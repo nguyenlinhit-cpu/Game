@@ -1,7 +1,7 @@
 class_name TechniqueBox
 extends Interactable
 ## Hộp Bí Kỹ: vật phá được, phá ra hồi Điểm Bí Kỹ.
-## Phá bằng F hoặc Đòn Mở Màn. TODO Phase 6: cộng Điểm Bí Kỹ thật.
+## Phá bằng F hoặc Đòn Mở Màn: +1 Điểm Bí Kỹ.
 
 const BOX_COLOR := Color("3d5a80")
 const GLOW_COLOR := Color("f2d58a")
@@ -33,8 +33,8 @@ func restore_broken() -> void:
 
 func _on_interact(_by: Node) -> void:
 	is_broken = true
-	print("[TechniqueBox] Phá hộp %s: +1 Điểm Bí Kỹ – TODO Phase 6" % box_id)
-	EventBus.toast_requested.emit(tr("TOAST_BOX_BROKEN"))
+	GameState.change_technique_points(1)
+	EventBus.toast_requested.emit(tr("TOAST_BOX_BROKEN") % GameState.technique_points)
 	CameraRig.shake(4.0, 0.12)
 	set_deferred("monitorable", false)
 	var tween := create_tween().set_parallel()

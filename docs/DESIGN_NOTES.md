@@ -80,3 +80,18 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 7. **Kháng nguyên tố** chỉ áp lên quái; phe ta mặc định 0 (Phase 6–8 có thể thêm buff kháng).
 8. **Ưu Thế trừ 25% khiên** không bao giờ đủ làm Phá Vỡ ngay đầu trận.
 9. **Phòng thử** ép nguyên tố cho cả đội (`BattleController.debug_element_override`), không ảnh hưởng trận thường.
+
+## Phase 6
+
+1. **Kỹ năng = danh sách hiệu ứng chạy theo thứ tự.** Sát thương được tính theo trạng thái khiên/buff ngay lúc hiệu ứng đó chạy, nên đặt buff trước sát thương nếu muốn buff có tác dụng ngay.
+2. **Giảm Khiên Điểm Yếu nằm trong DamageEffect** (mỗi đòn sát thương mang lượng giảm khiên riêng), không nằm ở SkillData.
+3. **Khiên:** mỗi đơn vị chỉ giữ khiên lớn nhất (không cộng dồn), hết khi hiệu ứng khiên hết lượt hoặc bị đánh vỡ. Sát thương theo lượt không bị khiên chặn.
+4. **Tinh Mệnh 3 và 5** đặc tả kiểu thể loại thường là "+2 cấp kỹ năng"; cấp kỹ năng làm ở Phase 9, nên tạm dùng "+15% hệ số". Phase 9 có thể đổi sang +cấp mà không đổi ý nghĩa.
+5. **Đòn phụ / phản công** chạy sau hành động hiện tại, không làm trôi thời gian, không cho/không trừ Điểm Chiến Kỹ; phản công không kích hoạt phản công khác.
+6. **Bí Kỹ "trận kế tiếp"** chỉ có tác dụng nếu người dùng Bí Kỹ có trong đội lúc vào trận; dùng lại cùng Bí Kỹ không cộng dồn. Bí Kỹ "đánh dấu quái" (Kiri) áp khi vào trận với đúng nhóm quái đó.
+7. **Bước Hư Ảnh** (theo mẫu mục 7) vừa là tiện ích khám phá, vừa kéo lượt đầu 25% ở trận kế tiếp → xếp vào kiểu khám phá.
+8. **Rào Ma Biến** là vật cản thứ 8, không gắn nguyên tố: chỉ lướt qua bằng Bước Hư Ảnh. Hốc rào Ma Biến có Hộp Bí Kỹ bên trong để không bị kẹt khi hết điểm.
+9. **Điểm Bí Kỹ** bắt đầu đầy (5), lưu trong save.
+10. **Trọng số bị nhắm** = trọng số vận mệnh × (1 + AGGRO). Khiêu Khích chỉ ép đòn đơn/lan; đòn toàn bộ vẫn trúng cả đội.
+11. **Dòng Chảy Ân Cần (Mira)** kích hoạt khi máu đồng minh vừa xuống dưới 30% vì bất kỳ lý do gì (cả sát thương theo lượt), mỗi đồng minh 1 lần (E2: 2 lần).
+12. **Đặc tính tránh trùng cơ chế:** tích tầng khi Phá Vỡ (Lữ khách), hồi khẩn cấp (Mira), hoàn Điểm Chiến Kỹ (Kiri), phản công (Garren), kích nổ sát thương theo lượt (Nyx).

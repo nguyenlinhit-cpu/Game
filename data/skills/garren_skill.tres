@@ -1,17 +1,32 @@
 [gd_resource type="Resource" script_class="SkillData" format=3]
 
-[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill"]
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/shield.tres" id="3_shield"]
+[ext_resource type="Script" path="res://systems/skill_effects/shield_effect.gd" id="4_shield_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/garren_taunt.tres" id="5_garren_taunt"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="6_apply_status_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("4_shield_effect")
+scope = 4
+scaling_stat = 2
+multiplier = 0.3
+flat = 80.0
+status = ExtResource("3_shield")
+
+[sub_resource type="Resource" id="Effect_2"]
+script = ExtResource("6_apply_status_effect")
+scope = 3
+status = ExtResource("5_garren_taunt")
 
 [resource]
-script = ExtResource("1_skill")
+script = ExtResource("1_skill_data")
 id = &"garren_skill"
 name_key = "SKILL_GARREN_SKILL"
 desc_key = "SKILL_GARREN_SKILL_DESC"
 kind = 1
-target = 0
-scaling_stat = 2
-damage_multiplier = 1.0
-target_delay = 0.25
-energy_gain = 30.0
+target = 5
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1"), SubResource("Effect_2")])
 sp_change = -1
-toughness_damage = 20.0
+energy_gain = 30.0

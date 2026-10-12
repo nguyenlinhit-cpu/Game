@@ -6,6 +6,7 @@ extends Control
 ##
 ## Điều khiển: bấm quái/đồng minh = chọn và ra đòn; Q / E = Đánh thường / Chiến kỹ (bấm lại = ra đòn);
 ## ←/→ đổi mục tiêu, Space/Enter ra đòn; bấm thẻ hoặc phím 1–4 = Tuyệt kỹ; chuột phải/Esc = hủy Tuyệt kỹ.
+## Tuyệt kỹ có 2 chế độ (SkillData.alternate): đang chọn mục tiêu Tuyệt kỹ thì Q để đổi chế độ.
 
 const ALLY_POSITIONS: Array[Vector2] = [
 	Vector2(700, 300), Vector2(570, 420), Vector2(700, 540), Vector2(570, 660)]
@@ -28,6 +29,7 @@ var _acting: BattleUnit
 var _selected_kind: SkillData.Kind = SkillData.Kind.BASIC
 var _target: BattleUnit
 var _ultimate_unit: BattleUnit
+var _ultimate_alt: bool = false
 var _encounter: EncounterData
 var _opening: BattleTypes.Opening = BattleTypes.Opening.NORMAL
 var _setup_failed: bool = false
@@ -79,7 +81,8 @@ func _ready() -> void:
 		team.assign(team_override)
 	var err := controller.setup(team, GameState.team_level, _encounter, _opening,
 			{GameState.PLAYER_CHARACTER_ID: GameState.player_gender},
-			{GameState.PLAYER_CHARACTER_ID: GameState.player_name}, _opener_element)
+			{GameState.PLAYER_CHARACTER_ID: GameState.player_name}, _opener_element,
+			GameState.get_eidolon_levels_for_battle(), _get_payload_techniques())
 	if err != OK:
 		_show_setup_error(err, team.size())
 		return
@@ -99,6 +102,13 @@ func _ready() -> void:
 	controller.set_auto(_auto_button.button_pressed)
 	_apply_speed(_speed_button.button_pressed)
 	controller.start()
+
+
+func _get_payload_techniques() -> Array[StringName]:
+	var result: Array[StringName] = []
+	for id: Variant in SceneRouter.payload.get("techniques", []):
+		result.append(StringName(str(id)))
+	return result
 
 
 func _process(delta: float) -> void:
@@ -177,9 +187,10 @@ func confirm() -> void:
 				_set_watch()
 		Mode.ULTIMATE:
 			var unit := _ultimate_unit
+			var skill := _current_skill()
 			_ultimate_unit = null
 			_set_watch()
-			controller.request_ultimate(unit, _target)
+			controller.request_ultimate(unit, _target, skill)
 			_refresh_cards()
 			if controller.is_awaiting_input() and _mode == Mode.WATCH:
 				_enter_choose()
@@ -195,10 +206,21 @@ func activate_ultimate(unit: BattleUnit) -> bool:
 		_refresh_cards()
 		return true
 	_ultimate_unit = unit
+	_ultimate_alt = false
 	_mode = Mode.ULTIMATE
 	_target = _default_target()
 	_refresh_choice()
 	return true
+
+
+## Đổi chế độ Tuyệt kỹ (nếu có chế độ khác).
+func toggle_ultimate_mode() -> void:
+	if _mode != Mode.ULTIMATE or _ultimate_unit.get_skill(SkillData.Kind.ULTIMATE).alternate == null:
+		return
+	_ultimate_alt = not _ultimate_alt
+	if not _current_pool().has(_target):
+		_target = _default_target()
+	_refresh_choice()
 
 
 func cancel_ultimate() -> void:
@@ -294,6 +316,8 @@ func _show_events(events: Array[Dictionary]) -> void:
 		match str(event["type"]):
 			"damage":
 				view.play_hit()
+				if float(event.get("absorbed", 0.0)) > 0.0:
+					_numbers.spawn(tr("BATTLE_ABSORBED") % event["absorbed"], at + Vector2(0, -34), Color(0.85, 0.9, 1.0), 26)
 				if event["crit"]:
 					_numbers.spawn("%d!" % event["amount"], at, Color("ffd34d"), 52, outline)
 				else:
@@ -316,6 +340,16 @@ func _show_events(events: Array[Dictionary]) -> void:
 				_numbers.spawn(tr("BATTLE_TURN_SKIPPED"), at, Color("7fb6ff"), 28)
 			"heal":
 				_numbers.spawn("+%d" % event["amount"], at, Color("6fdc8c"), 38)
+			"shield":
+				_numbers.spawn(tr("BATTLE_SHIELD_GAINED") % event["amount"], at, Color(0.85, 0.9, 1.0), 30)
+			"energy":
+				_numbers.spawn(tr("BATTLE_ENERGY_GAINED") % event["amount"], at, Color("7fb6ff"), 24)
+			"skill_point":
+				_numbers.spawn(tr("BATTLE_SKILL_POINT_GAINED") % event["amount"], at, Color("f2d58a"), 28)
+			"cleanse":
+				_numbers.spawn(tr("BATTLE_CLEANSED"), at, Color("6fdc8c"), 26)
+			"revive":
+				_numbers.spawn(tr("BATTLE_REVIVED"), at, Color("6fdc8c"), 34)
 			"advance":
 				_numbers.spawn(tr("BATTLE_ADVANCED") % roundi(event["amount"] * 100.0), at, Color("7fb6ff"), 28)
 			"delay":
@@ -376,7 +410,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_cancel") or event.is_action_pressed("menu"):
 		cancel_ultimate()
 	elif event.is_action_pressed("battle_basic"):
-		select_kind(SkillData.Kind.BASIC)
+		if _mode == Mode.ULTIMATE:
+			toggle_ultimate_mode()
+		else:
+			select_kind(SkillData.Kind.BASIC)
 	elif event.is_action_pressed("battle_skill"):
 		select_kind(SkillData.Kind.SKILL)
 	elif event.is_action_pressed("ui_left"):
@@ -460,7 +497,10 @@ func _current_skill() -> SkillData:
 	var user := _current_user()
 	if user == null:
 		return null
-	return user.get_skill(SkillData.Kind.ULTIMATE if _mode == Mode.ULTIMATE else _selected_kind)
+	if _mode == Mode.ULTIMATE:
+		var ultimate := user.get_skill(SkillData.Kind.ULTIMATE)
+		return ultimate.alternate if _ultimate_alt and ultimate.alternate else ultimate
+	return user.get_skill(_selected_kind)
 
 
 func _current_pool() -> Array[BattleUnit]:
@@ -497,6 +537,8 @@ func _refresh_choice() -> void:
 		if view:
 			view.marker = UnitView.Marker.MAIN if entry["main"] else UnitView.Marker.ADJACENT
 	_skill_info.text = "%s — %s" % [tr(skill.name_key), tr(skill.desc_key)]
+	if _mode == Mode.ULTIMATE and _ultimate_unit.get_skill(SkillData.Kind.ULTIMATE).alternate:
+		_skill_info.text += "\n" + tr("BATTLE_ULTIMATE_SWITCH_MODE")
 	_refresh_buttons()
 	if _mode == Mode.CHOOSE:
 		_turn_order.show_preview(controller.preview_order(skill, _target, PREVIEW_COUNT))

@@ -8,8 +8,9 @@
 | 2. Di chuyển và phòng kiểu Soul Knight | Xong |
 | 3. Quái trên map và chuyển vào trận | Xong |
 | 4. Lõi trận đánh theo lượt | Xong |
-| 5. Nguyên tố, khiên, phá vỡ, hiệu ứng | Xong, chờ duyệt |
-| 6–14 | Chưa làm |
+| 5. Nguyên tố, khiên, phá vỡ, hiệu ứng | Xong |
+| 6. Hệ thống kỹ năng, nhân vật chính, 4 nhân vật miễn phí | Xong, chờ duyệt |
+| 7–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -148,7 +149,7 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 4.
 ### Việc còn nợ
 
 - ~~Nguyên tố, Khiên Điểm Yếu, Phá Vỡ, hiệu ứng/buff~~ (Phase 5).
-- Kỹ năng dạng danh sách hiệu ứng, Đặc tính, Tinh Mệnh, nhân vật thật, trọng số bị nhắm theo vận mệnh (Phase 6).
+- ~~Kỹ năng dạng danh sách hiệu ứng, Đặc tính, Tinh Mệnh, nhân vật thật, trọng số bị nhắm~~ (Phase 6).
 - AI quái theo tình huống, báo trước đòn mạnh (Phase 8).
 - Máu giữ nguyên giữa các trận, cấp từng nhân vật (Phase 9). Hiện mọi nhân vật lấy cấp đội, vào trận đầy máu và nửa năng lượng.
 - EXP/vật phẩm thắng trận thật (Phase 10).
@@ -183,10 +184,47 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 5.
 
 ### Việc còn nợ
 
-- Kỹ năng gắn hiệu ứng (buff/debuff thật, khiên, khiêu khích, giải hiệu ứng) và Đặc tính (Phase 6). Hiện chỉ có Phá Vỡ gắn hiệu ứng; `test_atk_up`, `test_def_down` chỉ để test.
+- ~~Kỹ năng gắn hiệu ứng và Đặc tính~~ (Phase 6). `test_atk_up`, `test_def_down` chỉ để test.
 - Quái gắn hiệu ứng lên phe ta (Phase 8).
 - Cân bằng số liệu phá vỡ cùng báo cáo boss (Phase 8, 14).
 - Biểu tượng điểm yếu/hiệu ứng thật (Phase 13; đang là ô màu + chữ).
+
+## Phase 6 – Hệ thống kỹ năng, nhân vật chính và 4 nhân vật miễn phí
+
+### Đã làm
+
+- `SkillData` dạng danh sách hiệu ứng ghép (`systems/skill_effects/`): `DamageEffect` (theo chỉ số, hệ số chính/bên cạnh, giảm khiên), `HealEffect` (theo chỉ số người hồi hoặc % máu mục tiêu), `ShieldEffect`, `ApplyStatusEffect` (buff/debuff, khiêu khích), `TurnShiftEffect` (kéo/đẩy lượt), `EnergyEffect`, `SkillPointEffect`, `CleanseEffect`; phạm vi: mục tiêu / chính / bên cạnh / bản thân / cả đội / đồng đội khác / toàn bộ quái. Đánh thường, Chiến kỹ, Tuyệt kỹ, đòn phụ đều là SkillData. Tuyệt kỹ có thể có 2 chế độ (`alternate`).
+- `SkillContext`: mọi sát thương/hồi máu/khiên (của kỹ năng và Đặc tính) đi chung một đường, có móc `before_damage`/`after_damage`/`before_heal`/`skill_resolved` để Đặc tính sửa số tại chỗ. Khiên chặn sát thương trước máu.
+- `TalentScript`: lớp cơ sở cho Đặc tính, gắn vào EventBus (lọc theo trận) và móc của BattleController. Tinh Mệnh 1–6 bật theo cấp Tinh Mệnh (`GameState.eidolon_levels`): phần tăng số khai báo trong `EidolonData`, phần cơ chế trong TalentScript (`has_eidolon(n)`). Đòn phụ / phản công (`request_follow_up`) không tốn lượt. Có hồi sinh (`revive`).
+- Vận mệnh (`CharacterPath`) + trọng số bị nhắm đúng bảng mục 6; AI quái chọn mục tiêu theo trọng số × (1 + AGGRO), Khiêu Khích bắt đòn đơn/lan nhắm người khiêu khích.
+- Kỹ năng ngoài map: Đòn Mở Màn của người dẫn đầu (nguyên tố, hồi chiêu, tầm, độ rộng quạt riêng) đánh quái + mở vật cản; Bí Kỹ tốn Điểm Bí Kỹ dùng chung (tối đa 5; Hộp Bí Kỹ +1, phòng nghỉ hồi đầy). 3 kiểu Bí Kỹ: trận kế tiếp (Mira, Garren), tác động quái trên map (Kiri: choáng + đánh dấu), tiện ích khám phá (Lữ khách: lướt xuyên rào Ma Biến; Nyx: tàng hình).
+- 7 vật cản nguyên tố + rào Ma Biến (`ElementalObstacle`): dây leo, tường lửa, cửa máy, sương mù, cổng gỉ, khe vực (mọc cầu), tường nứt (lối ẩn). Lưu "đã mở" trong map_states. Phòng giải đố mới `room_puzzle_01` (8 hốc, mỗi hốc 1 vật cản + rương) nối phía Nam phòng nghỉ.
+- Đổi người dẫn đầu bằng phím 1–4 hoặc chạm chân dung trên thanh đội (HUD góc trái dưới, có Điểm Bí Kỹ và Bí Kỹ đang chờ trận sau). Nút cảm ứng Bí Kỹ.
+- 5 nhân vật thật (Lữ khách theo mẫu mục 7, Mira, Kiri, Garren, Nyx): 2 kỹ năng ngoài map, 3 kỹ năng trận, Đặc tính, 6 Tinh Mệnh, chỉ số cấp 1/30 (`docs/CHARACTERS.md`). Dữ liệu sinh bằng `tools/data_builder/build_characters.py`; thay toàn bộ dữ liệu tạm Phase 4.
+- Màn trận: Tuyệt kỹ 2 chế độ (Q để đổi), hiện khiên / năng lượng / Điểm Chiến Kỹ / giải hiệu ứng / hồi sinh, thanh khiên trên thẻ nhân vật.
+- Phòng thử trận: chọn đúng 4 trong 5 nhân vật + cấp Tinh Mệnh, "Áp dụng" để đánh lại. Menu tạm dừng (debug): "Đổi đội thử".
+- Test `tests/phase06_test.tscn`: 77/77 đạt. Test Phase 1–5 vẫn đạt (Phase 2 cập nhật số phòng = 5).
+
+### File chính
+
+- `systems/skill_effects/*.gd`, `systems/character_path.gd`, `systems/resources/{skill_data,talent_data,eidolon_data,technique_data}.gd`
+- `scenes/battle/{skill_context,talent_script}.gd`, sửa `battle_controller`, `skill_executor`, `battle_unit`, `battle_scene`, `ui/*`
+- `data/characters/*.tres`, `data/characters/scripts/*_talent.gd`, `data/skills/*.tres`, `data/status_effects/*.tres`
+- `scenes/overworld/interactables/elemental_obstacle.*`, `scenes/overworld/rooms/room_puzzle_01.tscn`, `scenes/ui/hud/team_bar.gd`
+- `tools/data_builder/build_characters.py`, `tests/phase06_test.*`, `docs/CHARACTERS.md`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 6.
+
+### Việc còn nợ
+
+- Sương mù (Phong) và Cổng gỉ (Độc) chưa có nhân vật mở được trong đội miễn phí (Phase 7 có nhân vật gacha; test đang dùng Đòn Mở Màn giả lập).
+- 20 nhân vật còn lại, cân bằng 5★/4★, phòng thử chọn quái/cấp (Phase 7).
+- Cấp kỹ năng (Phase 9); hiện Tinh Mệnh 3/5 là +15% hệ số thay cho "+2 cấp kỹ năng".
+- Nhận nhân vật theo cốt truyện, Tinh Mệnh nhân vật chính theo Mảnh Hồn (Phase 12); nhân vật trùng (Phase 11). Hiện cả 5 nhân vật có sẵn, Tinh Mệnh chỉnh trong phòng thử.
+- Máu giữ giữa các trận để Bí Kỹ hồi máu có nghĩa (Phase 9).
+- Quái gắn hiệu ứng lên phe ta, đòn phụ của quái (Phase 8).
 
 ## Để sau
 

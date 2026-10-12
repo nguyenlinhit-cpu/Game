@@ -1,16 +1,27 @@
 [gd_resource type="Resource" script_class="SkillData" format=3]
 
-[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill"]
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/turn_shift_effect.gd" id="3_turn_shift_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/kiri_kindle.tres" id="4_kiri_kindle"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="5_apply_status_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("3_turn_shift_effect")
+amount = 0.5
+
+[sub_resource type="Resource" id="Effect_2"]
+script = ExtResource("5_apply_status_effect")
+status = ExtResource("4_kiri_kindle")
 
 [resource]
-script = ExtResource("1_skill")
+script = ExtResource("1_skill_data")
 id = &"kiri_skill"
 name_key = "SKILL_KIRI_SKILL"
 desc_key = "SKILL_KIRI_SKILL_DESC"
 kind = 1
 target = 3
 can_target_self = false
-scaling_stat = 1
-action_advance = 0.5
-energy_gain = 30.0
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1"), SubResource("Effect_2")])
 sp_change = -1
+energy_gain = 30.0

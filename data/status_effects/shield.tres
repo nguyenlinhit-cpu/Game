@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"shield"
+name_key = "STATUS_SHIELD"
+desc_key = "STATUS_SHIELD_DESC"
+kind = 0
+icon_text = "Kh"
+icon_color = Color(0.85, 0.9, 1, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 1.0
+ignores_resistance = true
+shield = true

@@ -1,7 +1,8 @@
 extends Control
 ## Phòng thử trận: đánh bù nhìn (2 con yếu cả 7 nguyên tố, 1 con chỉ yếu Lửa, máu rất nhiều),
 ## chọn nguyên tố đòn đánh của phe ta để kiểm chứng đủ 7 hiệu ứng Phá Vỡ,
-## và thấy đòn sai nguyên tố không làm giảm khiên.
+## và thấy đòn sai nguyên tố không làm giảm khiên. Chọn đúng 4 nhân vật và cấp Tinh Mệnh (áp cho cả đội),
+## bấm "Áp dụng" để đánh lại với đội mới. Phase 7 thêm chọn quái và cấp.
 ## Mở: chạy thẳng scene này (F6), hoặc menu tạm dừng → "Phòng thử trận" (bản debug).
 
 const SANDBOX_ENCOUNTER: String = "res://data/encounters/sandbox_dummies.tres"
@@ -10,6 +11,8 @@ const BATTLE_SCENE: PackedScene = preload("res://scenes/battle/battle_scene.tscn
 var battle: Node
 
 var _element_buttons: Dictionary = {}
+var _team_checks: Dictionary = {}
+var _eidolon_spin: SpinBox
 
 @onready var _panel: HBoxContainer = %SandboxPanel
 @onready var _element_label: Label = %ElementLabel
@@ -62,6 +65,54 @@ func _build_panel() -> void:
 	reset.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	reset.pressed.connect(reset_dummies)
 	_panel.add_child(reset)
+	_build_team_row()
+
+
+func _build_team_row() -> void:
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 10)
+	_panel.get_parent().add_child(row)
+	var label := Label.new()
+	label.text = tr("SANDBOX_TEAM")
+	row.add_child(label)
+	for id in GameState.owned_characters:
+		var data := DataPaths.load_character(id)
+		var check := CheckBox.new()
+		check.text = GameState.player_name if id == GameState.PLAYER_CHARACTER_ID else tr(data.name_key)
+		check.button_pressed = GameState.team.has(id)
+		check.focus_mode = Control.FOCUS_NONE
+		row.add_child(check)
+		_team_checks[id] = check
+	_eidolon_spin = SpinBox.new()
+	_eidolon_spin.min_value = 0
+	_eidolon_spin.max_value = 6
+	_eidolon_spin.prefix = tr("SANDBOX_EIDOLON").replace("%d", "").strip_edges()
+	_eidolon_spin.value = GameState.get_eidolon_level(GameState.team[0])
+	row.add_child(_eidolon_spin)
+	var apply := Button.new()
+	apply.text = tr("SANDBOX_APPLY")
+	apply.focus_mode = Control.FOCUS_NONE
+	apply.pressed.connect(func() -> void:
+		var ids: Array[StringName] = []
+		for id: StringName in _team_checks:
+			if (_team_checks[id] as CheckBox).button_pressed:
+				ids.append(id)
+		apply_team(ids, int(_eidolon_spin.value)))
+	row.add_child(apply)
+
+
+## Đặt đội (đúng 4 người) và cấp Tinh Mệnh cho cả đội rồi mở lại phòng thử. Trả về false nếu đội sai.
+func apply_team(ids: Array[StringName], eidolon_level: int) -> bool:
+	if ids.size() != GameConfig.MAX_TEAM_SIZE:
+		EventBus.toast_requested.emit(tr("SANDBOX_TEAM_INVALID"))
+		_element_label.text = tr("SANDBOX_TEAM_INVALID")
+		return false
+	if not GameState.set_team(ids):
+		return false
+	for id in ids:
+		GameState.set_eidolon_level(id, eidolon_level)
+	SceneRouter.go_to(DataPaths.BATTLE_SANDBOX_SCENE, SceneRouter.payload.duplicate())
+	return true
 
 
 func _add_element_button(element: int, label: String, color: Color, group: ButtonGroup) -> void:

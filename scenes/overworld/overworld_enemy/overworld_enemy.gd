@@ -10,7 +10,7 @@ extends CharacterBody2D
 signal defeated(group: Node)
 signal encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening)
 
-enum State { PATROL, ALERT, CHASE, RETURN, WINDUP, LUNGE, RECOVER }
+enum State { PATROL, ALERT, CHASE, RETURN, WINDUP, LUNGE, RECOVER, DAZED }
 
 const GROUP: StringName = &"overworld_enemy"
 const ARRIVE_DISTANCE: float = 8.0
@@ -42,6 +42,8 @@ var _lunge_direction: Vector2 = Vector2.ZERO
 var _defeated: bool = false
 var _triggered: bool = false
 var _time: float = 0.0
+## Bí Kỹ đã đánh dấu nhóm này (character_id); vào trận thì áp hiệu ứng đầu trận của Bí Kỹ đó.
+var marks: Array[StringName] = []
 
 
 func _ready() -> void:
@@ -79,6 +81,10 @@ func _physics_process(delta: float) -> void:
 
 	var player := _find_player()
 	match state:
+		State.DAZED:
+			velocity = Vector2.ZERO
+			if _state_time >= _daze_duration:
+				_set_state(State.PATROL)
 		State.PATROL:
 			_process_patrol(delta)
 			if can_see(player):
@@ -115,7 +121,22 @@ func _physics_process(delta: float) -> void:
 	_check_contact(player)
 
 
+var _daze_duration: float = 0.0
+
+
 # --- Giao diện cho map / phòng ---
+
+## Bí Kỹ tác động quái trên map: choáng đứng yên, không nhìn thấy ai.
+func daze(duration: float) -> void:
+	if _defeated:
+		return
+	_daze_duration = duration
+	_set_state(State.DAZED)
+
+
+func add_mark(character_id: StringName) -> void:
+	if not marks.has(character_id):
+		marks.append(character_id)
 
 func is_defeated() -> bool:
 	return _defeated
@@ -164,7 +185,9 @@ func set_triggered(value: bool) -> void:
 
 
 func can_see(player: Node2D) -> bool:
-	if player == null:
+	if player == null or state == State.DAZED:
+		return false
+	if player is Player and (player as Player).is_invisible():
 		return false
 	var to_player := player.global_position - global_position
 	var distance := to_player.length()
@@ -288,6 +311,12 @@ func _draw() -> void:
 		draw_circle(Vector2(-radius + i * 9.0, radius + 12.0), 3.5, body_color.lightened(0.3))
 
 	var font := ThemeDB.fallback_font
+	if state == State.DAZED:
+		for i in 3:
+			var star := Vector2.from_angle(_time * 3.0 + TAU * i / 3.0) * radius * 0.8 + Vector2(0.0, -radius - 20.0)
+			draw_circle(star, 5.0, ALERT_COLOR)
+	if not marks.is_empty():
+		draw_arc(Vector2.ZERO, radius + 8.0, 0.0, TAU, 32, Element.color(Element.Type.FIRE), 3.0, true)
 	if state in [State.ALERT, State.CHASE, State.WINDUP, State.LUNGE]:
 		draw_string(font, Vector2(-7.0, -radius - 34.0), "!", HORIZONTAL_ALIGNMENT_LEFT, -1, 40, ALERT_COLOR)
 	elif state == State.RETURN:

@@ -10,6 +10,8 @@ enum Type {
 	HP, ATK, DEF, SPD,
 	CRIT_RATE, CRIT_DMG, BREAK_EFFECT, ENERGY_REGEN, EFFECT_HIT, EFFECT_RES, OUTGOING_HEALING,
 	DAMAGE_BONUS, VULNERABILITY, DEF_REDUCTION, RES,
+	## Nhân trọng số bị nhắm: trọng số = trọng số vận mệnh × (1 + AGGRO).
+	AGGRO,
 }
 
 const CORE_STAT_COUNT: int = 11

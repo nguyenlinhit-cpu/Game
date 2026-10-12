@@ -1,10 +1,11 @@
 class_name SkillData
 extends Resource
-## Kỹ năng trong trận (TẠM cho Phase 4–5: sát thương, giảm khiên, hồi máu, kéo/đẩy lượt, Điểm Chiến Kỹ, năng lượng).
-## Nguyên tố đòn đánh = nguyên tố của người dùng.
-## Phase 6 đổi thành danh sách hiệu ứng ghép được (khiên, buff/debuff, khiêu khích...).
+## Kỹ năng trong trận (Đánh thường, Chiến kỹ, Tuyệt kỹ, đòn phụ của Đặc tính đều là SkillData).
+## Nội dung là danh sách hiệu ứng ghép (`effects`, chạy lần lượt): sát thương, hồi máu, khiên,
+## buff/debuff, kéo/đẩy lượt, năng lượng, Điểm Chiến Kỹ, khiêu khích (buff có taunt), giải hiệu ứng.
+## Nguyên tố đòn đánh = nguyên tố người dùng.
 
-enum Kind { BASIC, SKILL, ULTIMATE }
+enum Kind { BASIC, SKILL, ULTIMATE, FOLLOW_UP }
 ## "ENEMY" = phe đối địch của người dùng, "ALLY" = phe mình (quái dùng thì ngược lại).
 enum Target { SINGLE_ENEMY, BLAST_ENEMY, ALL_ENEMIES, SINGLE_ALLY, ALL_ALLIES, SELF }
 
@@ -15,32 +16,16 @@ enum Target { SINGLE_ENEMY, BLAST_ENEMY, ALL_ENEMIES, SINGLE_ALLY, ALL_ALLIES, S
 @export var target: Target = Target.SINGLE_ENEMY
 ## Được chọn chính mình làm mục tiêu (với kỹ năng nhắm đồng minh).
 @export var can_target_self: bool = true
-
-@export_group("Sát thương")
-@export var scaling_stat: Stats.Type = Stats.Type.ATK
-## Hệ số lên mục tiêu chính (hoặc mọi mục tiêu với ALL_ENEMIES).
-@export var damage_multiplier: float = 0.0
-## Hệ số lên 2 mục tiêu bên cạnh (BLAST_ENEMY).
-@export var adjacent_multiplier: float = 0.0
-
-## Lượng giảm Khiên Điểm Yếu lên mục tiêu chính (mọi mục tiêu với ALL_ENEMIES) và mục tiêu bên cạnh.
-@export var toughness_damage: float = 0.0
-@export var toughness_damage_adjacent: float = 0.0
-
-@export_group("Hồi máu")
-@export var heal_multiplier: float = 0.0
-@export var heal_flat: float = 0.0
-
-@export_group("Thứ tự lượt")
-## Kéo lượt mục tiêu lên (0,5 = 50% quãng đường).
-@export var action_advance: float = 0.0
-## Đẩy lùi lượt mục tiêu chính.
-@export var target_delay: float = 0.0
+@export var effects: Array[SkillEffect] = []
 
 @export_group("Tài nguyên")
 ## Đánh thường +1, Chiến kỹ −1, Tuyệt kỹ 0.
 @export var sp_change: int = 0
 @export var energy_gain: float = 0.0
+
+@export_group("Chế độ khác")
+## Kiểu thay thế của cùng kỹ năng (vd. Tuyệt kỹ nhân vật chính: đơn mục tiêu / lan).
+@export var alternate: SkillData
 
 
 func is_ally_targeted() -> bool:
@@ -51,9 +36,46 @@ func needs_target_choice() -> bool:
 	return target in [Target.SINGLE_ENEMY, Target.BLAST_ENEMY, Target.SINGLE_ALLY]
 
 
+func get_effects_of(script: Script) -> Array[SkillEffect]:
+	var result: Array[SkillEffect] = []
+	for effect in effects:
+		if effect and effect.get_script() == script:
+			result.append(effect)
+	return result
+
+
 func deals_damage() -> bool:
-	return damage_multiplier > 0.0 or adjacent_multiplier > 0.0
+	return not get_effects_of(DamageEffect).is_empty()
 
 
 func heals() -> bool:
-	return heal_multiplier > 0.0 or heal_flat > 0.0
+	return not get_effects_of(HealEffect).is_empty()
+
+
+func gives_shield() -> bool:
+	return not get_effects_of(ShieldEffect).is_empty()
+
+
+## Tổng phần kéo lượt lên mục tiêu đồng minh (cho Tự Động và xem trước).
+func get_action_advance() -> float:
+	var total := 0.0
+	for effect in get_effects_of(TurnShiftEffect):
+		var shift := effect as TurnShiftEffect
+		if shift.amount > 0.0:
+			total += shift.amount
+	return total
+
+
+## Kỹ năng chỉ gây sát thương đơn giản (dùng trong test và dữ liệu nhanh).
+static func simple_damage(multiplier: float, toughness: float = 0.0,
+		skill_target: Target = Target.SINGLE_ENEMY, skill_kind: Kind = Kind.BASIC) -> SkillData:
+	var skill := SkillData.new()
+	skill.id = &"simple_damage"
+	skill.name_key = "SKILL_TRAVELER_BASIC"
+	skill.kind = skill_kind
+	skill.target = skill_target
+	var damage := DamageEffect.new()
+	damage.multiplier = multiplier
+	damage.toughness = toughness
+	skill.effects = [damage]
+	return skill

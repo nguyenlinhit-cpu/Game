@@ -24,6 +24,9 @@ signal battle_lost(encounter: Resource)
 
 # --- Ngoài map (Phase 2–6) ---
 signal technique_used(character_id: StringName)
+signal technique_points_changed(value: int)
+signal leader_changed(index: int)
+signal obstacle_resolved(obstacle_id: String)
 signal camera_shake_requested(strength: float, duration: float)
 signal chest_opened(chest_id: StringName)
 

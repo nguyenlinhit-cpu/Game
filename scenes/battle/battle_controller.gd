@@ -5,6 +5,8 @@ extends Node
 ## → Kiểm tra thắng thua (sang đợt sau nếu còn) → lặp lại → Kết thúc.
 ## Tuyệt kỹ chen lượt: request_ultimate() xếp vào hàng chen lượt, chạy ngay sau hành động
 ## đang diễn ra (hoặc ngay lập tức nếu đang chờ người chơi chọn), không tốn lượt của ai.
+## Đòn đánh phụ / phản công của Đặc tính (request_follow_up) đi chung hàng này.
+## Đặc tính/Tinh Mệnh (TalentScript) gắn khi setup, gỡ khi trận rời cây.
 ## Không phụ thuộc giao diện: BattleScene nghe tín hiệu và gọi submit_action()/request_ultimate().
 
 signal turn_started(unit: BattleUnit)
@@ -18,6 +20,12 @@ signal queue_changed
 signal wave_started(index: int, wave_enemies: Array[BattleUnit])
 signal unit_died(unit: BattleUnit)
 signal battle_ended(won: bool)
+## Móc cho TalentScript.
+signal battle_began
+signal before_damage(ctx: SkillContext, target: BattleUnit, params: DamageCalc.Params)
+signal after_damage(ctx: SkillContext, target: BattleUnit, amount: float, crit: bool)
+signal before_heal(ctx: SkillContext, target: BattleUnit, box: Dictionary)
+signal skill_resolved(ctx: SkillContext)
 
 enum Phase { SETUP, RUNNING, AWAITING_INPUT, ENDED }
 
@@ -53,7 +61,10 @@ var opener_element: int = Element.NONE
 ## Phòng thử: ép nguyên tố mọi đòn của phe ta (Element.NONE = theo nhân vật).
 var debug_element_override: int = Element.NONE
 
-## Các tuyệt kỹ chờ chen lượt: [{ "unit": BattleUnit, "target": BattleUnit }].
+## Bí Kỹ áp đầu trận: [character_id] (trận kế tiếp + nhóm quái bị đánh dấu).
+var technique_users: Array[StringName] = []
+var talents: Array[TalentScript] = []
+## Hàng chen lượt: [{ "unit", "target", "skill"?: SkillData, "follow_up"?: bool }].
 var _interrupts: Array[Dictionary] = []
 var _choice: Dictionary = {}
 var _skip_wait: bool = false
@@ -64,7 +75,8 @@ signal _choice_made
 ## Chuẩn bị trận. Từ chối đội rỗng hoặc hơn 4 người, và trận có dữ liệu lỗi.
 func setup(team: Array[CharacterData], team_level: int, battle_encounter: EncounterData,
 		battle_opening: BattleTypes.Opening, skins: Dictionary = {}, names: Dictionary = {},
-		battle_opener_element: int = Element.NONE) -> Error:
+		battle_opener_element: int = Element.NONE, eidolon_levels: Dictionary = {},
+		techniques: Array[StringName] = []) -> Error:
 	if team.is_empty():
 		push_warning("BattleController: đội trống")
 		return ERR_INVALID_PARAMETER
@@ -77,6 +89,7 @@ func setup(team: Array[CharacterData], team_level: int, battle_encounter: Encoun
 	encounter = battle_encounter
 	opening = battle_opening
 	opener_element = battle_opener_element
+	technique_users = techniques.duplicate()
 	var level := clampi(team_level, 1, GameConfig.MAX_LEVEL)
 	for i in team.size():
 		var data := team[i]
@@ -84,6 +97,8 @@ func setup(team: Array[CharacterData], team_level: int, battle_encounter: Encoun
 		allies.append(unit)
 		queue.add(unit)
 	_spawn_wave(0)
+	for unit in allies:
+		_attach_character_scripts(unit, int(eidolon_levels.get(unit.character.id, 0)))
 	match opening:
 		BattleTypes.Opening.ADVANTAGE:
 			# Cả đội hành động trước ở vòng đầu (nhanh hơn đi trước).
@@ -106,6 +121,11 @@ func start() -> void:
 	skill_points_changed.emit(skill_points)
 	queue_changed.emit()
 	await _wait(START_PAUSE_SEC)
+	battle_began.emit()
+	var technique_events := _apply_technique_effects()
+	if not technique_events.is_empty():
+		report_events(allies[0], technique_events)
+		await _wait(STATUS_PAUSE_SEC)
 	while phase != Phase.ENDED:
 		await _process_interrupts()
 		var wave_before := wave_index
@@ -181,11 +201,12 @@ func submit_action(kind: SkillData.Kind, target: BattleUnit) -> bool:
 	return true
 
 
-## Xếp tuyệt kỹ chen lượt. Trả về false nếu chưa đầy năng lượng hoặc đã xếp rồi.
-func request_ultimate(unit: BattleUnit, target: BattleUnit = null) -> bool:
+## Xếp tuyệt kỹ chen lượt. `skill`: chế độ khác của Tuyệt kỹ (SkillData.alternate), null = mặc định.
+## Trả về false nếu chưa đầy năng lượng hoặc đã xếp rồi.
+func request_ultimate(unit: BattleUnit, target: BattleUnit = null, skill: SkillData = null) -> bool:
 	if phase == Phase.ENDED or phase == Phase.SETUP or not unit.is_ultimate_ready() or is_ultimate_queued(unit):
 		return false
-	_interrupts.append({"unit": unit, "target": target})
+	_interrupts.append({"unit": unit, "target": target, "skill": skill})
 	if phase == Phase.AWAITING_INPUT:
 		_choice = {"type": "interrupt"}
 		_choice_made.emit()
@@ -194,9 +215,45 @@ func request_ultimate(unit: BattleUnit, target: BattleUnit = null) -> bool:
 
 func is_ultimate_queued(unit: BattleUnit) -> bool:
 	for entry in _interrupts:
-		if entry["unit"] == unit:
+		if entry["unit"] == unit and not entry.get("follow_up", false):
 			return true
 	return false
+
+
+## Đòn đánh phụ / phản công: hành động riêng, không tốn lượt, chạy sau hành động hiện tại.
+func request_follow_up(unit: BattleUnit, skill: SkillData, target: BattleUnit = null) -> void:
+	if phase == Phase.ENDED or not unit.is_alive():
+		return
+	_interrupts.append({"unit": unit, "target": target, "skill": skill, "follow_up": true})
+	if phase == Phase.AWAITING_INPUT:
+		_choice = {"type": "interrupt"}
+		_choice_made.emit()
+
+
+## Hồi sinh đồng minh đã ngã: trở lại hàng lượt với quãng đường đầy.
+func revive(unit: BattleUnit, ratio: float) -> Array[Dictionary]:
+	if unit.is_alive():
+		return []
+	unit.revive(ratio)
+	queue.add(unit)
+	queue_changed.emit()
+	return [{"type": "revive", "target": unit, "amount": unit.hp, "crit": false}]
+
+
+## Sự kiện ngoài kỹ năng (Đặc tính, Bí Kỹ đầu trận): xử lý đơn vị ngã rồi báo giao diện.
+func report_events(unit: BattleUnit, events: Array[Dictionary]) -> void:
+	_handle_deaths(events)
+	status_events.emit(unit, events)
+	queue_changed.emit()
+
+
+## Phe mình (còn sống) của đơn vị.
+func get_friends(unit: BattleUnit) -> Array[BattleUnit]:
+	return (allies if unit.is_ally() else enemies).filter(func(u: BattleUnit) -> bool: return u.is_alive())
+
+
+func get_foes(unit: BattleUnit) -> Array[BattleUnit]:
+	return (enemies if unit.is_ally() else allies).filter(func(u: BattleUnit) -> bool: return u.is_alive())
 
 
 func set_auto(enabled: bool) -> void:
@@ -266,13 +323,11 @@ func change_skill_points(delta: int) -> void:
 ## Xem trước thứ tự lượt nếu nhân vật đang tới lượt dùng `skill` lên `target`.
 func preview_order(skill: SkillData, target: BattleUnit, count: int) -> Array[Dictionary]:
 	var overrides: Dictionary = {}
-	if skill and target:
-		for entry in SkillExecutor.resolve_targets(skill, current_unit, target, allies, enemies):
-			var unit: BattleUnit = entry["unit"]
-			if skill.action_advance > 0.0 and unit != current_unit:
-				overrides[unit] = maxf(unit.distance_left - TurnQueue.BASE_DISTANCE * skill.action_advance, 0.0)
-			if skill.target_delay > 0.0 and entry["main"]:
-				overrides[unit] = unit.distance_left + TurnQueue.BASE_DISTANCE * skill.target_delay
+	if skill and target and current_unit:
+		var ctx := SkillContext.new(self, current_unit, skill, target)
+		for effect in skill.effects:
+			if effect:
+				effect.collect_turn_overrides(ctx, overrides)
 	return queue.predict(count, current_unit, overrides)
 
 
@@ -311,21 +366,27 @@ func _process_interrupts() -> void:
 	while not _interrupts.is_empty() and phase != Phase.ENDED:
 		var entry: Dictionary = _interrupts.pop_front()
 		var unit: BattleUnit = entry["unit"]
-		if not unit.is_ultimate_ready():
+		var follow_up: bool = entry.get("follow_up", false)
+		if not unit.is_alive() or (not follow_up and not unit.is_ultimate_ready()):
 			continue
-		var ultimate := unit.get_skill(SkillData.Kind.ULTIMATE)
+		var skill: SkillData = entry.get("skill")
+		if skill == null:
+			skill = unit.get_skill(SkillData.Kind.ULTIMATE)
 		var target: BattleUnit = entry.get("target")
-		var pool := SkillExecutor.get_target_pool(ultimate, unit, allies, enemies)
+		var pool := SkillExecutor.get_target_pool(skill, unit, allies, enemies)
 		if pool.is_empty():
 			continue
 		if target == null or not pool.has(target):
-			target = AutoBattle.choose_ultimate_target(unit, self)
-		await _perform(unit, ultimate, target)
+			target = AutoBattle.choose_ultimate_target(unit, self) if not follow_up \
+					else EnemyAI.choose_target(skill, pool, rng) if not unit.is_ally() else pool[0]
+			if not pool.has(target):
+				target = pool[0]
+		await _perform(unit, skill, target, follow_up)
 		if _check_end():
 			return
 
 
-func _perform(unit: BattleUnit, skill: SkillData, target: BattleUnit) -> void:
+func _perform(unit: BattleUnit, skill: SkillData, target: BattleUnit, follow_up: bool = false) -> void:
 	var targets: Array[BattleUnit] = []
 	for entry in SkillExecutor.resolve_targets(skill, unit, target, allies, enemies):
 		targets.append(entry["unit"])
@@ -336,7 +397,7 @@ func _perform(unit: BattleUnit, skill: SkillData, target: BattleUnit) -> void:
 	await _wait(ULTIMATE_PAUSE_SEC if is_ultimate else WINDUP_PAUSE_SEC)
 	if phase == Phase.ENDED:
 		return
-	var events := SkillExecutor.execute(self, unit, skill, target)
+	var events := SkillExecutor.execute(self, unit, skill, target, follow_up)
 	_handle_deaths(events)
 	action_resolved.emit(unit, skill, events)
 	queue_changed.emit()
@@ -361,7 +422,48 @@ func _handle_deaths(events: Array[Dictionary]) -> void:
 func _queue_auto_ultimates() -> void:
 	for unit in allies:
 		if AutoBattle.should_use_ultimate(unit, self) and not is_ultimate_queued(unit):
-			_interrupts.append({"unit": unit, "target": null})
+			_interrupts.append({"unit": unit, "target": null, "skill": AutoBattle.choose_ultimate_skill(unit, self)})
+
+
+func _attach_character_scripts(unit: BattleUnit, eidolon_level: int) -> void:
+	var data := unit.character
+	if data.talent and data.talent.script_class:
+		var talent := data.talent.script_class.new() as TalentScript
+		talent.attach(self, unit, eidolon_level)
+		talents.append(talent)
+	for i in mini(eidolon_level, data.eidolons.size()):
+		var eidolon := data.eidolons[i]
+		if eidolon == null:
+			continue
+		for kind in eidolon.bonus_kinds:
+			unit.skill_multiplier_bonus[kind] = unit.get_skill_multiplier_bonus(kind) + eidolon.multiplier_bonus
+		for modifier in eidolon.stat_modifiers:
+			unit.stats.add_modifier(modifier.stat, modifier.flat, modifier.percent, StringName("eidolon_%d" % (i + 1)))
+		if eidolon.script_class:
+			var extra := eidolon.script_class.new() as TalentScript
+			extra.attach(self, unit, eidolon_level)
+			talents.append(extra)
+
+
+## Hiệu ứng đầu trận của Bí Kỹ (người dùng phải có trong đội).
+func _apply_technique_effects() -> Array[Dictionary]:
+	var events: Array[Dictionary] = []
+	for character_id in technique_users:
+		for unit in allies:
+			if unit.character.id != character_id or unit.character.technique == null:
+				continue
+			var ctx := SkillContext.new(self, unit, null, null)
+			for effect in unit.character.technique.battle_start_effects:
+				if effect:
+					effect.apply(ctx)
+			events.append_array(ctx.events)
+	return events
+
+
+func _exit_tree() -> void:
+	for talent in talents:
+		talent.detach()
+	talents.clear()
 
 
 ## Kiểm tra thắng/thua; hết quái đợt này mà còn đợt sau thì gọi đợt mới. Trả về true nếu trận đã kết thúc.

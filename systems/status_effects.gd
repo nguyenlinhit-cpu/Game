@@ -42,6 +42,8 @@ static func apply(data: StatusEffectData, source: BattleUnit, target: BattleUnit
 
 
 static func remove(target: BattleUnit, instance: StatusEffectInstance) -> void:
+	if instance.data.shield:
+		target.shield_hp = 0.0
 	target.stats.remove_source(instance.uid)
 	target.status_effects.erase(instance)
 	target.status_changed.emit(target)
@@ -61,6 +63,9 @@ static func tick_turn_start(target: BattleUnit) -> Dictionary:
 		if not target.is_alive():
 			break
 		var data := instance.data
+		if data.heal_per_turn_ratio > 0.0:
+			var healed := target.heal(target.get_max_hp() * data.heal_per_turn_ratio)
+			events.append({"type": "heal", "target": target, "amount": healed, "crit": false})
 		if data.dot_mode != StatusEffectData.DotMode.NONE and data.dot_multiplier > 0.0:
 			var amount := target.take_damage(compute_dot(instance, target))
 			events.append({"type": "dot", "target": target, "amount": amount, "crit": false,
@@ -87,6 +92,19 @@ static func tick_turn_end(target: BattleUnit) -> Array[Dictionary]:
 			events.append({"type": "expired", "target": target, "amount": 0.0, "crit": false, "status": instance.data.id, "name_key": instance.data.name_key})
 	if not events.is_empty() or not target.status_effects.is_empty():
 		target.status_changed.emit(target)
+	return events
+
+
+## Kích nổ ngay mọi sát thương theo lượt trên mục tiêu với tỉ lệ `ratio` (không trừ số lượt).
+static func detonate_dots(target: BattleUnit, ratio: float) -> Array[Dictionary]:
+	var events: Array[Dictionary] = []
+	for instance: StatusEffectInstance in target.status_effects.duplicate():
+		var data := instance.data
+		if data.dot_mode == StatusEffectData.DotMode.NONE or data.dot_multiplier <= 0.0 or not target.is_alive():
+			continue
+		var amount := target.take_damage(floorf(compute_dot(instance, target) * ratio))
+		events.append({"type": "dot", "target": target, "amount": amount, "crit": false,
+				"element": data.dot_element, "status": data.id, "name_key": data.name_key})
 	return events
 
 

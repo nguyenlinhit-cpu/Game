@@ -1,8 +1,9 @@
 class_name AutoBattle
 extends RefCounted
 ## Chế độ Tự Động cho phe ta (và cho người chơi bấm nút Tự Động).
-## Luật đơn giản: hồi máu khi đồng đội dưới 60%; kéo lượt khi dư Điểm Chiến Kỹ;
-## chiến kỹ gây sát thương khi còn ≥2 điểm (chừa 1 cho người hồi máu); còn lại đánh thường.
+## Luật đơn giản: hồi máu khi đồng đội dưới 60%; tạo khiên khi có người dưới 70% hoặc chưa có khiên;
+## kéo lượt / gắn buff khi dư Điểm Chiến Kỹ; chiến kỹ gây sát thương khi còn ≥2 điểm
+## (chừa 1 cho người hồi máu); còn lại đánh thường.
 
 const HEAL_THRESHOLD: float = 0.6
 const ULTIMATE_HEAL_THRESHOLD: float = 0.75
@@ -15,7 +16,9 @@ static func choose_action(unit: BattleUnit, battle: BattleController) -> Diction
 	if skill and battle.skill_points >= 1:
 		if skill.heals() and _lowest_ally(battle, unit, skill).get_hp_ratio() < HEAL_THRESHOLD:
 			return {"skill": skill, "target": _lowest_ally(battle, unit, skill)}
-		if skill.action_advance > 0.0 and battle.skill_points >= 3:
+		if skill.gives_shield() and battle.skill_points >= 2 and _needs_shield(battle, unit):
+			return {"skill": skill, "target": unit}
+		if skill.is_ally_targeted() and not skill.heals() and not skill.gives_shield() and battle.skill_points >= 3:
 			return {"skill": skill, "target": _strongest_ally(battle, unit, skill)}
 		if skill.deals_damage() and battle.skill_points >= 2:
 			return {"skill": skill, "target": best_enemy_target(battle, unit, skill)}
@@ -30,6 +33,24 @@ static func should_use_ultimate(unit: BattleUnit, battle: BattleController) -> b
 	if ultimate.heals() and not ultimate.deals_damage():
 		return _lowest_ally(battle, unit, ultimate).get_hp_ratio() < ULTIMATE_HEAL_THRESHOLD
 	return true
+
+
+static func _needs_shield(battle: BattleController, unit: BattleUnit) -> bool:
+	for ally in battle.get_friends(unit):
+		if ally.shield_hp <= 0.0 and ally.get_hp_ratio() < 0.9:
+			return true
+	return false
+
+
+## Tuyệt kỹ 2 chế độ: còn 1 quái thì dùng kiểu đơn mục tiêu nếu có.
+static func choose_ultimate_skill(unit: BattleUnit, battle: BattleController) -> SkillData:
+	var ultimate := unit.get_skill(SkillData.Kind.ULTIMATE)
+	if ultimate.alternate == null:
+		return ultimate
+	var foes := battle.get_foes(unit).size()
+	var single := ultimate if ultimate.target == SkillData.Target.SINGLE_ENEMY else ultimate.alternate
+	var spread := ultimate.alternate if single == ultimate else ultimate
+	return single if foes <= 1 else spread
 
 
 static func choose_ultimate_target(unit: BattleUnit, battle: BattleController) -> BattleUnit:

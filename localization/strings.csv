@@ -34,12 +34,10 @@ SETTINGS_TOUCH_CONTROLS,Điều khiển cảm ứng (thử trên PC),Touch contr
 UI_RESUME,Chơi tiếp,Resume
 UI_BACK_TO_TITLE,Về màn hình tiêu đề,Back to title
 PAUSE_TITLE,Tạm dừng,Paused
-HUD_HINT,"WASD: đi · Space/Shift: lướt · J/chuột trái: Đòn Mở Màn · F: tương tác · Esc: menu","WASD: move · Space/Shift: dash · J/left click: Opener · F: interact · Esc: menu"
 PROMPT_OPEN_CHEST,Mở rương,Open chest
 PROMPT_BREAK_BOX,Phá Hộp Bí Kỹ,Break Technique Box
 PROMPT_REST,Nghỉ ngơi,Rest
 TOAST_CHEST_OPENED,Đã mở rương (phần thưởng làm ở Phase 10),Chest opened (rewards in Phase 10)
-TOAST_BOX_BROKEN,+1 Điểm Bí Kỹ (tạm),+1 Technique Point (placeholder)
 TOAST_RESTED,Đã nghỉ: hồi máu và lưu game (tạm),Rested: healed and saved (placeholder)
 TOAST_ROOM_LOCKED,Cửa đã khóa! Hạ hết quái để mở,The doors are sealed! Defeat all enemies
 TOAST_ROOM_CLEARED,Đã dọn sạch phòng – cửa mở,Room cleared – doors open
@@ -48,7 +46,6 @@ TOUCH_INTERACT,F,F
 HUD_TEAM_LEVEL,Cấp đội: %d (debug: F6/F7 −/+5 · F8 xóa quái),Team level: %d (debug: F6/F7 −/+5 · F8 clear enemies)
 TOAST_TEAM_LEVEL,Cấp đội: %d,Team level: %d
 TOUCH_OPENER,Chém,Slash
-SKILL_TRAVELER_OPENER,Vết Chém Hồn,Soul Slash
 OPENING_NORMAL,Trận bình thường,Normal battle
 OPENING_ADVANTAGE,Ưu Thế!,Advantage!
 OPENING_AMBUSHED,Bị Phục Kích!,Ambushed!
@@ -100,30 +97,6 @@ STAT_ENERGY_REGEN,Hiệu Suất Hồi Năng Lượng,Energy Regen Rate
 STAT_EFFECT_HIT,Chính Xác Hiệu Ứng,Effect Hit Rate
 STAT_EFFECT_RES,Kháng Hiệu Ứng,Effect RES
 STAT_OUTGOING_HEALING,Tăng Trị Liệu,Outgoing Healing
-SKILL_TRAVELER_BASIC,Chém Rạn,Cracking Slash
-SKILL_TRAVELER_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
-SKILL_TRAVELER_SKILL,Hồn Vỡ,Shattered Soul
-SKILL_TRAVELER_SKILL_DESC,125% Tấn Công lên mục tiêu chính và 50% lên 2 quái bên cạnh,125% ATK to the target and 50% to adjacent enemies
-SKILL_TRAVELER_ULTIMATE,Tâm Nhãn Khai Mở,Mind's Eye Unveiled
-SKILL_TRAVELER_ULTIMATE_DESC,270% Tấn Công lên mục tiêu chính và 160% lên 2 bên,270% ATK to the target and 160% to adjacent enemies
-SKILL_MIRA_BASIC,Giọt Sương,Dewdrop
-SKILL_MIRA_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
-SKILL_MIRA_SKILL,Suối Lành,Healing Spring
-SKILL_MIRA_SKILL_DESC,Hồi cho 1 đồng minh 40% Tấn Công + 80 Máu,Heals one ally for 40% ATK + 80
-SKILL_MIRA_ULTIMATE,Mưa Phúc,Blessed Rain
-SKILL_MIRA_ULTIMATE_DESC,Hồi cả đội 30% Tấn Công + 60 Máu,Heals all allies for 30% ATK + 60
-SKILL_KIRI_BASIC,Tia Lửa,Spark
-SKILL_KIRI_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
-SKILL_KIRI_SKILL,Thổi Bùng,Kindle
-SKILL_KIRI_SKILL_DESC,Kéo lượt 1 đồng minh khác lên 50%,Advances another ally's action by 50%
-SKILL_KIRI_ULTIMATE,Pháo Hoa,Fireworks
-SKILL_KIRI_ULTIMATE_DESC,80% Tấn Công lên toàn bộ quái,80% ATK to all enemies
-SKILL_GARREN_BASIC,Đập Khiên,Shield Bash
-SKILL_GARREN_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
-SKILL_GARREN_SKILL,Rễ Ghìm,Rooting Slam
-SKILL_GARREN_SKILL_DESC,100% Phòng Thủ lên 1 quái và trì hoãn lượt 25%,100% DEF to one enemy and delays it by 25%
-SKILL_GARREN_ULTIMATE,Tường Rừng,Forest Wall
-SKILL_GARREN_ULTIMATE_DESC,90% Phòng Thủ lên toàn bộ quái,90% DEF to all enemies
 SKILL_WARP_SPROUT_BITE,Cắn,Bite
 SKILL_WARP_SPROUT_BITE_DESC,,
 SKILL_WANDERING_SHADE_TOUCH,Chạm Lạnh,Cold Touch
@@ -173,3 +146,194 @@ SANDBOX_ELEMENT,Nguyên tố đòn đánh: %s,Attack element: %s
 SANDBOX_ELEMENT_DEFAULT,Theo nhân vật,Character's own
 SANDBOX_RESET,Hồi khiên + hồi đội,Reset dummies + team
 PAUSE_BATTLE_SANDBOX,Phòng thử trận (debug),Battle sandbox (debug)
+HUD_HINT,"WASD: đi · Space/Shift: lướt · J/chuột trái: Đòn Mở Màn · K/E: Bí Kỹ · 1–4: đổi người · F: tương tác · Esc: menu","WASD: move · Space/Shift: dash · J/left click: Opener · K/E: Technique · 1–4: switch · F: interact · Esc: menu"
+HUD_TECHNIQUE_POINTS,Điểm Bí Kỹ,Technique Points
+HUD_PENDING_TECHNIQUES,Trận kế tiếp: %s,Next battle: %s
+TOUCH_TECHNIQUE,Bí Kỹ,Tech
+TOAST_BOX_BROKEN,+1 Điểm Bí Kỹ (%d/5),+1 Technique Point (%d/5)
+TOAST_NO_TECHNIQUE_POINTS,Không đủ Điểm Bí Kỹ,Not enough Technique Points
+TOAST_TECHNIQUE_USED,Bí Kỹ: %s,Technique: %s
+TOAST_OBSTACLE_OPENED,Đã mở: %s,Opened: %s
+TOAST_OBSTACLE_NEEDS,%s – cần Đòn Mở Màn hệ %s,%s – needs a %s Opener
+TOAST_WARP_BARRIER,Rào Ma Biến – chỉ lướt xuyên qua bằng Bí Kỹ Bước Hư Ảnh,Warp barrier – only Phantom Step can pass through
+OBSTACLE_VINES,Dây leo,Vines
+OBSTACLE_FIRE_WALL,Tường lửa,Fire wall
+OBSTACLE_MACHINE_DOOR,Cửa máy,Machine door
+OBSTACLE_FOG,Sương mù,Fog
+OBSTACLE_RUSTED_GATE,Cổng gỉ,Rusted gate
+OBSTACLE_CHASM,Khe vực,Chasm
+OBSTACLE_HIDDEN_WALL,Tường nứt,Cracked wall
+OBSTACLE_WARP_BARRIER,Rào Ma Biến,Warp barrier
+PATH_DESTRUCTION,Hủy Diệt,Destruction
+PATH_HUNT,Săn Bắn,The Hunt
+PATH_ERUDITION,Tri Thức,Erudition
+PATH_HARMONY,Hòa Hợp,Harmony
+PATH_NIHILITY,Hư Vô,Nihility
+PATH_PRESERVATION,Bảo Hộ,Preservation
+PATH_ABUNDANCE,Trù Phú,Abundance
+CHAR_NYX_NAME,Nyx,Nyx
+BATTLE_ABSORBED,Khiên đỡ %d,Shield blocked %d
+BATTLE_SHIELD_GAINED,Khiên +%d,Shield +%d
+BATTLE_ENERGY_GAINED,+%d năng lượng,+%d energy
+BATTLE_SKILL_POINT_GAINED,+%d Điểm Chiến Kỹ,+%d Skill Point
+BATTLE_CLEANSED,Giải hiệu ứng,Cleansed
+BATTLE_REVIVED,Hồi sinh!,Revived!
+BATTLE_ULTIMATE_SWITCH_MODE,[Q] Đổi chế độ Tuyệt kỹ,[Q] Switch Ultimate mode
+SKILL_TRAVELER_OPENER,Vết Chém Hồn,Soul Slash
+SKILL_TRAVELER_TECHNIQUE,Bước Hư Ảnh,Phantom Step
+SKILL_TRAVELER_TECHNIQUE_DESC,"Lướt 4 ô xuyên qua rào Ma Biến. Trận kế tiếp, lượt đầu của nhân vật chính được kéo lên 25%.","Dash 4 tiles through warp barriers. Next battle, the Traveler's first action is advanced by 25%."
+SKILL_TRAVELER_BASIC,Chém Rạn,Cracking Slash
+SKILL_TRAVELER_BASIC_DESC,100% Tấn Công sát thương Hồn lên 1 quái.,Deals 100% ATK Soul damage to one enemy.
+SKILL_TRAVELER_SKILL,Hồn Vỡ,Shattered Soul
+SKILL_TRAVELER_SKILL_DESC,"125% Tấn Công lên mục tiêu chính, 50% lên 2 quái bên cạnh.","125% ATK to the target, 50% to adjacent enemies."
+SKILL_TRAVELER_ULTIMATE,Tâm Nhãn Khai Mở (lan),Mind's Eye Unveiled (spread)
+SKILL_TRAVELER_ULTIMATE_DESC,"270% Tấn Công lên mục tiêu chính, 160% lên 2 bên.","270% ATK to the target, 160% to adjacent enemies."
+SKILL_TRAVELER_ULTIMATE_SINGLE,Tâm Nhãn Khai Mở (đơn),Mind's Eye Unveiled (single)
+SKILL_TRAVELER_ULTIMATE_SINGLE_DESC,450% Tấn Công lên 1 quái.,450% ATK to one enemy.
+TALENT_TRAVELER,Cộng Hưởng Mảnh Hồn,Shard Resonance
+TALENT_TRAVELER_DESC,"Mỗi lần Phá Vỡ khiên một quái, Tấn Công +20% trong 2 lượt, cộng dồn tối đa 2 tầng.","Each time you break an enemy's Weakness, ATK +20% for 2 turns, stacking up to 2."
+STATUS_SOUL_RESONANCE,Cộng Hưởng Mảnh Hồn,Shard Resonance
+STATUS_SOUL_RESONANCE_DESC,Tấn Công +20% mỗi tầng (tối đa 2).,ATK +20% per stack (max 2).
+STATUS_SOUL_RESONANCE_E1,Cộng Hưởng Mảnh Hồn,Shard Resonance
+STATUS_SOUL_RESONANCE_E1_DESC,Tấn Công +20% mỗi tầng (tối đa 3).,ATK +20% per stack (max 3).
+EIDOLON_TRAVELER_1,Ký Ức Đầu Tiên,First Memory
+EIDOLON_TRAVELER_1_DESC,Cộng Hưởng Mảnh Hồn cộng dồn tối đa 3 tầng.,Shard Resonance stacks up to 3.
+EIDOLON_TRAVELER_2,Vết Nứt Thứ Hai,Second Fracture
+EIDOLON_TRAVELER_2_DESC,Đánh thường lên quái đang Phá Vỡ hồi 1 Điểm Chiến Kỹ (1 lần mỗi lượt).,Basic ATK on a broken enemy restores 1 Skill Point (once per turn).
+EIDOLON_TRAVELER_3,Ánh Sao Lạc,Stray Starlight
+EIDOLON_TRAVELER_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Basic ATK and Skill multipliers +15%.
+EIDOLON_TRAVELER_4,Ý Chí Không Tắt,Unfading Will
+EIDOLON_TRAVELER_4_DESC,Khi dưới 50% máu: Tăng sát thương +20%.,Below 50% HP: DMG +20%.
+EIDOLON_TRAVELER_5,Mảnh Hồn Thứ Năm,Fifth Shard
+EIDOLON_TRAVELER_5_DESC,Tuyệt kỹ +15% hệ số.,Ultimate multipliers +15%.
+EIDOLON_TRAVELER_6,Tâm Nhãn Trọn Vẹn,Eye Made Whole
+EIDOLON_TRAVELER_6_DESC,Dùng Tuyệt kỹ xong được kéo lượt 30%.,After using the Ultimate: Action Advance 30%.
+SKILL_MIRA_OPENER,Giọt Sương Bắn,Dew Shot
+SKILL_MIRA_TECHNIQUE,Mưa Sương Lành,Healing Drizzle
+SKILL_MIRA_TECHNIQUE_DESC,"Trận kế tiếp, cả đội nhận Sương Dưỡng: hồi 6% máu tối đa đầu mỗi lượt trong 2 lượt.","Next battle, all allies gain Nurturing Mist: heal 6% max HP at turn start for 2 turns."
+SKILL_MIRA_BASIC,Giọt Sương,Dewdrop
+SKILL_MIRA_BASIC_DESC,100% Tấn Công sát thương Nước lên 1 quái.,Deals 100% ATK Water damage to one enemy.
+SKILL_MIRA_SKILL,Suối Lành,Healing Spring
+SKILL_MIRA_SKILL_DESC,"Hồi cho 1 đồng minh 40% Tấn Công + 80 Máu, giải 1 hiệu ứng xấu.","Heals one ally for 40% ATK + 80 and removes 1 debuff."
+SKILL_MIRA_ULTIMATE,Mưa Phúc,Blessed Rain
+SKILL_MIRA_ULTIMATE_DESC,"Hồi cả đội 30% Tấn Công + 60 Máu, mỗi người giải 1 hiệu ứng xấu.","Heals all allies for 30% ATK + 60 and removes 1 debuff from each."
+SKILL_MIRA_TALENT_HEAL,Dòng Chảy Ân Cần,Caring Current
+SKILL_MIRA_TALENT_HEAL_DESC,Hồi 15% máu tối đa.,Heals 15% max HP.
+TALENT_MIRA,Dòng Chảy Ân Cần,Caring Current
+TALENT_MIRA_DESC,"Lần đầu mỗi đồng minh rơi xuống dưới 30% máu trong trận, Mira lập tức hồi cho người đó 15% máu tối đa (không tốn lượt).","The first time each ally drops below 30% HP in a battle, Mira instantly heals them for 15% max HP (no turn used)."
+STATUS_MIRA_MIST,Sương Dưỡng,Nurturing Mist
+STATUS_MIRA_MIST_DESC,Hồi 6% máu tối đa đầu mỗi lượt.,Heals 6% max HP at the start of each turn.
+EIDOLON_MIRA_1,Giọt Đầu Mùa,First Rain
+EIDOLON_MIRA_1_DESC,Chiến kỹ +10% hệ số hồi máu.,Skill healing multiplier +10%.
+EIDOLON_MIRA_2,Dòng Chảy Kép,Twin Current
+EIDOLON_MIRA_2_DESC,Dòng Chảy Ân Cần kích hoạt tối đa 2 lần cho mỗi đồng minh.,Caring Current can trigger twice per ally.
+EIDOLON_MIRA_3,Hồ Tĩnh,Still Pond
+EIDOLON_MIRA_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Basic ATK and Skill multipliers +15%.
+EIDOLON_MIRA_4,Mạch Nước Ngầm,Underground Spring
+EIDOLON_MIRA_4_DESC,Dùng Tuyệt kỹ xong cả đội hồi 10 năng lượng.,After the Ultimate all allies regain 10 energy.
+EIDOLON_MIRA_5,Thác Bạc,Silver Falls
+EIDOLON_MIRA_5_DESC,Tuyệt kỹ +15% hệ số.,Ultimate multipliers +15%.
+EIDOLON_MIRA_6,Nước Hồi Sinh,Water of Rebirth
+EIDOLON_MIRA_6_DESC,"Một lần mỗi trận, đồng minh đầu tiên ngã được hồi sinh với 30% máu.","Once per battle, the first fallen ally is revived with 30% HP."
+SKILL_KIRI_OPENER,Tia Lửa,Spark
+SKILL_KIRI_TECHNIQUE,Pháo Hoa Mồi,Decoy Fireworks
+SKILL_KIRI_TECHNIQUE_DESC,"Ném pháo hoa 3 ô phía trước: quái trong vùng choáng 8 giây; vào trận với chúng thì mọi quái bị Thiêu Đốt (50% Tấn Công của Kiri mỗi lượt, 2 lượt).","Throw fireworks 3 tiles ahead: enemies in range are dazed for 8 s; battles against them start with all enemies Burning (50% of Kiri's ATK per turn, 2 turns)."
+SKILL_KIRI_BASIC,Tia Lửa,Spark
+SKILL_KIRI_BASIC_DESC,100% Tấn Công sát thương Lửa lên 1 quái.,Deals 100% ATK Fire damage to one enemy.
+SKILL_KIRI_SKILL,Thổi Bùng,Kindle
+SKILL_KIRI_SKILL_DESC,"Kéo lượt 1 đồng minh khác lên 50% và tăng 20% Tấn Công trong 2 lượt.","Advances another ally's action by 50% and grants ATK +20% for 2 turns."
+SKILL_KIRI_ULTIMATE,Pháo Hoa Rực Rỡ,Grand Fireworks
+SKILL_KIRI_ULTIMATE_DESC,"60% Tấn Công sát thương Lửa lên toàn bộ quái; cả đội Tăng sát thương +20% trong 2 lượt.","60% ATK Fire damage to all enemies; all allies DMG +20% for 2 turns."
+TALENT_KIRI,Nhịp Lễ Hội,Festival Rhythm
+TALENT_KIRI_DESC,"Mỗi khi đồng minh đang có Thổi Bùng dùng Chiến kỹ, Kiri nhận 1 tầng; đủ 3 tầng thì cả đội +1 Điểm Chiến Kỹ.","Each time an ally under Kindle uses a Skill, Kiri gains 1 stack; at 3 stacks the team gains 1 Skill Point."
+STATUS_KIRI_KINDLE,Thổi Bùng,Kindle
+STATUS_KIRI_KINDLE_DESC,Tấn Công +20%.,ATK +20%.
+STATUS_KIRI_KINDLE_E1,Thổi Bùng,Kindle
+STATUS_KIRI_KINDLE_E1_DESC,Tấn Công +30%.,ATK +30%.
+STATUS_KIRI_KINDLE_E6,Thổi Bùng,Kindle
+STATUS_KIRI_KINDLE_E6_DESC,"Tấn Công +30%, Tốc Độ +10%.","ATK +30%, SPD +10%."
+STATUS_KIRI_FESTIVAL,Lễ Hội,Festival
+STATUS_KIRI_FESTIVAL_DESC,Tăng sát thương +20%.,DMG +20%.
+STATUS_KIRI_RHYTHM,Nhịp Lễ Hội,Festival Rhythm
+STATUS_KIRI_RHYTHM_DESC,Đủ tầng thì cả đội +1 Điểm Chiến Kỹ.,At full stacks the team gains 1 Skill Point.
+STATUS_KIRI_FIREWORK_BURN,Thiêu Đốt (pháo hoa),Burn (fireworks)
+STATUS_KIRI_FIREWORK_BURN_DESC,Chịu sát thương Lửa đầu mỗi lượt trong 2 lượt.,Takes Fire damage at the start of each turn for 2 turns.
+EIDOLON_KIRI_1,Que Diêm Đầu,First Match
+EIDOLON_KIRI_1_DESC,Thổi Bùng tăng Tấn Công 30% (thay 20%).,Kindle grants ATK +30% (instead of 20%).
+EIDOLON_KIRI_2,Nhịp Nhanh,Quick Beat
+EIDOLON_KIRI_2_DESC,Nhịp Lễ Hội chỉ cần 2 tầng.,Festival Rhythm needs only 2 stacks.
+EIDOLON_KIRI_3,Pháo Sáng,Flare
+EIDOLON_KIRI_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Basic ATK and Skill multipliers +15%.
+EIDOLON_KIRI_4,Khai Mạc,Opening Night
+EIDOLON_KIRI_4_DESC,Vào trận cả đội +1 Điểm Chiến Kỹ.,The team starts battle with +1 Skill Point.
+EIDOLON_KIRI_5,Bầu Trời Rực,Blazing Sky
+EIDOLON_KIRI_5_DESC,Tuyệt kỹ +15% hệ số.,Ultimate multipliers +15%.
+EIDOLON_KIRI_6,Ngọn Lửa Cổ Vũ,Cheering Flame
+EIDOLON_KIRI_6_DESC,Thổi Bùng thêm +10% Tốc Độ.,Kindle also grants SPD +10%.
+SKILL_GARREN_OPENER,Rễ Trồi,Rising Root
+SKILL_GARREN_TECHNIQUE,Tường Rễ,Root Wall
+SKILL_GARREN_TECHNIQUE_DESC,"Trận kế tiếp, cả đội nhận khiên 25% Phòng Thủ của Garren + 60 trong 2 lượt.","Next battle, all allies gain a shield of 25% of Garren's DEF + 60 for 2 turns."
+SKILL_GARREN_BASIC,Đập Khiên,Shield Bash
+SKILL_GARREN_BASIC_DESC,100% Phòng Thủ sát thương Mộc lên 1 quái.,Deals 100% DEF Wood damage to one enemy.
+SKILL_GARREN_SKILL,Khiên Cổ Thụ,Ancient Bark
+SKILL_GARREN_SKILL_DESC,"Cả đội nhận khiên 30% Phòng Thủ + 80 trong 2 lượt; Garren Khiêu Khích quái (đòn đơn/lan phải nhắm Garren).","All allies gain a shield of 30% DEF + 80 for 2 turns; Garren Taunts enemies."
+SKILL_GARREN_ULTIMATE,Tường Rừng,Forest Wall
+SKILL_GARREN_ULTIMATE_DESC,"90% Phòng Thủ sát thương Mộc lên toàn bộ quái, trì hoãn chúng 15%.","90% DEF Wood damage to all enemies and delays them by 15%."
+SKILL_GARREN_COUNTER,Phản Đòn Rễ,Root Riposte
+SKILL_GARREN_COUNTER_DESC,50% Phòng Thủ lên kẻ vừa tấn công.,50% DEF to the attacker.
+SKILL_GARREN_COUNTER_E6,Phản Đòn Rễ,Root Riposte
+SKILL_GARREN_COUNTER_E6_DESC,"75% Phòng Thủ lên kẻ vừa tấn công, trì hoãn 10%.","75% DEF to the attacker, delays it by 10%."
+TALENT_GARREN,Thân Rễ Phản Đòn,Rooted Riposte
+TALENT_GARREN_DESC,"Khi bị quái đánh trúng, Garren phản công kẻ đó 50% Phòng Thủ (không tốn lượt, tối đa 1 lần mỗi lượt quái).","When hit by an enemy, Garren counterattacks for 50% DEF (no turn used, once per enemy turn)."
+STATUS_SHIELD,Khiên,Shield
+STATUS_SHIELD_DESC,Chặn sát thương trước khi mất máu.,Absorbs damage before HP is lost.
+STATUS_GARREN_TAUNT,Khiêu Khích,Taunt
+STATUS_GARREN_TAUNT_DESC,Quái phải nhắm người này bằng đòn đơn/lan.,Enemies must target this unit with single/blast attacks.
+EIDOLON_GARREN_1,Vỏ Dày,Thick Bark
+EIDOLON_GARREN_1_DESC,Chiến kỹ +10% hệ số khiên.,Skill shield multiplier +10%.
+EIDOLON_GARREN_2,Nhựa Sống,Living Sap
+EIDOLON_GARREN_2_DESC,Mỗi lần phản công Garren hồi 5 năng lượng.,Each counterattack restores 5 energy to Garren.
+EIDOLON_GARREN_3,Rễ Sâu,Deep Roots
+EIDOLON_GARREN_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Basic ATK and Skill multipliers +15%.
+EIDOLON_GARREN_4,Lời Thề Cận Vệ,Guard's Oath
+EIDOLON_GARREN_4_DESC,Khiêu Khích của Chiến kỹ kéo dài thêm 1 lượt.,Skill's Taunt lasts 1 more turn.
+EIDOLON_GARREN_5,Rừng Già,Old Forest
+EIDOLON_GARREN_5_DESC,Tuyệt kỹ +15% hệ số.,Ultimate multipliers +15%.
+EIDOLON_GARREN_6,Gai Ngược,Reverse Thorns
+EIDOLON_GARREN_6_DESC,"Phản công 75% Phòng Thủ và trì hoãn kẻ đó 10%.","Counterattack deals 75% DEF and delays the attacker by 10%."
+SKILL_NYX_OPENER,Cú Chích Điện,Static Jab
+SKILL_NYX_TECHNIQUE,Màn Tĩnh Điện,Static Veil
+SKILL_NYX_TECHNIQUE_DESC,"Tàng hình 10 giây: quái không nhìn thấy, đi nhanh hơn 20%.","Become invisible for 10 s: enemies can't see you, move 20% faster."
+SKILL_NYX_BASIC,Cú Chích,Jab
+SKILL_NYX_BASIC_DESC,100% Tấn Công sát thương Sét lên 1 quái.,Deals 100% ATK Lightning damage to one enemy.
+SKILL_NYX_SKILL,Mạch Rò Rỉ,Leaking Circuit
+SKILL_NYX_SKILL_DESC,"60% Tấn Công lên 1 quái, gắn Rò Điện (50% Tấn Công sát thương Sét mỗi lượt, 2 lượt) và Đoản Mạch (−15% Phòng Thủ, 2 lượt).","60% ATK to one enemy, inflicts Leak (50% ATK Lightning per turn, 2 turns) and Short Circuit (DEF −15%, 2 turns)."
+SKILL_NYX_ULTIMATE,Bão Từ,Magnetic Storm
+SKILL_NYX_ULTIMATE_DESC,"70% Tấn Công sát thương Sét lên toàn bộ quái, gắn Tĩnh Điện (dễ tổn thương +15%, 2 lượt).","70% ATK Lightning damage to all enemies, inflicts Static (Vulnerability +15%, 2 turns)."
+TALENT_NYX,Mạch Khuếch Đại,Amplified Circuit
+TALENT_NYX_DESC,"Đánh thường lên quái đang chịu sát thương theo lượt kích nổ ngay mọi sát thương theo lượt trên quái đó với 50% giá trị.","Basic ATK on an enemy with DoTs instantly detonates all of its DoTs at 50% value."
+STATUS_NYX_LEAK,Rò Điện,Leak
+STATUS_NYX_LEAK_DESC,Chịu sát thương Sét đầu mỗi lượt.,Takes Lightning damage at the start of each turn.
+STATUS_NYX_SHORT_CIRCUIT,Đoản Mạch,Short Circuit
+STATUS_NYX_SHORT_CIRCUIT_DESC,Phòng Thủ −15%.,DEF −15%.
+STATUS_NYX_STATIC,Tĩnh Điện,Static
+STATUS_NYX_STATIC_DESC,Dễ tổn thương +15%.,Vulnerability +15%.
+STATUS_NYX_SLOW,Tê Liệt,Numb
+STATUS_NYX_SLOW_DESC,Tốc Độ −10%.,SPD −10%.
+EIDOLON_NYX_1,Quá Tải,Overload
+EIDOLON_NYX_1_DESC,Kích nổ của Mạch Khuếch Đại tăng lên 75%.,Amplified Circuit detonates at 75%.
+EIDOLON_NYX_2,Dòng Tê,Numbing Current
+EIDOLON_NYX_2_DESC,Đánh thường giảm 10% Tốc Độ quái 1 lượt.,Basic ATK reduces the enemy's SPD by 10% for 1 turn.
+EIDOLON_NYX_3,Cuộn Cảm,Inductor
+EIDOLON_NYX_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Basic ATK and Skill multipliers +15%.
+EIDOLON_NYX_4,Sấm Rền,Rolling Thunder
+EIDOLON_NYX_4_DESC,Bão Từ gắn thêm Rò Điện lên mọi quái.,Magnetic Storm also inflicts Leak on all enemies.
+EIDOLON_NYX_5,Từ Trường,Magnetic Field
+EIDOLON_NYX_5_DESC,Tuyệt kỹ +15% hệ số.,Ultimate multipliers +15%.
+EIDOLON_NYX_6,Mạch Hoàn Hảo,Perfect Circuit
+EIDOLON_NYX_6_DESC,Chính Xác Hiệu Ứng +20%.,Effect Hit Rate +20%.
+PAUSE_NEXT_TEST_TEAM,Đổi đội thử (debug),Cycle test team (debug)
+SANDBOX_TEAM,Đội (chọn đúng 4):,Team (pick exactly 4):
+SANDBOX_EIDOLON,Tinh Mệnh: %d,Eidolon: %d
+SANDBOX_APPLY,Áp dụng và đánh lại,Apply and restart
+SANDBOX_TEAM_INVALID,Phải chọn đúng 4 nhân vật,Pick exactly 4 characters

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_combat_01.tscn" id="4_combat"]
 [ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_chest_01.tscn" id="5_chest"]
 [ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_boss_01.tscn" id="6_boss"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_puzzle_01.tscn" id="11_puzzle"]
 [ext_resource type="Script" path="res://scenes/overworld/map/room_manager.gd" id="7_manager"]
 [ext_resource type="PackedScene" path="res://scenes/overworld/player/player.tscn" id="8_player"]
 [ext_resource type="Script" path="res://scenes/overworld/map/camera_rig.gd" id="9_camera"]
@@ -35,6 +36,10 @@ grid_cell = Vector2i(2, 0)
 [node name="RoomBoss01" parent="Rooms" instance=ExtResource("6_boss")]
 position = Vector2(2560, -2560)
 grid_cell = Vector2i(1, -1)
+
+[node name="RoomPuzzle01" parent="Rooms" instance=ExtResource("11_puzzle")]
+position = Vector2(0, 2560)
+grid_cell = Vector2i(0, 1)
 
 [node name="RoomManager" type="Node" parent="."]
 unique_name_in_owner = true

@@ -411,7 +411,7 @@ func _test_scene_mouse_battle() -> void:
 			# Chiến kỹ nhắm đồng minh: bấm nút Chiến kỹ rồi bấm đồng minh.
 			scene.get_node("%SkillButton").pressed.emit()
 			await _frames(1)
-			if skill.action_advance > 0.0 and scene.get_turn_order_bar().is_previewing():
+			if skill.get_action_advance() > 0.0 and scene.get_turn_order_bar().is_previewing():
 				preview_seen = true
 			_click_at(scene.get_view(scene.get_target()).global_position)
 			skills_used += 1

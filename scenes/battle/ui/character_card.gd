@@ -76,6 +76,10 @@ func _draw() -> void:
 	draw_rect(hp_rect, Color(0, 0, 0, 0.6))
 	draw_rect(Rect2(hp_rect.position, Vector2(hp_rect.size.x * unit.get_hp_ratio(), hp_rect.size.y)),
 			HP_FILL if unit.get_hp_ratio() > 0.3 else HP_LOW)
+	if unit.shield_hp > 0.0:
+		# Khiên: dải trắng phủ trên thanh máu, dài theo tỉ lệ khiên / máu tối đa.
+		var ratio := minf(unit.shield_hp / unit.get_max_hp(), 1.0)
+		draw_rect(Rect2(hp_rect.position, Vector2(hp_rect.size.x * ratio, 6.0)), Color(0.9, 0.95, 1.0, 0.9))
 	_text(font, "%d / %d" % [ceili(unit.hp), ceili(unit.get_max_hp())], Vector2(120.0, 90.0), 20, Color(1, 1, 1, alpha))
 
 	var energy_ratio := unit.energy / unit.max_energy if unit.max_energy > 0.0 else 0.0

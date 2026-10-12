@@ -3,7 +3,8 @@ extends Node2D
 ## Map gồm các phòng đặt trên lưới (Room.grid_cell). Hai phòng kề nhau cùng mở cửa ở phía
 ## đối diện thì được nối bằng hành lang thẳng rộng 3 ô, vẽ vào lớp Corridors lúc chạy.
 ## Map cũng giữ trạng thái trong GameState.map_states (quái đã hạ, rương đã mở, hộp đã phá,
-## phòng đã khám phá, vị trí người chơi) và điều phối vào trận / thắng ngay / quay về.
+## phòng đã khám phá, vật cản đã mở, vị trí người chơi), điều phối vào trận / thắng ngay / quay về,
+## và chạy Bí Kỹ của người dẫn đầu (tốn Điểm Bí Kỹ dùng chung).
 
 const CORRIDOR_HALF_WIDTH: int = 1
 ## Bất tử ngắn khi vừa từ trận quay về, để quái gần đó không kéo vào trận ngay.
@@ -32,6 +33,8 @@ func _ready() -> void:
 	_place_player()
 	camera.snap_to_target()
 	hud.setup(player, room_manager)
+	player.technique_requested.connect(use_technique)
+	player.obstacle_hit.connect(_on_obstacle_hit)
 	_show_battle_result()
 
 
@@ -62,8 +65,13 @@ func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening
 	GameState.set_map_player(scene_file_path, player.global_position, player.facing)
 	GameState.begin_battle(scene_file_path, _persistent_id(enemy), enemy.encounter, opening)
 	var opener_element: int = int(player.opener.element) if opening == BattleTypes.Opening.ADVANTAGE else Element.NONE
+	# Bí Kỹ: "trận kế tiếp" đang chờ + nhóm quái bị Bí Kỹ đánh dấu.
+	var techniques := GameState.consume_pending_techniques()
+	for mark in enemy.marks:
+		if not techniques.has(mark):
+			techniques.append(mark)
 	SceneRouter.go_to(DataPaths.BATTLE_SCENE, {"encounter": enemy.encounter, "opening": opening,
-			"opener_element": opener_element})
+			"opener_element": opener_element, "techniques": techniques})
 
 
 ## Quái yếu hơn đội ≥10 cấp bị chém trúng: thắng luôn, không vào trận.
@@ -106,6 +114,13 @@ func _restore_and_track_state() -> void:
 			else:
 				(node as Chest).interacted.connect(func(_by: Node) -> void:
 					GameState.map_state_add(scene, "opened_chests", id))
+		elif node is ElementalObstacle:
+			var obstacle := node as ElementalObstacle
+			if GameState.map_state_has(scene, "resolved_obstacles", id):
+				obstacle.restore_resolved()
+			else:
+				obstacle.resolved.connect(func(_o: ElementalObstacle) -> void:
+					GameState.map_state_add(scene, "resolved_obstacles", id))
 		elif node is TechniqueBox:
 			if GameState.map_state_has(scene, "broken_boxes", id):
 				(node as TechniqueBox).restore_broken()
@@ -166,6 +181,54 @@ func _all_descendants(root: Node) -> Array[Node]:
 		result.append(child)
 		result.append_array(_all_descendants(child))
 	return result
+
+
+# --- Bí Kỹ ---
+
+## Dùng Bí Kỹ của người dẫn đầu. Trả về false nếu không đủ Điểm Bí Kỹ hoặc không có Bí Kỹ.
+func use_technique() -> bool:
+	var leader := player.get_leader()
+	var technique := leader.technique if leader else null
+	if technique == null or SceneRouter.is_busy() or _encounter_started:
+		return false
+	if GameState.technique_points < technique.cost:
+		EventBus.toast_requested.emit(tr("TOAST_NO_TECHNIQUE_POINTS"))
+		return false
+	GameState.change_technique_points(-technique.cost)
+	var tile := float(Room.TILE_SIZE)
+	match technique.map_action:
+		TechniqueData.MapAction.PHASE_DASH:
+			player.start_phase_dash(technique.distance_tiles * tile)
+		TechniqueData.MapAction.FIREWORK_DAZE:
+			var center := player.global_position + player.facing * technique.distance_tiles * tile
+			var hits := 0
+			for node in get_tree().get_nodes_in_group(OverworldEnemy.GROUP):
+				var enemy := node as OverworldEnemy
+				if enemy and not enemy.is_defeated() and enemy.global_position.distance_to(center) <= technique.radius_tiles * tile:
+					enemy.daze(technique.duration_sec)
+					enemy.add_mark(leader.id)
+					hits += 1
+			hud.show_burst(center, technique.radius_tiles * tile, Element.color(leader.element))
+			print("[Technique] %s trúng %d nhóm quái" % [technique.id, hits])
+		TechniqueData.MapAction.INVISIBILITY:
+			player.make_invisible(technique.duration_sec, technique.speed_bonus)
+	if technique.kind != TechniqueData.Kind.MAP_ENEMIES and not technique.battle_start_effects.is_empty():
+		GameState.add_pending_technique(leader.id)
+	EventBus.technique_used.emit(leader.id)
+	EventBus.toast_requested.emit(tr("TOAST_TECHNIQUE_USED") % tr(technique.name_key))
+	CameraRig.shake(4.0, 0.12)
+	return true
+
+
+func _on_obstacle_hit(obstacle: ElementalObstacle, opened: bool) -> void:
+	var name_text := tr(ElementalObstacle.NAME_KEYS[obstacle.kind])
+	if opened:
+		EventBus.toast_requested.emit(tr("TOAST_OBSTACLE_OPENED") % name_text)
+	elif obstacle.kind == ElementalObstacle.Kind.WARP_BARRIER:
+		EventBus.toast_requested.emit(tr("TOAST_WARP_BARRIER"))
+	else:
+		EventBus.toast_requested.emit(tr("TOAST_OBSTACLE_NEEDS") % [name_text,
+				tr(Element.name_key(obstacle.get_required_element()))])
 
 
 func _change_team_level(delta: int) -> void:

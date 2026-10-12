@@ -1,43 +1,105 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3]
 
-[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_data"]
-[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
-[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_skin"]
-[ext_resource type="Resource" path="res://data/skills/garren_basic.tres" id="4_basic"]
-[ext_resource type="Resource" path="res://data/skills/garren_skill.tres" id="5_skill"]
-[ext_resource type="Resource" path="res://data/skills/garren_ultimate.tres" id="6_ultimate"]
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_character_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_character_skin"]
+[ext_resource type="Script" path="res://data/characters/scripts/garren_talent.gd" id="4_garren_talent"]
+[ext_resource type="Script" path="res://systems/resources/talent_data.gd" id="5_talent_data"]
+[ext_resource type="Script" path="res://systems/resources/eidolon_data.gd" id="6_eidolon_data"]
+[ext_resource type="Resource" path="res://data/skills/garren_basic.tres" id="7_garren_basic"]
+[ext_resource type="Resource" path="res://data/skills/garren_skill.tres" id="8_garren_skill"]
+[ext_resource type="Resource" path="res://data/skills/garren_ultimate.tres" id="9_garren_ultimate"]
+[ext_resource type="Resource" path="res://data/skills/garren_opener.tres" id="10_garren_opener"]
+[ext_resource type="Resource" path="res://data/skills/garren_technique.tres" id="11_garren_technique"]
 
 [sub_resource type="Resource" id="Stats_lv1"]
-script = ExtResource("2_stats")
+script = ExtResource("2_stat_block")
 hp = 200.0
 atk = 55.0
 def = 80.0
 spd = 92.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.0
 
 [sub_resource type="Resource" id="Stats_lv80"]
-script = ExtResource("2_stats")
+script = ExtResource("2_stat_block")
 hp = 1500.0
 atk = 420.0
 def = 600.0
+spd = 92.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.0
 
 [sub_resource type="Resource" id="Skin_default"]
-script = ExtResource("3_skin")
+script = ExtResource("3_character_skin")
 skin_id = &"default"
 label_key = ""
 placeholder_color = Color(0.18, 0.545, 0.341, 1)
 accent_color = Color(0.75, 0.95, 0.6, 1)
 
+[sub_resource type="Resource" id="Talent"]
+script = ExtResource("5_talent_data")
+name_key = "TALENT_GARREN"
+desc_key = "TALENT_GARREN_DESC"
+script_class = ExtResource("4_garren_talent")
+
+[sub_resource type="Resource" id="Eidolon_1"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_GARREN_1"
+desc_key = "EIDOLON_GARREN_1_DESC"
+multiplier_bonus = 0.1
+bonus_kinds = Array[int]([1])
+
+[sub_resource type="Resource" id="Eidolon_2"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_GARREN_2"
+desc_key = "EIDOLON_GARREN_2_DESC"
+
+[sub_resource type="Resource" id="Eidolon_3"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_GARREN_3"
+desc_key = "EIDOLON_GARREN_3_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([0, 1])
+
+[sub_resource type="Resource" id="Eidolon_4"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_GARREN_4"
+desc_key = "EIDOLON_GARREN_4_DESC"
+
+[sub_resource type="Resource" id="Eidolon_5"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_GARREN_5"
+desc_key = "EIDOLON_GARREN_5_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([2])
+
+[sub_resource type="Resource" id="Eidolon_6"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_GARREN_6"
+desc_key = "EIDOLON_GARREN_6_DESC"
+
 [resource]
-script = ExtResource("1_data")
+script = ExtResource("1_character_data")
 id = &"garren"
 name_key = "CHAR_GARREN_NAME"
 rarity = 4
 element = 5
-path = &"preservation"
-skins = Array[ExtResource("3_skin")]([SubResource("Skin_default")])
+path = 5
+skins = Array[ExtResource("3_character_skin")]([SubResource("Skin_default")])
 stats_lv1 = SubResource("Stats_lv1")
 stats_lv80 = SubResource("Stats_lv80")
 max_energy = 120.0
-basic_attack = ExtResource("4_basic")
-skill = ExtResource("5_skill")
-ultimate = ExtResource("6_ultimate")
+basic_attack = ExtResource("7_garren_basic")
+skill = ExtResource("8_garren_skill")
+ultimate = ExtResource("9_garren_ultimate")
+talent = SubResource("Talent")
+eidolons = Array[ExtResource("6_eidolon_data")]([SubResource("Eidolon_1"), SubResource("Eidolon_2"), SubResource("Eidolon_3"), SubResource("Eidolon_4"), SubResource("Eidolon_5"), SubResource("Eidolon_6")])
+opener = ExtResource("10_garren_opener")
+technique = ExtResource("11_garren_technique")

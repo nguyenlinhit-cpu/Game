@@ -42,11 +42,19 @@ enum DotMode { NONE, BREAK_BASE, TARGET_MAX_HP, ATTACKER_STAT }
 @export var dot_cap_multiplier: float = 0.0
 @export var dot_scaling_stat: Stats.Type = Stats.Type.ATK
 
+@export_group("Hồi máu theo lượt")
+## Đầu lượt người mang hồi chừng này phần máu tối đa (0,06 = 6%).
+@export var heal_per_turn_ratio: float = 0.0
+
 @export_group("Điều khiển")
+## Khiêu khích: quái phải nhắm người mang hiệu ứng (đòn đơn/lan).
+@export var taunt: bool = false
+## Đánh dấu hiệu ứng khiên (ShieldEffect). Hết hiệu ứng thì mất khiên.
 ## Mất lượt kế tiếp (hết hiệu ứng ngay khi mất lượt).
 @export var skip_turn: bool = false
 ## Trì hoãn thêm khi vừa gắn (0,2 = 20%).
 @export var extra_delay: float = 0.0
+@export var shield: bool = false
 
 @export_group("Kích hoạt")
 ## Sát thương khi hết mất lượt (Đóng Băng tan), × giá trị nền.

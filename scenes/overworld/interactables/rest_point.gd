@@ -1,7 +1,7 @@
 class_name RestPoint
 extends Interactable
 ## Điểm nghỉ trong phòng nghỉ: hồi máu cả đội, lưu game, dịch chuyển nhanh.
-## Phase 2 chỉ in log. TODO Phase 9: hồi máu thật. TODO Phase 14: tự lưu. TODO Phase 12: dịch chuyển nhanh.
+## Hồi đầy Điểm Bí Kỹ. TODO Phase 9: hồi máu thật. TODO Phase 14: tự lưu. TODO Phase 12: dịch chuyển nhanh.
 
 const CRYSTAL_COLOR := Color("f2d58a")
 
@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _on_interact(_by: Node) -> void:
+	GameState.change_technique_points(GameState.MAX_TECHNIQUE_POINTS)
 	print("[RestPoint] %s: hồi đầy máu cả đội – TODO Phase 9" % rest_point_id)
 	print("[RestPoint] %s: lưu game – TODO Phase 14" % rest_point_id)
 	EventBus.toast_requested.emit(tr("TOAST_RESTED"))

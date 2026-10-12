@@ -45,13 +45,13 @@ func _run() -> void:
 
 
 func _test_layout() -> void:
-	_check(_rooms.rooms.size() == 4, "Map có 4 phòng")
-	_check(_rooms.connections.size() == 3, "Có 3 hành lang nối phòng")
+	_check(_rooms.rooms.size() == 5, "Map có 5 phòng (thêm phòng giải đố ở Phase 6)")
+	_check(_rooms.connections.size() == 4, "Có 4 hành lang nối phòng")
 	_check(_map.corridor_layer.get_used_cells().size() > 100, "Hành lang được vẽ ra TileMapLayer")
 	var rest := _rooms.get_room(&"rest_01")
 	var combat := _rooms.get_room(&"combat_01")
 	var boss := _rooms.get_room(&"boss_01")
-	_check(rest.connected_sides == Room.Side.EAST, "Phòng nghỉ chỉ mở cửa phía Đông")
+	_check(rest.connected_sides == Room.Side.EAST | Room.Side.SOUTH, "Phòng nghỉ mở cửa phía Đông và Nam")
 	_check(combat.connected_sides == Room.Side.WEST | Room.Side.EAST | Room.Side.NORTH,
 			"Phòng chiến đấu mở cửa Tây, Đông, Bắc")
 	_check(boss.connected_sides == Room.Side.SOUTH, "Phòng boss mở cửa phía Nam")
@@ -155,7 +155,7 @@ func _test_boss_room() -> void:
 	await _walk_to(boss.get_center_world())
 	_check(_rooms.current_room == boss, "Đi lên phòng boss qua cửa Bắc")
 	_check(not boss.are_doors_locked(), "Phòng boss trống không khóa cửa")
-	_check(_rooms.get_visited_count() == 4, "Minimap đã khám phá đủ 4 phòng")
+	_check(_rooms.get_visited_count() == 4, "Minimap đã khám phá 4 phòng đã đi qua")
 
 
 func _test_touch_controls() -> void:

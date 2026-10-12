@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 1
+flat = 0.0
+percent = 0.2
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"soul_resonance"
+name_key = "STATUS_SOUL_RESONANCE"
+desc_key = "STATUS_SOUL_RESONANCE_DESC"
+kind = 0
+icon_text = "CH"
+icon_color = Color(0.94902, 0.835294, 0.541176, 1)
+duration_turns = 2
+max_stacks = 2
+stack_mode = 1
+base_chance = 1.0
+ignores_resistance = true
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_0")])

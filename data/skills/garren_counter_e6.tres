@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/damage_effect.gd" id="3_damage_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/turn_shift_effect.gd" id="4_turn_shift_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("3_damage_effect")
+scaling_stat = 2
+multiplier = 0.75
+toughness = 10.0
+
+[sub_resource type="Resource" id="Effect_2"]
+script = ExtResource("4_turn_shift_effect")
+amount = -0.1
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"garren_counter_e6"
+name_key = "SKILL_GARREN_COUNTER_E6"
+desc_key = "SKILL_GARREN_COUNTER_E6_DESC"
+kind = 3
+target = 0
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1"), SubResource("Effect_2")])

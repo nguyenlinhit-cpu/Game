@@ -1,14 +1,13 @@
 class_name CharacterData
 extends Resource
-## Dữ liệu một nhân vật: nhận diện, skin, chỉ số theo cấp, 3 kỹ năng trong trận.
-## Kỹ năng ngoài map, Đặc tính, Tinh Mệnh bổ sung ở Phase 6–7.
+## Dữ liệu một nhân vật: nhận diện, skin, chỉ số theo cấp, 2 kỹ năng ngoài map (Đòn Mở Màn, Bí Kỹ),
+## 3 kỹ năng trong trận, Đặc tính, 6 Tinh Mệnh.
 
 @export var id: StringName
 @export var name_key: String = ""
 @export_range(4, 5) var rarity: int = 4
 @export var element: Element.Type = Element.Type.SOUL
-## TODO Phase 6: đổi sang enum Path (destruction, hunt, erudition, harmony, nihility, preservation, abundance).
-@export var path: StringName
+@export var path: CharacterPath.Type = CharacterPath.Type.DESTRUCTION
 ## Nhân vật chính không có trong banner.
 @export var in_gacha_pool: bool = true
 @export var skins: Array[CharacterSkin] = []
@@ -20,6 +19,13 @@ extends Resource
 @export var basic_attack: SkillData
 @export var skill: SkillData
 @export var ultimate: SkillData
+@export var talent: TalentData
+## 6 Tinh Mệnh theo thứ tự.
+@export var eidolons: Array[EidolonData] = []
+
+@export_group("Ngoài map")
+@export var opener: OpenerAttackData
+@export var technique: TechniqueData
 
 
 func get_skin(skin_id: StringName) -> CharacterSkin:

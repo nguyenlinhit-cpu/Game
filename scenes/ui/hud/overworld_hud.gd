@@ -20,6 +20,7 @@ var _reward_tween: Tween
 @onready var _reward_popup: PanelContainer = %RewardPopup
 @onready var _reward_title: Label = %RewardTitle
 @onready var _reward_lines: Label = %RewardLines
+@onready var _team_bar: TeamBar = %TeamBar
 
 
 func _ready() -> void:
@@ -32,6 +33,7 @@ func _ready() -> void:
 func setup(player: Player, room_manager: RoomManager) -> void:
 	_player = player
 	_minimap.setup(room_manager, player)
+	_team_bar.slot_pressed.connect(func(index: int) -> void: player.set_leader(index))
 	player.focused_interactable_changed.connect(_on_focused_interactable_changed)
 
 
@@ -44,6 +46,7 @@ func _process(delta: float) -> void:
 	if _player and _touch_controls.visible:
 		_touch_controls.dash_button.cooldown_ratio = _player.get_dash_cooldown_ratio()
 		_touch_controls.opener_button.cooldown_ratio = _player.get_opener_cooldown_ratio()
+	_team_bar.queue_redraw()
 
 
 func show_toast(text: String) -> void:
@@ -70,6 +73,15 @@ func show_reward_popup(title: String, lines: Array[String]) -> void:
 	_reward_tween.tween_callback(_reward_popup.hide)
 
 
+## Vòng nổ hiệu ứng Bí Kỹ tại vị trí trên map (toạ độ thế giới).
+func show_burst(world_position: Vector2, radius: float, color: Color) -> void:
+	var burst := BurstEffect.new()
+	burst.radius = radius
+	burst.color = color
+	burst.global_position = world_position
+	_player.get_parent().add_child(burst)
+
+
 func is_reward_popup_visible() -> bool:
 	return _reward_popup.visible
 
@@ -84,3 +96,21 @@ func _on_focused_interactable_changed(interactable: Interactable) -> void:
 		return
 	_prompt_label.text = "[F]  %s" % interactable.get_prompt()
 	_prompt_label.show()
+
+
+## Vòng tròn lan ra rồi mờ dần.
+class BurstEffect extends Node2D:
+	var radius: float = 100.0
+	var color: Color = Color.WHITE
+	var _t: float = 0.0
+
+	func _process(delta: float) -> void:
+		_t += delta
+		queue_redraw()
+		if _t > 0.6:
+			queue_free()
+
+	func _draw() -> void:
+		var k := clampf(_t / 0.6, 0.0, 1.0)
+		draw_circle(Vector2.ZERO, radius * k, Color(color, 0.35 * (1.0 - k)))
+		draw_arc(Vector2.ZERO, radius * k, 0.0, TAU, 48, Color(color, 1.0 - k), 4.0, true)

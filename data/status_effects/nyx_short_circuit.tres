@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 13
+flat = 0.15
+percent = 0.0
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"nyx_short_circuit"
+name_key = "STATUS_NYX_SHORT_CIRCUIT"
+desc_key = "STATUS_NYX_SHORT_CIRCUIT_DESC"
+kind = 1
+icon_text = "ĐM"
+icon_color = Color(0.65098, 0.356863, 0.94902, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 1.0
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_0")])

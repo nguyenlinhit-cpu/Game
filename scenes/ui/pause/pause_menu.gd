@@ -28,6 +28,12 @@ func _ready() -> void:
 			SceneRouter.go_to(DataPaths.BATTLE_SANDBOX_SCENE))
 		_menu.add_child(sandbox)
 		_menu.move_child(sandbox, _title_button.get_index())
+		var cycle := Button.new()
+		cycle.text = tr("PAUSE_NEXT_TEST_TEAM")
+		cycle.custom_minimum_size = Vector2(0.0, 72.0)
+		cycle.pressed.connect(_cycle_test_team)
+		_menu.add_child(cycle)
+		_menu.move_child(cycle, _title_button.get_index())
 
 
 func open() -> void:
@@ -62,6 +68,26 @@ func _on_settings_pressed() -> void:
 func _on_settings_closed() -> void:
 	_menu.show()
 	_settings_button.grab_focus()
+
+
+## Debug: lần lượt để 1 trong 5 nhân vật ngồi ngoài (nhân vật chính luôn có mặt).
+func _cycle_test_team() -> void:
+	var owned := GameState.owned_characters
+	var outside := owned.filter(func(id: StringName) -> bool: return not GameState.team.has(id))
+	var next_out_index := 1
+	if not outside.is_empty():
+		next_out_index = (owned.find(outside[0]) % (owned.size() - 1)) + 1
+	var team: Array[StringName] = []
+	for i in owned.size():
+		if i != next_out_index and team.size() < GameConfig.MAX_TEAM_SIZE:
+			team.append(owned[i])
+	var map := get_tree().current_scene as OverworldMap
+	if map:
+		GameState.set_map_player(map.scene_file_path, map.player.global_position, map.player.facing)
+	GameState.set_team(team)
+	GameState.leader_index = 0
+	close()
+	SceneRouter.go_to(GameState.current_map_scene)
 
 
 func _on_title_pressed() -> void:

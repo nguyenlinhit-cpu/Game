@@ -17,6 +17,10 @@ const ENEMY_SCENE: String = "res://scenes/overworld/overworld_enemy/overworld_en
 const ENC_SPROUTS: String = "res://data/encounters/test_sprouts_lv3.tres"
 const ENC_MIXED: String = "res://data/encounters/test_mixed_lv5.tres"
 const ENC_WEAK: String = "res://data/encounters/test_weak_lv1.tres"
+const OBSTACLE_SCENE: String = "res://scenes/overworld/interactables/elemental_obstacle.tscn"
+## Phòng giải đố: 8 hốc dọc tường Nam, mỗi hốc rộng 2 ô, sâu 2 ô, có vật cản chắn miệng hốc.
+const PUZZLE_SIZE := Vector2i(27, 15)
+const PUZZLE_NICHE_XS: Array[int] = [-11, -8, -5, -2, 1, 4, 7, 10]
 
 ## Màu ô tạm, theo thứ tự cột trong ảnh: sàn A, sàn B, tường, sàn hành lang, tường hành lang.
 const TILE_COLORS: Array[Color] = [
@@ -55,6 +59,7 @@ var templates: Array[Dictionary] = [
 			{"scene": CHEST_SCENE, "name": "Chest1", "tile": Vector2i(0, 0), "props": {"chest_id": &"chest_01_a", "tier": Chest.Tier.PRECIOUS}},
 		],
 	},
+	_puzzle_template(),
 	{
 		"file": "room_boss_01.tscn", "id": &"boss_01", "type": Room.RoomType.BOSS,
 		"size": Vector2i(31, 23),
@@ -62,6 +67,32 @@ var templates: Array[Dictionary] = [
 		"markers": {"BossSpawn": Vector2i(0, -4)},
 	},
 ]
+
+
+## Mỗi hốc: 1 vật cản (7 loại nguyên tố + rào Ma Biến) và 1 rương bên trong
+## (hốc rào Ma Biến có thêm Hộp Bí Kỹ để có điểm lướt ra).
+func _puzzle_template() -> Dictionary:
+	var half := (PUZZLE_SIZE - Vector2i.ONE) / 2
+	var walls: Array[Vector2i] = []
+	for x in range(-half.x + 1, half.x):
+		if not PUZZLE_NICHE_XS.has(x) and not PUZZLE_NICHE_XS.has(x - 1):
+			for y in range(half.y - 3, half.y):
+				walls.append(Vector2i(x, y))
+	var entities: Array[Dictionary] = []
+	for i in PUZZLE_NICHE_XS.size():
+		var x: int = PUZZLE_NICHE_XS[i]
+		entities.append({"scene": OBSTACLE_SCENE, "name": "Obstacle%d" % (i + 1), "tile": Vector2i(x, half.y - 3),
+				"offset": Vector2(Room.TILE_SIZE * 0.5, 0.0), "props": {"kind": i, "size_tiles": Vector2i(2, 1)}})
+		entities.append({"scene": CHEST_SCENE, "name": "NicheChest%d" % (i + 1), "tile": Vector2i(x, half.y - 1),
+				"offset": Vector2(Room.TILE_SIZE * 0.5, 0.0),
+				"props": {"chest_id": StringName("puzzle_01_niche_%d" % (i + 1)), "tier": Chest.Tier.PUZZLE}})
+	entities.append({"scene": BOX_SCENE, "name": "NicheTechniqueBox", "tile": Vector2i(PUZZLE_NICHE_XS[7] + 1, half.y - 2),
+			"props": {"box_id": &"puzzle_01_niche_box"}})
+	return {
+		"file": "room_puzzle_01.tscn", "id": &"puzzle_01", "type": Room.RoomType.PUZZLE,
+		"size": PUZZLE_SIZE, "door_sides": Room.Side.NORTH, "extra_walls": walls,
+		"entities": entities,
+	}
 
 
 func _ready() -> void:
@@ -148,6 +179,9 @@ func _build_room(template: Dictionary, tile_set: TileSet) -> bool:
 	root.set("room_type", template["type"])
 	var size: Vector2i = template["size"]
 	root.set("size_tiles", size)
+	if template.has("door_sides"):
+		root.set("door_sides", template["door_sides"])
+	var extra_walls: Array = template.get("extra_walls", [])
 
 	var floor_layer := _add_layer(root, "Floor", tile_set)
 	var wall_layer := _add_layer(root, "Walls", tile_set)
@@ -158,7 +192,7 @@ func _build_room(template: Dictionary, tile_set: TileSet) -> bool:
 			var on_edge := absi(x) == half.x or absi(y) == half.y
 			var in_gap := on_edge and (absi(x) <= Room.DOOR_HALF_WIDTH or absi(y) <= Room.DOOR_HALF_WIDTH) \
 					and not (absi(x) == half.x and absi(y) == half.y)
-			if on_edge and not in_gap:
+			if (on_edge and not in_gap) or extra_walls.has(cell):
 				wall_layer.set_cell(cell, TileIds.SOURCE_ID, TileIds.WALL)
 			else:
 				floor_layer.set_cell(cell, TileIds.SOURCE_ID,
@@ -171,7 +205,7 @@ func _build_room(template: Dictionary, tile_set: TileSet) -> bool:
 	for entry: Dictionary in template.get("entities", []):
 		var node := (load(entry["scene"]) as PackedScene).instantiate() as Node2D
 		node.name = entry["name"]
-		node.position = _tile_to_local(entry["tile"])
+		node.position = _tile_to_local(entry["tile"]) + entry.get("offset", Vector2.ZERO)
 		var props: Dictionary = entry.get("props", {})
 		for key: String in props:
 			var value: Variant = props[key]

@@ -36,13 +36,14 @@ var is_acting: bool = false:
 
 var _time: float = 0.0
 var _hit_flash: float = 0.0
+var _death_tween: Tween
 
 
 func setup(battle_unit: BattleUnit, at: Vector2) -> void:
 	unit = battle_unit
 	home_position = at
 	position = at
-	unit.hp_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
+	unit.hp_changed.connect(_on_hp_changed)
 	unit.toughness_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
 	unit.status_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
 	unit.died.connect(_on_died)
@@ -100,9 +101,19 @@ func _process(delta: float) -> void:
 
 func _on_died(_u: BattleUnit) -> void:
 	marker = Marker.NONE
-	var tween := create_tween().set_parallel()
-	tween.tween_property(self, "modulate:a", 0.0 if not unit.is_ally() else 0.35, 0.5)
-	tween.tween_property(self, "scale", Vector2(1.0, 0.6) if unit.is_ally() else Vector2(0.6, 0.6), 0.5)
+	_death_tween = create_tween().set_parallel()
+	_death_tween.tween_property(self, "modulate:a", 0.0 if not unit.is_ally() else 0.35, 0.5)
+	_death_tween.tween_property(self, "scale", Vector2(1.0, 0.6) if unit.is_ally() else Vector2(0.6, 0.6), 0.5)
+
+
+## Hồi sinh: hủy hoạt ảnh ngã, hiện lại bình thường.
+func _on_hp_changed(_u: BattleUnit) -> void:
+	if unit.is_alive() and _death_tween:
+		_death_tween.kill()
+		_death_tween = null
+		modulate.a = 1.0
+		scale = Vector2.ONE
+	queue_redraw()
 
 
 func _draw() -> void:

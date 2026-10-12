@@ -41,6 +41,10 @@ var max_toughness: float = 0.0
 var toughness: float = 0.0
 var is_broken: bool = false
 var status_effects: Array[StatusEffectInstance] = []
+## Khiên chặn sát thương (giữ khiên lớn nhất, hết khi hiệu ứng khiên hết).
+var shield_hp: float = 0.0
+## Tinh Mệnh tăng hệ số theo loại kỹ năng: { SkillData.Kind: phần cộng thêm }.
+var skill_multiplier_bonus: Dictionary = {}
 
 
 static func create_ally(data: CharacterData, unit_level: int, unit_slot: int,
@@ -126,7 +130,49 @@ func is_ultimate_ready() -> bool:
 	return is_ally() and is_alive() and max_energy > 0.0 and energy >= max_energy
 
 
-## Trừ máu, trả về lượng máu thực mất.
+## Trúng đòn: khiên chặn trước, phần còn lại trừ máu. Trả về { "hp_lost", "absorbed" }.
+func take_hit(amount: float) -> Dictionary:
+	var absorbed := minf(shield_hp, maxf(amount, 0.0))
+	if absorbed > 0.0:
+		shield_hp -= absorbed
+		if shield_hp <= 0.0:
+			shield_hp = 0.0
+			for instance in status_effects.duplicate():
+				if instance.data.shield:
+					StatusEffects.remove(self, instance)
+		hp_changed.emit(self)
+	return {"hp_lost": take_damage(amount - absorbed), "absorbed": absorbed}
+
+
+func add_shield(amount: float) -> void:
+	shield_hp = maxf(shield_hp, amount)
+	hp_changed.emit(self)
+
+
+func get_skill_multiplier_bonus(kind: int) -> float:
+	return float(skill_multiplier_bonus.get(kind, 0.0))
+
+
+func is_taunting() -> bool:
+	for instance in status_effects:
+		if instance.data.taunt:
+			return true
+	return false
+
+
+func get_aggro_weight() -> float:
+	var path := character.path if character else CharacterPath.Type.HARMONY
+	return CharacterPath.aggro_weight(path) * maxf(1.0 + stats.get_value(Stats.Type.AGGRO), 0.0)
+
+
+## Hồi sinh với `ratio` phần máu tối đa (gỡ hết hiệu ứng).
+func revive(ratio: float) -> void:
+	StatusEffects.remove_all(self)
+	hp = maxf(get_max_hp() * ratio, 1.0)
+	hp_changed.emit(self)
+
+
+## Trừ máu thẳng (bỏ qua khiên), trả về lượng máu thực mất.
 func take_damage(amount: float) -> float:
 	if not is_alive() or amount <= 0.0:
 		return 0.0

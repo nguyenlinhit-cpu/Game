@@ -32,13 +32,7 @@ func _run() -> void:
 # --- Tiện ích ---
 
 func _make_skill(multiplier: float, toughness: float, target := SkillData.Target.SINGLE_ENEMY) -> SkillData:
-	var skill := SkillData.new()
-	skill.id = &"test_hit"
-	skill.name_key = "SKILL_TRAVELER_BASIC"
-	skill.target = target
-	skill.damage_multiplier = multiplier
-	skill.toughness_damage = toughness
-	return skill
+	return SkillData.simple_damage(multiplier, toughness, target)
 
 
 func _team() -> Array[CharacterData]:
@@ -100,8 +94,8 @@ func _test_resistance_and_toughness() -> void:
 			"Kháng mặc định 20%, nguyên tố điểm yếu 0%")
 	var base_skill := _make_skill(1.0, 0.0)
 	var ally := controller.allies[0]
-	var weak_damage := DamageCalc.compute(SkillExecutor.build_damage_params(ally, knight, base_skill, 1.0, Element.Type.WATER), false)
-	var resisted := DamageCalc.compute(SkillExecutor.build_damage_params(ally, knight, base_skill, 1.0, Element.Type.SOUL), false)
+	var weak_damage := DamageCalc.compute(SkillExecutor.build_damage_params(ally, knight, Stats.Type.ATK, 1.0, Element.Type.WATER), false)
+	var resisted := DamageCalc.compute(SkillExecutor.build_damage_params(ally, knight, Stats.Type.ATK, 1.0, Element.Type.SOUL), false)
 	_check(absf(resisted / float(weak_damage) - 0.8) < 0.02, "Sai nguyên tố gây 80%% sát thương (%d vs %d)" % [resisted, weak_damage])
 
 	var start := knight.toughness
@@ -124,9 +118,11 @@ func _test_break_factor_and_recovery() -> void:
 	var knight := _find_enemy(controller, &"rusted_knight")
 	var skill := _make_skill(1.0, 0.0)
 	var ally := controller.allies[0]
-	var shielded := DamageCalc.compute_raw(SkillExecutor.build_damage_params(ally, knight, skill, 1.0, Element.Type.WATER), false)
+	var shielded := DamageCalc.compute_raw(SkillExecutor.build_damage_params(ally, knight, Stats.Type.ATK, 1.0, Element.Type.WATER), false)
 	BreakSystem.trigger_break(controller, ally, knight, Element.Type.WATER)
-	var broken := DamageCalc.compute_raw(SkillExecutor.build_damage_params(ally, knight, skill, 1.0, Element.Type.WATER), false)
+	# Đặc tính nhân vật chính cộng Tấn Công khi Phá Vỡ (Phase 6); gỡ để so đúng hệ số.
+	StatusEffects.remove_all(ally)
+	var broken := DamageCalc.compute_raw(SkillExecutor.build_damage_params(ally, knight, Stats.Type.ATK, 1.0, Element.Type.WATER), false)
 	_check(is_equal_approx(broken / shielded, 1.0 / 0.9), "Hệ số phá vỡ 0,9 khi còn khiên, 1,0 khi đã vỡ")
 	StatusEffects.remove_all(knight)
 	var result := controller.process_turn_start(knight)

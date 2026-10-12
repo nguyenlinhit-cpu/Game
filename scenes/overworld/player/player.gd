@@ -1,13 +1,17 @@
 class_name Player
 extends CharacterBody2D
-## Nhân vật dẫn đầu ngoài map: đi 8 hướng có tăng/giảm tốc, lướt có hồi chiêu và bất tử ngắn,
-## Đòn Mở Màn chém hình quạt (J/chuột trái), tương tác vật gần nhất bằng F. Hình tạm vẽ theo skin, có chỉ hướng và nhấp nhô khi chạy.
+## Nhân vật dẫn đầu ngoài map (đổi giữa 4 người trong đội bằng phím 1–4): đi 8 hướng có tăng/giảm tốc,
+## lướt có hồi chiêu và bất tử ngắn, Đòn Mở Màn của người dẫn đầu (J/chuột trái) đánh quái / mở vật cản
+## đúng nguyên tố, Bí Kỹ (K/E) do OverworldMap xử lý, tương tác vật gần nhất bằng F. Hình tạm vẽ theo skin, có chỉ hướng và nhấp nhô khi chạy.
 ## Thông số di chuyển trong data/config/player_movement.tres.
 
 signal dashed
 ## Số quái và vật phá được trúng đòn.
 signal opener_used(hit_count: int)
 signal focused_interactable_changed(interactable: Interactable)
+signal technique_requested
+## Đòn Mở Màn trúng vật cản: mở được hay không.
+signal obstacle_hit(obstacle: ElementalObstacle, opened: bool)
 
 ## Thứ tự trùng với góc: 0 = đông, tăng theo chiều kim đồng hồ (trục y hướng xuống).
 ## Dùng cho tên file sprite theo mục 12, vd. map_ignar_run_se_03.png.
@@ -22,7 +26,7 @@ const SWING_SEC: float = 0.15
 const SWING_COLOR := Color(1.0, 0.95, 0.75, 0.55)
 
 @export var movement: PlayerMovementConfig
-## TODO Phase 6: lấy từ SkillData của nhân vật dẫn đầu.
+## Đòn Mở Màn của người dẫn đầu (đổi khi đổi người).
 @export var opener: OpenerAttackData
 
 ## Hướng nhìn (đã chuẩn hóa).
@@ -31,6 +35,12 @@ var facing: Vector2 = Vector2.DOWN
 var input_enabled: bool = true
 
 var _skin: CharacterSkin
+var _leader: CharacterData
+var _phase_left: float = 0.0
+var _phase_direction: Vector2 = Vector2.ZERO
+var _phase_speed: float = 1600.0
+var _invisible_left: float = 0.0
+var _speed_bonus: float = 0.0
 var _dash_time_left: float = 0.0
 var _dash_cooldown_left: float = 0.0
 var _invincible_left: float = 0.0
@@ -52,13 +62,17 @@ func _ready() -> void:
 		opener = load(DataPaths.TRAVELER_OPENER) as OpenerAttackData
 	if movement == null:
 		movement = load(DataPaths.PLAYER_MOVEMENT_CONFIG) as PlayerMovementConfig
-	var data := DataPaths.load_character(GameState.PLAYER_CHARACTER_ID)
-	if data:
-		_skin = data.get_skin(GameState.player_gender)
-	_name_label.text = GameState.player_name
+	collision_mask = PhysicsLayers.WORLD | PhysicsLayers.WARP_BARRIER
+	set_leader(GameState.leader_index)
 
 
 func _physics_process(delta: float) -> void:
+	_invisible_left = maxf(_invisible_left - delta, 0.0)
+	modulate.a = 0.45 if is_invisible() else 1.0
+	if _phase_left > 0.0 or _is_inside_barrier():
+		_process_phase_dash(delta)
+		return
+	collision_mask = PhysicsLayers.WORLD | PhysicsLayers.WARP_BARRIER
 	_dash_cooldown_left = maxf(_dash_cooldown_left - delta, 0.0)
 	_invincible_left = maxf(_invincible_left - delta, 0.0)
 	_opener_cooldown_left = maxf(_opener_cooldown_left - delta, 0.0)
@@ -82,7 +96,8 @@ func _physics_process(delta: float) -> void:
 			# Ra khỏi lướt ở tốc độ chạy để không bị khựng.
 			velocity = _dash_direction * movement.max_speed
 	else:
-		var target := input_vector * movement.max_speed
+		var bonus := 1.0 + (_speed_bonus if is_invisible() else 0.0)
+		var target := input_vector * movement.max_speed * bonus
 		var rate := movement.acceleration if input_vector != Vector2.ZERO else movement.friction
 		velocity = velocity.move_toward(target, rate * delta)
 		if not _ghosts.is_empty():
@@ -96,6 +111,15 @@ func _physics_process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not input_enabled:
+		return
+	for i in GameConfig.MAX_TEAM_SIZE:
+		if event.is_action_pressed("switch_character_%d" % (i + 1)):
+			get_viewport().set_input_as_handled()
+			set_leader(i)
+			return
+	if event.is_action_pressed("technique"):
+		get_viewport().set_input_as_handled()
+		technique_requested.emit()
 		return
 	if event.is_action_pressed("interact") and _focused != null:
 		get_viewport().set_input_as_handled()
@@ -129,6 +153,12 @@ func try_opener(aim: Vector2 = Vector2.ZERO) -> bool:
 			if distance < best_distance:
 				best_distance = distance
 				target = enemy
+	for node in get_tree().get_nodes_in_group(ElementalObstacle.GROUP):
+		var obstacle := node as ElementalObstacle
+		if obstacle and not obstacle.is_resolved and is_in_opener_arc(obstacle.global_position, obstacle.get_hit_radius()):
+			var opened := obstacle.receive_opener(opener.element)
+			obstacle_hit.emit(obstacle, opened)
+			hits += 1
 	for node in get_tree().get_nodes_in_group(BREAKABLE_GROUP):
 		# Vật phá được là Interactable có hàm break_open() (Hộp Bí Kỹ...).
 		var breakable := node as Interactable
@@ -156,6 +186,71 @@ func is_in_opener_arc(point: Vector2, target_radius: float = 0.0) -> bool:
 
 func get_opener_cooldown_ratio() -> float:
 	return _opener_cooldown_left / opener.cooldown_sec if opener.cooldown_sec > 0.0 else 0.0
+
+
+## Đổi người dẫn đầu theo vị trí trong đội. Trả về false nếu vị trí trống.
+func set_leader(index: int) -> bool:
+	var team := GameState.get_team_data()
+	if index < 0 or index >= team.size():
+		return false
+	GameState.leader_index = index
+	_leader = team[index]
+	var is_traveler := _leader.id == GameState.PLAYER_CHARACTER_ID
+	_skin = _leader.get_skin(GameState.player_gender if is_traveler else &"default")
+	if _leader.opener:
+		opener = _leader.opener
+	_name_label.text = GameState.player_name if is_traveler else tr(_leader.name_key)
+	EventBus.leader_changed.emit(index)
+	queue_redraw()
+	return true
+
+
+func get_leader() -> CharacterData:
+	return _leader
+
+
+## Bí Kỹ "Bước Hư Ảnh": lướt xuyên rào Ma Biến (bỏ lớp va chạm rào trong lúc lướt).
+func start_phase_dash(distance_px: float) -> void:
+	_phase_direction = facing.normalized()
+	_phase_left = distance_px / _phase_speed
+	_invincible_left = maxf(_invincible_left, _phase_left + 0.1)
+	collision_mask = PhysicsLayers.WORLD
+
+
+func is_phase_dashing() -> bool:
+	return _phase_left > 0.0
+
+
+## Bí Kỹ tàng hình: quái không nhìn thấy, đi nhanh hơn.
+func make_invisible(duration: float, speed_bonus: float) -> void:
+	_invisible_left = duration
+	_speed_bonus = speed_bonus
+
+
+func is_invisible() -> bool:
+	return _invisible_left > 0.0
+
+
+func _process_phase_dash(delta: float) -> void:
+	_phase_left = maxf(_phase_left - delta, 0.0)
+	velocity = _phase_direction * _phase_speed
+	_ghosts.append(global_position)
+	if _ghosts.size() > DASH_GHOST_COUNT:
+		_ghosts.pop_front()
+	move_and_slide()
+	_anim_time += delta
+	queue_redraw()
+
+
+## Còn kẹt trong rào Ma Biến thì đi tiếp cho ra hẳn.
+func _is_inside_barrier() -> bool:
+	if collision_mask & PhysicsLayers.WARP_BARRIER:
+		return false
+	var query := PhysicsShapeQueryParameters2D.new()
+	query.shape = ($CollisionShape2D as CollisionShape2D).shape
+	query.transform = ($CollisionShape2D as CollisionShape2D).global_transform
+	query.collision_mask = PhysicsLayers.WARP_BARRIER
+	return not get_world_2d().direct_space_state.intersect_shape(query, 1).is_empty()
 
 
 ## Bất tử tạm thời (vd. vừa từ trận quay về map).
@@ -244,7 +339,7 @@ func _draw() -> void:
 	if is_invincible():
 		draw_arc(center, BODY_RADIUS + 6.0, 0.0, TAU, 32, Color(accent, 0.6), 3.0, true)
 	PlaceholderArt.draw_character(self, center, BODY_RADIUS, body, accent,
-			GameState.player_name.left(1).to_upper())
+			get_display_name().left(1).to_upper())
 
 	if _swing_left > 0.0:
 		# Vệt chém hình quạt, mờ dần.

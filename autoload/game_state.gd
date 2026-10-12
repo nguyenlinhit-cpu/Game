@@ -10,7 +10,11 @@ const MAX_PLAYER_NAME_LENGTH: int = 12
 const PLAYER_CHARACTER_ID: StringName = &"traveler"
 ## Đội mẫu Phase 4 (dữ liệu tạm; Phase 6 thay bằng nhân vật miễn phí thật).
 const DEFAULT_TEAM: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren"]
-const MAP_LIST_KEYS: Array[String] = ["defeated_enemies", "opened_chests", "broken_boxes", "visited_rooms"]
+## Nhân vật đang có. TODO Phase 9/11/12: nhận theo cốt truyện và gacha.
+const DEFAULT_OWNED: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren", &"nyx"]
+const MAX_TECHNIQUE_POINTS: int = 5
+const MAP_LIST_KEYS: Array[String] = ["defeated_enemies", "opened_chests", "broken_boxes", "visited_rooms",
+		"resolved_obstacles"]
 
 var player_gender: StringName = GENDER_MALE
 var player_name: String = "Kael"
@@ -23,6 +27,15 @@ var play_time_sec: float = 0.0
 var team_level: int = 1
 ## Đội hình hiện tại (tối đa 4, không trùng). TODO Phase 9: nhiều đội hình lưu sẵn, chỉ chọn nhân vật đã sở hữu.
 var team: Array[StringName] = DEFAULT_TEAM.duplicate()
+var owned_characters: Array[StringName] = DEFAULT_OWNED.duplicate()
+## Người dẫn đầu ngoài map (chỉ số trong team).
+var leader_index: int = 0
+## Điểm Bí Kỹ dùng chung cả đội (0–5).
+var technique_points: int = MAX_TECHNIQUE_POINTS
+## Bí Kỹ kiểu "trận kế tiếp" đang chờ: [character_id].
+var pending_techniques: Array[StringName] = []
+## Cấp Tinh Mệnh: { character_id: 0–6 }. TODO Phase 9/11/12: tăng theo trùng nhân vật / cốt truyện.
+var eidolon_levels: Dictionary = {}
 
 ## Trạng thái từng map, khóa theo đường dẫn scene:
 ## { scene_path: { "player_position": [x, y], "player_facing": [x, y], "respawn_at_rest": bool,
@@ -52,6 +65,11 @@ func reset_new_game() -> void:
 	play_time_sec = 0.0
 	team_level = 1
 	team = DEFAULT_TEAM.duplicate()
+	owned_characters = DEFAULT_OWNED.duplicate()
+	leader_index = 0
+	technique_points = MAX_TECHNIQUE_POINTS
+	pending_techniques.clear()
+	eidolon_levels.clear()
 	map_states.clear()
 	pending_battle.clear()
 
@@ -109,7 +127,48 @@ func set_team(character_ids: Array[StringName]) -> bool:
 		EventBus.toast_requested.emit(error)
 		return false
 	team = character_ids.duplicate()
+	leader_index = clampi(leader_index, 0, team.size() - 1)
 	return true
+
+
+func get_leader_id() -> StringName:
+	return team[clampi(leader_index, 0, team.size() - 1)]
+
+
+# --- Bí Kỹ và Tinh Mệnh ---
+
+func change_technique_points(delta: int) -> void:
+	technique_points = clampi(technique_points + delta, 0, MAX_TECHNIQUE_POINTS)
+	EventBus.technique_points_changed.emit(technique_points)
+
+
+## Thêm Bí Kỹ "trận kế tiếp" (dùng lại cùng nhân vật không cộng dồn).
+func add_pending_technique(character_id: StringName) -> void:
+	if not pending_techniques.has(character_id):
+		pending_techniques.append(character_id)
+
+
+## Lấy và xóa danh sách Bí Kỹ chờ trận kế tiếp.
+func consume_pending_techniques() -> Array[StringName]:
+	var result := pending_techniques.duplicate()
+	pending_techniques.clear()
+	return result
+
+
+func get_eidolon_level(character_id: StringName) -> int:
+	return clampi(int(eidolon_levels.get(String(character_id), 0)), 0, 6)
+
+
+func set_eidolon_level(character_id: StringName, level: int) -> void:
+	eidolon_levels[String(character_id)] = clampi(level, 0, 6)
+
+
+## { StringName: cấp } cho BattleController.
+func get_eidolon_levels_for_battle() -> Dictionary:
+	var result: Dictionary = {}
+	for key: String in eidolon_levels:
+		result[StringName(key)] = get_eidolon_level(StringName(key))
+	return result
 
 
 ## CharacterData của đội hiện tại (bỏ qua id không tồn tại).
@@ -200,6 +259,11 @@ func to_dict() -> Dictionary:
 		"play_time_sec": play_time_sec,
 		"team_level": team_level,
 		"team": team.map(func(id: StringName) -> String: return String(id)),
+		"owned_characters": owned_characters.map(func(id: StringName) -> String: return String(id)),
+		"leader_index": leader_index,
+		"technique_points": technique_points,
+		"pending_techniques": pending_techniques.map(func(id: StringName) -> String: return String(id)),
+		"eidolon_levels": eidolon_levels.duplicate(),
 		"map_states": map_states.duplicate(true),
 	}
 
@@ -223,6 +287,21 @@ func from_dict(data: Dictionary) -> void:
 			ids.append(StringName(str(id)))
 		if ids.size() <= GameConfig.MAX_TEAM_SIZE:
 			team = ids
+	owned_characters = DEFAULT_OWNED.duplicate()
+	var saved_owned: Variant = data.get("owned_characters", [])
+	if saved_owned is Array and not saved_owned.is_empty():
+		owned_characters.clear()
+		for id: Variant in saved_owned:
+			owned_characters.append(StringName(str(id)))
+	leader_index = clampi(int(data.get("leader_index", 0)), 0, team.size() - 1)
+	technique_points = clampi(int(data.get("technique_points", MAX_TECHNIQUE_POINTS)), 0, MAX_TECHNIQUE_POINTS)
+	pending_techniques.clear()
+	var saved_pending: Variant = data.get("pending_techniques", [])
+	if saved_pending is Array:
+		for id: Variant in saved_pending:
+			pending_techniques.append(StringName(str(id)))
+	var saved_eidolons: Variant = data.get("eidolon_levels", {})
+	eidolon_levels = saved_eidolons.duplicate() if saved_eidolons is Dictionary else {}
 	var states: Variant = data.get("map_states", {})
 	map_states = states.duplicate(true) if states is Dictionary else {}
 	pending_battle.clear()
