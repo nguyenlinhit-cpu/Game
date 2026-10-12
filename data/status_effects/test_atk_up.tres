@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_mod"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_mod")
+stat = 1
+flat = 0.0
+percent = 0.2
+
+[resource]
+script = ExtResource("1_status")
+id = &"test_atk_up"
+name_key = "STATUS_TEST_ATK_UP"
+desc_key = "STATUS_TEST_ATK_UP_DESC"
+kind = 0
+icon_text = "↑"
+icon_color = Color(1, 0.6, 0.3, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 1.0
+ignores_resistance = true
+stat_modifiers = Array[ExtResource("2_mod")]([SubResource("Mod_0")])

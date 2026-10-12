@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status"]
+
+[resource]
+script = ExtResource("1_status")
+id = &"shock"
+name_key = "STATUS_SHOCK"
+desc_key = "STATUS_SHOCK_DESC"
+kind = 1
+icon_text = "ĐG"
+icon_color = Color(0.65098, 0.356863, 0.94902, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 1.5
+dot_mode = 1
+dot_element = 2
+dot_multiplier = 2.0

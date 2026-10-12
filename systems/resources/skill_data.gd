@@ -1,6 +1,7 @@
 class_name SkillData
 extends Resource
-## Kỹ năng trong trận (TẠM cho Phase 4: sát thương, hồi máu, kéo/đẩy lượt, Điểm Chiến Kỹ, năng lượng).
+## Kỹ năng trong trận (TẠM cho Phase 4–5: sát thương, giảm khiên, hồi máu, kéo/đẩy lượt, Điểm Chiến Kỹ, năng lượng).
+## Nguyên tố đòn đánh = nguyên tố của người dùng.
 ## Phase 6 đổi thành danh sách hiệu ứng ghép được (khiên, buff/debuff, khiêu khích...).
 
 enum Kind { BASIC, SKILL, ULTIMATE }
@@ -21,6 +22,10 @@ enum Target { SINGLE_ENEMY, BLAST_ENEMY, ALL_ENEMIES, SINGLE_ALLY, ALL_ALLIES, S
 @export var damage_multiplier: float = 0.0
 ## Hệ số lên 2 mục tiêu bên cạnh (BLAST_ENEMY).
 @export var adjacent_multiplier: float = 0.0
+
+## Lượng giảm Khiên Điểm Yếu lên mục tiêu chính (mọi mục tiêu với ALL_ENEMIES) và mục tiêu bên cạnh.
+@export var toughness_damage: float = 0.0
+@export var toughness_damage_adjacent: float = 0.0
 
 @export_group("Hồi máu")
 @export var heal_multiplier: float = 0.0

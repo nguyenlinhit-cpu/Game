@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill"]
+
+[resource]
+script = ExtResource("1_skill")
+id = &"training_dummy_poke"
+name_key = "SKILL_TRAINING_DUMMY_POKE"
+desc_key = "SKILL_TRAINING_DUMMY_POKE_DESC"
+damage_multiplier = 0.05

@@ -6,6 +6,8 @@ extends RefCounted
 signal hp_changed(unit: BattleUnit)
 signal energy_changed(unit: BattleUnit)
 signal died(unit: BattleUnit)
+signal toughness_changed(unit: BattleUnit)
+signal status_changed(unit: BattleUnit)
 
 enum Faction { ALLY, ENEMY }
 
@@ -31,6 +33,14 @@ var character: CharacterData
 var enemy: EnemyData
 ## Quãng đường còn lại tới lượt (TurnQueue dùng). Giá trị Hành Động = quãng đường / Tốc Độ.
 var distance_left: float = 10000.0
+## Nguyên tố tấn công.
+var element: Element.Type = Element.Type.SOUL
+## Chỉ quái có điểm yếu và Khiên Điểm Yếu.
+var weaknesses: Array[Element.Type] = []
+var max_toughness: float = 0.0
+var toughness: float = 0.0
+var is_broken: bool = false
+var status_effects: Array[StatusEffectInstance] = []
 
 
 static func create_ally(data: CharacterData, unit_level: int, unit_slot: int,
@@ -46,6 +56,7 @@ static func create_ally(data: CharacterData, unit_level: int, unit_slot: int,
 	unit.stats = Stats.from_blocks(data.stats_lv1, data.stats_lv80, unit_level)
 	unit.hp = unit.get_max_hp()
 	unit.max_energy = data.max_energy
+	unit.element = data.element
 	# Vào trận với nửa thanh năng lượng (giống phổ biến của thể loại).
 	unit.energy = data.max_energy * 0.5
 	var skin := data.get_skin(skin_id)
@@ -69,7 +80,11 @@ static func create_enemy(data: EnemyData, unit_level: int, unit_slot: int, unit_
 	unit.stats = Stats.from_blocks(data.stats_lv1, data.stats_lv80, unit_level)
 	unit.hp = unit.get_max_hp()
 	unit.color = data.placeholder_color
-	unit.accent_color = data.placeholder_color.lightened(0.4)
+	unit.element = data.element
+	unit.accent_color = Element.color(data.element)
+	unit.weaknesses = data.weaknesses.duplicate()
+	unit.max_toughness = data.max_toughness
+	unit.toughness = data.max_toughness
 	return unit
 
 
@@ -140,6 +155,51 @@ func add_energy(amount: float, apply_regen: bool = true) -> void:
 		return
 	var gain := amount * (stats.get_value(Stats.Type.ENERGY_REGEN) if apply_regen else 1.0)
 	set_energy(energy + gain)
+
+
+# --- Nguyên tố và khiên ---
+
+func is_weak_to(attack_element: int) -> bool:
+	return weaknesses.has(attack_element)
+
+
+## Kháng nguyên tố: quái mặc định 20% (EnemyData.default_res), đúng điểm yếu 0%; cộng thêm bộ điều chỉnh RES.
+func get_res(attack_element: int) -> float:
+	var base := 0.0
+	if enemy and not is_weak_to(attack_element):
+		base = enemy.default_res
+	return base + stats.get_value(Stats.Type.RES)
+
+
+func has_toughness() -> bool:
+	return max_toughness > 0.0
+
+
+## Trừ khiên, trả về lượng đã trừ.
+func reduce_toughness(amount: float) -> float:
+	var reduced := minf(amount, toughness)
+	toughness -= reduced
+	toughness_changed.emit(self)
+	return reduced
+
+
+func recover_toughness() -> void:
+	toughness = max_toughness
+	is_broken = false
+	toughness_changed.emit(self)
+
+
+# --- Hiệu ứng ---
+
+func get_status(status_id: StringName) -> StatusEffectInstance:
+	for instance in status_effects:
+		if instance.data.id == status_id:
+			return instance
+	return null
+
+
+func has_status(status_id: StringName) -> bool:
+	return get_status(status_id) != null
 
 
 func set_energy(value: float) -> void:

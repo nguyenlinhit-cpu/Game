@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="BreakConfig" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/break_config.gd" id="1_cfg"]
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="2_status"]
+[ext_resource type="Resource" path="res://data/status_effects/burn.tres" id="3_burn"]
+[ext_resource type="Resource" path="res://data/status_effects/freeze.tres" id="4_freeze"]
+[ext_resource type="Resource" path="res://data/status_effects/shock.tres" id="5_shock"]
+[ext_resource type="Resource" path="res://data/status_effects/wind_shear.tres" id="6_wind_shear"]
+[ext_resource type="Resource" path="res://data/status_effects/poisoned.tres" id="7_poisoned"]
+[ext_resource type="Resource" path="res://data/status_effects/entangle.tres" id="8_entangle"]
+[ext_resource type="Resource" path="res://data/status_effects/imprison.tres" id="9_imprison"]
+
+[resource]
+script = ExtResource("1_cfg")
+level_base = 50.0
+level_growth = 8.0
+element_multipliers = PackedFloat32Array(2, 1, 1, 1.5, 1, 0.5, 0.5)
+toughness_factor_base = 0.5
+toughness_factor_divisor = 120.0
+break_delay = 0.25
+advantage_toughness_loss = 0.25
+break_effects = Array[ExtResource("2_status")]([ExtResource("3_burn"), ExtResource("4_freeze"), ExtResource("5_shock"), ExtResource("6_wind_shear"), ExtResource("7_poisoned"), ExtResource("8_entangle"), ExtResource("9_imprison")])

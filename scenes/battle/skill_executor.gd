@@ -1,7 +1,8 @@
 class_name SkillExecutor
 extends RefCounted
 ## Áp một SkillData lên mục tiêu, trả về danh sách sự kiện để giao diện hiển thị:
-## { "type": "damage"|"heal"|"advance"|"delay"|"death", "target": BattleUnit, "amount": float, "crit": bool }.
+## { "type", "target": BattleUnit, "amount": float, "crit": bool, "element"?: Element.Type, "status"?: StringName }.
+## type: damage, dot, break, toughness, heal, advance, delay, status_applied, status_resisted, recover, skip, expired.
 
 
 ## Đơn vị chọn được làm mục tiêu chính cho kỹ năng này (đã sắp theo vị trí).
@@ -50,19 +51,22 @@ static func execute(battle: BattleController, user: BattleUnit, skill: SkillData
 	var targets := resolve_targets(skill, user, main_target, battle.allies, battle.enemies)
 
 	if skill.deals_damage():
+		var element := battle.get_attack_element(user)
 		for entry in targets:
 			var target: BattleUnit = entry["unit"]
 			var multiplier := skill.damage_multiplier if entry["main"] else skill.adjacent_multiplier
 			if multiplier <= 0.0 or not target.is_alive():
 				continue
-			var result := DamageCalc.roll(build_damage_params(user, target, skill, multiplier),
+			# Sát thương tính theo trạng thái khiên TRƯỚC đòn này (đòn phá vỡ vẫn chịu hệ số 0,9).
+			var result := DamageCalc.roll(build_damage_params(user, target, skill, multiplier, element),
 					battle.rng, battle.crit_mode)
 			var dealt := target.take_damage(result["amount"])
-			events.append({"type": "damage", "target": target, "amount": dealt, "crit": result["crit"]})
+			events.append({"type": "damage", "target": target, "amount": dealt, "crit": result["crit"], "element": element})
 			EventBus.damage_dealt.emit(user, target, int(dealt), result["crit"])
 			target.add_energy(BattleUnit.ENERGY_ON_HIT)
-			if not target.is_alive():
-				events.append({"type": "death", "target": target})
+			events.append_array(StatusEffects.on_hit(target))
+			var toughness := skill.toughness_damage if entry["main"] else skill.toughness_damage_adjacent
+			events.append_array(BreakSystem.apply_toughness_damage(battle, user, target, element, toughness))
 
 	if skill.heals():
 		var amount := (user.stats.get_value(skill.scaling_stat) * skill.heal_multiplier + skill.heal_flat) \
@@ -93,7 +97,7 @@ static func execute(battle: BattleController, user: BattleUnit, skill: SkillData
 
 
 static func build_damage_params(user: BattleUnit, target: BattleUnit, skill: SkillData,
-		multiplier: float) -> DamageCalc.Params:
+		multiplier: float, element: int) -> DamageCalc.Params:
 	var p := DamageCalc.Params.new()
 	p.base_stat = user.stats.get_value(skill.scaling_stat)
 	p.multiplier = multiplier
@@ -103,11 +107,10 @@ static func build_damage_params(user: BattleUnit, target: BattleUnit, skill: Ski
 	p.attacker_level = user.level
 	p.defender_level = target.level
 	p.def_reduction = target.stats.get_value(Stats.Type.DEF_REDUCTION)
-	p.res = target.stats.get_value(Stats.Type.RES)
+	p.res = target.get_res(element)
 	p.vulnerability = target.stats.get_value(Stats.Type.VULNERABILITY)
-	# TODO Phase 5: quái có Khiên Điểm Yếu thật; tạm coi quái luôn còn khiên.
-	p.defender_has_toughness = not target.is_ally()
-	p.defender_broken = false
+	p.defender_has_toughness = target.has_toughness()
+	p.defender_broken = target.is_broken
 	return p
 
 

@@ -14,3 +14,5 @@ damage_multiplier = 1.25
 adjacent_multiplier = 0.5
 energy_gain = 30.0
 sp_change = -1
+toughness_damage = 20.0
+toughness_damage_adjacent = 10.0

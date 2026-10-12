@@ -6,8 +6,7 @@ extends Resource
 @export var id: StringName
 @export var name_key: String = ""
 @export_range(4, 5) var rarity: int = 4
-## TODO Phase 5: đổi sang enum Element (fire, water, lightning, wind, poison, wood, soul).
-@export var element: StringName
+@export var element: Element.Type = Element.Type.SOUL
 ## TODO Phase 6: đổi sang enum Path (destruction, hunt, erudition, harmony, nihility, preservation, abundance).
 @export var path: StringName
 ## Nhân vật chính không có trong banner.

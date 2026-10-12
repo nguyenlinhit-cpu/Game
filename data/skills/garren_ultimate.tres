@@ -12,3 +12,4 @@ target = 2
 scaling_stat = 2
 damage_multiplier = 0.9
 energy_gain = 5.0
+toughness_damage = 20.0

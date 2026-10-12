@@ -1,7 +1,7 @@
 extends Control
 ## Màn trận theo lượt 2D: phe ta bên trái, quái bên phải, thanh thứ tự lượt bên trái,
 ## 4 thẻ nhân vật dưới cùng, nút Đánh thường / Chiến kỹ và ô Điểm Chiến Kỹ góc phải.
-## Vào: SceneRouter.payload { "encounter", "opening" } (thêm "instant", "team_override" khi test).
+## Vào: SceneRouter.payload { "encounter", "opening", "opener_element" } (thêm "instant", "team_override" khi test).
 ## Ra: GameState.finish_battle() rồi quay về map với payload { "battle_result": "win"|"lose" }.
 ##
 ## Điều khiển: bấm quái/đồng minh = chọn và ra đòn; Q / E = Đánh thường / Chiến kỹ (bấm lại = ra đòn);
@@ -14,6 +14,8 @@ const ENEMY_SPACING: float = 230.0
 const ENEMY_STAGGER: float = 70.0
 const PREVIEW_COUNT: int = 8
 const ULTIMATE_BANNER_SEC: float = 0.9
+## Chạm vào biểu tượng hiệu ứng (màn cảm ứng) thì giữ mô tả chừng này giây.
+const TOOLTIP_TAP_SEC: float = 3.0
 
 enum Mode { WATCH, CHOOSE, ULTIMATE }
 
@@ -29,6 +31,8 @@ var _ultimate_unit: BattleUnit
 var _encounter: EncounterData
 var _opening: BattleTypes.Opening = BattleTypes.Opening.NORMAL
 var _setup_failed: bool = false
+var _opener_element: int = Element.NONE
+var _tooltip_hold: float = 0.0
 
 @onready var _field: Node2D = %Field
 @onready var _numbers: DamageNumberPool = %Numbers
@@ -49,6 +53,8 @@ var _setup_failed: bool = false
 @onready var _continue_button: Button = %ContinueButton
 @onready var _retry_button: Button = %RetryButton
 @onready var _retreat_button: Button = %RetreatButton
+@onready var _tooltip: PanelContainer = %Tooltip
+@onready var _tooltip_label: Label = %TooltipLabel
 
 
 func _ready() -> void:
@@ -57,8 +63,10 @@ func _ready() -> void:
 	if _encounter == null:
 		# Mở thẳng scene này để thử: dùng trận mẫu.
 		_encounter = load(DataPaths.DEBUG_ENCOUNTER) as EncounterData
+	_opener_element = int(SceneRouter.payload.get("opener_element", Element.NONE))
 	_result_panel.hide()
 	_banner.hide()
+	_tooltip.hide()
 
 	controller = BattleController.new()
 	controller.name = "Controller"
@@ -71,7 +79,7 @@ func _ready() -> void:
 		team.assign(team_override)
 	var err := controller.setup(team, GameState.team_level, _encounter, _opening,
 			{GameState.PLAYER_CHARACTER_ID: GameState.player_gender},
-			{GameState.PLAYER_CHARACTER_ID: GameState.player_name})
+			{GameState.PLAYER_CHARACTER_ID: GameState.player_name}, _opener_element)
 	if err != OK:
 		_show_setup_error(err, team.size())
 		return
@@ -91,6 +99,13 @@ func _ready() -> void:
 	controller.set_auto(_auto_button.button_pressed)
 	_apply_speed(_speed_button.button_pressed)
 	controller.start()
+
+
+func _process(delta: float) -> void:
+	if _tooltip_hold > 0.0:
+		_tooltip_hold -= delta
+		if _tooltip_hold <= 0.0:
+			_tooltip.hide()
 
 
 func _exit_tree() -> void:
@@ -208,6 +223,8 @@ func _connect_controller() -> void:
 	controller.input_requested.connect(_on_input_requested)
 	controller.action_started.connect(_on_action_started)
 	controller.action_resolved.connect(_on_action_resolved)
+	controller.status_events.connect(func(_unit: BattleUnit, events: Array[Dictionary]) -> void:
+		_show_events(events))
 	controller.skill_points_changed.connect(_on_skill_points_changed)
 	controller.queue_changed.connect(_refresh_turn_order)
 	controller.wave_started.connect(_on_wave_started)
@@ -257,20 +274,46 @@ func _on_action_started(unit: BattleUnit, skill: SkillData, _targets: Array[Batt
 
 
 func _on_action_resolved(_unit: BattleUnit, _skill: SkillData, events: Array[Dictionary]) -> void:
+	_show_events(events)
+
+
+## Hiện số/chữ bay cho danh sách sự kiện (SkillExecutor, BreakSystem, StatusEffects).
+func _show_events(events: Array[Dictionary]) -> void:
+	# Chữ trên cùng một mục tiêu xếp chồng lên nhau để khỏi đè.
+	var stack: Dictionary = {}
 	for event in events:
 		var target: BattleUnit = event["target"]
 		var view := get_view(target)
 		if view == null:
 			continue
-		var at := view.global_position + Vector2(0.0, -view.get_radius() - 20.0)
+		var line := int(stack.get(target, 0))
+		stack[target] = line + 1
+		var at := view.global_position + Vector2(0.0, -view.get_radius() - 20.0 - line * 34.0)
+		var element_color := Element.color(int(event.get("element", Element.NONE)))
+		var outline := element_color if event.has("element") else Color.BLACK
 		match str(event["type"]):
 			"damage":
 				view.play_hit()
 				if event["crit"]:
-					_numbers.spawn("%d!" % event["amount"], at, Color("ffd34d"), 52)
+					_numbers.spawn("%d!" % event["amount"], at, Color("ffd34d"), 52, outline)
 				else:
-					_numbers.spawn("%d" % event["amount"], at, Color.WHITE, 40)
+					_numbers.spawn("%d" % event["amount"], at, Color.WHITE, 40, outline)
 				CameraShakeLite.shake(_field, 6.0 if event["crit"] else 3.0)
+			"dot":
+				view.play_hit()
+				_numbers.spawn("%d" % event["amount"], at, element_color.lightened(0.3), 32)
+			"break":
+				view.play_hit()
+				_numbers.spawn("%s  %d" % [tr("BATTLE_BREAK"), event["amount"]], at, element_color.lightened(0.2), 46)
+				CameraShakeLite.shake(_field, 10.0)
+			"status_applied":
+				_numbers.spawn(tr(str(event.get("name_key", ""))), at, Color("ffcf4d"), 28)
+			"status_resisted":
+				_numbers.spawn(tr("BATTLE_RESISTED"), at, Color(0.75, 0.75, 0.75), 28)
+			"recover":
+				_numbers.spawn(tr("BATTLE_TOUGHNESS_RECOVERED"), at, Color.WHITE, 26)
+			"skip":
+				_numbers.spawn(tr("BATTLE_TURN_SKIPPED"), at, Color("7fb6ff"), 28)
 			"heal":
 				_numbers.spawn("+%d" % event["amount"], at, Color("6fdc8c"), 38)
 			"advance":
@@ -308,10 +351,18 @@ func _on_battle_ended(battle_won: bool) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if _setup_failed or controller == null or controller.phase == BattleController.Phase.ENDED:
 		return
+	var motion := event as InputEventMouseMotion
+	if motion:
+		_update_tooltip(get_viewport().get_canvas_transform().affine_inverse() * motion.position, false)
+		return
 	var mouse := event as InputEventMouseButton
 	if mouse and mouse.pressed:
 		if mouse.button_index == MOUSE_BUTTON_LEFT:
 			var point := get_viewport().get_canvas_transform().affine_inverse() * mouse.position
+			# Chạm vào biểu tượng hiệu ứng = xem mô tả (không ra đòn).
+			if _update_tooltip(point, true):
+				get_viewport().set_input_as_handled()
+				return
 			for view: UnitView in _views.values():
 				if view.contains_point(point) and select_target(view.unit):
 					get_viewport().set_input_as_handled()
@@ -339,6 +390,40 @@ func _unhandled_input(event: InputEvent) -> void:
 			if event.is_action_pressed("switch_character_%d" % (i + 1)):
 				activate_ultimate(controller.allies[i])
 				break
+
+
+## Hiện mô tả hiệu ứng dưới con trỏ / chỗ chạm. Trả về true nếu đang trỏ vào một hiệu ứng.
+func _update_tooltip(point: Vector2, tapped: bool) -> bool:
+	for view: UnitView in _views.values():
+		var instance := view.get_status_at(point)
+		if instance:
+			show_status_tooltip(instance, point)
+			if tapped:
+				_tooltip_hold = TOOLTIP_TAP_SEC
+			return true
+	if _tooltip_hold <= 0.0:
+		_tooltip.hide()
+	return false
+
+
+func show_status_tooltip(instance: StatusEffectInstance, at: Vector2) -> void:
+	var lines: Array[String] = [tr(instance.data.name_key)]
+	if instance.stacks > 1:
+		lines[0] += "  ×%d" % instance.stacks
+	lines.append(tr(instance.data.desc_key))
+	lines.append(tr("BATTLE_TURNS_LEFT") % instance.turns_left)
+	_tooltip_label.text = "\n".join(lines)
+	_tooltip.reset_size()
+	_tooltip.position = (at + Vector2(24.0, 24.0)).clamp(Vector2.ZERO, size - _tooltip.size)
+	_tooltip.show()
+
+
+func is_tooltip_visible() -> bool:
+	return _tooltip.visible
+
+
+func get_status_tooltip_text() -> String:
+	return _tooltip_label.text
 
 
 func _cycle_target(step: int) -> void:

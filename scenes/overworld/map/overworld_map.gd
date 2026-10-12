@@ -61,7 +61,9 @@ func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening
 	player.input_enabled = false
 	GameState.set_map_player(scene_file_path, player.global_position, player.facing)
 	GameState.begin_battle(scene_file_path, _persistent_id(enemy), enemy.encounter, opening)
-	SceneRouter.go_to(DataPaths.BATTLE_SCENE, {"encounter": enemy.encounter, "opening": opening})
+	var opener_element: int = int(player.opener.element) if opening == BattleTypes.Opening.ADVANTAGE else Element.NONE
+	SceneRouter.go_to(DataPaths.BATTLE_SCENE, {"encounter": enemy.encounter, "opening": opening,
+			"opener_element": opener_element})
 
 
 ## Quái yếu hơn đội ≥10 cấp bị chém trúng: thắng luôn, không vào trận.

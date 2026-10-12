@@ -23,12 +23,14 @@ func _ready() -> void:
 		_pool.append(label)
 
 
-func spawn(text: String, at: Vector2, color: Color, font_size: int = 40) -> void:
+## `outline`: màu viền (màu nguyên tố của đòn), mặc định đen.
+func spawn(text: String, at: Vector2, color: Color, font_size: int = 40, outline: Color = Color.BLACK) -> void:
 	var label := _pool[_next]
 	_next = (_next + 1) % _pool.size()
 	label.text = text
 	label.add_theme_font_size_override("font_size", font_size)
 	label.add_theme_color_override("font_color", color)
+	label.add_theme_color_override("font_outline_color", outline)
 	label.reset_size()
 	label.position = at - label.size * 0.5 + Vector2(randf_range(-18.0, 18.0), 0.0)
 	label.modulate.a = 1.0

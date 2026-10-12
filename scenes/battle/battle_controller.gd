@@ -11,6 +11,8 @@ signal turn_started(unit: BattleUnit)
 signal input_requested(unit: BattleUnit)
 signal action_started(unit: BattleUnit, skill: SkillData, targets: Array[BattleUnit])
 signal action_resolved(unit: BattleUnit, skill: SkillData, events: Array[Dictionary])
+## Sự kiện đầu/cuối lượt: hồi khiên, sát thương theo lượt, mất lượt, hiệu ứng hết hạn.
+signal status_events(unit: BattleUnit, events: Array[Dictionary])
 signal skill_points_changed(value: int)
 signal queue_changed
 signal wave_started(index: int, wave_enemies: Array[BattleUnit])
@@ -27,6 +29,7 @@ const WINDUP_PAUSE_SEC: float = 0.25
 const ACTION_PAUSE_SEC: float = 0.55
 const ULTIMATE_PAUSE_SEC: float = 1.0
 const WAVE_PAUSE_SEC: float = 0.8
+const STATUS_PAUSE_SEC: float = 0.45
 
 var allies: Array[BattleUnit] = []
 ## Quái của đợt hiện tại.
@@ -45,6 +48,10 @@ var phase: Phase = Phase.SETUP
 var current_unit: BattleUnit
 var turn_count: int = 0
 var won: bool = false
+## Nguyên tố Đòn Mở Màn khi vào trận bằng Ưu Thế (Element.NONE nếu không có).
+var opener_element: int = Element.NONE
+## Phòng thử: ép nguyên tố mọi đòn của phe ta (Element.NONE = theo nhân vật).
+var debug_element_override: int = Element.NONE
 
 ## Các tuyệt kỹ chờ chen lượt: [{ "unit": BattleUnit, "target": BattleUnit }].
 var _interrupts: Array[Dictionary] = []
@@ -56,7 +63,8 @@ signal _choice_made
 
 ## Chuẩn bị trận. Từ chối đội rỗng hoặc hơn 4 người, và trận có dữ liệu lỗi.
 func setup(team: Array[CharacterData], team_level: int, battle_encounter: EncounterData,
-		battle_opening: BattleTypes.Opening, skins: Dictionary = {}, names: Dictionary = {}) -> Error:
+		battle_opening: BattleTypes.Opening, skins: Dictionary = {}, names: Dictionary = {},
+		battle_opener_element: int = Element.NONE) -> Error:
 	if team.is_empty():
 		push_warning("BattleController: đội trống")
 		return ERR_INVALID_PARAMETER
@@ -68,6 +76,7 @@ func setup(team: Array[CharacterData], team_level: int, battle_encounter: Encoun
 		return ERR_INVALID_DATA
 	encounter = battle_encounter
 	opening = battle_opening
+	opener_element = battle_opener_element
 	var level := clampi(team_level, 1, GameConfig.MAX_LEVEL)
 	for i in team.size():
 		var data := team[i]
@@ -80,6 +89,11 @@ func setup(team: Array[CharacterData], team_level: int, battle_encounter: Encoun
 			# Cả đội hành động trước ở vòng đầu (nhanh hơn đi trước).
 			for unit in allies:
 				unit.distance_left = 0.0
+			# Đòn Mở Màn đúng điểm yếu: quái mất 25% khiên (không đủ để Phá Vỡ).
+			if opener_element != Element.NONE:
+				for unit in enemies:
+					if unit.is_weak_to(opener_element) and unit.has_toughness():
+						unit.reduce_toughness(unit.max_toughness * BreakSystem.config().advantage_toughness_loss)
 		BattleTypes.Opening.AMBUSHED:
 			for unit in enemies:
 				unit.distance_left = 0.0
@@ -106,15 +120,30 @@ func start() -> void:
 		EventBus.turn_started.emit(unit)
 		queue_changed.emit()
 		await _wait(TURN_START_PAUSE_SEC)
-		var action: Dictionary
-		if unit.is_ally():
-			action = await _get_ally_action(unit)
-		else:
-			action = EnemyAI.choose_action(unit, allies, enemies, rng)
-		if phase == Phase.ENDED:
-			break
-		if not action.is_empty() and unit.is_alive():
-			await _perform(unit, action["skill"], action["target"])
+		var start_result := process_turn_start(unit)
+		var start_events: Array[Dictionary] = start_result["events"]
+		if not start_events.is_empty():
+			_handle_deaths(start_events)
+			status_events.emit(unit, start_events)
+			queue_changed.emit()
+			await _wait(STATUS_PAUSE_SEC)
+		if not unit.is_alive():
+			current_unit = null
+			continue
+		if not bool(start_result["skip"]):
+			var action: Dictionary
+			if unit.is_ally():
+				action = await _get_ally_action(unit)
+			else:
+				action = EnemyAI.choose_action(unit, allies, enemies, rng)
+			if phase == Phase.ENDED:
+				break
+			if not action.is_empty() and unit.is_alive():
+				await _perform(unit, action["skill"], action["target"])
+		if unit.is_alive():
+			var end_events := process_turn_end(unit)
+			if not end_events.is_empty():
+				status_events.emit(unit, end_events)
 		if queue.has(unit):
 			queue.end_turn(unit)
 		EventBus.turn_ended.emit(unit)
@@ -175,6 +204,45 @@ func set_auto(enabled: bool) -> void:
 	if enabled and phase == Phase.AWAITING_INPUT:
 		_choice = {"type": "auto"}
 		_choice_made.emit()
+
+
+## Nguyên tố đòn đánh của đơn vị (phòng thử có thể ép nguyên tố cho phe ta).
+func get_attack_element(unit: BattleUnit) -> int:
+	if unit.is_ally() and debug_element_override != Element.NONE:
+		return debug_element_override
+	return unit.element
+
+
+## Tung tỉ lệ trúng rồi gắn hiệu ứng, kèm trì hoãn thêm nếu có. Trả về sự kiện.
+func apply_status(data: StatusEffectData, source: BattleUnit, target: BattleUnit,
+		base_value: float = 0.0) -> Array[Dictionary]:
+	var events: Array[Dictionary] = []
+	var instance := StatusEffects.try_apply(data, source, target, rng, base_value)
+	if instance == null:
+		events.append({"type": "status_resisted", "target": target, "amount": 0.0, "crit": false, "status": data.id, "name_key": data.name_key})
+		return events
+	events.append({"type": "status_applied", "target": target, "amount": float(instance.stacks), "crit": false,
+			"status": data.id, "name_key": data.name_key})
+	if data.extra_delay > 0.0 and queue.has(target):
+		queue.delay(target, data.extra_delay)
+		events.append({"type": "delay", "target": target, "amount": data.extra_delay, "crit": false})
+	return events
+
+
+## Đầu lượt: quái đang bị Phá Vỡ hồi đầy khiên; xử lý sát thương theo lượt và mất lượt.
+## Trả về { "skip": bool, "events": Array[Dictionary] }.
+func process_turn_start(unit: BattleUnit) -> Dictionary:
+	var events: Array[Dictionary] = []
+	if unit.is_broken:
+		unit.recover_toughness()
+		events.append({"type": "recover", "target": unit, "amount": unit.max_toughness, "crit": false})
+	var result := StatusEffects.tick_turn_start(unit)
+	events.append_array(result["events"])
+	return {"skip": result["skip"], "events": events}
+
+
+func process_turn_end(unit: BattleUnit) -> Array[Dictionary]:
+	return StatusEffects.tick_turn_end(unit)
 
 
 ## Kết thúc trận ngay (phím debug và test của các phase map).
@@ -269,15 +337,25 @@ func _perform(unit: BattleUnit, skill: SkillData, target: BattleUnit) -> void:
 	if phase == Phase.ENDED:
 		return
 	var events := SkillExecutor.execute(self, unit, skill, target)
-	for event in events:
-		if event["type"] == "death":
-			var dead: BattleUnit = event["target"]
-			queue.remove(dead)
-			unit_died.emit(dead)
-			EventBus.unit_died.emit(dead)
+	_handle_deaths(events)
 	action_resolved.emit(unit, skill, events)
 	queue_changed.emit()
 	await _wait(ACTION_PAUSE_SEC)
+
+
+## Đơn vị trong sự kiện đã hết máu: rời hàng lượt, thêm sự kiện "death".
+func _handle_deaths(events: Array[Dictionary]) -> void:
+	var dead_units: Array[BattleUnit] = []
+	for event in events:
+		var target: BattleUnit = event["target"]
+		if not target.is_alive() and queue.has(target) and not dead_units.has(target):
+			dead_units.append(target)
+	for dead in dead_units:
+		queue.remove(dead)
+		StatusEffects.remove_all(dead)
+		events.append({"type": "death", "target": dead, "amount": 0.0, "crit": false})
+		unit_died.emit(dead)
+		EventBus.unit_died.emit(dead)
 
 
 func _queue_auto_ultimates() -> void:

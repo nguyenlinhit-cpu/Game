@@ -13,3 +13,5 @@ scaling_stat = 1
 damage_multiplier = 2.7
 adjacent_multiplier = 1.6
 energy_gain = 5.0
+toughness_damage = 30.0
+toughness_damage_adjacent = 20.0

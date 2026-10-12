@@ -1,15 +1,19 @@
 class_name EnemyData
 extends Resource
-## Dữ liệu một loại quái: nhận diện, chỉ số theo cấp, kỹ năng + trọng số chọn.
-## Điểm yếu, khiên ở Phase 5; AI theo tình huống ở Phase 8.
+## Dữ liệu một loại quái: nhận diện, nguyên tố, điểm yếu, Khiên Điểm Yếu, chỉ số theo cấp,
+## kỹ năng + trọng số chọn. AI theo tình huống ở Phase 8.
 
 enum Kind { NORMAL, ELITE, BOSS }
 
 @export var id: StringName
 @export var name_key: String = ""
 @export var kind: Kind = Kind.NORMAL
-## TODO Phase 5: đổi sang enum Element.
-@export var element: StringName
+## Nguyên tố tấn công.
+@export var element: Element.Type = Element.Type.POISON
+## 1–3 nguyên tố điểm yếu (kháng 0%); các nguyên tố khác kháng default_res.
+@export var weaknesses: Array[Element.Type] = []
+@export var max_toughness: float = 30.0
+@export var default_res: float = 0.2
 @export var placeholder_color: Color = Color("8e2a3b")
 
 @export_group("Chiến đấu")

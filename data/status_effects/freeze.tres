@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status"]
+
+[resource]
+script = ExtResource("1_status")
+id = &"freeze"
+name_key = "STATUS_FREEZE"
+desc_key = "STATUS_FREEZE_DESC"
+kind = 1
+icon_text = "ĐB"
+icon_color = Color(0.227451, 0.552941, 0.870588, 1)
+duration_turns = 1
+max_stacks = 1
+base_chance = 1.5
+skip_turn = true
+on_skip_damage_multiplier = 1.0
+on_skip_element = 1

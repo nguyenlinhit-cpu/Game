@@ -7,8 +7,9 @@
 | 1. Khung dự án, lời dẫn, chọn nhân vật chính | Xong |
 | 2. Di chuyển và phòng kiểu Soul Knight | Xong |
 | 3. Quái trên map và chuyển vào trận | Xong |
-| 4. Lõi trận đánh theo lượt | Xong, chờ duyệt |
-| 5–14 | Chưa làm |
+| 4. Lõi trận đánh theo lượt | Xong |
+| 5. Nguyên tố, khiên, phá vỡ, hiệu ứng | Xong, chờ duyệt |
+| 6–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -146,13 +147,46 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 4.
 
 ### Việc còn nợ
 
-- Nguyên tố, Khiên Điểm Yếu, Phá Vỡ, hiệu ứng/buff (Phase 5). Hiện coi quái luôn còn khiên (hệ số phá vỡ 0,9), kháng 0.
+- ~~Nguyên tố, Khiên Điểm Yếu, Phá Vỡ, hiệu ứng/buff~~ (Phase 5).
 - Kỹ năng dạng danh sách hiệu ứng, Đặc tính, Tinh Mệnh, nhân vật thật, trọng số bị nhắm theo vận mệnh (Phase 6).
 - AI quái theo tình huống, báo trước đòn mạnh (Phase 8).
 - Máu giữ nguyên giữa các trận, cấp từng nhân vật (Phase 9). Hiện mọi nhân vật lấy cấp đội, vào trận đầy máu và nửa năng lượng.
 - EXP/vật phẩm thắng trận thật (Phase 10).
 - Cắt cảnh Tuyệt kỹ 2D có tranh nhân vật, đổi màu nền theo nguyên tố (Phase 13; hiện là băng rôn chữ).
 - Hiện kỹ năng của quái là dữ liệu tạm cho 3 quái mẫu (Phase 8 làm đủ).
+
+## Phase 5 – Nguyên tố, khiên, phá vỡ, hiệu ứng
+
+### Đã làm
+
+- `Element` (7 nguyên tố, màu đúng bảng mục 6). Nguyên tố của nhân vật/quái/Đòn Mở Màn đổi từ chuỗi sang enum. Màu dùng cho viền quái, biểu tượng điểm yếu, viền số sát thương.
+- Quái có 1–3 điểm yếu (`EnemyData.weaknesses`), Khiên Điểm Yếu (`max_toughness`), kháng mặc định 20% (`default_res`), đúng điểm yếu 0%. Biểu tượng điểm yếu dưới thanh máu, thanh khiên màu trắng (xám + "Phá Vỡ" khi vỡ).
+- `BreakSystem` + `data/config/break_config.tres`: chỉ đòn đúng điểm yếu mới giảm khiên (`SkillData.toughness_damage`); khiên về 0 → sát thương phá vỡ (theo Hiệu Ứng Phá Vỡ, cấp, nguyên tố, độ dày khiên), trì hoãn 25%, gắn hiệu ứng theo nguyên tố; khiên hồi đầy đầu lượt kế tiếp của quái; hệ số phá vỡ 0,9 / 1,0 nối với trạng thái khiên thật.
+- 7 hiệu ứng phá vỡ đúng bảng (`data/status_effects/`): Thiêu Đốt, Đóng Băng (mất lượt, tan thì thêm sát thương Nước), Điện Giật, Phong Cắt (cộng dồn 5), Nhiễm Độc (% máu tối đa có trần, −10% Phòng Thủ), Trói Rễ (+20% trì hoãn, đòn kế tiếp thêm sát thương Mộc), Giam Hồn (+30% trì hoãn, −10% Tốc Độ 1 lượt).
+- Hệ thống hiệu ứng dạng dữ liệu (`StatusEffectData`, `StatusEffectInstance`, `StatusEffects`): buff/debuff có số lượt, cộng dồn (làm mới / cộng tầng), điều chỉnh chỉ số, tỉ lệ trúng = gốc × (1 + Chính Xác) × (1 − Kháng), sát thương theo lượt, mất lượt, trì hoãn thêm, kích hoạt khi bị đánh. Biểu tượng dưới thanh máu (viền xanh = buff, đỏ = debuff, số tầng), rê chuột hoặc chạm để xem mô tả.
+- Bộ điều khiển trận xử lý đầu lượt (hồi khiên, sát thương theo lượt, mất lượt) và cuối lượt (trừ số lượt).
+- Ưu Thế: Đòn Mở Màn đúng điểm yếu → quái mất 25% khiên khi vào trận (map truyền nguyên tố Đòn Mở Màn vào trận).
+- Phòng thử trận `scenes/battle/sandbox/battle_sandbox.tscn` (mở thẳng, hoặc menu tạm dừng → "Phòng thử trận" ở bản debug): 2 bù nhìn yếu cả 7 nguyên tố + 1 bù nhìn chỉ yếu Lửa, chọn nguyên tố đòn đánh của cả đội, nút hồi khiên + hồi đội.
+- Lớp test cơ sở bắt mọi lỗi engine/script và tính là thất bại (trước đây lỗi trong hàm await làm test bỏ dở lặng lẽ).
+- Test `tests/phase05_test.tscn`: 63/63 đạt (từng nguyên tố, đủ 7 hiệu ứng phá vỡ, tỉ lệ trúng giả lập 10.000 lần: 50,0% so với kỳ vọng 50,4%). Test Phase 1–4 vẫn đạt.
+
+### File chính
+
+- `systems/{element,status_effects,status_effect_instance,break_system}.gd`, `systems/resources/{status_effect_data,stat_modifier_data,break_config}.gd`
+- `data/status_effects/*.tres`, `data/config/break_config.tres`, `data/enemies/training_dummy*.tres`, `data/encounters/sandbox_dummies.tres`
+- Sửa: `scenes/battle/{battle_unit,skill_executor,battle_controller,battle_scene}.gd`, `scenes/battle/ui/{unit_view,damage_number_pool}.gd`
+- `scenes/battle/sandbox/battle_sandbox.*`, `tests/phase05_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 5.
+
+### Việc còn nợ
+
+- Kỹ năng gắn hiệu ứng (buff/debuff thật, khiên, khiêu khích, giải hiệu ứng) và Đặc tính (Phase 6). Hiện chỉ có Phá Vỡ gắn hiệu ứng; `test_atk_up`, `test_def_down` chỉ để test.
+- Quái gắn hiệu ứng lên phe ta (Phase 8).
+- Cân bằng số liệu phá vỡ cùng báo cáo boss (Phase 8, 14).
+- Biểu tượng điểm yếu/hiệu ứng thật (Phase 13; đang là ô màu + chữ).
 
 ## Để sau
 

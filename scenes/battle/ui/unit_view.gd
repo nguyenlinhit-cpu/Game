@@ -1,6 +1,8 @@
 class_name UnitView
 extends Node2D
-## Hình tạm của một đơn vị trên sân: nhân vật (khối màu + chữ cái) hoặc quái (thân tròn + thanh máu).
+## Hình tạm của một đơn vị trên sân: nhân vật (khối màu + chữ cái) hoặc quái (thân tròn viền màu nguyên tố).
+## Quái có thanh máu, thanh Khiên Điểm Yếu (trắng; xám + "PHÁ VỠ" khi vỡ) và hàng biểu tượng điểm yếu.
+## Mọi đơn vị có hàng biểu tượng hiệu ứng (rê chuột/chạm để xem mô tả).
 ## Hiện dấu mục tiêu (chính / bên cạnh), vòng sáng khi tới lượt, nháy khi trúng đòn, mờ dần khi ngã.
 
 const ALLY_RADIUS: float = 52.0
@@ -10,6 +12,13 @@ const MARKER_COLOR := Color("f2d58a")
 const TURN_COLOR := Color(0.95, 0.84, 0.54, 0.5)
 const HP_BACK := Color(0.1, 0.08, 0.12, 0.9)
 const HP_FILL := Color("d64545")
+const TOUGHNESS_FILL := Color(0.95, 0.95, 1.0)
+const TOUGHNESS_BROKEN := Color(0.4, 0.4, 0.45)
+const WEAKNESS_RADIUS: float = 12.0
+const STATUS_ICON_SIZE: float = 30.0
+const STATUS_ICON_GAP: float = 4.0
+const BUFF_BORDER := Color("6fdc8c")
+const DEBUFF_BORDER := Color("ff6b6b")
 
 enum Marker { NONE, MAIN, ADJACENT }
 
@@ -34,6 +43,8 @@ func setup(battle_unit: BattleUnit, at: Vector2) -> void:
 	home_position = at
 	position = at
 	unit.hp_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
+	unit.toughness_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
+	unit.status_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
 	unit.died.connect(_on_died)
 
 
@@ -47,6 +58,24 @@ func contains_point(global_point: Vector2) -> bool:
 
 
 ## Bị đánh: nháy trắng, giật lùi về phía sau.
+## Khung biểu tượng hiệu ứng thứ `index` (toạ độ trong view).
+func get_status_icon_rect(index: int) -> Rect2:
+	var count := unit.status_effects.size()
+	var total := count * STATUS_ICON_SIZE + maxi(count - 1, 0) * STATUS_ICON_GAP
+	var y := get_radius() + (104.0 if not unit.is_ally() else 16.0)
+	return Rect2(Vector2(-total * 0.5 + index * (STATUS_ICON_SIZE + STATUS_ICON_GAP), y),
+			Vector2.ONE * STATUS_ICON_SIZE)
+
+
+## Hiệu ứng có biểu tượng dưới điểm (toạ độ toàn cục), null nếu không có.
+func get_status_at(global_point: Vector2) -> StatusEffectInstance:
+	var local := to_local(global_point)
+	for i in unit.status_effects.size():
+		if get_status_icon_rect(i).grow(2.0).has_point(local):
+			return unit.status_effects[i]
+	return null
+
+
 func play_hit() -> void:
 	_hit_flash = 1.0
 	var back := -14.0 if unit.is_ally() else 14.0
@@ -97,6 +126,9 @@ func _draw() -> void:
 		draw_circle(Vector2(-radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
 		draw_circle(Vector2(radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
 		_draw_enemy_hp(radius)
+		_draw_toughness(radius)
+		_draw_weaknesses(radius)
+	_draw_statuses()
 	_draw_marker(radius)
 
 
@@ -110,6 +142,50 @@ func _draw_enemy_hp(radius: float) -> void:
 	draw_rect(bar, HP_BACK)
 	draw_rect(Rect2(bar.position, Vector2(bar.size.x * unit.get_hp_ratio(), bar.size.y)), HP_FILL)
 	draw_rect(bar, Color(1, 1, 1, 0.5), false, 1.5)
+
+
+func _draw_toughness(radius: float) -> void:
+	if not unit.has_toughness():
+		return
+	var bar := Rect2(Vector2(-HP_BAR_SIZE.x * 0.5, radius + 60.0), Vector2(HP_BAR_SIZE.x, 8.0))
+	draw_rect(bar, HP_BACK)
+	if unit.is_broken:
+		draw_rect(bar, TOUGHNESS_BROKEN)
+		var font := ThemeDB.fallback_font
+		draw_string(font, bar.position + Vector2(bar.size.x + 6.0, 9.0), tr("BATTLE_BROKEN"),
+				HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("ffcf4d"))
+	else:
+		var ratio := unit.toughness / unit.max_toughness
+		draw_rect(Rect2(bar.position, Vector2(bar.size.x * ratio, bar.size.y)), TOUGHNESS_FILL)
+
+
+func _draw_weaknesses(radius: float) -> void:
+	var count := unit.weaknesses.size()
+	var font := ThemeDB.fallback_font
+	for i in count:
+		var element: int = unit.weaknesses[i]
+		var center := Vector2((i - (count - 1) * 0.5) * (WEAKNESS_RADIUS * 2.0 + 6.0), radius + 84.0)
+		draw_circle(center, WEAKNESS_RADIUS, Element.color(element))
+		draw_arc(center, WEAKNESS_RADIUS, 0.0, TAU, 20, Color.BLACK, 1.5, true)
+		var text := Element.letter(element)
+		var width := font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, 15).x
+		draw_string(font, center + Vector2(-width * 0.5, 5.0), text, HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.BLACK)
+
+
+func _draw_statuses() -> void:
+	var font := ThemeDB.fallback_font
+	for i in unit.status_effects.size():
+		var instance := unit.status_effects[i]
+		var rect := get_status_icon_rect(i)
+		draw_rect(rect, Color(instance.data.icon_color, 0.9))
+		var border := BUFF_BORDER if instance.data.kind == StatusEffectData.Kind.BUFF else DEBUFF_BORDER
+		draw_rect(rect, border, false, 2.0)
+		var width := font.get_string_size(instance.data.icon_text, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
+		draw_string(font, rect.get_center() + Vector2(-width * 0.5, 5.0), instance.data.icon_text,
+				HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color.BLACK)
+		if instance.stacks > 1:
+			draw_string(font, rect.end + Vector2(-10.0, -1.0), str(instance.stacks),
+					HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color.WHITE)
 
 
 func _draw_marker(radius: float) -> void:

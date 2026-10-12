@@ -68,3 +68,15 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 12. **Bấm vào quái = chọn và ra đòn luôn** (như thể loại). Muốn xem trước thì dùng ←/→ để đổi mục tiêu, Space để ra đòn; bấm lại nút kỹ năng đang chọn cũng là ra đòn.
 13. **Điểm Chiến Kỹ khi Tự Động:** chiến kỹ gây sát thương chỉ dùng khi còn ≥2 điểm (chừa 1 cho người hồi máu). Tuyệt kỹ hồi máu chỉ dùng khi có người dưới 75% máu.
 14. **Tên enum:** `BattleUnit.Faction` (không đặt `Side` vì trùng enum có sẵn của Godot).
+
+## Phase 5
+
+1. **Thời điểm hiệu ứng:** sát thương theo lượt, mất lượt (Đóng Băng) xử lý ĐẦU lượt của người mang; số lượt trừ ở CUỐI lượt. Gắn giữa lượt người khác thì lượt đó không bị tính. Vd. Thiêu Đốt 2 lượt = gây sát thương 2 lần.
+2. **Hồi khiên:** đầu lượt kế tiếp của quái đã bị Phá Vỡ, khiên hồi đầy rồi quái vẫn hành động bình thường (trừ khi đang Đóng Băng).
+3. **Đòn phá vỡ:** sát thương của chính đòn làm vỡ khiên vẫn tính hệ số 0,9 (khiên còn lúc ra đòn); sau đó mới trừ khiên → Phá Vỡ.
+4. **Sát thương phá vỡ** = Mức phá vỡ theo cấp (50 + 8 × (cấp − 1)) × (1 + Hiệu Ứng Phá Vỡ) × hệ số nguyên tố (Lửa 2, Phong 1,5, Nước/Sét/Độc 1, Mộc/Hồn 0,5; Mộc/Hồn bù lại bằng trì hoãn) × hệ số khiên (0,5 + khiên tối đa / 120), rồi qua phòng thủ, kháng, dễ tổn thương. Số liệu ở `break_config.tres`.
+5. **Hiệu ứng phá vỡ** có tỉ lệ gốc 150%, nên quái có Kháng Hiệu Ứng dưới 33% luôn dính. Sát thương của hiệu ứng không bạo kích, không cộng Tăng sát thương, nhưng vẫn qua phòng thủ, kháng, khiên.
+6. **Số liệu từng hiệu ứng** (× mức phá vỡ): Thiêu Đốt 1,0/lượt; Điện Giật 2,0/lượt; Phong Cắt 1,0/tầng/lượt (tối đa 5 tầng, mỗi lần Phá Vỡ +1 tầng); Nhiễm Độc 10% máu tối đa/lượt, trần 3,0; Đóng Băng tan 1,0; Trói Rễ đòn kế tiếp 0,6 (dùng một lần, tối đa 1 lượt).
+7. **Kháng nguyên tố** chỉ áp lên quái; phe ta mặc định 0 (Phase 6–8 có thể thêm buff kháng).
+8. **Ưu Thế trừ 25% khiên** không bao giờ đủ làm Phá Vỡ ngay đầu trận.
+9. **Phòng thử** ép nguyên tố cho cả đội (`BattleController.debug_element_override`), không ảnh hưởng trận thường.

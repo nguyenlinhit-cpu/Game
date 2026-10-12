@@ -134,3 +134,42 @@ SKILL_RUSTED_KNIGHT_SLASH,Chém Gỉ,Rusty Slash
 SKILL_RUSTED_KNIGHT_SLASH_DESC,,
 SKILL_RUSTED_KNIGHT_SWEEP,Chém Quét,Sweep
 SKILL_RUSTED_KNIGHT_SWEEP_DESC,,
+ELEMENT_FIRE,Lửa,Fire
+ELEMENT_WATER,Nước,Water
+ELEMENT_LIGHTNING,Sét,Lightning
+ELEMENT_WIND,Phong,Wind
+ELEMENT_POISON,Độc,Poison
+ELEMENT_WOOD,Mộc,Wood
+ELEMENT_SOUL,Hồn,Soul
+BATTLE_BREAK,PHÁ VỠ!,BREAK!
+BATTLE_BROKEN,Phá Vỡ,Broken
+BATTLE_RESISTED,Kháng!,Resisted!
+BATTLE_TOUGHNESS_RECOVERED,Hồi khiên,Toughness restored
+BATTLE_TURN_SKIPPED,Mất lượt,Turn skipped
+BATTLE_TURNS_LEFT,Còn %d lượt,%d turn(s) left
+STATUS_BURN,Thiêu Đốt,Burn
+STATUS_BURN_DESC,Chịu sát thương Lửa đầu mỗi lượt trong 2 lượt.,Takes Fire damage at the start of each turn for 2 turns.
+STATUS_FREEZE,Đóng Băng,Freeze
+STATUS_FREEZE_DESC,Mất lượt kế tiếp; khi tan nhận thêm sát thương Nước.,Skips the next turn; takes extra Water damage when thawing.
+STATUS_SHOCK,Điện Giật,Shock
+STATUS_SHOCK_DESC,Chịu sát thương Sét đầu mỗi lượt trong 2 lượt.,Takes Lightning damage at the start of each turn for 2 turns.
+STATUS_WIND_SHEAR,Phong Cắt,Wind Shear
+STATUS_WIND_SHEAR_DESC,"Chịu sát thương Phong đầu mỗi lượt, cộng dồn tối đa 5 tầng.","Takes Wind damage at the start of each turn, stacks up to 5 times."
+STATUS_POISONED,Nhiễm Độc,Poisoned
+STATUS_POISONED_DESC,"Mỗi lượt mất máu theo % máu tối đa (có trần) trong 2 lượt, giảm 10% Phòng Thủ.","Loses a % of max HP each turn (capped) for 2 turns, DEF −10%."
+STATUS_ENTANGLE,Trói Rễ,Entangle
+STATUS_ENTANGLE_DESC,"Bị trì hoãn thêm 20%; đòn kế tiếp lên mục tiêu gây thêm sát thương Mộc.","Delayed by an extra 20%; the next hit on it deals extra Wood damage."
+STATUS_IMPRISON,Giam Hồn,Imprison
+STATUS_IMPRISON_DESC,"Bị trì hoãn thêm 30%, giảm 10% Tốc Độ trong 1 lượt.","Delayed by an extra 30%, SPD −10% for 1 turn."
+STATUS_TEST_ATK_UP,Tăng Tấn Công (thử),ATK Up (test)
+STATUS_TEST_ATK_UP_DESC,Tấn Công +20% trong 2 lượt.,ATK +20% for 2 turns.
+STATUS_TEST_DEF_DOWN,Giảm Phòng Thủ (thử),DEF Down (test)
+STATUS_TEST_DEF_DOWN_DESC,Phòng Thủ −20% trong 2 lượt (tỉ lệ gốc 60%).,DEF −20% for 2 turns (60% base chance).
+ENEMY_TRAINING_DUMMY,Bù Nhìn,Training Dummy
+ENEMY_TRAINING_DUMMY_FIRE,Bù Nhìn Lửa,Fire Dummy
+SKILL_TRAINING_DUMMY_POKE,Chọc,Poke
+SKILL_TRAINING_DUMMY_POKE_DESC,,
+SANDBOX_ELEMENT,Nguyên tố đòn đánh: %s,Attack element: %s
+SANDBOX_ELEMENT_DEFAULT,Theo nhân vật,Character's own
+SANDBOX_RESET,Hồi khiên + hồi đội,Reset dummies + team
+PAUSE_BATTLE_SANDBOX,Phòng thử trận (debug),Battle sandbox (debug)

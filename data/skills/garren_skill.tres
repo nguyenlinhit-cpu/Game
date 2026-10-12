@@ -14,3 +14,4 @@ damage_multiplier = 1.0
 target_delay = 0.25
 energy_gain = 30.0
 sp_change = -1
+toughness_damage = 20.0

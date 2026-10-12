@@ -18,6 +18,16 @@ func _ready() -> void:
 	_settings_button.pressed.connect(_on_settings_pressed)
 	_title_button.pressed.connect(_on_title_pressed)
 	_settings_panel.closed.connect(_on_settings_closed)
+	if OS.is_debug_build():
+		# Bản debug: lối vào phòng thử trận (Phase 5).
+		var sandbox := Button.new()
+		sandbox.text = tr("PAUSE_BATTLE_SANDBOX")
+		sandbox.custom_minimum_size = Vector2(0.0, 72.0)
+		sandbox.pressed.connect(func() -> void:
+			get_tree().paused = false
+			SceneRouter.go_to(DataPaths.BATTLE_SANDBOX_SCENE))
+		_menu.add_child(sandbox)
+		_menu.move_child(sandbox, _title_button.get_index())
 
 
 func open() -> void:
