@@ -64,12 +64,14 @@ static func tick_turn_start(target: BattleUnit) -> Dictionary:
 			break
 		var data := instance.data
 		if data.heal_per_turn_ratio > 0.0:
-			var healed := target.heal(target.get_max_hp() * data.heal_per_turn_ratio)
-			events.append({"type": "heal", "target": target, "amount": healed, "crit": false})
+			var raw_heal := target.get_max_hp() * data.heal_per_turn_ratio
+			var healed := target.heal(raw_heal)
+			events.append({"type": "heal", "target": target, "amount": healed, "crit": false, "raw": raw_heal,
+					"source": instance.source})
 		if data.dot_mode != StatusEffectData.DotMode.NONE and data.dot_multiplier > 0.0:
 			var amount := target.take_damage(compute_dot(instance, target))
 			events.append({"type": "dot", "target": target, "amount": amount, "crit": false,
-					"element": data.dot_element, "status": data.id, "name_key": data.name_key})
+					"element": data.dot_element, "status": data.id, "name_key": data.name_key, "source": instance.source})
 		if data.skip_turn:
 			skip = true
 			events.append({"type": "skip", "target": target, "amount": 0.0, "crit": false, "status": data.id, "name_key": data.name_key})
@@ -77,7 +79,7 @@ static func tick_turn_start(target: BattleUnit) -> Dictionary:
 				var raw := instance.base_value * data.on_skip_damage_multiplier
 				var amount := target.take_damage(effect_damage(raw, data.on_skip_element, instance.source_level, target))
 				events.append({"type": "dot", "target": target, "amount": amount, "crit": false,
-						"element": data.on_skip_element, "status": data.id, "name_key": data.name_key})
+						"element": data.on_skip_element, "status": data.id, "name_key": data.name_key, "source": instance.source})
 			remove(target, instance)
 	return {"skip": skip, "events": events}
 
@@ -96,15 +98,18 @@ static func tick_turn_end(target: BattleUnit) -> Array[Dictionary]:
 
 
 ## Kích nổ ngay mọi sát thương theo lượt trên mục tiêu với tỉ lệ `ratio` (không trừ số lượt).
-static func detonate_dots(target: BattleUnit, ratio: float) -> Array[Dictionary]:
+## `only_id`: chỉ kích nổ hiệu ứng có id này (rỗng = mọi hiệu ứng).
+static func detonate_dots(target: BattleUnit, ratio: float, only_id: StringName = &"") -> Array[Dictionary]:
 	var events: Array[Dictionary] = []
 	for instance: StatusEffectInstance in target.status_effects.duplicate():
 		var data := instance.data
 		if data.dot_mode == StatusEffectData.DotMode.NONE or data.dot_multiplier <= 0.0 or not target.is_alive():
 			continue
+		if only_id != &"" and data.id != only_id:
+			continue
 		var amount := target.take_damage(floorf(compute_dot(instance, target) * ratio))
 		events.append({"type": "dot", "target": target, "amount": amount, "crit": false,
-				"element": data.dot_element, "status": data.id, "name_key": data.name_key})
+				"element": data.dot_element, "status": data.id, "name_key": data.name_key, "source": instance.source})
 	return events
 
 
@@ -118,7 +123,7 @@ static func on_hit(target: BattleUnit) -> Array[Dictionary]:
 		var raw := instance.base_value * data.on_hit_damage_multiplier
 		var amount := target.take_damage(effect_damage(raw, data.on_hit_element, instance.source_level, target))
 		events.append({"type": "dot", "target": target, "amount": amount, "crit": false,
-				"element": data.on_hit_element, "status": data.id, "name_key": data.name_key})
+				"element": data.on_hit_element, "status": data.id, "name_key": data.name_key, "source": instance.source})
 		if data.consume_on_hit:
 			remove(target, instance)
 	return events
@@ -150,6 +155,12 @@ static func effect_damage(raw: float, element: int, source_level: int, target: B
 	p.defender_has_toughness = target.has_toughness()
 	p.defender_broken = target.is_broken
 	return DamageCalc.compute(p, false)
+
+
+## Áp lại điều chỉnh chỉ số sau khi đổi số tầng bằng tay.
+static func refresh_modifiers(target: BattleUnit, instance: StatusEffectInstance) -> void:
+	_apply_modifiers(target, instance)
+	target.status_changed.emit(target)
 
 
 static func _apply_modifiers(target: BattleUnit, instance: StatusEffectInstance) -> void:

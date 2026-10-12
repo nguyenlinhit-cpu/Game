@@ -15,6 +15,9 @@ const DEBUG_TEAM_LEVEL_STEP: int = 5
 @export var start_room_id: StringName
 
 var _encounter_started: bool = false
+## Bí Kỹ hút vật phẩm: còn bao nhiêu giây, bán kính (px).
+var _magnet_left: float = 0.0
+var _magnet_radius: float = 0.0
 
 @onready var rooms_root: Node2D = %Rooms
 @onready var corridor_layer: TileMapLayer = %Corridors
@@ -38,6 +41,15 @@ func _ready() -> void:
 	_show_battle_result()
 
 
+func _physics_process(delta: float) -> void:
+	if _magnet_left > 0.0:
+		_magnet_left -= delta
+		for node in get_tree().get_nodes_in_group(Player.BREAKABLE_GROUP):
+			var box := node as TechniqueBox
+			if box and box.can_interact() and box.global_position.distance_to(player.global_position) <= _magnet_radius:
+				box.break_open()
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not OS.is_debug_build():
 		return
@@ -56,6 +68,9 @@ func get_state() -> Dictionary:
 func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening) -> void:
 	if _encounter_started or SceneRouter.is_busy():
 		return
+	# Bẫy Dây: nhóm quái bị bẫy luôn vào trận với Ưu Thế.
+	if opening != BattleTypes.Opening.ADVANTAGE and _has_forced_advantage(enemy):
+		opening = BattleTypes.Opening.ADVANTAGE
 	if opening == BattleTypes.Opening.ADVANTAGE and enemy.is_trivial_for(GameState.team_level):
 		_instant_win(enemy)
 		return
@@ -196,28 +211,108 @@ func use_technique() -> bool:
 		return false
 	GameState.change_technique_points(-technique.cost)
 	var tile := float(Room.TILE_SIZE)
+	var color := Element.color(leader.element)
 	match technique.map_action:
 		TechniqueData.MapAction.PHASE_DASH:
 			player.start_phase_dash(technique.distance_tiles * tile)
+		TechniqueData.MapAction.LONG_DASH:
+			player.start_phase_dash(technique.distance_tiles * tile, PhysicsLayers.PIT)
 		TechniqueData.MapAction.FIREWORK_DAZE:
 			var center := player.global_position + player.facing * technique.distance_tiles * tile
-			var hits := 0
+			var hits := _mark_enemies_in_radius(center, technique.radius_tiles * tile, technique.duration_sec, leader.id)
+			hud.show_burst(center, technique.radius_tiles * tile, color)
+			print("[Technique] %s trúng %d nhóm quái" % [technique.id, hits])
+		TechniqueData.MapAction.DASH_TRAIL:
+			# Lao về trước, đánh dấu mọi nhóm quái gần đường lao.
+			var start := player.global_position
+			var end := start + player.facing * technique.distance_tiles * tile
 			for node in get_tree().get_nodes_in_group(OverworldEnemy.GROUP):
 				var enemy := node as OverworldEnemy
-				if enemy and not enemy.is_defeated() and enemy.global_position.distance_to(center) <= technique.radius_tiles * tile:
-					enemy.daze(technique.duration_sec)
+				if enemy and not enemy.is_defeated() and Geometry2D.get_closest_point_to_segment(
+						enemy.global_position, start, end).distance_to(enemy.global_position) <= technique.radius_tiles * tile:
 					enemy.add_mark(leader.id)
-					hits += 1
-			hud.show_burst(center, technique.radius_tiles * tile, Element.color(leader.element))
-			print("[Technique] %s trúng %d nhóm quái" % [technique.id, hits])
+			player.start_phase_dash(technique.distance_tiles * tile, 0)
+			hud.show_burst(end, technique.radius_tiles * tile, color)
+		TechniqueData.MapAction.ARROW:
+			var target := _first_enemy_on_line(player.global_position, player.facing, technique.distance_tiles * tile)
+			if target:
+				target.daze(technique.duration_sec)
+				target.add_mark(leader.id)
+				hud.show_burst(target.global_position, tile, color)
+		TechniqueData.MapAction.TRAP:
+			for old in get_tree().get_nodes_in_group(TechniqueTrap.GROUP):
+				old.queue_free()
+			var trap := TechniqueTrap.new()
+			trap.owner_id = leader.id
+			trap.radius = technique.radius_tiles * tile
+			trap.hold_sec = technique.duration_sec
+			trap.color = color
+			trap.global_position = player.global_position
+			add_child(trap)
 		TechniqueData.MapAction.INVISIBILITY:
 			player.make_invisible(technique.duration_sec, technique.speed_bonus)
+		TechniqueData.MapAction.SPEED_BOOST:
+			player.boost_speed(technique.duration_sec, technique.speed_bonus)
+		TechniqueData.MapAction.REVEAL_SECRETS:
+			hud.reveal_on_minimap(Minimap.Reveal.SECRETS, technique.duration_sec)
+		TechniqueData.MapAction.REVEAL_ENEMIES:
+			hud.reveal_on_minimap(Minimap.Reveal.ENEMIES, technique.duration_sec)
+		TechniqueData.MapAction.MAGNET:
+			_magnet_left = technique.duration_sec
+			_magnet_radius = technique.radius_tiles * tile
+		TechniqueData.MapAction.HEAL_TEAM:
+			# TODO Phase 9: máu giữ giữa các trận thì hồi thật (25% máu tối đa cả đội).
+			EventBus.toast_requested.emit(tr("TOAST_TEAM_HEALED"))
+		TechniqueData.MapAction.RETURN_TO_REST:
+			var rest := _nearest_rest_room(player.global_position)
+			if rest:
+				player.global_position = rest.get_spawn_point()
+				camera.snap_to_target()
 	if technique.kind != TechniqueData.Kind.MAP_ENEMIES and not technique.battle_start_effects.is_empty():
 		GameState.add_pending_technique(leader.id)
 	EventBus.technique_used.emit(leader.id)
-	EventBus.toast_requested.emit(tr("TOAST_TECHNIQUE_USED") % tr(technique.name_key))
+	# Bí Kỹ có thông báo riêng thì không đè bằng thông báo chung.
+	if technique.map_action != TechniqueData.MapAction.HEAL_TEAM:
+		EventBus.toast_requested.emit(tr("TOAST_TECHNIQUE_USED") % tr(technique.name_key))
 	CameraRig.shake(4.0, 0.12)
 	return true
+
+
+func _mark_enemies_in_radius(center: Vector2, radius: float, daze_sec: float, mark: StringName) -> int:
+	var hits := 0
+	for node in get_tree().get_nodes_in_group(OverworldEnemy.GROUP):
+		var enemy := node as OverworldEnemy
+		if enemy and not enemy.is_defeated() and enemy.global_position.distance_to(center) <= radius:
+			if daze_sec > 0.0:
+				enemy.daze(daze_sec)
+			enemy.add_mark(mark)
+			hits += 1
+	return hits
+
+
+func _first_enemy_on_line(origin: Vector2, direction: Vector2, length: float) -> OverworldEnemy:
+	var best: OverworldEnemy = null
+	var best_distance := INF
+	for node in get_tree().get_nodes_in_group(OverworldEnemy.GROUP):
+		var enemy := node as OverworldEnemy
+		if enemy == null or enemy.is_defeated():
+			continue
+		var offset := enemy.global_position - origin
+		var along := offset.dot(direction)
+		if along < 0.0 or along > length or absf(offset.cross(direction)) > enemy.get_hit_radius() + 24.0:
+			continue
+		if along < best_distance:
+			best_distance = along
+			best = enemy
+	return best
+
+
+func _has_forced_advantage(enemy: OverworldEnemy) -> bool:
+	for mark in enemy.marks:
+		var data := DataPaths.load_character(mark)
+		if data and data.technique and data.technique.marks_force_advantage:
+			return true
+	return false
 
 
 func _on_obstacle_hit(obstacle: ElementalObstacle, opened: bool) -> void:
@@ -299,3 +394,30 @@ func _on_current_room_changed(room: Room) -> void:
 		camera.set_room_limits(room.get_world_rect())
 	else:
 		camera.clear_limits()
+
+
+## Bẫy Dây (Fenna): nhóm quái đi vào bán kính thì bị giữ chặt và đánh dấu; dùng một lần.
+class TechniqueTrap extends Node2D:
+	const GROUP: StringName = &"technique_trap"
+	var owner_id: StringName
+	var radius: float = 64.0
+	var hold_sec: float = 8.0
+	var color: Color = Color.WHITE
+
+	func _ready() -> void:
+		add_to_group(GROUP)
+
+	func _physics_process(_delta: float) -> void:
+		queue_redraw()
+		for node in get_tree().get_nodes_in_group(OverworldEnemy.GROUP):
+			var enemy := node as OverworldEnemy
+			if enemy and not enemy.is_defeated() and enemy.global_position.distance_to(global_position) <= radius:
+				enemy.daze(hold_sec)
+				enemy.add_mark(owner_id)
+				queue_free()
+				return
+
+	func _draw() -> void:
+		draw_arc(Vector2.ZERO, radius, 0.0, TAU, 32, Color(color, 0.8), 3.0, true)
+		draw_line(Vector2(-radius * 0.6, 0), Vector2(radius * 0.6, 0), color, 2.0)
+		draw_line(Vector2(0, -radius * 0.6), Vector2(0, radius * 0.6), color, 2.0)

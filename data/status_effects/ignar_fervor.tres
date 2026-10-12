@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 11
+flat = 0.08
+percent = 0.0
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"ignar_fervor"
+name_key = "STATUS_IGNAR_FERVOR"
+desc_key = "STATUS_IGNAR_FERVOR_DESC"
+kind = 0
+icon_text = "NH"
+icon_color = Color(0.909804, 0.333333, 0.168627, 1)
+duration_turns = 99
+max_stacks = 5
+stack_mode = 1
+base_chance = 1.0
+ignores_resistance = true
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_0")])

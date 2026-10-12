@@ -2,8 +2,17 @@ class_name EncounterData
 extends Resource
 ## Một nhóm quái trên map = một trận, có thể nhiều đợt. Gắn vào OverworldEnemy.
 
+enum Kind { NORMAL, ELITE, BOSS }
+
 @export var id: StringName
 @export var waves: Array[EncounterWave] = []
+@export var kind: Kind = Kind.NORMAL
+## Khu vực (Phase 12 đặt lên map): lobby, library, vault, furnace, tower; rỗng = trận thử.
+@export var zone: StringName = &""
+## Cấp đội khuyến nghị (0 = không ghi).
+@export var recommended_level: int = 0
+## Nhạc trận (PlaceholderMusic id; rỗng = nhạc trận thường hoặc nhạc của boss).
+@export var music_id: StringName = &""
 
 
 func get_max_level() -> int:
@@ -26,6 +35,19 @@ func get_leader() -> EnemyData:
 	for wave in waves:
 		for entry in wave.entries:
 			if entry.enemy:
+				return entry.enemy
+	return null
+
+
+func is_boss() -> bool:
+	return kind == Kind.BOSS
+
+
+## Boss đầu tiên trong trận (null nếu không có).
+func get_boss() -> EnemyData:
+	for wave in waves:
+		for entry in wave.entries:
+			if entry.enemy and entry.enemy.is_boss():
 				return entry.enemy
 	return null
 

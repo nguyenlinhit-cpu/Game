@@ -12,6 +12,11 @@ const ROOM_CURRENT := Color(0.45, 0.48, 0.7, 1.0)
 const ROOM_KNOWN := Color(0.6, 0.62, 0.75, 0.45)
 const CORRIDOR := Color(0.55, 0.57, 0.7, 0.8)
 const PLAYER_DOT := Color("f2d58a")
+const SECRET_COLOR := Color("c78bff")
+const ENEMY_DOT := Color("ff5c5c")
+
+## Bí Kỹ hiện thêm thông tin trên bản đồ nhỏ.
+enum Reveal { SECRETS, ENEMIES }
 const ICON_COLORS: Dictionary = {
 	Room.RoomType.COMBAT: Color("e8552b"),
 	Room.RoomType.ELITE: Color("e8552b"),
@@ -23,6 +28,8 @@ const ICON_COLORS: Dictionary = {
 
 var _manager: RoomManager
 var _player: Node2D
+## { Reveal: giây còn lại }
+var _reveal_left: Dictionary = {}
 
 
 func setup(manager: RoomManager, player: Node2D) -> void:
@@ -31,8 +38,20 @@ func setup(manager: RoomManager, player: Node2D) -> void:
 	clip_contents = true
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	for kind: int in _reveal_left.keys():
+		_reveal_left[kind] = float(_reveal_left[kind]) - delta
+		if _reveal_left[kind] <= 0.0:
+			_reveal_left.erase(kind)
 	queue_redraw()
+
+
+func reveal(kind: Reveal, duration: float) -> void:
+	_reveal_left[kind] = duration
+
+
+func is_revealing(kind: Reveal) -> bool:
+	return _reveal_left.has(kind)
 
 
 ## Đổi toạ độ thế giới sang toạ độ minimap, lấy người chơi làm tâm.
@@ -54,6 +73,23 @@ func _draw() -> void:
 					CORRIDOR if both else ROOM_KNOWN, 3.0 * PX_PER_TILE)
 	for room in _manager.rooms:
 		_draw_room(room)
+	if is_revealing(Reveal.SECRETS):
+		for node in get_tree().get_nodes_in_group(Chest.GROUP):
+			if not (node as Chest).is_opened:
+				draw_rect(Rect2(world_to_minimap(node.global_position) - Vector2(3, 3), Vector2(6, 6)), SECRET_COLOR)
+		for node in get_tree().get_nodes_in_group(ElementalObstacle.GROUP):
+			var obstacle := node as ElementalObstacle
+			if obstacle.kind == ElementalObstacle.Kind.HIDDEN_WALL and not obstacle.is_resolved:
+				draw_circle(world_to_minimap(obstacle.global_position), 4.0, SECRET_COLOR)
+	if is_revealing(Reveal.ENEMIES):
+		var font := get_theme_default_font()
+		for node in get_tree().get_nodes_in_group(OverworldEnemy.GROUP):
+			var enemy := node as OverworldEnemy
+			if enemy.is_defeated():
+				continue
+			var at := world_to_minimap(enemy.global_position)
+			draw_circle(at, 4.0, ENEMY_DOT)
+			draw_string(font, at + Vector2(5, -3), str(enemy.get_level()), HORIZONTAL_ALIGNMENT_LEFT, -1, 12, ENEMY_DOT)
 	if _player:
 		draw_circle(size * 0.5, 5.0, PLAYER_DOT)
 		draw_arc(size * 0.5, 7.0, 0.0, TAU, 16, Color.BLACK, 1.5, true)

@@ -1,0 +1,105 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_character_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_character_skin"]
+[ext_resource type="Script" path="res://data/characters/scripts/raiko_talent.gd" id="4_raiko_talent"]
+[ext_resource type="Script" path="res://systems/resources/talent_data.gd" id="5_talent_data"]
+[ext_resource type="Script" path="res://systems/resources/eidolon_data.gd" id="6_eidolon_data"]
+[ext_resource type="Resource" path="res://data/skills/raiko_basic.tres" id="7_raiko_basic"]
+[ext_resource type="Resource" path="res://data/skills/raiko_skill.tres" id="8_raiko_skill"]
+[ext_resource type="Resource" path="res://data/skills/raiko_ultimate.tres" id="9_raiko_ultimate"]
+[ext_resource type="Resource" path="res://data/skills/raiko_opener.tres" id="10_raiko_opener"]
+[ext_resource type="Resource" path="res://data/skills/raiko_technique.tres" id="11_raiko_technique"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 150.0
+atk = 98.0
+def = 55.0
+spd = 112.0
+crit_rate = 0.1
+crit_dmg = 0.6
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.0
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 1110.0
+atk = 740.0
+def = 420.0
+spd = 112.0
+crit_rate = 0.1
+crit_dmg = 0.6
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.0
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Skin_default"]
+script = ExtResource("3_character_skin")
+skin_id = &"default"
+label_key = ""
+placeholder_color = Color(0.65098, 0.356863, 0.94902, 1)
+accent_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Talent"]
+script = ExtResource("5_talent_data")
+name_key = "TALENT_RAIKO"
+desc_key = "TALENT_RAIKO_DESC"
+script_class = ExtResource("4_raiko_talent")
+
+[sub_resource type="Resource" id="Eidolon_1"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_RAIKO_1"
+desc_key = "EIDOLON_RAIKO_1_DESC"
+
+[sub_resource type="Resource" id="Eidolon_2"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_RAIKO_2"
+desc_key = "EIDOLON_RAIKO_2_DESC"
+
+[sub_resource type="Resource" id="Eidolon_3"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_RAIKO_3"
+desc_key = "EIDOLON_RAIKO_3_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([0, 1])
+
+[sub_resource type="Resource" id="Eidolon_4"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_RAIKO_4"
+desc_key = "EIDOLON_RAIKO_4_DESC"
+
+[sub_resource type="Resource" id="Eidolon_5"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_RAIKO_5"
+desc_key = "EIDOLON_RAIKO_5_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([2])
+
+[sub_resource type="Resource" id="Eidolon_6"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_RAIKO_6"
+desc_key = "EIDOLON_RAIKO_6_DESC"
+
+[resource]
+script = ExtResource("1_character_data")
+id = &"raiko"
+name_key = "CHAR_RAIKO_NAME"
+rarity = 5
+element = 2
+path = 1
+skins = Array[ExtResource("3_character_skin")]([SubResource("Skin_default")])
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+max_energy = 120.0
+basic_attack = ExtResource("7_raiko_basic")
+skill = ExtResource("8_raiko_skill")
+ultimate = ExtResource("9_raiko_ultimate")
+talent = SubResource("Talent")
+eidolons = Array[ExtResource("6_eidolon_data")]([SubResource("Eidolon_1"), SubResource("Eidolon_2"), SubResource("Eidolon_3"), SubResource("Eidolon_4"), SubResource("Eidolon_5"), SubResource("Eidolon_6")])
+opener = ExtResource("10_raiko_opener")
+technique = ExtResource("11_raiko_technique")

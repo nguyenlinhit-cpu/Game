@@ -6,11 +6,13 @@ import os
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 os.chdir(ROOT)
 
-STAT = {"HP": 0, "ATK": 1, "DEF": 2, "SPD": 3, "CRIT_RATE": 4, "CRIT_DMG": 5, "EFFECT_HIT": 8,
+STAT = {"HP": 0, "ATK": 1, "DEF": 2, "SPD": 3, "CRIT_RATE": 4, "CRIT_DMG": 5, "BREAK_EFFECT": 6, "ENERGY_REGEN": 7,
+        "EFFECT_HIT": 8, "EFFECT_RES": 9, "OUTGOING_HEALING": 10,
         "DAMAGE_BONUS": 11, "VULNERABILITY": 12, "DEF_REDUCTION": 13, "RES": 14, "AGGRO": 15}
 KIND = {"BASIC": 0, "SKILL": 1, "ULTIMATE": 2, "FOLLOW_UP": 3}
 TGT = {"SINGLE_ENEMY": 0, "BLAST_ENEMY": 1, "ALL_ENEMIES": 2, "SINGLE_ALLY": 3, "ALL_ALLIES": 4, "SELF": 5}
-SCOPE = {"TARGETS": 0, "MAIN": 1, "ADJACENT": 2, "SELF": 3, "ALL_ALLIES": 4, "ALLIES_EXCEPT_SELF": 5, "ALL_ENEMIES": 6}
+SCOPE = {"TARGETS": 0, "MAIN": 1, "ADJACENT": 2, "SELF": 3, "ALL_ALLIES": 4, "ALLIES_EXCEPT_SELF": 5, "ALL_ENEMIES": 6,
+         "FIRST_ENEMY": 7, "RANDOM_ENEMY": 8}
 EL = {"fire": 0, "water": 1, "lightning": 2, "wind": 3, "poison": 4, "wood": 5, "soul": 6}
 PATH = {"destruction": 0, "hunt": 1, "erudition": 2, "harmony": 3, "nihility": 4, "preservation": 5, "abundance": 6}
 ELCOL = {0: "Color(0.909804, 0.333333, 0.168627, 1)", 1: "Color(0.227451, 0.552941, 0.870588, 1)",
@@ -19,7 +21,9 @@ ELCOL = {0: "Color(0.909804, 0.333333, 0.168627, 1)", 1: "Color(0.227451, 0.5529
          6: "Color(0.94902, 0.835294, 0.541176, 1)"}
 EFFECT_SCRIPTS = {
     "damage": "damage_effect", "heal": "heal_effect", "shield": "shield_effect", "status": "apply_status_effect",
-    "turn": "turn_shift_effect", "energy": "energy_effect", "sp": "skill_point_effect", "cleanse": "cleanse_effect"}
+    "turn": "turn_shift_effect", "energy": "energy_effect", "sp": "skill_point_effect", "cleanse": "cleanse_effect",
+    "hp_cost": "hp_cost_effect", "revive": "revive_effect", "summon": "summon_effect", "maxhp": "max_hp_damage_effect",
+    "tough_pct": "toughness_damage_effect"}
 
 
 class Tres:
@@ -94,6 +98,17 @@ def effect_list(t, effects, prefix="Effect"):
             props.append(("amount", p["amount"]))
         elif etype == "cleanse":
             props.append(("count", p.get("count", 1)))
+        elif etype == "hp_cost":
+            props.append(("current_hp_ratio", f(p["ratio"])))
+        elif etype == "revive":
+            props += [("hp_ratio", f(p["ratio"])), ("max_uses", p.get("uses", 1))]
+        elif etype == "summon":
+            props += [("name_key", '"%s"' % p["name_key"]), ("letter", '"%s"' % p["letter"]), ("color", p["color"]),
+                      ("speed", f(p["speed"])), ("hp_ratio", f(p["hp_ratio"])),
+                      ("skill", t.ext_id("Resource", res("data/skills/%s.tres" % p["skill"]))), ("turns", p["turns"])]
+            if p.get("only_if_absent"): props.append(("only_if_absent", "true"))
+        elif etype in ("maxhp", "tough_pct"):
+            props.append(("ratio", f(p["ratio"])))
         refs.append(t.sub("%s_%d" % (prefix, i + 1), res("systems/skill_effects/%s.gd" % EFFECT_SCRIPTS[etype]), props))
     return "Array[%s]([%s])" % (base, ", ".join(refs))
 
@@ -138,20 +153,23 @@ def opener(sid, element, rng, arc, cd):
             ("range_px", f(rng)), ("arc_degrees", f(arc)), ("cooldown_sec", f(cd))])
 
 
-def technique(sid, kind, action, effects, distance=4.0, radius=2.0, duration=8.0, speed=0.0):
+def technique(sid, kind, action, effects, distance=4.0, radius=2.0, duration=8.0, speed=0.0, force_adv=False):
     t = Tres("TechniqueData", res("systems/resources/technique_data.gd"))
     kinds = {"NEXT_BATTLE": 0, "MAP_ENEMIES": 1, "EXPLORATION": 2}
-    actions = {"NONE": 0, "PHASE_DASH": 1, "FIREWORK_DAZE": 2, "INVISIBILITY": 3}
+    actions = {"NONE": 0, "PHASE_DASH": 1, "FIREWORK_DAZE": 2, "INVISIBILITY": 3, "DASH_TRAIL": 4, "ARROW": 5, "TRAP": 6,
+               "SPEED_BOOST": 7, "REVEAL_SECRETS": 8, "HEAL_TEAM": 9, "LONG_DASH": 10, "MAGNET": 11,
+               "REVEAL_ENEMIES": 12, "RETURN_TO_REST": 13}
     props = [("id", '&"%s"' % sid), ("name_key", '"SKILL_%s"' % sid.upper()), ("desc_key", '"SKILL_%s_DESC"' % sid.upper()),
              ("kind", kinds[kind]), ("battle_start_effects", effect_list(t, effects)), ("map_action", actions[action]),
              ("distance_tiles", f(distance)), ("radius_tiles", f(radius)), ("duration_sec", f(duration)), ("speed_bonus", f(speed))]
+    if force_adv: props.append(("marks_force_advantage", "true"))
     t.write("data/skills/%s.tres" % sid, props)
 
 
 def character(cid, rarity, element, path, energy, lv1, lv80, skins, eidolons, gacha=True):
     t = Tres("CharacterData", res("systems/resources/character_data.gd"))
     stats = res("systems/resources/stat_block.gd")
-    keys = ["hp", "atk", "def", "spd", "crit_rate", "crit_dmg", "break_effect", "energy_regen", "effect_hit"]
+    keys = ["hp", "atk", "def", "spd", "crit_rate", "crit_dmg", "break_effect", "energy_regen", "effect_hit", "outgoing_healing"]
     s1 = t.sub("Stats_lv1", stats, [(k, f(v)) for k, v in zip(keys, lv1)])
     s80 = t.sub("Stats_lv80", stats, [(k, f(v)) for k, v in zip(keys, lv80)])
     skin_refs = [t.sub("Skin_%s" % sk, res("systems/resources/character_skin.gd"),
@@ -185,102 +203,107 @@ def character(cid, rarity, element, path, energy, lv1, lv80, skins, eidolons, ga
     t.write("data/characters/%s.tres" % cid, props)
 
 
-BUFF_COL = "Color(1, 0.75, 0.4, 1)"
-# ---------------- Hiệu ứng trạng thái ----------------
-status("shield", "buff", "Kh", "Color(0.85, 0.9, 1, 1)", dur=2, ignore=True, shield=True)
-status("soul_resonance", "buff", "CH", ELCOL[6], dur=2, stacks=2, add=True, ignore=True, mods=[("ATK", 0, 0.2)])
-status("soul_resonance_e1", "buff", "CH", ELCOL[6], dur=2, stacks=3, add=True, ignore=True, mods=[("ATK", 0, 0.2)])
-status("mira_mist", "buff", "SD", ELCOL[1], dur=2, ignore=True, hot=0.06)
-status("kiri_kindle", "buff", "TB", ELCOL[0], dur=2, ignore=True, mods=[("ATK", 0, 0.2)])
-status("kiri_kindle_e1", "buff", "TB", ELCOL[0], dur=2, ignore=True, mods=[("ATK", 0, 0.3)])
-status("kiri_kindle_e6", "buff", "TB", ELCOL[0], dur=2, ignore=True, mods=[("ATK", 0, 0.3), ("SPD", 0, 0.1)])
-status("kiri_festival", "buff", "LH", BUFF_COL, dur=2, ignore=True, mods=[("DAMAGE_BONUS", 0.2, 0)])
-status("kiri_rhythm", "buff", "NL", BUFF_COL, dur=99, stacks=3, add=True, ignore=True)
-status("kiri_firework_burn", "debuff", "TĐ", ELCOL[0], dur=2, chance=1.0, dot=(3, EL["fire"], 0.5))
-status("garren_taunt", "buff", "KK", ELCOL[5], dur=1, ignore=True, taunt=True)
-status("nyx_leak", "debuff", "RĐ", ELCOL[2], dur=2, chance=1.0, dot=(3, EL["lightning"], 0.5))
-status("nyx_short_circuit", "debuff", "ĐM", ELCOL[2], dur=2, chance=1.0, mods=[("DEF_REDUCTION", 0.15, 0)])
-status("nyx_static", "debuff", "TĐi", ELCOL[2], dur=2, chance=1.0, mods=[("VULNERABILITY", 0.15, 0)])
-status("nyx_slow", "debuff", "CH", "Color(0.6, 0.7, 1, 1)", dur=1, chance=1.0, mods=[("SPD", 0, -0.1)])
+def build_phase6():
+    BUFF_COL = "Color(1, 0.75, 0.4, 1)"
+    # ---------------- Hiệu ứng trạng thái ----------------
+    status("shield", "buff", "Kh", "Color(0.85, 0.9, 1, 1)", dur=2, ignore=True, shield=True)
+    status("soul_resonance", "buff", "CH", ELCOL[6], dur=2, stacks=2, add=True, ignore=True, mods=[("ATK", 0, 0.2)])
+    status("soul_resonance_e1", "buff", "CH", ELCOL[6], dur=2, stacks=3, add=True, ignore=True, mods=[("ATK", 0, 0.2)])
+    status("mira_mist", "buff", "SD", ELCOL[1], dur=2, ignore=True, hot=0.06)
+    status("kiri_kindle", "buff", "TB", ELCOL[0], dur=2, ignore=True, mods=[("ATK", 0, 0.2)])
+    status("kiri_kindle_e1", "buff", "TB", ELCOL[0], dur=2, ignore=True, mods=[("ATK", 0, 0.3)])
+    status("kiri_kindle_e6", "buff", "TB", ELCOL[0], dur=2, ignore=True, mods=[("ATK", 0, 0.3), ("SPD", 0, 0.1)])
+    status("kiri_festival", "buff", "LH", BUFF_COL, dur=2, ignore=True, mods=[("DAMAGE_BONUS", 0.2, 0)])
+    status("kiri_rhythm", "buff", "NL", BUFF_COL, dur=99, stacks=3, add=True, ignore=True)
+    status("kiri_firework_burn", "debuff", "TĐ", ELCOL[0], dur=2, chance=1.0, dot=(3, EL["fire"], 0.5))
+    status("garren_taunt", "buff", "KK", ELCOL[5], dur=1, ignore=True, taunt=True)
+    status("nyx_leak", "debuff", "RĐ", ELCOL[2], dur=2, chance=1.0, dot=(3, EL["lightning"], 0.5))
+    status("nyx_short_circuit", "debuff", "ĐM", ELCOL[2], dur=2, chance=1.0, mods=[("DEF_REDUCTION", 0.15, 0)])
+    status("nyx_static", "debuff", "TĐi", ELCOL[2], dur=2, chance=1.0, mods=[("VULNERABILITY", 0.15, 0)])
+    status("nyx_slow", "debuff", "CH", "Color(0.6, 0.7, 1, 1)", dur=1, chance=1.0, mods=[("SPD", 0, -0.1)])
 
-# ---------------- Kỹ năng ----------------
-# Nhân vật chính (Hồn, Hủy Diệt) – theo mẫu mục 7.
-skill("traveler_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
-skill("traveler_skill", "SKILL", "BLAST_ENEMY", [("damage", {"mult": 1.25, "adj": 0.5, "tough": 20, "tough_adj": 10})], sp=-1, en=30)
-skill("traveler_ultimate_single", "ULTIMATE", "SINGLE_ENEMY", [("damage", {"mult": 4.5, "tough": 30})], en=5)
-skill("traveler_ultimate", "ULTIMATE", "BLAST_ENEMY", [("damage", {"mult": 2.7, "adj": 1.6, "tough": 30, "tough_adj": 20})],
-      en=5, alternate="traveler_ultimate_single")
-# Mira (Nước, Trù Phú).
-skill("mira_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
-skill("mira_skill", "SKILL", "SINGLE_ALLY", [("heal", {"mult": 0.4, "flat": 80}), ("cleanse", {"count": 1})], sp=-1, en=30)
-skill("mira_ultimate", "ULTIMATE", "ALL_ALLIES", [("heal", {"mult": 0.3, "flat": 60}), ("cleanse", {"count": 1})], en=5)
-skill("mira_talent_heal", "FOLLOW_UP", "SINGLE_ALLY", [("heal", {"target_max_hp": True, "mult": 0.15})])
-# Kiri (Lửa, Hòa Hợp).
-skill("kiri_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
-skill("kiri_skill", "SKILL", "SINGLE_ALLY", [("turn", {"amount": 0.5}), ("status", {"status": "kiri_kindle"})],
-      sp=-1, en=30, self_ok=False)
-skill("kiri_ultimate", "ULTIMATE", "ALL_ENEMIES", [("damage", {"mult": 0.6, "tough": 10}),
-      ("status", {"status": "kiri_festival", "scope": "ALL_ALLIES"})], en=5)
-# Garren (Mộc, Bảo Hộ).
-skill("garren_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"stat": "DEF", "mult": 1.0, "tough": 10})], sp=1, en=20)
-skill("garren_skill", "SKILL", "SELF", [("shield", {"scope": "ALL_ALLIES", "mult": 0.3, "flat": 80, "status": "shield"}),
-      ("status", {"status": "garren_taunt", "scope": "SELF"})], sp=-1, en=30)
-skill("garren_ultimate", "ULTIMATE", "ALL_ENEMIES", [("damage", {"stat": "DEF", "mult": 0.9, "tough": 20}),
-      ("turn", {"amount": -0.15})], en=5)
-skill("garren_counter", "FOLLOW_UP", "SINGLE_ENEMY", [("damage", {"stat": "DEF", "mult": 0.5, "tough": 10})])
-skill("garren_counter_e6", "FOLLOW_UP", "SINGLE_ENEMY", [("damage", {"stat": "DEF", "mult": 0.75, "tough": 10}),
-      ("turn", {"amount": -0.1})])
-# Nyx (Sét, Hư Vô).
-skill("nyx_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
-skill("nyx_skill", "SKILL", "SINGLE_ENEMY", [("damage", {"mult": 0.6, "tough": 20}),
-      ("status", {"status": "nyx_leak", "base_mult": 1.0}), ("status", {"status": "nyx_short_circuit"})], sp=-1, en=30)
-skill("nyx_ultimate", "ULTIMATE", "ALL_ENEMIES", [("damage", {"mult": 0.7, "tough": 20}), ("status", {"status": "nyx_static"})], en=5)
-# Quái (dữ liệu cũ chuyển sang hiệu ứng ghép).
-skill("warp_sprout_bite", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0})])
-skill("wandering_shade_touch", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 0.9})])
-skill("wandering_shade_wail", "SKILL", "ALL_ENEMIES", [("damage", {"mult": 0.45})])
-skill("rusted_knight_slash", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0})])
-skill("rusted_knight_sweep", "SKILL", "BLAST_ENEMY", [("damage", {"mult": 0.7, "adj": 0.4})])
-skill("training_dummy_poke", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 0.05})])
+    # ---------------- Kỹ năng ----------------
+    # Nhân vật chính (Hồn, Hủy Diệt) – theo mẫu mục 7.
+    skill("traveler_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
+    skill("traveler_skill", "SKILL", "BLAST_ENEMY", [("damage", {"mult": 1.25, "adj": 0.5, "tough": 20, "tough_adj": 10})], sp=-1, en=30)
+    skill("traveler_ultimate_single", "ULTIMATE", "SINGLE_ENEMY", [("damage", {"mult": 4.5, "tough": 30})], en=5)
+    skill("traveler_ultimate", "ULTIMATE", "BLAST_ENEMY", [("damage", {"mult": 2.7, "adj": 1.6, "tough": 30, "tough_adj": 20})],
+          en=5, alternate="traveler_ultimate_single")
+    # Mira (Nước, Trù Phú).
+    skill("mira_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
+    skill("mira_skill", "SKILL", "SINGLE_ALLY", [("heal", {"mult": 0.4, "flat": 80}), ("cleanse", {"count": 1})], sp=-1, en=30)
+    skill("mira_ultimate", "ULTIMATE", "ALL_ALLIES", [("heal", {"mult": 0.3, "flat": 60}), ("cleanse", {"count": 1})], en=5)
+    skill("mira_talent_heal", "FOLLOW_UP", "SINGLE_ALLY", [("heal", {"target_max_hp": True, "mult": 0.15})])
+    # Kiri (Lửa, Hòa Hợp).
+    skill("kiri_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
+    skill("kiri_skill", "SKILL", "SINGLE_ALLY", [("turn", {"amount": 0.5}), ("status", {"status": "kiri_kindle"})],
+          sp=-1, en=30, self_ok=False)
+    skill("kiri_ultimate", "ULTIMATE", "ALL_ENEMIES", [("damage", {"mult": 0.6, "tough": 10}),
+          ("status", {"status": "kiri_festival", "scope": "ALL_ALLIES"})], en=5)
+    # Garren (Mộc, Bảo Hộ).
+    skill("garren_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"stat": "DEF", "mult": 1.0, "tough": 10})], sp=1, en=20)
+    skill("garren_skill", "SKILL", "SELF", [("shield", {"scope": "ALL_ALLIES", "mult": 0.3, "flat": 80, "status": "shield"}),
+          ("status", {"status": "garren_taunt", "scope": "SELF"})], sp=-1, en=30)
+    skill("garren_ultimate", "ULTIMATE", "ALL_ENEMIES", [("damage", {"stat": "DEF", "mult": 0.9, "tough": 20}),
+          ("turn", {"amount": -0.15})], en=5)
+    skill("garren_counter", "FOLLOW_UP", "SINGLE_ENEMY", [("damage", {"stat": "DEF", "mult": 0.5, "tough": 10})])
+    skill("garren_counter_e6", "FOLLOW_UP", "SINGLE_ENEMY", [("damage", {"stat": "DEF", "mult": 0.75, "tough": 10}),
+          ("turn", {"amount": -0.1})])
+    # Nyx (Sét, Hư Vô).
+    skill("nyx_basic", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0, "tough": 10})], sp=1, en=20)
+    skill("nyx_skill", "SKILL", "SINGLE_ENEMY", [("damage", {"mult": 0.6, "tough": 20}),
+          ("status", {"status": "nyx_leak", "base_mult": 1.0}), ("status", {"status": "nyx_short_circuit"})], sp=-1, en=30)
+    skill("nyx_ultimate", "ULTIMATE", "ALL_ENEMIES", [("damage", {"mult": 0.7, "tough": 20}), ("status", {"status": "nyx_static"})], en=5)
+    # Quái (dữ liệu cũ chuyển sang hiệu ứng ghép).
+    skill("warp_sprout_bite", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0})])
+    skill("wandering_shade_touch", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 0.9})])
+    skill("wandering_shade_wail", "SKILL", "ALL_ENEMIES", [("damage", {"mult": 0.45})])
+    skill("rusted_knight_slash", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 1.0})])
+    skill("rusted_knight_sweep", "SKILL", "BLAST_ENEMY", [("damage", {"mult": 0.7, "adj": 0.4})])
+    skill("training_dummy_poke", "BASIC", "SINGLE_ENEMY", [("damage", {"mult": 0.05})])
 
-# ---------------- Đòn Mở Màn ----------------
-opener("traveler_opener", EL["soul"], 120, 120, 0.6)
-opener("mira_opener", EL["water"], 150, 60, 0.7)
-opener("kiri_opener", EL["fire"], 130, 90, 0.6)
-opener("garren_opener", EL["wood"], 110, 140, 0.8)
-opener("nyx_opener", EL["lightning"], 140, 70, 0.5)
+    # ---------------- Đòn Mở Màn ----------------
+    opener("traveler_opener", EL["soul"], 120, 120, 0.6)
+    opener("mira_opener", EL["water"], 150, 60, 0.7)
+    opener("kiri_opener", EL["fire"], 130, 90, 0.6)
+    opener("garren_opener", EL["wood"], 110, 140, 0.8)
+    opener("nyx_opener", EL["lightning"], 140, 70, 0.5)
 
-# ---------------- Bí Kỹ ----------------
-technique("traveler_technique", "EXPLORATION", "PHASE_DASH", [("turn", {"scope": "SELF", "amount": 0.25})], distance=4)
-technique("mira_technique", "NEXT_BATTLE", "NONE", [("status", {"scope": "ALL_ALLIES", "status": "mira_mist"})])
-technique("kiri_technique", "MAP_ENEMIES", "FIREWORK_DAZE",
-          [("status", {"scope": "ALL_ENEMIES", "status": "kiri_firework_burn", "base_mult": 1.0})], distance=3, radius=2.5, duration=8)
-technique("garren_technique", "NEXT_BATTLE", "NONE",
-          [("shield", {"scope": "ALL_ALLIES", "mult": 0.25, "flat": 60, "status": "shield"})])
-technique("nyx_technique", "EXPLORATION", "INVISIBILITY", [], duration=10, speed=0.2)
+    # ---------------- Bí Kỹ ----------------
+    technique("traveler_technique", "EXPLORATION", "PHASE_DASH", [("turn", {"scope": "SELF", "amount": 0.25})], distance=4)
+    technique("mira_technique", "NEXT_BATTLE", "NONE", [("status", {"scope": "ALL_ALLIES", "status": "mira_mist"})])
+    technique("kiri_technique", "MAP_ENEMIES", "FIREWORK_DAZE",
+              [("status", {"scope": "ALL_ENEMIES", "status": "kiri_firework_burn", "base_mult": 1.0})], distance=3, radius=2.5, duration=8)
+    technique("garren_technique", "NEXT_BATTLE", "NONE",
+              [("shield", {"scope": "ALL_ALLIES", "mult": 0.25, "flat": 60, "status": "shield"})])
+    technique("nyx_technique", "EXPLORATION", "INVISIBILITY", [], duration=10, speed=0.2)
 
-# ---------------- Nhân vật ----------------
-GOLD = ELCOL[6]
-STD_E35 = [{"bonus": 0.15, "kinds": ["BASIC", "SKILL"]}, {"bonus": 0.15, "kinds": ["ULTIMATE"]}]
-character("traveler", 5, "soul", "destruction", 120,
-          (160, 80, 60, 100, 0.05, 0.5, 0, 1, 0), (1200, 620, 460, 100, 0.05, 0.5, 0, 1, 0),
-          [("male", "CHARSEL_MALE", "Color(0.168627, 0.298039, 0.494118, 1)", GOLD),
-           ("female", "CHARSEL_FEMALE", "Color(0.494118, 0.168627, 0.360784, 1)", GOLD)],
-          [{}, {}, STD_E35[0], {}, STD_E35[1], {}], gacha=False)
-character("mira", 4, "water", "abundance", 100,
-          (150, 60, 55, 105, 0.05, 0.5, 0, 1, 0), (1100, 480, 420, 105, 0.05, 0.5, 0, 1, 0),
-          [("default", "", "Color(0.227, 0.553, 0.871, 1)", "Color(0.8, 0.93, 1, 1)")],
-          [{"bonus": 0.1, "kinds": ["SKILL"]}, {}, STD_E35[0], {}, STD_E35[1], {}])
-character("kiri", 4, "fire", "harmony", 110,
-          (140, 70, 50, 110, 0.05, 0.5, 0, 1, 0), (1050, 540, 400, 110, 0.05, 0.5, 0, 1, 0),
-          [("default", "", "Color(0.91, 0.333, 0.169, 1)", "Color(1, 0.85, 0.5, 1)")],
-          [{}, {}, STD_E35[0], {}, STD_E35[1], {}])
-character("garren", 4, "wood", "preservation", 120,
-          (200, 55, 80, 92, 0.05, 0.5, 0, 1, 0), (1500, 420, 600, 92, 0.05, 0.5, 0, 1, 0),
-          [("default", "", "Color(0.18, 0.545, 0.341, 1)", "Color(0.75, 0.95, 0.6, 1)")],
-          [{"bonus": 0.1, "kinds": ["SKILL"]}, {}, STD_E35[0], {}, STD_E35[1], {}])
-character("nyx", 4, "lightning", "nihility", 110,
-          (135, 75, 50, 106, 0.05, 0.5, 0, 1, 0.1), (1000, 580, 380, 106, 0.05, 0.5, 0, 1, 0.1),
-          [("default", "", "Color(0.4, 0.22, 0.6, 1)", "Color(0.85, 0.7, 1, 1)")],
-          [{}, {}, STD_E35[0], {}, STD_E35[1], {"mods": [("EFFECT_HIT", 0.2, 0)]}])
-print("Xong: dữ liệu 5 nhân vật.")
+    # ---------------- Nhân vật ----------------
+    GOLD = ELCOL[6]
+    STD_E35 = [{"bonus": 0.15, "kinds": ["BASIC", "SKILL"]}, {"bonus": 0.15, "kinds": ["ULTIMATE"]}]
+    character("traveler", 5, "soul", "destruction", 120,
+              (160, 80, 60, 100, 0.05, 0.5, 0, 1, 0), (1200, 620, 460, 100, 0.05, 0.5, 0, 1, 0),
+              [("male", "CHARSEL_MALE", "Color(0.168627, 0.298039, 0.494118, 1)", GOLD),
+               ("female", "CHARSEL_FEMALE", "Color(0.494118, 0.168627, 0.360784, 1)", GOLD)],
+              [{}, {}, STD_E35[0], {}, STD_E35[1], {}], gacha=False)
+    character("mira", 4, "water", "abundance", 100,
+              (150, 60, 55, 105, 0.05, 0.5, 0, 1, 0), (1100, 480, 420, 105, 0.05, 0.5, 0, 1, 0),
+              [("default", "", "Color(0.227, 0.553, 0.871, 1)", "Color(0.8, 0.93, 1, 1)")],
+              [{"bonus": 0.1, "kinds": ["SKILL"]}, {}, STD_E35[0], {}, STD_E35[1], {}])
+    character("kiri", 4, "fire", "harmony", 110,
+              (140, 70, 50, 110, 0.05, 0.5, 0, 1, 0), (1050, 540, 400, 110, 0.05, 0.5, 0, 1, 0),
+              [("default", "", "Color(0.91, 0.333, 0.169, 1)", "Color(1, 0.85, 0.5, 1)")],
+              [{}, {}, STD_E35[0], {}, STD_E35[1], {}])
+    character("garren", 4, "wood", "preservation", 120,
+              (200, 55, 80, 92, 0.05, 0.5, 0, 1, 0), (1500, 420, 600, 92, 0.05, 0.5, 0, 1, 0),
+              [("default", "", "Color(0.18, 0.545, 0.341, 1)", "Color(0.75, 0.95, 0.6, 1)")],
+              [{"bonus": 0.1, "kinds": ["SKILL"]}, {}, STD_E35[0], {}, STD_E35[1], {}])
+    character("nyx", 4, "lightning", "nihility", 110,
+              (135, 75, 50, 106, 0.05, 0.5, 0, 1, 0.1), (1000, 580, 380, 106, 0.05, 0.5, 0, 1, 0.1),
+              [("default", "", "Color(0.4, 0.22, 0.6, 1)", "Color(0.85, 0.7, 1, 1)")],
+              [{}, {}, STD_E35[0], {}, STD_E35[1], {"mods": [("EFFECT_HIT", 0.2, 0)]}])
+    print("Xong: dữ liệu 5 nhân vật.")
+
+
+if __name__ == "__main__":
+    build_phase6()

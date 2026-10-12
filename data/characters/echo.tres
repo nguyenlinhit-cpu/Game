@@ -1,0 +1,105 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_character_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_character_skin"]
+[ext_resource type="Script" path="res://data/characters/scripts/echo_talent.gd" id="4_echo_talent"]
+[ext_resource type="Script" path="res://systems/resources/talent_data.gd" id="5_talent_data"]
+[ext_resource type="Script" path="res://systems/resources/eidolon_data.gd" id="6_eidolon_data"]
+[ext_resource type="Resource" path="res://data/skills/echo_basic.tres" id="7_echo_basic"]
+[ext_resource type="Resource" path="res://data/skills/echo_skill.tres" id="8_echo_skill"]
+[ext_resource type="Resource" path="res://data/skills/echo_ultimate.tres" id="9_echo_ultimate"]
+[ext_resource type="Resource" path="res://data/skills/echo_opener.tres" id="10_echo_opener"]
+[ext_resource type="Resource" path="res://data/skills/echo_technique.tres" id="11_echo_technique"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 142.0
+atk = 74.0
+def = 54.0
+spd = 108.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.1
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 1040.0
+atk = 560.0
+def = 400.0
+spd = 108.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.1
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Skin_default"]
+script = ExtResource("3_character_skin")
+skin_id = &"default"
+label_key = ""
+placeholder_color = Color(0.94902, 0.835294, 0.541176, 1)
+accent_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Talent"]
+script = ExtResource("5_talent_data")
+name_key = "TALENT_ECHO"
+desc_key = "TALENT_ECHO_DESC"
+script_class = ExtResource("4_echo_talent")
+
+[sub_resource type="Resource" id="Eidolon_1"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_ECHO_1"
+desc_key = "EIDOLON_ECHO_1_DESC"
+
+[sub_resource type="Resource" id="Eidolon_2"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_ECHO_2"
+desc_key = "EIDOLON_ECHO_2_DESC"
+
+[sub_resource type="Resource" id="Eidolon_3"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_ECHO_3"
+desc_key = "EIDOLON_ECHO_3_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([0, 1])
+
+[sub_resource type="Resource" id="Eidolon_4"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_ECHO_4"
+desc_key = "EIDOLON_ECHO_4_DESC"
+
+[sub_resource type="Resource" id="Eidolon_5"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_ECHO_5"
+desc_key = "EIDOLON_ECHO_5_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([2])
+
+[sub_resource type="Resource" id="Eidolon_6"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_ECHO_6"
+desc_key = "EIDOLON_ECHO_6_DESC"
+
+[resource]
+script = ExtResource("1_character_data")
+id = &"echo"
+name_key = "CHAR_ECHO_NAME"
+rarity = 4
+element = 6
+path = 4
+skins = Array[ExtResource("3_character_skin")]([SubResource("Skin_default")])
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+max_energy = 110.0
+basic_attack = ExtResource("7_echo_basic")
+skill = ExtResource("8_echo_skill")
+ultimate = ExtResource("9_echo_ultimate")
+talent = SubResource("Talent")
+eidolons = Array[ExtResource("6_eidolon_data")]([SubResource("Eidolon_1"), SubResource("Eidolon_2"), SubResource("Eidolon_3"), SubResource("Eidolon_4"), SubResource("Eidolon_5"), SubResource("Eidolon_6")])
+opener = ExtResource("10_echo_opener")
+technique = ExtResource("11_echo_technique")

@@ -45,6 +45,15 @@ var status_effects: Array[StatusEffectInstance] = []
 var shield_hp: float = 0.0
 ## Tinh Mệnh tăng hệ số theo loại kỹ năng: { SkillData.Kind: phần cộng thêm }.
 var skill_multiplier_bonus: Dictionary = {}
+## Đặc tính thay kỹ năng tạm thời (tư thế Celestine, Chiến kỹ cường hóa của Ignar): { Kind: SkillData }.
+var skill_overrides: Dictionary = {}
+## Vật triệu hồi: không chiếm chỗ nhân vật, quái không nhắm, tự hành động bằng summon_skill.
+var is_summon: bool = false
+var summon_owner: BattleUnit
+var summon_skill: SkillData
+var summon_turns_left: int = 0
+## Chỗ để Đặc tính/Tinh Mệnh ghi tham số riêng (vd. "hp_cost_reduction", "revive_uses_bonus").
+var custom: Dictionary = {}
 
 
 static func create_ally(data: CharacterData, unit_level: int, unit_slot: int,
@@ -67,6 +76,34 @@ static func create_ally(data: CharacterData, unit_level: int, unit_slot: int,
 	if skin:
 		unit.color = skin.placeholder_color
 		unit.accent_color = skin.accent_color
+	return unit
+
+
+## Vật triệu hồi phe ta (vd. Cây Sự Sống của Sylvaine).
+static func create_summon(owner_unit: BattleUnit, summon_name: String, unit_letter: String, unit_color: Color,
+		speed: float, hp_ratio: float, skill: SkillData, turns: int) -> BattleUnit:
+	var unit := BattleUnit.new()
+	unit.side = Faction.ALLY
+	unit.is_summon = true
+	unit.summon_owner = owner_unit
+	unit.summon_skill = skill
+	unit.summon_turns_left = turns
+	unit.level = owner_unit.level
+	unit.slot = 10
+	unit.id = StringName("summon_%s" % owner_unit.id)
+	unit.display_name = summon_name
+	unit.letter = unit_letter
+	unit.color = unit_color
+	unit.accent_color = unit_color.lightened(0.5)
+	unit.element = owner_unit.element
+	unit.stats = Stats.new()
+	unit.stats.level = owner_unit.level
+	unit.stats.set_base(Stats.Type.HP, owner_unit.get_max_hp() * hp_ratio)
+	unit.stats.set_base(Stats.Type.ATK, owner_unit.stats.get_value(Stats.Type.ATK))
+	unit.stats.set_base(Stats.Type.DEF, owner_unit.stats.get_value(Stats.Type.DEF))
+	unit.stats.set_base(Stats.Type.SPD, speed)
+	unit.stats.set_base(Stats.Type.ENERGY_REGEN, 1.0)
+	unit.hp = unit.get_max_hp()
 	return unit
 
 
@@ -118,6 +155,8 @@ func get_action_value() -> float:
 
 
 func get_skill(kind: SkillData.Kind) -> SkillData:
+	if skill_overrides.has(kind):
+		return skill_overrides[kind]
 	if character == null:
 		return null
 	match kind:
@@ -127,7 +166,15 @@ func get_skill(kind: SkillData.Kind) -> SkillData:
 
 
 func is_ultimate_ready() -> bool:
-	return is_ally() and is_alive() and max_energy > 0.0 and energy >= max_energy
+	return is_ally() and not is_summon and is_alive() and max_energy > 0.0 and energy >= max_energy
+
+
+func count_debuffs() -> int:
+	var count := 0
+	for instance in status_effects:
+		if instance.data.kind == StatusEffectData.Kind.DEBUFF:
+			count += 1
+	return count
 
 
 ## Trúng đòn: khiên chặn trước, phần còn lại trừ máu. Trả về { "hp_lost", "absorbed" }.

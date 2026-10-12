@@ -1,0 +1,568 @@
+keys,vi,en
+BATTLE_BLAST,Nổ!,Nổ!
+BATTLE_INTERCEPTED,Đỡ thay!,Đỡ thay!
+BATTLE_SUMMONED,Triệu hồi!,Triệu hồi!
+CHAR_ALDRIC_NAME,Aldric,Aldric
+CHAR_CELESTINE_NAME,Celestine,Celestine
+CHAR_ECHO_NAME,Echo,Echo
+CHAR_EMBER_NAME,Ember,Ember
+CHAR_FENNA_NAME,Fenna,Fenna
+CHAR_IGNAR_NAME,Ignar,Ignar
+CHAR_KESTREL_NAME,Kestrel,Kestrel
+CHAR_MARISOL_NAME,Marisol,Marisol
+CHAR_NERIS_NAME,Neris,Neris
+CHAR_ORRIN_NAME,Orrin,Orrin
+CHAR_PIP_NAME,Pip,Pip
+CHAR_QUILL_NAME,Quill,Quill
+CHAR_RAIKO_NAME,Raiko,Raiko
+CHAR_ROOK_NAME,Rook,Rook
+CHAR_SELKA_NAME,Selka,Selka
+CHAR_SYLVAINE_NAME,Sylvaine,Sylvaine
+CHAR_VAEL_NAME,Vael,Vael
+CHAR_VESPER_NAME,Vesper,Vesper
+CHAR_WISP_NAME,Wisp,Wisp
+CHAR_ZEPHYRA_NAME,Zephyra,Zephyra
+EIDOLON_ALDRIC_1,Phản Xạ Nhanh,Phản Xạ Nhanh
+EIDOLON_ALDRIC_1_DESC,Đỡ thay khi đòn từ 20% máu tối đa.,Đỡ thay khi đòn từ 20% máu tối đa.
+EIDOLON_ALDRIC_2,Cứng Như Đá,Cứng Như Đá
+EIDOLON_ALDRIC_2_DESC,Đòn đỡ thay giảm 35%.,Đòn đỡ thay giảm 35%.
+EIDOLON_ALDRIC_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_ALDRIC_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_ALDRIC_4,Gió Đáp Trả,Gió Đáp Trả
+EIDOLON_ALDRIC_4_DESC,Đỡ thay xong được kéo lượt 15%.,Đỡ thay xong được kéo lượt 15%.
+EIDOLON_ALDRIC_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_ALDRIC_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_ALDRIC_6,Không Ai Bị Bỏ Lại,Không Ai Bị Bỏ Lại
+EIDOLON_ALDRIC_6_DESC,Đỡ thay tối đa 2 lần mỗi lượt quái.,Đỡ thay tối đa 2 lần mỗi lượt quái.
+EIDOLON_CELESTINE_1,Lời Thề Đầu,Lời Thề Đầu
+EIDOLON_CELESTINE_1_DESC,Đổi tư thế cho thêm 15 năng lượng.,Đổi tư thế cho thêm 15 năng lượng.
+EIDOLON_CELESTINE_2,Hai Mảnh Một Lòng,Hai Mảnh Một Lòng
+EIDOLON_CELESTINE_2_DESC,Tư thế Phán Xử Tăng sát thương +20%.,Tư thế Phán Xử Tăng sát thương +20%.
+EIDOLON_CELESTINE_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_CELESTINE_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_CELESTINE_4,Người Canh Không Ngủ,Người Canh Không Ngủ
+EIDOLON_CELESTINE_4_DESC,Tư thế Canh Giữ: đầu lượt hồi 8% máu tối đa.,Tư thế Canh Giữ: đầu lượt hồi 8% máu tối đa.
+EIDOLON_CELESTINE_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_CELESTINE_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_CELESTINE_6,Nhãn Toàn Tri,Nhãn Toàn Tri
+EIDOLON_CELESTINE_6_DESC,Nhãn Phán Quyết bỏ qua 30% Phòng Thủ quái.,Nhãn Phán Quyết bỏ qua 30% Phòng Thủ quái.
+EIDOLON_ECHO_1,Gương Thứ Hai,Gương Thứ Hai
+EIDOLON_ECHO_1_DESC,Rạn Hồn kéo dài 3 lượt.,Rạn Hồn kéo dài 3 lượt.
+EIDOLON_ECHO_2,Tiếng Vọng Kép,Tiếng Vọng Kép
+EIDOLON_ECHO_2_DESC,Vang Vọng tối đa 2 lần mỗi lượt.,Vang Vọng tối đa 2 lần mỗi lượt.
+EIDOLON_ECHO_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_ECHO_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_ECHO_4,Mặt Nạ,Mặt Nạ
+EIDOLON_ECHO_4_DESC,Bản sao từ Vang Vọng kéo dài thêm 1 lượt.,Bản sao từ Vang Vọng kéo dài thêm 1 lượt.
+EIDOLON_ECHO_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_ECHO_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_ECHO_6,Bản Thể,Bản Thể
+EIDOLON_ECHO_6_DESC,Vang Vọng cũng sao chép hiệu ứng xấu Echo tự gắn.,Vang Vọng cũng sao chép hiệu ứng xấu Echo tự gắn.
+EIDOLON_EMBER_1,Than Còn Nóng,Than Còn Nóng
+EIDOLON_EMBER_1_DESC,Vụ nổ giảm khiên 10 mỗi quái.,Vụ nổ giảm khiên 10 mỗi quái.
+EIDOLON_EMBER_2,Phản Ứng Dây Chuyền,Phản Ứng Dây Chuyền
+EIDOLON_EMBER_2_DESC,Vụ nổ hạ quái thì nổ tiếp (tối đa 2 lần mỗi hành động).,Vụ nổ hạ quái thì nổ tiếp (tối đa 2 lần mỗi hành động).
+EIDOLON_EMBER_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_EMBER_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_EMBER_4,Mồi Lửa,Mồi Lửa
+EIDOLON_EMBER_4_DESC,Hạ quái hồi 10 năng lượng.,Hạ quái hồi 10 năng lượng.
+EIDOLON_EMBER_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_EMBER_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_EMBER_6,Siêu Tân Tinh,Siêu Tân Tinh
+EIDOLON_EMBER_6_DESC,Vụ nổ gây 80% Tấn Công.,Vụ nổ gây 80% Tấn Công.
+EIDOLON_FENNA_1,Mũi Tên Ba,Mũi Tên Ba
+EIDOLON_FENNA_1_DESC,Mũi Tên Thứ Hai bắn 2 mũi.,Mũi Tên Thứ Hai bắn 2 mũi.
+EIDOLON_FENNA_2,Ngắm Kỹ,Ngắm Kỹ
+EIDOLON_FENNA_2_DESC,Đòn phụ +20% Tỉ Lệ Bạo Kích.,Đòn phụ +20% Tỉ Lệ Bạo Kích.
+EIDOLON_FENNA_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_FENNA_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_FENNA_4,Kẻ Đi Săn,Kẻ Đi Săn
+EIDOLON_FENNA_4_DESC,Hạ quái thì +1 Điểm Chiến Kỹ (1 lần mỗi lượt).,Hạ quái thì +1 Điểm Chiến Kỹ (1 lần mỗi lượt).
+EIDOLON_FENNA_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_FENNA_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_FENNA_6,Ưng Trở Về,Ưng Trở Về
+EIDOLON_FENNA_6_DESC,Mũi Tên Thứ Hai kích hoạt cả với Chiến kỹ.,Mũi Tên Thứ Hai kích hoạt cả với Chiến kỹ.
+EIDOLON_IGNAR_1,Than Hồng,Than Hồng
+EIDOLON_IGNAR_1_DESC,Lò Rèn Tự Thiêu chỉ tiêu 10% máu hiện tại.,Lò Rèn Tự Thiêu chỉ tiêu 10% máu hiện tại.
+EIDOLON_IGNAR_2,Rèn Lại,Rèn Lại
+EIDOLON_IGNAR_2_DESC,Mỗi tầng Nhiệt Huyết còn tăng 3% Tỉ Lệ Bạo Kích.,Mỗi tầng Nhiệt Huyết còn tăng 3% Tỉ Lệ Bạo Kích.
+EIDOLON_IGNAR_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_IGNAR_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_IGNAR_4,Da Sắt,Da Sắt
+EIDOLON_IGNAR_4_DESC,Dưới 30% máu: Phòng Thủ +40%.,Dưới 30% máu: Phòng Thủ +40%.
+EIDOLON_IGNAR_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_IGNAR_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_IGNAR_6,Lò Không Tắt,Lò Không Tắt
+EIDOLON_IGNAR_6_DESC,Núi Lửa Bùng cho ngay 5 tầng Nhiệt Huyết.,Núi Lửa Bùng cho ngay 5 tầng Nhiệt Huyết.
+EIDOLON_KESTREL_1,Đà Bay,Đà Bay
+EIDOLON_KESTREL_1_DESC,Đủ 3 tầng thì Xoáy Liềm hoàn 1 Điểm Chiến Kỹ.,Đủ 3 tầng thì Xoáy Liềm hoàn 1 Điểm Chiến Kỹ.
+EIDOLON_KESTREL_2,Gió Không Ngừng,Gió Không Ngừng
+EIDOLON_KESTREL_2_DESC,Đánh thường chỉ mất 1 tầng.,Đánh thường chỉ mất 1 tầng.
+EIDOLON_KESTREL_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_KESTREL_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_KESTREL_4,Mắt Bão,Mắt Bão
+EIDOLON_KESTREL_4_DESC,Mỗi tầng Lốc Tích Tụ còn Tốc Độ +4%.,Mỗi tầng Lốc Tích Tụ còn Tốc Độ +4%.
+EIDOLON_KESTREL_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_KESTREL_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_KESTREL_6,Vượt Nứt,Vượt Nứt
+EIDOLON_KESTREL_6_DESC,Cuồng Phong tính như 1 lần Chiến kỹ cho Lốc Tích Tụ.,Cuồng Phong tính như 1 lần Chiến kỹ cho Lốc Tích Tụ.
+EIDOLON_MARISOL_1,Vỏ Ốc Dày,Vỏ Ốc Dày
+EIDOLON_MARISOL_1_DESC,Chia sẻ thêm 10% (thành 35%).,Chia sẻ thêm 10% (thành 35%).
+EIDOLON_MARISOL_2,Bến Đỗ,Bến Đỗ
+EIDOLON_MARISOL_2_DESC,Sát thương nhận qua chia sẻ giảm 30%.,Sát thương nhận qua chia sẻ giảm 30%.
+EIDOLON_MARISOL_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_MARISOL_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_MARISOL_4,Thuyền Không Chìm,Thuyền Không Chìm
+EIDOLON_MARISOL_4_DESC,"Một lần mỗi trận, nhận đòn chí mạng thì giữ lại 1 máu và hồi 30% máu tối đa.","Một lần mỗi trận, nhận đòn chí mạng thì giữ lại 1 máu và hồi 30% máu tối đa."
+EIDOLON_MARISOL_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_MARISOL_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_MARISOL_6,Thủy Triều Phản,Thủy Triều Phản
+EIDOLON_MARISOL_6_DESC,"Mỗi lần chia sẻ sát thương, gây 30% Phòng Thủ sát thương Nước lên kẻ tấn công.","Mỗi lần chia sẻ sát thương, gây 30% Phòng Thủ sát thương Nước lên kẻ tấn công."
+EIDOLON_NERIS_1,Hơi Thở Dài,Hơi Thở Dài
+EIDOLON_NERIS_1_DESC,Mỗi tầng +15% thay 12%.,Mỗi tầng +15% thay 12%.
+EIDOLON_NERIS_2,Áp Lực Sâu,Áp Lực Sâu
+EIDOLON_NERIS_2_DESC,Bạo kích sau khi có từ 3 tầng: +30% Sát thương bạo kích.,Bạo kích sau khi có từ 3 tầng: +30% Sát thương bạo kích.
+EIDOLON_NERIS_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_NERIS_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_NERIS_4,Mò Ngọc,Mò Ngọc
+EIDOLON_NERIS_4_DESC,Bạo kích hồi 8 năng lượng.,Bạo kích hồi 8 năng lượng.
+EIDOLON_NERIS_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_NERIS_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_NERIS_6,Ngọc Đen,Ngọc Đen
+EIDOLON_NERIS_6_DESC,Sóng Ngầm bỏ qua 20% Phòng Thủ quái.,Sóng Ngầm bỏ qua 20% Phòng Thủ quái.
+EIDOLON_ORRIN_1,Chú Thích,Chú Thích
+EIDOLON_ORRIN_1_DESC,Mỗi Điểm Chiến Kỹ tiêu thêm còn hoàn 10 năng lượng.,Mỗi Điểm Chiến Kỹ tiêu thêm còn hoàn 10 năng lượng.
+EIDOLON_ORRIN_2,Phụ Lục,Phụ Lục
+EIDOLON_ORRIN_2_DESC,Tiêu thêm tối đa 3 điểm (tối đa 206%).,Tiêu thêm tối đa 3 điểm (tối đa 206%).
+EIDOLON_ORRIN_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_ORRIN_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_ORRIN_4,Mục Lục,Mục Lục
+EIDOLON_ORRIN_4_DESC,Thư Tịch Khai Mở hoàn 1 Điểm Chiến Kỹ.,Thư Tịch Khai Mở hoàn 1 Điểm Chiến Kỹ.
+EIDOLON_ORRIN_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_ORRIN_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_ORRIN_6,Cuốn Sách Mất,Cuốn Sách Mất
+EIDOLON_ORRIN_6_DESC,Chiến kỹ tiêu đủ điểm thì giảm khiên gấp đôi.,Chiến kỹ tiêu đủ điểm thì giảm khiên gấp đôi.
+EIDOLON_PIP_1,Pin Lớn,Pin Lớn
+EIDOLON_PIP_1_DESC,Pin Dự Phòng cho 12 năng lượng.,Pin Dự Phòng cho 12 năng lượng.
+EIDOLON_PIP_2,Hai Cổng Sạc,Hai Cổng Sạc
+EIDOLON_PIP_2_DESC,Pin Dự Phòng sạc 2 đồng minh.,Pin Dự Phòng sạc 2 đồng minh.
+EIDOLON_PIP_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_PIP_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_PIP_4,Bolt Nâng Cấp,Bolt Nâng Cấp
+EIDOLON_PIP_4_DESC,Sạc Nhanh còn kéo lượt mục tiêu 15%.,Sạc Nhanh còn kéo lượt mục tiêu 15%.
+EIDOLON_PIP_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_PIP_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_PIP_6,Lò Phản Ứng Mini,Lò Phản Ứng Mini
+EIDOLON_PIP_6_DESC,Quá Áp hoàn 1 Điểm Chiến Kỹ.,Quá Áp hoàn 1 Điểm Chiến Kỹ.
+EIDOLON_QUILL_1,Liều Chuẩn,Liều Chuẩn
+EIDOLON_QUILL_1_DESC,Độc Hóa Thuốc hồi 20%.,Độc Hóa Thuốc hồi 20%.
+EIDOLON_QUILL_2,Pha Kép,Pha Kép
+EIDOLON_QUILL_2_DESC,Liều Đôi gắn Độc Quill lên 2 quái.,Liều Đôi gắn Độc Quill lên 2 quái.
+EIDOLON_QUILL_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_QUILL_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_QUILL_4,Kháng Sinh,Kháng Sinh
+EIDOLON_QUILL_4_DESC,Thuốc Giải Vạn Năng còn cho cả đội Kháng Hiệu Ứng +20% trong 2 lượt.,Thuốc Giải Vạn Năng còn cho cả đội Kháng Hiệu Ứng +20% trong 2 lượt.
+EIDOLON_QUILL_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_QUILL_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_QUILL_6,Thần Dược,Thần Dược
+EIDOLON_QUILL_6_DESC,Lượng hồi vượt máu tối đa chuyển thành khiên (tối đa 20% máu tối đa).,Lượng hồi vượt máu tối đa chuyển thành khiên (tối đa 20% máu tối đa).
+EIDOLON_RAIKO_1,Tên Thứ Nhất,Tên Thứ Nhất
+EIDOLON_RAIKO_1_DESC,Dấu Sấm kéo dài thêm 1 lượt.,Dấu Sấm kéo dài thêm 1 lượt.
+EIDOLON_RAIKO_2,Mắt Diều Hâu,Mắt Diều Hâu
+EIDOLON_RAIKO_2_DESC,Raiko +15% Tỉ Lệ Bạo Kích lên quái mang Dấu Sấm.,Raiko +15% Tỉ Lệ Bạo Kích lên quái mang Dấu Sấm.
+EIDOLON_RAIKO_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_RAIKO_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_RAIKO_4,Đuổi Theo,Đuổi Theo
+EIDOLON_RAIKO_4_DESC,Kéo lượt khi Dấu chuyển tăng lên 75%.,Kéo lượt khi Dấu chuyển tăng lên 75%.
+EIDOLON_RAIKO_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_RAIKO_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_RAIKO_6,Sét Đánh Hai Lần,Sét Đánh Hai Lần
+EIDOLON_RAIKO_6_DESC,Thiên Lôi Giáng lên quái mang Dấu Sấm đánh thêm 1 lần 60% Tấn Công.,Thiên Lôi Giáng lên quái mang Dấu Sấm đánh thêm 1 lần 60% Tấn Công.
+EIDOLON_ROOK_1,Nỗi Nhớ,Nỗi Nhớ
+EIDOLON_ROOK_1_DESC,Vào trận có sẵn 1 tầng Báo Thù.,Vào trận có sẵn 1 tầng Báo Thù.
+EIDOLON_ROOK_2,Cơn Giận Dồn,Cơn Giận Dồn
+EIDOLON_ROOK_2_DESC,Bị đánh trúng +8 năng lượng thêm.,Bị đánh trúng +8 năng lượng thêm.
+EIDOLON_ROOK_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_ROOK_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_ROOK_4,Gốc Vững,Gốc Vững
+EIDOLON_ROOK_4_DESC,Mỗi tầng Báo Thù còn Phòng Thủ +10%.,Mỗi tầng Báo Thù còn Phòng Thủ +10%.
+EIDOLON_ROOK_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_ROOK_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_ROOK_6,Cây Không Gục,Cây Không Gục
+EIDOLON_ROOK_6_DESC,"Một lần mỗi trận, khi ngã Rook đứng dậy với 30% máu.","Một lần mỗi trận, khi ngã Rook đứng dậy với 30% máu."
+EIDOLON_SELKA_1,Hương Bền,Hương Bền
+EIDOLON_SELKA_1_DESC,Hương Dũng Khí kéo dài 3 lượt.,Hương Dũng Khí kéo dài 3 lượt.
+EIDOLON_SELKA_2,Hòa Âm,Hòa Âm
+EIDOLON_SELKA_2_DESC,Đồng Điệu tính cả Selka như một cặp với người cùng vận mệnh.,Đồng Điệu tính cả Selka như một cặp với người cùng vận mệnh.
+EIDOLON_SELKA_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_SELKA_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_SELKA_4,Mùi Quen,Mùi Quen
+EIDOLON_SELKA_4_DESC,Hương Dũng Khí còn kéo lượt mục tiêu 15%.,Hương Dũng Khí còn kéo lượt mục tiêu 15%.
+EIDOLON_SELKA_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_SELKA_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_SELKA_6,Bản Hòa Tấu,Bản Hòa Tấu
+EIDOLON_SELKA_6_DESC,Mỗi cặp Đồng Điệu cho +10% (thay 8%).,Mỗi cặp Đồng Điệu cho +10% (thay 8%).
+EIDOLON_SYLVAINE_1,Rễ Sâu,Rễ Sâu
+EIDOLON_SYLVAINE_1_DESC,Cây Sự Sống tồn tại 4 lượt.,Cây Sự Sống tồn tại 4 lượt.
+EIDOLON_SYLVAINE_2,Hoa Nở Rộ,Hoa Nở Rộ
+EIDOLON_SYLVAINE_2_DESC,Cây hồi thêm cho đồng minh thứ hai ít máu nhất.,Cây hồi thêm cho đồng minh thứ hai ít máu nhất.
+EIDOLON_SYLVAINE_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_SYLVAINE_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_SYLVAINE_4,Mùa Xuân Mới,Mùa Xuân Mới
+EIDOLON_SYLVAINE_4_DESC,Vườn Hồi Sinh dùng được 2 lần mỗi trận.,Vườn Hồi Sinh dùng được 2 lần mỗi trận.
+EIDOLON_SYLVAINE_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_SYLVAINE_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_SYLVAINE_6,Cổ Thụ,Cổ Thụ
+EIDOLON_SYLVAINE_6_DESC,Cây Sự Sống đầu lượt còn giải 1 hiệu ứng xấu cho cả đội.,Cây Sự Sống đầu lượt còn giải 1 hiệu ứng xấu cho cả đội.
+EIDOLON_VAEL_1,Mở Màn,Mở Màn
+EIDOLON_VAEL_1_DESC,Màn Sương Tím có 50% gắn Giảm Phòng Thủ 10% (2 lượt).,Màn Sương Tím có 50% gắn Giảm Phòng Thủ 10% (2 lượt).
+EIDOLON_VAEL_2,Tiếng Vỗ Tay,Tiếng Vỗ Tay
+EIDOLON_VAEL_2_DESC,Tính tối đa 6 hiệu ứng xấu.,Tính tối đa 6 hiệu ứng xấu.
+EIDOLON_VAEL_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_VAEL_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_VAEL_4,Diễn Lại,Diễn Lại
+EIDOLON_VAEL_4_DESC,Đêm Diễn Cuối hoàn 15 năng lượng.,Đêm Diễn Cuối hoàn 15 năng lượng.
+EIDOLON_VAEL_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_VAEL_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_VAEL_6,Ngôi Sao,Ngôi Sao
+EIDOLON_VAEL_6_DESC,Mỗi hiệu ứng xấu cộng 16% thay 12%.,Mỗi hiệu ứng xấu cộng 16% thay 12%.
+EIDOLON_VESPER_1,Chủng Mạnh,Chủng Mạnh
+EIDOLON_VESPER_1_DESC,Độc Vesper gây thêm 20% sát thương.,Độc Vesper gây thêm 20% sát thương.
+EIDOLON_VESPER_2,Kháng Thể Ngược,Kháng Thể Ngược
+EIDOLON_VESPER_2_DESC,Quái mang Độc Vesper giảm 10% Kháng Hiệu Ứng.,Quái mang Độc Vesper giảm 10% Kháng Hiệu Ứng.
+EIDOLON_VESPER_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_VESPER_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_VESPER_4,Bệnh Dịch Kéo Dài,Bệnh Dịch Kéo Dài
+EIDOLON_VESPER_4_DESC,Độc Vesper kéo dài 4 lượt.,Độc Vesper kéo dài 4 lượt.
+EIDOLON_VESPER_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_VESPER_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_VESPER_6,Đại Dịch,Đại Dịch
+EIDOLON_VESPER_6_DESC,Nọc Lan lan sang mọi quái còn lại.,Nọc Lan lan sang mọi quái còn lại.
+EIDOLON_WISP_1,Gió Lẻn,Gió Lẻn
+EIDOLON_WISP_1_DESC,Chính Xác Hiệu Ứng +20%.,Chính Xác Hiệu Ứng +20%.
+EIDOLON_WISP_2,Thì Thầm Lớn,Thì Thầm Lớn
+EIDOLON_WISP_2_DESC,Trì hoãn 20%.,Trì hoãn 20%.
+EIDOLON_WISP_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_WISP_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_WISP_4,Quên Hẳn,Quên Hẳn
+EIDOLON_WISP_4_DESC,Lãng Quên kéo dài 3 lượt.,Lãng Quên kéo dài 3 lượt.
+EIDOLON_WISP_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_WISP_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_WISP_6,Im Lặng Tuyệt Đối,Im Lặng Tuyệt Đối
+EIDOLON_WISP_6_DESC,Chỉ cần 1 hiệu ứng xấu để kích hoạt Lời Thì Thầm.,Chỉ cần 1 hiệu ứng xấu để kích hoạt Lời Thì Thầm.
+EIDOLON_ZEPHYRA_1,Hơi Thở Đầu,Hơi Thở Đầu
+EIDOLON_ZEPHYRA_1_DESC,"Vào trận, Zephyra kéo lượt 30%.","Vào trận, Zephyra kéo lượt 30%."
+EIDOLON_ZEPHYRA_2,Gió Kép,Gió Kép
+EIDOLON_ZEPHYRA_2_DESC,Gió Dây Chuyền kéo lượt 35%.,Gió Dây Chuyền kéo lượt 35%.
+EIDOLON_ZEPHYRA_3,Kỹ Năng Thuần Thục,Kỹ Năng Thuần Thục
+EIDOLON_ZEPHYRA_3_DESC,Đánh thường và Chiến kỹ +15% hệ số.,Đánh thường và Chiến kỹ +15% hệ số.
+EIDOLON_ZEPHYRA_4,Thăng Hoa,Thăng Hoa
+EIDOLON_ZEPHYRA_4_DESC,Thuận Buồm còn cho đồng minh +12 năng lượng.,Thuận Buồm còn cho đồng minh +12 năng lượng.
+EIDOLON_ZEPHYRA_5,Tuyệt Kỹ Thuần Thục,Tuyệt Kỹ Thuần Thục
+EIDOLON_ZEPHYRA_5_DESC,Tuyệt kỹ +15% hệ số.,Tuyệt kỹ +15% hệ số.
+EIDOLON_ZEPHYRA_6,Bão Lành,Bão Lành
+EIDOLON_ZEPHYRA_6_DESC,Trời Lộng Gió hoàn 1 Điểm Chiến Kỹ.,Trời Lộng Gió hoàn 1 Điểm Chiến Kỹ.
+ENEMY_BALANCE_BRUTE,Quái Thử Sức,Quái Thử Sức
+SANDBOX_ENCOUNTER,Trận quái:,Trận quái:
+SANDBOX_LEVEL,Cấp đội:,Cấp đội:
+SANDBOX_SETUP,Đội & quái…,Đội & quái…
+SKILL_ALDRIC_BASIC,Đâm Khiên,Đâm Khiên
+SKILL_ALDRIC_BASIC_DESC,100% Phòng Thủ lên 1 quái.,100% Phòng Thủ lên 1 quái.
+SKILL_ALDRIC_OPENER,Khiên Gió Đập,Khiên Gió Đập
+SKILL_ALDRIC_SKILL,Tấm Khiên Buồm,Tấm Khiên Buồm
+SKILL_ALDRIC_SKILL_DESC,"Khiên 1 đồng minh 40% Phòng Thủ + 100 trong 2 lượt, khiên bản thân 20% Phòng Thủ + 50.","Khiên 1 đồng minh 40% Phòng Thủ + 100 trong 2 lượt, khiên bản thân 20% Phòng Thủ + 50."
+SKILL_ALDRIC_TECHNIQUE,Bức Tường Gió,Bức Tường Gió
+SKILL_ALDRIC_TECHNIQUE_DESC,"Trận kế tiếp, mọi quái bị trì hoãn 20% ngay đầu trận.","Trận kế tiếp, mọi quái bị trì hoãn 20% ngay đầu trận."
+SKILL_ALDRIC_ULTIMATE,Gió Bão Che Thân,Gió Bão Che Thân
+SKILL_ALDRIC_ULTIMATE_DESC,"Khiên cả đội 30% Phòng Thủ + 80 trong 2 lượt, 70% Phòng Thủ sát thương Phong lên toàn bộ quái.","Khiên cả đội 30% Phòng Thủ + 80 trong 2 lượt, 70% Phòng Thủ sát thương Phong lên toàn bộ quái."
+SKILL_CELESTINE_BASIC,Nhát Canh,Nhát Canh
+SKILL_CELESTINE_BASIC_DESC,"Tư thế Canh Giữ: 100% Tấn Công, +1 Điểm Chiến Kỹ, +10 năng lượng thêm. Tư thế Phán Xử: 160% Tấn Công.","Tư thế Canh Giữ: 100% Tấn Công, +1 Điểm Chiến Kỹ, +10 năng lượng thêm. Tư thế Phán Xử: 160% Tấn Công."
+SKILL_CELESTINE_BASIC_JUDGMENT,Nhát Phán,Nhát Phán
+SKILL_CELESTINE_BASIC_JUDGMENT_DESC,Tư thế Phán Xử: 130% Tấn Công lên 1 quái.,Tư thế Phán Xử: 130% Tấn Công lên 1 quái.
+SKILL_CELESTINE_OPENER,Kiếm Canh,Kiếm Canh
+SKILL_CELESTINE_SKILL,Đổi Kiếm,Đổi Kiếm
+SKILL_CELESTINE_SKILL_DESC,Đổi tư thế rồi đánh: sang Phán Xử thì 280% Tấn Công lên 1 quái; sang Canh Giữ thì kéo lượt bản thân 30%.,Đổi tư thế rồi đánh: sang Phán Xử thì 280% Tấn Công lên 1 quái; sang Canh Giữ thì kéo lượt bản thân 30%.
+SKILL_CELESTINE_SKILL_JUDGMENT,Đổi Kiếm (về Canh Giữ),Đổi Kiếm (về Canh Giữ)
+SKILL_CELESTINE_SKILL_JUDGMENT_DESC,Về tư thế Canh Giữ và kéo lượt bản thân 30%.,Về tư thế Canh Giữ và kéo lượt bản thân 30%.
+SKILL_CELESTINE_TECHNIQUE,Lời Tiên Tri,Lời Tiên Tri
+SKILL_CELESTINE_TECHNIQUE_DESC,Trận kế tiếp vào trận với +2 Điểm Chiến Kỹ và ở tư thế Phán Xử.,Trận kế tiếp vào trận với +2 Điểm Chiến Kỹ và ở tư thế Phán Xử.
+SKILL_CELESTINE_ULTIMATE,Nhãn Phán Quyết,Nhãn Phán Quyết
+SKILL_CELESTINE_ULTIMATE_DESC,"Vào tư thế Phán Xử, 550% Tấn Công lên 1 quái.","Vào tư thế Phán Xử, 550% Tấn Công lên 1 quái."
+SKILL_ECHO_BASIC,Lời Nhại,Lời Nhại
+SKILL_ECHO_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_ECHO_OPENER,Gương Vỡ,Gương Vỡ
+SKILL_ECHO_SKILL,Lời Nguyền Vọng,Lời Nguyền Vọng
+SKILL_ECHO_SKILL_DESC,"75% Tấn Công lên 1 quái, gắn Rạn Hồn (dễ tổn thương +12%, 2 lượt).","75% Tấn Công lên 1 quái, gắn Rạn Hồn (dễ tổn thương +12%, 2 lượt)."
+SKILL_ECHO_TECHNIQUE,Tiếng Vọng Về,Tiếng Vọng Về
+SKILL_ECHO_TECHNIQUE_DESC,Dịch chuyển về phòng nghỉ đã khám phá gần nhất.,Dịch chuyển về phòng nghỉ đã khám phá gần nhất.
+SKILL_ECHO_ULTIMATE,Gương Ngàn Mặt,Gương Ngàn Mặt
+SKILL_ECHO_ULTIMATE_DESC,70% Tấn Công lên toàn bộ quái; mỗi quái nhận lại 1 hiệu ứng xấu đang có ở quái khác.,70% Tấn Công lên toàn bộ quái; mỗi quái nhận lại 1 hiệu ứng xấu đang có ở quái khác.
+SKILL_EMBER_BASIC,Cầu Lửa Nhỏ,Cầu Lửa Nhỏ
+SKILL_EMBER_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_EMBER_OPENER,Đốm Lửa,Đốm Lửa
+SKILL_EMBER_SKILL,Biển Lửa,Biển Lửa
+SKILL_EMBER_SKILL_DESC,85% Tấn Công lên toàn bộ quái.,85% Tấn Công lên toàn bộ quái.
+SKILL_EMBER_TECHNIQUE,Mưa Tro,Mưa Tro
+SKILL_EMBER_TECHNIQUE_DESC,Mưa lửa bán kính 3 ô quanh mình: quái trúng bị đánh dấu; vào trận chúng mất 15% khiên.,Mưa lửa bán kính 3 ô quanh mình: quái trúng bị đánh dấu; vào trận chúng mất 15% khiên.
+SKILL_EMBER_ULTIMATE,Sao Băng Lửa,Sao Băng Lửa
+SKILL_EMBER_ULTIMATE_DESC,170% Tấn Công lên toàn bộ quái.,170% Tấn Công lên toàn bộ quái.
+SKILL_FENNA_ARROW,Mũi Tên Thứ Hai,Mũi Tên Thứ Hai
+SKILL_FENNA_ARROW_DESC,60% Tấn Công lên quái đang Phá Vỡ.,60% Tấn Công lên quái đang Phá Vỡ.
+SKILL_FENNA_BASIC,Tên Nhanh,Tên Nhanh
+SKILL_FENNA_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_FENNA_OPENER,Tên Rừng,Tên Rừng
+SKILL_FENNA_SKILL,Mưa Tên,Mưa Tên
+SKILL_FENNA_SKILL_DESC,180% Tấn Công lên 1 quái.,180% Tấn Công lên 1 quái.
+SKILL_FENNA_TECHNIQUE,Bẫy Dây,Bẫy Dây
+SKILL_FENNA_TECHNIQUE_DESC,Đặt bẫy tại chỗ (tối đa 1): nhóm quái dẫm phải bị giữ chặt 8 giây; chạm nhóm đó luôn vào trận với Ưu Thế.,Đặt bẫy tại chỗ (tối đa 1): nhóm quái dẫm phải bị giữ chặt 8 giây; chạm nhóm đó luôn vào trận với Ưu Thế.
+SKILL_FENNA_ULTIMATE,Mũi Tên Định Mệnh,Mũi Tên Định Mệnh
+SKILL_FENNA_ULTIMATE_DESC,360% Tấn Công lên 1 quái; quái đang Phá Vỡ thì +30% Sát thương bạo kích.,360% Tấn Công lên 1 quái; quái đang Phá Vỡ thì +30% Sát thương bạo kích.
+SKILL_IGNAR_BASIC,Búa Than,Búa Than
+SKILL_IGNAR_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_IGNAR_OPENER,Búa Lửa Giáng,Búa Lửa Giáng
+SKILL_IGNAR_SKILL,Lò Rèn Tự Thiêu,Lò Rèn Tự Thiêu
+SKILL_IGNAR_SKILL_DESC,"Tiêu 15% máu hiện tại. 162% Tấn Công lên mục tiêu chính, 81% lên 2 quái bên cạnh.","Tiêu 15% máu hiện tại. 162% Tấn Công lên mục tiêu chính, 81% lên 2 quái bên cạnh."
+SKILL_IGNAR_SKILL_ENHANCED,Lò Rèn Tự Thiêu (cường hóa),Lò Rèn Tự Thiêu (cường hóa)
+SKILL_IGNAR_SKILL_ENHANCED_DESC,Tiêu 15% máu hiện tại. 160% Tấn Công lên toàn bộ quái.,Tiêu 15% máu hiện tại. 160% Tấn Công lên toàn bộ quái.
+SKILL_IGNAR_TECHNIQUE,Bước Chân Lửa,Bước Chân Lửa
+SKILL_IGNAR_TECHNIQUE_DESC,"Lao về trước 5 ô để lại vệt lửa: quái chạm vệt bị đánh dấu; vào trận với nhóm đó, mọi quái mất 20% khiên.","Lao về trước 5 ô để lại vệt lửa: quái chạm vệt bị đánh dấu; vào trận với nhóm đó, mọi quái mất 20% khiên."
+SKILL_IGNAR_ULTIMATE,Núi Lửa Bùng,Núi Lửa Bùng
+SKILL_IGNAR_ULTIMATE_DESC,"244% Tấn Công lên toàn bộ quái, hồi lại máu bằng 10% sát thương gây ra.","244% Tấn Công lên toàn bộ quái, hồi lại máu bằng 10% sát thương gây ra."
+SKILL_KESTREL_BASIC,Chém Gió,Chém Gió
+SKILL_KESTREL_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_KESTREL_OPENER,Liềm Gió,Liềm Gió
+SKILL_KESTREL_SKILL,Xoáy Liềm,Xoáy Liềm
+SKILL_KESTREL_SKILL_DESC,"130% Tấn Công lên mục tiêu chính, 65% lên 2 bên.","130% Tấn Công lên mục tiêu chính, 65% lên 2 bên."
+SKILL_KESTREL_TECHNIQUE,Lướt Gió,Lướt Gió
+SKILL_KESTREL_TECHNIQUE_DESC,"Lướt xa 6 ô, bay qua khe vực chưa có cầu.","Lướt xa 6 ô, bay qua khe vực chưa có cầu."
+SKILL_KESTREL_ULTIMATE,Cuồng Phong,Cuồng Phong
+SKILL_KESTREL_ULTIMATE_DESC,200% Tấn Công lên toàn bộ quái.,200% Tấn Công lên toàn bộ quái.
+SKILL_MARISOL_BASIC,Đập Vỏ Ốc,Đập Vỏ Ốc
+SKILL_MARISOL_BASIC_DESC,100% Phòng Thủ lên 1 quái.,100% Phòng Thủ lên 1 quái.
+SKILL_MARISOL_OPENER,Sóng Vỗ,Sóng Vỗ
+SKILL_MARISOL_SKILL,Triều Che Chở,Triều Che Chở
+SKILL_MARISOL_SKILL_DESC,Khiên cả đội 20% Phòng Thủ + 55 trong 2 lượt; bản thân Khiêu Khích 1 lượt.,Khiên cả đội 20% Phòng Thủ + 55 trong 2 lượt; bản thân Khiêu Khích 1 lượt.
+SKILL_MARISOL_TECHNIQUE,Áo Choàng Sóng,Áo Choàng Sóng
+SKILL_MARISOL_TECHNIQUE_DESC,"Trận kế tiếp, cả đội Phòng Thủ +30% trong 2 lượt.","Trận kế tiếp, cả đội Phòng Thủ +30% trong 2 lượt."
+SKILL_MARISOL_ULTIMATE,Đại Dương Ôm Ấp,Đại Dương Ôm Ấp
+SKILL_MARISOL_ULTIMATE_DESC,"Khiên cả đội 27% Phòng Thủ + 80 trong 2 lượt, giải 1 hiệu ứng xấu mỗi người, cả đội Phòng Thủ +20% trong 2 lượt.","Khiên cả đội 27% Phòng Thủ + 80 trong 2 lượt, giải 1 hiệu ứng xấu mỗi người, cả đội Phòng Thủ +20% trong 2 lượt."
+SKILL_NERIS_BASIC,Đâm Giáo,Đâm Giáo
+SKILL_NERIS_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_NERIS_OPENER,Giáo Xuyên,Giáo Xuyên
+SKILL_NERIS_SKILL,Ba Chĩa Xoáy,Ba Chĩa Xoáy
+SKILL_NERIS_SKILL_DESC,190% Tấn Công lên 1 quái.,190% Tấn Công lên 1 quái.
+SKILL_NERIS_TECHNIQUE,Mắt Đáy Biển,Mắt Đáy Biển
+SKILL_NERIS_TECHNIQUE_DESC,30 giây: bản đồ nhỏ hiện mọi nhóm quái trong khu kèm cấp và điểm yếu.,30 giây: bản đồ nhỏ hiện mọi nhóm quái trong khu kèm cấp và điểm yếu.
+SKILL_NERIS_ULTIMATE,Sóng Ngầm,Sóng Ngầm
+SKILL_NERIS_ULTIMATE_DESC,380% Tấn Công lên 1 quái; chắc chắn bạo kích.,380% Tấn Công lên 1 quái; chắc chắn bạo kích.
+SKILL_ORRIN_BASIC,Chữ Hồn,Chữ Hồn
+SKILL_ORRIN_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_ORRIN_OPENER,Trang Sách Bay,Trang Sách Bay
+SKILL_ORRIN_SKILL,Chương Hồn,Chương Hồn
+SKILL_ORRIN_SKILL_DESC,56% Tấn Công lên toàn bộ quái.,56% Tấn Công lên toàn bộ quái.
+SKILL_ORRIN_TECHNIQUE,Mắt Thư Tịch,Mắt Thư Tịch
+SKILL_ORRIN_TECHNIQUE_DESC,Hiện vị trí mọi rương và tường nứt chưa mở trong khu trên bản đồ nhỏ trong 60 giây.,Hiện vị trí mọi rương và tường nứt chưa mở trong khu trên bản đồ nhỏ trong 60 giây.
+SKILL_ORRIN_ULTIMATE,Thư Tịch Khai Mở,Thư Tịch Khai Mở
+SKILL_ORRIN_ULTIMATE_DESC,"128% Tấn Công lên toàn bộ quái, rồi 3 lần 40% lên quái ngẫu nhiên.","128% Tấn Công lên toàn bộ quái, rồi 3 lần 40% lên quái ngẫu nhiên."
+SKILL_PIP_BASIC,Tia Điện Nhỏ,Tia Điện Nhỏ
+SKILL_PIP_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_PIP_OPENER,Bolt Lao Tới,Bolt Lao Tới
+SKILL_PIP_SKILL,Sạc Nhanh,Sạc Nhanh
+SKILL_PIP_SKILL_DESC,1 đồng minh khác: +25 năng lượng và Tấn Công +15% trong 2 lượt.,1 đồng minh khác: +25 năng lượng và Tấn Công +15% trong 2 lượt.
+SKILL_PIP_TECHNIQUE,Sạc Đầy,Sạc Đầy
+SKILL_PIP_TECHNIQUE_DESC,"Trận kế tiếp, cả đội vào trận thêm 30 năng lượng.","Trận kế tiếp, cả đội vào trận thêm 30 năng lượng."
+SKILL_PIP_ULTIMATE,Quá Áp,Quá Áp
+SKILL_PIP_ULTIMATE_DESC,Cả đội +20 năng lượng và Tốc Độ +12% trong 2 lượt.,Cả đội +20 năng lượng và Tốc Độ +12% trong 2 lượt.
+SKILL_QUILL_BASIC,Kim Thuốc,Kim Thuốc
+SKILL_QUILL_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_QUILL_OPENER,Ống Nghiệm Vỡ,Ống Nghiệm Vỡ
+SKILL_QUILL_SKILL,Liều Đôi,Liều Đôi
+SKILL_QUILL_SKILL_DESC,"Hồi 1 đồng minh 35% Tấn Công + 70 và gắn Độc Quill (40% Tấn Công sát thương Độc mỗi lượt, 2 lượt) lên quái ngẫu nhiên.","Hồi 1 đồng minh 35% Tấn Công + 70 và gắn Độc Quill (40% Tấn Công sát thương Độc mỗi lượt, 2 lượt) lên quái ngẫu nhiên."
+SKILL_QUILL_TECHNIQUE,Túi Thuốc,Túi Thuốc
+SKILL_QUILL_TECHNIQUE_DESC,"Hồi cả đội 25% máu tối đa ngay trên map (có tác dụng khi máu giữ giữa các trận, Phase 9).","Hồi cả đội 25% máu tối đa ngay trên map (có tác dụng khi máu giữ giữa các trận, Phase 9)."
+SKILL_QUILL_ULTIMATE,Thuốc Giải Vạn Năng,Thuốc Giải Vạn Năng
+SKILL_QUILL_ULTIMATE_DESC,Hồi cả đội 25% Tấn Công + 60 và giải 1 hiệu ứng xấu mỗi người.,Hồi cả đội 25% Tấn Công + 60 và giải 1 hiệu ứng xấu mỗi người.
+SKILL_RAIKO_BASIC,Tên Điện,Tên Điện
+SKILL_RAIKO_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_RAIKO_OPENER,Tên Sấm,Tên Sấm
+SKILL_RAIKO_SKILL,Dấu Sấm,Dấu Sấm
+SKILL_RAIKO_SKILL_DESC,147% Tấn Công lên 1 quái và gắn Dấu Sấm (3 lượt).,147% Tấn Công lên 1 quái và gắn Dấu Sấm (3 lượt).
+SKILL_RAIKO_TECHNIQUE,Lôi Tiễn,Lôi Tiễn
+SKILL_RAIKO_TECHNIQUE_DESC,"Bắn tên 8 ô về trước: nhóm quái đầu tiên trúng bị choáng 6 giây và đánh dấu; vào trận, quái chính bị Dấu Sấm sẵn.","Bắn tên 8 ô về trước: nhóm quái đầu tiên trúng bị choáng 6 giây và đánh dấu; vào trận, quái chính bị Dấu Sấm sẵn."
+SKILL_RAIKO_ULTIMATE,Thiên Lôi Giáng,Thiên Lôi Giáng
+SKILL_RAIKO_ULTIMATE_DESC,315% Tấn Công lên 1 quái; nếu quái mang Dấu Sấm thì thêm 60%.,315% Tấn Công lên 1 quái; nếu quái mang Dấu Sấm thì thêm 60%.
+SKILL_ROOK_BASIC,Bổ Rìu,Bổ Rìu
+SKILL_ROOK_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_ROOK_OPENER,Rìu Bổ Đất,Rìu Bổ Đất
+SKILL_ROOK_SKILL,Quét Rìu,Quét Rìu
+SKILL_ROOK_SKILL_DESC,"140% Tấn Công lên mục tiêu chính, 70% lên 2 bên.","140% Tấn Công lên mục tiêu chính, 70% lên 2 bên."
+SKILL_ROOK_TECHNIQUE,Rễ Đâm,Rễ Đâm
+SKILL_ROOK_TECHNIQUE_DESC,Rễ trồi 4 ô phía trước: quái trúng bị trói 8 giây và đánh dấu; vào trận chúng bị Trói Rễ.,Rễ trồi 4 ô phía trước: quái trúng bị trói 8 giây và đánh dấu; vào trận chúng bị Trói Rễ.
+SKILL_ROOK_ULTIMATE,Cây Đổ,Cây Đổ
+SKILL_ROOK_ULTIMATE_DESC,"240% Tấn Công mục tiêu chính, 140% hai bên; mỗi tầng Báo Thù cộng thêm 40% hệ số.","240% Tấn Công mục tiêu chính, 140% hai bên; mỗi tầng Báo Thù cộng thêm 40% hệ số."
+SKILL_SELKA_BASIC,Trâm Hương,Trâm Hương
+SKILL_SELKA_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_SELKA_OPENER,Khói Hương,Khói Hương
+SKILL_SELKA_SKILL,Hương Dũng Khí,Hương Dũng Khí
+SKILL_SELKA_SKILL_DESC,1 đồng minh: Tấn Công +25% và Tăng sát thương +15% trong 2 lượt.,1 đồng minh: Tấn Công +25% và Tăng sát thương +15% trong 2 lượt.
+SKILL_SELKA_TECHNIQUE,Hương Đồng Điệu,Hương Đồng Điệu
+SKILL_SELKA_TECHNIQUE_DESC,"Trận kế tiếp, cả đội Tấn Công +15% trong 3 lượt.","Trận kế tiếp, cả đội Tấn Công +15% trong 3 lượt."
+SKILL_SELKA_ULTIMATE,Hội Tụ Hương,Hội Tụ Hương
+SKILL_SELKA_ULTIMATE_DESC,"Cả đội Tăng sát thương +20% trong 2 lượt, hồi 10 năng lượng cho mỗi người.","Cả đội Tăng sát thương +20% trong 2 lượt, hồi 10 năng lượng cho mỗi người."
+SKILL_SYLVAINE_BASIC,Cành Quất,Cành Quất
+SKILL_SYLVAINE_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_SYLVAINE_OPENER,Gai Hoa,Gai Hoa
+SKILL_SYLVAINE_SKILL,Mưa Phấn Hoa,Mưa Phấn Hoa
+SKILL_SYLVAINE_SKILL_DESC,Hồi cả đội 12% Tấn Công + 33; nếu chưa có Cây Sự Sống thì gieo cây.,Hồi cả đội 12% Tấn Công + 33; nếu chưa có Cây Sự Sống thì gieo cây.
+SKILL_SYLVAINE_TECHNIQUE,Hạt Giống Sống,Hạt Giống Sống
+SKILL_SYLVAINE_TECHNIQUE_DESC,"Trận kế tiếp, Cây Sự Sống mọc ngay đầu trận.","Trận kế tiếp, Cây Sự Sống mọc ngay đầu trận."
+SKILL_SYLVAINE_TREE_HEAL,Nhựa Sống,Nhựa Sống
+SKILL_SYLVAINE_TREE_HEAL_DESC,Hồi đồng minh ít máu nhất 6% máu tối đa.,Hồi đồng minh ít máu nhất 6% máu tối đa.
+SKILL_SYLVAINE_ULTIMATE,Vườn Hồi Sinh,Vườn Hồi Sinh
+SKILL_SYLVAINE_ULTIMATE_DESC,Hồi cả đội 19% Tấn Công + 57; hồi sinh 1 đồng minh đã ngã với 40% máu (1 lần mỗi trận).,Hồi cả đội 19% Tấn Công + 57; hồi sinh 1 đồng minh đã ngã với 40% máu (1 lần mỗi trận).
+SKILL_VAEL_BASIC,Phi Bài Độc,Phi Bài Độc
+SKILL_VAEL_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_VAEL_OPENER,Màn Sương Ảo,Màn Sương Ảo
+SKILL_VAEL_SKILL,Màn Sương Tím,Màn Sương Tím
+SKILL_VAEL_SKILL_DESC,90% Tấn Công lên toàn bộ quái.,90% Tấn Công lên toàn bộ quái.
+SKILL_VAEL_TECHNIQUE,Bom Độc,Bom Độc
+SKILL_VAEL_TECHNIQUE_DESC,"Ném bom 3 ô phía trước, bán kính 2 ô: quái trúng bị đánh dấu; vào trận chúng mất 10% máu tối đa.","Ném bom 3 ô phía trước, bán kính 2 ô: quái trúng bị đánh dấu; vào trận chúng mất 10% máu tối đa."
+SKILL_VAEL_ULTIMATE,Đêm Diễn Cuối,Đêm Diễn Cuối
+SKILL_VAEL_ULTIMATE_DESC,180% Tấn Công lên toàn bộ quái.,180% Tấn Công lên toàn bộ quái.
+SKILL_VESPER_BASIC,Kim Tẩm Độc,Kim Tẩm Độc
+SKILL_VESPER_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_VESPER_OPENER,Lọ Độc Ném,Lọ Độc Ném
+SKILL_VESPER_SKILL,Chén Độc,Chén Độc
+SKILL_VESPER_SKILL_DESC,"30% Tấn Công lên mục tiêu chính và 2 bên, gắn Độc Vesper (12% Tấn Công sát thương Độc mỗi lượt, 3 lượt) lên cả 3.","30% Tấn Công lên mục tiêu chính và 2 bên, gắn Độc Vesper (12% Tấn Công sát thương Độc mỗi lượt, 3 lượt) lên cả 3."
+SKILL_VESPER_TECHNIQUE,Sương Ngủ,Sương Ngủ
+SKILL_VESPER_TECHNIQUE_DESC,"Thả sương bán kính 3 ô: quái ngủ 10 giây và bị đánh dấu; vào trận, mọi quái bị Nhiễm Độc Vesper.","Thả sương bán kính 3 ô: quái ngủ 10 giây và bị đánh dấu; vào trận, mọi quái bị Nhiễm Độc Vesper."
+SKILL_VESPER_ULTIMATE,Mùa Dịch,Mùa Dịch
+SKILL_VESPER_ULTIMATE_DESC,40% Tấn Công lên toàn bộ quái; mọi Độc Vesper đang có lập tức gây thêm 25% sát thương một lượt.,40% Tấn Công lên toàn bộ quái; mọi Độc Vesper đang có lập tức gây thêm 25% sát thương một lượt.
+SKILL_WISP_BASIC,Gió Rít,Gió Rít
+SKILL_WISP_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_WISP_OPENER,Hơi Thở Lạnh,Hơi Thở Lạnh
+SKILL_WISP_SKILL,Lời Quên Lãng,Lời Quên Lãng
+SKILL_WISP_SKILL_DESC,"70% Tấn Công lên 1 quái, gắn Lãng Quên (Tốc Độ −12%, 2 lượt) và Giảm Tấn Công 15% (2 lượt).","70% Tấn Công lên 1 quái, gắn Lãng Quên (Tốc Độ −12%, 2 lượt) và Giảm Tấn Công 15% (2 lượt)."
+SKILL_WISP_TECHNIQUE,Gió Hút,Gió Hút
+SKILL_WISP_TECHNIQUE_DESC,20 giây: tự hút vật phẩm rơi và Hộp Bí Kỹ trong bán kính 6 ô.,20 giây: tự hút vật phẩm rơi và Hộp Bí Kỹ trong bán kính 6 ô.
+SKILL_WISP_ULTIMATE,Cơn Gió Câm,Cơn Gió Câm
+SKILL_WISP_ULTIMATE_DESC,"60% Tấn Công lên toàn bộ quái, gắn Lãng Quên lên tất cả.","60% Tấn Công lên toàn bộ quái, gắn Lãng Quên lên tất cả."
+SKILL_ZEPHYRA_BASIC,Lưỡi Gió,Lưỡi Gió
+SKILL_ZEPHYRA_BASIC_DESC,100% Tấn Công lên 1 quái.,100% Tấn Công lên 1 quái.
+SKILL_ZEPHYRA_OPENER,Cuộn Gió,Cuộn Gió
+SKILL_ZEPHYRA_SKILL,Thuận Buồm,Thuận Buồm
+SKILL_ZEPHYRA_SKILL_DESC,Kéo lượt 1 đồng minh khác 100% (đi ngay) và tăng 20% Tốc Độ trong 1 lượt.,Kéo lượt 1 đồng minh khác 100% (đi ngay) và tăng 20% Tốc Độ trong 1 lượt.
+SKILL_ZEPHYRA_TECHNIQUE,Gió Nâng Bước,Gió Nâng Bước
+SKILL_ZEPHYRA_TECHNIQUE_DESC,15 giây: đi nhanh hơn 40% và lướt hồi chiêu nhanh gấp đôi.,15 giây: đi nhanh hơn 40% và lướt hồi chiêu nhanh gấp đôi.
+SKILL_ZEPHYRA_ULTIMATE,Trời Lộng Gió,Trời Lộng Gió
+SKILL_ZEPHYRA_ULTIMATE_DESC,"Cả đội kéo lượt 25%, Tăng sát thương +45% và Tốc Độ +10% trong 2 lượt.","Cả đội kéo lượt 25%, Tăng sát thương +45% và Tốc Độ +10% trong 2 lượt."
+STATUS_CELESTINE_JUDGMENT,Phán Xử,Phán Xử
+STATUS_CELESTINE_JUDGMENT_DESC,"Sát thương bạo kích +50%, Tỉ Lệ Bạo Kích +15%.","Sát thương bạo kích +50%, Tỉ Lệ Bạo Kích +15%."
+STATUS_CELESTINE_JUDGMENT_E2,Phán Xử,Phán Xử
+STATUS_CELESTINE_JUDGMENT_E2_DESC,"Sát thương bạo kích +50%, Tỉ Lệ Bạo Kích +15%, Tăng sát thương +20%.","Sát thương bạo kích +50%, Tỉ Lệ Bạo Kích +15%, Tăng sát thương +20%."
+STATUS_CELESTINE_WATCH,Canh Giữ,Canh Giữ
+STATUS_CELESTINE_WATCH_DESC,Tốc Độ +20%. Đánh thường cho thêm năng lượng.,Tốc Độ +20%. Đánh thường cho thêm năng lượng.
+STATUS_ECHO_CRACK,Rạn Hồn,Rạn Hồn
+STATUS_ECHO_CRACK_DESC,Dễ tổn thương +12%.,Dễ tổn thương +12%.
+STATUS_IGNAR_FERVOR,Nhiệt Huyết,Nhiệt Huyết
+STATUS_IGNAR_FERVOR_DESC,Tăng sát thương +8% mỗi tầng (tối đa 5).,Tăng sát thương +8% mỗi tầng (tối đa 5).
+STATUS_IGNAR_FERVOR_E2,Nhiệt Huyết,Nhiệt Huyết
+STATUS_IGNAR_FERVOR_E2_DESC,"Tăng sát thương +8%, Tỉ Lệ Bạo Kích +3% mỗi tầng (tối đa 5).","Tăng sát thương +8%, Tỉ Lệ Bạo Kích +3% mỗi tầng (tối đa 5)."
+STATUS_IGNAR_IRON_SKIN,Da Sắt,Da Sắt
+STATUS_IGNAR_IRON_SKIN_DESC,Phòng Thủ +40% khi dưới 30% máu.,Phòng Thủ +40% khi dưới 30% máu.
+STATUS_KESTREL_GALE,Lốc Tích Tụ,Lốc Tích Tụ
+STATUS_KESTREL_GALE_DESC,Xoáy Liềm +20% hệ số mỗi tầng (tối đa 3).,Xoáy Liềm +20% hệ số mỗi tầng (tối đa 3).
+STATUS_KESTREL_GALE_E4,Lốc Tích Tụ,Lốc Tích Tụ
+STATUS_KESTREL_GALE_E4_DESC,"Xoáy Liềm +20% hệ số, Tốc Độ +4% mỗi tầng (tối đa 3).","Xoáy Liềm +20% hệ số, Tốc Độ +4% mỗi tầng (tối đa 3)."
+STATUS_MARISOL_TAUNT,Khiêu Khích,Khiêu Khích
+STATUS_MARISOL_TAUNT_DESC,Quái phải nhắm người này bằng đòn đơn/lan.,Quái phải nhắm người này bằng đòn đơn/lan.
+STATUS_MARISOL_TIDE_GUARD,Đại Dương Bảo Hộ,Đại Dương Bảo Hộ
+STATUS_MARISOL_TIDE_GUARD_DESC,Phòng Thủ +20%.,Phòng Thủ +20%.
+STATUS_MARISOL_WAVE_COAT,Áo Choàng Sóng,Áo Choàng Sóng
+STATUS_MARISOL_WAVE_COAT_DESC,Phòng Thủ +30%.,Phòng Thủ +30%.
+STATUS_NERIS_PATIENCE,Nhẫn Nại,Nhẫn Nại
+STATUS_NERIS_PATIENCE_DESC,Tỉ Lệ Bạo Kích +12% mỗi tầng; bạo kích thì mất hết.,Tỉ Lệ Bạo Kích +12% mỗi tầng; bạo kích thì mất hết.
+STATUS_NERIS_PATIENCE_E1,Nhẫn Nại,Nhẫn Nại
+STATUS_NERIS_PATIENCE_E1_DESC,Tỉ Lệ Bạo Kích +15% mỗi tầng; bạo kích thì mất hết.,Tỉ Lệ Bạo Kích +15% mỗi tầng; bạo kích thì mất hết.
+STATUS_PIP_CHARGE,Sạc Nhanh,Sạc Nhanh
+STATUS_PIP_CHARGE_DESC,Tấn Công +15%.,Tấn Công +15%.
+STATUS_PIP_OVERVOLT,Quá Áp,Quá Áp
+STATUS_PIP_OVERVOLT_DESC,Tốc Độ +12%.,Tốc Độ +12%.
+STATUS_QUILL_POISON,Độc Quill,Độc Quill
+STATUS_QUILL_POISON_DESC,Chịu sát thương Độc đầu mỗi lượt.,Chịu sát thương Độc đầu mỗi lượt.
+STATUS_QUILL_RESIST,Kháng Sinh,Kháng Sinh
+STATUS_QUILL_RESIST_DESC,Kháng Hiệu Ứng +20%.,Kháng Hiệu Ứng +20%.
+STATUS_RAIKO_MARK,Dấu Sấm,Dấu Sấm
+STATUS_RAIKO_MARK_DESC,Nhận thêm Sát thương bạo kích từ Raiko; bị hạ thì dấu chuyển sang quái khác.,Nhận thêm Sát thương bạo kích từ Raiko; bị hạ thì dấu chuyển sang quái khác.
+STATUS_ROOK_REVENGE,Báo Thù,Báo Thù
+STATUS_ROOK_REVENGE_DESC,Tấn Công +25% mỗi tầng (tối đa 3).,Tấn Công +25% mỗi tầng (tối đa 3).
+STATUS_ROOK_REVENGE_E4,Báo Thù,Báo Thù
+STATUS_ROOK_REVENGE_E4_DESC,"Tấn Công +25%, Phòng Thủ +10% mỗi tầng (tối đa 3).","Tấn Công +25%, Phòng Thủ +10% mỗi tầng (tối đa 3)."
+STATUS_SELKA_AROMA,Hương Đồng Điệu,Hương Đồng Điệu
+STATUS_SELKA_AROMA_DESC,Tấn Công +15%.,Tấn Công +15%.
+STATUS_SELKA_CHORUS,Hội Tụ Hương,Hội Tụ Hương
+STATUS_SELKA_CHORUS_DESC,Tăng sát thương +20%.,Tăng sát thương +20%.
+STATUS_SELKA_COURAGE,Hương Dũng Khí,Hương Dũng Khí
+STATUS_SELKA_COURAGE_DESC,"Tấn Công +25%, Tăng sát thương +15%.","Tấn Công +25%, Tăng sát thương +15%."
+STATUS_SELKA_HARMONY,Đồng Điệu,Đồng Điệu
+STATUS_SELKA_HARMONY_DESC,Tăng sát thương +8% mỗi cặp đồng minh cùng nguyên tố (tối đa 3).,Tăng sát thương +8% mỗi cặp đồng minh cùng nguyên tố (tối đa 3).
+STATUS_SELKA_HARMONY_E6,Đồng Điệu,Đồng Điệu
+STATUS_SELKA_HARMONY_E6_DESC,Tăng sát thương +10% mỗi cặp đồng minh cùng nguyên tố (tối đa 3).,Tăng sát thương +10% mỗi cặp đồng minh cùng nguyên tố (tối đa 3).
+STATUS_SELKA_RESONANCE,Cộng Hưởng Hương,Cộng Hưởng Hương
+STATUS_SELKA_RESONANCE_DESC,Tấn Công +10%.,Tấn Công +10%.
+STATUS_VAEL_DEF_DOWN,Mở Màn,Mở Màn
+STATUS_VAEL_DEF_DOWN_DESC,Phòng Thủ −10%.,Phòng Thủ −10%.
+STATUS_VESPER_POISON,Độc Vesper,Độc Vesper
+STATUS_VESPER_POISON_DESC,Chịu sát thương Độc đầu mỗi lượt; quái bị hạ thì độc lan sang bên cạnh.,Chịu sát thương Độc đầu mỗi lượt; quái bị hạ thì độc lan sang bên cạnh.
+STATUS_VESPER_WEAKEN,Kháng Thể Ngược,Kháng Thể Ngược
+STATUS_VESPER_WEAKEN_DESC,Kháng Hiệu Ứng −10%.,Kháng Hiệu Ứng −10%.
+STATUS_WISP_FORGET,Lãng Quên,Lãng Quên
+STATUS_WISP_FORGET_DESC,Tốc Độ −12%.,Tốc Độ −12%.
+STATUS_WISP_WEAKEN,Yếu Ớt,Yếu Ớt
+STATUS_WISP_WEAKEN_DESC,Tấn Công −15%.,Tấn Công −15%.
+STATUS_ZEPHYRA_GALE,Trời Lộng Gió,Trời Lộng Gió
+STATUS_ZEPHYRA_GALE_DESC,"Tăng sát thương +45%, Tốc Độ +10%.","Tăng sát thương +45%, Tốc Độ +10%."
+STATUS_ZEPHYRA_TAILWIND,Thuận Buồm,Thuận Buồm
+STATUS_ZEPHYRA_TAILWIND_DESC,Tốc Độ +20%.,Tốc Độ +20%.
+SUMMON_SYLVAINE_TREE,Cây Sự Sống,Cây Sự Sống
+TALENT_ALDRIC,Lao Tới Che,Lao Tới Che
+TALENT_ALDRIC_DESC,Một lần mỗi lượt quái: đồng minh khác sắp nhận đòn từ 25% máu tối đa của họ trở lên thì Aldric nhận đòn thay (giảm 20%).,Một lần mỗi lượt quái: đồng minh khác sắp nhận đòn từ 25% máu tối đa của họ trở lên thì Aldric nhận đòn thay (giảm 20%).
+TALENT_CELESTINE,Hai Tư Thế,Hai Tư Thế
+TALENT_CELESTINE_DESC,"Canh Giữ: Tốc Độ +20%. Phán Xử: Sát thương bạo kích +50%, Tỉ Lệ Bạo Kích +15%. Đầu trận ở Canh Giữ.","Canh Giữ: Tốc Độ +20%. Phán Xử: Sát thương bạo kích +50%, Tỉ Lệ Bạo Kích +15%. Đầu trận ở Canh Giữ."
+TALENT_ECHO,Vang Vọng,Vang Vọng
+TALENT_ECHO_DESC,"Mỗi khi đồng minh khác gắn hiệu ứng xấu lên quái, Echo gắn bản sao hiệu ứng đó lên 1 quái ngẫu nhiên khác (tối đa 1 lần mỗi lượt của đồng minh đó).","Mỗi khi đồng minh khác gắn hiệu ứng xấu lên quái, Echo gắn bản sao hiệu ứng đó lên 1 quái ngẫu nhiên khác (tối đa 1 lần mỗi lượt của đồng minh đó)."
+TALENT_EMBER,Tro Tàn Lan,Tro Tàn Lan
+TALENT_EMBER_DESC,Ember hạ một quái thì vụ nổ gây 50% Tấn Công sát thương Lửa lên mọi quái còn lại (tối đa 1 lần mỗi hành động).,Ember hạ một quái thì vụ nổ gây 50% Tấn Công sát thương Lửa lên mọi quái còn lại (tối đa 1 lần mỗi hành động).
+TALENT_FENNA,Mũi Tên Thứ Hai,Mũi Tên Thứ Hai
+TALENT_FENNA_DESC,"Đánh thường lên quái đang Phá Vỡ thì bắn thêm 1 mũi tên 60% Tấn Công (đòn phụ, không tốn lượt).","Đánh thường lên quái đang Phá Vỡ thì bắn thêm 1 mũi tên 60% Tấn Công (đòn phụ, không tốn lượt)."
+TALENT_IGNAR,Lửa Trong Máu,Lửa Trong Máu
+TALENT_IGNAR_DESC,"Mỗi khi mất máu do tự tiêu, nhận 1 tầng Nhiệt Huyết (tối đa 5): Tăng sát thương +8% mỗi tầng. Đủ 5 tầng, Chiến kỹ kế tiếp đánh toàn bộ quái (hệ số 160% cho mọi quái) rồi xóa tầng.","Mỗi khi mất máu do tự tiêu, nhận 1 tầng Nhiệt Huyết (tối đa 5): Tăng sát thương +8% mỗi tầng. Đủ 5 tầng, Chiến kỹ kế tiếp đánh toàn bộ quái (hệ số 160% cho mọi quái) rồi xóa tầng."
+TALENT_KESTREL,Lốc Tích Tụ,Lốc Tích Tụ
+TALENT_KESTREL_DESC,Mỗi lượt liên tiếp dùng Chiến kỹ: Xoáy Liềm +20% hệ số (tối đa 3 tầng); dùng Đánh thường thì mất hết tầng.,Mỗi lượt liên tiếp dùng Chiến kỹ: Xoáy Liềm +20% hệ số (tối đa 3 tầng); dùng Đánh thường thì mất hết tầng.
+TALENT_MARISOL,Thủy Triều Chia Sẻ,Thủy Triều Chia Sẻ
+TALENT_MARISOL_DESC,"Khi Marisol còn trên 40% máu, 25% sát thương đồng minh khác nhận (sau khiên) được chuyển sang Marisol.","Khi Marisol còn trên 40% máu, 25% sát thương đồng minh khác nhận (sau khiên) được chuyển sang Marisol."
+TALENT_NERIS,Nhẫn Nại,Nhẫn Nại
+TALENT_NERIS_DESC,Mỗi đòn không bạo kích: Neris +12% Tỉ Lệ Bạo Kích (cộng dồn); bạo kích thì mất hết.,Mỗi đòn không bạo kích: Neris +12% Tỉ Lệ Bạo Kích (cộng dồn); bạo kích thì mất hết.
+TALENT_ORRIN,Thư Tịch Hồn,Thư Tịch Hồn
+TALENT_ORRIN_DESC,Chiến kỹ tự tiêu thêm tối đa 2 Điểm Chiến Kỹ nếu có: mỗi điểm thêm cộng 50 điểm % vào hệ số (56% → tối đa 156%).,Chiến kỹ tự tiêu thêm tối đa 2 Điểm Chiến Kỹ nếu có: mỗi điểm thêm cộng 50 điểm % vào hệ số (56% → tối đa 156%).
+TALENT_PIP,Pin Dự Phòng,Pin Dự Phòng
+TALENT_PIP_DESC,"Đầu mỗi lượt của Pip, đồng minh có tỉ lệ năng lượng thấp nhất (trừ Pip) nhận 8 năng lượng.","Đầu mỗi lượt của Pip, đồng minh có tỉ lệ năng lượng thấp nhất (trừ Pip) nhận 8 năng lượng."
+TALENT_QUILL,Độc Hóa Thuốc,Độc Hóa Thuốc
+TALENT_QUILL_DESC,"Mỗi khi quái chịu sát thương theo lượt (của bất kỳ ai), đồng minh ít máu nhất hồi 15% lượng sát thương đó.","Mỗi khi quái chịu sát thương theo lượt (của bất kỳ ai), đồng minh ít máu nhất hồi 15% lượng sát thương đó."
+TALENT_RAIKO,Mắt Thợ Săn,Mắt Thợ Săn
+TALENT_RAIKO_DESC,Quái mang Dấu Sấm nhận thêm 25% Sát thương bạo kích từ Raiko. Quái mang Dấu Sấm bị hạ thì Dấu chuyển sang quái máu cao nhất và Raiko được kéo lượt 50%.,Quái mang Dấu Sấm nhận thêm 25% Sát thương bạo kích từ Raiko. Quái mang Dấu Sấm bị hạ thì Dấu chuyển sang quái máu cao nhất và Raiko được kéo lượt 50%.
+TALENT_ROOK,Báo Thù,Báo Thù
+TALENT_ROOK_DESC,"Mỗi đồng minh ngã: Rook nhận 1 tầng Báo Thù vĩnh viễn trong trận (Tấn Công +25%, tối đa 3) và đầy năng lượng ngay.","Mỗi đồng minh ngã: Rook nhận 1 tầng Báo Thù vĩnh viễn trong trận (Tấn Công +25%, tối đa 3) và đầy năng lượng ngay."
+TALENT_SELKA,Đồng Điệu,Đồng Điệu
+TALENT_SELKA_DESC,Mỗi cặp đồng minh cùng nguyên tố trong đội cho cả đội Tăng sát thương +8% (tối đa 3 cặp); đồng minh cùng nguyên tố với mục tiêu Hương Dũng Khí nhận thêm 10% Tấn Công.,Mỗi cặp đồng minh cùng nguyên tố trong đội cho cả đội Tăng sát thương +8% (tối đa 3 cặp); đồng minh cùng nguyên tố với mục tiêu Hương Dũng Khí nhận thêm 10% Tấn Công.
+TALENT_SYLVAINE,Cây Sự Sống,Cây Sự Sống
+TALENT_SYLVAINE_DESC,"Cây Sự Sống là vật triệu hồi (không chiếm chỗ nhân vật, quái không nhắm), Tốc Độ 80, tồn tại 3 lượt của cây: mỗi lượt hồi đồng minh ít máu nhất 6% máu tối đa của người đó.","Cây Sự Sống là vật triệu hồi (không chiếm chỗ nhân vật, quái không nhắm), Tốc Độ 80, tồn tại 3 lượt của cây: mỗi lượt hồi đồng minh ít máu nhất 6% máu tối đa của người đó."
+TALENT_VAEL,Khán Giả Bị Bỏ Bùa,Khán Giả Bị Bỏ Bùa
+TALENT_VAEL_DESC,Sát thương của Vael lên mỗi quái tăng 12% cho mỗi hiệu ứng xấu quái đó đang mang (tối đa 5).,Sát thương của Vael lên mỗi quái tăng 12% cho mỗi hiệu ứng xấu quái đó đang mang (tối đa 5).
+TALENT_VESPER,Nọc Lan,Nọc Lan
+TALENT_VESPER_DESC,Quái mang Độc Vesper bị hạ thì Độc lan sang 2 quái bên cạnh với số lượt còn lại (tối thiểu 1).,Quái mang Độc Vesper bị hạ thì Độc lan sang 2 quái bên cạnh với số lượt còn lại (tối thiểu 1).
+TALENT_WISP,Lời Thì Thầm,Lời Thì Thầm
+TALENT_WISP_DESC,"Cuối lượt của quái mang từ 2 hiệu ứng xấu trở lên, Wisp trì hoãn lượt kế tiếp của quái đó 15%.","Cuối lượt của quái mang từ 2 hiệu ứng xấu trở lên, Wisp trì hoãn lượt kế tiếp của quái đó 15%."
+TALENT_ZEPHYRA,Gió Dây Chuyền,Gió Dây Chuyền
+TALENT_ZEPHYRA_DESC,"Khi đồng minh được Thuận Buồm kết thúc lượt, đồng minh đứng ngay sau trong thứ tự lượt được kéo lượt 25%.","Khi đồng minh được Thuận Buồm kết thúc lượt, đồng minh đứng ngay sau trong thứ tự lượt được kéo lượt 25%."
+TOAST_TEAM_HEALED,Đã hồi máu cả đội (có tác dụng khi máu giữ giữa các trận – Phase 9),Đã hồi máu cả đội (có tác dụng khi máu giữ giữa các trận – Phase 9)

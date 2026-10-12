@@ -125,7 +125,15 @@ func _draw() -> void:
 		draw_circle(Vector2.ZERO, radius * 1.35 + sin(_time * 5.0) * 4.0, TURN_COLOR)
 		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 	var body := unit.color.lerp(Color.WHITE, _hit_flash * 0.7)
-	if unit.is_ally():
+	if unit.is_summon:
+		# Vật triệu hồi: hình thoi nhỏ.
+		var r := radius * 0.8
+		draw_colored_polygon(PackedVector2Array([Vector2(0, -r), Vector2(r, 0), Vector2(0, r), Vector2(-r, 0)]), body)
+		var font := ThemeDB.fallback_font
+		draw_string(font, Vector2(-10.0, 10.0), unit.letter, HORIZONTAL_ALIGNMENT_LEFT, -1, 30, Color.WHITE)
+		draw_string(font, Vector2(-r, r + 22.0), "%s (%d)" % [unit.display_name, unit.summon_turns_left],
+				HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color.WHITE)
+	elif unit.is_ally():
 		PlaceholderArt.draw_character(self, Vector2.ZERO, radius, body, unit.accent_color, unit.letter, false)
 	else:
 		draw_set_transform(Vector2(0.0, radius * 0.9), 0.0, Vector2(1.0, 0.3))

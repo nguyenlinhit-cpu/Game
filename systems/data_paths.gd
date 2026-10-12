@@ -24,6 +24,28 @@ static func character_path(character_id: StringName) -> String:
 	return CHARACTERS_DIR.path_join("%s.tres" % character_id)
 
 
+## Mọi id nhân vật có dữ liệu (theo tên file trong data/characters).
+static func list_character_ids() -> Array[StringName]:
+	var ids: Array[StringName] = []
+	for file in DirAccess.get_files_at(CHARACTERS_DIR):
+		var clean := file.trim_suffix(".remap")
+		if clean.ends_with(".tres"):
+			ids.append(StringName(clean.get_basename()))
+	ids.sort_custom(func(a: StringName, b: StringName) -> bool:
+		return a == &"traveler" or (b != &"traveler" and String(a) < String(b)))
+	return ids
+
+
+static func list_encounter_paths() -> Array[String]:
+	var paths: Array[String] = []
+	for file in DirAccess.get_files_at("res://data/encounters"):
+		var clean := file.trim_suffix(".remap")
+		if clean.ends_with(".tres"):
+			paths.append("res://data/encounters/" + clean)
+	paths.sort()
+	return paths
+
+
 static func load_character(character_id: StringName) -> CharacterData:
 	var data := load(character_path(character_id)) as CharacterData
 	if data == null:

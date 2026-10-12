@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 4
+flat = 0.15
+percent = 0.0
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"neris_patience_e1"
+name_key = "STATUS_NERIS_PATIENCE_E1"
+desc_key = "STATUS_NERIS_PATIENCE_E1_DESC"
+kind = 0
+icon_text = "NN"
+icon_color = Color(0.227451, 0.552941, 0.870588, 1)
+duration_turns = 999
+max_stacks = 10
+stack_mode = 1
+base_chance = 1.0
+ignores_resistance = true
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_0")])

@@ -1,0 +1,113 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_character_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_character_skin"]
+[ext_resource type="Script" path="res://data/characters/scripts/wisp_talent.gd" id="4_wisp_talent"]
+[ext_resource type="Script" path="res://systems/resources/talent_data.gd" id="5_talent_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="6_stat_modifier_data"]
+[ext_resource type="Script" path="res://systems/resources/eidolon_data.gd" id="7_eidolon_data"]
+[ext_resource type="Resource" path="res://data/skills/wisp_basic.tres" id="8_wisp_basic"]
+[ext_resource type="Resource" path="res://data/skills/wisp_skill.tres" id="9_wisp_skill"]
+[ext_resource type="Resource" path="res://data/skills/wisp_ultimate.tres" id="10_wisp_ultimate"]
+[ext_resource type="Resource" path="res://data/skills/wisp_opener.tres" id="11_wisp_opener"]
+[ext_resource type="Resource" path="res://data/skills/wisp_technique.tres" id="12_wisp_technique"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 140.0
+atk = 72.0
+def = 52.0
+spd = 112.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.1
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 1020.0
+atk = 540.0
+def = 380.0
+spd = 112.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.1
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Skin_default"]
+script = ExtResource("3_character_skin")
+skin_id = &"default"
+label_key = ""
+placeholder_color = Color(0.309804, 0.819608, 0.709804, 1)
+accent_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Talent"]
+script = ExtResource("5_talent_data")
+name_key = "TALENT_WISP"
+desc_key = "TALENT_WISP_DESC"
+script_class = ExtResource("4_wisp_talent")
+
+[sub_resource type="Resource" id="Eidolon1_Mod_0"]
+script = ExtResource("6_stat_modifier_data")
+stat = 8
+flat = 0.2
+percent = 0.0
+
+[sub_resource type="Resource" id="Eidolon_1"]
+script = ExtResource("7_eidolon_data")
+name_key = "EIDOLON_WISP_1"
+desc_key = "EIDOLON_WISP_1_DESC"
+stat_modifiers = Array[ExtResource("6_stat_modifier_data")]([SubResource("Eidolon1_Mod_0")])
+
+[sub_resource type="Resource" id="Eidolon_2"]
+script = ExtResource("7_eidolon_data")
+name_key = "EIDOLON_WISP_2"
+desc_key = "EIDOLON_WISP_2_DESC"
+
+[sub_resource type="Resource" id="Eidolon_3"]
+script = ExtResource("7_eidolon_data")
+name_key = "EIDOLON_WISP_3"
+desc_key = "EIDOLON_WISP_3_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([0, 1])
+
+[sub_resource type="Resource" id="Eidolon_4"]
+script = ExtResource("7_eidolon_data")
+name_key = "EIDOLON_WISP_4"
+desc_key = "EIDOLON_WISP_4_DESC"
+
+[sub_resource type="Resource" id="Eidolon_5"]
+script = ExtResource("7_eidolon_data")
+name_key = "EIDOLON_WISP_5"
+desc_key = "EIDOLON_WISP_5_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([2])
+
+[sub_resource type="Resource" id="Eidolon_6"]
+script = ExtResource("7_eidolon_data")
+name_key = "EIDOLON_WISP_6"
+desc_key = "EIDOLON_WISP_6_DESC"
+
+[resource]
+script = ExtResource("1_character_data")
+id = &"wisp"
+name_key = "CHAR_WISP_NAME"
+rarity = 4
+element = 3
+path = 4
+skins = Array[ExtResource("3_character_skin")]([SubResource("Skin_default")])
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+max_energy = 110.0
+basic_attack = ExtResource("8_wisp_basic")
+skill = ExtResource("9_wisp_skill")
+ultimate = ExtResource("10_wisp_ultimate")
+talent = SubResource("Talent")
+eidolons = Array[ExtResource("7_eidolon_data")]([SubResource("Eidolon_1"), SubResource("Eidolon_2"), SubResource("Eidolon_3"), SubResource("Eidolon_4"), SubResource("Eidolon_5"), SubResource("Eidolon_6")])
+opener = ExtResource("11_wisp_opener")
+technique = ExtResource("12_wisp_technique")

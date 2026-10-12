@@ -35,6 +35,11 @@ func attach(p_battle: BattleController, p_owner: BattleUnit, p_eidolon_level: in
 	_connect(battle.after_damage, _on_after_damage)
 	_connect(battle.before_heal, _on_before_heal)
 	_connect(battle.skill_resolved, _on_skill_resolved)
+	_connect(battle.before_hit, _on_before_hit)
+	_connect(battle.status_applied, _on_status_applied)
+	_connect(battle.dot_damage, _on_dot_damage)
+	_connect(battle.hp_consumed, _on_hp_consumed)
+	_connect(battle.summon_added, _on_summon_added)
 	_on_attach()
 
 
@@ -112,3 +117,29 @@ func _on_before_heal(_ctx: SkillContext, _target: BattleUnit, _box: Dictionary) 
 
 func _on_skill_resolved(_ctx: SkillContext) -> void:
 	pass
+
+
+## `box["amount"]`, `box["target"]` sửa được (chia / đỡ sát thương).
+func _on_before_hit(_ctx: SkillContext, _target: BattleUnit, _box: Dictionary) -> void:
+	pass
+
+
+func _on_status_applied(_source: BattleUnit, _target: BattleUnit, _instance: StatusEffectInstance) -> void:
+	pass
+
+
+func _on_dot_damage(_target: BattleUnit, _amount: float, _source: BattleUnit) -> void:
+	pass
+
+
+func _on_hp_consumed(_unit: BattleUnit, _amount: float) -> void:
+	pass
+
+
+func _on_summon_added(_unit: BattleUnit) -> void:
+	pass
+
+
+## Bối cảnh rỗng để Đặc tính tự gây sát thương / hồi máu / khiên ngoài kỹ năng.
+func make_context() -> SkillContext:
+	return SkillContext.new(battle, owner, null, null)

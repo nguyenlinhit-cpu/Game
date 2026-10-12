@@ -16,6 +16,13 @@ const BAND_COLOR := Color("f2d58a")
 
 var is_opened: bool = false
 
+const GROUP: StringName = &"chest"
+
+
+func _ready() -> void:
+	super()
+	add_to_group(GROUP)
+
 
 func can_interact() -> bool:
 	return not is_opened

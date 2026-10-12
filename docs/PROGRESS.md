@@ -9,8 +9,9 @@
 | 3. Quái trên map và chuyển vào trận | Xong |
 | 4. Lõi trận đánh theo lượt | Xong |
 | 5. Nguyên tố, khiên, phá vỡ, hiệu ứng | Xong |
-| 6. Hệ thống kỹ năng, nhân vật chính, 4 nhân vật miễn phí | Xong, chờ duyệt |
-| 7–14 | Chưa làm |
+| 6. Hệ thống kỹ năng, nhân vật chính, 4 nhân vật miễn phí | Xong |
+| 7. 20 nhân vật còn lại | Xong (bước A đã duyệt, bước B xong), chờ duyệt |
+| 8–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -225,6 +226,40 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 6.
 - Nhận nhân vật theo cốt truyện, Tinh Mệnh nhân vật chính theo Mảnh Hồn (Phase 12); nhân vật trùng (Phase 11). Hiện cả 5 nhân vật có sẵn, Tinh Mệnh chỉnh trong phòng thử.
 - Máu giữ giữa các trận để Bí Kỹ hồi máu có nghĩa (Phase 9).
 - Quái gắn hiệu ứng lên phe ta, đòn phụ của quái (Phase 8).
+
+## Phase 7 – 20 nhân vật còn lại
+
+### Bước A – Thiết kế (xong, chờ duyệt)
+
+- Thiết kế 8 nhân vật 5★ và 12 nhân vật 4★ trong `tools/data_builder/roster_design.py` (nguồn duy nhất), sinh vào `docs/CHARACTERS.md` bằng `tools/data_builder/write_character_doc.py`. Mỗi người: tiểu sử, tính cách, ngoại hình (bảng màu + dáng bóng đen), Đòn Mở Màn, Bí Kỹ, 3 kỹ năng trận, Đặc tính, 6 Tinh Mệnh, chỉ số cấp 1 / cấp 30.
+- Bảng tổng hợp 25 nhân vật cuối file. Script tự kiểm: 25 cơ chế Đặc tính không trùng, Bí Kỹ 24 nhân vật chia đều 8/8/8, nguyên tố/vận mệnh/hạng khớp mục 8.
+- Cơ chế mới cần code ở bước B: tự tiêu máu (Ignar), chia sát thương (Marisol), dấu chuyển mục tiêu (Raiko), kéo lượt dây chuyền (Zephyra), lan độc khi chết (Vesper), vật triệu hồi (Sylvaine), tiêu thêm Điểm Chiến Kỹ (Orrin), đổi tư thế (Celestine), hút máu từ sát thương theo lượt (Quill), đỡ đòn thay (Aldric), báo thù (Rook), đòn phụ lên quái Phá Vỡ (Fenna), chuỗi Chiến kỹ (Kestrel), tăng theo số debuff (Vael), debuff thành trì hoãn (Wisp), cộng hưởng nguyên tố (Selka), nổ lan khi hạ quái (Ember), bảo hiểm bạo kích (Neris), sạc năng lượng (Pip), nhân bản debuff (Echo). Bí Kỹ mới trên map: lao để lại vệt, bắn tên, sương ngủ, rễ trói, bẫy, bom, mưa tro, lướt xa qua khe vực, hút vật phẩm, hiện rương ẩn / quái trên bản đồ nhỏ, về phòng nghỉ.
+
+### Bước B – Code (xong)
+
+- Dữ liệu 20 nhân vật sinh bằng `tools/data_builder/build_roster.py` (tên/mô tả lấy từ `roster_design.py`, số liệu kỹ năng khai báo trong builder), theo 4 nhóm 5 người; mỗi nhóm có test riêng trước khi sang nhóm sau. Chữ trong game ở `localization/roster.csv` (sinh tự động; cột tiếng Anh tạm dùng lại tiếng Việt).
+- 20 TalentScript trong `data/characters/scripts/` (Đặc tính + Tinh Mệnh có cơ chế riêng). Tinh Mệnh 3/5 là +15% hệ số (EidolonData), Wisp E1 là +20% Chính Xác Hiệu Ứng.
+- Lõi mới: vật triệu hồi (`BattleController.add_summon`, không chiếm chỗ nhân vật, quái không nhắm), móc `before_hit` (chia / đỡ sát thương), `status_applied`, `dot_damage`, `hp_consumed`; thay kỹ năng tạm thời (`BattleUnit.skill_overrides` – tư thế, Chiến kỹ cường hóa); đếm lần dùng mỗi trận (`try_use`); hiệu ứng ghép mới: tự tiêu máu, hồi sinh, triệu hồi, mất % máu tối đa, trừ % khiên; phạm vi FIRST_ENEMY, RANDOM_ENEMY. Bí Kỹ áp trước khi Đặc tính nhận `battle_began`.
+- Bí Kỹ mới trên map: lao để lại vệt đánh dấu, bắn tên choáng, vùng choáng/đánh dấu (sương ngủ, rễ trói, bom, mưa tro), bẫy (luôn Ưu Thế), tăng tốc, hiện rương ẩn / quái trên bản đồ nhỏ, hút Hộp Bí Kỹ, lướt xa qua khe vực (lớp va chạm PIT), hồi máu cả đội (chờ Phase 9), về phòng nghỉ gần nhất.
+- Phòng thử trận: bảng "Đội & quái…" chọn đúng 4 trong 25 nhân vật, trận quái bất kỳ trong `data/encounters`, cấp đội, cấp Tinh Mệnh.
+- Báo cáo cân bằng `tools/balance/balance_report.tscn` → `docs/BALANCE_REPORT.md`: 10 lượt mỗi nhân vật, cấp 30, 8 seed, cùng đội hỗ trợ (chỉ đánh thường), cùng 3 Quái Thử Sức. Sau 8 lượt chỉnh số, cả 8 nhân vật 5★ mạnh hơn trung bình 4★ cùng vận mệnh 17–24%.
+- Test `tests/phase07_test.tscn` (chạy theo nhóm: `-- --groups=1,2`): với mỗi nhân vật kiểm đủ kỹ năng, chữ dịch, 3 kỹ năng trận, 1 trận Tự Động trọn vẹn ở Tinh Mệnh 6 có Bí Kỹ, làm người dẫn đầu và dùng Bí Kỹ ngoài map; cộng kiểm tra riêng cho từng Đặc tính.
+
+### File chính
+
+- `tools/data_builder/{roster_design,build_roster,write_character_doc}.py`, `tools/balance/balance_report.*`
+- `data/characters/*.tres` (25), `data/characters/scripts/*_talent.gd` (25), `data/skills/*`, `data/status_effects/*`
+- `systems/skill_effects/{hp_cost,revive,summon,max_hp_damage,toughness_damage}_effect.gd`
+- Sửa: `scenes/battle/{battle_controller,battle_unit,skill_context,talent_script,battle_scene}.gd`, `scenes/battle/ui/unit_view.gd`, `scenes/battle/sandbox/battle_sandbox.gd`, `scenes/overworld/map/overworld_map.gd`, `scenes/overworld/player/player.gd`, `scenes/ui/hud/minimap.gd`
+- `docs/CHARACTERS.md`, `docs/BALANCE_REPORT.md`, `tests/phase07_test.*`
+
+### Việc còn nợ
+
+- Bản tiếng Anh của chữ 20 nhân vật (đang dùng lại tiếng Việt).
+- Hình thật, biểu tượng (Phase 13). Vật triệu hồi đang là hình thoi.
+- Sở hữu nhân vật qua gacha (Phase 11); hiện mọi nhân vật dùng được trong phòng thử, đội trên map đổi bằng phòng thử hoặc "Đổi đội thử".
+- Bí Kỹ Túi Thuốc chưa hồi thật (Phase 9 giữ máu giữa các trận). Tiếng Vọng Về đang về phòng nghỉ gần nhất; dịch chuyển nhanh giữa các phòng nghỉ làm ở Phase 12.
+- Cân bằng lại cùng boss ở Phase 8 và lần cuối ở Phase 14.
 
 ## Để sau
 

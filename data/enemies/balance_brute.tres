@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
+[ext_resource type="Resource" path="res://data/skills/balance_brute_smash.tres" id="3_smash"]
+[ext_resource type="Resource" path="res://data/skills/balance_brute_quake.tres" id="4_quake"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stats")
+hp = 200000.0
+atk = 280.0
+def = 300.0
+spd = 95.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stats")
+hp = 200000.0
+atk = 280.0
+def = 300.0
+
+[resource]
+script = ExtResource("1_data")
+id = &"balance_brute"
+name_key = "ENEMY_BALANCE_BRUTE"
+element = 6
+placeholder_color = Color(0.4, 0.35, 0.5, 1)
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+skills = Array[ExtResource("3_smash")]([ExtResource("3_smash"), ExtResource("4_quake")])
+skill_weights = PackedFloat32Array(2, 1)
+weaknesses = Array[int]([0, 1, 2, 3, 4, 5, 6])
+max_toughness = 60.0

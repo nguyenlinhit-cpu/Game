@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 3
+flat = 0.0
+percent = -0.12
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"wisp_forget"
+name_key = "STATUS_WISP_FORGET"
+desc_key = "STATUS_WISP_FORGET_DESC"
+kind = 1
+icon_text = "LQ"
+icon_color = Color(0.309804, 0.819608, 0.709804, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 1.0
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_0")])

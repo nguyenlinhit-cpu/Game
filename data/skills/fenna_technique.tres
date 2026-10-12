@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TechniqueData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/technique_data.gd" id="1_technique_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+
+[resource]
+script = ExtResource("1_technique_data")
+id = &"fenna_technique"
+name_key = "SKILL_FENNA_TECHNIQUE"
+desc_key = "SKILL_FENNA_TECHNIQUE_DESC"
+kind = 1
+battle_start_effects = Array[ExtResource("2_skill_effect")]([])
+map_action = 6
+distance_tiles = 4.0
+radius_tiles = 1.0
+duration_sec = 8.0
+speed_bonus = 0.0
+marks_force_advantage = true

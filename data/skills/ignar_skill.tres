@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/hp_cost_effect.gd" id="3_hp_cost_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/damage_effect.gd" id="4_damage_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("3_hp_cost_effect")
+scope = 3
+current_hp_ratio = 0.15
+
+[sub_resource type="Resource" id="Effect_2"]
+script = ExtResource("4_damage_effect")
+scaling_stat = 1
+multiplier = 1.62
+adjacent_multiplier = 0.81
+toughness = 20.0
+toughness_adjacent = 10.0
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"ignar_skill"
+name_key = "SKILL_IGNAR_SKILL"
+desc_key = "SKILL_IGNAR_SKILL_DESC"
+kind = 1
+target = 1
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1"), SubResource("Effect_2")])
+sp_change = -1
+energy_gain = 30.0

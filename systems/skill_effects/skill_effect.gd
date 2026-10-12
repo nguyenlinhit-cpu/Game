@@ -12,6 +12,10 @@ enum Scope {
 	ALL_ALLIES,
 	ALLIES_EXCEPT_SELF,
 	ALL_ENEMIES,
+	## Quái còn sống đầu hàng (dùng cho hiệu ứng đầu trận không có mục tiêu chọn).
+	FIRST_ENEMY,
+	## 1 quái còn sống ngẫu nhiên.
+	RANDOM_ENEMY,
 }
 
 @export var scope: Scope = Scope.TARGETS

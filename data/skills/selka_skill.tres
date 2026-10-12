@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/selka_courage.tres" id="3_selka_courage"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="4_apply_status_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("4_apply_status_effect")
+status = ExtResource("3_selka_courage")
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"selka_skill"
+name_key = "SKILL_SELKA_SKILL"
+desc_key = "SKILL_SELKA_SKILL_DESC"
+kind = 1
+target = 3
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1")])
+sp_change = -1
+energy_gain = 30.0

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TechniqueData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/technique_data.gd" id="1_technique_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/marisol_wave_coat.tres" id="3_marisol_wave_coat"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="4_apply_status_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("4_apply_status_effect")
+scope = 4
+status = ExtResource("3_marisol_wave_coat")
+
+[resource]
+script = ExtResource("1_technique_data")
+id = &"marisol_technique"
+name_key = "SKILL_MARISOL_TECHNIQUE"
+desc_key = "SKILL_MARISOL_TECHNIQUE_DESC"
+kind = 0
+battle_start_effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1")])
+map_action = 0
+distance_tiles = 4.0
+radius_tiles = 2.0
+duration_sec = 8.0
+speed_bonus = 0.0

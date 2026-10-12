@@ -82,6 +82,10 @@ func show_burst(world_position: Vector2, radius: float, color: Color) -> void:
 	_player.get_parent().add_child(burst)
 
 
+func reveal_on_minimap(kind: Minimap.Reveal, duration: float) -> void:
+	_minimap.reveal(kind, duration)
+
+
 func is_reward_popup_visible() -> bool:
 	return _reward_popup.visible
 

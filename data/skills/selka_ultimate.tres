@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/selka_chorus.tres" id="3_selka_chorus"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="4_apply_status_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/energy_effect.gd" id="5_energy_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("4_apply_status_effect")
+status = ExtResource("3_selka_chorus")
+
+[sub_resource type="Resource" id="Effect_2"]
+script = ExtResource("5_energy_effect")
+amount = 10.0
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"selka_ultimate"
+name_key = "SKILL_SELKA_ULTIMATE"
+desc_key = "SKILL_SELKA_ULTIMATE_DESC"
+kind = 2
+target = 4
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1"), SubResource("Effect_2")])
+energy_gain = 5.0

@@ -1,0 +1,105 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_character_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_character_skin"]
+[ext_resource type="Script" path="res://data/characters/scripts/kestrel_talent.gd" id="4_kestrel_talent"]
+[ext_resource type="Script" path="res://systems/resources/talent_data.gd" id="5_talent_data"]
+[ext_resource type="Script" path="res://systems/resources/eidolon_data.gd" id="6_eidolon_data"]
+[ext_resource type="Resource" path="res://data/skills/kestrel_basic.tres" id="7_kestrel_basic"]
+[ext_resource type="Resource" path="res://data/skills/kestrel_skill.tres" id="8_kestrel_skill"]
+[ext_resource type="Resource" path="res://data/skills/kestrel_ultimate.tres" id="9_kestrel_ultimate"]
+[ext_resource type="Resource" path="res://data/skills/kestrel_opener.tres" id="10_kestrel_opener"]
+[ext_resource type="Resource" path="res://data/skills/kestrel_technique.tres" id="11_kestrel_technique"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 165.0
+atk = 82.0
+def = 56.0
+spd = 106.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.0
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 1210.0
+atk = 610.0
+def = 420.0
+spd = 106.0
+crit_rate = 0.05
+crit_dmg = 0.5
+break_effect = 0.0
+energy_regen = 1.0
+effect_hit = 0.0
+outgoing_healing = 0.0
+
+[sub_resource type="Resource" id="Skin_default"]
+script = ExtResource("3_character_skin")
+skin_id = &"default"
+label_key = ""
+placeholder_color = Color(0.309804, 0.819608, 0.709804, 1)
+accent_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Talent"]
+script = ExtResource("5_talent_data")
+name_key = "TALENT_KESTREL"
+desc_key = "TALENT_KESTREL_DESC"
+script_class = ExtResource("4_kestrel_talent")
+
+[sub_resource type="Resource" id="Eidolon_1"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_KESTREL_1"
+desc_key = "EIDOLON_KESTREL_1_DESC"
+
+[sub_resource type="Resource" id="Eidolon_2"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_KESTREL_2"
+desc_key = "EIDOLON_KESTREL_2_DESC"
+
+[sub_resource type="Resource" id="Eidolon_3"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_KESTREL_3"
+desc_key = "EIDOLON_KESTREL_3_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([0, 1])
+
+[sub_resource type="Resource" id="Eidolon_4"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_KESTREL_4"
+desc_key = "EIDOLON_KESTREL_4_DESC"
+
+[sub_resource type="Resource" id="Eidolon_5"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_KESTREL_5"
+desc_key = "EIDOLON_KESTREL_5_DESC"
+multiplier_bonus = 0.15
+bonus_kinds = Array[int]([2])
+
+[sub_resource type="Resource" id="Eidolon_6"]
+script = ExtResource("6_eidolon_data")
+name_key = "EIDOLON_KESTREL_6"
+desc_key = "EIDOLON_KESTREL_6_DESC"
+
+[resource]
+script = ExtResource("1_character_data")
+id = &"kestrel"
+name_key = "CHAR_KESTREL_NAME"
+rarity = 4
+element = 3
+path = 0
+skins = Array[ExtResource("3_character_skin")]([SubResource("Skin_default")])
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+max_energy = 120.0
+basic_attack = ExtResource("7_kestrel_basic")
+skill = ExtResource("8_kestrel_skill")
+ultimate = ExtResource("9_kestrel_ultimate")
+talent = SubResource("Talent")
+eidolons = Array[ExtResource("6_eidolon_data")]([SubResource("Eidolon_1"), SubResource("Eidolon_2"), SubResource("Eidolon_3"), SubResource("Eidolon_4"), SubResource("Eidolon_5"), SubResource("Eidolon_6")])
+opener = ExtResource("10_kestrel_opener")
+technique = ExtResource("11_kestrel_technique")

@@ -15,6 +15,8 @@ var events: Array[Dictionary] = []
 var element: int = Element.NONE
 ## Đòn đánh phụ / phản công (không tốn lượt).
 var is_follow_up: bool = false
+## Chỗ để TalentScript ghi dấu trong một hành động (vd. đã tiêu thêm Điểm Chiến Kỹ, đã nổ lan).
+var custom: Dictionary = {}
 
 
 func _init(p_battle: BattleController, p_user: BattleUnit, p_skill: SkillData, p_main: BattleUnit) -> void:
@@ -56,6 +58,14 @@ func entries(scope: SkillEffect.Scope) -> Array[Dictionary]:
 		SkillEffect.Scope.ALL_ENEMIES:
 			for unit in battle.get_foes(user):
 				result.append({"unit": unit, "main": true})
+		SkillEffect.Scope.FIRST_ENEMY:
+			var foes := battle.get_foes(user)
+			if not foes.is_empty():
+				result.append({"unit": foes[0], "main": true})
+		SkillEffect.Scope.RANDOM_ENEMY:
+			var foes := battle.get_foes(user)
+			if not foes.is_empty():
+				result.append({"unit": foes[battle.rng.randi_range(0, foes.size() - 1)], "main": true})
 	return result
 
 
@@ -69,9 +79,13 @@ func deal_damage(target: BattleUnit, scaling_stat: Stats.Type, multiplier: float
 			multiplier * get_multiplier_scale(), element)
 	battle.before_damage.emit(self, target, params)
 	var result := DamageCalc.roll(params, battle.rng, battle.crit_mode)
-	var outcome := target.take_hit(result["amount"])
+	# Móc đổi người nhận / chia sát thương (Marisol, Aldric).
+	var box := {"amount": float(result["amount"]), "target": target, "crit": result["crit"]}
+	battle.before_hit.emit(self, target, box)
+	target = box["target"]
+	var outcome := target.take_hit(box["amount"])
 	events.append({"type": "damage", "target": target, "amount": outcome["hp_lost"], "crit": result["crit"],
-			"element": element, "absorbed": outcome["absorbed"]})
+			"element": element, "absorbed": outcome["absorbed"], "source": user})
 	EventBus.damage_dealt.emit(user, target, int(outcome["hp_lost"]), result["crit"])
 	target.add_energy(BattleUnit.ENERGY_ON_HIT)
 	events.append_array(StatusEffects.on_hit(target))
@@ -88,7 +102,8 @@ func heal(target: BattleUnit, raw_amount: float) -> float:
 	var box := {"amount": amount}
 	battle.before_heal.emit(self, target, box)
 	var healed := target.heal(box["amount"])
-	events.append({"type": "heal", "target": target, "amount": healed, "crit": false})
+	events.append({"type": "heal", "target": target, "amount": healed, "crit": false, "raw": box["amount"],
+			"source": user})
 	return healed
 
 
@@ -97,4 +112,4 @@ func give_shield(target: BattleUnit, amount: float, status: StatusEffectData) ->
 		return
 	StatusEffects.apply(status, user, target)
 	target.add_shield(amount)
-	events.append({"type": "shield", "target": target, "amount": amount, "crit": false})
+	events.append({"type": "shield", "target": target, "amount": amount, "crit": false, "source": user})

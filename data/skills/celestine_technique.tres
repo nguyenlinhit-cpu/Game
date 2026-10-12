@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="TechniqueData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/technique_data.gd" id="1_technique_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_point_effect.gd" id="3_skill_point_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/celestine_judgment.tres" id="4_celestine_judgment"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="5_apply_status_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("3_skill_point_effect")
+scope = 3
+amount = 2
+
+[sub_resource type="Resource" id="Effect_2"]
+script = ExtResource("5_apply_status_effect")
+scope = 3
+status = ExtResource("4_celestine_judgment")
+
+[resource]
+script = ExtResource("1_technique_data")
+id = &"celestine_technique"
+name_key = "SKILL_CELESTINE_TECHNIQUE"
+desc_key = "SKILL_CELESTINE_TECHNIQUE_DESC"
+kind = 0
+battle_start_effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1"), SubResource("Effect_2")])
+map_action = 0
+distance_tiles = 4.0
+radius_tiles = 2.0
+duration_sec = 8.0
+speed_bonus = 0.0

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 13
+flat = 0.1
+percent = 0.0
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"vael_def_down"
+name_key = "STATUS_VAEL_DEF_DOWN"
+desc_key = "STATUS_VAEL_DEF_DOWN_DESC"
+kind = 1
+icon_text = "MM"
+icon_color = Color(0.607843, 0.772549, 0.239216, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 0.5
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_0")])

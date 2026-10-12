@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="OpenerAttackData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/opener_attack_data.gd" id="1_opener_attack_data"]
+
+[resource]
+script = ExtResource("1_opener_attack_data")
+name_key = "SKILL_IGNAR_OPENER"
+element = 0
+range_px = 110.0
+arc_degrees = 100.0
+cooldown_sec = 0.8

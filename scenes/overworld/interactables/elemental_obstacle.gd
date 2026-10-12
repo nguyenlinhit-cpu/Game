@@ -45,7 +45,10 @@ var _open_amount: float = 0.0:
 
 func _ready() -> void:
 	add_to_group(GROUP)
-	collision_layer = PhysicsLayers.WARP_BARRIER if kind == Kind.WARP_BARRIER else PhysicsLayers.WORLD
+	match kind:
+		Kind.WARP_BARRIER: collision_layer = PhysicsLayers.WARP_BARRIER
+		Kind.CHASM: collision_layer = PhysicsLayers.PIT
+		_: collision_layer = PhysicsLayers.WORLD
 	collision_mask = 0
 	var rect := RectangleShape2D.new()
 	rect.size = get_size_px()

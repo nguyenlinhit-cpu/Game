@@ -1,8 +1,8 @@
 extends Control
 ## Phòng thử trận: đánh bù nhìn (2 con yếu cả 7 nguyên tố, 1 con chỉ yếu Lửa, máu rất nhiều),
 ## chọn nguyên tố đòn đánh của phe ta để kiểm chứng đủ 7 hiệu ứng Phá Vỡ,
-## và thấy đòn sai nguyên tố không làm giảm khiên. Chọn đúng 4 nhân vật và cấp Tinh Mệnh (áp cho cả đội),
-## bấm "Áp dụng" để đánh lại với đội mới. Phase 7 thêm chọn quái và cấp.
+## và thấy đòn sai nguyên tố không làm giảm khiên. Bảng "Đội & quái…": chọn đúng 4 trong mọi nhân vật,
+## trận quái, cấp đội, cấp Tinh Mệnh (áp cho cả đội), bấm "Áp dụng" để đánh lại.
 ## Mở: chạy thẳng scene này (F6), hoặc menu tạm dừng → "Phòng thử trận" (bản debug).
 
 const SANDBOX_ENCOUNTER: String = "res://data/encounters/sandbox_dummies.tres"
@@ -20,7 +20,7 @@ var _eidolon_spin: SpinBox
 
 func _ready() -> void:
 	var payload := SceneRouter.payload.duplicate()
-	payload["encounter"] = load(SANDBOX_ENCOUNTER)
+	payload["encounter"] = load(str(payload.get("sandbox_encounter", SANDBOX_ENCOUNTER)))
 	payload["opening"] = BattleTypes.Opening.NORMAL
 	SceneRouter.payload = payload
 	battle = BATTLE_SCENE.instantiate()
@@ -68,25 +68,81 @@ func _build_panel() -> void:
 	_build_team_row()
 
 
+var _setup_panel: PanelContainer
+var _encounter_option: OptionButton
+var _level_spin: SpinBox
+var _encounter_paths: Array[String] = []
+
+
+## Bảng chọn đội / quái / cấp / Tinh Mệnh (bật bằng nút "Đội & quái…").
 func _build_team_row() -> void:
-	var row := HBoxContainer.new()
-	row.add_theme_constant_override("separation", 10)
-	_panel.get_parent().add_child(row)
+	var open_button := Button.new()
+	open_button.text = tr("SANDBOX_SETUP")
+	open_button.focus_mode = Control.FOCUS_NONE
+	open_button.custom_minimum_size = Vector2(0.0, 48.0)
+	_panel.add_child(open_button)
+	# Bảng nằm giữa màn hình, nền đặc để đọc rõ trên sân đấu.
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	center.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(center)
+	_setup_panel = PanelContainer.new()
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.07, 0.06, 0.13, 0.97)
+	style.border_color = Color(0.95, 0.84, 0.54, 0.8)
+	style.set_border_width_all(3)
+	style.set_corner_radius_all(14)
+	style.set_content_margin_all(24)
+	_setup_panel.add_theme_stylebox_override("panel", style)
+	_setup_panel.hide()
+	center.add_child(_setup_panel)
+	open_button.pressed.connect(func() -> void: _setup_panel.visible = not _setup_panel.visible)
+	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 12)
+	_setup_panel.add_child(box)
 	var label := Label.new()
 	label.text = tr("SANDBOX_TEAM")
-	row.add_child(label)
-	for id in GameState.owned_characters:
+	box.add_child(label)
+	var grid := GridContainer.new()
+	grid.columns = 5
+	box.add_child(grid)
+	for id in DataPaths.list_character_ids():
 		var data := DataPaths.load_character(id)
 		var check := CheckBox.new()
 		check.text = GameState.player_name if id == GameState.PLAYER_CHARACTER_ID else tr(data.name_key)
+		check.add_theme_color_override("font_color", Element.color(data.element))
 		check.button_pressed = GameState.team.has(id)
 		check.focus_mode = Control.FOCUS_NONE
-		row.add_child(check)
+		grid.add_child(check)
 		_team_checks[id] = check
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
+	box.add_child(row)
+	var encounter_label := Label.new()
+	encounter_label.text = tr("SANDBOX_ENCOUNTER")
+	row.add_child(encounter_label)
+	_encounter_option = OptionButton.new()
+	_encounter_paths = DataPaths.list_encounter_paths()
+	var current := str(SceneRouter.payload.get("sandbox_encounter", SANDBOX_ENCOUNTER))
+	for path in _encounter_paths:
+		_encounter_option.add_item(path.get_file().get_basename())
+		if path == current:
+			_encounter_option.select(_encounter_option.item_count - 1)
+	row.add_child(_encounter_option)
+	var level_label := Label.new()
+	level_label.text = tr("SANDBOX_LEVEL")
+	row.add_child(level_label)
+	_level_spin = SpinBox.new()
+	_level_spin.min_value = 1
+	_level_spin.max_value = GameConfig.MAX_LEVEL
+	_level_spin.value = GameState.team_level
+	row.add_child(_level_spin)
+	var eidolon_label := Label.new()
+	eidolon_label.text = tr("SANDBOX_EIDOLON").replace("%d", "").strip_edges()
+	row.add_child(eidolon_label)
 	_eidolon_spin = SpinBox.new()
 	_eidolon_spin.min_value = 0
 	_eidolon_spin.max_value = 6
-	_eidolon_spin.prefix = tr("SANDBOX_EIDOLON").replace("%d", "").strip_edges()
 	_eidolon_spin.value = GameState.get_eidolon_level(GameState.team[0])
 	row.add_child(_eidolon_spin)
 	var apply := Button.new()
@@ -97,8 +153,17 @@ func _build_team_row() -> void:
 		for id: StringName in _team_checks:
 			if (_team_checks[id] as CheckBox).button_pressed:
 				ids.append(id)
-		apply_team(ids, int(_eidolon_spin.value)))
-	row.add_child(apply)
+		apply_setup(ids, _encounter_paths[_encounter_option.selected], int(_level_spin.value), int(_eidolon_spin.value)))
+	box.add_child(apply)
+
+
+## Đặt đội (đúng 4), trận quái, cấp, Tinh Mệnh rồi mở lại phòng thử. Trả về false nếu đội sai.
+func apply_setup(ids: Array[StringName], encounter_path: String, level: int, eidolon_level: int) -> bool:
+	GameState.team_level = clampi(level, 1, GameConfig.MAX_LEVEL)
+	var payload := SceneRouter.payload.duplicate()
+	payload["sandbox_encounter"] = encounter_path
+	SceneRouter.payload = payload
+	return apply_team(ids, eidolon_level)
 
 
 ## Đặt đội (đúng 4 người) và cấp Tinh Mệnh cho cả đội rồi mở lại phòng thử. Trả về false nếu đội sai.

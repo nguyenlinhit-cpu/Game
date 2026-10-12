@@ -26,6 +26,14 @@ signal before_damage(ctx: SkillContext, target: BattleUnit, params: DamageCalc.P
 signal after_damage(ctx: SkillContext, target: BattleUnit, amount: float, crit: bool)
 signal before_heal(ctx: SkillContext, target: BattleUnit, box: Dictionary)
 signal skill_resolved(ctx: SkillContext)
+## box = { "amount": float, "target": BattleUnit } – sửa được để chia/đỡ sát thương.
+signal before_hit(ctx: SkillContext, target: BattleUnit, box: Dictionary)
+signal status_applied(source: BattleUnit, target: BattleUnit, instance: StatusEffectInstance)
+signal dot_damage(target: BattleUnit, amount: float, source: BattleUnit)
+## Mất máu do tự tiêu (HpCostEffect).
+signal hp_consumed(unit: BattleUnit, amount: float)
+signal summon_added(unit: BattleUnit)
+signal summon_removed(unit: BattleUnit)
 
 enum Phase { SETUP, RUNNING, AWAITING_INPUT, ENDED }
 
@@ -64,6 +72,14 @@ var debug_element_override: int = Element.NONE
 ## Bí Kỹ áp đầu trận: [character_id] (trận kế tiếp + nhóm quái bị đánh dấu).
 var technique_users: Array[StringName] = []
 var talents: Array[TalentScript] = []
+## Vật triệu hồi phe ta đang có mặt (không nằm trong `allies`).
+var summons: Array[BattleUnit] = []
+## Đếm số lần dùng giới hạn mỗi trận (hồi sinh...): { khóa: số lần }.
+var use_counts: Dictionary = {}
+## Tự Động riêng cho từng đơn vị (công cụ cân bằng): { BattleUnit: Callable(unit) -> { "skill", "target" } }.
+var auto_overrides: Dictionary = {}
+## Đơn vị không tự dùng Tuyệt kỹ khi Tự Động.
+var auto_ultimate_blocklist: Array[BattleUnit] = []
 ## Hàng chen lượt: [{ "unit", "target", "skill"?: SkillData, "follow_up"?: bool }].
 var _interrupts: Array[Dictionary] = []
 var _choice: Dictionary = {}
@@ -121,8 +137,9 @@ func start() -> void:
 	skill_points_changed.emit(skill_points)
 	queue_changed.emit()
 	await _wait(START_PAUSE_SEC)
-	battle_began.emit()
+	# Bí Kỹ áp trước để Đặc tính (vd. tư thế Celestine) thấy được trạng thái đầu trận.
 	var technique_events := _apply_technique_effects()
+	battle_began.emit()
 	if not technique_events.is_empty():
 		report_events(allies[0], technique_events)
 		await _wait(STATUS_PAUSE_SEC)
@@ -152,7 +169,9 @@ func start() -> void:
 			continue
 		if not bool(start_result["skip"]):
 			var action: Dictionary
-			if unit.is_ally():
+			if unit.is_summon:
+				action = _summon_action(unit)
+			elif unit.is_ally():
 				action = await _get_ally_action(unit)
 			else:
 				action = EnemyAI.choose_action(unit, allies, enemies, rng)
@@ -166,6 +185,10 @@ func start() -> void:
 				status_events.emit(unit, end_events)
 		if queue.has(unit):
 			queue.end_turn(unit)
+		if unit.is_summon:
+			unit.summon_turns_left -= 1
+			if unit.summon_turns_left <= 0:
+				remove_summon(unit)
 		EventBus.turn_ended.emit(unit)
 		current_unit = null
 		queue_changed.emit()
@@ -230,6 +253,57 @@ func request_follow_up(unit: BattleUnit, skill: SkillData, target: BattleUnit = 
 		_choice_made.emit()
 
 
+## Thêm vật triệu hồi (đã có của cùng chủ thì làm mới số lượt). Trả về vật triệu hồi.
+func add_summon(owner_unit: BattleUnit, summon_name: String, unit_letter: String, unit_color: Color,
+		speed: float, hp_ratio: float, skill: SkillData, turns: int) -> BattleUnit:
+	for existing in summons:
+		if existing.summon_owner == owner_unit:
+			existing.summon_turns_left = maxi(existing.summon_turns_left, turns)
+			return existing
+	var unit := BattleUnit.create_summon(owner_unit, summon_name, unit_letter, unit_color, speed, hp_ratio, skill, turns)
+	summons.append(unit)
+	queue.add(unit)
+	summon_added.emit(unit)
+	queue_changed.emit()
+	return unit
+
+
+func get_summon_of(owner_unit: BattleUnit) -> BattleUnit:
+	for unit in summons:
+		if unit.summon_owner == owner_unit:
+			return unit
+	return null
+
+
+func remove_summon(unit: BattleUnit) -> void:
+	summons.erase(unit)
+	queue.remove(unit)
+	summon_removed.emit(unit)
+	queue_changed.emit()
+
+
+## Đếm lần dùng giới hạn mỗi trận. Trả về true (và tăng đếm) nếu còn lượt dùng.
+func try_use(key: String, limit: int) -> bool:
+	var used := int(use_counts.get(key, 0))
+	if used >= limit:
+		return false
+	use_counts[key] = used + 1
+	return true
+
+
+func _summon_action(unit: BattleUnit) -> Dictionary:
+	if unit.summon_skill == null:
+		return {}
+	var pool := SkillExecutor.get_target_pool(unit.summon_skill, unit, allies, enemies)
+	if pool.is_empty():
+		return {}
+	var target := pool[0]
+	for candidate in pool:
+		if candidate.get_hp_ratio() < target.get_hp_ratio():
+			target = candidate
+	return {"skill": unit.summon_skill, "target": target}
+
+
 ## Hồi sinh đồng minh đã ngã: trở lại hàng lượt với quãng đường đầy.
 func revive(unit: BattleUnit, ratio: float) -> Array[Dictionary]:
 	if unit.is_alive():
@@ -278,6 +352,7 @@ func apply_status(data: StatusEffectData, source: BattleUnit, target: BattleUnit
 	if instance == null:
 		events.append({"type": "status_resisted", "target": target, "amount": 0.0, "crit": false, "status": data.id, "name_key": data.name_key})
 		return events
+	status_applied.emit(source, target, instance)
 	events.append({"type": "status_applied", "target": target, "amount": float(instance.stacks), "crit": false,
 			"status": data.id, "name_key": data.name_key})
 	if data.extra_delay > 0.0 and queue.has(target):
@@ -345,6 +420,8 @@ func _get_ally_action(unit: BattleUnit) -> Dictionary:
 				await _process_interrupts()
 				if _check_end() or not unit.is_alive():
 					return {}
+			if auto_overrides.has(unit):
+				return (auto_overrides[unit] as Callable).call(unit)
 			return AutoBattle.choose_action(unit, self)
 		phase = Phase.AWAITING_INPUT
 		input_requested.emit(unit)
@@ -406,6 +483,9 @@ func _perform(unit: BattleUnit, skill: SkillData, target: BattleUnit, follow_up:
 
 ## Đơn vị trong sự kiện đã hết máu: rời hàng lượt, thêm sự kiện "death".
 func _handle_deaths(events: Array[Dictionary]) -> void:
+	for event in events.duplicate():
+		if event["type"] == "dot":
+			dot_damage.emit(event["target"], float(event["amount"]), event.get("source"))
 	var dead_units: Array[BattleUnit] = []
 	for event in events:
 		var target: BattleUnit = event["target"]
@@ -413,14 +493,18 @@ func _handle_deaths(events: Array[Dictionary]) -> void:
 			dead_units.append(target)
 	for dead in dead_units:
 		queue.remove(dead)
-		StatusEffects.remove_all(dead)
 		events.append({"type": "death", "target": dead, "amount": 0.0, "crit": false})
+		# Báo trước khi gỡ hiệu ứng để Đặc tính còn đọc được hiệu ứng trên đơn vị vừa ngã (vd. lan độc).
 		unit_died.emit(dead)
 		EventBus.unit_died.emit(dead)
+		if not dead.is_alive():
+			StatusEffects.remove_all(dead)
 
 
 func _queue_auto_ultimates() -> void:
 	for unit in allies:
+		if auto_ultimate_blocklist.has(unit):
+			continue
 		if AutoBattle.should_use_ultimate(unit, self) and not is_ultimate_queued(unit):
 			_interrupts.append({"unit": unit, "target": null, "skill": AutoBattle.choose_ultimate_skill(unit, self)})
 

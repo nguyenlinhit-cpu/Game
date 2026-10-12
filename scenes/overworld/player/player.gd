@@ -41,6 +41,11 @@ var _phase_direction: Vector2 = Vector2.ZERO
 var _phase_speed: float = 1600.0
 var _invisible_left: float = 0.0
 var _speed_bonus: float = 0.0
+## Lớp va chạm bỏ qua trong lúc lướt Bí Kỹ (rào Ma Biến / khe vực).
+var _phase_ignore: int = 0
+var _boost_left: float = 0.0
+var _boost_speed: float = 0.0
+const BASE_MASK: int = PhysicsLayers.WORLD | PhysicsLayers.WARP_BARRIER | PhysicsLayers.PIT
 var _dash_time_left: float = 0.0
 var _dash_cooldown_left: float = 0.0
 var _invincible_left: float = 0.0
@@ -62,7 +67,7 @@ func _ready() -> void:
 		opener = load(DataPaths.TRAVELER_OPENER) as OpenerAttackData
 	if movement == null:
 		movement = load(DataPaths.PLAYER_MOVEMENT_CONFIG) as PlayerMovementConfig
-	collision_mask = PhysicsLayers.WORLD | PhysicsLayers.WARP_BARRIER
+	collision_mask = BASE_MASK
 	set_leader(GameState.leader_index)
 
 
@@ -72,8 +77,10 @@ func _physics_process(delta: float) -> void:
 	if _phase_left > 0.0 or _is_inside_barrier():
 		_process_phase_dash(delta)
 		return
-	collision_mask = PhysicsLayers.WORLD | PhysicsLayers.WARP_BARRIER
-	_dash_cooldown_left = maxf(_dash_cooldown_left - delta, 0.0)
+	collision_mask = BASE_MASK
+	_boost_left = maxf(_boost_left - delta, 0.0)
+	# Tăng tốc Bí Kỹ: lướt hồi chiêu nhanh gấp đôi.
+	_dash_cooldown_left = maxf(_dash_cooldown_left - delta * (2.0 if _boost_left > 0.0 else 1.0), 0.0)
 	_invincible_left = maxf(_invincible_left - delta, 0.0)
 	_opener_cooldown_left = maxf(_opener_cooldown_left - delta, 0.0)
 	_swing_left = maxf(_swing_left - delta, 0.0)
@@ -96,7 +103,7 @@ func _physics_process(delta: float) -> void:
 			# Ra khỏi lướt ở tốc độ chạy để không bị khựng.
 			velocity = _dash_direction * movement.max_speed
 	else:
-		var bonus := 1.0 + (_speed_bonus if is_invisible() else 0.0)
+		var bonus := 1.0 + (_speed_bonus if is_invisible() else 0.0) + (_boost_speed if _boost_left > 0.0 else 0.0)
 		var target := input_vector * movement.max_speed * bonus
 		var rate := movement.acceleration if input_vector != Vector2.ZERO else movement.friction
 		velocity = velocity.move_toward(target, rate * delta)
@@ -209,12 +216,23 @@ func get_leader() -> CharacterData:
 	return _leader
 
 
-## Bí Kỹ "Bước Hư Ảnh": lướt xuyên rào Ma Biến (bỏ lớp va chạm rào trong lúc lướt).
-func start_phase_dash(distance_px: float) -> void:
+## Lướt Bí Kỹ bỏ qua lớp `ignore_layers` (mặc định rào Ma Biến – "Bước Hư Ảnh"; khe vực – "Lướt Gió").
+func start_phase_dash(distance_px: float, ignore_layers: int = PhysicsLayers.WARP_BARRIER) -> void:
 	_phase_direction = facing.normalized()
 	_phase_left = distance_px / _phase_speed
+	_phase_ignore = ignore_layers
 	_invincible_left = maxf(_invincible_left, _phase_left + 0.1)
-	collision_mask = PhysicsLayers.WORLD
+	collision_mask = BASE_MASK & ~ignore_layers
+
+
+## Bí Kỹ tăng tốc: đi nhanh hơn, lướt hồi chiêu nhanh gấp đôi.
+func boost_speed(duration: float, bonus: float) -> void:
+	_boost_left = duration
+	_boost_speed = bonus
+
+
+func is_boosted() -> bool:
+	return _boost_left > 0.0
 
 
 func is_phase_dashing() -> bool:
@@ -242,14 +260,14 @@ func _process_phase_dash(delta: float) -> void:
 	queue_redraw()
 
 
-## Còn kẹt trong rào Ma Biến thì đi tiếp cho ra hẳn.
+## Còn kẹt trong vật cản đang bỏ qua thì đi tiếp cho ra hẳn.
 func _is_inside_barrier() -> bool:
-	if collision_mask & PhysicsLayers.WARP_BARRIER:
+	if _phase_ignore == 0 or (collision_mask & _phase_ignore):
 		return false
 	var query := PhysicsShapeQueryParameters2D.new()
 	query.shape = ($CollisionShape2D as CollisionShape2D).shape
 	query.transform = ($CollisionShape2D as CollisionShape2D).global_transform
-	query.collision_mask = PhysicsLayers.WARP_BARRIER
+	query.collision_mask = _phase_ignore
 	return not get_world_2d().direct_space_state.intersect_shape(query, 1).is_empty()
 
 

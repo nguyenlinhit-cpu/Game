@@ -164,7 +164,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/strings.vi.translation", "res://localization/strings.en.translation")
+locale/translations=PackedStringArray("res://localization/strings.vi.translation", "res://localization/strings.en.translation", "res://localization/roster.vi.translation", "res://localization/roster.en.translation")
 locale/fallback="vi"
 
 [layer_names]

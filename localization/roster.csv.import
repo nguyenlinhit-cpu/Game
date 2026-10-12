@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ckwdi8nboyxmf"
+
+[deps]
+
+files=["res://localization/roster.vi.translation", "res://localization/roster.en.translation"]
+
+source_file="res://localization/roster.csv"
+dest_files=["res://localization/roster.vi.translation", "res://localization/roster.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

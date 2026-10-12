@@ -5,7 +5,12 @@ extends Resource
 
 enum Kind { NEXT_BATTLE, MAP_ENEMIES, EXPLORATION }
 ## Việc làm ngay trên map.
-enum MapAction { NONE, PHASE_DASH, FIREWORK_DAZE, INVISIBILITY }
+## FIREWORK_DAZE (vùng): tâm cách `distance_tiles` phía trước (0 = quanh mình), bán kính `radius_tiles`,
+## quái trong vùng bị đánh dấu và choáng `duration_sec` (0 = không choáng).
+enum MapAction {
+	NONE, PHASE_DASH, FIREWORK_DAZE, INVISIBILITY,
+	DASH_TRAIL, ARROW, TRAP, SPEED_BOOST, REVEAL_SECRETS, HEAL_TEAM, LONG_DASH, MAGNET, REVEAL_ENEMIES, RETURN_TO_REST,
+}
 
 @export var id: StringName
 @export var name_key: String = ""
@@ -22,3 +27,5 @@ enum MapAction { NONE, PHASE_DASH, FIREWORK_DAZE, INVISIBILITY }
 @export var radius_tiles: float = 2.0
 @export var duration_sec: float = 8.0
 @export var speed_bonus: float = 0.0
+## Chạm/chém nhóm quái mang dấu này luôn vào trận với Ưu Thế (Bẫy Dây).
+@export var marks_force_advantage: bool = false

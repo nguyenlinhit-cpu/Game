@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Mod_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 3
+flat = 0.0
+percent = 0.12
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"pip_overvolt"
+name_key = "STATUS_PIP_OVERVOLT"
+desc_key = "STATUS_PIP_OVERVOLT_DESC"
+kind = 0
+icon_text = "QA"
+icon_color = Color(0.65098, 0.356863, 0.94902, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 1.0
+ignores_resistance = true
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_0")])

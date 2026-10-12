@@ -95,3 +95,13 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 10. **Trọng số bị nhắm** = trọng số vận mệnh × (1 + AGGRO). Khiêu Khích chỉ ép đòn đơn/lan; đòn toàn bộ vẫn trúng cả đội.
 11. **Dòng Chảy Ân Cần (Mira)** kích hoạt khi máu đồng minh vừa xuống dưới 30% vì bất kỳ lý do gì (cả sát thương theo lượt), mỗi đồng minh 1 lần (E2: 2 lần).
 12. **Đặc tính tránh trùng cơ chế:** tích tầng khi Phá Vỡ (Lữ khách), hồi khẩn cấp (Mira), hoàn Điểm Chiến Kỹ (Kiri), phản công (Garren), kích nổ sát thương theo lượt (Nyx).
+
+## Phase 7
+
+1. **Một nguồn thiết kế:** `roster_design.py` chứa chữ (tiểu sử, mô tả kỹ năng, Tinh Mệnh); `build_roster.py` chứa số liệu kỹ năng và sinh `.tres` + file dịch; `write_character_doc.py` sinh `docs/CHARACTERS.md` và tự kiểm tra trùng cơ chế / chia Bí Kỹ / khớp mục 8. Chỉnh số thì sửa cả mô tả trong `roster_design.py` rồi chạy lại hai script.
+2. **Cách đo cân bằng:** 10 lượt của nhân vật, cấp 30, Tinh Mệnh 0, 8 seed. Đội hỗ trợ (Lữ khách, Mira, Garren; trùng thì thay Nyx) chỉ đánh thường và không dùng Tuyệt kỹ, để không tranh Điểm Chiến Kỹ — trước khi làm vậy kết quả dao động quá mạnh. Điểm: sát thương bản thân (Hủy Diệt, Săn Bắn, Tri Thức), tổng sát thương cả đội quy về 1000 Giá trị Hành Động (Hòa Hợp, Hư Vô), lượng hồi kể cả phần tràn (Trù Phú), khiên + gánh thay + 50% sát thương (Bảo Hộ). Lữ khách không nằm trong phép so (không có trong banner).
+3. **Thay đổi so với bản thiết kế đã duyệt (do cân bằng):** hệ số kỹ năng của Ignar, Marisol, Raiko, Zephyra, Vesper, Sylvaine, Orrin, Celestine được chỉnh qua 8 lượt; mô tả trong `docs/CHARACTERS.md` đã cập nhật theo. Vesper chỉ giảm khiên mục tiêu chính (Phá Vỡ hệ Độc gắn Nhiễm Độc theo % máu nên phá khiên cả 3 quái thì mạnh quá). Wisp E1 đổi thành +20% Chính Xác Hiệu Ứng; Lời Thì Thầm của Wisp áp ở cuối lượt quái (áp đầu lượt thì bị mất khi quái kết thúc lượt).
+4. **Vật triệu hồi:** nằm trong hàng lượt nhưng không thuộc `allies` (không tính vào giới hạn 4, không làm thua, quái và kỹ năng "cả đội" không tính tới). Hết số lượt thì biến mất.
+5. **"+20% hệ số" của Kestrel** nghĩa là cộng 20 điểm phần trăm vào hệ số (130% → 150% → 170% → 190%).
+6. **Chia sát thương (Marisol)** áp cho đòn trực tiếp của quái, sau khi tính sát thương, trước khiên của người nhận; phần chuyển sang Marisol vẫn bị khiên của Marisol chặn. Đỡ thay (Aldric) đổi luôn người nhận.
+7. **Tiếng Anh:** 20 nhân vật mới tạm dùng chữ tiếng Việt ở cột `en` (Phase 14 dịch).

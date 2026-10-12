@@ -11,6 +11,7 @@ extends Control
 const ALLY_POSITIONS: Array[Vector2] = [
 	Vector2(700, 300), Vector2(570, 420), Vector2(700, 540), Vector2(570, 660)]
 const ENEMY_CENTER := Vector2(1360, 440)
+const SUMMON_POSITION := Vector2(420, 540)
 const ENEMY_SPACING: float = 230.0
 const ENEMY_STAGGER: float = 70.0
 const PREVIEW_COUNT: int = 8
@@ -250,6 +251,13 @@ func _connect_controller() -> void:
 	controller.skill_points_changed.connect(_on_skill_points_changed)
 	controller.queue_changed.connect(_refresh_turn_order)
 	controller.wave_started.connect(_on_wave_started)
+	controller.summon_added.connect(func(unit: BattleUnit) -> void:
+		_add_view(unit, SUMMON_POSITION + Vector2(0.0, 120.0 * controller.summons.find(unit))))
+	controller.summon_removed.connect(func(unit: BattleUnit) -> void:
+		var view := get_view(unit)
+		if view:
+			view.queue_free()
+			_views.erase(unit))
 	controller.battle_ended.connect(_on_battle_ended)
 
 
@@ -348,6 +356,14 @@ func _show_events(events: Array[Dictionary]) -> void:
 				_numbers.spawn(tr("BATTLE_SKILL_POINT_GAINED") % event["amount"], at, Color("f2d58a"), 28)
 			"cleanse":
 				_numbers.spawn(tr("BATTLE_CLEANSED"), at, Color("6fdc8c"), 26)
+			"hp_cost":
+				_numbers.spawn("−%d" % event["amount"], at, Color("ff8a5c"), 30)
+			"summon":
+				_numbers.spawn(tr("BATTLE_SUMMONED"), at, Color("6fdc8c"), 30)
+			"intercept":
+				_numbers.spawn(tr("BATTLE_INTERCEPTED"), at, Color(0.85, 0.9, 1.0), 28)
+			"blast":
+				_numbers.spawn(tr("BATTLE_BLAST"), at, Color("ff8a5c"), 34)
 			"revive":
 				_numbers.spawn(tr("BATTLE_REVIVED"), at, Color("6fdc8c"), 34)
 			"advance":
