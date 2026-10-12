@@ -24,6 +24,8 @@ func _ready() -> void:
 
 
 func _run() -> void:
+	# Quái của Phase 3 đứng yên để không kéo người chơi vào trận giữa chừng.
+	OverworldEnemy.debug_frozen = true
 	GameState.set_player_identity(GameState.GENDER_FEMALE, "Linh")
 	SceneRouter.go_to(DataPaths.TEST_MAP_SCENE, {}, 0.01)
 	await SceneRouter.transition_finished
@@ -130,7 +132,7 @@ func _test_combat_room() -> void:
 
 	_send_action("debug_clear_enemies")
 	await _seconds(0.5)
-	_check(not combat.has_enemies(), "Phím debug F8 xóa hết nhóm quái giả")
+	_check(not combat.has_enemies(), "Phím debug F8 xóa hết nhóm quái")
 	_check(not combat.are_doors_locked(), "Hết quái thì mở cửa")
 	await _seconds(0.3)
 

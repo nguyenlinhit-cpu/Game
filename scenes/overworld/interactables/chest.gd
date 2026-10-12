@@ -1,6 +1,6 @@
 class_name Chest
 extends Interactable
-## Rương. Phase 2 chỉ mở và báo log; phần thưởng ở Phase 10, lưu "đã mở" ở Phase 3.
+## Rương. Phase 2 chỉ mở và báo log; phần thưởng ở Phase 10, trạng thái "đã mở" lưu trong GameState.map_states.
 
 enum Tier { NORMAL, PRECIOUS, PUZZLE }
 
@@ -23,6 +23,12 @@ func can_interact() -> bool:
 
 func open() -> void:
 	interact(null)
+
+
+## Nạp lại map: rương đã mở từ trước, không phát tín hiệu/thông báo.
+func restore_opened() -> void:
+	is_opened = true
+	queue_redraw()
 
 
 func _on_interact(_by: Node) -> void:

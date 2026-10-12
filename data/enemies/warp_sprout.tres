@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"warp_sprout"
+name_key = "ENEMY_WARP_SPROUT"
+element = &"poison"
+placeholder_color = Color(0.36, 0.55, 0.2, 1)

@@ -40,3 +40,14 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 7. **Phím debug F8** (`debug_clear_enemies`) chỉ chạy ở bản debug.
 8. **Tên lớp.** Godot 4.7 đã có lớp gốc `VirtualJoystick`, nên joystick của game tên là `TouchJoystick`.
 9. **Lớp va chạm:** 1 world, 2 player, 3 enemy, 4 interactable (`systems/physics_layers.gd`).
+
+## Phase 3
+
+1. **Một nhóm quái = một con đại diện trên map.** Mỗi `OverworldEnemy` mang một `EncounterData` (có thể nhiều đợt). Chấm nhỏ dưới chân cho biết tổng số quái trong trận.
+2. **So cấp để thắng ngay:** lấy **cấp cao nhất** trong trận so với **cấp đội**. Hơn ≥10 cấp và người chơi chém trúng trước thì thắng ngay. Bị quái chạm/vồ thì vẫn vào trận như thường. Cấp đội tạm là `GameState.team_level` (Phase 9 tính trung bình cấp 4 người).
+3. **Ưu tiên kiểu mở trận:** sự kiện nào xảy ra trước thì tính trước. Một lần chém chỉ mở 1 trận (chọn quái gần nhất trong quạt). Đang lướt thì bất tử: không bị tính chạm, không bị vồ trúng.
+4. **Không lưu riêng trạng thái cửa:** cửa suy ra từ quái còn lại. Quay về giữa phòng còn quái thì cửa tự khóa lại (không hiện lại thông báo).
+5. **"Phòng nghỉ gần nhất"** = gần theo khoảng cách tới chỗ thua, ưu tiên phòng đã khám phá.
+6. **Chống bị kéo vào trận liên tục:** vừa vào map quái đứng yên 1,5 giây; vừa từ trận về người chơi bất tử 1 giây.
+7. **Phần thưởng thắng ngay/thắng trận tạm:** 30 Xu mỗi quái, Ký Ức bậc 1 = làm tròn lên 60% số quái (mức giữa bảng mục 11). Chưa cộng vào túi đồ (Phase 9–10).
+8. **Đòn Mở Màn bằng chuột** bắt trong `_unhandled_input` và chém về phía con trỏ; bấm lên nút giao diện/nút cảm ứng không tính là chém.

@@ -2,7 +2,7 @@ class_name RoomManager
 extends Node
 ## Biết người chơi đang ở phòng nào (null = đang ở hành lang), phòng nào đã khám phá,
 ## khóa cửa phòng chiến đấu khi còn quái và mở khi hạ hết.
-## TODO Phase 3: lưu phòng đã khám phá / đã dọn vào GameState để giữ khi ra vào trận.
+## Phòng đã khám phá được OverworldMap ghi vào GameState để giữ khi ra vào trận.
 
 signal current_room_changed(room: Room)
 signal room_visited(room: Room)
@@ -15,6 +15,8 @@ var connections: Array[Array] = []
 var current_room: Room
 
 var _visited: Dictionary = {}
+## Vừa nạp map (vd. từ trận về) thì khóa cửa lại không cần báo.
+var _quiet_until_msec: int = 0
 
 
 func setup(map_rooms: Array[Room], map_connections: Array[Array]) -> void:
@@ -24,6 +26,13 @@ func setup(map_rooms: Array[Room], map_connections: Array[Array]) -> void:
 		room.player_entered.connect(_on_player_entered)
 		room.player_exited.connect(_on_player_exited)
 		room.cleared.connect(_on_room_cleared)
+	_quiet_until_msec = Time.get_ticks_msec() + 500
+
+
+## Nạp lại danh sách phòng đã khám phá (không phát room_visited).
+func restore_visited(room_ids: Array) -> void:
+	for room_id: Variant in room_ids:
+		_visited[StringName(str(room_id))] = true
 
 
 func is_visited(room: Room) -> bool:
@@ -55,7 +64,8 @@ func _on_player_entered(room: Room) -> void:
 	if room.should_lock_on_enter() and not room.are_doors_locked():
 		room.lock_doors()
 		room_locked.emit(room)
-		EventBus.toast_requested.emit(tr("TOAST_ROOM_LOCKED"))
+		if Time.get_ticks_msec() > _quiet_until_msec:
+			EventBus.toast_requested.emit(tr("TOAST_ROOM_LOCKED"))
 	current_room_changed.emit(room)
 
 

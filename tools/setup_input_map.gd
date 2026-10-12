@@ -24,6 +24,8 @@ func _init() -> void:
 		"menu": [_key(KEY_ESCAPE), _joy(JOY_BUTTON_START)],
 		# Chỉ có tác dụng ở bản debug.
 		"debug_clear_enemies": [_key(KEY_F8)],
+		"debug_team_level_down": [_key(KEY_F6)],
+		"debug_team_level_up": [_key(KEY_F7)],
 	}
 	for action_name: String in actions:
 		for event: InputEvent in actions[action_name]:

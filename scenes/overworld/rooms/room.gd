@@ -113,12 +113,28 @@ func apply_connections(sides: int) -> void:
 				wall_layer.set_cell(cell, TileIds.SOURCE_ID, TileIds.WALL)
 
 
+## Mã lưu trạng thái cho vật trong phòng (rương, quái...): "<room_id>/<đường dẫn trong phòng>".
+## Không trùng kể cả khi nhiều phòng dùng chung 1 phòng mẫu, miễn room_id khác nhau.
+func get_persistent_id(node: Node) -> String:
+	return "%s/%s" % [room_id, get_path_to(node)]
+
+
+## Phòng chứa node (đi ngược lên cây), null nếu không nằm trong phòng nào.
+static func find_room_of(node: Node) -> Room:
+	var current := node.get_parent()
+	while current:
+		if current is Room:
+			return current
+		current = current.get_parent()
+	return null
+
+
 func get_spawn_point() -> Vector2:
 	var marker := find_child("PlayerSpawn", true, false) as Node2D
 	return marker.global_position if marker else get_center_world()
 
 
-## Nhóm quái còn sống trong phòng (node thuộc group "enemy_group" có is_defeated/defeat/defeated).
+## Nhóm quái còn sống trong phòng (OverworldEnemy, hoặc node khác có is_defeated/defeat/defeated).
 func get_enemy_groups() -> Array[Node]:
 	var groups: Array[Node] = []
 	if not is_inside_tree():
@@ -157,7 +173,7 @@ func unlock_doors() -> void:
 		door.set_closed(false)
 
 
-## Phím debug: hạ hết nhóm quái giả trong phòng.
+## Phím debug: hạ hết nhóm quái trong phòng.
 func debug_clear_enemies() -> void:
 	for group in get_enemy_groups():
 		group.defeat()

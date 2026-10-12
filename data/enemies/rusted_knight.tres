@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"rusted_knight"
+name_key = "ENEMY_RUSTED_KNIGHT"
+element = &"lightning"
+placeholder_color = Color(0.55, 0.38, 0.25, 1)

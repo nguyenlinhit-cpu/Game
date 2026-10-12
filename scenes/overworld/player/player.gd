@@ -1,10 +1,12 @@
 class_name Player
 extends CharacterBody2D
 ## Nhân vật dẫn đầu ngoài map: đi 8 hướng có tăng/giảm tốc, lướt có hồi chiêu và bất tử ngắn,
-## tương tác vật gần nhất bằng F. Hình tạm vẽ theo skin, có chỉ hướng và nhấp nhô khi chạy.
+## Đòn Mở Màn chém hình quạt (J/chuột trái), tương tác vật gần nhất bằng F. Hình tạm vẽ theo skin, có chỉ hướng và nhấp nhô khi chạy.
 ## Thông số di chuyển trong data/config/player_movement.tres.
 
 signal dashed
+## Số quái và vật phá được trúng đòn.
+signal opener_used(hit_count: int)
 signal focused_interactable_changed(interactable: Interactable)
 
 ## Thứ tự trùng với góc: 0 = đông, tăng theo chiều kim đồng hồ (trục y hướng xuống).
@@ -14,8 +16,14 @@ const BODY_RADIUS: float = 30.0
 const INPUT_FACING_THRESHOLD: float = 0.2
 const RUN_ANIM_SPEED: float = 20.0
 const DASH_GHOST_COUNT: int = 4
+const GROUP: StringName = &"player"
+const BREAKABLE_GROUP: StringName = &"breakable"
+const SWING_SEC: float = 0.15
+const SWING_COLOR := Color(1.0, 0.95, 0.75, 0.55)
 
 @export var movement: PlayerMovementConfig
+## TODO Phase 6: lấy từ SkillData của nhân vật dẫn đầu.
+@export var opener: OpenerAttackData
 
 ## Hướng nhìn (đã chuẩn hóa).
 var facing: Vector2 = Vector2.DOWN
@@ -26,6 +34,8 @@ var _skin: CharacterSkin
 var _dash_time_left: float = 0.0
 var _dash_cooldown_left: float = 0.0
 var _invincible_left: float = 0.0
+var _opener_cooldown_left: float = 0.0
+var _swing_left: float = 0.0
 var _dash_direction: Vector2 = Vector2.ZERO
 var _anim_time: float = 0.0
 var _focused: Interactable
@@ -37,6 +47,9 @@ var _ghosts: Array[Vector2] = []
 
 
 func _ready() -> void:
+	add_to_group(GROUP)
+	if opener == null:
+		opener = load(DataPaths.TRAVELER_OPENER) as OpenerAttackData
 	if movement == null:
 		movement = load(DataPaths.PLAYER_MOVEMENT_CONFIG) as PlayerMovementConfig
 	var data := DataPaths.load_character(GameState.PLAYER_CHARACTER_ID)
@@ -48,6 +61,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_dash_cooldown_left = maxf(_dash_cooldown_left - delta, 0.0)
 	_invincible_left = maxf(_invincible_left - delta, 0.0)
+	_opener_cooldown_left = maxf(_opener_cooldown_left - delta, 0.0)
+	_swing_left = maxf(_swing_left - delta, 0.0)
 
 	var input_vector := Vector2.ZERO
 	if input_enabled:
@@ -80,9 +95,72 @@ func _physics_process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if input_enabled and event.is_action_pressed("interact") and _focused != null:
+	if not input_enabled:
+		return
+	if event.is_action_pressed("interact") and _focused != null:
 		get_viewport().set_input_as_handled()
 		_focused.interact(self)
+	elif event.is_action_pressed("opener_attack"):
+		get_viewport().set_input_as_handled()
+		# Bấm chuột thì chém về phía con trỏ, còn lại chém theo hướng nhìn.
+		var aim := Vector2.ZERO
+		if event is InputEventMouseButton:
+			aim = get_global_mouse_position() - global_position
+		try_opener(aim)
+
+
+## Chém hình quạt trước mặt. Trúng quái → báo quái (Ưu Thế); trúng vật phá được → phá.
+## Trả về false nếu đang hồi chiêu hoặc đang lướt.
+func try_opener(aim: Vector2 = Vector2.ZERO) -> bool:
+	if _opener_cooldown_left > 0.0 or is_dashing():
+		return false
+	if aim.length() > 0.01:
+		facing = aim.normalized()
+	_opener_cooldown_left = opener.cooldown_sec
+	_swing_left = SWING_SEC
+	var hits := 0
+	# Mỗi lần chém chỉ mở 1 trận: chọn con quái gần nhất trong quạt.
+	var target: OverworldEnemy = null
+	var best_distance := INF
+	for node in get_tree().get_nodes_in_group(OverworldEnemy.GROUP):
+		var enemy := node as OverworldEnemy
+		if enemy and not enemy.is_defeated() and is_in_opener_arc(enemy.global_position, enemy.get_hit_radius()):
+			var distance := global_position.distance_to(enemy.global_position)
+			if distance < best_distance:
+				best_distance = distance
+				target = enemy
+	for node in get_tree().get_nodes_in_group(BREAKABLE_GROUP):
+		# Vật phá được là Interactable có hàm break_open() (Hộp Bí Kỹ...).
+		var breakable := node as Interactable
+		if breakable and breakable.can_interact() and is_in_opener_arc(breakable.global_position, 22.0):
+			breakable.call("break_open")
+			hits += 1
+	if target:
+		hits += 1
+		target.receive_opener_hit(self)
+	if hits > 0:
+		CameraRig.shake(5.0, 0.12)
+	opener_used.emit(hits)
+	queue_redraw()
+	return true
+
+
+func is_in_opener_arc(point: Vector2, target_radius: float = 0.0) -> bool:
+	var offset := point - global_position
+	if offset.length() > opener.range_px + target_radius:
+		return false
+	if offset.length() <= target_radius:
+		return true
+	return rad_to_deg(absf(facing.angle_to(offset))) <= opener.arc_degrees * 0.5
+
+
+func get_opener_cooldown_ratio() -> float:
+	return _opener_cooldown_left / opener.cooldown_sec if opener.cooldown_sec > 0.0 else 0.0
+
+
+## Bất tử tạm thời (vd. vừa từ trận quay về map).
+func grant_invincibility(duration: float) -> void:
+	_invincible_left = maxf(_invincible_left, duration)
 
 
 ## Lướt theo hướng đang bấm, không bấm thì theo hướng nhìn. Trả về false nếu đang hồi chiêu.
@@ -167,6 +245,17 @@ func _draw() -> void:
 		draw_arc(center, BODY_RADIUS + 6.0, 0.0, TAU, 32, Color(accent, 0.6), 3.0, true)
 	PlaceholderArt.draw_character(self, center, BODY_RADIUS, body, accent,
 			GameState.player_name.left(1).to_upper())
+
+	if _swing_left > 0.0:
+		# Vệt chém hình quạt, mờ dần.
+		var alpha := _swing_left / SWING_SEC
+		var half := deg_to_rad(opener.arc_degrees * 0.5)
+		var points := PackedVector2Array()
+		for i in 13:
+			points.append(Vector2.from_angle(facing.angle() - half + half * 2.0 * i / 12.0) * opener.range_px)
+		for i in range(12, -1, -1):
+			points.append(Vector2.from_angle(facing.angle() - half + half * 2.0 * i / 12.0) * opener.range_px * 0.55)
+		draw_colored_polygon(points, Color(SWING_COLOR, SWING_COLOR.a * alpha))
 
 	# Mũi tên chỉ hướng nhìn (8 hướng).
 	var snapped_facing := Vector2.from_angle(roundi(facing.angle() / (PI / 4.0)) * PI / 4.0)

@@ -13,7 +13,10 @@ const ROOMS_DIR: String = "res://scenes/overworld/rooms"
 const CHEST_SCENE: String = "res://scenes/overworld/interactables/chest.tscn"
 const BOX_SCENE: String = "res://scenes/overworld/interactables/technique_box.tscn"
 const REST_SCENE: String = "res://scenes/overworld/interactables/rest_point.tscn"
-const ENEMY_SCENE: String = "res://scenes/overworld/overworld_enemy/enemy_group_placeholder.tscn"
+const ENEMY_SCENE: String = "res://scenes/overworld/overworld_enemy/overworld_enemy.tscn"
+const ENC_SPROUTS: String = "res://data/encounters/test_sprouts_lv3.tres"
+const ENC_MIXED: String = "res://data/encounters/test_mixed_lv5.tres"
+const ENC_WEAK: String = "res://data/encounters/test_weak_lv1.tres"
 
 ## Màu ô tạm, theo thứ tự cột trong ảnh: sàn A, sàn B, tường, sàn hành lang, tường hành lang.
 const TILE_COLORS: Array[Color] = [
@@ -35,8 +38,12 @@ var templates: Array[Dictionary] = [
 		"file": "room_combat_01.tscn", "id": &"combat_01", "type": Room.RoomType.COMBAT,
 		"size": Vector2i(27, 19),
 		"entities": [
-			{"scene": ENEMY_SCENE, "name": "EnemyGroup1", "tile": Vector2i(-6, -4), "props": {"group_id": &"combat_01_g1", "enemy_count": 3}},
-			{"scene": ENEMY_SCENE, "name": "EnemyGroup2", "tile": Vector2i(7, 4), "props": {"group_id": &"combat_01_g2", "enemy_count": 2}},
+			{"scene": ENEMY_SCENE, "name": "EnemyGroup1", "tile": Vector2i(-5, -5),
+				"props": {"encounter": ENC_SPROUTS, "patrol_points": PackedVector2Array([Vector2(-192, 0), Vector2(256, 0)])}},
+			{"scene": ENEMY_SCENE, "name": "EnemyGroup2", "tile": Vector2i(6, 3),
+				"props": {"encounter": ENC_MIXED, "patrol_points": PackedVector2Array([Vector2.ZERO, Vector2(0, 192), Vector2(256, 192), Vector2(256, 0)])}},
+			{"scene": ENEMY_SCENE, "name": "EnemyGroup3", "tile": Vector2i(-2, 6),
+				"props": {"encounter": ENC_WEAK}},
 			{"scene": BOX_SCENE, "name": "TechniqueBox1", "tile": Vector2i(10, -6), "props": {"box_id": &"combat_01_box_1"}},
 			{"scene": BOX_SCENE, "name": "TechniqueBox2", "tile": Vector2i(-10, 6), "props": {"box_id": &"combat_01_box_2"}},
 		],
@@ -167,7 +174,11 @@ func _build_room(template: Dictionary, tile_set: TileSet) -> bool:
 		node.position = _tile_to_local(entry["tile"])
 		var props: Dictionary = entry.get("props", {})
 		for key: String in props:
-			node.set(key, props[key])
+			var value: Variant = props[key]
+			# Chuỗi "res://...tres" là đường dẫn Resource cần nạp.
+			if value is String and str(value).begins_with("res://"):
+				value = load(value)
+			node.set(key, value)
 		entities.add_child(node)
 		node.owner = root
 

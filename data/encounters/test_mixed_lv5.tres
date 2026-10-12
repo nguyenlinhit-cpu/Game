@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="EncounterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="1_enc"]
+[ext_resource type="Script" path="res://systems/resources/encounter_wave.gd" id="2_wave"]
+[ext_resource type="Script" path="res://systems/resources/encounter_enemy_entry.gd" id="3_entry"]
+[ext_resource type="Resource" path="res://data/enemies/rusted_knight.tres" id="4_rusted_knight"]
+[ext_resource type="Resource" path="res://data/enemies/wandering_shade.tres" id="5_wandering_shade"]
+[ext_resource type="Resource" path="res://data/enemies/warp_sprout.tres" id="6_warp_sprout"]
+
+[sub_resource type="Resource" id="Entry_w1_1"]
+script = ExtResource("3_entry")
+enemy = ExtResource("4_rusted_knight")
+level = 5
+count = 1
+
+[sub_resource type="Resource" id="Entry_w1_2"]
+script = ExtResource("3_entry")
+enemy = ExtResource("5_wandering_shade")
+level = 4
+count = 1
+
+[sub_resource type="Resource" id="Wave_1"]
+script = ExtResource("2_wave")
+entries = Array[ExtResource("3_entry")]([SubResource("Entry_w1_1"), SubResource("Entry_w1_2")])
+
+[sub_resource type="Resource" id="Entry_w2_1"]
+script = ExtResource("3_entry")
+enemy = ExtResource("6_warp_sprout")
+level = 5
+count = 2
+
+[sub_resource type="Resource" id="Wave_2"]
+script = ExtResource("2_wave")
+entries = Array[ExtResource("3_entry")]([SubResource("Entry_w2_1")])
+
+[resource]
+script = ExtResource("1_enc")
+id = &"test_mixed_lv5"
+waves = Array[ExtResource("2_wave")]([SubResource("Wave_1"), SubResource("Wave_2")])

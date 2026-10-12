@@ -5,8 +5,9 @@
 | Phase | Trạng thái |
 | --- | --- |
 | 1. Khung dự án, lời dẫn, chọn nhân vật chính | Xong |
-| 2. Di chuyển và phòng kiểu Soul Knight | Xong, chờ duyệt |
-| 3–14 | Chưa làm |
+| 2. Di chuyển và phòng kiểu Soul Knight | Xong |
+| 3. Quái trên map và chuyển vào trận | Xong, chờ duyệt |
+| 4–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -74,12 +75,46 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 2.
 
 ### Việc còn nợ
 
-- Lưu phòng đã khám phá, rương đã mở, hộp đã phá, vị trí người chơi vào GameState (Phase 3).
-- Đòn Mở Màn phá Hộp Bí Kỹ (Phase 3); Điểm Bí Kỹ thật (Phase 6).
+- ~~Lưu trạng thái map vào GameState~~, ~~Đòn Mở Màn phá Hộp Bí Kỹ~~ (đã làm ở Phase 3). Điểm Bí Kỹ thật (Phase 6).
 - Hồi máu, lưu game, dịch chuyển nhanh ở phòng nghỉ (Phase 9, 12, 14).
 - Phần thưởng rương (Phase 10).
-- Nút cảm ứng cho Đòn Mở Màn, Bí Kỹ, đổi nhân vật (Phase 3, 6).
+- Nút cảm ứng cho Bí Kỹ, đổi nhân vật (Phase 6). Nút Đòn Mở Màn đã có từ Phase 3.
 - Phòng boss đang trống (Phase 8).
+
+## Phase 3 – Quái trên map và chuyển vào trận
+
+### Đã làm
+
+- Dữ liệu: `EnemyData`, `EncounterData` (nhiều đợt) → `EncounterWave` (tối đa 5 quái, có kiểm tra) → `EncounterEnemyEntry` (quái, cấp, số lượng). 3 quái mẫu (`data/enemies/`), 3 trận mẫu (`data/encounters/`).
+- `OverworldEnemy`: tuần tra theo điểm định sẵn (hoặc đứng gác quay nhìn), tầm nhìn hình nón có kiểm tra tường chắn, nghe được khi đứng sát sau lưng, báo "!" rồi đuổi, bỏ cuộc ("?") khi người chơi quá xa / mất dấu 2 giây / quá xa điểm gác, vồ có báo trước (gồng đỏ 0,45 giây). Thông số trong `data/config/overworld_enemy_default.tres`. Hiện cấp quái trên đầu (xám nếu là quái yếu).
+- Đòn Mở Màn tạm "Vết Chém Hồn" (`data/skills/traveler_opener.tres`): quạt 120°, tầm 120 px, hồi 0,6 giây; J, chuột trái (chém về phía con trỏ) hoặc nút cảm ứng "Chém". Phá luôn Hộp Bí Kỹ trong quạt.
+- Kiểu mở trận: chém trúng trước → Ưu Thế; quái vồ trúng → Bị Phục Kích; chạm thường → Bình thường. Đang lướt (bất tử) thì né được cả vồ lẫn chạm.
+- Thắng ngay: quái thấp hơn cấp đội ≥10 cấp bị chém trúng → biến mất, hiện bảng phần thưởng tạm, không vào trận.
+- Trạng thái map trong `GameState.map_states` (có trong file save): vị trí + hướng người chơi, quái đã hạ, rương đã mở, hộp đã phá, phòng đã khám phá. Mã vật thể = `<room_id>/<đường dẫn trong phòng>` nên không trùng khi dùng chung phòng mẫu.
+- Trận tạm `scenes/battle/battle_scene.tscn`: hiện kiểu mở trận, quái theo đợt, nút Thắng/Thua. Thắng → nhóm quái biến mất, về đúng chỗ đứng. Thua → về phòng nghỉ gần nhất (ưu tiên phòng đã khám phá), không mất đồ, nhóm quái vẫn còn. Vừa quay về: người chơi bất tử 1 giây, quái đứng yên 1,5 giây.
+- Phòng chiến đấu dùng 3 nhóm quái thật (Lv3, Lv5 hai đợt, Lv1 để thử thắng ngay). Cửa tự khóa lại nếu quay về giữa phòng còn quái.
+- Debug: F6/F7 giảm/tăng cấp đội 5 cấp, F8 xóa quái trong phòng.
+- Test `tests/phase03_test.tscn`: 25/25 đạt, gồm đủ 4 kiểu mở trận và ra vào trận 10 lần liên tiếp giữ đúng trạng thái. Test Phase 1 (19/19), Phase 2 (39/39) vẫn đạt.
+
+### File chính
+
+- `scenes/overworld/overworld_enemy/overworld_enemy.*`, `scenes/overworld/map/overworld_map.gd`, `scenes/battle/battle_scene.*`
+- `systems/battle_types.gd`, `systems/placeholder_rewards.gd`, `systems/resources/{enemy_data,encounter_data,encounter_wave,encounter_enemy_entry,overworld_enemy_config,opener_attack_data}.gd`
+- `data/enemies/*.tres`, `data/encounters/*.tres`, `data/config/overworld_enemy_default.tres`, `data/skills/traveler_opener.tres`
+- `autoload/game_state.gd` (map_states, pending_battle, team_level), `scenes/overworld/player/player.gd` (Đòn Mở Màn)
+- `tests/phase03_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 3.
+
+### Việc còn nợ
+
+- Trận theo lượt thật thay cho trận tạm (Phase 4); trừ 25% khiên khi Ưu Thế đúng điểm yếu (Phase 5); hiệu ứng Bí Kỹ mang vào trận (Phase 6).
+- Cấp đội đang là số cố định `GameState.team_level` (Phase 9 tính từ đội hình).
+- Phần thưởng tạm `PlaceholderRewards` (Phase 10 thay bằng LootTable, xóa file).
+- Quái thường hồi lại khi rời khu (Phase 10/12; hiện quái đã hạ biến mất hẳn).
+- Hiệu ứng chuyển cảnh vào trận riêng (đang dùng mờ đen chung 0,7 giây).
 
 ## Để sau
 

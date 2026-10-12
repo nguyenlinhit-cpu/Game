@@ -1,7 +1,7 @@
 class_name TechniqueBox
 extends Interactable
 ## Hộp Bí Kỹ: vật phá được, phá ra hồi Điểm Bí Kỹ.
-## TODO Phase 6: cộng Điểm Bí Kỹ thật. TODO Phase 3: Đòn Mở Màn cũng phá được hộp.
+## Phá bằng F hoặc Đòn Mở Màn. TODO Phase 6: cộng Điểm Bí Kỹ thật.
 
 const BOX_COLOR := Color("3d5a80")
 const GLOW_COLOR := Color("f2d58a")
@@ -11,12 +11,24 @@ const GLOW_COLOR := Color("f2d58a")
 var is_broken: bool = false
 
 
+func _ready() -> void:
+	super()
+	add_to_group(Player.BREAKABLE_GROUP)
+
+
 func can_interact() -> bool:
 	return not is_broken
 
 
 func break_open() -> void:
 	interact(null)
+
+
+## Nạp lại map: hộp đã phá từ trước.
+func restore_broken() -> void:
+	is_broken = true
+	monitorable = false
+	hide()
 
 
 func _on_interact(_by: Node) -> void:

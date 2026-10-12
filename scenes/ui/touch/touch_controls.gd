@@ -1,11 +1,12 @@
 class_name TouchControls
 extends Control
-## Lớp điều khiển cảm ứng ngoài map: joystick trái, nút Lướt và Tương tác bên phải.
+## Lớp điều khiển cảm ứng ngoài map: joystick trái; nút Chém (Đòn Mở Màn), Lướt, Tương tác bên phải.
 ## Hiện khi máy có màn cảm ứng hoặc khi bật trong Cài đặt.
-## TODO Phase 3/6: thêm nút Đòn Mở Màn, Bí Kỹ, đổi nhân vật.
+## TODO Phase 6: thêm nút Bí Kỹ, đổi nhân vật.
 
 @onready var dash_button: TouchActionButton = %DashButton
 @onready var interact_button: TouchActionButton = %InteractButton
+@onready var opener_button: TouchActionButton = %OpenerButton
 
 
 func _ready() -> void:

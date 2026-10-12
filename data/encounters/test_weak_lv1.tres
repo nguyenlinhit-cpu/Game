@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EncounterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="1_enc"]
+[ext_resource type="Script" path="res://systems/resources/encounter_wave.gd" id="2_wave"]
+[ext_resource type="Script" path="res://systems/resources/encounter_enemy_entry.gd" id="3_entry"]
+[ext_resource type="Resource" path="res://data/enemies/warp_sprout.tres" id="4_warp_sprout"]
+
+[sub_resource type="Resource" id="Entry_w1_1"]
+script = ExtResource("3_entry")
+enemy = ExtResource("4_warp_sprout")
+level = 1
+count = 2
+
+[sub_resource type="Resource" id="Wave_1"]
+script = ExtResource("2_wave")
+entries = Array[ExtResource("3_entry")]([SubResource("Entry_w1_1")])
+
+[resource]
+script = ExtResource("1_enc")
+id = &"test_weak_lv1"
+waves = Array[ExtResource("2_wave")]([SubResource("Wave_1")])

@@ -34,7 +34,7 @@ SETTINGS_TOUCH_CONTROLS,Điều khiển cảm ứng (thử trên PC),Touch contr
 UI_RESUME,Chơi tiếp,Resume
 UI_BACK_TO_TITLE,Về màn hình tiêu đề,Back to title
 PAUSE_TITLE,Tạm dừng,Paused
-HUD_HINT,"WASD/mũi tên: đi · Space/Shift: lướt · F: tương tác · F8: xóa quái (debug) · Esc: menu","WASD/arrows: move · Space/Shift: dash · F: interact · F8: clear enemies (debug) · Esc: menu"
+HUD_HINT,"WASD: đi · Space/Shift: lướt · J/chuột trái: Đòn Mở Màn · F: tương tác · Esc: menu","WASD: move · Space/Shift: dash · J/left click: Opener · F: interact · Esc: menu"
 PROMPT_OPEN_CHEST,Mở rương,Open chest
 PROMPT_BREAK_BOX,Phá Hộp Bí Kỹ,Break Technique Box
 PROMPT_REST,Nghỉ ngơi,Rest
@@ -45,3 +45,22 @@ TOAST_ROOM_LOCKED,Cửa đã khóa! Hạ hết quái để mở,The doors are se
 TOAST_ROOM_CLEARED,Đã dọn sạch phòng – cửa mở,Room cleared – doors open
 TOUCH_DASH,Lướt,Dash
 TOUCH_INTERACT,F,F
+HUD_TEAM_LEVEL,Cấp đội: %d (debug: F6/F7 −/+5 · F8 xóa quái),Team level: %d (debug: F6/F7 −/+5 · F8 clear enemies)
+TOAST_TEAM_LEVEL,Cấp đội: %d,Team level: %d
+TOUCH_OPENER,Chém,Slash
+SKILL_TRAVELER_OPENER,Vết Chém Hồn,Soul Slash
+OPENING_NORMAL,Trận bình thường,Normal battle
+OPENING_ADVANTAGE,Ưu Thế!,Advantage!
+OPENING_AMBUSHED,Bị Phục Kích!,Ambushed!
+BATTLE_TEMP_TITLE,Trận đánh (tạm – Phase 4 làm thật),Battle (placeholder – real one in Phase 4)
+BATTLE_WAVE,Đợt %d,Wave %d
+BATTLE_WIN,Thắng,Win
+BATTLE_LOSE,Thua,Lose
+TOAST_VICTORY,Chiến thắng!,Victory!
+TOAST_DEFEAT,Thất bại – trở về phòng nghỉ gần nhất,Defeated – back to the nearest rest room
+REWARD_INSTANT_TITLE,Thắng ngay!,Instant victory!
+REWARD_COINS,Xu Aether +%d (tạm),Aether Coin +%d (placeholder)
+REWARD_MEMORY_1,Ký Ức Mảnh Hồn bậc 1 ×%d (tạm),Soul Memory I ×%d (placeholder)
+ENEMY_WARP_SPROUT,Mầm Ma Biến,Warp Sprout
+ENEMY_WANDERING_SHADE,Hồn Ảnh Lang Thang,Wandering Shade
+ENEMY_RUSTED_KNIGHT,Giáp Sĩ Rỉ Sét,Rusted Knight

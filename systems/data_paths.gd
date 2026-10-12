@@ -6,10 +6,16 @@ const TITLE_SCENE: String = "res://scenes/ui/title/title_screen.tscn"
 const INTRO_SCENE: String = "res://scenes/ui/intro/intro.tscn"
 const CHARACTER_SELECT_SCENE: String = "res://scenes/ui/character_select/character_select.tscn"
 const TEST_MAP_SCENE: String = "res://scenes/overworld/map/test_map.tscn"
+## Trận tạm của Phase 3 (Phase 4 thay bằng trận thật, giữ đường dẫn).
+const BATTLE_SCENE: String = "res://scenes/battle/battle_scene.tscn"
 
 const INTRO_SCRIPT: String = "res://data/dialogue/intro.json"
 const CHARACTERS_DIR: String = "res://data/characters"
 const PLAYER_MOVEMENT_CONFIG: String = "res://data/config/player_movement.tres"
+const OVERWORLD_ENEMY_CONFIG: String = "res://data/config/overworld_enemy_default.tres"
+const TRAVELER_OPENER: String = "res://data/skills/traveler_opener.tres"
+## Dùng khi mở thẳng scene trận để thử (không đi từ map vào).
+const DEBUG_ENCOUNTER: String = "res://data/encounters/test_mixed_lv5.tres"
 const PLACEHOLDER_TILESET: String = "res://assets/tilesets/placeholder_tileset.tres"
 
 
