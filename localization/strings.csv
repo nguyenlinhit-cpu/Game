@@ -52,10 +52,7 @@ SKILL_TRAVELER_OPENER,Vết Chém Hồn,Soul Slash
 OPENING_NORMAL,Trận bình thường,Normal battle
 OPENING_ADVANTAGE,Ưu Thế!,Advantage!
 OPENING_AMBUSHED,Bị Phục Kích!,Ambushed!
-BATTLE_TEMP_TITLE,Trận đánh (tạm – Phase 4 làm thật),Battle (placeholder – real one in Phase 4)
 BATTLE_WAVE,Đợt %d,Wave %d
-BATTLE_WIN,Thắng,Win
-BATTLE_LOSE,Thua,Lose
 TOAST_VICTORY,Chiến thắng!,Victory!
 TOAST_DEFEAT,Thất bại – trở về phòng nghỉ gần nhất,Defeated – back to the nearest rest room
 REWARD_INSTANT_TITLE,Thắng ngay!,Instant victory!
@@ -64,3 +61,76 @@ REWARD_MEMORY_1,Ký Ức Mảnh Hồn bậc 1 ×%d (tạm),Soul Memory I ×%d (p
 ENEMY_WARP_SPROUT,Mầm Ma Biến,Warp Sprout
 ENEMY_WANDERING_SHADE,Hồn Ảnh Lang Thang,Wandering Shade
 ENEMY_RUSTED_KNIGHT,Giáp Sĩ Rỉ Sét,Rusted Knight
+UI_BACK,Quay lại,Back
+UI_CONTINUE_ON,Tiếp tục,Continue
+TEAM_ERROR_EMPTY,Đội hình trống,The team is empty
+TEAM_ERROR_TOO_MANY,Đội hình tối đa %d nhân vật,A team can have at most %d characters
+TEAM_ERROR_DUPLICATE,Một nhân vật không thể có 2 lần trong đội,A character cannot appear twice in the team
+BATTLE_SETUP_ERROR,Không thể vào trận,Cannot start the battle
+BATTLE_SETUP_ERROR_BODY,Dữ liệu đội hình hoặc trận đánh bị lỗi,The team or battle data is invalid
+BATTLE_WAVE_PROGRESS,Đợt %d/%d,Wave %d/%d
+BATTLE_TURN_OF,Lượt của %s,%s's turn
+BATTLE_NOW,Bây giờ,Now
+BATTLE_AUTO,Tự Động,Auto
+BATTLE_SPEED_X2,x2,x2
+BATTLE_ULTIMATE_READY,Tuyệt kỹ sẵn sàng!,Ultimate ready!
+BATTLE_ULTIMATE_QUEUED,Chờ chen lượt...,Queued...
+BATTLE_FALLEN,Đã ngã,Fallen
+BATTLE_NO_SKILL_POINTS,Không đủ Điểm Chiến Kỹ,Not enough Skill Points
+BATTLE_ADVANCED,Kéo lượt %d%%,Advance %d%%
+BATTLE_DELAYED,Trì hoãn %d%%,Delay %d%%
+BATTLE_VICTORY,Chiến thắng!,Victory!
+BATTLE_DEFEAT,Thất bại,Defeat
+BATTLE_DEFEAT_BODY,Cả đội đã ngã. Đánh lại hoặc rút lui về phòng nghỉ (không mất đồ).,Your whole team has fallen. Retry or retreat to the rest room (nothing is lost).
+BATTLE_EXP_GAINED,EXP +%d (tạm),EXP +%d (placeholder)
+BATTLE_ITEMS_EMPTY,Vật phẩm: (trống – làm ở Phase 10),Items: (none yet – Phase 10)
+BATTLE_RETRY,Đánh lại,Retry
+BATTLE_RETREAT,Rút lui,Retreat
+CHAR_MIRA_NAME,Mira,Mira
+CHAR_KIRI_NAME,Kiri,Kiri
+CHAR_GARREN_NAME,Garren,Garren
+STAT_HP,Máu,HP
+STAT_ATK,Tấn Công,ATK
+STAT_DEF,Phòng Thủ,DEF
+STAT_SPD,Tốc Độ,SPD
+STAT_CRIT_RATE,Tỉ Lệ Bạo Kích,CRIT Rate
+STAT_CRIT_DMG,Sát Thương Bạo Kích,CRIT DMG
+STAT_BREAK_EFFECT,Hiệu Ứng Phá Vỡ,Break Effect
+STAT_ENERGY_REGEN,Hiệu Suất Hồi Năng Lượng,Energy Regen Rate
+STAT_EFFECT_HIT,Chính Xác Hiệu Ứng,Effect Hit Rate
+STAT_EFFECT_RES,Kháng Hiệu Ứng,Effect RES
+STAT_OUTGOING_HEALING,Tăng Trị Liệu,Outgoing Healing
+SKILL_TRAVELER_BASIC,Chém Rạn,Cracking Slash
+SKILL_TRAVELER_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
+SKILL_TRAVELER_SKILL,Hồn Vỡ,Shattered Soul
+SKILL_TRAVELER_SKILL_DESC,125% Tấn Công lên mục tiêu chính và 50% lên 2 quái bên cạnh,125% ATK to the target and 50% to adjacent enemies
+SKILL_TRAVELER_ULTIMATE,Tâm Nhãn Khai Mở,Mind's Eye Unveiled
+SKILL_TRAVELER_ULTIMATE_DESC,270% Tấn Công lên mục tiêu chính và 160% lên 2 bên,270% ATK to the target and 160% to adjacent enemies
+SKILL_MIRA_BASIC,Giọt Sương,Dewdrop
+SKILL_MIRA_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
+SKILL_MIRA_SKILL,Suối Lành,Healing Spring
+SKILL_MIRA_SKILL_DESC,Hồi cho 1 đồng minh 40% Tấn Công + 80 Máu,Heals one ally for 40% ATK + 80
+SKILL_MIRA_ULTIMATE,Mưa Phúc,Blessed Rain
+SKILL_MIRA_ULTIMATE_DESC,Hồi cả đội 30% Tấn Công + 60 Máu,Heals all allies for 30% ATK + 60
+SKILL_KIRI_BASIC,Tia Lửa,Spark
+SKILL_KIRI_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
+SKILL_KIRI_SKILL,Thổi Bùng,Kindle
+SKILL_KIRI_SKILL_DESC,Kéo lượt 1 đồng minh khác lên 50%,Advances another ally's action by 50%
+SKILL_KIRI_ULTIMATE,Pháo Hoa,Fireworks
+SKILL_KIRI_ULTIMATE_DESC,80% Tấn Công lên toàn bộ quái,80% ATK to all enemies
+SKILL_GARREN_BASIC,Đập Khiên,Shield Bash
+SKILL_GARREN_BASIC_DESC,100% Tấn Công lên 1 quái,100% ATK to one enemy
+SKILL_GARREN_SKILL,Rễ Ghìm,Rooting Slam
+SKILL_GARREN_SKILL_DESC,100% Phòng Thủ lên 1 quái và trì hoãn lượt 25%,100% DEF to one enemy and delays it by 25%
+SKILL_GARREN_ULTIMATE,Tường Rừng,Forest Wall
+SKILL_GARREN_ULTIMATE_DESC,90% Phòng Thủ lên toàn bộ quái,90% DEF to all enemies
+SKILL_WARP_SPROUT_BITE,Cắn,Bite
+SKILL_WARP_SPROUT_BITE_DESC,,
+SKILL_WANDERING_SHADE_TOUCH,Chạm Lạnh,Cold Touch
+SKILL_WANDERING_SHADE_TOUCH_DESC,,
+SKILL_WANDERING_SHADE_WAIL,Than Khóc,Wail
+SKILL_WANDERING_SHADE_WAIL_DESC,,
+SKILL_RUSTED_KNIGHT_SLASH,Chém Gỉ,Rusty Slash
+SKILL_RUSTED_KNIGHT_SLASH_DESC,,
+SKILL_RUSTED_KNIGHT_SWEEP,Chém Quét,Sweep
+SKILL_RUSTED_KNIGHT_SWEEP_DESC,,

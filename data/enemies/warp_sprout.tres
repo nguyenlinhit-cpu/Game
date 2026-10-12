@@ -1,6 +1,22 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3]
 
 [ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="3_skill"]
+[ext_resource type="Resource" path="res://data/skills/warp_sprout_bite.tres" id="4_warp_sprout_bite"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stats")
+hp = 90.0
+atk = 40.0
+def = 40.0
+spd = 90.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stats")
+hp = 3500.0
+atk = 700.0
+def = 500.0
 
 [resource]
 script = ExtResource("1_data")
@@ -8,3 +24,7 @@ id = &"warp_sprout"
 name_key = "ENEMY_WARP_SPROUT"
 element = &"poison"
 placeholder_color = Color(0.36, 0.55, 0.2, 1)
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+skills = Array[ExtResource("3_skill")]([ExtResource("4_warp_sprout_bite")])
+skill_weights = PackedFloat32Array(1.0)

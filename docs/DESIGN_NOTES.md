@@ -51,3 +51,20 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 6. **Chống bị kéo vào trận liên tục:** vừa vào map quái đứng yên 1,5 giây; vừa từ trận về người chơi bất tử 1 giây.
 7. **Phần thưởng thắng ngay/thắng trận tạm:** 30 Xu mỗi quái, Ký Ức bậc 1 = làm tròn lên 60% số quái (mức giữa bảng mục 11). Chưa cộng vào túi đồ (Phase 9–10).
 8. **Đòn Mở Màn bằng chuột** bắt trong `_unhandled_input` và chém về phía con trỏ; bấm lên nút giao diện/nút cảm ứng không tính là chém.
+
+## Phase 4
+
+1. **Thứ tự lượt lưu "quãng đường" thay vì GTHĐ.** Mỗi đơn vị chạy 10000; GTHĐ = quãng còn lại / Tốc Độ. Nhờ vậy đổi Tốc Độ giữa trận tự đúng. Kéo lượt 50% = trừ 5000 quãng đường (không âm); trì hoãn 25% = cộng 2500.
+2. **Hòa GTHĐ:** ai nhanh hơn đi trước → phe ta trước quái → ai vào trận trước.
+3. **Ưu Thế / Phục Kích:** đặt quãng đường của cả phe về 0 ở đầu trận, nên cả phe đi liền một lượt theo thứ tự Tốc Độ, sau đó về nhịp bình thường.
+4. **Đợt sau:** quái mới vào với quãng 10000, phe ta giữ nguyên tiến độ lượt.
+5. **Năng lượng:** vào trận 50%; đánh thường +20, chiến kỹ +30, mỗi lần bị trúng đòn +10, Tuyệt kỹ trừ hết rồi +5 (đều nhân Hiệu Suất Hồi Năng Lượng). Năng lượng tối đa theo từng nhân vật.
+6. **Chen lượt Tuyệt kỹ:** đang chờ người chơi chọn thì Tuyệt kỹ chạy ngay; đang trong hành động khác thì chạy ngay sau hành động đó. Không tốn lượt, không làm trôi thời gian. Mục tiêu đã chết lúc chạy thì tự chọn lại.
+7. **Công thức:** làm tròn xuống, tối thiểu 1 nếu hệ số > 0. Kháng kẹp trong [−100%, 100%], giảm phòng thủ kẹp trong [0, 100%]. Hệ số phá vỡ chỉ áp lên mục tiêu có thanh khiên (quái); nhân vật phe ta luôn 1,0. Phase 4 coi quái luôn còn khiên (0,9).
+8. **Hồi máu:** (Chỉ số × hệ số + số cố định) × (1 + Tăng Trị Liệu).
+9. **Chỉ số theo cấp:** dữ liệu ghi bảng cấp 1 và cấp 80; Máu/Tấn Công/Phòng Thủ nội suy tuyến tính, các chỉ số khác giữ như cấp 1. Phase 9 cộng thêm thưởng đột phá.
+10. **Cấp nhân vật trong trận:** tạm lấy `GameState.team_level` cho cả đội (Phase 9 dùng cấp riêng).
+11. **Tăng Tốc x2:** dùng `Engine.time_scale = 2` trong màn trận (trả về 1 khi rời màn).
+12. **Bấm vào quái = chọn và ra đòn luôn** (như thể loại). Muốn xem trước thì dùng ←/→ để đổi mục tiêu, Space để ra đòn; bấm lại nút kỹ năng đang chọn cũng là ra đòn.
+13. **Điểm Chiến Kỹ khi Tự Động:** chiến kỹ gây sát thương chỉ dùng khi còn ≥2 điểm (chừa 1 cho người hồi máu). Tuyệt kỹ hồi máu chỉ dùng khi có người dưới 75% máu.
+14. **Tên enum:** `BattleUnit.Faction` (không đặt `Side` vì trùng enum có sẵn của Godot).

@@ -8,6 +8,8 @@ const DEFAULT_PLAYER_NAMES: Dictionary = {GENDER_MALE: "Kael", GENDER_FEMALE: "K
 const MAX_PLAYER_NAME_LENGTH: int = 12
 ## Nam và Nữ dùng chung 1 CharacterData, chỉ khác skin.
 const PLAYER_CHARACTER_ID: StringName = &"traveler"
+## Đội mẫu Phase 4 (dữ liệu tạm; Phase 6 thay bằng nhân vật miễn phí thật).
+const DEFAULT_TEAM: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren"]
 const MAP_LIST_KEYS: Array[String] = ["defeated_enemies", "opened_chests", "broken_boxes", "visited_rooms"]
 
 var player_gender: StringName = GENDER_MALE
@@ -19,6 +21,8 @@ var play_time_sec: float = 0.0
 ## Cấp đội dùng để so với cấp quái (thắng ngay khi hơn ≥10 cấp).
 ## TODO Phase 9: tính từ cấp các nhân vật trong đội thay vì giá trị cố định.
 var team_level: int = 1
+## Đội hình hiện tại (tối đa 4, không trùng). TODO Phase 9: nhiều đội hình lưu sẵn, chỉ chọn nhân vật đã sở hữu.
+var team: Array[StringName] = DEFAULT_TEAM.duplicate()
 
 ## Trạng thái từng map, khóa theo đường dẫn scene:
 ## { scene_path: { "player_position": [x, y], "player_facing": [x, y], "respawn_at_rest": bool,
@@ -47,6 +51,7 @@ func reset_new_game() -> void:
 	story_flags.clear()
 	play_time_sec = 0.0
 	team_level = 1
+	team = DEFAULT_TEAM.duplicate()
 	map_states.clear()
 	pending_battle.clear()
 
@@ -82,6 +87,39 @@ func set_story_flag(flag: StringName, value: Variant = true) -> void:
 
 func get_story_flag(flag: StringName, default: Variant = false) -> Variant:
 	return story_flags.get(String(flag), default)
+
+
+# --- Đội hình ---
+
+## Đặt đội hình. Từ chối (trả về false, giữ đội cũ) nếu rỗng, quá 4 người hoặc trùng nhân vật.
+func set_team(character_ids: Array[StringName]) -> bool:
+	var error := ""
+	if character_ids.is_empty():
+		error = tr("TEAM_ERROR_EMPTY")
+	elif character_ids.size() > GameConfig.MAX_TEAM_SIZE:
+		error = tr("TEAM_ERROR_TOO_MANY") % GameConfig.MAX_TEAM_SIZE
+	else:
+		var seen: Dictionary = {}
+		for id in character_ids:
+			if seen.has(id):
+				error = tr("TEAM_ERROR_DUPLICATE")
+			seen[id] = true
+	if not error.is_empty():
+		push_warning("GameState.set_team: " + error)
+		EventBus.toast_requested.emit(error)
+		return false
+	team = character_ids.duplicate()
+	return true
+
+
+## CharacterData của đội hiện tại (bỏ qua id không tồn tại).
+func get_team_data() -> Array[CharacterData]:
+	var result: Array[CharacterData] = []
+	for id in team:
+		var data := DataPaths.load_character(id)
+		if data:
+			result.append(data)
+	return result
 
 
 # --- Trạng thái map ---
@@ -161,6 +199,7 @@ func to_dict() -> Dictionary:
 		"story_flags": story_flags.duplicate(true),
 		"play_time_sec": play_time_sec,
 		"team_level": team_level,
+		"team": team.map(func(id: StringName) -> String: return String(id)),
 		"map_states": map_states.duplicate(true),
 	}
 
@@ -176,6 +215,14 @@ func from_dict(data: Dictionary) -> void:
 	story_flags = flags if flags is Dictionary else {}
 	play_time_sec = float(data.get("play_time_sec", 0.0))
 	team_level = int(data.get("team_level", 1))
+	team = DEFAULT_TEAM.duplicate()
+	var saved_team: Variant = data.get("team", [])
+	if saved_team is Array and not saved_team.is_empty():
+		var ids: Array[StringName] = []
+		for id: Variant in saved_team:
+			ids.append(StringName(str(id)))
+		if ids.size() <= GameConfig.MAX_TEAM_SIZE:
+			team = ids
 	var states: Variant = data.get("map_states", {})
 	map_states = states.duplicate(true) if states is Dictionary else {}
 	pending_battle.clear()

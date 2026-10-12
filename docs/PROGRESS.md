@@ -6,8 +6,9 @@
 | --- | --- |
 | 1. Khung dự án, lời dẫn, chọn nhân vật chính | Xong |
 | 2. Di chuyển và phòng kiểu Soul Knight | Xong |
-| 3. Quái trên map và chuyển vào trận | Xong, chờ duyệt |
-| 4–14 | Chưa làm |
+| 3. Quái trên map và chuyển vào trận | Xong |
+| 4. Lõi trận đánh theo lượt | Xong, chờ duyệt |
+| 5–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -110,11 +111,48 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 3.
 
 ### Việc còn nợ
 
-- Trận theo lượt thật thay cho trận tạm (Phase 4); trừ 25% khiên khi Ưu Thế đúng điểm yếu (Phase 5); hiệu ứng Bí Kỹ mang vào trận (Phase 6).
+- ~~Trận theo lượt thật~~ (Phase 4); trừ 25% khiên khi Ưu Thế đúng điểm yếu (Phase 5); hiệu ứng Bí Kỹ mang vào trận (Phase 6).
 - Cấp đội đang là số cố định `GameState.team_level` (Phase 9 tính từ đội hình).
 - Phần thưởng tạm `PlaceholderRewards` (Phase 10 thay bằng LootTable, xóa file).
 - Quái thường hồi lại khi rời khu (Phase 10/12; hiện quái đã hạ biến mất hẳn).
 - Hiệu ứng chuyển cảnh vào trận riêng (đang dùng mờ đen chung 0,7 giây).
+
+## Phase 4 – Lõi trận đánh theo lượt
+
+### Đã làm
+
+- `systems/stats.gd`: 11 chỉ số mục 5 + 4 hệ số chiến đấu (Tăng sát thương, Dễ tổn thương, Giảm phòng thủ, Kháng). Bộ điều chỉnh cộng thẳng và cộng %, gỡ theo id hoặc theo nguồn. Chỉ số theo cấp từ 2 bảng `StatBlock` cấp 1 và cấp 80 (Máu/Tấn Công/Phòng Thủ nội suy tuyến tính).
+- `systems/game_config.gd`: `MAX_LEVEL = 30`, `DESIGN_MAX_LEVEL = 80`, `MAX_TEAM_SIZE = 4`.
+- `systems/damage_calc.gd`: đúng công thức mục 5, một hàm duy nhất; hệ số phá vỡ có sẵn tham số (0,9 còn khiên / 1,0 đã vỡ). Làm tròn xuống, tối thiểu 1.
+- `BattleUnit` (logic, không vẽ) và `TurnQueue`: GTHĐ = quãng đường còn lại / Tốc Độ (quãng 10000). Kéo lượt, trì hoãn, đổi Tốc Độ giữa trận tự đúng. Dự đoán N lượt tới, xem trước khi chọn kỹ năng.
+- `BattleController` (state machine): phe ta tối đa 4 (từ chối cứng đội 5 người), quái tối đa 5 mỗi đợt, nhiều đợt, người ngã không có ai thay. Điểm Chiến Kỹ dùng chung (đầu trận 3, tối đa 5). Năng lượng (hành động, bị đánh +10). Hàng chen lượt Tuyệt kỹ. Ưu Thế: cả đội đi trước vòng đầu; Phục Kích: quái đi trước.
+- `SkillData` tạm (sát thương đơn/lan/toàn bộ, hồi máu, kéo/đẩy lượt, Điểm Chiến Kỹ, năng lượng). `SkillExecutor` áp kỹ năng. `EnemyAI` tạm (ngẫu nhiên theo trọng số), `AutoBattle` (Tự Động).
+- Giao diện trận: phe ta trái, quái phải, thanh thứ tự lượt bên trái (có xem trước, ô thay đổi viền vàng), 4 thẻ nhân vật (máu, năng lượng, bấm để dùng Tuyệt kỹ), nút Đánh thường / Chiến kỹ (Q/E, bấm lại = ra đòn), 5 viên Điểm Chiến Kỹ, chọn mục tiêu đơn / lan 3 / toàn bộ (bấm quái, ←/→, Space). Số sát thương bay dùng object pool, bạo kích màu vàng. Băng rôn Tuyệt kỹ (bấm để bỏ qua). Nút Tự Động và x2 (nhớ lựa chọn). Màn thắng (EXP tạm, vật phẩm trống) và màn thua (Đánh lại / Rút lui).
+- 4 nhân vật mẫu (`traveler`, `mira`, `kiri`, `garren`, dùng đúng id để Phase 6 ghi đè) và 3 quái mẫu có chỉ số + kỹ năng. Đội mặc định trong `GameState.team` (`set_team` từ chối >4 người và nhân vật trùng).
+- Debug: F9 thắng trận ngay.
+- Test `tests/phase04_test.tscn`: 57/57 đạt. Gồm 13 ca công thức sát thương (ca 10 tính tay đủ mọi hệ số = 2916), tỉ lệ bạo kích 10.000 lần, thứ tự lượt 8 lượt + đổi tốc độ + kéo/đẩy lượt, 40 trận mô phỏng (Tự Động + chọn bừa) kiểm tra Điểm Chiến Kỹ luôn trong 0–5, chen lượt Tuyệt kỹ, đánh trọn trận bằng sự kiện chuột thật, trận 2 đợt bằng Tự Động, từ chối đội 5 người ở cả GameState, BattleController và màn trận. Test Phase 1–3 vẫn đạt.
+
+### File chính
+
+- `systems/{stats,damage_calc,game_config,enemy_ai,auto_battle}.gd`, `systems/resources/{stat_block,skill_data}.gd`
+- `scenes/battle/{battle_unit,turn_queue,skill_executor,battle_controller,battle_scene}.gd`, `scenes/battle/battle_scene.tscn`
+- `scenes/battle/ui/{unit_view,character_card,turn_order_bar,skill_points_bar,damage_number_pool}.gd`
+- `data/characters/{traveler,mira,kiri,garren}.tres`, `data/enemies/*.tres`, `data/skills/*.tres`
+- `tests/test_base.gd`, `tests/phase04_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 4.
+
+### Việc còn nợ
+
+- Nguyên tố, Khiên Điểm Yếu, Phá Vỡ, hiệu ứng/buff (Phase 5). Hiện coi quái luôn còn khiên (hệ số phá vỡ 0,9), kháng 0.
+- Kỹ năng dạng danh sách hiệu ứng, Đặc tính, Tinh Mệnh, nhân vật thật, trọng số bị nhắm theo vận mệnh (Phase 6).
+- AI quái theo tình huống, báo trước đòn mạnh (Phase 8).
+- Máu giữ nguyên giữa các trận, cấp từng nhân vật (Phase 9). Hiện mọi nhân vật lấy cấp đội, vào trận đầy máu và nửa năng lượng.
+- EXP/vật phẩm thắng trận thật (Phase 10).
+- Cắt cảnh Tuyệt kỹ 2D có tranh nhân vật, đổi màu nền theo nguyên tố (Phase 13; hiện là băng rôn chữ).
+- Hiện kỹ năng của quái là dữ liệu tạm cho 3 quái mẫu (Phase 8 làm đủ).
 
 ## Để sau
 

@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_skin"]
+[ext_resource type="Resource" path="res://data/skills/garren_basic.tres" id="4_basic"]
+[ext_resource type="Resource" path="res://data/skills/garren_skill.tres" id="5_skill"]
+[ext_resource type="Resource" path="res://data/skills/garren_ultimate.tres" id="6_ultimate"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stats")
+hp = 200.0
+atk = 55.0
+def = 80.0
+spd = 92.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stats")
+hp = 1500.0
+atk = 420.0
+def = 600.0
+
+[sub_resource type="Resource" id="Skin_default"]
+script = ExtResource("3_skin")
+skin_id = &"default"
+label_key = ""
+placeholder_color = Color(0.18, 0.545, 0.341, 1)
+accent_color = Color(0.75, 0.95, 0.6, 1)
+
+[resource]
+script = ExtResource("1_data")
+id = &"garren"
+name_key = "CHAR_GARREN_NAME"
+rarity = 4
+element = &"wood"
+path = &"preservation"
+skins = Array[ExtResource("3_skin")]([SubResource("Skin_default")])
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+max_energy = 120.0
+basic_attack = ExtResource("4_basic")
+skill = ExtResource("5_skill")
+ultimate = ExtResource("6_ultimate")

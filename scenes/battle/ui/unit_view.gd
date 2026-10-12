@@ -1,0 +1,123 @@
+class_name UnitView
+extends Node2D
+## Hình tạm của một đơn vị trên sân: nhân vật (khối màu + chữ cái) hoặc quái (thân tròn + thanh máu).
+## Hiện dấu mục tiêu (chính / bên cạnh), vòng sáng khi tới lượt, nháy khi trúng đòn, mờ dần khi ngã.
+
+const ALLY_RADIUS: float = 52.0
+const ENEMY_RADIUS: float = 56.0
+const HP_BAR_SIZE := Vector2(150.0, 12.0)
+const MARKER_COLOR := Color("f2d58a")
+const TURN_COLOR := Color(0.95, 0.84, 0.54, 0.5)
+const HP_BACK := Color(0.1, 0.08, 0.12, 0.9)
+const HP_FILL := Color("d64545")
+
+enum Marker { NONE, MAIN, ADJACENT }
+
+var unit: BattleUnit
+## Vị trí đứng gốc; hoạt ảnh lao/giật luôn quay về đây.
+var home_position: Vector2
+var marker: Marker = Marker.NONE:
+	set(value):
+		marker = value
+		queue_redraw()
+var is_acting: bool = false:
+	set(value):
+		is_acting = value
+		queue_redraw()
+
+var _time: float = 0.0
+var _hit_flash: float = 0.0
+
+
+func setup(battle_unit: BattleUnit, at: Vector2) -> void:
+	unit = battle_unit
+	home_position = at
+	position = at
+	unit.hp_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
+	unit.died.connect(_on_died)
+
+
+func get_radius() -> float:
+	return ALLY_RADIUS if unit.is_ally() else ENEMY_RADIUS
+
+
+## Điểm có nằm trên hình này không (để bấm chọn mục tiêu).
+func contains_point(global_point: Vector2) -> bool:
+	return unit.is_alive() and global_point.distance_to(global_position) <= get_radius() + 24.0
+
+
+## Bị đánh: nháy trắng, giật lùi về phía sau.
+func play_hit() -> void:
+	_hit_flash = 1.0
+	var back := -14.0 if unit.is_ally() else 14.0
+	var tween := create_tween()
+	tween.tween_property(self, "position", home_position + Vector2(back, 0.0), 0.05)
+	tween.tween_property(self, "position", home_position, 0.12)
+
+
+## Ra đòn: lao về phía trước rồi quay lại.
+func play_action() -> void:
+	var forward := 40.0 if unit.is_ally() else -40.0
+	var tween := create_tween()
+	tween.tween_property(self, "position", home_position + Vector2(forward, 0.0), 0.12)
+	tween.tween_property(self, "position", home_position, 0.2)
+
+
+func _process(delta: float) -> void:
+	_time += delta
+	_hit_flash = maxf(_hit_flash - delta * 4.0, 0.0)
+	queue_redraw()
+
+
+func _on_died(_u: BattleUnit) -> void:
+	marker = Marker.NONE
+	var tween := create_tween().set_parallel()
+	tween.tween_property(self, "modulate:a", 0.0 if not unit.is_ally() else 0.35, 0.5)
+	tween.tween_property(self, "scale", Vector2(1.0, 0.6) if unit.is_ally() else Vector2(0.6, 0.6), 0.5)
+
+
+func _draw() -> void:
+	if unit == null:
+		return
+	var radius := get_radius()
+	if is_acting:
+		draw_set_transform(Vector2(0.0, radius * 0.95), 0.0, Vector2(1.0, 0.32))
+		draw_circle(Vector2.ZERO, radius * 1.35 + sin(_time * 5.0) * 4.0, TURN_COLOR)
+		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+	var body := unit.color.lerp(Color.WHITE, _hit_flash * 0.7)
+	if unit.is_ally():
+		PlaceholderArt.draw_character(self, Vector2.ZERO, radius, body, unit.accent_color, unit.letter, false)
+	else:
+		draw_set_transform(Vector2(0.0, radius * 0.9), 0.0, Vector2(1.0, 0.3))
+		draw_circle(Vector2.ZERO, radius, Color(0.0, 0.0, 0.0, 0.35))
+		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+		var bob := sin(_time * 3.0 + unit.slot) * 4.0
+		draw_circle(Vector2(0.0, bob), radius, body)
+		draw_arc(Vector2(0.0, bob), radius, 0.0, TAU, 40, unit.accent_color, 4.0, true)
+		draw_circle(Vector2(-radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
+		draw_circle(Vector2(radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
+		_draw_enemy_hp(radius)
+	_draw_marker(radius)
+
+
+func _draw_enemy_hp(radius: float) -> void:
+	var font := ThemeDB.fallback_font
+	var title := "%s  Lv%d" % [unit.display_name, unit.level]
+	var width := font.get_string_size(title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22).x
+	draw_string_outline(font, Vector2(-width * 0.5, radius + 34.0), title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22, 6, Color.BLACK)
+	draw_string(font, Vector2(-width * 0.5, radius + 34.0), title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color.WHITE)
+	var bar := Rect2(Vector2(-HP_BAR_SIZE.x * 0.5, radius + 44.0), HP_BAR_SIZE)
+	draw_rect(bar, HP_BACK)
+	draw_rect(Rect2(bar.position, Vector2(bar.size.x * unit.get_hp_ratio(), bar.size.y)), HP_FILL)
+	draw_rect(bar, Color(1, 1, 1, 0.5), false, 1.5)
+
+
+func _draw_marker(radius: float) -> void:
+	if marker == Marker.NONE:
+		return
+	var size := 22.0 if marker == Marker.MAIN else 13.0
+	var top := Vector2(0.0, -radius - 30.0 + sin(_time * 6.0) * 5.0)
+	draw_colored_polygon(PackedVector2Array([
+		top + Vector2(-size, -size * 1.2), top + Vector2(size, -size * 1.2), top]), MARKER_COLOR)
+	if marker == Marker.MAIN:
+		draw_arc(Vector2.ZERO, radius + 10.0, 0.0, TAU, 40, MARKER_COLOR, 3.0, true)

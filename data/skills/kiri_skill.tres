@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill"]
+
+[resource]
+script = ExtResource("1_skill")
+id = &"kiri_skill"
+name_key = "SKILL_KIRI_SKILL"
+desc_key = "SKILL_KIRI_SKILL_DESC"
+kind = 1
+target = 3
+can_target_self = false
+scaling_stat = 1
+action_advance = 0.5
+energy_gain = 30.0
+sp_change = -1

@@ -1,6 +1,23 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3]
 
 [ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="3_skill"]
+[ext_resource type="Resource" path="res://data/skills/wandering_shade_touch.tres" id="4_wandering_shade_touch"]
+[ext_resource type="Resource" path="res://data/skills/wandering_shade_wail.tres" id="5_wandering_shade_wail"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stats")
+hp = 120.0
+atk = 35.0
+def = 40.0
+spd = 100.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stats")
+hp = 4500.0
+atk = 600.0
+def = 500.0
 
 [resource]
 script = ExtResource("1_data")
@@ -8,3 +25,7 @@ id = &"wandering_shade"
 name_key = "ENEMY_WANDERING_SHADE"
 element = &"soul"
 placeholder_color = Color(0.55, 0.5, 0.75, 1)
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+skills = Array[ExtResource("3_skill")]([ExtResource("4_wandering_shade_touch"), ExtResource("5_wandering_shade_wail")])
+skill_weights = PackedFloat32Array(3.0, 1.0)

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill"]
+
+[resource]
+script = ExtResource("1_skill")
+id = &"wandering_shade_wail"
+name_key = "SKILL_WANDERING_SHADE_WAIL"
+desc_key = "SKILL_WANDERING_SHADE_WAIL_DESC"
+kind = 1
+target = 2
+scaling_stat = 1
+damage_multiplier = 0.45

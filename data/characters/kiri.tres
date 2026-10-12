@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_skin"]
+[ext_resource type="Resource" path="res://data/skills/kiri_basic.tres" id="4_basic"]
+[ext_resource type="Resource" path="res://data/skills/kiri_skill.tres" id="5_skill"]
+[ext_resource type="Resource" path="res://data/skills/kiri_ultimate.tres" id="6_ultimate"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stats")
+hp = 140.0
+atk = 70.0
+def = 50.0
+spd = 110.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stats")
+hp = 1050.0
+atk = 540.0
+def = 400.0
+
+[sub_resource type="Resource" id="Skin_default"]
+script = ExtResource("3_skin")
+skin_id = &"default"
+label_key = ""
+placeholder_color = Color(0.91, 0.333, 0.169, 1)
+accent_color = Color(1, 0.85, 0.5, 1)
+
+[resource]
+script = ExtResource("1_data")
+id = &"kiri"
+name_key = "CHAR_KIRI_NAME"
+rarity = 4
+element = &"fire"
+path = &"harmony"
+skins = Array[ExtResource("3_skin")]([SubResource("Skin_default")])
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+max_energy = 110.0
+basic_attack = ExtResource("4_basic")
+skill = ExtResource("5_skill")
+ultimate = ExtResource("6_ultimate")

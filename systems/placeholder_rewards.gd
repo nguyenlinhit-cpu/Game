@@ -5,6 +5,8 @@ extends RefCounted
 
 const COINS_PER_ENEMY: int = 30
 const MEMORY_CHANCE: float = 0.6
+## Ký Ức Mảnh Hồn bậc 1 = 100 EXP (mục 11).
+const EXP_PER_MEMORY_1: int = 100
 
 
 static func for_encounter(encounter: EncounterData) -> Dictionary:
@@ -22,3 +24,7 @@ static func describe(rewards: Dictionary) -> Array[String]:
 	if rewards.get("soul_memory_1", 0) > 0:
 		lines.append(TranslationServer.translate("REWARD_MEMORY_1") % rewards["soul_memory_1"])
 	return lines
+
+
+static func exp_for_encounter(encounter: EncounterData) -> int:
+	return int(for_encounter(encounter)["soul_memory_1"]) * EXP_PER_MEMORY_1

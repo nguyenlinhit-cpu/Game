@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill"]
+
+[resource]
+script = ExtResource("1_skill")
+id = &"traveler_skill"
+name_key = "SKILL_TRAVELER_SKILL"
+desc_key = "SKILL_TRAVELER_SKILL_DESC"
+kind = 1
+target = 1
+scaling_stat = 1
+damage_multiplier = 1.25
+adjacent_multiplier = 0.5
+energy_gain = 30.0
+sp_change = -1

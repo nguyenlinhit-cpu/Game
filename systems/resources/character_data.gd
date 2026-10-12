@@ -1,7 +1,7 @@
 class_name CharacterData
 extends Resource
-## Dữ liệu một nhân vật. Phase 1 chỉ có phần nhận diện và skin;
-## chỉ số, kỹ năng, Đặc tính, Tinh Mệnh bổ sung ở Phase 4–7.
+## Dữ liệu một nhân vật: nhận diện, skin, chỉ số theo cấp, 3 kỹ năng trong trận.
+## Kỹ năng ngoài map, Đặc tính, Tinh Mệnh bổ sung ở Phase 6–7.
 
 @export var id: StringName
 @export var name_key: String = ""
@@ -13,6 +13,14 @@ extends Resource
 ## Nhân vật chính không có trong banner.
 @export var in_gacha_pool: bool = true
 @export var skins: Array[CharacterSkin] = []
+
+@export_group("Chiến đấu")
+@export var stats_lv1: StatBlock
+@export var stats_lv80: StatBlock
+@export var max_energy: float = 120.0
+@export var basic_attack: SkillData
+@export var skill: SkillData
+@export var ultimate: SkillData
 
 
 func get_skin(skin_id: StringName) -> CharacterSkin:

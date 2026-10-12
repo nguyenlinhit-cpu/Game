@@ -239,8 +239,11 @@ func _await_battle(timeout: float = 3.0) -> Node:
 	return null
 
 
+## Trận thật (Phase 4) kết thúc ngay theo kết quả mong muốn rồi bấm nút rời trận.
 func _press_battle_button(battle: Node, win: bool) -> void:
-	battle.get_node("%WinButton" if win else "%LoseButton").pressed.emit()
+	battle.debug_force_result(win)
+	await _frames(2)
+	battle.get_node("%ContinueButton" if win else "%RetreatButton").pressed.emit()
 	await SceneRouter.transition_finished
 	_bind_map()
 	await _frames(3)

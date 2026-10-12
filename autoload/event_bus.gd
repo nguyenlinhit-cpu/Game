@@ -11,14 +11,14 @@ signal settings_changed
 ## Thông báo nhỏ trên HUD.
 signal toast_requested(text: String)
 
-# --- Trận đánh (Phase 4–6) ---
+# --- Trận đánh (Phase 4–6). Đơn vị trong trận là BattleUnit (RefCounted). ---
 signal battle_started(encounter: Resource)
-signal turn_started(unit: Node)
-signal turn_ended(unit: Node)
-signal damage_dealt(source: Node, target: Node, amount: int, is_crit: bool)
-signal weakness_broken(source: Node, target: Node)
-signal ultimate_used(unit: Node)
-signal unit_died(unit: Node)
+signal turn_started(unit: Object)
+signal turn_ended(unit: Object)
+signal damage_dealt(source: Object, target: Object, amount: int, is_crit: bool)
+signal weakness_broken(source: Object, target: Object)
+signal ultimate_used(unit: Object)
+signal unit_died(unit: Object)
 signal battle_won(encounter: Resource)
 signal battle_lost(encounter: Resource)
 

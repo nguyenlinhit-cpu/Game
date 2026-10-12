@@ -5,7 +5,7 @@ extends RefCounted
 
 
 static func draw_character(canvas: CanvasItem, center: Vector2, radius: float,
-		body_color: Color, accent_color: Color, letter: String) -> void:
+		body_color: Color, accent_color: Color, letter: String, draw_shard: bool = true) -> void:
 	# Bóng dưới chân (hình elip = hình tròn bị bóp dọc).
 	canvas.draw_set_transform(center + Vector2(0.0, radius * 0.95), 0.0, Vector2(1.0, 0.3))
 	canvas.draw_circle(Vector2.ZERO, radius * 0.9, Color(0.0, 0.0, 0.0, 0.35))
@@ -14,7 +14,13 @@ static func draw_character(canvas: CanvasItem, center: Vector2, radius: float,
 	canvas.draw_circle(center, radius, body_color)
 	canvas.draw_arc(center, radius, 0.0, TAU, 64, accent_color, maxf(2.0, radius * 0.1), true)
 
-	# Mảnh Hồn nhỏ trên đỉnh đầu, gợi ý nguyên tố Hồn của nhân vật chính.
+	# Mảnh Hồn nhỏ trên đỉnh đầu (ngoài map). Trong trận tắt để khỏi nhầm với dấu mục tiêu.
+	if draw_shard:
+		_draw_shard(canvas, center, radius, accent_color)
+	_draw_letter(canvas, center, radius, letter)
+
+
+static func _draw_shard(canvas: CanvasItem, center: Vector2, radius: float, accent_color: Color) -> void:
 	var shard_center := center + Vector2(0.0, -radius * 1.35)
 	var shard_size := radius * 0.22
 	canvas.draw_colored_polygon(PackedVector2Array([
@@ -24,6 +30,8 @@ static func draw_character(canvas: CanvasItem, center: Vector2, radius: float,
 		shard_center + Vector2(-shard_size, 0.0),
 	]), accent_color)
 
+
+static func _draw_letter(canvas: CanvasItem, center: Vector2, radius: float, letter: String) -> void:
 	if letter.is_empty():
 		return
 	var font := ThemeDB.fallback_font

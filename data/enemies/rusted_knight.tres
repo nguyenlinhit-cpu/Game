@@ -1,6 +1,23 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3]
 
 [ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="3_skill"]
+[ext_resource type="Resource" path="res://data/skills/rusted_knight_slash.tres" id="4_rusted_knight_slash"]
+[ext_resource type="Resource" path="res://data/skills/rusted_knight_sweep.tres" id="5_rusted_knight_sweep"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stats")
+hp = 220.0
+atk = 50.0
+def = 70.0
+spd = 80.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stats")
+hp = 8000.0
+atk = 850.0
+def = 700.0
 
 [resource]
 script = ExtResource("1_data")
@@ -8,3 +25,7 @@ id = &"rusted_knight"
 name_key = "ENEMY_RUSTED_KNIGHT"
 element = &"lightning"
 placeholder_color = Color(0.55, 0.38, 0.25, 1)
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+skills = Array[ExtResource("3_skill")]([ExtResource("4_rusted_knight_slash"), ExtResource("5_rusted_knight_sweep")])
+skill_weights = PackedFloat32Array(2.0, 1.0)

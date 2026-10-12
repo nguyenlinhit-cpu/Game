@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stats"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="3_skin"]
+[ext_resource type="Resource" path="res://data/skills/mira_basic.tres" id="4_basic"]
+[ext_resource type="Resource" path="res://data/skills/mira_skill.tres" id="5_skill"]
+[ext_resource type="Resource" path="res://data/skills/mira_ultimate.tres" id="6_ultimate"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stats")
+hp = 150.0
+atk = 60.0
+def = 55.0
+spd = 105.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stats")
+hp = 1100.0
+atk = 480.0
+def = 420.0
+
+[sub_resource type="Resource" id="Skin_default"]
+script = ExtResource("3_skin")
+skin_id = &"default"
+label_key = ""
+placeholder_color = Color(0.227, 0.553, 0.871, 1)
+accent_color = Color(0.8, 0.93, 1, 1)
+
+[resource]
+script = ExtResource("1_data")
+id = &"mira"
+name_key = "CHAR_MIRA_NAME"
+rarity = 4
+element = &"water"
+path = &"abundance"
+skins = Array[ExtResource("3_skin")]([SubResource("Skin_default")])
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+max_energy = 100.0
+basic_attack = ExtResource("4_basic")
+skill = ExtResource("5_skill")
+ultimate = ExtResource("6_ultimate")

@@ -22,10 +22,14 @@ func _init() -> void:
 		"switch_character_4": [_key(KEY_4), _joy(JOY_BUTTON_DPAD_LEFT)],
 		"interact": [_key(KEY_F), _joy(JOY_BUTTON_A)],
 		"menu": [_key(KEY_ESCAPE), _joy(JOY_BUTTON_START)],
+		# Trong trận (phím 1–4 dùng lại switch_character_* cho Tuyệt kỹ).
+		"battle_basic": [_key(KEY_Q), _joy(JOY_BUTTON_X)],
+		"battle_skill": [_key(KEY_E), _joy(JOY_BUTTON_Y)],
 		# Chỉ có tác dụng ở bản debug.
 		"debug_clear_enemies": [_key(KEY_F8)],
 		"debug_team_level_down": [_key(KEY_F6)],
 		"debug_team_level_up": [_key(KEY_F7)],
+		"debug_win_battle": [_key(KEY_F9)],
 	}
 	for action_name: String in actions:
 		for event: InputEvent in actions[action_name]:
