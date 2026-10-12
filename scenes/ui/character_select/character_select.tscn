@@ -1,0 +1,151 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/character_select/character_select.gd" id="1_script"]
+[ext_resource type="Script" path="res://scenes/ui/common/avatar_preview.gd" id="2_preview"]
+[ext_resource type="Shader" path="res://assets/vfx/shaders/starfield_bg.gdshader" id="3_bg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bg"]
+shader = ExtResource("3_bg")
+shader_parameter/glow_strength = 0.15
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_bg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Layout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -440.0
+offset_right = 460.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "CHARSEL_TITLE"
+horizontal_alignment = 1
+
+[node name="Cards" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="MaleCard" type="Button" parent="Layout/Cards"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 440)
+layout_mode = 2
+toggle_mode = true
+
+[node name="MalePreview" type="Control" parent="Layout/Cards/MaleCard"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 340.0
+grow_horizontal = 2
+mouse_filter = 2
+script = ExtResource("2_preview")
+
+[node name="MaleLabel" type="Label" parent="Layout/Cards/MaleCard"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "CHARSEL_MALE"
+horizontal_alignment = 1
+
+[node name="FemaleCard" type="Button" parent="Layout/Cards"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 440)
+layout_mode = 2
+toggle_mode = true
+
+[node name="FemalePreview" type="Control" parent="Layout/Cards/FemaleCard"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 340.0
+grow_horizontal = 2
+mouse_filter = 2
+script = ExtResource("2_preview")
+
+[node name="FemaleLabel" type="Label" parent="Layout/Cards/FemaleCard"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "CHARSEL_FEMALE"
+horizontal_alignment = 1
+
+[node name="NameRow" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="Layout/NameRow"]
+layout_mode = 2
+text = "CHARSEL_NAME_LABEL"
+
+[node name="NameEdit" type="LineEdit" parent="Layout/NameRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 64)
+layout_mode = 2
+max_length = 12
+alignment = 1
+
+[node name="NameHint" type="Label" parent="Layout"]
+modulate = Color(1, 1, 1, 0.6)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CHARSEL_NAME_HINT"
+horizontal_alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 72)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "UI_CONFIRM"

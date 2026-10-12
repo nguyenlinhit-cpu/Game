@@ -1,0 +1,52 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/overworld/map/overworld_map.gd" id="1_map"]
+[ext_resource type="TileSet" path="res://assets/tilesets/placeholder_tileset.tres" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_rest_01.tscn" id="3_rest"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_combat_01.tscn" id="4_combat"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_chest_01.tscn" id="5_chest"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/rooms/room_boss_01.tscn" id="6_boss"]
+[ext_resource type="Script" path="res://scenes/overworld/map/room_manager.gd" id="7_manager"]
+[ext_resource type="PackedScene" path="res://scenes/overworld/player/player.tscn" id="8_player"]
+[ext_resource type="Script" path="res://scenes/overworld/map/camera_rig.gd" id="9_camera"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/overworld_hud.tscn" id="10_hud"]
+
+[node name="TestMap" type="Node2D"]
+script = ExtResource("1_map")
+start_room_id = &"rest_01"
+
+[node name="Corridors" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_tiles")
+
+[node name="Rooms" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="RoomRest01" parent="Rooms" instance=ExtResource("3_rest")]
+
+[node name="RoomCombat01" parent="Rooms" instance=ExtResource("4_combat")]
+position = Vector2(2560, 0)
+grid_cell = Vector2i(1, 0)
+
+[node name="RoomChest01" parent="Rooms" instance=ExtResource("5_chest")]
+position = Vector2(5120, 0)
+grid_cell = Vector2i(2, 0)
+
+[node name="RoomBoss01" parent="Rooms" instance=ExtResource("6_boss")]
+position = Vector2(2560, -2560)
+grid_cell = Vector2i(1, -1)
+
+[node name="RoomManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_manager")
+
+[node name="Player" parent="." instance=ExtResource("8_player")]
+unique_name_in_owner = true
+
+[node name="CameraRig" type="Camera2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_camera")
+target_path = NodePath("../Player")
+
+[node name="Hud" parent="." instance=ExtResource("10_hud")]
+unique_name_in_owner = true

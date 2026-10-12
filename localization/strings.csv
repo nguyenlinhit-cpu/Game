@@ -1,0 +1,47 @@
+keys,vi,en
+GAME_TITLE,Aethelgard: Mảnh Hồn,Aethelgard: Soul Shards
+GAME_SUBTITLE,Pháo Đài Vọng Tinh,The Stargazer Fortress
+UI_START,Bắt đầu,Start
+UI_CONTINUE,Tiếp tục,Continue
+UI_SETTINGS,Cài đặt,Settings
+UI_QUIT,Thoát,Quit
+UI_CLOSE,Đóng,Close
+UI_CONFIRM,Xác nhận,Confirm
+UI_SKIP,Bỏ qua ▶▶,Skip ▶▶
+SETTINGS_TITLE,Cài đặt,Settings
+SETTINGS_VOLUME_MASTER,Âm lượng tổng,Master volume
+SETTINGS_VOLUME_MUSIC,Nhạc,Music
+SETTINGS_VOLUME_SFX,Hiệu ứng,Sound effects
+SETTINGS_VOLUME_VOICE,Giọng nói,Voice
+INTRO_HINT,Nhấn chuột hoặc Enter để đọc nhanh,Click or press Enter to speed up
+INTRO_P1_L1,"Từ thuở sơ khai, thế giới Aethelgard không tồn tại bóng tối.","Since the dawn of time, the world of Aethelgard knew no darkness."
+INTRO_P1_L2,"Vạn vật sinh sôi, từ ngọn cỏ chiếc lá cho đến những vì sao trên bầu trời, đều vận hành nhờ trái tim của vương quốc gọi là Tâm Thần Nhãn.","All living things, from blades of grass to the stars in the sky, moved to the beat of the kingdom's heart: the Mind's Eye."
+INTRO_P1_L3,"Sáu nguyên tố Lửa, Nước, Sét, Phong, Độc và Mộc đan xen lẫn nhau, giữ cho thế giới một sự cân bằng tuyệt đối.","Six elements, Fire, Water, Lightning, Wind, Poison and Wood, wove together and held the world in perfect balance."
+INTRO_P2_L1,Nhưng hòa bình chưa bao giờ là vĩnh cửu.,But peace was never meant to last.
+INTRO_P3_L1,"Một đêm nọ, bầu trời lặng im một cách kỳ lạ.","One night, the sky fell strangely silent."
+INTRO_P3_L2,"Đột nhiên một vết nứt xé toạc hư không, mang theo những hiện tượng kỳ quái mang tên Ma Biến.","Suddenly a rift tore through the void, bringing with it a strange blight called the Warping."
+INTRO_P3_L3,"Trái tim của thế giới nổ tung: Tâm Thần Nhãn vỡ tan thành muôn vàn Mảnh Hồn, rơi vãi khắp nơi.","The heart of the world burst apart: the Mind's Eye shattered into countless Soul Shards, scattered far and wide."
+INTRO_P3_L4,"Aethelgard trôi dạt vào hư vô, bị xé nhỏ thành hàng ngàn hầm ngục hỗn loạn, nơi thời gian ngưng đọng và không gian bị bóp méo.","Aethelgard drifted into the void, torn into a thousand chaotic dungeons where time stands still and space is twisted."
+INTRO_P4_L1,"Sức mạnh của chính Tâm Thần Nhãn hóa thành nguyên tố thứ bảy: Hồn.","The power of the Mind's Eye itself became a seventh element: Soul."
+INTRO_P4_L2,"Và trong Pháo Đài Vọng Tinh, một lữ khách mở mắt, với một Mảnh Hồn đang đập trong tim.","And within the Stargazer Fortress, a traveler opens their eyes, a Soul Shard beating in their heart."
+CHARSEL_TITLE,Chọn lữ khách,Choose your traveler
+CHARSEL_MALE,Nam,Male
+CHARSEL_FEMALE,Nữ,Female
+CHARSEL_NAME_LABEL,Tên,Name
+CHARSEL_NAME_HINT,Tối đa 12 ký tự,Up to 12 characters
+CHAR_TRAVELER_NAME,Lữ Khách,Traveler
+SETTINGS_TOUCH_CONTROLS,Điều khiển cảm ứng (thử trên PC),Touch controls (test on PC)
+UI_RESUME,Chơi tiếp,Resume
+UI_BACK_TO_TITLE,Về màn hình tiêu đề,Back to title
+PAUSE_TITLE,Tạm dừng,Paused
+HUD_HINT,"WASD/mũi tên: đi · Space/Shift: lướt · F: tương tác · F8: xóa quái (debug) · Esc: menu","WASD/arrows: move · Space/Shift: dash · F: interact · F8: clear enemies (debug) · Esc: menu"
+PROMPT_OPEN_CHEST,Mở rương,Open chest
+PROMPT_BREAK_BOX,Phá Hộp Bí Kỹ,Break Technique Box
+PROMPT_REST,Nghỉ ngơi,Rest
+TOAST_CHEST_OPENED,Đã mở rương (phần thưởng làm ở Phase 10),Chest opened (rewards in Phase 10)
+TOAST_BOX_BROKEN,+1 Điểm Bí Kỹ (tạm),+1 Technique Point (placeholder)
+TOAST_RESTED,Đã nghỉ: hồi máu và lưu game (tạm),Rested: healed and saved (placeholder)
+TOAST_ROOM_LOCKED,Cửa đã khóa! Hạ hết quái để mở,The doors are sealed! Defeat all enemies
+TOAST_ROOM_CLEARED,Đã dọn sạch phòng – cửa mở,Room cleared – doors open
+TOUCH_DASH,Lướt,Dash
+TOUCH_INTERACT,F,F

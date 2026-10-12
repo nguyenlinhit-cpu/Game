@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayerMovementConfig" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/player_movement_config.gd" id="1_cfg"]
+
+[resource]
+script = ExtResource("1_cfg")
+max_speed = 420.0
+acceleration = 3200.0
+friction = 3800.0
+dash_speed = 1450.0
+dash_duration = 0.16
+dash_cooldown = 0.7
+dash_invincibility = 0.24

@@ -1,0 +1,12 @@
+{
+	"chars_per_second": 38,
+	"line_hold_sec": 0.7,
+	"page_hold_sec": 2.4,
+	"page_fade_sec": 0.6,
+	"pages": [
+		["INTRO_P1_L1", "INTRO_P1_L2", "INTRO_P1_L3"],
+		["INTRO_P2_L1"],
+		["INTRO_P3_L1", "INTRO_P3_L2", "INTRO_P3_L3", "INTRO_P3_L4"],
+		["INTRO_P4_L1", "INTRO_P4_L2"]
+	]
+}

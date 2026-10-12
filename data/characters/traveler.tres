@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/character_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://systems/resources/character_skin.gd" id="2_skin"]
+
+[sub_resource type="Resource" id="Skin_male"]
+script = ExtResource("2_skin")
+skin_id = &"male"
+label_key = "CHARSEL_MALE"
+placeholder_color = Color(0.168627, 0.298039, 0.494118, 1)
+accent_color = Color(0.94902, 0.835294, 0.541176, 1)
+
+[sub_resource type="Resource" id="Skin_female"]
+script = ExtResource("2_skin")
+skin_id = &"female"
+label_key = "CHARSEL_FEMALE"
+placeholder_color = Color(0.494118, 0.168627, 0.360784, 1)
+accent_color = Color(0.94902, 0.835294, 0.541176, 1)
+
+[resource]
+script = ExtResource("1_data")
+id = &"traveler"
+name_key = "CHAR_TRAVELER_NAME"
+rarity = 5
+element = &"soul"
+path = &"destruction"
+in_gacha_pool = false
+skins = Array[ExtResource("2_skin")]([SubResource("Skin_male"), SubResource("Skin_female")])
