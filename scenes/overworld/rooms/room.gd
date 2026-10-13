@@ -31,6 +31,8 @@ const LOCKING_TYPES: Array[RoomType] = [RoomType.COMBAT, RoomType.ELITE, RoomTyp
 @export var grid_cell: Vector2i = Vector2i.ZERO
 ## Các phía cho phép mở cửa; chỉ thành cửa thật khi phòng bên cạnh cũng mở phía đối diện.
 @export_flags("Bắc", "Đông", "Nam", "Tây") var door_sides: int = 15
+## Khu chứa phòng (library, vault...). Rỗng = theo khu của map (OverworldMap.zone).
+@export var zone: StringName = &""
 
 var connected_sides: int = 0
 

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EconomyModel" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/economy_model.gd" id="1_economy_model"]
+[ext_resource type="Script" path="res://systems/resources/zone_data.gd" id="2_zone_data"]
+[ext_resource type="Resource" path="res://data/zones/library.tres" id="3_library"]
+[ext_resource type="Resource" path="res://data/zones/vault.tres" id="4_vault"]
+[ext_resource type="Resource" path="res://data/zones/furnace.tres" id="5_furnace"]
+[ext_resource type="Resource" path="res://data/zones/tower.tres" id="6_tower"]
+
+[resource]
+script = ExtResource("1_economy_model")
+zones = Array[ExtResource("2_zone_data")]([ExtResource("3_library"), ExtResource("4_vault"), ExtResource("5_furnace"), ExtResource("6_tower")])
+story_days = 14
+days_before_daily_unlock = 2
+grind_battles_per_chapter = 8
+grind_enemies_per_battle = 3.0
+elite_repeat_days = 5
+boss_repeat_runs = 0
+boss_hard_runs = 2
+free_team = Array[StringName]([&"traveler", &"mira", &"kiri", &"garren", &"nyx"])

@@ -39,7 +39,8 @@ ASCENSIONS = [(10, 20, 4000, 4), (20, 30, 12000, 10), (30, 40, 30000, 15), (40, 
               (50, 60, 100000, 25), (60, 70, 160000, 30), (70, 80, 240000, 40)]
 SKILL_CAP_BY_ASCENSION = [2, 4, 5]
 # (cấp, xu, bậc Dấu Ấn, số Dấu Ấn, Lõi Ma Biến, số lần đột phá cần)
-SKILL_COSTS = [(2, 1500, 1, 3, 0, 0), (3, 4000, 2, 2, 0, 1), (4, 8000, 2, 4, 0, 1), (5, 16000, 3, 3, 1, 2)]
+# Phase 10 cân lại theo nguồn tài nguyên toàn bản đồ (docs/ECONOMY_REPORT.md): 4–5 nhân vật tối đa.
+SKILL_COSTS = [(2, 800, 1, 2, 0, 0), (3, 2000, 2, 1, 0, 1), (4, 4000, 2, 1, 0, 1), (5, 6000, 3, 2, 1, 2)]
 SKILL_MULT = [1.0, 1.1, 1.2, 1.3, 1.4]
 SKILL_STATUS = [1.0, 1.05, 1.1, 1.15, 1.2]
 EXP_ITEMS = [(1, 100), (2, 500), (3, 2000)]
@@ -101,8 +102,8 @@ MAJORS = {
     ],
 }
 # (xu, bậc Dấu Ấn, số Dấu Ấn, số lần đột phá cần) cho bậc 1–3 của nút nhỏ và nút lớn 1–3.
-SMALL_COST = {1: (1500, 1, 2, 0), 2: (4000, 2, 2, 1), 3: (8000, 3, 2, 2)}
-MAJOR_COST = {1: (3000, 1, 3, 0), 2: (8000, 2, 4, 1), 3: (16000, 3, 4, 2)}
+SMALL_COST = {1: (800, 1, 2, 0), 2: (2000, 2, 1, 1), 3: (4000, 2, 1, 2)}
+MAJOR_COST = {1: (1500, 1, 3, 0), 2: (4000, 2, 1, 1), 3: (6000, 3, 1, 2)}
 STAT_NAME = {"ATK": ("Tấn Công", "ATK"), "HP": ("Máu", "HP"), "DEF": ("Phòng Thủ", "DEF"), "SPD": ("Tốc Độ", "SPD"),
              "CRIT_RATE": ("Tỉ Lệ Bạo Kích", "CRIT Rate"), "DAMAGE_BONUS": ("Tăng Sát Thương", "DMG Boost"),
              "EFFECT_HIT": ("Chính Xác Hiệu Ứng", "Effect Hit Rate"), "OUTGOING_HEALING": ("Tăng Trị Liệu", "Outgoing Healing")}

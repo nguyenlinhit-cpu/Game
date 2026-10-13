@@ -12,8 +12,9 @@
 | 6. Hệ thống kỹ năng, nhân vật chính, 4 nhân vật miễn phí | Xong |
 | 7. 20 nhân vật còn lại | Xong |
 | 8. Quái thường, tinh anh, boss | Xong |
-| 9. Tiến trình nhân vật (cấp 30) | Xong, chờ duyệt |
-| 10–14 | Chưa làm |
+| 9. Tiến trình nhân vật (cấp 30) | Xong |
+| 10. Tài nguyên, rơi đồ, nhiệm vụ ngày/tuần | Xong, chờ duyệt |
+| 11–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -83,7 +84,7 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 2.
 
 - ~~Lưu trạng thái map vào GameState~~, ~~Đòn Mở Màn phá Hộp Bí Kỹ~~ (đã làm ở Phase 3). Điểm Bí Kỹ thật (Phase 6).
 - Hồi máu, lưu game, dịch chuyển nhanh ở phòng nghỉ (Phase 9, 12, 14).
-- Phần thưởng rương (Phase 10).
+- ~~Phần thưởng rương~~ (đã làm ở Phase 10).
 - Nút cảm ứng cho Bí Kỹ, đổi nhân vật (Phase 6). Nút Đòn Mở Màn đã có từ Phase 3.
 - Phòng boss đang trống (Phase 8).
 
@@ -118,8 +119,8 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 3.
 
 - ~~Trận theo lượt thật~~ (Phase 4); trừ 25% khiên khi Ưu Thế đúng điểm yếu (Phase 5); hiệu ứng Bí Kỹ mang vào trận (Phase 6).
 - Cấp đội đang là số cố định `GameState.team_level` (Phase 9 tính từ đội hình).
-- Phần thưởng tạm `PlaceholderRewards` (Phase 10 thay bằng LootTable, xóa file).
-- Quái thường hồi lại khi rời khu (Phase 10/12; hiện quái đã hạ biến mất hẳn).
+- ~~Phần thưởng tạm `PlaceholderRewards`~~ (Phase 10 đã thay bằng LootTable, xóa file).
+- ~~Quái thường hồi lại khi rời khu~~ (Phase 10; Phase 12 đặt khu cho phòng).
 - Hiệu ứng chuyển cảnh vào trận riêng (đang dùng mờ đen chung 0,7 giây).
 
 ## Phase 4 – Lõi trận đánh theo lượt
@@ -155,7 +156,7 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 4.
 - ~~Kỹ năng dạng danh sách hiệu ứng, Đặc tính, Tinh Mệnh, nhân vật thật, trọng số bị nhắm~~ (Phase 6).
 - AI quái theo tình huống, báo trước đòn mạnh (Phase 8).
 - Máu giữ nguyên giữa các trận, cấp từng nhân vật (Phase 9). Hiện mọi nhân vật lấy cấp đội, vào trận đầy máu và nửa năng lượng.
-- EXP/vật phẩm thắng trận thật (Phase 10).
+- ~~EXP/vật phẩm thắng trận thật~~ (Phase 10).
 - Cắt cảnh Tuyệt kỹ 2D có tranh nhân vật, đổi màu nền theo nguyên tố (Phase 13; hiện là băng rôn chữ).
 - Hiện kỹ năng của quái là dữ liệu tạm cho 3 quái mẫu (Phase 8 làm đủ).
 
@@ -303,7 +304,7 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 8.
 
 ### Việc còn nợ
 
-- Phần thưởng mức Khó, rơi đồ theo trận (Phase 10). Đặt EncounterData lên map, quái hồi lại khi rời khu, cảnh mở boss (Phase 12).
+- ~~Phần thưởng mức Khó, rơi đồ theo trận~~ (Phase 10). Đặt EncounterData lên map, quái hồi lại khi rời khu, cảnh mở boss (Phase 12).
 - Trùm cuối mức Khó: đội miễn phí Tinh Mệnh 0 cấp 30 chưa thắng được (0%) – dành cho đội đã nâng kỹ năng/Tinh Mệnh (Phase 9); cân lại ở Phase 14.
 - Trận thường khá nhẹ (đội còn ~90% máu) vì máu chưa giữ giữa các trận; cân lại khi Phase 9 giữ máu.
 - Hình quái/boss thật, hiệu ứng đòn (Phase 13); nhạc thật (Phase 14). Chữ tiếng Anh của quái đã có, nhưng mô tả kỹ năng quái chưa hiện trong giao diện (chỉ hiện tên đòn và dòng nhắc).
@@ -348,11 +349,65 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 9.
 
 ### Việc còn nợ
 
-- Nguồn tài nguyên (rơi đồ, rương, nhiệm vụ) làm ở Phase 10; hiện chỉ có lệnh debug. Phase 10 cân bảng rơi đồ theo bảng chi phí trên (4–5 nhân vật tối đa).
+- ~~Nguồn tài nguyên (rơi đồ, rương, nhiệm vụ)~~ (Phase 10, chi phí Xu/Dấu Ấn/Lõi đã cân lại – xem mục Phase 10).
 - Mô tả kỹ năng trong màn chi tiết vẫn ghi số cấp 1 (hệ số theo cấp hiện bằng dòng "×%").
 - Cân bằng boss Phase 8 tính ở kỹ năng cấp 1, chưa có cây vận mệnh → khi người chơi nâng kỹ năng, boss sẽ dễ hơn; cân lại ở Phase 14.
 - Năng lượng chưa giữ giữa các trận (luôn vào trận 50%).
 - Hình chân dung thật (Phase 13).
+
+## Phase 10 – Tài nguyên, rơi đồ, nhiệm vụ ngày và tuần
+
+### Đã làm
+
+- **Vật phẩm:** đủ 38 ItemData cho mọi tài nguyên mục 11 (có từ Phase 9, test kiểm lại).
+- **Rơi đồ** (`systems/loot.gd`, `LootTable` + `LootEntry`): bảng quái thường / tinh anh / boss đúng mục 11, cộng theo từng con; thưởng lần hạ đầu (tinh anh 20 Lệ Tinh, boss 100 Lệ Tinh + 1 Lõi Ma Biến, theo trận); boss nhận đủ thưởng 3 lần mỗi ngày rồi chỉ cho Xu; mức Khó nguyên liệu ×2 + 2 Lõi; rương thường / quý / giải đố theo khu (5/10/20 Lệ Tinh + Xu + Ký Ức, rương quý/giải đố thêm Tinh Thể theo đội). Dấu Ấn rơi theo vận mệnh của đội đang dùng. Thắng trận thật, thắng ngay, mở rương đều cộng vào túi đồ và hiện phần thưởng; xóa `PlaceholderRewards`.
+- **Hồi quái:** quái thường + boss hồi khi rời khu, tinh anh hồi mỗi ngày (`GameState.record_defeat / respawn_zone / respawn_daily`, `Room.zone`, `OverworldMap.zone`).
+- **Bảng chi phí** lên cấp 1–30, đột phá, kỹ năng tới cấp 5 vẫn ở `data/config/progression.tres` (sinh bằng `build_progression.py`); chi phí Xu / Dấu Ấn / Lõi cân lại theo báo cáo kinh tế.
+- **QuestManager + QuestData/QuestConfig** (`data/quests/quest_config.tres`): 6 nhiệm vụ ngày (500 Hoạt Động), 5 mốc 10/15/20/25/30 Lệ Tinh + Xu + Ký Ức + 1 Hộp Bí Kỹ, làm mới 4:00 giờ máy, chỉ mở sau cờ `chapter_1_complete`; 3 nhiệm vụ tuần (160 Lệ Tinh + 1 Vé Giới Hạn + 1 Vé Thường), làm mới thứ Hai 4:00; 15 thành tựu (800 Lệ Tinh); khám phá 100% mỗi khu (160 Lệ Tinh); quà đăng nhập 7 ngày (10 Vé Thường); thưởng mỗi chương (400 Lệ Tinh + 5 Vé Thường + 3 Vé Giới Hạn) theo cờ `chapter_<n>_complete`. Chống chỉnh giờ lùi. Nhận thưởng tự lưu. Save lên v3.
+- **Màn nhiệm vụ** (menu tạm dừng → Nhiệm vụ, hoặc thẻ trong menu nhân vật): thẻ Ngày / Tuần / Thành tựu / Người mới, thời gian tới lần làm mới, nút Nhận, chấm đỏ trên thẻ/nút/menu, dòng nhắc đỏ trên HUD; thông báo nhỏ khi xong nhiệm vụ.
+- **Kế hoạch 4 khu** (`data/zones/`) + **mô hình kinh tế** (`data/config/economy_model.tres`), sinh bằng `tools/data_builder/build_economy.py`.
+- **Báo cáo kinh tế** `systems/economy_report.gd` (+ `.tscn`) → `docs/ECONOMY_REPORT.md`: lượt quay một lần / mỗi tháng / theo banner, tài nguyên toàn bản đồ so với chi phí 4–5 nhân vật, nhịp cốt truyện theo cấp khuyến nghị boss, kiểm tra dữ liệu. Kết quả: ĐẠT.
+- Test `tests/phase10_test.tscn`: 78/78 đạt. Test Phase 1–9 vẫn đạt.
+
+### Kết quả báo cáo kinh tế (tóm tắt)
+
+| Hạng mục | Kết quả | Mục tiêu |
+| --- | --- | --- |
+| Lượt quay một lần | 78,0 (cốt truyện 42, người mới 20, thành tựu + khám phá 9, boss/tinh anh/rương 7) | 78 |
+| Lượt quay mỗi tháng từ nhiệm vụ | 31,6 (ngày 18,8 + tuần 12,9) + tối đa 10 từ cửa hàng | 32 + 10 |
+| Banner giới hạn | một lần 48 lượt, mỗi tháng 27,4 → chắc chắn Celestine sau 4,8 tháng | 4–5 tháng |
+| Nhân vật nâng tối đa được (nút thắt Dấu Ấn bậc 2) | 4,15 (EXP 5,39 · Xu 4,52 · Dấu Ấn 5,27/4,15/4,44 · Lõi 5,00) | 4–5 |
+| Nhịp cốt truyện (EXP so với 4 người lên cấp khuyến nghị) | 1,45 / 1,16 / 0,97 / 1,08; Tinh Thể đủ đột phá cho 5 nguyên tố đội miễn phí | ≥ 0,9 |
+
+### Chi phí 1 nhân vật sau khi cân lại
+
+| Hạng mục | Chi phí |
+| --- | --- |
+| Lên cấp 1 → 30 | 50.750 EXP + 5.075 Xu |
+| Đột phá cấp 10 / 20 | 4.000 Xu + 4 Tinh Thể / 12.000 Xu + 10 Tinh Thể |
+| Kỹ năng cấp 2 / 3 / 4 / 5 (mỗi kỹ năng) | 800 Xu + 2 Dấu Ấn bậc 1 / 2.000 + 1 bậc 2 / 4.000 + 1 bậc 2 / 6.000 + 2 bậc 3 + 1 Lõi Ma Biến |
+| **Tổng 1 nhân vật tối đa** | **50.750 EXP, ~97.400 Xu, 14 Tinh Thể, Dấu Ấn 15/13/9, 4 Lõi Ma Biến** |
+
+### File chính
+
+- `systems/loot.gd`, `systems/economy_report.{gd,tscn}`, `systems/resources/{loot_entry,loot_table,zone_data,economy_model,quest_data,quest_config}.gd`
+- `autoload/quest_manager.gd` (viết đầy đủ), sửa `game_state.gd` (loot_state, hồi quái), `event_bus.gd` (`encounter_cleared`, `reward_popup_requested`), `save_manager.gd` (v3)
+- `scenes/ui/quests/quest_screen.gd`; sửa `menu/game_menu.gd`, `pause/pause_menu.gd`, `hud/overworld_hud.gd`, `common/ui_kit.gd` (chấm đỏ)
+- Sửa `scenes/battle/battle_scene.gd` (thưởng trận), `scenes/overworld/map/overworld_map.gd` (thắng ngay, hồi quái, khám phá), `rooms/room.gd` (khu), `interactables/chest.gd` (thưởng rương)
+- `data/loot_tables/{enemies,chests}/*.tres`, `data/zones/*.tres`, `data/config/economy_model.tres`, `data/quests/quest_config.tres`, `data/config/progression.tres`, `data/progression/traces/*.tres`, `localization/economy.csv`
+- `tools/data_builder/build_economy.py`, sửa `build_progression.py`; `docs/ECONOMY_REPORT.md`, `docs/PROGRESSION.md`; `tests/phase10_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 10.
+
+### Việc còn nợ
+
+- Đặt khu cho phòng và dựng map đúng `data/zones/*.tres` (số nhóm quái, rương), cờ `chapter_<n>_complete`, bảng chọn mức Khó khi đánh lại boss (Phase 12). Map thử hiện không có khu (rương dùng bảng Thư Viện, không tính khám phá).
+- Quà mở Gacha 10 Vé Giới Hạn, cửa hàng Bụi Sao, Ký Ức/Xu 3★ từ gacha (Phase 11; báo cáo đã cộng quà mở Gacha).
+- Hồi quái khi rời khu áp ở lần nạp map kế tiếp, chưa hồi ngay trước mắt người chơi.
+- Biểu tượng vật phẩm thật (Phase 13); chữ tiếng Anh của nhiệm vụ đã có, mô tả vật phẩm giữ như Phase 9.
+- Cân lại cùng boss khi người chơi đã nâng kỹ năng (Phase 14); chạy lại báo cáo kinh tế sau mỗi lần đổi dữ liệu.
 
 ## Để sau
 

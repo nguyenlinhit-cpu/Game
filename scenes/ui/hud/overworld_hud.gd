@@ -11,6 +11,8 @@ var _player: Player
 var _toast_tween: Tween
 var _fps_timer: float = 0.0
 var _reward_tween: Tween
+## Nhắc "có thưởng nhiệm vụ chưa nhận" dưới bản đồ nhỏ.
+var quest_badge: Label
 
 @onready var _info_label: Label = %InfoLabel
 @onready var _minimap: Minimap = %Minimap
@@ -28,6 +30,21 @@ func _ready() -> void:
 	_toast_label.modulate.a = 0.0
 	_reward_popup.hide()
 	EventBus.toast_requested.connect(show_toast)
+	quest_badge = UiKit.make_label(tr("HUD_QUEST_BADGE"), 22, Color("ff6b6b"))
+	quest_badge.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	quest_badge.offset_left = -352.0
+	quest_badge.offset_top = 292.0
+	quest_badge.offset_right = -32.0
+	quest_badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	add_child(quest_badge)
+	# Nằm dưới menu tạm dừng.
+	move_child(quest_badge, get_node("PauseMenu").get_index())
+	QuestManager.changed.connect(_refresh_quest_badge)
+	_refresh_quest_badge()
+	EventBus.reward_popup_requested.connect(func(title: String, lines: Array) -> void:
+		var text_lines: Array[String] = []
+		text_lines.assign(lines)
+		show_reward_popup(title, text_lines))
 
 
 func setup(player: Player, room_manager: RoomManager) -> void:
@@ -57,6 +74,10 @@ func show_toast(text: String) -> void:
 	_toast_tween = create_tween()
 	_toast_tween.tween_interval(TOAST_SECONDS)
 	_toast_tween.tween_property(_toast_label, "modulate:a", 0.0, 0.4)
+
+
+func _refresh_quest_badge() -> void:
+	quest_badge.visible = QuestManager.has_any_claimable()
 
 
 ## Bảng phần thưởng nhỏ giữa màn hình, tự ẩn.

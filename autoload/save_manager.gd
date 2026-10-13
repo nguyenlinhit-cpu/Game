@@ -5,7 +5,7 @@ extends Node
 signal game_saved(slot: int)
 signal game_loaded(slot: int)
 
-const SAVE_VERSION: int = 2
+const SAVE_VERSION: int = 3
 const AUTOSAVE_SLOT: int = 0
 const MANUAL_SLOTS: Array[int] = [1, 2, 3]
 

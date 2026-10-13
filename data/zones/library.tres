@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ZoneData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/zone_data.gd" id="1_zone_data"]
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="2_encounter_data"]
+[ext_resource type="Resource" path="res://data/encounters/library_01_sprouts.tres" id="3_library_01_sprouts"]
+[ext_resource type="Resource" path="res://data/encounters/library_02_shade.tres" id="4_library_02_shade"]
+[ext_resource type="Resource" path="res://data/encounters/library_03_rats.tres" id="5_library_03_rats"]
+[ext_resource type="Resource" path="res://data/encounters/library_04_archer.tres" id="6_library_04_archer"]
+[ext_resource type="Resource" path="res://data/encounters/library_05_mage.tres" id="7_library_05_mage"]
+[ext_resource type="Resource" path="res://data/encounters/library_06_bees.tres" id="8_library_06_bees"]
+[ext_resource type="Resource" path="res://data/encounters/library_07_patrol.tres" id="9_library_07_patrol"]
+[ext_resource type="Resource" path="res://data/encounters/library_elite_librarian.tres" id="10_library_elite_librarian"]
+[ext_resource type="Resource" path="res://data/encounters/library_boss_warden.tres" id="11_library_boss_warden"]
+[ext_resource type="Script" path="res://systems/resources/loot_table.gd" id="12_loot_table"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/library_normal.tres" id="13_library_normal"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/library_precious.tres" id="14_library_precious"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/library_puzzle.tres" id="15_library_puzzle"]
+
+[resource]
+script = ExtResource("1_zone_data")
+id = &"library"
+name_key = "ZONE_LIBRARY"
+chapter = 1
+room_count = 11
+encounters = Array[ExtResource("2_encounter_data")]([ExtResource("3_library_01_sprouts"), ExtResource("4_library_02_shade"), ExtResource("5_library_03_rats"), ExtResource("6_library_04_archer"), ExtResource("7_library_05_mage"), ExtResource("8_library_06_bees"), ExtResource("9_library_07_patrol"), ExtResource("10_library_elite_librarian"), ExtResource("11_library_boss_warden")])
+encounter_counts = PackedInt32Array(2, 2, 2, 2, 2, 2, 2, 1, 1)
+chest_counts = PackedInt32Array(6, 4, 4)
+chest_tables = Array[ExtResource("12_loot_table")]([ExtResource("13_library_normal"), ExtResource("14_library_precious"), ExtResource("15_library_puzzle")])
+technique_boxes = 8

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ZoneData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/zone_data.gd" id="1_zone_data"]
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="2_encounter_data"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_01_sprouts.tres" id="3_furnace_01_sprouts"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_02_mage.tres" id="4_furnace_02_mage"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_03_knight.tres" id="5_furnace_03_knight"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_04_bees.tres" id="6_furnace_04_bees"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_05_rats.tres" id="7_furnace_05_rats"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_06_patrol.tres" id="8_furnace_06_patrol"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_elite_matrix.tres" id="9_furnace_elite_matrix"]
+[ext_resource type="Resource" path="res://data/encounters/furnace_boss_core.tres" id="10_furnace_boss_core"]
+[ext_resource type="Script" path="res://systems/resources/loot_table.gd" id="11_loot_table"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/furnace_normal.tres" id="12_furnace_normal"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/furnace_precious.tres" id="13_furnace_precious"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/furnace_puzzle.tres" id="14_furnace_puzzle"]
+
+[resource]
+script = ExtResource("1_zone_data")
+id = &"furnace"
+name_key = "ZONE_FURNACE"
+chapter = 3
+room_count = 10
+encounters = Array[ExtResource("2_encounter_data")]([ExtResource("3_furnace_01_sprouts"), ExtResource("4_furnace_02_mage"), ExtResource("5_furnace_03_knight"), ExtResource("6_furnace_04_bees"), ExtResource("7_furnace_05_rats"), ExtResource("8_furnace_06_patrol"), ExtResource("9_furnace_elite_matrix"), ExtResource("10_furnace_boss_core")])
+encounter_counts = PackedInt32Array(2, 2, 2, 2, 2, 2, 1, 1)
+chest_counts = PackedInt32Array(6, 4, 4)
+chest_tables = Array[ExtResource("11_loot_table")]([ExtResource("12_furnace_normal"), ExtResource("13_furnace_precious"), ExtResource("14_furnace_puzzle")])
+technique_boxes = 8

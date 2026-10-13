@@ -3,6 +3,7 @@ extends Control
 ## 4 thẻ nhân vật dưới cùng, nút Đánh thường / Chiến kỹ và ô Điểm Chiến Kỹ góc phải.
 ## Vào: SceneRouter.payload { "encounter", "opening", "opener_element", "hard_mode" } (thêm "instant", "team_override" khi test).
 ## Ra: GameState.finish_battle() rồi quay về map với payload { "battle_result": "win"|"lose" }.
+## Thắng trận thật (đi từ map) thì nhận thưởng theo bảng rơi đồ (Loot.claim_encounter) và hiện trên bảng kết quả.
 ##
 ## Điều khiển: bấm quái/đồng minh = chọn và ra đòn; Q / E = Đánh thường / Chiến kỹ (bấm lại = ra đòn);
 ## ←/→ đổi mục tiêu, Space/Enter ra đòn; bấm thẻ hoặc phím 1–4 = Tuyệt kỹ; chuột phải/Esc = hủy Tuyệt kỹ.
@@ -46,6 +47,8 @@ var _persist_hp: bool = true
 var _phase_title: Label
 var _phase_subtitle: Label
 var _phase_backdrop: ColorRect
+## Phần thưởng trận vừa thắng (rỗng ở phòng thử / test): { "items", "first_clear", "coins_only", "hard" }.
+var rewards: Dictionary = {}
 
 @onready var _field: Node2D = %Field
 @onready var _numbers: DamageNumberPool = %Numbers
@@ -491,13 +494,26 @@ func _on_battle_ended(battle_won: bool) -> void:
 	_retreat_button.visible = not battle_won
 	if battle_won:
 		_result_title.text = tr("BATTLE_VICTORY")
-		_result_body.text = "%s\n%s" % [tr("BATTLE_EXP_GAINED") % PlaceholderRewards.exp_for_encounter(_encounter),
-				tr("BATTLE_ITEMS_EMPTY")]
+		_result_body.text = _describe_rewards()
 		_continue_button.grab_focus()
 	else:
 		_result_title.text = tr("BATTLE_DEFEAT")
 		_result_body.text = tr("BATTLE_DEFEAT_BODY")
 		_retry_button.grab_focus()
+
+
+## Nhận thưởng (chỉ trận thật) và trả về chữ cho bảng kết quả.
+func _describe_rewards() -> String:
+	if not _persist_hp:
+		return tr("BATTLE_REWARDS_SANDBOX")
+	rewards = Loot.claim_encounter(_encounter, controller.difficulty != null, controller.rng)
+	var lines: Array[String] = []
+	if bool(rewards["first_clear"]) and _encounter.kind != EncounterData.Kind.NORMAL:
+		lines.append(tr("BATTLE_FIRST_CLEAR"))
+	if bool(rewards["coins_only"]):
+		lines.append(tr("BATTLE_BOSS_COINS_ONLY"))
+	lines.append_array(Loot.describe(rewards["items"]))
+	return "\n".join(lines)
 
 
 # --- Nhập liệu ---

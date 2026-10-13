@@ -122,3 +122,24 @@ class Portrait:
 		draw_string(font, Vector2(size.x * 0.5 - 14.0, size.y * 0.5 + 16.0), letter, HORIZONTAL_ALIGNMENT_LEFT, -1,
 				int(size.y * 0.45), Color.WHITE)
 		draw_string(font, Vector2(6.0, 22.0), "★".repeat(data.rarity), HORIZONTAL_ALIGNMENT_LEFT, -1, 16, UiKit.GOLD)
+
+
+## Chấm đỏ góc trên-phải của `parent` (báo có thưởng chưa nhận). Bật/tắt bằng visible.
+static func attach_red_dot(parent: Control) -> Control:
+	var dot := RedDot.new()
+	dot.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	dot.offset_left = -22.0
+	dot.offset_top = 4.0
+	dot.offset_right = -4.0
+	dot.offset_bottom = 22.0
+	dot.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	dot.hide()
+	parent.add_child(dot)
+	return dot
+
+
+class RedDot extends Control:
+	func _draw() -> void:
+		var radius := minf(size.x, size.y) * 0.5
+		draw_circle(size * 0.5, radius, Color("ff4d4d"))
+		draw_arc(size * 0.5, radius, 0.0, TAU, 24, Color.WHITE, 2.0, true)

@@ -56,36 +56,36 @@ crystals = 40
 [sub_resource type="Resource" id="SkillCost_2"]
 script = ExtResource("3_skill_level_cost")
 level = 2
-coin = 1500
+coin = 800
 sigil_tier = 1
-sigil_count = 3
+sigil_count = 2
 warp_cores = 0
 required_ascension = 0
 
 [sub_resource type="Resource" id="SkillCost_3"]
 script = ExtResource("3_skill_level_cost")
 level = 3
-coin = 4000
+coin = 2000
 sigil_tier = 2
-sigil_count = 2
+sigil_count = 1
 warp_cores = 0
 required_ascension = 1
 
 [sub_resource type="Resource" id="SkillCost_4"]
 script = ExtResource("3_skill_level_cost")
 level = 4
-coin = 8000
+coin = 4000
 sigil_tier = 2
-sigil_count = 4
+sigil_count = 1
 warp_cores = 0
 required_ascension = 1
 
 [sub_resource type="Resource" id="SkillCost_5"]
 script = ExtResource("3_skill_level_cost")
 level = 5
-coin = 16000
+coin = 6000
 sigil_tier = 3
-sigil_count = 3
+sigil_count = 2
 warp_cores = 1
 required_ascension = 2
 

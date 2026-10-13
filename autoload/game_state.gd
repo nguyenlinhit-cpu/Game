@@ -55,6 +55,9 @@ var hp_ratios: Dictionary = {}
 var map_states: Dictionary = {}
 ## Trận đang đánh: { "map_scene", "enemy_id", "encounter_path", "opening" }. Rỗng khi không trong trận.
 var pending_battle: Dictionary = {}
+## Rơi đồ (Phase 10): { "first_clears": [id trận đã hạ lần đầu], "boss_claims": { id trận boss: số lần nhận đủ
+## thưởng }, "boss_claims_day": kỳ ngày của boss_claims }.
+var loot_state: Dictionary = _empty_loot_state()
 
 
 
@@ -87,6 +90,8 @@ func reset_new_game() -> void:
 	eidolon_levels.clear()
 	map_states.clear()
 	pending_battle.clear()
+	loot_state = _empty_loot_state()
+	QuestManager.reset()
 
 
 static func get_default_name(gender: StringName) -> String:
@@ -385,6 +390,76 @@ func get_map_player_facing(scene_path: String) -> Vector2:
 	return Vector2.DOWN
 
 
+## Ghi nhóm quái vừa bị hạ kèm loại trận, khu và kỳ ngày (để hồi quái theo luật mục 11).
+func record_defeat(scene_path: String, enemy_id: String, kind: int, zone: StringName) -> void:
+	map_state_add(scene_path, "defeated_enemies", enemy_id)
+	var state := get_map_state(scene_path)
+	var info: Dictionary = state.get("defeat_info", {})
+	info[enemy_id] = {"kind": kind, "zone": String(zone), "day": QuestManager.get_day_index()}
+	state["defeat_info"] = info
+
+
+## Hồi quái thường và boss của `zone` (người chơi rời khu). Tinh anh không hồi theo cách này.
+func respawn_zone(scene_path: String, zone: StringName) -> int:
+	return _respawn(scene_path, func(meta: Dictionary) -> bool:
+		return str(meta.get("zone", "")) == String(zone) and int(meta.get("kind", 0)) != EncounterData.Kind.ELITE)
+
+
+## Hồi tinh anh bị hạ từ kỳ ngày trước (tinh anh hồi mỗi ngày theo đồng hồ máy).
+func respawn_daily(scene_path: String, today: int) -> int:
+	return _respawn(scene_path, func(meta: Dictionary) -> bool:
+		return int(meta.get("kind", 0)) == EncounterData.Kind.ELITE and int(meta.get("day", today)) < today)
+
+
+func _respawn(scene_path: String, should_respawn: Callable) -> int:
+	var state := get_map_state(scene_path)
+	var info: Dictionary = state.get("defeat_info", {})
+	var defeated: Array = state.get("defeated_enemies", [])
+	var count := 0
+	for id: Variant in info.keys():
+		if should_respawn.call(info[id]):
+			info.erase(id)
+			defeated.erase(id)
+			count += 1
+	return count
+
+
+# --- Rơi đồ ---
+
+static func _empty_loot_state() -> Dictionary:
+	return {"first_clears": [], "boss_claims": {}, "boss_claims_day": -1}
+
+
+func has_first_clear(encounter_key: String) -> bool:
+	return (loot_state.get("first_clears", []) as Array).has(encounter_key)
+
+
+func mark_first_clear(encounter_key: String) -> void:
+	var list: Array = loot_state.get("first_clears", [])
+	if not list.has(encounter_key):
+		list.append(encounter_key)
+	loot_state["first_clears"] = list
+
+
+## Số lần đã nhận đủ thưởng boss này trong kỳ ngày hiện tại.
+func get_boss_claims(encounter_key: String) -> int:
+	_refresh_boss_claims()
+	return int((loot_state["boss_claims"] as Dictionary).get(encounter_key, 0))
+
+
+func add_boss_claim(encounter_key: String) -> void:
+	_refresh_boss_claims()
+	var claims: Dictionary = loot_state["boss_claims"]
+	claims[encounter_key] = int(claims.get(encounter_key, 0)) + 1
+
+
+func _refresh_boss_claims() -> void:
+	var today := QuestManager.get_day_index()
+	if int(loot_state.get("boss_claims_day", -1)) != today or not loot_state.get("boss_claims") is Dictionary:
+		loot_state["boss_claims"] = {}
+		loot_state["boss_claims_day"] = today
+
+
 # --- Vào/ra trận ---
 
 func begin_battle(map_scene: String, enemy_id: String, encounter: EncounterData,
@@ -433,6 +508,7 @@ func to_dict() -> Dictionary:
 		"inventory": inventory.duplicate(),
 		"character_progress": character_progress.duplicate(true),
 		"hp_ratios": hp_ratios.duplicate(),
+		"loot_state": loot_state.duplicate(true),
 	}
 
 
@@ -484,4 +560,8 @@ func from_dict(data: Dictionary) -> void:
 	character_progress = progress.duplicate(true) if progress is Dictionary else {}
 	var ratios: Variant = data.get("hp_ratios", {})
 	hp_ratios = ratios.duplicate() if ratios is Dictionary else {}
+	var loot: Variant = data.get("loot_state", {})
+	loot_state = _empty_loot_state()
+	if loot is Dictionary:
+		loot_state.merge(loot.duplicate(true), true)
 	pending_battle.clear()

@@ -55,21 +55,21 @@ Cấp kỹ năng tối đa theo số lần đột phá: 0 lần → cấp 2 / 1 
 
 | Lên cấp | Xu Aether | Dấu Ấn Vận Mệnh | Lõi Ma Biến | Cần đột phá |
 | --- | --- | --- | --- | --- |
-| 2 | 1500 | 3 × bậc 1 | 0 | 0 lần |
-| 3 | 4000 | 2 × bậc 2 | 0 | 1 lần |
-| 4 | 8000 | 4 × bậc 2 | 0 | 1 lần |
-| 5 | 16000 | 3 × bậc 3 | 1 | 2 lần |
+| 2 | 800 | 2 × bậc 1 | 0 | 0 lần |
+| 3 | 2000 | 1 × bậc 2 | 0 | 1 lần |
+| 4 | 4000 | 1 × bậc 2 | 0 | 1 lần |
+| 5 | 6000 | 2 × bậc 3 | 1 | 2 lần |
 
 ## Cây vận mệnh (mỗi vận mệnh 6 nút nhỏ + 3 nút lớn)
 
 | Nút | Xu Aether | Dấu Ấn | Cần đột phá |
 | --- | --- | --- | --- |
-| 2 nút nhỏ bậc 1 (mỗi nút) | 1500 | 2 × bậc 1 | 0 lần |
-| Nút lớn 1 | 3000 | 3 × bậc 1 | 0 lần |
-| 2 nút nhỏ bậc 2 (mỗi nút) | 4000 | 2 × bậc 2 | 1 lần |
-| Nút lớn 2 | 8000 | 4 × bậc 2 | 1 lần |
-| 2 nút nhỏ bậc 3 (mỗi nút) | 8000 | 2 × bậc 3 | 2 lần |
-| Nút lớn 3 | 16000 | 4 × bậc 3 | 2 lần |
+| 2 nút nhỏ bậc 1 (mỗi nút) | 800 | 2 × bậc 1 | 0 lần |
+| Nút lớn 1 | 1500 | 3 × bậc 1 | 0 lần |
+| 2 nút nhỏ bậc 2 (mỗi nút) | 2000 | 1 × bậc 2 | 1 lần |
+| Nút lớn 2 | 4000 | 1 × bậc 2 | 1 lần |
+| 2 nút nhỏ bậc 3 (mỗi nút) | 4000 | 1 × bậc 2 | 2 lần |
+| Nút lớn 3 | 6000 | 1 × bậc 3 | 2 lần |
 
 ### Nút lớn theo vận mệnh
 
@@ -86,9 +86,9 @@ Cấp kỹ năng tối đa theo số lần đột phá: 0 lần → cấp 2 / 1 
 | Hạng mục | Số lượng |
 | --- | --- |
 | EXP (cấp 1 → 30) | 50750 (≈ 25.4 Ký Ức bậc 3) |
-| Xu Aether | 193075 (cấp 5075 + đột phá 16000 + kỹ năng 118000 + cây 54000) |
+| Xu Aether | 97375 (cấp 5075 + đột phá 16000 + kỹ năng 51200 + cây 25100) |
 | Tinh Thể Nguyên Tố | 14 |
-| Dấu Ấn Vận Mệnh | bậc 1: 19, bậc 2: 32, bậc 3: 20 |
+| Dấu Ấn Vận Mệnh | bậc 1: 15, bậc 2: 13, bậc 3: 9 |
 | Lõi Ma Biến | 4 |
 
 Mục tiêu mục 11: 4–5 nhân vật như trên → nhân 4–5 lần. Phase 10 cân bảng rơi đồ theo con số này.

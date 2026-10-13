@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ZoneData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/zone_data.gd" id="1_zone_data"]
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="2_encounter_data"]
+[ext_resource type="Resource" path="res://data/encounters/vault_01_sprouts.tres" id="3_vault_01_sprouts"]
+[ext_resource type="Resource" path="res://data/encounters/vault_02_knight.tres" id="4_vault_02_knight"]
+[ext_resource type="Resource" path="res://data/encounters/vault_03_mirror.tres" id="5_vault_03_mirror"]
+[ext_resource type="Resource" path="res://data/encounters/vault_04_guards.tres" id="6_vault_04_guards"]
+[ext_resource type="Resource" path="res://data/encounters/vault_05_mixed.tres" id="7_vault_05_mixed"]
+[ext_resource type="Resource" path="res://data/encounters/vault_06_patrol.tres" id="8_vault_06_patrol"]
+[ext_resource type="Resource" path="res://data/encounters/vault_elite_knight.tres" id="9_vault_elite_knight"]
+[ext_resource type="Resource" path="res://data/encounters/vault_boss_behemoth.tres" id="10_vault_boss_behemoth"]
+[ext_resource type="Script" path="res://systems/resources/loot_table.gd" id="11_loot_table"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/vault_normal.tres" id="12_vault_normal"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/vault_precious.tres" id="13_vault_precious"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/vault_puzzle.tres" id="14_vault_puzzle"]
+
+[resource]
+script = ExtResource("1_zone_data")
+id = &"vault"
+name_key = "ZONE_VAULT"
+chapter = 2
+room_count = 10
+encounters = Array[ExtResource("2_encounter_data")]([ExtResource("3_vault_01_sprouts"), ExtResource("4_vault_02_knight"), ExtResource("5_vault_03_mirror"), ExtResource("6_vault_04_guards"), ExtResource("7_vault_05_mixed"), ExtResource("8_vault_06_patrol"), ExtResource("9_vault_elite_knight"), ExtResource("10_vault_boss_behemoth")])
+encounter_counts = PackedInt32Array(2, 2, 2, 2, 2, 2, 1, 1)
+chest_counts = PackedInt32Array(6, 4, 4)
+chest_tables = Array[ExtResource("11_loot_table")]([ExtResource("12_vault_normal"), ExtResource("13_vault_precious"), ExtResource("14_vault_puzzle")])
+technique_boxes = 8

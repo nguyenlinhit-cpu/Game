@@ -37,7 +37,6 @@ PAUSE_TITLE,Tạm dừng,Paused
 PROMPT_OPEN_CHEST,Mở rương,Open chest
 PROMPT_BREAK_BOX,Phá Hộp Bí Kỹ,Break Technique Box
 PROMPT_REST,Nghỉ ngơi,Rest
-TOAST_CHEST_OPENED,Đã mở rương (phần thưởng làm ở Phase 10),Chest opened (rewards in Phase 10)
 TOAST_RESTED,Đã nghỉ: hồi đầy máu và Điểm Bí Kỹ,Rested: HP and Technique Points restored
 TOAST_ROOM_LOCKED,Cửa đã khóa! Hạ hết quái để mở,The doors are sealed! Defeat all enemies
 TOAST_ROOM_CLEARED,Đã dọn sạch phòng – cửa mở,Room cleared – doors open
@@ -53,8 +52,6 @@ BATTLE_WAVE,Đợt %d,Wave %d
 TOAST_VICTORY,Chiến thắng!,Victory!
 TOAST_DEFEAT,Thất bại – trở về phòng nghỉ gần nhất,Defeated – back to the nearest rest room
 REWARD_INSTANT_TITLE,Thắng ngay!,Instant victory!
-REWARD_COINS,Xu Aether +%d (tạm),Aether Coin +%d (placeholder)
-REWARD_MEMORY_1,Ký Ức Mảnh Hồn bậc 1 ×%d (tạm),Soul Memory I ×%d (placeholder)
 ENEMY_WARP_SPROUT,Mầm Ma Biến,Warp Sprout
 ENEMY_WANDERING_SHADE,Hồn Ảnh Lang Thang,Wandering Shade
 ENEMY_RUSTED_KNIGHT,Giáp Sĩ Rỉ Sét,Rusted Knight
@@ -79,8 +76,6 @@ BATTLE_DELAYED,Trì hoãn %d%%,Delay %d%%
 BATTLE_VICTORY,Chiến thắng!,Victory!
 BATTLE_DEFEAT,Thất bại,Defeat
 BATTLE_DEFEAT_BODY,Cả đội đã ngã. Đánh lại hoặc rút lui về phòng nghỉ (không mất đồ).,Your whole team has fallen. Retry or retreat to the rest room (nothing is lost).
-BATTLE_EXP_GAINED,EXP +%d (tạm),EXP +%d (placeholder)
-BATTLE_ITEMS_EMPTY,Vật phẩm: (trống – làm ở Phase 10),Items: (none yet – Phase 10)
 BATTLE_RETRY,Đánh lại,Retry
 BATTLE_RETREAT,Rút lui,Retreat
 CHAR_MIRA_NAME,Mira,Mira
@@ -421,3 +416,29 @@ TOAST_DEBUG_GRANTED,Đã cộng tài nguyên thử (debug),Test resources grante
 MENU_CHARACTERS,Nhân vật,Characters
 MENU_TEAM,Đội hình,Team
 MENU_INVENTORY,Túi đồ,Inventory
+REWARD_CHEST_TITLE,Mở rương!,Chest opened!
+BATTLE_REWARDS_SANDBOX,Trận thử: không có phần thưởng.,Practice battle: no rewards.
+BATTLE_FIRST_CLEAR,Thưởng hạ lần đầu!,First clear bonus!
+BATTLE_BOSS_COINS_ONLY,Hôm nay đã nhận đủ 3 lần thưởng boss này – lần này chỉ có Xu.,You've claimed this boss's full rewards 3 times today – coins only.
+MENU_QUESTS,Nhiệm vụ,Quests
+QUEST_TAB_DAILY,Ngày,Daily
+QUEST_TAB_WEEKLY,Tuần,Weekly
+QUEST_TAB_ACHIEVEMENT,Thành tựu,Achievements
+QUEST_TAB_NEWBIE,Người mới,Newcomer
+QUEST_LOCKED,Mở sau khi hoàn thành Chương 1.,Unlocks after completing Chapter 1.
+QUEST_ACTIVITY,Hoạt Động hôm nay: %d / %d,Today's Activity: %d / %d
+QUEST_ACTIVITY_SHORT,+%d Hoạt Động,+%d Activity
+QUEST_RESET_IN,Làm mới sau %s,Resets in %s
+QUEST_TIME,%d giờ %02d phút,%dh %02dm
+QUEST_TIME_DAYS,%d ngày %d giờ,%dd %dh
+QUEST_CLAIM,Nhận,Claim
+QUEST_CLAIMED,Đã nhận,Claimed
+QUEST_NOT_DONE,Chưa xong,In progress
+QUEST_PROGRESS,%d / %d,%d / %d
+QUEST_MILESTONE,%d Hoạt Động,%d Activity
+QUEST_WEEKLY_REWARD,Thưởng tuần (xong cả 3 nhiệm vụ),Weekly reward (complete all 3)
+QUEST_LOGIN_DAYS,Đã đăng nhập %d ngày,Logged in on %d days
+QUEST_TOAST_COMPLETED,Hoàn thành nhiệm vụ: %s,Quest complete: %s
+QUEST_TOAST_CHAPTER,Hoàn thành Chương %d: đã nhận thưởng chương!,Chapter %d complete: chapter rewards received!
+QUEST_TOAST_CLAIMED,Đã nhận thưởng,Rewards claimed
+HUD_QUEST_BADGE,● Có thưởng nhiệm vụ chưa nhận (Esc → Nhiệm vụ),● Unclaimed quest rewards (Esc → Quests)

@@ -1,7 +1,7 @@
 class_name PauseMenu
 extends Control
-## Menu tạm dừng ngoài map (Esc): Tiếp tục, Nhân vật, Đội hình, Túi đồ, Cài đặt, Về màn hình tiêu đề.
-## Nhân vật / Đội hình / Túi đồ mở GameMenu (Phase 9).
+## Menu tạm dừng ngoài map (Esc): Tiếp tục, Nhân vật, Đội hình, Túi đồ, Nhiệm vụ, Cài đặt, Về màn hình tiêu đề.
+## Nhân vật / Đội hình / Túi đồ / Nhiệm vụ mở GameMenu (Phase 9–10). Nút Nhiệm vụ có chấm đỏ khi còn thưởng chưa nhận.
 
 @onready var _menu: VBoxContainer = %Menu
 @onready var _resume_button: Button = %ResumeButton
@@ -20,7 +20,7 @@ func _ready() -> void:
 	_settings_panel.closed.connect(_on_settings_closed)
 	var at := _settings_button.get_index()
 	for entry: Array in [["MENU_CHARACTERS", GameMenu.Page.CHARACTERS], ["MENU_TEAM", GameMenu.Page.TEAM],
-			["MENU_INVENTORY", GameMenu.Page.INVENTORY]]:
+			["MENU_INVENTORY", GameMenu.Page.INVENTORY], ["MENU_QUESTS", GameMenu.Page.QUESTS]]:
 		var button := Button.new()
 		button.text = tr(entry[0])
 		button.custom_minimum_size = Vector2(0.0, 72.0)
@@ -28,6 +28,9 @@ func _ready() -> void:
 		_menu.add_child(button)
 		_menu.move_child(button, at)
 		at += 1
+		if entry[1] == GameMenu.Page.QUESTS:
+			quest_dot = UiKit.attach_red_dot(button)
+	QuestManager.changed.connect(_refresh_quest_dot)
 	if OS.is_debug_build():
 		# Bản debug: lối vào phòng thử trận (Phase 5).
 		var sandbox := Button.new()
@@ -54,9 +57,19 @@ func _ready() -> void:
 		_menu.move_child(grant, _title_button.get_index())
 
 
+## Chấm đỏ trên nút Nhiệm vụ.
+var quest_dot: Control
+
+
+func _refresh_quest_dot() -> void:
+	if quest_dot:
+		quest_dot.visible = QuestManager.has_any_claimable()
+
+
 func open() -> void:
 	if SceneRouter.is_busy():
 		return
+	_refresh_quest_dot()
 	show()
 	_menu.show()
 	get_tree().paused = true

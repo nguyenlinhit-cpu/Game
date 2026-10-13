@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ZoneData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/zone_data.gd" id="1_zone_data"]
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="2_encounter_data"]
+[ext_resource type="Resource" path="res://data/encounters/tower_01_shade.tres" id="3_tower_01_shade"]
+[ext_resource type="Resource" path="res://data/encounters/tower_02_mirror.tres" id="4_tower_02_mirror"]
+[ext_resource type="Resource" path="res://data/encounters/tower_03_bees.tres" id="5_tower_03_bees"]
+[ext_resource type="Resource" path="res://data/encounters/tower_04_archers.tres" id="6_tower_04_archers"]
+[ext_resource type="Resource" path="res://data/encounters/tower_05_patrol.tres" id="7_tower_05_patrol"]
+[ext_resource type="Resource" path="res://data/encounters/tower_06_sprouts.tres" id="8_tower_06_sprouts"]
+[ext_resource type="Resource" path="res://data/encounters/tower_elite_knight.tres" id="9_tower_elite_knight"]
+[ext_resource type="Resource" path="res://data/encounters/tower_elite_librarian.tres" id="10_tower_elite_librarian"]
+[ext_resource type="Resource" path="res://data/encounters/tower_elite_matrix.tres" id="11_tower_elite_matrix"]
+[ext_resource type="Resource" path="res://data/encounters/tower_boss_devourer.tres" id="12_tower_boss_devourer"]
+[ext_resource type="Script" path="res://systems/resources/loot_table.gd" id="13_loot_table"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/tower_normal.tres" id="14_tower_normal"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/tower_precious.tres" id="15_tower_precious"]
+[ext_resource type="Resource" path="res://data/loot_tables/chests/tower_puzzle.tres" id="16_tower_puzzle"]
+
+[resource]
+script = ExtResource("1_zone_data")
+id = &"tower"
+name_key = "ZONE_TOWER"
+chapter = 4
+room_count = 12
+encounters = Array[ExtResource("2_encounter_data")]([ExtResource("3_tower_01_shade"), ExtResource("4_tower_02_mirror"), ExtResource("5_tower_03_bees"), ExtResource("6_tower_04_archers"), ExtResource("7_tower_05_patrol"), ExtResource("8_tower_06_sprouts"), ExtResource("9_tower_elite_knight"), ExtResource("10_tower_elite_librarian"), ExtResource("11_tower_elite_matrix"), ExtResource("12_tower_boss_devourer")])
+encounter_counts = PackedInt32Array(2, 2, 2, 2, 2, 2, 1, 1, 1, 1)
+chest_counts = PackedInt32Array(6, 4, 4)
+chest_tables = Array[ExtResource("13_loot_table")]([ExtResource("14_tower_normal"), ExtResource("15_tower_precious"), ExtResource("16_tower_puzzle")])
+technique_boxes = 8

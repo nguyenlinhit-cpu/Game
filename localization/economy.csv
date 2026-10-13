@@ -1,0 +1,40 @@
+keys,vi,en
+ZONE_LIBRARY,Thư Viện Câm Lặng,Silent Library
+ZONE_VAULT,Kho Chứa Băng Giá,Frozen Vault
+ZONE_FURNACE,Lò Năng Lượng,Energy Furnace
+ZONE_TOWER,Đỉnh Tháp Quan Sát,Observatory Spire
+QUEST_DAILY_LOGIN,Đăng nhập,Log in
+QUEST_DAILY_WIN_3,Thắng 3 trận,Win 3 battles
+QUEST_DAILY_ELITE,Hạ 1 quái tinh anh hoặc boss,Defeat 1 elite or boss
+QUEST_DAILY_BREAK_5,Phá vỡ khiên quái 5 lần,Break enemy Toughness 5 times
+QUEST_DAILY_TECHNIQUE_2,Dùng Bí Kỹ 2 lần,Use Techniques 2 times
+QUEST_DAILY_UPGRADE,Nâng cấp nhân vật hoặc kỹ năng 1 lần,Upgrade a character or skill once
+QUEST_WEEKLY_FULL_DAYS,Đủ 500 Hoạt Động trong 5 ngày,Reach 500 Activity on 5 days
+QUEST_WEEKLY_BOSS_3,Hạ boss 3 lần,Defeat bosses 3 times
+QUEST_WEEKLY_WIN_30,Thắng 30 trận,Win 30 battles
+QUEST_ACH_WIN_1,Trận thắng đầu tiên,First Victory
+QUEST_ACH_WIN_50,Chiến binh Pháo Đài: thắng 50 trận,Fortress Warrior: win 50 battles
+QUEST_ACH_WIN_200,Bất bại: thắng 200 trận,Unyielding: win 200 battles
+QUEST_ACH_BREAK_50,Kẻ phá khiên: Phá Vỡ 50 lần,Shieldbreaker: 50 Breaks
+QUEST_ACH_BREAK_300,Búa tạ: Phá Vỡ 300 lần,Sledgehammer: 300 Breaks
+QUEST_ACH_ELITE_1,Hạ quái tinh anh đầu tiên,First elite defeated
+QUEST_ACH_BOSS_LIBRARY,Hạ Người Gác Thư Viện,Defeat the Library Warden
+QUEST_ACH_BOSS_VAULT,Hạ Cự Thú Kho Chứa,Defeat the Vault Behemoth
+QUEST_ACH_BOSS_FURNACE,Hạ Lõi Lò Biến Dạng,Defeat the Warped Core
+QUEST_ACH_BOSS_TOWER,Hạ Kẻ Nuốt Mảnh Hồn,Defeat the Soul Devourer
+QUEST_ACH_HARD_BOSS,Thắng 1 boss mức Khó,Defeat a boss on Hard
+QUEST_ACH_LEVEL_30,Một nhân vật đạt cấp 30,Raise a character to level 30
+QUEST_ACH_SKILL_5,Một kỹ năng đạt cấp 5,Raise a skill to level 5
+QUEST_ACH_CHESTS_30,Thợ săn kho báu: mở 30 rương,Treasure Hunter: open 30 chests
+QUEST_ACH_TECHNIQUE_50,Bậc thầy Bí Kỹ: dùng 50 lần,Technique Master: use 50 Techniques
+QUEST_EXPLORE_LIBRARY,Khám phá 100% Thư Viện Câm Lặng,Explore 100% of the Silent Library
+QUEST_EXPLORE_VAULT,Khám phá 100% Kho Chứa Băng Giá,Explore 100% of the Frozen Vault
+QUEST_EXPLORE_FURNACE,Khám phá 100% Lò Năng Lượng,Explore 100% of the Energy Furnace
+QUEST_EXPLORE_TOWER,Khám phá 100% Đỉnh Tháp Quan Sát,Explore 100% of the Observatory Spire
+QUEST_LOGIN_DAY_1,Đăng nhập ngày 1,Login day 1
+QUEST_LOGIN_DAY_2,Đăng nhập ngày 2,Login day 2
+QUEST_LOGIN_DAY_3,Đăng nhập ngày 3,Login day 3
+QUEST_LOGIN_DAY_4,Đăng nhập ngày 4,Login day 4
+QUEST_LOGIN_DAY_5,Đăng nhập ngày 5,Login day 5
+QUEST_LOGIN_DAY_6,Đăng nhập ngày 6,Login day 6
+QUEST_LOGIN_DAY_7,Đăng nhập ngày 7,Login day 7

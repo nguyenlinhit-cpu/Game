@@ -1,6 +1,7 @@
 class_name Chest
 extends Interactable
-## Rương. Phase 2 chỉ mở và báo log; phần thưởng ở Phase 10, trạng thái "đã mở" lưu trong GameState.map_states.
+## Rương 3 bậc. Mở ra lăn bảng rơi đồ rương của khu (Loot.roll_chest: xu, Ký Ức, Tinh Thể; Lệ Tinh vì rương
+## chỉ mở 1 lần), cộng vào túi đồ và hiện bảng phần thưởng. Trạng thái "đã mở" lưu trong GameState.map_states.
 
 enum Tier { NORMAL, PRECIOUS, PUZZLE }
 
@@ -13,8 +14,12 @@ const BAND_COLOR := Color("f2d58a")
 
 @export var chest_id: StringName
 @export var tier: Tier = Tier.NORMAL
+## Khu để chọn bảng rơi đồ; OverworldMap gán theo phòng/map khi nạp.
+@export var zone: StringName = &""
 
 var is_opened: bool = false
+## Phần thưởng lần mở vừa rồi (test đọc).
+var last_rewards: Dictionary = {}
 
 const GROUP: StringName = &"chest"
 
@@ -41,9 +46,10 @@ func restore_opened() -> void:
 func _on_interact(_by: Node) -> void:
 	is_opened = true
 	queue_redraw()
-	print("[Chest] Mở rương %s (bậc %s) – TODO Phase 10: bảng rơi đồ" % [chest_id, Tier.keys()[tier]])
+	last_rewards = Loot.roll_chest(zone, tier)
+	Loot.grant(last_rewards)
 	EventBus.chest_opened.emit(chest_id)
-	EventBus.toast_requested.emit(tr("TOAST_CHEST_OPENED"))
+	EventBus.reward_popup_requested.emit(tr("REWARD_CHEST_TITLE"), Loot.describe(last_rewards))
 	CameraRig.shake(6.0, 0.15)
 
 

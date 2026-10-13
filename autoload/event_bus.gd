@@ -37,6 +37,10 @@ signal inventory_changed(item_id: StringName, count: int)
 signal team_hp_changed
 signal gacha_pulled(banner_id: StringName, results: Array)
 signal quest_completed(quest_id: StringName)
+## Thắng một trận thật (từ map hoặc thắng ngay) và đã nhận thưởng: info { "items", "first_clear", "coins_only", "hard" }.
+signal encounter_cleared(encounter: Resource, info: Dictionary)
+## Bảng phần thưởng nhỏ trên HUD (rương...).
+signal reward_popup_requested(title: String, lines: Array)
 signal story_flag_set(flag: StringName, value: Variant)
 
 @warning_ignore_restore("unused_signal")

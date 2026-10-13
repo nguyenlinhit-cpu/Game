@@ -1,0 +1,342 @@
+[gd_resource type="Resource" script_class="QuestConfig" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/quest_config.gd" id="1_quest_config"]
+[ext_resource type="Script" path="res://systems/resources/quest_data.gd" id="2_quest_data"]
+
+[sub_resource type="Resource" id="Quest_daily_login"]
+script = ExtResource("2_quest_data")
+id = &"daily_login"
+type = 0
+name_key = "QUEST_DAILY_LOGIN"
+trigger = &"login"
+target = 1
+activity = 100
+
+[sub_resource type="Resource" id="Quest_daily_win_3"]
+script = ExtResource("2_quest_data")
+id = &"daily_win_3"
+type = 0
+name_key = "QUEST_DAILY_WIN_3"
+trigger = &"battle_won"
+target = 3
+activity = 100
+
+[sub_resource type="Resource" id="Quest_daily_elite"]
+script = ExtResource("2_quest_data")
+id = &"daily_elite"
+type = 0
+name_key = "QUEST_DAILY_ELITE"
+trigger = &"elite_or_boss"
+target = 1
+activity = 100
+
+[sub_resource type="Resource" id="Quest_daily_break_5"]
+script = ExtResource("2_quest_data")
+id = &"daily_break_5"
+type = 0
+name_key = "QUEST_DAILY_BREAK_5"
+trigger = &"weakness_broken"
+target = 5
+activity = 100
+
+[sub_resource type="Resource" id="Quest_daily_technique_2"]
+script = ExtResource("2_quest_data")
+id = &"daily_technique_2"
+type = 0
+name_key = "QUEST_DAILY_TECHNIQUE_2"
+trigger = &"technique_used"
+target = 2
+activity = 50
+
+[sub_resource type="Resource" id="Quest_daily_upgrade"]
+script = ExtResource("2_quest_data")
+id = &"daily_upgrade"
+type = 0
+name_key = "QUEST_DAILY_UPGRADE"
+trigger = &"upgrade"
+target = 1
+activity = 50
+
+[sub_resource type="Resource" id="Quest_weekly_full_days"]
+script = ExtResource("2_quest_data")
+id = &"weekly_full_days"
+type = 1
+name_key = "QUEST_WEEKLY_FULL_DAYS"
+trigger = &"daily_full"
+target = 5
+
+[sub_resource type="Resource" id="Quest_weekly_boss_3"]
+script = ExtResource("2_quest_data")
+id = &"weekly_boss_3"
+type = 1
+name_key = "QUEST_WEEKLY_BOSS_3"
+trigger = &"boss_defeated"
+target = 3
+
+[sub_resource type="Resource" id="Quest_weekly_win_30"]
+script = ExtResource("2_quest_data")
+id = &"weekly_win_30"
+type = 1
+name_key = "QUEST_WEEKLY_WIN_30"
+trigger = &"battle_won"
+target = 30
+
+[sub_resource type="Resource" id="Quest_ach_win_1"]
+script = ExtResource("2_quest_data")
+id = &"ach_win_1"
+type = 2
+name_key = "QUEST_ACH_WIN_1"
+trigger = &"battle_won"
+target = 1
+rewards = {"star_tear": 20}
+
+[sub_resource type="Resource" id="Quest_ach_win_50"]
+script = ExtResource("2_quest_data")
+id = &"ach_win_50"
+type = 2
+name_key = "QUEST_ACH_WIN_50"
+trigger = &"battle_won"
+target = 50
+rewards = {"star_tear": 40}
+
+[sub_resource type="Resource" id="Quest_ach_win_200"]
+script = ExtResource("2_quest_data")
+id = &"ach_win_200"
+type = 2
+name_key = "QUEST_ACH_WIN_200"
+trigger = &"battle_won"
+target = 200
+rewards = {"star_tear": 60}
+
+[sub_resource type="Resource" id="Quest_ach_break_50"]
+script = ExtResource("2_quest_data")
+id = &"ach_break_50"
+type = 2
+name_key = "QUEST_ACH_BREAK_50"
+trigger = &"weakness_broken"
+target = 50
+rewards = {"star_tear": 40}
+
+[sub_resource type="Resource" id="Quest_ach_break_300"]
+script = ExtResource("2_quest_data")
+id = &"ach_break_300"
+type = 2
+name_key = "QUEST_ACH_BREAK_300"
+trigger = &"weakness_broken"
+target = 300
+rewards = {"star_tear": 60}
+
+[sub_resource type="Resource" id="Quest_ach_elite_1"]
+script = ExtResource("2_quest_data")
+id = &"ach_elite_1"
+type = 2
+name_key = "QUEST_ACH_ELITE_1"
+trigger = &"elite_or_boss"
+target = 1
+rewards = {"star_tear": 20}
+
+[sub_resource type="Resource" id="Quest_ach_boss_library"]
+script = ExtResource("2_quest_data")
+id = &"ach_boss_library"
+type = 2
+name_key = "QUEST_ACH_BOSS_LIBRARY"
+trigger = &"boss_defeated"
+target = 1
+param = &"library_boss_warden"
+rewards = {"star_tear": 60}
+
+[sub_resource type="Resource" id="Quest_ach_boss_vault"]
+script = ExtResource("2_quest_data")
+id = &"ach_boss_vault"
+type = 2
+name_key = "QUEST_ACH_BOSS_VAULT"
+trigger = &"boss_defeated"
+target = 1
+param = &"vault_boss_behemoth"
+rewards = {"star_tear": 60}
+
+[sub_resource type="Resource" id="Quest_ach_boss_furnace"]
+script = ExtResource("2_quest_data")
+id = &"ach_boss_furnace"
+type = 2
+name_key = "QUEST_ACH_BOSS_FURNACE"
+trigger = &"boss_defeated"
+target = 1
+param = &"furnace_boss_core"
+rewards = {"star_tear": 60}
+
+[sub_resource type="Resource" id="Quest_ach_boss_tower"]
+script = ExtResource("2_quest_data")
+id = &"ach_boss_tower"
+type = 2
+name_key = "QUEST_ACH_BOSS_TOWER"
+trigger = &"boss_defeated"
+target = 1
+param = &"tower_boss_devourer"
+rewards = {"star_tear": 100}
+
+[sub_resource type="Resource" id="Quest_ach_hard_boss"]
+script = ExtResource("2_quest_data")
+id = &"ach_hard_boss"
+type = 2
+name_key = "QUEST_ACH_HARD_BOSS"
+trigger = &"hard_boss_defeated"
+target = 1
+rewards = {"star_tear": 60}
+
+[sub_resource type="Resource" id="Quest_ach_level_30"]
+script = ExtResource("2_quest_data")
+id = &"ach_level_30"
+type = 2
+name_key = "QUEST_ACH_LEVEL_30"
+trigger = &"max_level"
+target = 30
+rewards = {"star_tear": 60}
+track_max = true
+
+[sub_resource type="Resource" id="Quest_ach_skill_5"]
+script = ExtResource("2_quest_data")
+id = &"ach_skill_5"
+type = 2
+name_key = "QUEST_ACH_SKILL_5"
+trigger = &"max_skill"
+target = 5
+rewards = {"star_tear": 60}
+track_max = true
+
+[sub_resource type="Resource" id="Quest_ach_chests_30"]
+script = ExtResource("2_quest_data")
+id = &"ach_chests_30"
+type = 2
+name_key = "QUEST_ACH_CHESTS_30"
+trigger = &"chest_opened"
+target = 30
+rewards = {"star_tear": 40}
+
+[sub_resource type="Resource" id="Quest_ach_technique_50"]
+script = ExtResource("2_quest_data")
+id = &"ach_technique_50"
+type = 2
+name_key = "QUEST_ACH_TECHNIQUE_50"
+trigger = &"technique_used"
+target = 50
+rewards = {"star_tear": 60}
+
+[sub_resource type="Resource" id="Quest_explore_library"]
+script = ExtResource("2_quest_data")
+id = &"explore_library"
+type = 2
+name_key = "QUEST_EXPLORE_LIBRARY"
+trigger = &"zone_explored"
+target = 100
+param = &"library"
+rewards = {"star_tear": 160}
+track_max = true
+
+[sub_resource type="Resource" id="Quest_explore_vault"]
+script = ExtResource("2_quest_data")
+id = &"explore_vault"
+type = 2
+name_key = "QUEST_EXPLORE_VAULT"
+trigger = &"zone_explored"
+target = 100
+param = &"vault"
+rewards = {"star_tear": 160}
+track_max = true
+
+[sub_resource type="Resource" id="Quest_explore_furnace"]
+script = ExtResource("2_quest_data")
+id = &"explore_furnace"
+type = 2
+name_key = "QUEST_EXPLORE_FURNACE"
+trigger = &"zone_explored"
+target = 100
+param = &"furnace"
+rewards = {"star_tear": 160}
+track_max = true
+
+[sub_resource type="Resource" id="Quest_explore_tower"]
+script = ExtResource("2_quest_data")
+id = &"explore_tower"
+type = 2
+name_key = "QUEST_EXPLORE_TOWER"
+trigger = &"zone_explored"
+target = 100
+param = &"tower"
+rewards = {"star_tear": 160}
+track_max = true
+
+[sub_resource type="Resource" id="Quest_login_day_1"]
+script = ExtResource("2_quest_data")
+id = &"login_day_1"
+type = 3
+name_key = "QUEST_LOGIN_DAY_1"
+trigger = &"login_day"
+target = 1
+rewards = {"wish_ticket_standard": 2}
+
+[sub_resource type="Resource" id="Quest_login_day_2"]
+script = ExtResource("2_quest_data")
+id = &"login_day_2"
+type = 3
+name_key = "QUEST_LOGIN_DAY_2"
+trigger = &"login_day"
+target = 2
+rewards = {"wish_ticket_standard": 1, "aether_coin": 5000}
+
+[sub_resource type="Resource" id="Quest_login_day_3"]
+script = ExtResource("2_quest_data")
+id = &"login_day_3"
+type = 3
+name_key = "QUEST_LOGIN_DAY_3"
+trigger = &"login_day"
+target = 3
+rewards = {"wish_ticket_standard": 1, "soul_memory_2": 4}
+
+[sub_resource type="Resource" id="Quest_login_day_4"]
+script = ExtResource("2_quest_data")
+id = &"login_day_4"
+type = 3
+name_key = "QUEST_LOGIN_DAY_4"
+trigger = &"login_day"
+target = 4
+rewards = {"wish_ticket_standard": 1, "technique_box": 2}
+
+[sub_resource type="Resource" id="Quest_login_day_5"]
+script = ExtResource("2_quest_data")
+id = &"login_day_5"
+type = 3
+name_key = "QUEST_LOGIN_DAY_5"
+trigger = &"login_day"
+target = 5
+rewards = {"wish_ticket_standard": 1, "aether_coin": 10000}
+
+[sub_resource type="Resource" id="Quest_login_day_6"]
+script = ExtResource("2_quest_data")
+id = &"login_day_6"
+type = 3
+name_key = "QUEST_LOGIN_DAY_6"
+trigger = &"login_day"
+target = 6
+rewards = {"wish_ticket_standard": 1, "soul_memory_3": 2}
+
+[sub_resource type="Resource" id="Quest_login_day_7"]
+script = ExtResource("2_quest_data")
+id = &"login_day_7"
+type = 3
+name_key = "QUEST_LOGIN_DAY_7"
+trigger = &"login_day"
+target = 7
+rewards = {"wish_ticket_standard": 3}
+
+[resource]
+script = ExtResource("1_quest_config")
+quests = Array[ExtResource("2_quest_data")]([SubResource("Quest_daily_login"), SubResource("Quest_daily_win_3"), SubResource("Quest_daily_elite"), SubResource("Quest_daily_break_5"), SubResource("Quest_daily_technique_2"), SubResource("Quest_daily_upgrade"), SubResource("Quest_weekly_full_days"), SubResource("Quest_weekly_boss_3"), SubResource("Quest_weekly_win_30"), SubResource("Quest_ach_win_1"), SubResource("Quest_ach_win_50"), SubResource("Quest_ach_win_200"), SubResource("Quest_ach_break_50"), SubResource("Quest_ach_break_300"), SubResource("Quest_ach_elite_1"), SubResource("Quest_ach_boss_library"), SubResource("Quest_ach_boss_vault"), SubResource("Quest_ach_boss_furnace"), SubResource("Quest_ach_boss_tower"), SubResource("Quest_ach_hard_boss"), SubResource("Quest_ach_level_30"), SubResource("Quest_ach_skill_5"), SubResource("Quest_ach_chests_30"), SubResource("Quest_ach_technique_50"), SubResource("Quest_explore_library"), SubResource("Quest_explore_vault"), SubResource("Quest_explore_furnace"), SubResource("Quest_explore_tower"), SubResource("Quest_login_day_1"), SubResource("Quest_login_day_2"), SubResource("Quest_login_day_3"), SubResource("Quest_login_day_4"), SubResource("Quest_login_day_5"), SubResource("Quest_login_day_6"), SubResource("Quest_login_day_7")])
+daily_milestones = PackedInt32Array(100, 200, 300, 400, 500)
+daily_milestone_rewards = Array[Dictionary]([{"star_tear": 10, "aether_coin": 1000, "soul_memory_1": 3}, {"star_tear": 15, "aether_coin": 1500, "soul_memory_1": 3}, {"star_tear": 20, "aether_coin": 2000, "soul_memory_2": 1}, {"star_tear": 25, "aether_coin": 2500, "soul_memory_2": 1}, {"star_tear": 30, "aether_coin": 3000, "soul_memory_2": 1, "technique_box": 1}])
+weekly_reward = {"star_tear": 160, "wish_ticket_limited": 1, "wish_ticket_standard": 1}
+unlock_flag = &"chapter_1_complete"
+reset_hour = 4
+chapter_reward = {"star_tear": 400, "wish_ticket_standard": 5, "wish_ticket_limited": 3}
+chapter_count = 4
+gacha_open_gift = {"wish_ticket_limited": 10}

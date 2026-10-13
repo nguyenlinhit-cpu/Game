@@ -5,6 +5,8 @@ extends Node2D
 ## Map cũng giữ trạng thái trong GameState.map_states (quái đã hạ, rương đã mở, hộp đã phá,
 ## phòng đã khám phá, vật cản đã mở, vị trí người chơi), điều phối vào trận / thắng ngay / quay về,
 ## và chạy Bí Kỹ của người dẫn đầu (tốn Điểm Bí Kỹ dùng chung).
+## Phase 10: thưởng thắng ngay theo bảng rơi đồ, hồi quái (thường + boss khi rời khu, tinh anh mỗi ngày),
+## báo % khám phá từng khu cho nhiệm vụ.
 
 const CORRIDOR_HALF_WIDTH: int = 1
 ## Bất tử ngắn khi vừa từ trận quay về, để quái gần đó không kéo vào trận ngay.
@@ -13,6 +15,8 @@ const DEBUG_TEAM_LEVEL_STEP: int = 5
 
 ## Phòng người chơi xuất hiện khi vào map lần đầu.
 @export var start_room_id: StringName
+## Khu mặc định của các phòng không ghi khu riêng (rỗng = map thử, không tính khám phá).
+@export var zone: StringName = &""
 
 var _encounter_started: bool = false
 ## Bí Kỹ hút vật phẩm: còn bao nhiêu giây, bán kính (px).
@@ -91,10 +95,9 @@ func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening
 
 ## Quái yếu hơn đội ≥10 cấp bị chém trúng: thắng luôn, không vào trận.
 func _instant_win(enemy: OverworldEnemy) -> void:
-	var rewards := PlaceholderRewards.for_encounter(enemy.encounter)
-	print("[OverworldMap] Thắng ngay %s: %s – TODO Phase 10: bảng rơi đồ" % [enemy.name, rewards])
 	enemy.defeat()
-	hud.show_reward_popup(tr("REWARD_INSTANT_TITLE"), PlaceholderRewards.describe(rewards))
+	var result := Loot.claim_encounter(enemy.encounter)
+	hud.show_reward_popup(tr("REWARD_INSTANT_TITLE"), Loot.describe(result["items"]))
 	EventBus.battle_won.emit(enemy.encounter)
 
 
@@ -113,6 +116,7 @@ func _show_battle_result() -> void:
 
 func _restore_and_track_state() -> void:
 	var scene := scene_file_path
+	_apply_respawns()
 	for node in _all_descendants(rooms_root):
 		var id := _persistent_id(node)
 		if node is OverworldEnemy:
@@ -121,30 +125,92 @@ func _restore_and_track_state() -> void:
 				enemy.remove_silently()
 				continue
 			enemy.encounter_triggered.connect(_on_encounter_triggered)
+			var kind := int(enemy.encounter.kind) if enemy.encounter else EncounterData.Kind.NORMAL
+			var enemy_zone := zone_of(enemy)
 			enemy.defeated.connect(func(_group: Node) -> void:
-				GameState.map_state_add(scene, "defeated_enemies", id))
+				GameState.record_defeat(scene, id, kind, enemy_zone))
 		elif node is Chest:
+			var chest := node as Chest
+			if chest.zone == &"":
+				chest.zone = zone_of(chest)
 			if GameState.map_state_has(scene, "opened_chests", id):
-				(node as Chest).restore_opened()
+				chest.restore_opened()
 			else:
-				(node as Chest).interacted.connect(func(_by: Node) -> void:
-					GameState.map_state_add(scene, "opened_chests", id))
+				chest.interacted.connect(func(_by: Node) -> void:
+					GameState.map_state_add(scene, "opened_chests", id)
+					_report_exploration())
 		elif node is ElementalObstacle:
 			var obstacle := node as ElementalObstacle
 			if GameState.map_state_has(scene, "resolved_obstacles", id):
 				obstacle.restore_resolved()
 			else:
 				obstacle.resolved.connect(func(_o: ElementalObstacle) -> void:
-					GameState.map_state_add(scene, "resolved_obstacles", id))
+					GameState.map_state_add(scene, "resolved_obstacles", id)
+					_report_exploration())
 		elif node is TechniqueBox:
 			if GameState.map_state_has(scene, "broken_boxes", id):
 				(node as TechniqueBox).restore_broken()
 			else:
 				(node as TechniqueBox).interacted.connect(func(_by: Node) -> void:
-					GameState.map_state_add(scene, "broken_boxes", id))
+					GameState.map_state_add(scene, "broken_boxes", id)
+					_report_exploration())
 	room_manager.restore_visited(get_state().get("visited_rooms", []))
 	room_manager.room_visited.connect(func(room: Room) -> void:
-		GameState.map_state_add(scene, "visited_rooms", String(room.room_id)))
+		GameState.map_state_add(scene, "visited_rooms", String(room.room_id))
+		_report_exploration())
+	_report_exploration()
+
+
+## Khu của một node trên map: khu của phòng chứa nó, không ghi thì khu của map.
+func zone_of(node: Node) -> StringName:
+	var room: Room = node as Room if node is Room else Room.find_room_of(node)
+	return room.zone if room and room.zone != &"" else zone
+
+
+## Hồi quái khi nạp map: tinh anh hạ từ hôm trước; quái thường + boss của các khu người chơi đã rời.
+func _apply_respawns() -> void:
+	var state := get_state()
+	GameState.respawn_daily(scene_file_path, QuestManager.get_day_index())
+	for left_zone: Variant in state.get("respawn_zones", []):
+		GameState.respawn_zone(scene_file_path, StringName(str(left_zone)))
+	state["respawn_zones"] = []
+
+
+## % khám phá từng khu = (phòng đã vào + rương đã mở + vật cản đã mở + Hộp Bí Kỹ đã phá) / tổng số trong khu.
+func get_exploration() -> Dictionary:
+	var scene := scene_file_path
+	var totals: Dictionary = {}
+	var done: Dictionary = {}
+	for room in room_manager.rooms:
+		var z := zone_of(room)
+		totals[z] = int(totals.get(z, 0)) + 1
+		if room_manager.is_visited(room):
+			done[z] = int(done.get(z, 0)) + 1
+	for node in _all_descendants(rooms_root):
+		var key := ""
+		if node is Chest:
+			key = "opened_chests"
+		elif node is ElementalObstacle:
+			key = "resolved_obstacles"
+		elif node is TechniqueBox:
+			key = "broken_boxes"
+		if key.is_empty():
+			continue
+		var z := zone_of(node)
+		totals[z] = int(totals.get(z, 0)) + 1
+		if GameState.map_state_has(scene, key, _persistent_id(node)):
+			done[z] = int(done.get(z, 0)) + 1
+	var result: Dictionary = {}
+	for z: StringName in totals:
+		result[z] = floori(100.0 * int(done.get(z, 0)) / int(totals[z]))
+	return result
+
+
+func _report_exploration() -> void:
+	var exploration := get_exploration()
+	for z: StringName in exploration:
+		if z != &"":
+			QuestManager.report(&"zone_explored", exploration[z], z)
 
 
 func _place_player() -> void:
@@ -394,6 +460,16 @@ func _paint_corridor(from: Room, to: Room, side: int) -> void:
 func _on_current_room_changed(room: Room) -> void:
 	if room:
 		camera.set_room_limits(room.get_world_rect())
+		# Rời khu: quái thường và boss của khu cũ hồi lại lần nạp map sau.
+		var state := get_state()
+		var new_zone := String(zone_of(room))
+		var old_zone := str(state.get("current_zone", new_zone))
+		if old_zone != new_zone:
+			var pending: Array = state.get("respawn_zones", [])
+			if not pending.has(old_zone):
+				pending.append(old_zone)
+			state["respawn_zones"] = pending
+		state["current_zone"] = new_zone
 	else:
 		camera.clear_limits()
 
