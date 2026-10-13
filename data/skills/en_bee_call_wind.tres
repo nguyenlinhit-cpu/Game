@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Resource" path="res://data/enemies/venom_bee_wind_drone.tres" id="3_venom_bee_wind_drone"]
+[ext_resource type="Script" path="res://systems/skill_effects/summon_enemy_effect.gd" id="4_summon_enemy_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("4_summon_enemy_effect")
+enemy = ExtResource("3_venom_bee_wind_drone")
+count = 2
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"en_bee_call_wind"
+name_key = "SKILL_EN_BEE_CALL_WIND"
+desc_key = "SKILL_EN_BEE_CALL_WIND_DESC"
+kind = 1
+target = 5
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1")])

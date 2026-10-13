@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EncounterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="1_encounter_data"]
+[ext_resource type="Resource" path="res://data/enemies/soul_devourer.tres" id="2_soul_devourer"]
+[ext_resource type="Script" path="res://systems/resources/encounter_enemy_entry.gd" id="3_encounter_enemy_entry"]
+[ext_resource type="Script" path="res://systems/resources/encounter_wave.gd" id="4_encounter_wave"]
+
+[sub_resource type="Resource" id="Entry_w1_1"]
+script = ExtResource("3_encounter_enemy_entry")
+enemy = ExtResource("2_soul_devourer")
+level = 30
+count = 1
+
+[sub_resource type="Resource" id="Wave_1"]
+script = ExtResource("4_encounter_wave")
+entries = Array[ExtResource("3_encounter_enemy_entry")]([SubResource("Entry_w1_1")])
+
+[resource]
+script = ExtResource("1_encounter_data")
+id = &"tower_boss_devourer"
+waves = Array[ExtResource("4_encounter_wave")]([SubResource("Wave_1")])
+kind = 2
+zone = &"tower"
+recommended_level = 30

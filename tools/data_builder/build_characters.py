@@ -23,7 +23,8 @@ EFFECT_SCRIPTS = {
     "damage": "damage_effect", "heal": "heal_effect", "shield": "shield_effect", "status": "apply_status_effect",
     "turn": "turn_shift_effect", "energy": "energy_effect", "sp": "skill_point_effect", "cleanse": "cleanse_effect",
     "hp_cost": "hp_cost_effect", "revive": "revive_effect", "summon": "summon_effect", "maxhp": "max_hp_damage_effect",
-    "tough_pct": "toughness_damage_effect"}
+    "tough_pct": "toughness_damage_effect", "summon_enemy": "summon_enemy_effect", "buff_transfer": "buff_transfer_effect",
+    "remove_status": "remove_status_effect"}
 
 
 class Tres:
@@ -90,6 +91,8 @@ def effect_list(t, effects, prefix="Effect"):
             props.append(("status", t.ext_id("Resource", res("data/status_effects/%s.tres" % p["status"]))))
             if p.get("base_mult"):
                 props += [("base_stat", STAT[p.get("stat", "ATK")]), ("base_multiplier", f(p["base_mult"]))]
+            if p.get("extend_if_self"):
+                props.append(("extend_if_self", "true"))
         elif etype == "turn":
             props.append(("amount", f(p["amount"])))
         elif etype == "energy":
@@ -109,6 +112,14 @@ def effect_list(t, effects, prefix="Effect"):
             if p.get("only_if_absent"): props.append(("only_if_absent", "true"))
         elif etype in ("maxhp", "tough_pct"):
             props.append(("ratio", f(p["ratio"])))
+        elif etype == "summon_enemy":
+            props += [("enemy", t.ext_id("Resource", res("data/enemies/%s.tres" % p["enemy"]))), ("count", p.get("count", 1))]
+            if p.get("level_offset"): props.append(("level_offset", p["level_offset"]))
+        elif etype == "buff_transfer":
+            props += [("steal", "true" if p.get("steal") else "false"), ("count", p.get("count", 1))]
+        elif etype == "remove_status":
+            props.append(("status_id", '&"%s"' % p["status"]))
+            if p.get("any_source"): props.append(("only_own", "false"))
         refs.append(t.sub("%s_%d" % (prefix, i + 1), res("systems/skill_effects/%s.gd" % EFFECT_SCRIPTS[etype]), props))
     return "Array[%s]([%s])" % (base, ", ".join(refs))
 
@@ -126,7 +137,7 @@ def skill(sid, kind, target, effects, sp=0, en=0.0, self_ok=True, alternate=None
 
 
 def status(sid, kind, text, color, dur=2, stacks=1, add=False, chance=1.0, ignore=False, mods=(), dot=None,
-           taunt=False, shield=False, hot=0.0):
+           taunt=False, shield=False, hot=0.0, extra=()):
     t = Tres("StatusEffectData", res("systems/resources/status_effect_data.gd"))
     props = [("id", '&"%s"' % sid), ("name_key", '"STATUS_%s"' % sid.upper()), ("desc_key", '"STATUS_%s_DESC"' % sid.upper()),
              ("kind", 0 if kind == "buff" else 1), ("icon_text", '"%s"' % text), ("icon_color", color),
@@ -144,6 +155,7 @@ def status(sid, kind, text, color, dur=2, stacks=1, add=False, chance=1.0, ignor
         props += [("dot_mode", mode), ("dot_element", el), ("dot_multiplier", f(mult))]
     if taunt: props.append(("taunt", "true"))
     if shield: props.append(("shield", "true"))
+    props += list(extra)
     t.write("data/status_effects/%s.tres" % sid, props)
 
 

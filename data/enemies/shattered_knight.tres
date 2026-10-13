@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_sk_slash.tres" id="3_en_sk_slash"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_sk_sweep.tres" id="5_en_sk_sweep"]
+[ext_resource type="Resource" path="res://data/skills/en_sk_charge.tres" id="6_en_sk_charge"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 450.0
+atk = 48.0
+def = 50.0
+spd = 95.0
+effect_res = 0.2
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 4500.0
+atk = 384.0
+def = 500.0
+spd = 95.0
+effect_res = 0.2
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_sk_slash")
+weight = 2.0
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_sk_sweep")
+weight = 1.0
+
+[sub_resource type="Resource" id="Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_sk_charge")
+weight = 3.0
+cooldown_turns = 2
+first_turn = 2
+low_hp_weight_mult = 1.5
+charge_turns = 1
+cancel_on_break = true
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"shattered_knight"
+name_key = "ENEMY_SHATTERED_KNIGHT"
+desc_key = "ENEMY_SHATTERED_KNIGHT_DESC"
+kind = 1
+family = &"shattered_knight"
+element = 1
+weaknesses = Array[int]([0, 2, 3])
+max_toughness = 100.0
+placeholder_color = Color(0.3, 0.42, 0.55, 1)
+size_scale = 1.25
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2"), SubResource("Action_3")])

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/damage_effect.gd" id="3_damage_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("3_damage_effect")
+scaling_stat = 1
+multiplier = 0.4
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"en_mirror_flash"
+name_key = "SKILL_EN_MIRROR_FLASH"
+desc_key = "SKILL_EN_MIRROR_FLASH_DESC"
+kind = 1
+target = 2
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1")])

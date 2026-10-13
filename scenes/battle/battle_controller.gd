@@ -34,6 +34,12 @@ signal dot_damage(target: BattleUnit, amount: float, source: BattleUnit)
 signal hp_consumed(unit: BattleUnit, amount: float)
 signal summon_added(unit: BattleUnit)
 signal summon_removed(unit: BattleUnit)
+## Quái mới xuất hiện giữa đợt (triệu hồi, phân thân).
+signal enemy_spawned(unit: BattleUnit)
+## Boss sang giai đoạn mới (index 1 = giai đoạn 2). Giao diện chạy đoạn chuyển giai đoạn trong PHASE_TRANSITION_SEC.
+signal boss_phase_started(unit: BattleUnit, index: int, phase: BossPhaseData)
+## Đòn tích tụ bị ngắt (phá khiên hoặc đủ sát thương).
+signal charge_interrupted(unit: BattleUnit, action: EnemyAction)
 
 enum Phase { SETUP, RUNNING, AWAITING_INPUT, ENDED }
 
@@ -46,6 +52,7 @@ const ACTION_PAUSE_SEC: float = 0.55
 const ULTIMATE_PAUSE_SEC: float = 1.0
 const WAVE_PAUSE_SEC: float = 0.8
 const STATUS_PAUSE_SEC: float = 0.45
+const PHASE_TRANSITION_SEC: float = 1.6
 
 var allies: Array[BattleUnit] = []
 ## Quái của đợt hiện tại.
@@ -80,6 +87,10 @@ var use_counts: Dictionary = {}
 var auto_overrides: Dictionary = {}
 ## Đơn vị không tự dùng Tuyệt kỹ khi Tự Động.
 var auto_ultimate_blocklist: Array[BattleUnit] = []
+## Mức khó cao hơn (null = thường). Đặt trước setup().
+var difficulty: DifficultyConfig
+## Số quái đã bị hạ trong trận (AI dùng cho "đồng minh bị hạ").
+var enemy_deaths: int = 0
 ## Hàng chen lượt: [{ "unit", "target", "skill"?: SkillData, "follow_up"?: bool }].
 var _interrupts: Array[Dictionary] = []
 var _choice: Dictionary = {}
@@ -164,6 +175,7 @@ func start() -> void:
 			status_events.emit(unit, start_events)
 			queue_changed.emit()
 			await _wait(STATUS_PAUSE_SEC)
+			await _after_action()
 		if not unit.is_alive():
 			current_unit = null
 			continue
@@ -174,11 +186,13 @@ func start() -> void:
 			elif unit.is_ally():
 				action = await _get_ally_action(unit)
 			else:
-				action = EnemyAI.choose_action(unit, allies, enemies, rng)
+				await _run_enemy_turn(unit)
 			if phase == Phase.ENDED:
 				break
 			if not action.is_empty() and unit.is_alive():
 				await _perform(unit, action["skill"], action["target"])
+		if not unit.is_ally():
+			unit.broken_since_turn = false
 		if unit.is_alive():
 			var end_events := process_turn_end(unit)
 			if not end_events.is_empty():
@@ -207,6 +221,8 @@ func can_use(unit: BattleUnit, skill: SkillData) -> bool:
 		return false
 	if skill.kind == SkillData.Kind.ULTIMATE:
 		return unit.is_ultimate_ready()
+	if skill.kind == SkillData.Kind.SKILL and unit.is_skill_sealed():
+		return false
 	return skill.sp_change >= 0 or skill_points + skill.sp_change >= 0
 
 
@@ -326,8 +342,9 @@ func get_friends(unit: BattleUnit) -> Array[BattleUnit]:
 	return (allies if unit.is_ally() else enemies).filter(func(u: BattleUnit) -> bool: return u.is_alive())
 
 
+## Phe đối địch còn sống và chọn làm mục tiêu được.
 func get_foes(unit: BattleUnit) -> Array[BattleUnit]:
-	return (enemies if unit.is_ally() else allies).filter(func(u: BattleUnit) -> bool: return u.is_alive())
+	return (enemies if unit.is_ally() else allies).filter(func(u: BattleUnit) -> bool: return u.is_targetable())
 
 
 func set_auto(enabled: bool) -> void:
@@ -444,7 +461,9 @@ func _process_interrupts() -> void:
 		var entry: Dictionary = _interrupts.pop_front()
 		var unit: BattleUnit = entry["unit"]
 		var follow_up: bool = entry.get("follow_up", false)
-		if not unit.is_alive() or (not follow_up and not unit.is_ultimate_ready()):
+		# Kỹ năng khi chết (Mầm Ma Biến nổ) chạy dù người dùng đã ngã.
+		if (not unit.is_alive() and not entry.get("allow_dead", false)) \
+				or (not follow_up and not unit.is_ultimate_ready()):
 			continue
 		var skill: SkillData = entry.get("skill")
 		if skill == null:
@@ -479,6 +498,7 @@ func _perform(unit: BattleUnit, skill: SkillData, target: BattleUnit, follow_up:
 	action_resolved.emit(unit, skill, events)
 	queue_changed.emit()
 	await _wait(ACTION_PAUSE_SEC)
+	await _after_action()
 
 
 ## Đơn vị trong sự kiện đã hết máu: rời hàng lượt, thêm sự kiện "death".
@@ -494,6 +514,12 @@ func _handle_deaths(events: Array[Dictionary]) -> void:
 	for dead in dead_units:
 		queue.remove(dead)
 		events.append({"type": "death", "target": dead, "amount": 0.0, "crit": false})
+		if not dead.is_ally():
+			enemy_deaths += 1
+			dead.charge = null
+			if dead.enemy and dead.enemy.death_skill:
+				_interrupts.append({"unit": dead, "target": null, "skill": dead.enemy.death_skill,
+						"follow_up": true, "allow_dead": true})
 		# Báo trước khi gỡ hiệu ứng để Đặc tính còn đọc được hiệu ứng trên đơn vị vừa ngã (vd. lan độc).
 		unit_died.emit(dead)
 		EventBus.unit_died.emit(dead)
@@ -595,12 +621,187 @@ func _spawn_wave(index: int) -> void:
 			if int(counts[entry.enemy]) > 1:
 				seen[entry.enemy] = int(seen.get(entry.enemy, 0)) + 1
 				suffix = " " + char(64 + int(seen[entry.enemy]))
-			var unit := BattleUnit.create_enemy(entry.enemy, entry.level, slot, index, suffix)
+			var unit := _create_enemy(entry.enemy, entry.level, slot, suffix)
 			enemies.append(unit)
 			queue.add(unit)
 			slot += 1
+	for unit in enemies:
+		_attach_enemy_behavior(unit)
 	wave_started.emit(index, enemies)
 	queue_changed.emit()
+
+
+# --- Quái (Phase 8) ---
+
+func _create_enemy(data: EnemyData, level: int, slot: int, suffix: String) -> BattleUnit:
+	var bonus := difficulty.level_bonus if difficulty else 0
+	var unit := BattleUnit.create_enemy(data, clampi(level + bonus, 1, GameConfig.DESIGN_MAX_LEVEL), slot, wave_index, suffix)
+	if difficulty:
+		unit.stats.add_modifier(Stats.Type.HP, 0.0, difficulty.hp_percent, &"difficulty")
+		unit.stats.add_modifier(Stats.Type.ATK, 0.0, difficulty.atk_percent, &"difficulty")
+		unit.stats.add_modifier(Stats.Type.SPD, 0.0, difficulty.spd_percent, &"difficulty")
+		unit.stats.add_modifier(Stats.Type.EFFECT_HIT, difficulty.effect_hit_flat, 0.0, &"difficulty")
+		unit.hp = unit.get_max_hp()
+		unit.max_toughness *= difficulty.toughness_multiplier
+		unit.toughness = unit.max_toughness
+		unit.update_hp_floor()
+	return unit
+
+
+func _attach_enemy_behavior(unit: BattleUnit) -> void:
+	if unit.enemy == null or unit.enemy.behavior_script == null:
+		return
+	var behavior := unit.enemy.behavior_script.new() as TalentScript
+	if behavior == null:
+		push_warning("BattleController: behavior_script của %s không kế thừa EnemyBehavior" % unit.enemy.id)
+		return
+	behavior.attach(self, unit, 0)
+	talents.append(behavior)
+
+
+## Số quái phe mình còn sống (tính cả quái không bị nhắm được).
+func count_enemies_alive() -> int:
+	return enemies.filter(func(u: BattleUnit) -> bool: return u.is_alive()).size()
+
+
+## Chỗ trống trong giới hạn 5 quái mỗi đợt (quái triệu hồi vẫn tính).
+func get_free_enemy_slots() -> int:
+	return BattleTypes.MAX_ENEMIES_PER_WAVE - count_enemies_alive()
+
+
+## Số quái cùng họ (EnemyData.family, trống thì theo id) còn sống, kể cả chính nó.
+func count_family_alive(unit: BattleUnit) -> int:
+	var family := _family_of(unit.enemy)
+	return enemies.filter(func(u: BattleUnit) -> bool:
+		return u.is_alive() and u.enemy and _family_of(u.enemy) == family).size()
+
+
+static func _family_of(data: EnemyData) -> StringName:
+	return data.family if data.family != &"" else data.id
+
+
+## Gọi thêm quái vào đợt hiện tại. Hết chỗ (5 quái) thì trả về null.
+func spawn_enemy(data: EnemyData, level: int) -> BattleUnit:
+	if data == null or get_free_enemy_slots() <= 0 or phase == Phase.ENDED:
+		return null
+	var slot := 0
+	for unit in enemies:
+		slot = maxi(slot, unit.slot + 1)
+	var same := enemies.filter(func(u: BattleUnit) -> bool: return u.enemy == data).size()
+	var suffix := " " + char(65 + same) if same > 0 else ""
+	var unit := _create_enemy(data, level, slot, suffix)
+	unit.summoned = true
+	enemies.append(unit)
+	queue.add(unit)
+	_attach_enemy_behavior(unit)
+	enemy_spawned.emit(unit)
+	queue_changed.emit()
+	return unit
+
+
+## Một lượt của quái: đếm ngược / ra đòn đã tích tụ, hoặc AI chọn hành động (đòn báo trước thì chỉ báo).
+func _run_enemy_turn(unit: BattleUnit) -> void:
+	unit.turns_taken += 1
+	unit.turns_in_phase += 1
+	var charge := unit.charge
+	if charge:
+		charge.turns_left -= 1
+		if charge.turns_left <= 0:
+			unit.charge = null
+			var target := charge.target
+			if target == null or not SkillExecutor.get_target_pool(charge.action.skill, unit, allies, enemies).has(target):
+				target = EnemyAI.choose_target_for(charge.action, unit, self)
+			if target:
+				await _perform(unit, charge.action.skill, target)
+			return
+		var countdown: Array[Dictionary] = [{"type": "countdown", "target": unit, "amount": float(charge.turns_left),
+				"crit": false, "name_key": charge.action.skill.name_key}]
+		status_events.emit(unit, countdown)
+		queue_changed.emit()
+		await _wait(STATUS_PAUSE_SEC)
+		if not charge.action.act_while_charging:
+			return
+	var choice := EnemyAI.choose_action(unit, self, unit.charge == null)
+	if choice.is_empty() or phase == Phase.ENDED:
+		return
+	var action: EnemyAction = choice["action"]
+	unit.note_action_used(action)
+	if action.is_charged():
+		unit.charge = BattleUnit.Charge.new(action, choice["target"])
+		action_started.emit(unit, action.skill, [] as Array[BattleUnit])
+		var announce: Array[Dictionary] = [{"type": "charge", "target": unit, "amount": float(action.charge_turns),
+				"crit": false, "name_key": action.skill.name_key}]
+		status_events.emit(unit, announce)
+		queue_changed.emit()
+		await _wait(ACTION_PAUSE_SEC)
+		return
+	await _perform(unit, choice["skill"], choice["target"])
+
+
+## Mục tiêu sẽ trúng đòn đang tích tụ của quái (để giao diện đánh dấu cảnh báo).
+func get_charge_targets(unit: BattleUnit) -> Array[BattleUnit]:
+	var result: Array[BattleUnit] = []
+	if unit.charge == null or not unit.is_alive():
+		return result
+	var skill := unit.charge.action.skill
+	for entry in SkillExecutor.resolve_targets(skill, unit, unit.charge.target, allies, enemies):
+		result.append(entry["unit"])
+	return result
+
+
+## Sau mỗi hành động: ngắt đòn tích tụ (phá khiên / đủ sát thương), chuyển giai đoạn boss.
+func _after_action() -> void:
+	var events: Array[Dictionary] = []
+	for unit in enemies:
+		var charge := unit.charge
+		if charge == null:
+			continue
+		var by_break := charge.action.cancel_on_break and charge.broken
+		var by_damage := charge.action.cancel_damage_ratio > 0.0 \
+				and charge.damage_taken >= unit.get_max_hp() * charge.action.cancel_damage_ratio
+		if by_break or by_damage:
+			unit.charge = null
+			events.append({"type": "interrupted", "target": unit, "amount": 0.0, "crit": false,
+					"name_key": charge.action.skill.name_key})
+			charge_interrupted.emit(unit, charge.action)
+	if not events.is_empty():
+		status_events.emit(events[0]["target"], events)
+		queue_changed.emit()
+		await _wait(STATUS_PAUSE_SEC)
+	for unit in enemies.duplicate():
+		while unit.has_pending_phase() and phase != Phase.ENDED:
+			await enter_boss_phase(unit, unit.phase_index + 1)
+
+
+## Chuyển boss sang giai đoạn `index` (1 = giai đoạn 2): điểm yếu, khiên, chỉ số, bộ hành động mới.
+func enter_boss_phase(unit: BattleUnit, index: int) -> void:
+	if unit.enemy == null or index < 1 or index > unit.enemy.phases.size():
+		return
+	var data: BossPhaseData = unit.enemy.phases[index - 1]
+	unit.phase_index = index
+	unit.forced_phase = -1
+	unit.turns_in_phase = 0
+	unit.charge = null
+	if data.cleanse_debuffs:
+		for instance: StatusEffectInstance in unit.status_effects.duplicate():
+			if instance.data.kind == StatusEffectData.Kind.DEBUFF:
+				StatusEffects.remove(unit, instance)
+	if not data.weaknesses.is_empty():
+		unit.weaknesses = data.weaknesses.duplicate()
+	if data.max_toughness > 0.0:
+		unit.max_toughness = data.max_toughness * (difficulty.toughness_multiplier if difficulty else 1.0)
+	unit.recover_toughness()
+	for i in data.stat_modifiers.size():
+		var modifier := data.stat_modifiers[i]
+		unit.stats.add_modifier(modifier.stat, modifier.flat, modifier.percent, StringName("boss_phase_%d_%d" % [index, i]))
+	if not data.actions.is_empty():
+		unit.actions = data.actions.duplicate()
+	unit.update_hp_floor()
+	if data.action_advance > 0.0 and queue.has(unit):
+		queue.action_advance(unit, data.action_advance)
+	boss_phase_started.emit(unit, index, data)
+	queue_changed.emit()
+	await _wait(PHASE_TRANSITION_SEC)
 
 
 func _wait(seconds: float) -> void:

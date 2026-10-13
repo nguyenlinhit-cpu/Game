@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_sprout_bite.tres" id="3_en_sprout_bite"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_sprout_burst.tres" id="5_en_sprout_burst"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 54.0
+atk = 24.0
+def = 50.0
+spd = 90.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 540.0
+atk = 192.0
+def = 500.0
+spd = 90.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_sprout_bite")
+weight = 1.0
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"warp_sprout_water"
+name_key = "ENEMY_WARP_SPROUT_WATER"
+desc_key = "ENEMY_WARP_SPROUT_WATER_DESC"
+kind = 0
+family = &"warp_sprout"
+element = 1
+weaknesses = Array[int]([2, 5])
+max_toughness = 20.0
+placeholder_color = Color(0.56, 0.16, 0.23, 1)
+size_scale = 1.0
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1")])
+death_skill = ExtResource("5_en_sprout_burst")

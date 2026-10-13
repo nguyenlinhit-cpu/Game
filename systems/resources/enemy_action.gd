@@ -39,6 +39,11 @@ enum TargetRule {
 @export var requires_foe_status: StringName = &""
 ## Chỉ dùng khi phe ta có buff (hút / sao chép buff).
 @export var requires_foe_buff: bool = false
+## Chỉ dùng khi bản thân mang hiệu ứng này với ít nhất `self_status_min_stacks` tầng (vd. 4 tầng Nhiệt).
+@export var self_status: StringName = &""
+@export var self_status_min_stacks: int = 1
+## Đủ điều kiện thì dùng ngay, bỏ qua trọng số.
+@export var priority: bool = false
 ## Dùng ngay ở lượt đầu của giai đoạn (nếu đủ điều kiện), bỏ qua trọng số.
 @export var priority_on_phase_start: bool = false
 

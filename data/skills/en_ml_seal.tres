@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Script" path="res://systems/skill_effects/damage_effect.gd" id="3_damage_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/en_seal.tres" id="4_en_seal"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="5_apply_status_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("3_damage_effect")
+scaling_stat = 1
+multiplier = 0.6
+
+[sub_resource type="Resource" id="Effect_2"]
+script = ExtResource("5_apply_status_effect")
+status = ExtResource("4_en_seal")
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"en_ml_seal"
+name_key = "SKILL_EN_ML_SEAL"
+desc_key = "SKILL_EN_ML_SEAL_DESC"
+kind = 1
+target = 0
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1"), SubResource("Effect_2")])

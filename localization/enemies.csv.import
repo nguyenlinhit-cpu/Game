@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cfk4grrqvm2fl"
+
+[deps]
+
+files=["res://localization/enemies.vi.translation", "res://localization/enemies.en.translation"]
+
+source_file="res://localization/enemies.csv"
+dest_files=["res://localization/enemies.vi.translation", "res://localization/enemies.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

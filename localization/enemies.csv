@@ -1,0 +1,204 @@
+keys,vi,en
+BOSS_PHASE_LIBRARY_WARDEN_2,Lời Nguyền Câm Lặng,Curse of Silence
+BOSS_PHASE_SOUL_DEVOURER_2,Phân Thân,Splitting
+BOSS_PHASE_SOUL_DEVOURER_3,Nuốt Hồn,Soul Swallow
+BOSS_PHASE_VAULT_BEHEMOTH_2,Băng Vỡ,Shattered Ice
+BOSS_PHASE_WARPED_CORE_2,Lò Quá Tải,Overload
+ENEMY_DEVOURER_CLONE_FLAME,Phân Thân Lửa,Flame Fragment
+ENEMY_DEVOURER_CLONE_FLAME_DESC,Mảnh hồn bị Kẻ Nuốt tách ra; hạ nó làm bản thể bị thương.,A soul shard split off by the Devourer; destroying it wounds the true body.
+ENEMY_DEVOURER_CLONE_STORM,Phân Thân Sét,Storm Fragment
+ENEMY_DEVOURER_CLONE_STORM_DESC,Mảnh hồn bị Kẻ Nuốt tách ra; hạ nó làm bản thể bị thương.,A soul shard split off by the Devourer; destroying it wounds the true body.
+ENEMY_DEVOURER_CLONE_TIDE,Phân Thân Nước,Tide Fragment
+ENEMY_DEVOURER_CLONE_TIDE_DESC,Mảnh hồn bị Kẻ Nuốt tách ra; hạ nó làm bản thể bị thương.,A soul shard split off by the Devourer; destroying it wounds the true body.
+ENEMY_FLYING_BOOK,Sách Bay,Flying Tome
+ENEMY_FLYING_BOOK_DESC,"Cuốn sách bị gọi dậy, lượn vòng quanh Người Gác.",A tome roused to circle the Warden.
+ENEMY_FURNACE_ARM,Tay Máy Lò,Furnace Arm
+ENEMY_FURNACE_ARM_DESC,"Cánh tay máy nối vào lõi lò, đánh người và nạp thêm nhiệt.",A mechanical arm wired to the core that strikes and stokes its heat.
+ENEMY_INK_RAT_LIGHTNING,Chuột Mực Sách Sét,Lightning Ink Rat
+ENEMY_INK_RAT_LIGHTNING_DESC,"Chuột ăn mực sách, chạy nhanh, cắn ai là trộm mất nhịp chiến đấu.",A fast ink-eating rat; its bite steals Skill Points.
+ENEMY_INK_RAT_WIND,Chuột Mực Sách Phong,Wind Ink Rat
+ENEMY_INK_RAT_WIND_DESC,"Chuột ăn mực sách, chạy nhanh, cắn ai là trộm mất nhịp chiến đấu.",A fast ink-eating rat; its bite steals Skill Points.
+ENEMY_LIBRARY_WARDEN,Người Gác Thư Viện,Library Warden
+ENEMY_LIBRARY_WARDEN_DESC,"Người gác cổng Thư Viện Câm Lặng, giữ từng trang sách bằng lời nguyền.","Keeper of the Silent Library, guarding every page with a curse."
+ENEMY_MIRROR_SHADE_SOUL,Bóng Gương Hồn,Soul Mirror Shade
+ENEMY_MIRROR_SHADE_SOUL_DESC,"Cái bóng trong gương vỡ, bắt chước sức mạnh của đối thủ.",A shadow from a shattered mirror that mimics its foes' power.
+ENEMY_MIRROR_SHADE_WATER,Bóng Gương Nước,Water Mirror Shade
+ENEMY_MIRROR_SHADE_WATER_DESC,"Cái bóng trong gương vỡ, bắt chước sức mạnh của đối thủ.",A shadow from a shattered mirror that mimics its foes' power.
+ENEMY_MUTE_LIBRARIAN,Thủ Thư Câm,Mute Librarian
+ENEMY_MUTE_LIBRARIAN_DESC,"Thủ thư đã mất giọng, bắt cả thư viện câm theo mình.",A librarian who lost their voice and silences everyone else.
+ENEMY_RUSTED_KNIGHT_LIGHTNING,Giáp Sĩ Rỉ Sét Sét,Lightning Rusted Knight
+ENEMY_RUSTED_KNIGHT_LIGHTNING_DESC,"Bộ giáp rỗng gỉ sét, khiên dày, biết thủ thế khi bị dồn ép.",Hollow rusted armor with thick toughness that guards when pressed.
+ENEMY_RUSTED_KNIGHT_WATER,Giáp Sĩ Rỉ Sét Nước,Water Rusted Knight
+ENEMY_RUSTED_KNIGHT_WATER_DESC,"Bộ giáp rỗng gỉ sét, khiên dày, biết thủ thế khi bị dồn ép.",Hollow rusted armor with thick toughness that guards when pressed.
+ENEMY_SHATTERED_KNIGHT,Kỵ Sĩ Vỡ Vụn,Shattered Knight
+ENEMY_SHATTERED_KNIGHT_DESC,"Kỵ sĩ canh kho xưa, thân giáp nứt toác nhưng cú lao vẫn đủ sức xuyên tường.","An old vault knight; its armor is cracked, but its charge still breaks walls."
+ENEMY_SOUL_DEVOURER,Kẻ Nuốt Mảnh Hồn,Soul Devourer
+ENEMY_SOUL_DEVOURER_DESC,"Kẻ đánh cắp Mảnh Hồn, lớn lên bằng ánh sáng của người khác.","The thief of Soul Shards, grown fat on the light of others."
+ENEMY_VAULT_BEHEMOTH,Cự Thú Kho Chứa,Vault Behemoth
+ENEMY_VAULT_BEHEMOTH_DESC,"Con thú khổng lồ ngủ đông giữa kho băng, lớp băng trên lưng dày như tường thành.","A colossal beast hibernating in the ice vault, its frozen hide thick as a rampart."
+ENEMY_VENOM_BEE_POISON,Ong Độc Độc,Poison Venom Bee
+ENEMY_VENOM_BEE_POISON_DESC,Bầy ong nhiễm Ma Biến; còn một con là nó gọi cả tổ tới.,Warp-infected bees; the last one standing calls the hive.
+ENEMY_VENOM_BEE_POISON_DRONE,Ong Thợ Độc,Poison Worker Bee
+ENEMY_VENOM_BEE_POISON_DRONE_DESC,Bầy ong nhiễm Ma Biến; còn một con là nó gọi cả tổ tới.,Warp-infected bees; the last one standing calls the hive.
+ENEMY_VENOM_BEE_WIND,Ong Độc Phong,Wind Venom Bee
+ENEMY_VENOM_BEE_WIND_DESC,Bầy ong nhiễm Ma Biến; còn một con là nó gọi cả tổ tới.,Warp-infected bees; the last one standing calls the hive.
+ENEMY_VENOM_BEE_WIND_DRONE,Ong Thợ Phong,Wind Worker Bee
+ENEMY_VENOM_BEE_WIND_DRONE_DESC,Bầy ong nhiễm Ma Biến; còn một con là nó gọi cả tổ tới.,Warp-infected bees; the last one standing calls the hive.
+ENEMY_VOID_ARCHER_LIGHTNING,Xạ Thủ Hư Không Sét,Lightning Void Archer
+ENEMY_VOID_ARCHER_LIGHTNING_DESC,"Cung thủ đứng xa, ngắm trước rồi bắn xuyên.","A distant archer that takes aim, then fires a piercing shot."
+ENEMY_VOID_ARCHER_WIND,Xạ Thủ Hư Không Phong,Wind Void Archer
+ENEMY_VOID_ARCHER_WIND_DESC,"Cung thủ đứng xa, ngắm trước rồi bắn xuyên.","A distant archer that takes aim, then fires a piercing shot."
+ENEMY_WANDERING_SHADE_SOUL,Hồn Ảnh Lang Thang Hồn,Soul Wandering Shade
+ENEMY_WANDERING_SHADE_SOUL_DESC,Linh hồn lạc lối che chắn cho đồng bọn.,A lost spirit that shields its companions.
+ENEMY_WANDERING_SHADE_WATER,Hồn Ảnh Lang Thang Nước,Water Wandering Shade
+ENEMY_WANDERING_SHADE_WATER_DESC,Linh hồn lạc lối che chắn cho đồng bọn.,A lost spirit that shields its companions.
+ENEMY_WANDERING_SHADE_WIND,Hồn Ảnh Lang Thang Phong,Wind Wandering Shade
+ENEMY_WANDERING_SHADE_WIND_DESC,Linh hồn lạc lối che chắn cho đồng bọn.,A lost spirit that shields its companions.
+ENEMY_WARPED_CORE,Lõi Lò Biến Dạng,Warped Core
+ENEMY_WARPED_CORE_DESC,"Trái tim của Lò Năng Lượng bị Ma Biến nuốt, nóng dần tới khi nổ tung.","The Energy Furnace's heart, swallowed by the warp, heating until it bursts."
+ENEMY_WARPED_MAGE_FIRE,Pháp Sư Méo Lửa,Fire Warped Mage
+ENEMY_WARPED_MAGE_FIRE_DESC,"Pháp sư bị Ma Biến bẻ cong, gieo nguyên tố độc hại.",A mage bent by the warp who sows harmful elements.
+ENEMY_WARPED_MAGE_POISON,Pháp Sư Méo Độc,Poison Warped Mage
+ENEMY_WARPED_MAGE_POISON_DESC,"Pháp sư bị Ma Biến bẻ cong, gieo nguyên tố độc hại.",A mage bent by the warp who sows harmful elements.
+ENEMY_WARPED_MAGE_WIND,Pháp Sư Méo Phong,Wind Warped Mage
+ENEMY_WARPED_MAGE_WIND_DESC,"Pháp sư bị Ma Biến bẻ cong, gieo nguyên tố độc hại.",A mage bent by the warp who sows harmful elements.
+ENEMY_WARP_MATRIX,Mẫu Thể Ma Biến,Warp Matrix
+ENEMY_WARP_MATRIX_DESC,Khối mầm mẹ đập thình thịch; mỗi Mầm còn sống làm khiên của nó dày thêm.,A pulsing mother-mass; each living Sprout thickens its toughness.
+ENEMY_WARP_SPROUT_FIRE,Mầm Ma Biến Lửa,Fire Warp Sprout
+ENEMY_WARP_SPROUT_FIRE_DESC,"Mầm nhỏ nhiễm Ma Biến, đi thành bầy, nổ tung khi bị hạ.",Tiny warp-infected sprouts that come in swarms and burst when defeated.
+ENEMY_WARP_SPROUT_POISON,Mầm Ma Biến Độc,Poison Warp Sprout
+ENEMY_WARP_SPROUT_POISON_DESC,"Mầm nhỏ nhiễm Ma Biến, đi thành bầy, nổ tung khi bị hạ.",Tiny warp-infected sprouts that come in swarms and burst when defeated.
+ENEMY_WARP_SPROUT_WATER,Mầm Ma Biến Nước,Water Warp Sprout
+ENEMY_WARP_SPROUT_WATER_DESC,"Mầm nhỏ nhiễm Ma Biến, đi thành bầy, nổ tung khi bị hạ.",Tiny warp-infected sprouts that come in swarms and burst when defeated.
+SKILL_EN_ARCHER_MARK,Ngắm Bắn,Take Aim
+SKILL_EN_ARCHER_MARK_DESC,40% Tấn Công và gắn Bị Ngắm lên 1 người.,40% ATK and marks one target as Targeted.
+SKILL_EN_ARCHER_SHOT,Tên Hư Không,Void Arrow
+SKILL_EN_ARCHER_SHOT_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_ARCHER_SNIPE,Phát Bắn Xuyên Hư Không,Void Piercer
+SKILL_EN_ARCHER_SNIPE_DESC,200% Tấn Công lên người Bị Ngắm.,200% ATK to the Targeted ally.
+SKILL_EN_ARM_STOKE,Nạp Nhiệt,Stoke
+SKILL_EN_ARM_STOKE_DESC,Thêm 1 tầng Nhiệt cho Lõi Lò.,Adds 1 Heat stack to the Core.
+SKILL_EN_ARM_STRIKE,Kẹp Máy,Clamp
+SKILL_EN_ARM_STRIKE_DESC,90% Tấn Công lên 1 người.,90% ATK to one target.
+SKILL_EN_BEE_CALL_POISON,Gọi Tổ,Call the Hive
+SKILL_EN_BEE_CALL_POISON_DESC,Còn 1 con: gọi thêm 2 Ong Thợ (tối đa 2 lần).,When only one is left: calls 2 Worker Bees (up to twice).
+SKILL_EN_BEE_CALL_WIND,Gọi Tổ,Call the Hive
+SKILL_EN_BEE_CALL_WIND_DESC,Còn 1 con: gọi thêm 2 Ong Thợ (tối đa 2 lần).,When only one is left: calls 2 Worker Bees (up to twice).
+SKILL_EN_BEE_STING,Chích,Sting
+SKILL_EN_BEE_STING_DESC,"80% Tấn Công lên 1 người, 60% gắn Nọc Ong.","80% ATK to one target, 60% chance to apply Bee Venom."
+SKILL_EN_BEH_AVALANCHE,Lở Băng,Avalanche
+SKILL_EN_BEH_AVALANCHE_DESC,Báo trước 1 lượt: 130% Tấn Công lên cả đội. Phá khiên để hủy.,Telegraphed 1 turn: 130% ATK to the whole team. Break to cancel.
+SKILL_EN_BEH_CLAW,Vuốt Băng,Frost Claw
+SKILL_EN_BEH_CLAW_DESC,120% Tấn Công lên 1 người.,120% ATK to one target.
+SKILL_EN_BEH_FREEZE,Hơi Thở Đóng Băng,Freezing Breath
+SKILL_EN_BEH_FREEZE_DESC,"60% Tấn Công lên người Tấn Công cao nhất, 80% Đông Cứng 1 lượt.","60% ATK to the highest-ATK ally, 80% chance to Freeze them for 1 turn."
+SKILL_EN_BEH_RAMPAGE,Giẫm Nát,Rampage
+SKILL_EN_BEH_RAMPAGE_DESC,100% Tấn Công lên 1 người và 60% lên người bên cạnh.,100% ATK to one target and 60% to adjacent targets.
+SKILL_EN_BEH_ROAR,Gầm Băng Giá,Glacial Roar
+SKILL_EN_BEH_ROAR_DESC,Báo trước 1 lượt: 100% Tấn Công lên cả đội. Phá khiên để hủy.,Telegraphed 1 turn: 100% ATK to the whole team. Break to cancel.
+SKILL_EN_BEH_SHARDS,Mưa Mảnh Băng,Shard Hail
+SKILL_EN_BEH_SHARDS_DESC,60% Tấn Công lên cả đội.,60% ATK to the whole team.
+SKILL_EN_BOOK_CUT,Lật Trang Cắt,Paper Cut
+SKILL_EN_BOOK_CUT_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_CLONE_STRIKE,Vuốt Hồn,Soul Claw
+SKILL_EN_CLONE_STRIKE_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_CLONE_WAIL,Tiếng Vọng,Echoing Wail
+SKILL_EN_CLONE_WAIL_DESC,35% Tấn Công lên cả đội.,35% ATK to the whole team.
+SKILL_EN_CORE_FLARE,Lửa Lõi,Core Flare
+SKILL_EN_CORE_FLARE_DESC,110% Tấn Công lên 1 người.,110% ATK to one target.
+SKILL_EN_CORE_MELTDOWN,Quá Nhiệt,Meltdown
+SKILL_EN_CORE_MELTDOWN_DESC,"Từ 4 tầng Nhiệt: báo trước 1 lượt rồi nổ, 160% Tấn Công lên cả đội và xả hết Nhiệt. Phá khiên để hủy (và mất 3 tầng).","From 4 Heat: telegraphs 1 turn, then explodes for 160% ATK on the whole team and vents all Heat. Break to cancel (and remove 3 stacks)."
+SKILL_EN_CORE_WAVE,Sóng Nhiệt,Heat Wave
+SKILL_EN_CORE_WAVE_DESC,50% Tấn Công lên cả đội.,50% ATK to the whole team.
+SKILL_EN_DEV_BITE,Cắn Hồn,Soul Bite
+SKILL_EN_DEV_BITE_DESC,120% Tấn Công lên 1 người.,120% ATK to one target.
+SKILL_EN_DEV_DEVOUR,Nuốt Ánh Sáng,Devour Light
+SKILL_EN_DEV_DEVOUR_DESC,50% Tấn Công lên cả đội và hút 1 buff của mỗi người.,50% ATK to the whole team and steals one buff from each.
+SKILL_EN_DEV_PULSE,Xung Hư Không,Void Pulse
+SKILL_EN_DEV_PULSE_DESC,Báo trước 1 lượt: 110% Tấn Công lên cả đội. Phá khiên để hủy.,Telegraphed 1 turn: 110% ATK to the whole team. Break to cancel.
+SKILL_EN_DEV_SHADOW,Bóng Nuốt,Engulfing Shade
+SKILL_EN_DEV_SHADOW_DESC,40% Tấn Công lên cả đội.,40% ATK to the whole team.
+SKILL_EN_DEV_SWALLOW,Nuốt Hồn,Soul Swallow
+SKILL_EN_DEV_SWALLOW_DESC,Đếm ngược 2 lượt (vẫn hành động). Hết giờ: 180% Tấn Công lên cả đội. Gây đủ 10% máu tối đa của nó trong lúc đếm ngược để ngắt.,2-turn countdown (keeps acting). At zero: 180% ATK to the whole team. Deal 10% of its max HP during the countdown to interrupt.
+SKILL_EN_KNIGHT_GUARD,Thủ Thế,Guard Stance
+SKILL_EN_KNIGHT_GUARD_DESC,Giảm 40% sát thương nhận tới hết lượt sau.,Takes 40% less damage until the end of its next turn.
+SKILL_EN_KNIGHT_SLASH,Chém Gỉ,Rusty Slash
+SKILL_EN_KNIGHT_SLASH_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_KNIGHT_SWEEP,Quét Giáp,Armored Sweep
+SKILL_EN_KNIGHT_SWEEP_DESC,70% Tấn Công lên 1 người và 40% lên 2 người bên cạnh.,70% ATK to one target and 40% to adjacent targets.
+SKILL_EN_MAGE_BOLT,Tia Méo,Warped Bolt
+SKILL_EN_MAGE_BOLT_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_MAGE_HEX_FIRE,Phù Lửa Méo,Warped Flame Hex
+SKILL_EN_MAGE_HEX_FIRE_DESC,"50% Tấn Công, 90% gắn Bỏng Ma Biến 2 lượt.","50% ATK, 90% chance to apply Warp Burn for 2 turns."
+SKILL_EN_MAGE_HEX_POISON,Phù Độc Méo,Warped Venom Hex
+SKILL_EN_MAGE_HEX_POISON_DESC,"50% Tấn Công, 90% gắn Độc Ma Biến 2 lượt.","50% ATK, 90% chance to apply Warp Venom for 2 turns."
+SKILL_EN_MAGE_HEX_WIND,Phù Gió Méo,Warped Gale Hex
+SKILL_EN_MAGE_HEX_WIND_DESC,"50% Tấn Công, 90% gắn Gió Cắt Ma Biến 2 lượt.","50% ATK, 90% chance to apply Warp Shear for 2 turns."
+SKILL_EN_MAGE_STORM,Mưa Méo,Warped Rain
+SKILL_EN_MAGE_STORM_DESC,35% Tấn Công lên cả đội.,35% ATK to the whole team.
+SKILL_EN_MATRIX_LASH,Roi Rễ Méo,Warped Lash
+SKILL_EN_MATRIX_LASH_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_MATRIX_SPAWN,Nảy Mầm,Sprouting
+SKILL_EN_MATRIX_SPAWN_DESC,"Gọi 2 Mầm Ma Biến (cứ 2 lượt một lần, còn chỗ).","Summons 2 Warp Sprouts (every other turn, if there is room)."
+SKILL_EN_MATRIX_SPEW,Phun Ma Biến,Warp Spew
+SKILL_EN_MATRIX_SPEW_DESC,50% Tấn Công lên cả đội.,50% ATK to the whole team.
+SKILL_EN_MIRROR_COPY,Soi Gương,Mirror Image
+SKILL_EN_MIRROR_COPY_DESC,50% Tấn Công lên người nhiều buff nhất và sao chép 1 buff của họ.,50% ATK to the most-buffed ally and copies one of their buffs.
+SKILL_EN_MIRROR_FLASH,Lóe Gương,Mirror Flash
+SKILL_EN_MIRROR_FLASH_DESC,40% Tấn Công lên cả đội.,40% ATK to the whole team.
+SKILL_EN_MIRROR_STRIKE,Đòn Phản Chiếu,Mirrored Strike
+SKILL_EN_MIRROR_STRIKE_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_ML_HUSH,Tĩnh Lặng,Silence
+SKILL_EN_ML_HUSH_DESC,45% Tấn Công lên cả đội.,45% ATK to the whole team.
+SKILL_EN_ML_SEAL,Suỵt,Hush
+SKILL_EN_ML_SEAL_DESC,"60% Tấn Công lên người Tấn Công cao nhất, Phong Ấn Chiến kỹ của họ 2 lượt.",60% ATK to the highest-ATK ally and Seals their Skill for 2 turns.
+SKILL_EN_ML_STRIKE,Gáy Sách,Spine Strike
+SKILL_EN_ML_STRIKE_DESC,110% Tấn Công lên 1 người.,110% ATK to one target.
+SKILL_EN_RAT_SHRED,Xé Trang,Page Shred
+SKILL_EN_RAT_SHRED_DESC,60% Tấn Công lên 1 người và 30% lên người bên cạnh.,60% ATK to one target and 30% to adjacent targets.
+SKILL_EN_RAT_STEAL,Cắn Trộm,Thieving Bite
+SKILL_EN_RAT_STEAL_DESC,"90% Tấn Công lên 1 người, trộm 1 Điểm Chiến Kỹ.",90% ATK to one target and steals 1 Skill Point.
+SKILL_EN_SHADE_TOUCH,Chạm Lạnh,Cold Touch
+SKILL_EN_SHADE_TOUCH_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_SHADE_VEIL,Màn Hồn,Soul Veil
+SKILL_EN_SHADE_VEIL_DESC,Tạo khiên (50% Phòng Thủ) cho mọi quái đồng minh trong 2 lượt.,Shields all allied monsters (50% DEF) for 2 turns.
+SKILL_EN_SK_CHARGE,Lao Vỡ Vụn,Shattering Charge
+SKILL_EN_SK_CHARGE_DESC,Tích tụ 1 lượt rồi lao tới: 350% Tấn Công lên 1 người. Phá khiên lúc đang tích tụ thì hủy đòn.,"Charges for 1 turn, then rams: 350% ATK to one target. Breaking it while charging cancels the attack."
+SKILL_EN_SK_SLASH,Kiếm Gãy,Broken Blade
+SKILL_EN_SK_SLASH_DESC,110% Tấn Công lên 1 người.,110% ATK to one target.
+SKILL_EN_SK_SWEEP,Vung Mảnh Vỡ,Shard Swing
+SKILL_EN_SK_SWEEP_DESC,80% Tấn Công lên 1 người và 50% lên người bên cạnh.,80% ATK to one target and 50% to adjacent targets.
+SKILL_EN_SPROUT_BITE,Cắn,Bite
+SKILL_EN_SPROUT_BITE_DESC,100% Tấn Công lên 1 người.,100% ATK to one target.
+SKILL_EN_SPROUT_BURST,Nổ Mầm,Sprout Burst
+SKILL_EN_SPROUT_BURST_DESC,Khi chết: 45% Tấn Công lên cả đội.,On death: 45% ATK to the whole team.
+SKILL_EN_WARDEN_BOOKS,Gọi Sách,Summon Tomes
+SKILL_EN_WARDEN_BOOKS_DESC,Gọi 2 Sách Bay.,Summons 2 Flying Tomes.
+SKILL_EN_WARDEN_CURSE,Lời Nguyền Câm Lặng,Curse of Silence
+SKILL_EN_WARDEN_CURSE_DESC,Đếm ngược 3 lượt (vẫn hành động). Hết giờ: 60% Tấn Công lên cả đội và Phong Ấn Chiến kỹ cả đội 2 lượt. Phá khiên để ngắt.,3-turn countdown (keeps acting). At zero: 60% ATK to the whole team and Seals everyone's Skill for 2 turns. Break its toughness to interrupt.
+SKILL_EN_WARDEN_PAGES,Bão Trang,Page Storm
+SKILL_EN_WARDEN_PAGES_DESC,50% Tấn Công lên cả đội.,50% ATK to the whole team.
+SKILL_EN_WARDEN_STRIKE,Gáy Sách Nặng,Heavy Spine
+SKILL_EN_WARDEN_STRIKE_DESC,120% Tấn Công lên 1 người.,120% ATK to one target.
+STATUS_EN_BEE_VENOM,Nọc Ong,Bee Venom
+STATUS_EN_BEE_VENOM_DESC,Mất máu đầu mỗi lượt.,Loses HP at the start of each turn.
+STATUS_EN_CURSE_SEAL,Lời Nguyền Câm Lặng,Curse of Silence
+STATUS_EN_CURSE_SEAL_DESC,Cả đội không dùng được Chiến kỹ.,The whole team cannot use Skills.
+STATUS_EN_FROZEN,Đông Cứng,Frozen Solid
+STATUS_EN_FROZEN_DESC,Mất lượt kế tiếp.,Loses the next turn.
+STATUS_EN_GUARD,Thủ Thế,Guard Stance
+STATUS_EN_GUARD_DESC,Giảm 40% sát thương nhận.,Takes 40% less damage.
+STATUS_EN_HEAT,Nhiệt,Heat
+STATUS_EN_HEAT_DESC,Đủ 5 tầng thì Lõi Lò nổ cả đội. Phá Vỡ giảm 3 tầng.,At 5 stacks the Core explodes on the whole team. Breaking it removes 3 stacks.
+STATUS_EN_HEX_FIRE,Bỏng Ma Biến,Warp Burn
+STATUS_EN_HEX_FIRE_DESC,Mất máu đầu mỗi lượt (theo Tấn Công của Pháp Sư Méo).,Loses HP at the start of each turn (scales with the Warped Mage's ATK).
+STATUS_EN_HEX_LIGHTNING,Điện Ma Biến,Warp Shock
+STATUS_EN_HEX_LIGHTNING_DESC,Mất máu đầu mỗi lượt (theo Tấn Công của Pháp Sư Méo).,Loses HP at the start of each turn (scales with the Warped Mage's ATK).
+STATUS_EN_HEX_POISON,Độc Ma Biến,Warp Venom
+STATUS_EN_HEX_POISON_DESC,Mất máu đầu mỗi lượt (theo Tấn Công của Pháp Sư Méo).,Loses HP at the start of each turn (scales with the Warped Mage's ATK).
+STATUS_EN_HEX_WIND,Gió Cắt Ma Biến,Warp Shear
+STATUS_EN_HEX_WIND_DESC,Mất máu đầu mỗi lượt (theo Tấn Công của Pháp Sư Méo).,Loses HP at the start of each turn (scales with the Warped Mage's ATK).
+STATUS_EN_SEAL,Phong Ấn,Sealed
+STATUS_EN_SEAL_DESC,Không dùng được Chiến kỹ.,Cannot use Skill.
+STATUS_EN_VOID_MARK,Bị Ngắm,Targeted
+STATUS_EN_VOID_MARK_DESC,Xạ Thủ Hư Không sẽ bắn gấp đôi vào người này ở lượt sau.,The Void Archer will fire a double shot at this target next turn.

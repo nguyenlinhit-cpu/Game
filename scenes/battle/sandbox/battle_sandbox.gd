@@ -2,7 +2,8 @@ extends Control
 ## Phòng thử trận: đánh bù nhìn (2 con yếu cả 7 nguyên tố, 1 con chỉ yếu Lửa, máu rất nhiều),
 ## chọn nguyên tố đòn đánh của phe ta để kiểm chứng đủ 7 hiệu ứng Phá Vỡ,
 ## và thấy đòn sai nguyên tố không làm giảm khiên. Bảng "Đội & quái…": chọn đúng 4 trong mọi nhân vật,
-## trận quái, cấp đội, cấp Tinh Mệnh (áp cho cả đội), bấm "Áp dụng" để đánh lại.
+## trận quái (gồm trận boss theo khu), cấp đội, cấp Tinh Mệnh (áp cho cả đội), bật "Boss khó",
+## bấm "Áp dụng" để đánh lại.
 ## Mở: chạy thẳng scene này (F6), hoặc menu tạm dừng → "Phòng thử trận" (bản debug).
 
 const SANDBOX_ENCOUNTER: String = "res://data/encounters/sandbox_dummies.tres"
@@ -13,6 +14,7 @@ var battle: Node
 var _element_buttons: Dictionary = {}
 var _team_checks: Dictionary = {}
 var _eidolon_spin: SpinBox
+var _hard_check: CheckBox
 
 @onready var _panel: HBoxContainer = %SandboxPanel
 @onready var _element_label: Label = %ElementLabel
@@ -125,7 +127,7 @@ func _build_team_row() -> void:
 	_encounter_paths = DataPaths.list_encounter_paths()
 	var current := str(SceneRouter.payload.get("sandbox_encounter", SANDBOX_ENCOUNTER))
 	for path in _encounter_paths:
-		_encounter_option.add_item(path.get_file().get_basename())
+		_encounter_option.add_item(_encounter_label(path))
 		if path == current:
 			_encounter_option.select(_encounter_option.item_count - 1)
 	row.add_child(_encounter_option)
@@ -145,6 +147,11 @@ func _build_team_row() -> void:
 	_eidolon_spin.max_value = 6
 	_eidolon_spin.value = GameState.get_eidolon_level(GameState.team[0])
 	row.add_child(_eidolon_spin)
+	_hard_check = CheckBox.new()
+	_hard_check.text = tr("SANDBOX_HARD")
+	_hard_check.button_pressed = bool(SceneRouter.payload.get("hard_mode", false))
+	_hard_check.focus_mode = Control.FOCUS_NONE
+	row.add_child(_hard_check)
 	var apply := Button.new()
 	apply.text = tr("SANDBOX_APPLY")
 	apply.focus_mode = Control.FOCUS_NONE
@@ -153,15 +160,30 @@ func _build_team_row() -> void:
 		for id: StringName in _team_checks:
 			if (_team_checks[id] as CheckBox).button_pressed:
 				ids.append(id)
-		apply_setup(ids, _encounter_paths[_encounter_option.selected], int(_level_spin.value), int(_eidolon_spin.value)))
+		apply_setup(ids, _encounter_paths[_encounter_option.selected], int(_level_spin.value), int(_eidolon_spin.value),
+				_hard_check.button_pressed))
 	box.add_child(apply)
 
 
+## Tên trận trong danh sách: loại (boss/tinh anh), id, cấp quái và cấp khuyến nghị.
+func _encounter_label(path: String) -> String:
+	var data := load(path) as EncounterData
+	if data == null:
+		return path.get_file().get_basename()
+	var prefix := {EncounterData.Kind.BOSS: "★ ", EncounterData.Kind.ELITE: "◆ "}.get(data.kind, "") as String
+	var label := "%s%s  Lv%d" % [prefix, data.id, data.get_max_level()]
+	if data.recommended_level > 0:
+		label += " (→%d)" % data.recommended_level
+	return label
+
+
 ## Đặt đội (đúng 4), trận quái, cấp, Tinh Mệnh rồi mở lại phòng thử. Trả về false nếu đội sai.
-func apply_setup(ids: Array[StringName], encounter_path: String, level: int, eidolon_level: int) -> bool:
+func apply_setup(ids: Array[StringName], encounter_path: String, level: int, eidolon_level: int,
+		hard_mode: bool = false) -> bool:
 	GameState.team_level = clampi(level, 1, GameConfig.MAX_LEVEL)
 	var payload := SceneRouter.payload.duplicate()
 	payload["sandbox_encounter"] = encounter_path
+	payload["hard_mode"] = hard_mode
 	SceneRouter.payload = payload
 	return apply_team(ids, eidolon_level)
 

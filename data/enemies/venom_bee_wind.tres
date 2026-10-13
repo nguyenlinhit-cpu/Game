@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_bee_sting.tres" id="3_en_bee_sting"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_bee_call_wind.tres" id="5_en_bee_call_wind"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 40.5
+atk = 18.0
+def = 50.0
+spd = 110.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 405.0
+atk = 144.0
+def = 500.0
+spd = 110.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_bee_sting")
+weight = 1.0
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_bee_call_wind")
+weight = 1.0
+max_uses = 2
+max_family_alive = 1
+needs_free_slot = true
+priority = true
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"venom_bee_wind"
+name_key = "ENEMY_VENOM_BEE_WIND"
+desc_key = "ENEMY_VENOM_BEE_WIND_DESC"
+kind = 0
+family = &"venom_bee"
+element = 3
+weaknesses = Array[int]([2, 1])
+max_toughness = 10.0
+placeholder_color = Color(0.75, 0.62, 0.12, 1)
+size_scale = 1.0
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2")])

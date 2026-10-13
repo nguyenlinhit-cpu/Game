@@ -337,3 +337,19 @@ SANDBOX_TEAM,Đội (chọn đúng 4):,Team (pick exactly 4):
 SANDBOX_EIDOLON,Tinh Mệnh: %d,Eidolon: %d
 SANDBOX_APPLY,Áp dụng và đánh lại,Apply and restart
 SANDBOX_TEAM_INVALID,Phải chọn đúng 4 nhân vật,Pick exactly 4 characters
+BATTLE_CHARGING,"Tích tụ: %s",Charging: %s
+BATTLE_COUNTDOWN,"%s: còn %d lượt","%s: %d turns left"
+BATTLE_INTERRUPTED,Ngắt đòn!,Interrupted!
+BATTLE_PHASE_TITLE,Giai đoạn %d,Phase %d
+BATTLE_UNTARGETABLE,Bất khả xâm phạm,Untargetable
+BATTLE_SP_LOST,−%d ◆,−%d ◆
+BATTLE_BUFF_COPIED,Sao chép: %s,Copied: %s
+BATTLE_BUFF_STOLEN,Hút: %s,Stole: %s
+BATTLE_HEAT,Nhiệt ×%d,Heat ×%d
+BATTLE_THREAT_HINT,"%s sắp tung %s! %s","%s is about to unleash %s! %s"
+BATTLE_HINT_BREAK,Phá khiên để ngắt.,Break its toughness to interrupt.
+BATTLE_HINT_DAMAGE,Gây đủ %d sát thương để ngắt.,Deal %d damage to interrupt.
+BATTLE_SKILL_SEALED,Chiến kỹ đang bị Phong Ấn,Skill is Sealed
+BATTLE_HARD_MODE,Khó,Hard
+DIFFICULTY_HARD,Khó,Hard
+SANDBOX_HARD,Boss khó,Hard boss

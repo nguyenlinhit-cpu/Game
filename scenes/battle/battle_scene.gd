@@ -1,7 +1,7 @@
 extends Control
 ## Màn trận theo lượt 2D: phe ta bên trái, quái bên phải, thanh thứ tự lượt bên trái,
 ## 4 thẻ nhân vật dưới cùng, nút Đánh thường / Chiến kỹ và ô Điểm Chiến Kỹ góc phải.
-## Vào: SceneRouter.payload { "encounter", "opening", "opener_element" } (thêm "instant", "team_override" khi test).
+## Vào: SceneRouter.payload { "encounter", "opening", "opener_element", "hard_mode" } (thêm "instant", "team_override" khi test).
 ## Ra: GameState.finish_battle() rồi quay về map với payload { "battle_result": "win"|"lose" }.
 ##
 ## Điều khiển: bấm quái/đồng minh = chọn và ra đòn; Q / E = Đánh thường / Chiến kỹ (bấm lại = ra đòn);
@@ -14,10 +14,14 @@ const ENEMY_CENTER := Vector2(1360, 440)
 const SUMMON_POSITION := Vector2(420, 540)
 const ENEMY_SPACING: float = 230.0
 const ENEMY_STAGGER: float = 70.0
+## Bề rộng tối đa khu quái (từ giữa sân sang mép phải).
+const ENEMY_AREA_WIDTH: float = 1060.0
 const PREVIEW_COUNT: int = 8
 const ULTIMATE_BANNER_SEC: float = 0.9
 ## Chạm vào biểu tượng hiệu ứng (màn cảm ứng) thì giữ mô tả chừng này giây.
 const TOOLTIP_TAP_SEC: float = 3.0
+const HARD_MODE_CONFIG: String = "res://data/config/boss_hard_mode.tres"
+const DEFAULT_MUSIC: StringName = &"battle_normal"
 
 enum Mode { WATCH, CHOOSE, ULTIMATE }
 
@@ -36,6 +40,10 @@ var _opening: BattleTypes.Opening = BattleTypes.Opening.NORMAL
 var _setup_failed: bool = false
 var _opener_element: int = Element.NONE
 var _tooltip_hold: float = 0.0
+var _phase_overlay: Control
+var _phase_title: Label
+var _phase_subtitle: Label
+var _phase_backdrop: ColorRect
 
 @onready var _field: Node2D = %Field
 @onready var _numbers: DamageNumberPool = %Numbers
@@ -75,6 +83,8 @@ func _ready() -> void:
 	controller.name = "Controller"
 	controller.instant = bool(SceneRouter.payload.get("instant", false))
 	controller.rng.randomize()
+	if bool(SceneRouter.payload.get("hard_mode", false)) and _encounter.is_boss():
+		controller.difficulty = load(HARD_MODE_CONFIG) as DifficultyConfig
 	add_child(controller)
 	var team: Array[CharacterData] = GameState.get_team_data()
 	var team_override: Variant = SceneRouter.payload.get("team_override")
@@ -96,8 +106,12 @@ func _ready() -> void:
 		card.pressed.connect(activate_ultimate)
 		_cards_box.add_child(card)
 		_cards.append(card)
+	_build_phase_overlay()
 	_on_wave_started(controller.wave_index, controller.enemies)
 	_info_label.text = tr(BattleTypes.opening_key(_opening))
+	if controller.difficulty:
+		_wave_label.text += "  ·  " + tr(controller.difficulty.name_key)
+	_play_music(_initial_music_id())
 	_auto_button.button_pressed = bool(UserSettings.get_value("battle", "auto", false))
 	_speed_button.button_pressed = bool(UserSettings.get_value("battle", "speed_x2", false))
 	controller.set_auto(_auto_button.button_pressed)
@@ -121,6 +135,7 @@ func _process(delta: float) -> void:
 
 func _exit_tree() -> void:
 	Engine.time_scale = 1.0
+	AudioManager.stop_music()
 
 
 # --- Hàm công khai (chuột, bàn phím và test cùng gọi) ---
@@ -164,7 +179,7 @@ func select_kind(kind: SkillData.Kind) -> void:
 		return
 	var skill := _acting.get_skill(kind)
 	if not controller.can_use(_acting, skill):
-		_skill_info.text = tr("BATTLE_NO_SKILL_POINTS")
+		_skill_info.text = tr("BATTLE_SKILL_SEALED") if _acting.is_skill_sealed() else tr("BATTLE_NO_SKILL_POINTS")
 		return
 	_selected_kind = kind
 	if not _current_pool().has(_target):
@@ -259,6 +274,9 @@ func _connect_controller() -> void:
 			view.queue_free()
 			_views.erase(unit))
 	controller.battle_ended.connect(_on_battle_ended)
+	controller.enemy_spawned.connect(_on_enemy_spawned)
+	controller.boss_phase_started.connect(_on_boss_phase_started)
+	controller.queue_changed.connect(_refresh_threats)
 
 
 func _on_wave_started(index: int, wave_enemies: Array[BattleUnit]) -> void:
@@ -266,13 +284,70 @@ func _on_wave_started(index: int, wave_enemies: Array[BattleUnit]) -> void:
 		if not unit.is_ally():
 			_views[unit].queue_free()
 			_views.erase(unit)
-	var count := wave_enemies.size()
-	for i in count:
-		var offset := (i - (count - 1) * 0.5) * ENEMY_SPACING
-		var stagger := ENEMY_STAGGER if i % 2 == 1 else -ENEMY_STAGGER * 0.3
-		_add_view(wave_enemies[i], ENEMY_CENTER + Vector2(offset, stagger))
+	for unit in wave_enemies:
+		_add_view(unit, ENEMY_CENTER)
+	_layout_enemies(false)
 	_wave_label.text = tr("BATTLE_WAVE_PROGRESS") % [index + 1, controller.get_wave_count()]
 	_refresh_turn_order()
+
+
+## Xếp quái còn sống theo vị trí (slot); quái mới gọi ra thì cả hàng trượt về chỗ mới.
+func _layout_enemies(animate: bool) -> void:
+	var alive: Array[BattleUnit] = []
+	for unit: BattleUnit in _views.keys():
+		if not unit.is_ally() and unit.is_alive():
+			alive.append(unit)
+	alive.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool: return a.slot < b.slot)
+	# Mỗi quái chiếm bề rộng theo cỡ hình (boss to hơn); quá rộng thì ép lại cho vừa khu bên phải.
+	var widths: Array[float] = []
+	var total := 0.0
+	for unit in alive:
+		var width := maxf((_views[unit] as UnitView).get_radius() * 2.0 + 90.0, ENEMY_SPACING * 0.9)
+		widths.append(width)
+		total += width
+	var squeeze := minf(ENEMY_AREA_WIDTH / maxf(total, 1.0), 1.0)
+	var x := ENEMY_CENTER.x - total * squeeze * 0.5
+	for i in alive.size():
+		var view: UnitView = _views[alive[i]]
+		var stagger := ENEMY_STAGGER if i % 2 == 1 else -ENEMY_STAGGER * 0.3
+		var target := Vector2(x + widths[i] * squeeze * 0.5, ENEMY_CENTER.y + stagger)
+		x += widths[i] * squeeze
+		view.home_position = target
+		if animate:
+			view.create_tween().tween_property(view, "position", target, 0.3).set_ease(Tween.EASE_OUT)
+		else:
+			view.position = target
+
+
+func _on_enemy_spawned(unit: BattleUnit) -> void:
+	_add_view(unit, ENEMY_CENTER + Vector2(0.0, -260.0))
+	_layout_enemies(true)
+	_refresh_turn_order()
+
+
+## Đánh dấu nhân vật phe ta sắp trúng đòn tích tụ; dòng nhắc cách ngắt.
+func _refresh_threats() -> void:
+	if controller == null:
+		return
+	var threatened: Array[BattleUnit] = []
+	for unit in controller.enemies:
+		for target in controller.get_charge_targets(unit):
+			threatened.append(target)
+	for view: UnitView in _views.values():
+		view.threatened = view.unit.is_ally() and threatened.has(view.unit)
+
+
+func _charge_hint(unit: BattleUnit) -> String:
+	var charge := unit.charge
+	if charge == null:
+		return ""
+	var how := ""
+	if charge.action.cancel_on_break:
+		how = tr("BATTLE_HINT_BREAK")
+	elif charge.action.cancel_damage_ratio > 0.0:
+		var left := unit.get_max_hp() * charge.action.cancel_damage_ratio - charge.damage_taken
+		how = tr("BATTLE_HINT_DAMAGE") % maxi(ceili(left), 0)
+	return tr("BATTLE_THREAT_HINT") % [unit.display_name, tr(charge.action.skill.name_key), how]
 
 
 func _on_turn_started(unit: BattleUnit) -> void:
@@ -368,6 +443,26 @@ func _show_events(events: Array[Dictionary]) -> void:
 				_numbers.spawn(tr("BATTLE_REVIVED"), at, Color("6fdc8c"), 34)
 			"advance":
 				_numbers.spawn(tr("BATTLE_ADVANCED") % roundi(event["amount"] * 100.0), at, Color("7fb6ff"), 28)
+			"charge":
+				# Hiện giữa thân để không đè bảng cảnh báo trên đầu.
+				_numbers.spawn(tr("BATTLE_CHARGING") % tr(str(event.get("name_key", ""))), view.global_position,
+						Color("ff6b4d"), 34)
+				_info_label.text = _charge_hint(target)
+			"countdown":
+				_numbers.spawn(tr("BATTLE_COUNTDOWN") % [tr(str(event.get("name_key", ""))), int(event["amount"])], at,
+						Color("ff6b4d"), 30)
+				_info_label.text = _charge_hint(target)
+			"interrupted":
+				_numbers.spawn(tr("BATTLE_INTERRUPTED"), at, Color("ffd34d"), 44)
+				CameraShakeLite.shake(_field, 8.0)
+			"sp_lost":
+				_numbers.spawn(tr("BATTLE_SP_LOST") % int(event["amount"]), at, Color("f2d58a"), 32)
+			"buff_copied":
+				_numbers.spawn(tr("BATTLE_BUFF_COPIED") % tr(str(event.get("name_key", ""))), at, Color("c7b8ff"), 28)
+			"buff_stolen":
+				_numbers.spawn(tr("BATTLE_BUFF_STOLEN") % tr(str(event.get("name_key", ""))), at, Color("c78bff"), 30)
+			"heat":
+				_numbers.spawn(tr("BATTLE_HEAT") % int(event["amount"]), at, Element.color(Element.Type.FIRE).lightened(0.3), 30)
 			"delay":
 				_numbers.spawn(tr("BATTLE_DELAYED") % roundi(event["amount"] * 100.0), at, Color("c78bff"), 28)
 	_refresh_cards()
@@ -569,6 +664,8 @@ func _refresh_buttons() -> void:
 	if _acting:
 		_basic_button.text = "%s  [Q]\n+1 ◆" % tr(_acting.get_skill(SkillData.Kind.BASIC).name_key)
 		_skill_button.text = "%s  [E]\n−1 ◆" % tr(_acting.get_skill(SkillData.Kind.SKILL).name_key)
+		if _acting.is_skill_sealed():
+			_skill_button.text = "%s  [E]\n%s" % [tr(_acting.get_skill(SkillData.Kind.SKILL).name_key), tr("BATTLE_SKILL_SEALED")]
 
 
 func _refresh_cards() -> void:
@@ -600,6 +697,80 @@ func _show_banner(unit: BattleUnit, skill: SkillData) -> void:
 	tween.tween_interval(ULTIMATE_BANNER_SEC - 0.3)
 	tween.tween_property(_banner, "modulate:a", 0.0, 0.2)
 	tween.tween_callback(_banner.hide)
+
+
+# --- Giai đoạn boss, nhạc ---
+
+func _initial_music_id() -> StringName:
+	if _encounter.music_id != &"":
+		return _encounter.music_id
+	var boss := _encounter.get_boss()
+	if boss and boss.music_id != &"":
+		return boss.music_id
+	return DEFAULT_MUSIC
+
+
+func _play_music(id: StringName) -> void:
+	if id != &"" and PlaceholderMusic.has_track(id):
+		AudioManager.play_music(PlaceholderMusic.get_stream(id), 0.6)
+
+
+## Lớp phủ đoạn chuyển giai đoạn: nền màu giai đoạn chớp lên, tên giai đoạn trượt vào. Bấm để bỏ qua.
+func _build_phase_overlay() -> void:
+	_phase_overlay = Control.new()
+	_phase_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_phase_overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	_phase_overlay.hide()
+	add_child(_phase_overlay)
+	_phase_backdrop = ColorRect.new()
+	_phase_backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_phase_backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_phase_overlay.add_child(_phase_backdrop)
+	var box := VBoxContainer.new()
+	box.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	box.alignment = BoxContainer.ALIGNMENT_CENTER
+	box.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_phase_overlay.add_child(box)
+	_phase_subtitle = Label.new()
+	_phase_subtitle.add_theme_font_size_override("font_size", 34)
+	_phase_subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	box.add_child(_phase_subtitle)
+	_phase_title = Label.new()
+	_phase_title.add_theme_font_size_override("font_size", 72)
+	_phase_title.add_theme_color_override("font_outline_color", Color.BLACK)
+	_phase_title.add_theme_constant_override("outline_size", 12)
+	_phase_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	box.add_child(_phase_title)
+	_phase_overlay.gui_input.connect(func(event: InputEvent) -> void:
+		if event is InputEventMouseButton and event.pressed and controller:
+			controller.skip_wait())
+
+
+func _on_boss_phase_started(unit: BattleUnit, index: int, data: BossPhaseData) -> void:
+	_set_watch()
+	_phase_subtitle.text = "%s — %s" % [unit.display_name, tr("BATTLE_PHASE_TITLE") % (index + 1)]
+	_phase_title.text = tr(data.name_key)
+	_phase_title.add_theme_color_override("font_color", data.color.lightened(0.6))
+	_phase_backdrop.color = Color(data.color, 0.0)
+	_phase_overlay.modulate.a = 1.0
+	_phase_overlay.show()
+	var box := _phase_title.get_parent() as Control
+	box.position.x = -size.x * 0.3
+	var duration := BattleController.PHASE_TRANSITION_SEC
+	var tween := create_tween()
+	tween.tween_property(_phase_backdrop, "color:a", 0.8, 0.15)
+	tween.parallel().tween_property(box, "position:x", 0.0, 0.3).set_ease(Tween.EASE_OUT)
+	tween.tween_property(_phase_backdrop, "color:a", 0.55, duration * 0.4)
+	tween.tween_property(_phase_overlay, "modulate:a", 0.0, duration * 0.35)
+	tween.tween_callback(_phase_overlay.hide)
+	CameraShakeLite.shake(_field, 14.0)
+	_info_label.text = "%s: %s" % [unit.display_name, tr(data.name_key)]
+	_play_music(data.music_id)
+	_layout_enemies(true)
+
+
+func is_phase_overlay_visible() -> bool:
+	return _phase_overlay != null and _phase_overlay.visible
 
 
 # --- Nút ---

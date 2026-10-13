@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"en_hex_wind"
+name_key = "STATUS_EN_HEX_WIND"
+desc_key = "STATUS_EN_HEX_WIND_DESC"
+kind = 1
+icon_text = "GM"
+icon_color = Color(0.309804, 0.819608, 0.709804, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 0.9
+dot_mode = 3
+dot_element = 3
+dot_multiplier = 0.45

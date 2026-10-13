@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_ml_strike.tres" id="3_en_ml_strike"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_ml_seal.tres" id="5_en_ml_seal"]
+[ext_resource type="Resource" path="res://data/skills/en_ml_hush.tres" id="6_en_ml_hush"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 413.99999999999994
+atk = 48.0
+def = 50.0
+spd = 105.0
+effect_res = 0.2
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 4140.0
+atk = 384.0
+def = 500.0
+spd = 105.0
+effect_res = 0.2
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_ml_strike")
+weight = 2.0
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_ml_seal")
+weight = 3.0
+target_rule = 2
+cooldown_turns = 2
+
+[sub_resource type="Resource" id="Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_ml_hush")
+weight = 1.0
+first_turn = 2
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"mute_librarian"
+name_key = "ENEMY_MUTE_LIBRARIAN"
+desc_key = "ENEMY_MUTE_LIBRARIAN_DESC"
+kind = 1
+family = &"mute_librarian"
+element = 3
+weaknesses = Array[int]([0, 6, 2])
+max_toughness = 90.0
+placeholder_color = Color(0.32, 0.27, 0.22, 1)
+size_scale = 1.25
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2"), SubResource("Action_3")])

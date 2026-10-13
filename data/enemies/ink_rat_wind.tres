@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_rat_steal.tres" id="3_en_rat_steal"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_rat_shred.tres" id="5_en_rat_shred"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 62.99999999999999
+atk = 24.0
+def = 50.0
+spd = 125.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 630.0
+atk = 192.0
+def = 500.0
+spd = 125.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_rat_steal")
+weight = 3.0
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_rat_shred")
+weight = 1.0
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"ink_rat_wind"
+name_key = "ENEMY_INK_RAT_WIND"
+desc_key = "ENEMY_INK_RAT_WIND_DESC"
+kind = 0
+family = &"ink_rat"
+element = 3
+weaknesses = Array[int]([0, 2])
+max_toughness = 20.0
+placeholder_color = Color(0.2, 0.2, 0.25, 1)
+size_scale = 1.0
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2")])

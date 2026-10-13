@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DifficultyConfig" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/difficulty_config.gd" id="1_cfg"]
+
+[resource]
+script = ExtResource("1_cfg")
+name_key = "DIFFICULTY_HARD"
+level_bonus = 0
+hp_percent = 0.6
+atk_percent = 0.25
+spd_percent = 0.08
+effect_hit_flat = 0.1
+toughness_multiplier = 1.25
+reward_multiplier = 2.0

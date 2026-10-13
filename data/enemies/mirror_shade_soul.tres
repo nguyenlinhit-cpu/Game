@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_mirror_strike.tres" id="3_en_mirror_strike"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_mirror_copy.tres" id="5_en_mirror_copy"]
+[ext_resource type="Resource" path="res://data/skills/en_mirror_flash.tres" id="6_en_mirror_flash"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 90.0
+atk = 30.0
+def = 50.0
+spd = 100.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 900.0
+atk = 240.0
+def = 500.0
+spd = 100.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_mirror_strike")
+weight = 2.0
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_mirror_copy")
+weight = 4.0
+target_rule = 5
+cooldown_turns = 1
+requires_foe_buff = true
+
+[sub_resource type="Resource" id="Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_mirror_flash")
+weight = 1.0
+first_turn = 2
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"mirror_shade_soul"
+name_key = "ENEMY_MIRROR_SHADE_SOUL"
+desc_key = "ENEMY_MIRROR_SHADE_SOUL_DESC"
+kind = 0
+family = &"mirror_shade"
+element = 6
+weaknesses = Array[int]([0, 1, 6])
+max_toughness = 30.0
+placeholder_color = Color(0.6, 0.7, 0.78, 1)
+size_scale = 1.0
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2"), SubResource("Action_3")])

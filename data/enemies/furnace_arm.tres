@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_arm_strike.tres" id="3_en_arm_strike"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_arm_stoke.tres" id="5_en_arm_stoke"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 225.0
+atk = 54.0
+def = 50.0
+spd = 95.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 2250.0
+atk = 432.0
+def = 500.0
+spd = 95.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_arm_strike")
+weight = 2.0
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_arm_stoke")
+weight = 1.2
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"furnace_arm"
+name_key = "ENEMY_FURNACE_ARM"
+desc_key = "ENEMY_FURNACE_ARM_DESC"
+kind = 0
+family = &"furnace_arm"
+element = 0
+weaknesses = Array[int]([1, 5])
+max_toughness = 40.0
+placeholder_color = Color(0.45, 0.4, 0.38, 1)
+size_scale = 0.9
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2")])

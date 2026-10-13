@@ -105,3 +105,20 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 5. **"+20% hệ số" của Kestrel** nghĩa là cộng 20 điểm phần trăm vào hệ số (130% → 150% → 170% → 190%).
 6. **Chia sát thương (Marisol)** áp cho đòn trực tiếp của quái, sau khi tính sát thương, trước khiên của người nhận; phần chuyển sang Marisol vẫn bị khiên của Marisol chặn. Đỡ thay (Aldric) đổi luôn người nhận.
 7. **Tiếng Anh:** 20 nhân vật mới tạm dùng chữ tiếng Việt ở cột `en` (Phase 14 dịch).
+
+## Phase 8
+
+1. **AI quái = danh sách EnemyAction** (kỹ năng + trọng số + điều kiện + hệ số tình huống + cách chọn mục tiêu + báo trước), khai báo trong EnemyData. Tình huống nhân trọng số: máu bản thân < 50%, đã có quái phe mình bị hạ, vừa bị Phá Vỡ kể từ lượt trước, có đồng minh < 60% máu. Hành động `priority` đủ điều kiện thì dùng ngay (vd. Xạ Thủ bắn người Bị Ngắm, Bầy Ong gọi tổ, Quá Nhiệt). Dữ liệu cũ (`skills` + `skill_weights`) vẫn chạy, tự chuyển sang EnemyAction.
+2. **Báo trước đòn mạnh:** mọi Tuyệt kỹ của quái (kind ULTIMATE) phải tích tụ (`charge_turns ≥ 1`), trừ đòn nhắm người đã bị đánh dấu (dấu chính là lời báo). Lượt tích tụ chỉ báo (biểu tượng "!" + tên đòn + số lượt trên đầu quái, vòng đỏ trên người sắp trúng, dòng nhắc cách ngắt). Đếm ngược kiểu lời nguyền (`act_while_charging`) thì vẫn hành động bình thường mỗi lượt. Quái bị Đóng Băng / mất lượt thì đếm ngược không giảm.
+3. **Ngắt đòn:** `cancel_on_break` (Phá Vỡ trong lúc tích tụ) hoặc `cancel_damage_ratio` (tổng sát thương nhận trong lúc tích tụ, tính cả sát thương theo lượt). Kiểm tra sau mỗi hành động và sau sự kiện đầu lượt.
+4. **Giai đoạn boss theo ngưỡng máu, một thanh máu:** máu dừng ở ngưỡng giai đoạn kế tiếp (không bỏ qua giai đoạn bằng một đòn lớn), chuyển giai đoạn ngay sau hành động đó: đổi điểm yếu, khiên tối đa, cộng chỉ số, bộ hành động mới, gỡ debuff, hồi đầy khiên, hủy đòn đang tích tụ, đổi nhạc, đoạn chuyển cảnh 1,6 giây (bấm để bỏ qua). Giai đoạn có ngưỡng âm do EnemyBehavior gọi (hạ hết phân thân); trước đó boss không thể ngã.
+5. **Triệu hồi tính vào giới hạn 5 quái** (đếm quái còn sống, kể cả boss không bị nhắm được). Hết chỗ thì không gọi. Quái gọi ra không gọi tiếp (Ong Thợ là dữ liệu riêng) để tránh gọi vô hạn và vòng tham chiếu dữ liệu.
+6. **Nổ khi chết** chạy như đòn phụ của quái đã ngã (không tốn lượt), sau hành động làm nó ngã. Trận đã thắng thì không nổ nữa.
+7. **Sao chép / hút buff** chỉ lấy buff chỉ số hoặc hồi máu theo lượt; không lấy khiên, Khiêu Khích, bộ đếm dài hạn của Đặc tính (≥ 10 lượt). Buff lấy được giữ thêm 1 lượt (gắn trong lượt của chính quái).
+8. **Phong Ấn** chỉ khóa Chiến kỹ; Tự Động tự chuyển sang Đánh thường. Nút Chiến kỹ ghi "bị Phong Ấn".
+9. **Mức Khó** (`data/config/boss_hard_mode.tres`): máu +60%, Tấn Công +25%, Tốc Độ +8%, Chính Xác Hiệu Ứng +10%, khiên ×1,25; chỉ áp cho trận boss (payload `hard_mode`). Hệ số thưởng ×2 ghi sẵn cho Phase 10.
+10. **Chỉ số quái** = đường cong "quái chuẩn" (Máu 90→900, Tấn Công 30→240 từ cấp 1→80) × hệ số từng loại. Cấp khuyến nghị: boss Chương 1/2/3 = cấp boss + 2 (10/18/26), trùm cuối 30. Nhân vật chưa có thưởng đột phá (Phase 9) nên số liệu sẽ cân lại ở Phase 14.
+11. **Lõi Lò:** Quá Nhiệt dùng khi có ≥ 4 tầng Nhiệt và báo trước 1 lượt; lượt sau tích lên 5 thì nổ. Phá Vỡ lúc đó vừa hủy đòn vừa trừ 3 tầng. Tay máy là mục tiêu phụ (Nạp Nhiệt +1 tầng); sang giai đoạn 2 thì dựng lại tay máy đã hỏng.
+12. **Kẻ Nuốt Mảnh Hồn:** GĐ2 (≤ 66%) tách 3 phân thân, mỗi phân thân ngã làm bản thể mất 8% máu tối đa; hạ hết thì GĐ3. GĐ3 xóa 1 Điểm Chiến Kỹ đầu mỗi lượt của boss; Nuốt Hồn đếm ngược 2 lượt, ngắt bằng 10% máu tối đa.
+13. **Nhạc tạm** sinh bằng code (`systems/placeholder_music.gd`, vòng lặp sóng vuông/tam giác/răng cưa), mỗi boss và mỗi giai đoạn một bài. AudioManager phát qua bus Music; Phase 14 thay file thật theo id.
+14. **Biến thể quái thường** có id `<họ>_<nguyên tố>`; quái cũ của Phase 3–7 (`warp_sprout`, `wandering_shade`, `rusted_knight`, bù nhìn, Quái Thử Sức) giữ nguyên làm dữ liệu test.

@@ -4,6 +4,8 @@ extends Node2D
 ## Quái có thanh máu, thanh Khiên Điểm Yếu (trắng; xám + "PHÁ VỠ" khi vỡ) và hàng biểu tượng điểm yếu.
 ## Mọi đơn vị có hàng biểu tượng hiệu ứng (rê chuột/chạm để xem mô tả).
 ## Hiện dấu mục tiêu (chính / bên cạnh), vòng sáng khi tới lượt, nháy khi trúng đòn, mờ dần khi ngã.
+## Quái đang tích tụ đòn: biểu tượng cảnh báo "!" + số lượt còn lại; phe ta sắp trúng đòn đó: dấu cảnh báo đỏ.
+## Boss/tinh anh vẽ to hơn (EnemyData.size_scale), boss hiện giai đoạn; quái không bị nhắm được thì mờ đi.
 
 const ALLY_RADIUS: float = 52.0
 const ENEMY_RADIUS: float = 56.0
@@ -19,6 +21,8 @@ const STATUS_ICON_SIZE: float = 30.0
 const STATUS_ICON_GAP: float = 4.0
 const BUFF_BORDER := Color("6fdc8c")
 const DEBUFF_BORDER := Color("ff6b6b")
+const WARNING_COLOR := Color("ff4d4d")
+const WARNING_GLOW := Color(1.0, 0.85, 0.3)
 
 enum Marker { NONE, MAIN, ADJACENT }
 
@@ -33,6 +37,8 @@ var is_acting: bool = false:
 	set(value):
 		is_acting = value
 		queue_redraw()
+## Phe ta: sắp trúng một đòn đang tích tụ của quái.
+var threatened: bool = false
 
 var _time: float = 0.0
 var _hit_flash: float = 0.0
@@ -50,12 +56,12 @@ func setup(battle_unit: BattleUnit, at: Vector2) -> void:
 
 
 func get_radius() -> float:
-	return ALLY_RADIUS if unit.is_ally() else ENEMY_RADIUS
+	return ALLY_RADIUS if unit.is_ally() else ENEMY_RADIUS * unit.size_scale
 
 
 ## Điểm có nằm trên hình này không (để bấm chọn mục tiêu).
 func contains_point(global_point: Vector2) -> bool:
-	return unit.is_alive() and global_point.distance_to(global_position) <= get_radius() + 24.0
+	return unit.is_targetable() and global_point.distance_to(global_position) <= get_radius() + 24.0
 
 
 ## Bị đánh: nháy trắng, giật lùi về phía sau.
@@ -140,6 +146,8 @@ func _draw() -> void:
 		draw_circle(Vector2.ZERO, radius, Color(0.0, 0.0, 0.0, 0.35))
 		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 		var bob := sin(_time * 3.0 + unit.slot) * 4.0
+		if unit.untargetable:
+			body = Color(body, 0.35)
 		draw_circle(Vector2(0.0, bob), radius, body)
 		draw_arc(Vector2(0.0, bob), radius, 0.0, TAU, 40, unit.accent_color, 4.0, true)
 		draw_circle(Vector2(-radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
@@ -147,26 +155,43 @@ func _draw() -> void:
 		_draw_enemy_hp(radius)
 		_draw_toughness(radius)
 		_draw_weaknesses(radius)
+		_draw_charge(radius)
 	_draw_statuses()
 	_draw_marker(radius)
+	if threatened and unit.is_alive():
+		_draw_threat(radius)
 
 
 func _draw_enemy_hp(radius: float) -> void:
 	var font := ThemeDB.fallback_font
 	var title := "%s  Lv%d" % [unit.display_name, unit.level]
+	if unit.enemy and not unit.enemy.phases.is_empty():
+		title += "  [%s]" % (tr("BATTLE_PHASE_TITLE") % (unit.phase_index + 1))
 	var width := font.get_string_size(title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22).x
 	draw_string_outline(font, Vector2(-width * 0.5, radius + 34.0), title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22, 6, Color.BLACK)
 	draw_string(font, Vector2(-width * 0.5, radius + 34.0), title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color.WHITE)
-	var bar := Rect2(Vector2(-HP_BAR_SIZE.x * 0.5, radius + 44.0), HP_BAR_SIZE)
+	var bar_size := HP_BAR_SIZE * Vector2(maxf(unit.size_scale, 1.0), 1.0)
+	var bar := Rect2(Vector2(-bar_size.x * 0.5, radius + 44.0), bar_size)
 	draw_rect(bar, HP_BACK)
 	draw_rect(Rect2(bar.position, Vector2(bar.size.x * unit.get_hp_ratio(), bar.size.y)), HP_FILL)
+	# Vạch ngưỡng giai đoạn kế tiếp của boss.
+	var next := unit.get_next_phase()
+	if next and next.hp_threshold > 0.0:
+		var x := bar.position.x + bar.size.x * next.hp_threshold
+		draw_line(Vector2(x, bar.position.y - 3.0), Vector2(x, bar.end.y + 3.0), Color("ffcf4d"), 2.0)
 	draw_rect(bar, Color(1, 1, 1, 0.5), false, 1.5)
+	if unit.untargetable:
+		var label := tr("BATTLE_UNTARGETABLE")
+		var w := font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, 18).x
+		draw_string_outline(font, Vector2(-w * 0.5, -radius - 14.0), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, 5, Color.BLACK)
+		draw_string(font, Vector2(-w * 0.5, -radius - 14.0), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("c7b8ff"))
 
 
 func _draw_toughness(radius: float) -> void:
 	if not unit.has_toughness():
 		return
-	var bar := Rect2(Vector2(-HP_BAR_SIZE.x * 0.5, radius + 60.0), Vector2(HP_BAR_SIZE.x, 8.0))
+	var width := HP_BAR_SIZE.x * maxf(unit.size_scale, 1.0)
+	var bar := Rect2(Vector2(-width * 0.5, radius + 60.0), Vector2(width, 8.0))
 	draw_rect(bar, HP_BACK)
 	if unit.is_broken:
 		draw_rect(bar, TOUGHNESS_BROKEN)
@@ -205,6 +230,33 @@ func _draw_statuses() -> void:
 		if instance.stacks > 1:
 			draw_string(font, rect.end + Vector2(-10.0, -1.0), str(instance.stacks),
 					HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color.WHITE)
+
+
+## Bảng cảnh báo trên đầu quái đang tích tụ đòn: "!" + tên đòn + số lượt còn lại.
+func _draw_charge(radius: float) -> void:
+	if unit.charge == null or not unit.is_alive():
+		return
+	var pulse := 0.5 + 0.5 * sin(_time * 8.0)
+	var font := ThemeDB.fallback_font
+	var label := "%s  %d" % [tr(unit.charge.action.skill.name_key), unit.charge.turns_left]
+	var text_width := font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, 22).x
+	var box := Rect2(Vector2(-(text_width + 52.0) * 0.5, -radius - 74.0), Vector2(text_width + 52.0, 38.0))
+	draw_rect(box, Color(0.12, 0.02, 0.02, 0.85))
+	draw_rect(box, WARNING_GLOW.lerp(WARNING_COLOR, pulse), false, 3.0)
+	var icon := box.position + Vector2(20.0, 19.0)
+	draw_circle(icon, 14.0 + pulse * 2.0, WARNING_GLOW.lerp(WARNING_COLOR, pulse))
+	draw_string(font, icon + Vector2(-4.5, 9.0), "!", HORIZONTAL_ALIGNMENT_LEFT, -1, 26, Color.BLACK)
+	draw_string(font, box.position + Vector2(40.0, 27.0), label, HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color.WHITE)
+
+
+## Dấu cảnh báo trên nhân vật phe ta sắp trúng đòn tích tụ.
+func _draw_threat(radius: float) -> void:
+	var pulse := 0.5 + 0.5 * sin(_time * 8.0)
+	draw_arc(Vector2.ZERO, radius + 14.0 + pulse * 4.0, 0.0, TAU, 40, Color(WARNING_COLOR, 0.5 + 0.5 * pulse), 4.0, true)
+	var font := ThemeDB.fallback_font
+	var at := Vector2(-radius - 26.0, -radius + 4.0)
+	draw_circle(at, 15.0, WARNING_COLOR)
+	draw_string(font, at + Vector2(-4.5, 9.0), "!", HORIZONTAL_ALIGNMENT_LEFT, -1, 26, Color.WHITE)
 
 
 func _draw_marker(radius: float) -> void:

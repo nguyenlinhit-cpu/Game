@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_warden_books.tres" id="3_en_warden_books"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_warden_strike.tres" id="5_en_warden_strike"]
+[ext_resource type="Resource" path="res://data/skills/en_warden_pages.tres" id="6_en_warden_pages"]
+[ext_resource type="Resource" path="res://data/skills/en_warden_curse.tres" id="7_en_warden_curse"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="8_stat_modifier_data"]
+[ext_resource type="Script" path="res://systems/resources/boss_phase_data.gd" id="9_boss_phase_data"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 1980.0
+atk = 66.0
+def = 50.0
+spd = 105.0
+effect_res = 0.3
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 19800.0
+atk = 528.0
+def = 500.0
+spd = 105.0
+effect_res = 0.3
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_warden_books")
+weight = 3.0
+cooldown_turns = 3
+needs_free_slot = true
+priority_on_phase_start = true
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_warden_strike")
+weight = 3.0
+
+[sub_resource type="Resource" id="Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_warden_pages")
+weight = 1.5
+first_turn = 2
+ally_fallen_weight_mult = 1.5
+
+[sub_resource type="Resource" id="Phase2_Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("7_en_warden_curse")
+weight = 1.0
+cooldown_turns = 6
+priority_on_phase_start = true
+charge_turns = 3
+act_while_charging = true
+cancel_on_break = true
+
+[sub_resource type="Resource" id="Phase2_Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_warden_books")
+weight = 2.0
+cooldown_turns = 3
+needs_free_slot = true
+
+[sub_resource type="Resource" id="Phase2_Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_warden_strike")
+weight = 3.0
+
+[sub_resource type="Resource" id="Phase2_Action_4"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_warden_pages")
+weight = 1.5
+
+[sub_resource type="Resource" id="Phase2_Mod_0"]
+script = ExtResource("8_stat_modifier_data")
+stat = 1
+flat = 0.0
+percent = 0.15
+
+[sub_resource type="Resource" id="Phase_2"]
+script = ExtResource("9_boss_phase_data")
+name_key = "BOSS_PHASE_LIBRARY_WARDEN_2"
+hp_threshold = 0.5
+weaknesses = Array[int]([3, 6])
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Phase2_Action_1"), SubResource("Phase2_Action_2"), SubResource("Phase2_Action_3"), SubResource("Phase2_Action_4")])
+stat_modifiers = Array[ExtResource("8_stat_modifier_data")]([SubResource("Phase2_Mod_0")])
+color = Color(0.3, 0.15, 0.45, 1)
+music_id = &"boss_library_2"
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"library_warden"
+name_key = "ENEMY_LIBRARY_WARDEN"
+desc_key = "ENEMY_LIBRARY_WARDEN_DESC"
+kind = 2
+family = &"library_warden"
+element = 3
+weaknesses = Array[int]([0, 6])
+max_toughness = 160.0
+placeholder_color = Color(0.36, 0.28, 0.5, 1)
+size_scale = 1.6
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2"), SubResource("Action_3")])
+phases = Array[ExtResource("9_boss_phase_data")]([SubResource("Phase_2")])
+music_id = &"boss_library"

@@ -55,6 +55,46 @@ var summon_turns_left: int = 0
 ## Chỗ để Đặc tính/Tinh Mệnh ghi tham số riêng (vd. "hp_cost_reduction", "revive_uses_bonus").
 var custom: Dictionary = {}
 
+# --- Quái (Phase 8) ---
+## Bộ hành động AI hiện tại (đổi theo giai đoạn boss).
+var actions: Array[EnemyAction] = []
+## Giai đoạn boss hiện tại (0 = giai đoạn 1).
+var phase_index: int = 0
+## Máu không xuống dưới mức này (ngưỡng giai đoạn kế tiếp); 0 = không chặn.
+var hp_floor: float = 0.0
+## EnemyBehavior yêu cầu sang giai đoạn này (−1 = không).
+var forced_phase: int = -1
+## Không chọn làm mục tiêu được, đòn toàn bộ cũng bỏ qua (vd. boss khi phân thân còn sống).
+var untargetable: bool = false
+## Đòn đang tích tụ / đếm ngược (null = không).
+var charge: Charge
+## Số lượt của bản thân: cả trận và trong giai đoạn hiện tại.
+var turns_taken: int = 0
+var turns_in_phase: int = 0
+## Lần dùng và lượt sớm nhất được dùng lại của từng EnemyAction.
+var action_uses: Dictionary = {}
+var action_ready_turn: Dictionary = {}
+## Bị Phá Vỡ kể từ cuối lượt trước của bản thân (AI dùng).
+var broken_since_turn: bool = false
+## Quái được gọi ra giữa trận (triệu hồi).
+var summoned: bool = false
+var size_scale: float = 1.0
+
+
+## Đòn tích tụ của quái: báo trước, ra đòn sau `turns_left` lượt của bản thân.
+class Charge:
+	extends RefCounted
+	var action: EnemyAction
+	var target: BattleUnit
+	var turns_left: int = 1
+	var damage_taken: float = 0.0
+	var broken: bool = false
+
+	func _init(p_action: EnemyAction, p_target: BattleUnit) -> void:
+		action = p_action
+		target = p_target
+		turns_left = p_action.charge_turns
+
 
 static func create_ally(data: CharacterData, unit_level: int, unit_slot: int,
 		skin_id: StringName = &"", name_override: String = "") -> BattleUnit:
@@ -126,6 +166,9 @@ static func create_enemy(data: EnemyData, unit_level: int, unit_slot: int, unit_
 	unit.weaknesses = data.weaknesses.duplicate()
 	unit.max_toughness = data.max_toughness
 	unit.toughness = data.max_toughness
+	unit.actions = data.get_actions()
+	unit.size_scale = data.size_scale
+	unit.update_hp_floor()
 	return unit
 
 
@@ -135,6 +178,11 @@ func is_ally() -> bool:
 
 func is_alive() -> bool:
 	return hp > 0.0
+
+
+## Còn sống và chọn làm mục tiêu được.
+func is_targetable() -> bool:
+	return hp > 0.0 and not untargetable
 
 
 func get_max_hp() -> float:
@@ -220,10 +268,17 @@ func revive(ratio: float) -> void:
 
 
 ## Trừ máu thẳng (bỏ qua khiên), trả về lượng máu thực mất.
+## Boss không xuống dưới ngưỡng giai đoạn kế tiếp (hp_floor) cho tới khi chuyển giai đoạn.
 func take_damage(amount: float) -> float:
 	if not is_alive() or amount <= 0.0:
 		return 0.0
 	var dealt := minf(amount, hp)
+	if hp_floor > 0.0:
+		dealt = minf(dealt, maxf(hp - hp_floor, 0.0))
+	if charge:
+		charge.damage_taken += dealt
+	if dealt <= 0.0:
+		return 0.0
 	hp -= dealt
 	hp_changed.emit(self)
 	if hp <= 0.0:
@@ -293,6 +348,62 @@ func get_status(status_id: StringName) -> StatusEffectInstance:
 
 func has_status(status_id: StringName) -> bool:
 	return get_status(status_id) != null
+
+
+func is_skill_sealed() -> bool:
+	for instance in status_effects:
+		if instance.data.seal_skill:
+			return true
+	return false
+
+
+# --- Quái: giai đoạn, hành động ---
+
+## Giai đoạn kế tiếp (null nếu đang ở giai đoạn cuối).
+func get_next_phase() -> BossPhaseData:
+	if enemy == null or phase_index >= enemy.phases.size():
+		return null
+	return enemy.phases[phase_index]
+
+
+## Đặt sàn máu theo ngưỡng giai đoạn kế tiếp (giai đoạn do script gọi: không cho ngã trước khi tới).
+func update_hp_floor() -> void:
+	var next := get_next_phase()
+	if next == null:
+		hp_floor = 0.0
+	elif next.hp_threshold >= 0.0:
+		hp_floor = get_max_hp() * next.hp_threshold
+	else:
+		hp_floor = 1.0
+
+
+## Đã chạm ngưỡng giai đoạn kế tiếp hoặc được script yêu cầu.
+func has_pending_phase() -> bool:
+	var next := get_next_phase()
+	if next == null or not is_alive():
+		return false
+	if forced_phase > phase_index:
+		return true
+	return next.hp_threshold >= 0.0 and hp <= get_max_hp() * next.hp_threshold + 0.5
+
+
+func note_action_used(action: EnemyAction) -> void:
+	action_uses[action] = int(action_uses.get(action, 0)) + 1
+	action_ready_turn[action] = turns_taken + action.cooldown_turns + 1
+
+
+func is_action_ready(action: EnemyAction) -> bool:
+	if action.max_uses > 0 and int(action_uses.get(action, 0)) >= action.max_uses:
+		return false
+	return turns_taken >= int(action_ready_turn.get(action, 0))
+
+
+func count_buffs() -> int:
+	var count := 0
+	for instance in status_effects:
+		if instance.data.kind == StatusEffectData.Kind.BUFF:
+			count += 1
+	return count
 
 
 func set_energy(value: float) -> void:

@@ -39,6 +39,9 @@ static func trigger_break(battle: BattleController, attacker: BattleUnit, target
 	var events: Array[Dictionary] = []
 	var cfg := config()
 	target.is_broken = true
+	target.broken_since_turn = true
+	if target.charge:
+		target.charge.broken = true
 	target.toughness_changed.emit(target)
 	var base := break_base(attacker)
 	var raw := base * cfg.element_multiplier(element) * cfg.toughness_factor(target.max_toughness)

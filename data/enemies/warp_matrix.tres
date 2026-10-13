@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_matrix_spawn.tres" id="3_en_matrix_spawn"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_matrix_lash.tres" id="5_en_matrix_lash"]
+[ext_resource type="Resource" path="res://data/skills/en_matrix_spew.tres" id="6_en_matrix_spew"]
+[ext_resource type="Script" path="res://data/enemies/scripts/warp_matrix_behavior.gd" id="7_warp_matrix_behavior"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 450.0
+atk = 45.0
+def = 50.0
+spd = 90.0
+effect_res = 0.2
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 4500.0
+atk = 360.0
+def = 500.0
+spd = 90.0
+effect_res = 0.2
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_matrix_spawn")
+weight = 1.0
+cooldown_turns = 1
+needs_free_slot = true
+priority = true
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_matrix_lash")
+weight = 2.0
+
+[sub_resource type="Resource" id="Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_matrix_spew")
+weight = 1.0
+ally_fallen_weight_mult = 1.5
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"warp_matrix"
+name_key = "ENEMY_WARP_MATRIX"
+desc_key = "ENEMY_WARP_MATRIX_DESC"
+kind = 1
+family = &"warp_matrix"
+element = 4
+weaknesses = Array[int]([0, 5, 1])
+max_toughness = 60.0
+placeholder_color = Color(0.45, 0.12, 0.3, 1)
+size_scale = 1.3
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2"), SubResource("Action_3")])
+behavior_script = ExtResource("7_warp_matrix_behavior")
+behavior_params = {
+"base_toughness": 60.0,
+"toughness_per_sprout": 30.0,
+"sprout_family": &"warp_sprout"
+}

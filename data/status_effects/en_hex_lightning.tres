@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"en_hex_lightning"
+name_key = "STATUS_EN_HEX_LIGHTNING"
+desc_key = "STATUS_EN_HEX_LIGHTNING_DESC"
+kind = 1
+icon_text = "ĐM"
+icon_color = Color(0.65098, 0.356863, 0.94902, 1)
+duration_turns = 2
+max_stacks = 1
+base_chance = 0.9
+dot_mode = 3
+dot_element = 2
+dot_multiplier = 0.45

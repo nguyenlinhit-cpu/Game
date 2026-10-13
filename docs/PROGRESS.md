@@ -10,8 +10,9 @@
 | 4. Lõi trận đánh theo lượt | Xong |
 | 5. Nguyên tố, khiên, phá vỡ, hiệu ứng | Xong |
 | 6. Hệ thống kỹ năng, nhân vật chính, 4 nhân vật miễn phí | Xong |
-| 7. 20 nhân vật còn lại | Xong (bước A đã duyệt, bước B xong), chờ duyệt |
-| 8–14 | Chưa làm |
+| 7. 20 nhân vật còn lại | Xong |
+| 8. Quái thường, tinh anh, boss | Xong, chờ duyệt |
+| 9–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -260,6 +261,51 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 6.
 - Sở hữu nhân vật qua gacha (Phase 11); hiện mọi nhân vật dùng được trong phòng thử, đội trên map đổi bằng phòng thử hoặc "Đổi đội thử".
 - Bí Kỹ Túi Thuốc chưa hồi thật (Phase 9 giữ máu giữa các trận). Tiếng Vọng Về đang về phòng nghỉ gần nhất; dịch chuyển nhanh giữa các phòng nghỉ làm ở Phase 12.
 - Cân bằng lại cùng boss ở Phase 8 và lần cuối ở Phase 14.
+
+## Phase 8 – Quái thường, tinh anh và boss
+
+### Đã làm
+
+- **AI quái:** `EnemyAction` (kỹ năng, trọng số, điều kiện máu/hồi chiêu/số lần/số quái cùng họ/chỗ trống/hiệu ứng trên phe ta/tầng hiệu ứng của bản thân, ưu tiên, trọng số theo tình huống, cách chọn mục tiêu). `EnemyAI` viết lại. Đòn mạnh báo trước 1 lượt (tích tụ) hoặc đếm ngược nhiều lượt; ngắt bằng phá khiên hoặc đủ sát thương.
+- **8 quái thường × 2–3 biến thể nguyên tố** (19 biến thể + 2 Ong Thợ): Mầm Ma Biến (nổ khi chết), Hồn Ảnh (khiên cho đồng minh), Giáp Sĩ Rỉ Sét (khiên dày, Thủ Thế), Xạ Thủ Hư Không (Ngắm → bắn xuyên ×2), Pháp Sư Méo (Bỏng/Độc/Gió Cắt), Chuột Mực Sách (trộm Điểm Chiến Kỹ), Bầy Ong Độc (còn 1 thì gọi tổ), Bóng Gương (sao chép buff).
+- **3 tinh anh:** Kỵ Sĩ Vỡ Vụn (tích tụ rồi lao, phá khiên thì hủy), Mẫu Thể Ma Biến (cứ 2 lượt gọi Mầm, khiên theo số Mầm), Thủ Thư Câm (Phong Ấn Chiến kỹ 2 lượt).
+- **4 boss nhiều giai đoạn:** Người Gác Thư Viện (Sách Bay; ≤ 50% đọc Lời Nguyền đếm ngược 3 lượt → cả đội bị Phong Ấn), Cự Thú Kho Chứa (Đông Cứng; ≤ 50% Băng Vỡ: tăng tốc, đánh lan), Lõi Lò Biến Dạng (tích Nhiệt, Quá Nhiệt nổ cả đội, phá khiên −3 tầng, 2 tay máy), Kẻ Nuốt Mảnh Hồn (hút buff; ≤ 66% tách 3 phân thân; GĐ3 xóa Điểm Chiến Kỹ, Nuốt Hồn ngắt bằng sát thương). Mỗi boss đổi điểm yếu giữa giai đoạn, luôn có điểm yếu thuộc đội miễn phí, nhạc riêng từng giai đoạn (nhạc tạm sinh bằng code), đoạn chuyển giai đoạn 2D.
+- **Lõi trận:** sàn máu theo giai đoạn, `enter_boss_phase`, quái gọi thêm giữa đợt (`spawn_enemy`, giới hạn 5), kỹ năng khi chết, quái không bị nhắm được, `EnemyBehavior` (script cơ chế riêng, số liệu trong `behavior_params`), hiệu ứng ghép mới: gọi quái, sao chép/hút buff, gỡ hiệu ứng; Phong Ấn (`seal_skill`); trộm Điểm Chiến Kỹ.
+- **Mức Khó cho boss** (`DifficultyConfig`), bật bằng payload `hard_mode` / ô "Boss khó" trong phòng thử.
+- **35 EncounterData theo khu** (`data/encounters/<khu>_*.tres`, có `zone`, `kind`, `recommended_level`): Thư Viện cấp 1–8, Kho Băng 8–16, Lò 16–24, Đỉnh Tháp 24–30; mỗi khu 6–7 trận thường, 1–3 tinh anh, 1 boss. Bảng tổng hợp ở `docs/ENEMIES.md`.
+- **Giao diện trận:** bảng cảnh báo "!" + tên đòn + số lượt trên quái đang tích tụ, vòng đỏ trên người sắp trúng, dòng nhắc cách ngắt; boss/tinh anh vẽ to hơn, thanh máu có vạch ngưỡng giai đoạn, nhãn giai đoạn; quái không bị nhắm được thì mờ; xếp quái theo bề rộng khi có quái mới; số bay cho trộm điểm, sao chép/hút buff, Nhiệt, ngắt đòn.
+- **Phòng thử:** danh sách trận ghi loại (★ boss, ◆ tinh anh), cấp quái và cấp khuyến nghị; chọn đội 4 người + trận + cấp + Tinh Mệnh + Boss khó.
+- **Mô phỏng boss** `tools/balance/boss_report.tscn` → `docs/BOSS_REPORT.md` (đội miễn phí, cấp khuyến nghị, Tự Động, 40 seed; thêm bảng trận thường/tinh anh). Có chế độ in diễn biến một trận (`--trace`).
+- Test `tests/phase08_test.tscn`: 72/72 đạt. Test Phase 1–7 vẫn đạt.
+
+### Kết quả mô phỏng boss (Tự Động, Tinh Mệnh 0)
+
+| Boss | Cấp đội | Đội | Thắng | Lượt ta | Máu còn | Khó: thắng |
+| --- | --- | --- | --- | --- | --- | --- |
+| Người Gác Thư Viện | 10 | Lữ khách, Kiri, Garren, Nyx | 100% | 41 | 57% | 52% |
+| Cự Thú Kho Chứa | 18 | Lữ khách, Kiri, Garren, Nyx | 100% | 43 | 55% | 30% |
+| Lõi Lò Biến Dạng | 26 | Lữ khách, Mira, Kiri, Garren | 98% | 53 | 83% | 57% |
+| Kẻ Nuốt Mảnh Hồn | 30 | Lữ khách, Mira, Kiri, Nyx | 95% | 63 | 74% | 0% |
+
+### File chính
+
+- `systems/resources/{enemy_action,boss_phase_data,difficulty_config}.gd`, sửa `enemy_data.gd`, `encounter_data.gd`, `status_effect_data.gd`
+- `systems/enemy_ai.gd`, `systems/placeholder_music.gd`, `systems/skill_effects/{summon_enemy,buff_transfer,remove_status}_effect.gd`, sửa `skill_point_effect.gd`, `apply_status_effect.gd`, `auto_battle.gd`, `break_system.gd`
+- `scenes/battle/enemy_behavior.gd`, sửa `battle_controller.gd`, `battle_unit.gd`, `skill_executor.gd`, `battle_scene.gd`, `ui/unit_view.gd`, `sandbox/battle_sandbox.gd`; `autoload/audio_manager.gd` (phát nhạc)
+- `data/enemies/*.tres` (33 mới), `data/enemies/scripts/*_behavior.gd`, `data/skills/en_*.tres`, `data/status_effects/en_*.tres`, `data/encounters/{library,vault,furnace,tower}_*.tres`, `data/config/boss_hard_mode.tres`
+- `tools/data_builder/build_enemies.py` (sinh toàn bộ dữ liệu quái + `localization/enemies.csv` + `docs/ENEMIES.md`), `tools/balance/boss_report.*`
+- `docs/ENEMIES.md`, `docs/BOSS_REPORT.md`, `tests/phase08_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 8.
+
+### Việc còn nợ
+
+- Phần thưởng mức Khó, rơi đồ theo trận (Phase 10). Đặt EncounterData lên map, quái hồi lại khi rời khu, cảnh mở boss (Phase 12).
+- Trùm cuối mức Khó: đội miễn phí Tinh Mệnh 0 cấp 30 chưa thắng được (0%) – dành cho đội đã nâng kỹ năng/Tinh Mệnh (Phase 9); cân lại ở Phase 14.
+- Trận thường khá nhẹ (đội còn ~90% máu) vì máu chưa giữ giữa các trận; cân lại khi Phase 9 giữ máu.
+- Hình quái/boss thật, hiệu ứng đòn (Phase 13); nhạc thật (Phase 14). Chữ tiếng Anh của quái đã có, nhưng mô tả kỹ năng quái chưa hiện trong giao diện (chỉ hiện tên đòn và dòng nhắc).
 
 ## Để sau
 

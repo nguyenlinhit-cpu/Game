@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_core_meltdown.tres" id="3_en_core_meltdown"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_core_flare.tres" id="5_en_core_flare"]
+[ext_resource type="Resource" path="res://data/skills/en_core_wave.tres" id="6_en_core_wave"]
+[ext_resource type="Script" path="res://data/enemies/scripts/warped_core_behavior.gd" id="7_warped_core_behavior"]
+[ext_resource type="Resource" path="res://data/status_effects/en_heat.tres" id="8_en_heat"]
+[ext_resource type="Resource" path="res://data/enemies/furnace_arm.tres" id="9_furnace_arm"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="10_stat_modifier_data"]
+[ext_resource type="Script" path="res://systems/resources/boss_phase_data.gd" id="11_boss_phase_data"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 1620.0
+atk = 96.0
+def = 50.0
+spd = 95.0
+effect_res = 0.3
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 16200.0
+atk = 768.0
+def = 500.0
+spd = 95.0
+effect_res = 0.3
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_core_meltdown")
+weight = 1.0
+self_status = &"en_heat"
+self_status_min_stacks = 4
+priority = true
+charge_turns = 1
+cancel_on_break = true
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_core_flare")
+weight = 3.0
+
+[sub_resource type="Resource" id="Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_core_wave")
+weight = 1.5
+first_turn = 2
+
+[sub_resource type="Resource" id="Phase2_Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_core_meltdown")
+weight = 1.0
+self_status = &"en_heat"
+self_status_min_stacks = 4
+priority = true
+charge_turns = 1
+cancel_on_break = true
+
+[sub_resource type="Resource" id="Phase2_Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_core_flare")
+weight = 3.0
+
+[sub_resource type="Resource" id="Phase2_Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_core_wave")
+weight = 1.5
+first_turn = 2
+
+[sub_resource type="Resource" id="Phase2_Mod_0"]
+script = ExtResource("10_stat_modifier_data")
+stat = 1
+flat = 0.0
+percent = 0.15
+
+[sub_resource type="Resource" id="Phase_2"]
+script = ExtResource("11_boss_phase_data")
+name_key = "BOSS_PHASE_WARPED_CORE_2"
+hp_threshold = 0.5
+weaknesses = Array[int]([5, 6])
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Phase2_Action_1"), SubResource("Phase2_Action_2"), SubResource("Phase2_Action_3")])
+stat_modifiers = Array[ExtResource("10_stat_modifier_data")]([SubResource("Phase2_Mod_0")])
+color = Color(0.8, 0.2, 0.05, 1)
+music_id = &"boss_furnace_2"
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"warped_core"
+name_key = "ENEMY_WARPED_CORE"
+desc_key = "ENEMY_WARPED_CORE_DESC"
+kind = 2
+family = &"warped_core"
+element = 0
+weaknesses = Array[int]([1, 6])
+max_toughness = 170.0
+placeholder_color = Color(0.75, 0.3, 0.12, 1)
+size_scale = 1.7
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2"), SubResource("Action_3")])
+behavior_script = ExtResource("7_warped_core_behavior")
+behavior_params = {
+"heat_status": ExtResource("8_en_heat"),
+"heat_per_turn": 1,
+"break_heat_loss": 3,
+"stoke_skill_id": &"en_arm_stoke",
+"arm_enemy": ExtResource("9_furnace_arm"),
+"arm_count": 2
+}
+phases = Array[ExtResource("11_boss_phase_data")]([SubResource("Phase_2")])
+music_id = &"boss_furnace"

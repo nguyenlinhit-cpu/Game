@@ -13,7 +13,7 @@ const ULTIMATE_HEAL_THRESHOLD: float = 0.75
 static func choose_action(unit: BattleUnit, battle: BattleController) -> Dictionary:
 	var skill := unit.get_skill(SkillData.Kind.SKILL)
 	var basic := unit.get_skill(SkillData.Kind.BASIC)
-	if skill and battle.skill_points >= 1:
+	if skill and battle.skill_points >= 1 and battle.can_use(unit, skill):
 		if skill.heals() and _lowest_ally(battle, unit, skill).get_hp_ratio() < HEAL_THRESHOLD:
 			return {"skill": skill, "target": _lowest_ally(battle, unit, skill)}
 		if skill.gives_shield() and battle.skill_points >= 2 and _needs_shield(battle, unit):

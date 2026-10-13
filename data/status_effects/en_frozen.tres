@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/status_effect_data.gd" id="1_status_effect_data"]
+
+[resource]
+script = ExtResource("1_status_effect_data")
+id = &"en_frozen"
+name_key = "STATUS_EN_FROZEN"
+desc_key = "STATUS_EN_FROZEN_DESC"
+kind = 1
+icon_text = "ĐC"
+icon_color = Color(0.6, 0.85, 1, 1)
+duration_turns = 1
+max_stacks = 1
+base_chance = 0.8
+skip_turn = true

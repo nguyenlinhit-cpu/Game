@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="EncounterData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/encounter_data.gd" id="1_encounter_data"]
+[ext_resource type="Resource" path="res://data/enemies/warp_sprout_poison.tres" id="2_warp_sprout_poison"]
+[ext_resource type="Script" path="res://systems/resources/encounter_enemy_entry.gd" id="3_encounter_enemy_entry"]
+[ext_resource type="Resource" path="res://data/enemies/warp_matrix.tres" id="4_warp_matrix"]
+[ext_resource type="Script" path="res://systems/resources/encounter_wave.gd" id="5_encounter_wave"]
+
+[sub_resource type="Resource" id="Entry_w1_1"]
+script = ExtResource("3_encounter_enemy_entry")
+enemy = ExtResource("2_warp_sprout_poison")
+level = 29
+count = 1
+
+[sub_resource type="Resource" id="Entry_w1_2"]
+script = ExtResource("3_encounter_enemy_entry")
+enemy = ExtResource("4_warp_matrix")
+level = 29
+count = 1
+
+[sub_resource type="Resource" id="Entry_w1_3"]
+script = ExtResource("3_encounter_enemy_entry")
+enemy = ExtResource("2_warp_sprout_poison")
+level = 29
+count = 1
+
+[sub_resource type="Resource" id="Wave_1"]
+script = ExtResource("5_encounter_wave")
+entries = Array[ExtResource("3_encounter_enemy_entry")]([SubResource("Entry_w1_1"), SubResource("Entry_w1_2"), SubResource("Entry_w1_3")])
+
+[resource]
+script = ExtResource("1_encounter_data")
+id = &"tower_elite_matrix"
+waves = Array[ExtResource("5_encounter_wave")]([SubResource("Wave_1")])
+kind = 1
+zone = &"tower"
+recommended_level = 30

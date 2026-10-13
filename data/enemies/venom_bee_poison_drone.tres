@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_bee_sting.tres" id="3_en_bee_sting"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 40.5
+atk = 18.0
+def = 50.0
+spd = 110.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 405.0
+atk = 144.0
+def = 500.0
+spd = 110.0
+effect_res = 0.0
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_bee_sting")
+weight = 1.0
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"venom_bee_poison_drone"
+name_key = "ENEMY_VENOM_BEE_POISON_DRONE"
+desc_key = "ENEMY_VENOM_BEE_POISON_DRONE_DESC"
+kind = 0
+family = &"venom_bee"
+element = 4
+weaknesses = Array[int]([0, 3])
+max_toughness = 10.0
+placeholder_color = Color(0.75, 0.62, 0.12, 1)
+size_scale = 1.0
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1")])

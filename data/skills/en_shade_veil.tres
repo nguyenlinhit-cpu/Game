@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/shield.tres" id="3_shield"]
+[ext_resource type="Script" path="res://systems/skill_effects/shield_effect.gd" id="4_shield_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("4_shield_effect")
+scope = 4
+scaling_stat = 2
+multiplier = 0.5
+flat = 0.0
+status = ExtResource("3_shield")
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"en_shade_veil"
+name_key = "SKILL_EN_SHADE_VEIL"
+desc_key = "SKILL_EN_SHADE_VEIL_DESC"
+kind = 1
+target = 4
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1")])

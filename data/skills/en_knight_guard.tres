@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/skill_data.gd" id="1_skill_data"]
+[ext_resource type="Script" path="res://systems/skill_effects/skill_effect.gd" id="2_skill_effect"]
+[ext_resource type="Resource" path="res://data/status_effects/en_guard.tres" id="3_en_guard"]
+[ext_resource type="Script" path="res://systems/skill_effects/apply_status_effect.gd" id="4_apply_status_effect"]
+
+[sub_resource type="Resource" id="Effect_1"]
+script = ExtResource("4_apply_status_effect")
+scope = 3
+status = ExtResource("3_en_guard")
+extend_if_self = true
+
+[resource]
+script = ExtResource("1_skill_data")
+id = &"en_knight_guard"
+name_key = "SKILL_EN_KNIGHT_GUARD"
+desc_key = "SKILL_EN_KNIGHT_GUARD_DESC"
+kind = 1
+target = 5
+effects = Array[ExtResource("2_skill_effect")]([SubResource("Effect_1")])

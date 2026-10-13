@@ -33,6 +33,8 @@ enum Kind { NORMAL, ELITE, BOSS }
 @export var death_skill: SkillData
 ## Script cơ chế riêng (lớp con EnemyBehavior), gắn khi quái xuất hiện.
 @export var behavior_script: Script
+## Số liệu cho behavior_script (để cân bằng mà không sửa code).
+@export var behavior_params: Dictionary = {}
 
 @export_group("Boss")
 ## Giai đoạn 2, 3... (giai đoạn 1 = dữ liệu ở trên).

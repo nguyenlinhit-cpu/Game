@@ -55,6 +55,8 @@ enum DotMode { NONE, BREAK_BASE, TARGET_MAX_HP, ATTACKER_STAT }
 ## Trì hoãn thêm khi vừa gắn (0,2 = 20%).
 @export var extra_delay: float = 0.0
 @export var shield: bool = false
+## Phong Ấn: không dùng được Chiến kỹ.
+@export var seal_skill: bool = false
 
 @export_group("Kích hoạt")
 ## Sát thương khi hết mất lượt (Đóng Băng tan), × giá trị nền.

@@ -81,10 +81,11 @@ static func build_damage_params(user: BattleUnit, target: BattleUnit, scaling_st
 	return p
 
 
+## Còn sống, chọn làm mục tiêu được, sắp theo vị trí.
 static func _alive_sorted(units: Array[BattleUnit]) -> Array[BattleUnit]:
 	var result: Array[BattleUnit] = []
 	for unit in units:
-		if unit.is_alive():
+		if unit.is_targetable():
 			result.append(unit)
 	result.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool: return a.slot < b.slot)
 	return result

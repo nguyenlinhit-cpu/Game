@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/enemy_data.gd" id="1_enemy_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_block.gd" id="2_stat_block"]
+[ext_resource type="Resource" path="res://data/skills/en_dev_bite.tres" id="3_en_dev_bite"]
+[ext_resource type="Script" path="res://systems/resources/enemy_action.gd" id="4_enemy_action"]
+[ext_resource type="Resource" path="res://data/skills/en_dev_devour.tres" id="5_en_dev_devour"]
+[ext_resource type="Resource" path="res://data/skills/en_dev_pulse.tres" id="6_en_dev_pulse"]
+[ext_resource type="Script" path="res://data/enemies/scripts/soul_devourer_behavior.gd" id="7_soul_devourer_behavior"]
+[ext_resource type="Resource" path="res://data/enemies/devourer_clone_flame.tres" id="8_devourer_clone_flame"]
+[ext_resource type="Resource" path="res://data/enemies/devourer_clone_tide.tres" id="9_devourer_clone_tide"]
+[ext_resource type="Resource" path="res://data/enemies/devourer_clone_storm.tres" id="10_devourer_clone_storm"]
+[ext_resource type="Resource" path="res://data/skills/en_dev_shadow.tres" id="11_en_dev_shadow"]
+[ext_resource type="Script" path="res://systems/resources/boss_phase_data.gd" id="12_boss_phase_data"]
+[ext_resource type="Resource" path="res://data/skills/en_dev_swallow.tres" id="13_en_dev_swallow"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="14_stat_modifier_data"]
+
+[sub_resource type="Resource" id="Stats_lv1"]
+script = ExtResource("2_stat_block")
+hp = 1980.0
+atk = 81.0
+def = 50.0
+spd = 105.0
+effect_res = 0.3
+
+[sub_resource type="Resource" id="Stats_lv80"]
+script = ExtResource("2_stat_block")
+hp = 19800.0
+atk = 648.0
+def = 500.0
+spd = 105.0
+effect_res = 0.3
+
+[sub_resource type="Resource" id="Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_dev_bite")
+weight = 2.0
+
+[sub_resource type="Resource" id="Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_dev_devour")
+weight = 3.0
+cooldown_turns = 1
+requires_foe_buff = true
+
+[sub_resource type="Resource" id="Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("6_en_dev_pulse")
+weight = 1.5
+cooldown_turns = 3
+first_turn = 2
+charge_turns = 1
+cancel_on_break = true
+
+[sub_resource type="Resource" id="Phase2_Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("11_en_dev_shadow")
+weight = 1.0
+
+[sub_resource type="Resource" id="Phase_2"]
+script = ExtResource("12_boss_phase_data")
+name_key = "BOSS_PHASE_SOUL_DEVOURER_2"
+hp_threshold = 0.66
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Phase2_Action_1")])
+color = Color(0.35, 0.1, 0.45, 1)
+music_id = &"boss_devourer_2"
+
+[sub_resource type="Resource" id="Phase3_Action_1"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("13_en_dev_swallow")
+weight = 1.0
+cooldown_turns = 4
+priority_on_phase_start = true
+charge_turns = 2
+act_while_charging = true
+cancel_damage_ratio = 0.1
+
+[sub_resource type="Resource" id="Phase3_Action_2"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("3_en_dev_bite")
+weight = 2.0
+
+[sub_resource type="Resource" id="Phase3_Action_3"]
+script = ExtResource("4_enemy_action")
+skill = ExtResource("5_en_dev_devour")
+weight = 2.0
+cooldown_turns = 1
+requires_foe_buff = true
+
+[sub_resource type="Resource" id="Phase3_Mod_0"]
+script = ExtResource("14_stat_modifier_data")
+stat = 1
+flat = 0.0
+percent = 0.2
+
+[sub_resource type="Resource" id="Phase_3"]
+script = ExtResource("12_boss_phase_data")
+name_key = "BOSS_PHASE_SOUL_DEVOURER_3"
+hp_threshold = -1.0
+weaknesses = Array[int]([6, 0, 2])
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Phase3_Action_1"), SubResource("Phase3_Action_2"), SubResource("Phase3_Action_3")])
+stat_modifiers = Array[ExtResource("14_stat_modifier_data")]([SubResource("Phase3_Mod_0")])
+color = Color(0.55, 0.05, 0.15, 1)
+music_id = &"boss_devourer_3"
+
+[resource]
+script = ExtResource("1_enemy_data")
+id = &"soul_devourer"
+name_key = "ENEMY_SOUL_DEVOURER"
+desc_key = "ENEMY_SOUL_DEVOURER_DESC"
+kind = 2
+family = &"soul_devourer"
+element = 6
+weaknesses = Array[int]([6, 1])
+max_toughness = 180.0
+placeholder_color = Color(0.2, 0.1, 0.3, 1)
+size_scale = 1.8
+stats_lv1 = SubResource("Stats_lv1")
+stats_lv80 = SubResource("Stats_lv80")
+actions = Array[ExtResource("4_enemy_action")]([SubResource("Action_1"), SubResource("Action_2"), SubResource("Action_3")])
+behavior_script = ExtResource("7_soul_devourer_behavior")
+behavior_params = {
+"clones": [ExtResource("8_devourer_clone_flame"), ExtResource("9_devourer_clone_tide"), ExtResource("10_devourer_clone_storm")],
+"clone_phase": 1,
+"clone_backlash": 0.08,
+"drain_phase": 2
+}
+phases = Array[ExtResource("12_boss_phase_data")]([SubResource("Phase_2"), SubResource("Phase_3")])
+music_id = &"boss_devourer"
