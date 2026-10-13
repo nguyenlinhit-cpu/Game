@@ -1,0 +1,88 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for remaining views",
+  "metadata": {
+    "id": "raiko",
+    "title": "Raiko – 5★ · Sét · Săn Bắn",
+    "palette": [
+      [
+        "Tóc",
+        "#E7E9F0"
+      ],
+      [
+        "Da",
+        "#F6D8C8"
+      ],
+      [
+        "Áo trắng",
+        "#F3F3F7"
+      ],
+      [
+        "Áo đen",
+        "#22202A"
+      ],
+      [
+        "Điểm nhấn sét",
+        "#A65BF2"
+      ],
+      [
+        "Vàng chanh",
+        "#D9F25A"
+      ],
+      [
+        "Thân cung",
+        "#3A3550"
+      ],
+      [
+        "Mắt",
+        "#D9F25A"
+      ]
+    ],
+    "personality": "Tự tin, lạnh lùng khi săn, trẻ con khi rảnh; thích thi bắn.",
+    "identity": "Tím sét #A65BF2, trắng bạc, đen, vàng chanh. Bóng đen: cung dài cao hơn người, tóc buộc cao như tia sét."
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard. Weapon: a longbow taller than her body, dark metal with violet electricity crackling along the limbs. Holding the tall longbow vertically at her side, an arrow between her fingers, eyes narrowed at the target. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1b_front.png. Same character as the reference image: a sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard.  EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1c_weapon.png. Game prop design: a longbow taller than her body, dark metal with violet electricity crackling along the limbs, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. One isolated weapon design only, no collage.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, high zigzag silver ponytail, white and black outfit, very tall bow with violet sparks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": true
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1e_splash.png. Anime key visual splash art of the same character as the reference image: a sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard. Drawing her giant longbow straight up toward a dark thunderstorm sky, a massive violet lightning bolt about to strike, ponytail floating with static. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark violet storm background with branching lightning, glowing lightning effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    }
+  ],
+  "revisions": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Render ONLY the large main battle figure on LEFT of reference sheet. ONE full-body chibi archer, three-quarter FACING RIGHT with single lightning bow and arrow, same exact face hair ponytail clothes and colors. Shorten body to compact 2.5 heads tall. White background full figure and weapon with margins. Remove ALL insets small views and other figures. ONE figure only.",
+      "reference": "1a_battle.png_draft"
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render ONLY the front-facing A-pose figure on LEFT of reference. ONE full-body chibi archer centered on plain white, EMPTY HANDS no bow arrow, arms 30 degrees from body feet apart. Preserve exact hair ponytail face clothes colors asymmetric garments. Compact 2.5-head proportions. Remove back figure and all insets. ONE front view only.",
+      "reference": "1b_front.png_draft"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for all subsequent images",
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Kiri 1a_battle character concept for Aethelgard. Chibi anime game character, full body, 2.5 heads tall, big head and expressive amber eyes. Energetic cheerful fireworks artisan girl with bright orange hair #F07A2C in two upright twin braids shaped like firework fuses with tiny decorative spark tips. Short crimson #B3222E festival jacket with yellow #F7C948 stripes, star-shaped hairclip, shorts with striped stockings, cross-body brown #6B3E26 satchel full of small firework rockets. Weapon: a long signal sparkler baton like a conductor's baton with a burning star tip. Twirling baton above her head with one hand, big grin, one leg kicked back. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart not pure black, cool tinted shadows, bright clean colors, detailed layered outfit. Plain white background, one character, full head feet braids and baton visible with generous margins. No text, no logos, no watermark, no extra limbs, no 3D render."
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Reference image: Kiri's approved-for-consistency battle concept (identity reference only). Preserve exactly the orange upright braided twin tails, amber eyes, gold star hair clip, crimson jacket with gold stripes and tassels, white shirt, dark shorts, mismatched stockings one red-white striped and one dark with gold stripes, brown shoes and brown cross-body rocket satchel. Chibi 2.5 heads tall. Clean two-tone cel shading, colored dark outlines, white background. No text no watermark. Full body FRONT orthographic view, neutral face, symmetrical standing A pose with arms 30 degrees from body, feet slightly apart, EMPTY hands no weapon, even flat lighting, no cast shadow, clean modeling reference. Show complete character with margins."
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Reference image: Kiri's approved-for-consistency battle concept (identity reference only). Preserve exactly the orange upright braided twin tails, amber eyes, gold star hair clip, crimson jacket with gold stripes and tassels, white shirt, dark shorts, mismatched stockings one red-white striped and one dark with gold stripes, brown shoes and brown cross-body rocket satchel. Chibi 2.5 heads tall. Clean two-tone cel shading, colored dark outlines, white background. No text no watermark. Full body BACK orthographic view, matching front A pose with arms 30 degrees from body, feet slightly apart, empty hands no weapon. Back of hair, jacket and crossbody strap visible, satchel must remain on character's right hip as in reference. Even flat lighting, no cast shadow, complete character with margins."
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Identity reference: Kiri battle art. Isolated prop design of exactly her long slender brown signal sparkler conductor baton with gold collars and gold five-point star tip. Show one complete baton diagonally on plain white background, clear silhouette, small orange-yellow spark halo at star tip. Clean two-tone cel shading colored dark linework. No hand no character no text no watermark."
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Reference: Kiri battle art identity. Pixel art tiny game sprite chibi Kiri, side view facing RIGHT, orange upright twin braids with tiny spark tips, amber eyes, crimson jacket yellow stripe, brown rocket satchel, gold star baton. Oversized head 60 percent of total height, very short body legs. One sprite drawn on a strict 32x32 grid, max 12 colors, one pixel dark #141018 outline, light top-left, crisp square pixels no antialias. Display enlarged with nearest neighbor on transparent background, no shadows text or watermark."
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Reference image: Kiri's approved-for-consistency battle concept (identity reference only). Preserve exactly the orange upright braided twin tails, amber eyes, gold star hair clip, crimson jacket with gold stripes and tassels, white shirt, dark shorts, mismatched stockings one red-white striped and one dark with gold stripes, brown shoes and brown cross-body rocket satchel. Chibi 2.5 heads tall. Clean two-tone cel shading, colored dark outlines, white background. No text no watermark. Anime gacha splash art, landscape 16:9 composition. Same Kiri lighting a row of EXACTLY FIVE big firework launch tubes on ground with her star sparkler baton; fireworks exploding across night sky, hair spark tips. Character on right third, free space left. Blazing orange-red night background flying embers heat haze, dramatic dynamic pose. Detailed cel shading soft gradients. No UI no text. Background here is a full dramatic night scene not white."
+    }
+  ]
+}

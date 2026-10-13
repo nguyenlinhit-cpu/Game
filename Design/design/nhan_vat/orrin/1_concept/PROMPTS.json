@@ -1,0 +1,72 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for remaining views",
+  "metadata": {
+    "id": "orrin",
+    "title": "Orrin – 5★ · Hồn · Tri Thức",
+    "palette": [
+      [
+        "Tóc, râu",
+        "#EDEBE6"
+      ],
+      [
+        "Da",
+        "#EBC6A8"
+      ],
+      [
+        "Áo chùng",
+        "#1E2747"
+      ],
+      [
+        "Da thuộc",
+        "#7A4E2D"
+      ],
+      [
+        "Giấy",
+        "#F4EEDF"
+      ],
+      [
+        "Vàng hồn",
+        "#F2D58A"
+      ],
+      [
+        "Mắt",
+        "#F2D58A"
+      ]
+    ],
+    "personality": "Uyên bác, hay quên, nói vòng vo; nghiêm khắc khi có người làm hỏng sách.",
+    "identity": "Vàng hồn #F2D58A, nâu da thuộc, xanh đêm, trắng giấy. Bóng đen: lưng hơi gù, chồng sách bay lơ lửng quanh vai, mũ chóp mềm."
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. Weapon: a tall quill-shaped staff with a golden feather tip, plus floating spellbooks. Writing glowing golden runes in the air with the quill staff while books orbit his shoulders. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1b_front.png. Same character as the reference image: a kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders.  EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1c_weapon.png. Game prop design: a tall quill-shaped staff with a golden feather tip, plus floating spellbooks, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. One isolated weapon design only, no collage.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, slightly hunched, white beard, floppy cap, night-blue robe, books floating around the shoulders, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": true
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1e_splash.png. Anime key visual splash art of the same character as the reference image: a kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. A giant glowing tome opening above his head, golden ancient runes spiraling down, his quill staff raised, floating books orbiting him. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    }
+  ]
+}

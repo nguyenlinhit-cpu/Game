@@ -1,0 +1,76 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for remaining views",
+  "metadata": {
+    "id": "rook",
+    "title": "Rook – 4★ · Mộc · Hủy Diệt",
+    "palette": [
+      [
+        "Tóc",
+        "#4E7A3A"
+      ],
+      [
+        "Da",
+        "#D8A07A"
+      ],
+      [
+        "Áo kẻ ca rô",
+        "#8E2B2B"
+      ],
+      [
+        "Giáp gỗ",
+        "#7A5232"
+      ],
+      [
+        "Bao tay đá",
+        "#8A8A86"
+      ],
+      [
+        "Điểm nhấn Mộc",
+        "#2E8B57"
+      ],
+      [
+        "Lưỡi rìu",
+        "#9AA3AD"
+      ],
+      [
+        "Mắt",
+        "#3F6F3A"
+      ]
+    ],
+    "personality": "Hiền như cục đất, nổi giận như bão; nói chậm, ăn nhiều.",
+    "identity": "Xanh lá #2E8B57, nâu gỗ, đỏ sẫm, xám đá. Bóng đen: thân hình to vuông, rìu hai lưỡi khổng lồ."
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. Weapon: a giant double-bladed axe with a wooden handle and steel blades with wood-grain etching. Resting the giant double-bladed axe on his shoulder, wide stance, big grin. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1b_front.png. Same character as the reference image: a big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin.  EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1c_weapon.png. Game prop design: a giant double-bladed axe with a wooden handle and steel blades with wood-grain etching, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. One isolated weapon design only, no collage.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, very square body, spiky green hair, red plaid, giant double-bladed axe, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": true
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1e_splash.png. Anime key visual splash art of the same character as the reference image: a big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. Chopping the base of a giant tree that is falling toward the enemies, his double-bladed axe glowing with red wood grain, leaves exploding. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    }
+  ]
+}

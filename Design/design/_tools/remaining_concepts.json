@@ -1,0 +1,1490 @@
+[
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "ignar",
+      "title": "Ignar – 5★ · Lửa · Hủy Diệt",
+      "palette": [
+        [
+          "Tóc",
+          "#8E8A86"
+        ],
+        [
+          "Đuôi tóc lửa",
+          "#E8552B"
+        ],
+        [
+          "Da",
+          "#E9B996"
+        ],
+        [
+          "Tạp dề",
+          "#2A2523"
+        ],
+        [
+          "Áo",
+          "#C2402A"
+        ],
+        [
+          "Đồng thau",
+          "#C8A045"
+        ],
+        [
+          "Sắt, xích",
+          "#5A5F66"
+        ],
+        [
+          "Đầu búa nung",
+          "#FFB347"
+        ],
+        [
+          "Mắt",
+          "#E8552B"
+        ]
+      ],
+      "personality": "Cộc lốc, nóng tính, che giấu sự tốt bụng; coi búa rèn như bạn.",
+      "identity": "Đỏ cam #E8552B, đen than, đồng thau, xám tro. Bóng đen: vai trái phồng lớn quấn xích, búa rèn cán dài vác sau lưng."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ignar 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A muscular hot-blooded young blacksmith warrior with spiky ash-grey hair with ember-orange tips, red-orange eyes, a huge iron pauldron wrapped in chains on his left shoulder, a charcoal-black leather apron over a red-orange tunic, brass buckles, soot marks on cheeks. Weapon: a giant long-handled forge hammer with a glowing molten-orange head. Carrying the giant forge hammer over his right shoulder, chest out, confident grin. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ignar 1b_front.png. Same character as the reference image: a muscular hot-blooded young blacksmith warrior with spiky ash-grey hair with ember-orange tips, red-orange eyes, a huge iron pauldron wrapped in chains on his left shoulder, a charcoal-black leather apron over a red-orange tunic, brass buckles, soot marks on cheeks. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ignar 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a muscular hot-blooded young blacksmith warrior with spiky ash-grey hair with ember-orange tips, red-orange eyes, a huge iron pauldron wrapped in chains on his left shoulder, a charcoal-black leather apron over a red-orange tunic, brass buckles, soot marks on cheeks. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ignar 1c_weapon.png. Game prop design: a giant long-handled forge hammer with a glowing molten-orange head, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ignar 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, spiky grey hair with orange tips, big chained iron left shoulder, black apron, giant hammer with glowing head, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ignar 1e_splash.png. Anime key visual splash art of the same character as the reference image: a muscular hot-blooded young blacksmith warrior with spiky ash-grey hair with ember-orange tips, red-orange eyes, a huge iron pauldron wrapped in chains on his left shoulder, a charcoal-black leather apron over a red-orange tunic, brass buckles, soot marks on cheeks. Leaping high with the giant molten forge hammer raised over his head, the ground below cracking open with erupting lava. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a blazing orange-red background with flying embers and heat haze, glowing fire effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "marisol",
+      "title": "Marisol – 5★ · Nước · Bảo Hộ",
+      "palette": [
+        [
+          "Tóc",
+          "#2F6FB5"
+        ],
+        [
+          "Da",
+          "#F5D5C3"
+        ],
+        [
+          "Áo khoác, mũ",
+          "#F2EAD8"
+        ],
+        [
+          "Đồng thau",
+          "#C9A04A"
+        ],
+        [
+          "Đai lưng",
+          "#5E7F4F"
+        ],
+        [
+          "Vỏ ốc ngoài",
+          "#EADBC4"
+        ],
+        [
+          "Vỏ ốc trong, nước",
+          "#3A8DDE"
+        ],
+        [
+          "Mắt",
+          "#2BA3A8"
+        ]
+      ],
+      "personality": "Điềm tĩnh, mạnh mẽ, nói ít nhưng chắc; hay pha trò bằng giọng nghiêm.",
+      "identity": "Xanh biển #3A8DDE, trắng ngà, vàng đồng, xanh rêu. Bóng đen: mũ thuyền trưởng rộng vành, khiên vỏ ốc xoắn khổng lồ."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard marisol 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A confident warm-hearted young woman ship captain with long wavy sea-blue hair and teal eyes, a wide-brimmed captain hat with ivory trim and a brass anchor badge, an ivory-white long coat with brass buttons and a moss-green sash, white gloves. Weapon: a giant spiral seashell shield, ivory outside and blue pearl-like inside. Holding the giant spiral seashell shield forward with one arm, the other hand on her hat brim, protective stance. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard marisol 1b_front.png. Same character as the reference image: a confident warm-hearted young woman ship captain with long wavy sea-blue hair and teal eyes, a wide-brimmed captain hat with ivory trim and a brass anchor badge, an ivory-white long coat with brass buttons and a moss-green sash, white gloves. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard marisol 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a confident warm-hearted young woman ship captain with long wavy sea-blue hair and teal eyes, a wide-brimmed captain hat with ivory trim and a brass anchor badge, an ivory-white long coat with brass buttons and a moss-green sash, white gloves. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard marisol 1c_weapon.png. Game prop design: a giant spiral seashell shield, ivory outside and blue pearl-like inside, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard marisol 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, very wide captain hat, long wavy blue hair, ivory coat, giant spiral seashell shield, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard marisol 1e_splash.png. Anime key visual splash art of the same character as the reference image: a confident warm-hearted young woman ship captain with long wavy sea-blue hair and teal eyes, a wide-brimmed captain hat with ivory trim and a brass anchor badge, an ivory-white long coat with brass buttons and a moss-green sash, white gloves. Raising her giant spiral seashell shield high as a huge ocean wave curls protectively behind her, captain hat and long blue hair blown by the sea wind. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a deep blue water background with bubbles and shafts of light, glowing water effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "raiko",
+      "title": "Raiko – 5★ · Sét · Săn Bắn",
+      "palette": [
+        [
+          "Tóc",
+          "#E7E9F0"
+        ],
+        [
+          "Da",
+          "#F6D8C8"
+        ],
+        [
+          "Áo trắng",
+          "#F3F3F7"
+        ],
+        [
+          "Áo đen",
+          "#22202A"
+        ],
+        [
+          "Điểm nhấn sét",
+          "#A65BF2"
+        ],
+        [
+          "Vàng chanh",
+          "#D9F25A"
+        ],
+        [
+          "Thân cung",
+          "#3A3550"
+        ],
+        [
+          "Mắt",
+          "#D9F25A"
+        ]
+      ],
+      "personality": "Tự tin, lạnh lùng khi săn, trẻ con khi rảnh; thích thi bắn.",
+      "identity": "Tím sét #A65BF2, trắng bạc, đen, vàng chanh. Bóng đen: cung dài cao hơn người, tóc buộc cao như tia sét."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard. Weapon: a longbow taller than her body, dark metal with violet electricity crackling along the limbs. Holding the tall longbow vertically at her side, an arrow between her fingers, eyes narrowed at the target. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1b_front.png. Same character as the reference image: a sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1c_weapon.png. Game prop design: a longbow taller than her body, dark metal with violet electricity crackling along the limbs, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, high zigzag silver ponytail, white and black outfit, very tall bow with violet sparks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard raiko 1e_splash.png. Anime key visual splash art of the same character as the reference image: a sharp focused young archer woman with very long silver-white hair in a high ponytail shaped like a lightning bolt, lime-yellow eyes, a white and black hunting outfit with violet lightning-pattern trims, a short cape, arm guard. Drawing her giant longbow straight up toward a dark thunderstorm sky, a massive violet lightning bolt about to strike, ponytail floating with static. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark violet storm background with branching lightning, glowing lightning effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "zephyra",
+      "title": "Zephyra – 5★ · Phong · Hòa Hợp",
+      "palette": [
+        [
+          "Tóc",
+          "#4FD1B5"
+        ],
+        [
+          "Da",
+          "#F7DDD0"
+        ],
+        [
+          "Áo trắng",
+          "#F5F7F7"
+        ],
+        [
+          "Lụa xanh trời",
+          "#8FD3F4"
+        ],
+        [
+          "Ruy băng vàng nhạt",
+          "#F4E3A1"
+        ],
+        [
+          "Ngọc",
+          "#2FA88E"
+        ],
+        [
+          "Mắt",
+          "#8FD3F4"
+        ]
+      ],
+      "personality": "Phóng khoáng, nói chuyện như hát, luôn bình tĩnh trong hỗn loạn.",
+      "identity": "Xanh ngọc #4FD1B5, trắng, vàng nhạt, xanh trời. Bóng đen: tà áo dài bay như cánh, quạt gió hình bán nguyệt."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard zephyra 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A graceful elegant wind dancer woman with long flowing jade-teal hair tied with pale-yellow ribbons, light-blue eyes, a white layered robe with long sleeves and wing-like trailing sashes, jade accents and a small jade hair ornament. Weapon: a large half-moon folding fan with jade ribs and sky-blue silk. Mid dance spin on one foot, the half-moon fan open in one hand, sashes trailing like wings. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard zephyra 1b_front.png. Same character as the reference image: a graceful elegant wind dancer woman with long flowing jade-teal hair tied with pale-yellow ribbons, light-blue eyes, a white layered robe with long sleeves and wing-like trailing sashes, jade accents and a small jade hair ornament. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard zephyra 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a graceful elegant wind dancer woman with long flowing jade-teal hair tied with pale-yellow ribbons, light-blue eyes, a white layered robe with long sleeves and wing-like trailing sashes, jade accents and a small jade hair ornament. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard zephyra 1c_weapon.png. Game prop design: a large half-moon folding fan with jade ribs and sky-blue silk, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard zephyra 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, long teal hair with yellow ribbons, white robe with trailing wing-like sashes, big half-moon fan, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard zephyra 1e_splash.png. Anime key visual splash art of the same character as the reference image: a graceful elegant wind dancer woman with long flowing jade-teal hair tied with pale-yellow ribbons, light-blue eyes, a white layered robe with long sleeves and wing-like trailing sashes, jade accents and a small jade hair ornament. Floating in the air spreading her giant half-moon fan, a powerful jade wind swirling with leaves and petals, long sashes and hair flowing like wings. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a pale teal sky background with swirling wind streaks and leaves, glowing wind effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "vesper",
+      "title": "Vesper – 5★ · Độc · Hư Vô",
+      "palette": [
+        [
+          "Tóc",
+          "#3B2440"
+        ],
+        [
+          "Da",
+          "#EFD8D0"
+        ],
+        [
+          "Áo choàng",
+          "#2E2335"
+        ],
+        [
+          "Tím than",
+          "#5A3A66"
+        ],
+        [
+          "Cổ áo trắng xương",
+          "#EDE6D6"
+        ],
+        [
+          "Độc phát sáng",
+          "#9BC53D"
+        ],
+        [
+          "Vàng chén",
+          "#B89A4A"
+        ],
+        [
+          "Mắt",
+          "#B8F25A"
+        ]
+      ],
+      "personality": "Lịch thiệp, mỉa mai, tò mò đến lạnh người.",
+      "identity": "Xanh độc #9BC53D, tím than, đen, trắng xương. Bóng đen: mũ nhọn rộng vành, ống kính quai tròn, áo choàng xẻ tà nhọn."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vesper 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A mysterious elegant alchemist woman with long dark plum hair, glowing toxic-green eyes behind round monocle-like lenses, a wide-brimmed pointed witch hat, a dark plum cloak with sharp tattered hem, a bone-white high collar, glowing green vials on her belt. Weapon: an ornate golden chalice bubbling with glowing green poison, plus thin poisoned needles between her fingers. Raising the bubbling green chalice like a toast, a faint smile, cloak hem spreading. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vesper 1b_front.png. Same character as the reference image: a mysterious elegant alchemist woman with long dark plum hair, glowing toxic-green eyes behind round monocle-like lenses, a wide-brimmed pointed witch hat, a dark plum cloak with sharp tattered hem, a bone-white high collar, glowing green vials on her belt. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vesper 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a mysterious elegant alchemist woman with long dark plum hair, glowing toxic-green eyes behind round monocle-like lenses, a wide-brimmed pointed witch hat, a dark plum cloak with sharp tattered hem, a bone-white high collar, glowing green vials on her belt. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vesper 1c_weapon.png. Game prop design: an ornate golden chalice bubbling with glowing green poison, plus thin poisoned needles between her fingers, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vesper 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, wide pointed hat, round glowing lenses, dark plum cloak with sharp hem, green chalice, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vesper 1e_splash.png. Anime key visual splash art of the same character as the reference image: a mysterious elegant alchemist woman with long dark plum hair, glowing toxic-green eyes behind round monocle-like lenses, a wide-brimmed pointed witch hat, a dark plum cloak with sharp tattered hem, a bone-white high collar, glowing green vials on her belt. Spinning her dark plum cloak as toxic green mist rises around her, snapping her fingers, glowing poison bubbles bursting, eyes glowing behind round lenses. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark green and purple background with glowing toxic mist and bubbles, glowing poison effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "sylvaine",
+      "title": "Sylvaine – 5★ · Mộc · Trù Phú",
+      "palette": [
+        [
+          "Tóc",
+          "#6B8F4A"
+        ],
+        [
+          "Hoa",
+          "#F5A89A"
+        ],
+        [
+          "Da",
+          "#F6DCC8"
+        ],
+        [
+          "Váy kem",
+          "#F3EAD6"
+        ],
+        [
+          "Áo choàng lá",
+          "#2E8B57"
+        ],
+        [
+          "Gỗ",
+          "#7A5A3A"
+        ],
+        [
+          "Mắt",
+          "#6CC36A"
+        ]
+      ],
+      "personality": "Hiền, chậm rãi, kiên nhẫn; nói chuyện với cây như với người.",
+      "identity": "Xanh lá #2E8B57, hồng đào, nâu đất, kem. Bóng đen: mái tóc dài kết hoa thành vòng, gậy mọc cành lá."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. Weapon: a living wooden staff sprouting leafy branches and small flowers at the top. Holding the leafy staff with both hands, gentle smile, petals drifting around her. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1b_front.png. Same character as the reference image: a kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1c_weapon.png. Game prop design: a living wooden staff sprouting leafy branches and small flowers at the top, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, very long hair with a ring of pink flowers, cream dress, green capelet, leafy wooden staff, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1e_splash.png. Anime key visual splash art of the same character as the reference image: a kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. Praying with eyes closed as an entire garden of flowers blooms around her, her long flower-braided hair floating, warm green and golden light. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "orrin",
+      "title": "Orrin – 5★ · Hồn · Tri Thức",
+      "palette": [
+        [
+          "Tóc, râu",
+          "#EDEBE6"
+        ],
+        [
+          "Da",
+          "#EBC6A8"
+        ],
+        [
+          "Áo chùng",
+          "#1E2747"
+        ],
+        [
+          "Da thuộc",
+          "#7A4E2D"
+        ],
+        [
+          "Giấy",
+          "#F4EEDF"
+        ],
+        [
+          "Vàng hồn",
+          "#F2D58A"
+        ],
+        [
+          "Mắt",
+          "#F2D58A"
+        ]
+      ],
+      "personality": "Uyên bác, hay quên, nói vòng vo; nghiêm khắc khi có người làm hỏng sách.",
+      "identity": "Vàng hồn #F2D58A, nâu da thuộc, xanh đêm, trắng giấy. Bóng đen: lưng hơi gù, chồng sách bay lơ lửng quanh vai, mũ chóp mềm."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. Weapon: a tall quill-shaped staff with a golden feather tip, plus floating spellbooks. Writing glowing golden runes in the air with the quill staff while books orbit his shoulders. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1b_front.png. Same character as the reference image: a kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1c_weapon.png. Game prop design: a tall quill-shaped staff with a golden feather tip, plus floating spellbooks, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, slightly hunched, white beard, floppy cap, night-blue robe, books floating around the shoulders, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1e_splash.png. Anime key visual splash art of the same character as the reference image: a kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. A giant glowing tome opening above his head, golden ancient runes spiraling down, his quill staff raised, floating books orbiting him. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "celestine",
+      "title": "Celestine – 5★ · Hồn · Săn Bắn",
+      "palette": [
+        [
+          "Tóc",
+          "#EEF0F5"
+        ],
+        [
+          "Da",
+          "#F6DCCB"
+        ],
+        [
+          "Áo trắng bạc",
+          "#F2F3F7"
+        ],
+        [
+          "Xanh lam đêm",
+          "#1E2A55"
+        ],
+        [
+          "Vàng hồn",
+          "#F2D58A"
+        ],
+        [
+          "Găng đen",
+          "#1A1A22"
+        ],
+        [
+          "Mắt",
+          "#F2C14E"
+        ],
+        [
+          "Vầng sáng",
+          "#FFF1B8"
+        ]
+      ],
+      "personality": "Trang nghiêm, ít cảm xúc, trung thành tuyệt đối với lời thề; ấm áp với số ít người cô tin.",
+      "identity": "Trắng bạc, vàng hồn #F2D58A, xanh lam đêm, đen. Bóng đen: hai thanh kiếm dài bắt chéo sau lưng, vầng sáng hình mắt sau đầu."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard celestine 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A dignified elegant swordswoman, the last Eye Warden, with long straight silver-white hair, golden eyes, a white-silver and night-blue armored long coat with golden eye emblems, black gloves, two long swords crossed on her back, a radiant eye-shaped golden halo floating behind her head. Weapon: two long elegant swords with white blades and golden eye-shaped guards. Guard stance: one sword drawn and held low in front, the second still crossed on her back, the eye halo glowing softly. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard celestine 1b_front.png. Same character as the reference image: a dignified elegant swordswoman, the last Eye Warden, with long straight silver-white hair, golden eyes, a white-silver and night-blue armored long coat with golden eye emblems, black gloves, two long swords crossed on her back, a radiant eye-shaped golden halo floating behind her head. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard celestine 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a dignified elegant swordswoman, the last Eye Warden, with long straight silver-white hair, golden eyes, a white-silver and night-blue armored long coat with golden eye emblems, black gloves, two long swords crossed on her back, a radiant eye-shaped golden halo floating behind her head. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard celestine 1c_weapon.png. Game prop design: two long elegant swords with white blades and golden eye-shaped guards, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard celestine 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, long silver hair, white and night-blue coat, two swords crossed on the back, glowing eye-shaped halo behind the head, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard celestine 1e_splash.png. Anime key visual splash art of the same character as the reference image: a dignified elegant swordswoman, the last Eye Warden, with long straight silver-white hair, golden eyes, a white-silver and night-blue armored long coat with golden eye emblems, black gloves, two long swords crossed on her back, a radiant eye-shaped golden halo floating behind her head. Dashing forward with both swords drawn, leaving golden afterimages, a giant radiant eye opening in the sky behind her, silver hair streaming. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "quill",
+      "title": "Quill – 4★ · Độc · Trù Phú",
+      "palette": [
+        [
+          "Tóc",
+          "#6B4A2E"
+        ],
+        [
+          "Mũ phi công",
+          "#C26A2E"
+        ],
+        [
+          "Da",
+          "#F4D2BC"
+        ],
+        [
+          "Áo blouse",
+          "#F4F4F0"
+        ],
+        [
+          "Chữ thập, thuốc",
+          "#9BC53D"
+        ],
+        [
+          "Da nâu, ủng",
+          "#5E3E26"
+        ],
+        [
+          "Ống nghiệm",
+          "#CFEFD8"
+        ],
+        [
+          "Mắt",
+          "#7FB43A"
+        ]
+      ],
+      "personality": "Lém lỉnh, cẩu thả, tốt bụng; nói nhanh và hay pha chế lung tung.",
+      "identity": "Xanh độc #9BC53D, cam đất, trắng, nâu. Bóng đen: ba lô đầy ống nghiệm, mũ kính phi công."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard quill 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A cheerful clumsy young field medic boy with messy brown hair, green eyes, a burnt-orange leather aviator cap with ear flaps, a white medic coat with a toxic-green cross, brown boots, a big backpack full of glowing test tubes. Weapon: a large brass syringe-like injector with green liquid. Holding the big injector over his shoulder like a bazooka, giving a thumbs-up, test tubes rattling in the backpack. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard quill 1b_front.png. Same character as the reference image: a cheerful clumsy young field medic boy with messy brown hair, green eyes, a burnt-orange leather aviator cap with ear flaps, a white medic coat with a toxic-green cross, brown boots, a big backpack full of glowing test tubes. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard quill 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a cheerful clumsy young field medic boy with messy brown hair, green eyes, a burnt-orange leather aviator cap with ear flaps, a white medic coat with a toxic-green cross, brown boots, a big backpack full of glowing test tubes. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard quill 1c_weapon.png. Game prop design: a large brass syringe-like injector with green liquid, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard quill 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, orange aviator cap with ear flaps, white coat, huge backpack of test tubes, big syringe, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard quill 1e_splash.png. Anime key visual splash art of the same character as the reference image: a cheerful clumsy young field medic boy with messy brown hair, green eyes, a burnt-orange leather aviator cap with ear flaps, a white medic coat with a toxic-green cross, brown boots, a big backpack full of glowing test tubes. Popping the cork of a giant potion bottle pulled from his backpack, a sparkling mint-green healing mist bursting out over the team. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark green and purple background with glowing toxic mist and bubbles, glowing poison effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "aldric",
+      "title": "Aldric – 4★ · Phong · Bảo Hộ",
+      "palette": [
+        [
+          "Tóc",
+          "#3E9C88"
+        ],
+        [
+          "Da",
+          "#F2D2BE"
+        ],
+        [
+          "Giáp thép",
+          "#8C949E"
+        ],
+        [
+          "Áo choàng đỏ sẫm",
+          "#8E2A2A"
+        ],
+        [
+          "Buồm, hoa văn gió",
+          "#4FD1B5"
+        ],
+        [
+          "Áo khoác ngoài",
+          "#EEF1F2"
+        ],
+        [
+          "Mắt",
+          "#4FD1B5"
+        ]
+      ],
+      "personality": "Trầm, kỷ luật, hay càu nhàu; luôn đứng trước người khác.",
+      "identity": "Xanh ngọc #4FD1B5, xám thép, đỏ sẫm, trắng. Bóng đen: khiên buồm hình cánh diều, áo choàng ngắn rách mép."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard aldric 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A dutiful young knight with short teal hair, teal eyes, steel-grey plate armor, a white tabard, a short dark-red cape with torn edges, teal wind-pattern engravings. Weapon: a kite-shaped shield with a cloth sail stretched across it like a wing, steel frame with teal sail. Bracing the sail shield forward with both arms, cape whipping in the wind. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard aldric 1b_front.png. Same character as the reference image: a dutiful young knight with short teal hair, teal eyes, steel-grey plate armor, a white tabard, a short dark-red cape with torn edges, teal wind-pattern engravings. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard aldric 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a dutiful young knight with short teal hair, teal eyes, steel-grey plate armor, a white tabard, a short dark-red cape with torn edges, teal wind-pattern engravings. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard aldric 1c_weapon.png. Game prop design: a kite-shaped shield with a cloth sail stretched across it like a wing, steel frame with teal sail, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard aldric 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, teal hair, grey armor, torn dark-red short cape, kite-shaped shield with a teal sail, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard aldric 1e_splash.png. Anime key visual splash art of the same character as the reference image: a dutiful young knight with short teal hair, teal eyes, steel-grey plate armor, a white tabard, a short dark-red cape with torn edges, teal wind-pattern engravings. Planting his kite-shaped sail shield as the sail billows enormously, a protective teal storm swirling around him, torn red cape flying. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a pale teal sky background with swirling wind streaks and leaves, glowing wind effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "rook",
+      "title": "Rook – 4★ · Mộc · Hủy Diệt",
+      "palette": [
+        [
+          "Tóc",
+          "#4E7A3A"
+        ],
+        [
+          "Da",
+          "#D8A07A"
+        ],
+        [
+          "Áo kẻ ca rô",
+          "#8E2B2B"
+        ],
+        [
+          "Giáp gỗ",
+          "#7A5232"
+        ],
+        [
+          "Bao tay đá",
+          "#8A8A86"
+        ],
+        [
+          "Điểm nhấn Mộc",
+          "#2E8B57"
+        ],
+        [
+          "Lưỡi rìu",
+          "#9AA3AD"
+        ],
+        [
+          "Mắt",
+          "#3F6F3A"
+        ]
+      ],
+      "personality": "Hiền như cục đất, nổi giận như bão; nói chậm, ăn nhiều.",
+      "identity": "Xanh lá #2E8B57, nâu gỗ, đỏ sẫm, xám đá. Bóng đen: thân hình to vuông, rìu hai lưỡi khổng lồ."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. Weapon: a giant double-bladed axe with a wooden handle and steel blades with wood-grain etching. Resting the giant double-bladed axe on his shoulder, wide stance, big grin. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1b_front.png. Same character as the reference image: a big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1c_weapon.png. Game prop design: a giant double-bladed axe with a wooden handle and steel blades with wood-grain etching, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, very square body, spiky green hair, red plaid, giant double-bladed axe, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1e_splash.png. Anime key visual splash art of the same character as the reference image: a big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. Chopping the base of a giant tree that is falling toward the enemies, his double-bladed axe glowing with red wood grain, leaves exploding. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "fenna",
+      "title": "Fenna – 4★ · Mộc · Săn Bắn",
+      "palette": [
+        [
+          "Mũ trùm",
+          "#2E8B57"
+        ],
+        [
+          "Tóc",
+          "#B5562E"
+        ],
+        [
+          "Da",
+          "#F4D2BC"
+        ],
+        [
+          "Áo da",
+          "#6B4A2E"
+        ],
+        [
+          "Khăn cam",
+          "#E07B2E"
+        ],
+        [
+          "Lông vũ",
+          "#F4F2EC"
+        ],
+        [
+          "Mắt",
+          "#E0A33A"
+        ]
+      ],
+      "personality": "Hoang dã, thẳng thắn, ít nói trước người lạ; rất trung thành.",
+      "identity": "Xanh lá #2E8B57, nâu da, cam lá thu, trắng lông vũ. Bóng đen: mũ trùm tai cáo, cung ngắn cong và ống tên lông vũ."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. Weapon: a short curved bow and a quiver of white-feathered arrows. Crouching low with an arrow nocked on the short bow, fox-ear hood perked up. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1b_front.png. Same character as the reference image: a nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1c_weapon.png. Game prop design: a short curved bow and a quiver of white-feathered arrows, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, green hood with fox ears, orange scarf, brown vest, small curved bow, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1e_splash.png. Anime key visual splash art of the same character as the reference image: a nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. Kneeling on one knee aiming a glowing leaf-green arrow, a ring of leaves swirling around the arrowhead, fox-ear hood and orange scarf blowing. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "kestrel",
+      "title": "Kestrel – 4★ · Phong · Hủy Diệt",
+      "palette": [
+        [
+          "Tóc",
+          "#E3A62B"
+        ],
+        [
+          "Da",
+          "#EBC19E"
+        ],
+        [
+          "Giáp xanh ngọc",
+          "#4FD1B5"
+        ],
+        [
+          "Da nâu",
+          "#6B4A2E"
+        ],
+        [
+          "Khăn trắng",
+          "#F2F2EE"
+        ],
+        [
+          "Lưỡi liềm",
+          "#B8C0C8"
+        ],
+        [
+          "Mắt",
+          "#2FA88E"
+        ]
+      ],
+      "personality": "Hiếu động, khoe khoang, sợ độ cao một cách bí mật.",
+      "identity": "Xanh ngọc #4FD1B5, vàng nghệ, nâu, trắng. Bóng đen: hai lưỡi liềm cầm ngược, đôi cánh gió nhỏ ở mắt cá."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard kestrel 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A fierce agile hot-headed boy with short spiky turmeric-yellow hair, teal eyes, light teal and brown armor, a long white wrap scarf, small feathered wind wings on both ankles, tan skin. Weapon: two sickles held in reverse grip with teal wind-etched blades. Low crouching stance, both sickles held in reverse grip, scarf flying behind. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard kestrel 1b_front.png. Same character as the reference image: a fierce agile hot-headed boy with short spiky turmeric-yellow hair, teal eyes, light teal and brown armor, a long white wrap scarf, small feathered wind wings on both ankles, tan skin. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard kestrel 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a fierce agile hot-headed boy with short spiky turmeric-yellow hair, teal eyes, light teal and brown armor, a long white wrap scarf, small feathered wind wings on both ankles, tan skin. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard kestrel 1c_weapon.png. Game prop design: two sickles held in reverse grip with teal wind-etched blades, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard kestrel 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, spiky yellow hair, long white scarf, tiny wings on the ankles, two sickles, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard kestrel 1e_splash.png. Anime key visual splash art of the same character as the reference image: a fierce agile hot-headed boy with short spiky turmeric-yellow hair, teal eyes, light teal and brown armor, a long white wrap scarf, small feathered wind wings on both ankles, tan skin. Diving down from the sky spinning with both sickles inside a huge teal tornado, white scarf whipping. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a pale teal sky background with swirling wind streaks and leaves, glowing wind effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "vael",
+      "title": "Vael – 4★ · Độc · Tri Thức",
+      "palette": [
+        [
+          "Tóc",
+          "#C77DB8"
+        ],
+        [
+          "Da",
+          "#F5D6C8"
+        ],
+        [
+          "Áo đuôi tôm",
+          "#1E1A22"
+        ],
+        [
+          "Vàng kim",
+          "#D4AF37"
+        ],
+        [
+          "Lót áo choàng",
+          "#C77DB8"
+        ],
+        [
+          "Độc",
+          "#9BC53D"
+        ],
+        [
+          "Mắt",
+          "#9BC53D"
+        ]
+      ],
+      "personality": "Phô trương, kịch tính, thích được vỗ tay; sợ cô đơn.",
+      "identity": "Xanh độc #9BC53D, tím hồng, đen, vàng kim. Bóng đen: mũ chóp cao lệch, áo choàng sân khấu xòe tròn."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vael 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A flamboyant showy stage magician young man with pink-violet hair, toxic-green eyes, a tall crooked top hat, a black and gold stage tailcoat, a wide round flared cape with pink-violet lining, white gloves, a deck of glowing cards. Weapon: poison-tipped playing cards glowing green. Fanning out a hand of glowing cards with one hand, tipping his crooked top hat with the other, theatrical grin. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vael 1b_front.png. Same character as the reference image: a flamboyant showy stage magician young man with pink-violet hair, toxic-green eyes, a tall crooked top hat, a black and gold stage tailcoat, a wide round flared cape with pink-violet lining, white gloves, a deck of glowing cards. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vael 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a flamboyant showy stage magician young man with pink-violet hair, toxic-green eyes, a tall crooked top hat, a black and gold stage tailcoat, a wide round flared cape with pink-violet lining, white gloves, a deck of glowing cards. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vael 1c_weapon.png. Game prop design: poison-tipped playing cards glowing green, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vael 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, very tall crooked top hat, round flared cape with pink lining, fan of green cards, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard vael 1e_splash.png. Anime key visual splash art of the same character as the reference image: a flamboyant showy stage magician young man with pink-violet hair, toxic-green eyes, a tall crooked top hat, a black and gold stage tailcoat, a wide round flared cape with pink-violet lining, white gloves, a deck of glowing cards. Taking a dramatic bow on a stage under a spotlight as a curtain call of exploding glowing poison cards fills the air, flared cape spread. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark green and purple background with glowing toxic mist and bubbles, glowing poison effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "wisp",
+      "title": "Wisp – 4★ · Phong · Hư Vô",
+      "palette": [
+        [
+          "Tóc",
+          "#E6FBF6"
+        ],
+        [
+          "Đuôi khói",
+          "#CFEFEA"
+        ],
+        [
+          "Da",
+          "#F4E8EC"
+        ],
+        [
+          "Áo trắng sương",
+          "#F2F6F7"
+        ],
+        [
+          "Tím nhạt",
+          "#B9A3E3"
+        ],
+        [
+          "Xanh ngọc nhạt",
+          "#4FD1B5"
+        ],
+        [
+          "Viền bạc",
+          "#C7CCD4"
+        ],
+        [
+          "Mắt",
+          "#B9A3E3"
+        ]
+      ],
+      "personality": "Rụt rè, tò mò, thích sưu tầm đồ lấp lánh; nói thì thầm.",
+      "identity": "Xanh ngọc nhạt #4FD1B5, trắng sương, tím nhạt, bạc. Bóng đen: thân nhỏ trôi lơ lửng, đuôi như làn khói xoắn."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard wisp 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A small quiet ghost-like floating girl with pale mint-white hair, lavender eyes, a misty white robe with silver lining and pale teal accents, a smoky twisting tail instead of legs. Weapon: no weapon; she attacks with whispering wind from her hands and breath. Floating with hands cupped near her mouth as if whispering, smoky tail curling. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard wisp 1b_front.png. Same character as the reference image: a small quiet ghost-like floating girl with pale mint-white hair, lavender eyes, a misty white robe with silver lining and pale teal accents, a smoky twisting tail instead of legs. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard wisp 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a small quiet ghost-like floating girl with pale mint-white hair, lavender eyes, a misty white robe with silver lining and pale teal accents, a smoky twisting tail instead of legs. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard wisp 1c_weapon.png. Game prop design: no weapon; she attacks with whispering wind from her hands and breath, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard wisp 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, small floating ghost girl, pale mint hair, white robe, smoky curly tail instead of legs, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard wisp 1e_splash.png. Anime key visual splash art of the same character as the reference image: a small quiet ghost-like floating girl with pale mint-white hair, lavender eyes, a misty white robe with silver lining and pale teal accents, a smoky twisting tail instead of legs. Floating silently with eyes closed and a finger on her lips as a soundless pale wind ripples outward, colors fading into mist. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a pale teal sky background with swirling wind streaks and leaves, glowing wind effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "selka",
+      "title": "Selka – 4★ · Độc · Hòa Hợp",
+      "palette": [
+        [
+          "Tóc",
+          "#B9A3E3"
+        ],
+        [
+          "Da",
+          "#F6D9CC"
+        ],
+        [
+          "Áo tím oải hương",
+          "#CDB7EE"
+        ],
+        [
+          "Xanh độc",
+          "#9BC53D"
+        ],
+        [
+          "Hồng phấn",
+          "#F2A7B8"
+        ],
+        [
+          "Vàng",
+          "#D9B84E"
+        ],
+        [
+          "Mắt",
+          "#F2A7B8"
+        ]
+      ],
+      "personality": "Dịu dàng, tinh tế, hơi chậm chạp; ghét cãi nhau.",
+      "identity": "Xanh độc #9BC53D, tím oải hương, hồng phấn, vàng. Bóng đen: lư hương treo trên gậy dài, tóc búi cao cắm trâm."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard selka 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A serene graceful incense priestess with lavender hair in a high bun held by golden hairpins, peach-pink eyes, layered lavender and toxic-green robes, pink accents, gold ornaments. Weapon: a long staff with a hanging golden censer that emits curling green and pink smoke. Swinging the censer staff gently, smoke curling around her in elegant ribbons. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard selka 1b_front.png. Same character as the reference image: a serene graceful incense priestess with lavender hair in a high bun held by golden hairpins, peach-pink eyes, layered lavender and toxic-green robes, pink accents, gold ornaments. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard selka 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a serene graceful incense priestess with lavender hair in a high bun held by golden hairpins, peach-pink eyes, layered lavender and toxic-green robes, pink accents, gold ornaments. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard selka 1c_weapon.png. Game prop design: a long staff with a hanging golden censer that emits curling green and pink smoke, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard selka 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, high lavender bun with golden pins, layered lavender robe, long staff with hanging censer and smoke, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard selka 1e_splash.png. Anime key visual splash art of the same character as the reference image: a serene graceful incense priestess with lavender hair in a high bun held by golden hairpins, peach-pink eyes, layered lavender and toxic-green robes, pink accents, gold ornaments. Swinging her censer staff in a wide circle as fragrant green and pink smoke blooms into flower shapes around the whole team. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark green and purple background with glowing toxic mist and bubbles, glowing poison effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "ember",
+      "title": "Ember – 4★ · Lửa · Tri Thức",
+      "palette": [
+        [
+          "Tóc",
+          "#E8552B"
+        ],
+        [
+          "Đuôi tóc vàng",
+          "#F7C948"
+        ],
+        [
+          "Da",
+          "#F4D2BE"
+        ],
+        [
+          "Áo xám tro",
+          "#6E6A68"
+        ],
+        [
+          "Cổ áo trắng",
+          "#F4F2EE"
+        ],
+        [
+          "Viền lửa",
+          "#E8552B"
+        ],
+        [
+          "Bìa sách",
+          "#7A3B2E"
+        ],
+        [
+          "Mắt",
+          "#F7C948"
+        ]
+      ],
+      "personality": "Bốc đồng, vui vẻ, liều lĩnh; xin lỗi rất nhiều sau mỗi vụ nổ.",
+      "identity": "Đỏ cam #E8552B, vàng, xám tro, trắng. Bóng đen: mái tóc xù như ngọn lửa, cuốn sách phép cháy sém mép."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ember 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. An excitable young mage boy with wild flame-shaped orange-red hair with yellow tips, yellow eyes, an ash-grey robe with a white collar and flame-orange trim, soot on his nose. Weapon: a thick spellbook with scorched edges and a flame emblem, sometimes on fire. Holding the scorched spellbook open with one hand, a small fireball in the other, excited grin. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ember 1b_front.png. Same character as the reference image: an excitable young mage boy with wild flame-shaped orange-red hair with yellow tips, yellow eyes, an ash-grey robe with a white collar and flame-orange trim, soot on his nose. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ember 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: an excitable young mage boy with wild flame-shaped orange-red hair with yellow tips, yellow eyes, an ash-grey robe with a white collar and flame-orange trim, soot on his nose. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ember 1c_weapon.png. Game prop design: a thick spellbook with scorched edges and a flame emblem, sometimes on fire, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ember 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, wild flame-shaped orange hair, ash-grey robe, scorched open book, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard ember 1e_splash.png. Anime key visual splash art of the same character as the reference image: an excitable young mage boy with wild flame-shaped orange-red hair with yellow tips, yellow eyes, an ash-grey robe with a white collar and flame-orange trim, soot on his nose. Holding his burning spellbook to the sky as a magic circle spins and fiery meteors rain down, his flame-like hair blazing. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a blazing orange-red background with flying embers and heat haze, glowing fire effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "neris",
+      "title": "Neris – 4★ · Nước · Săn Bắn",
+      "palette": [
+        [
+          "Tóc",
+          "#1F3F7A"
+        ],
+        [
+          "Da",
+          "#D9A27E"
+        ],
+        [
+          "Bộ đồ lặn",
+          "#1F4E8C"
+        ],
+        [
+          "Xanh nước",
+          "#3A8DDE"
+        ],
+        [
+          "Cam san hô",
+          "#F2785C"
+        ],
+        [
+          "Bạc",
+          "#C9D1DA"
+        ],
+        [
+          "Mắt",
+          "#3AB0D8"
+        ]
+      ],
+      "personality": "Kiệm lời, kiên nhẫn, khô khan hài hước; ăn cá sống.",
+      "identity": "Xanh biển #3A8DDE, xanh đậm, bạc, cam san hô. Bóng đen: giáo ba chĩa dài, tóc ngắn rối, kính lặn trên trán."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips. Weapon: a silver trident taller than her body. Holding the tall trident diagonally with both hands, ready to thrust, playful wink. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1b_front.png. Same character as the reference image: a sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1c_weapon.png. Game prop design: a silver trident taller than her body, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, short messy navy hair, diving mask on head, blue suit with coral accents, tall silver trident, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1e_splash.png. Anime key visual splash art of the same character as the reference image: a sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips. Bursting up out of deep water with her silver trident thrust upward inside a towering spiral wave, bubbles everywhere. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a deep blue water background with bubbles and shafts of light, glowing water effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "pip",
+      "title": "Pip – 4★ · Sét · Hòa Hợp",
+      "palette": [
+        [
+          "Mũ bảo hộ",
+          "#F2A23A"
+        ],
+        [
+          "Tóc",
+          "#6B4A2E"
+        ],
+        [
+          "Da",
+          "#F6D8C6"
+        ],
+        [
+          "Quần yếm",
+          "#8C9096"
+        ],
+        [
+          "Túi xanh",
+          "#3A6FD8"
+        ],
+        [
+          "Miếng vá sét",
+          "#A65BF2"
+        ],
+        [
+          "Vỏ robot",
+          "#EDEFF2"
+        ],
+        [
+          "Mắt, mắt robot",
+          "#6FA8FF"
+        ]
+      ],
+      "personality": "Lanh lợi, vui tính, nói không ngừng; giả vờ không sợ khi rất sợ.",
+      "identity": "Tím sét #A65BF2, vàng cam, xanh dương, xám. Bóng đen: người nhỏ thó đội mũ bảo hộ to, robot tròn bay kè kè bên vai."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard pip 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A tiny cheerful mechanic kid with short brown hair, blue eyes, an oversized yellow-orange hard hat, grey overalls with blue pockets and violet lightning patches, big work boots, and a round floating robot companion with one glowing eye hovering beside the shoulder. Weapon: the round floating robot companion (white shell, violet lightning stripes, one blue eye) plus a big wrench. Pointing forward with the wrench while the round robot buddy charges a spark beside him. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard pip 1b_front.png. Same character as the reference image: a tiny cheerful mechanic kid with short brown hair, blue eyes, an oversized yellow-orange hard hat, grey overalls with blue pockets and violet lightning patches, big work boots, and a round floating robot companion with one glowing eye hovering beside the shoulder. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard pip 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a tiny cheerful mechanic kid with short brown hair, blue eyes, an oversized yellow-orange hard hat, grey overalls with blue pockets and violet lightning patches, big work boots, and a round floating robot companion with one glowing eye hovering beside the shoulder. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard pip 1c_weapon.png. Game prop design: the round floating robot companion (white shell, violet lightning stripes, one blue eye) plus a big wrench, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard pip 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, huge orange hard hat on a tiny body, grey overalls, small round floating robot next to the head, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard pip 1e_splash.png. Anime key visual splash art of the same character as the reference image: a tiny cheerful mechanic kid with short brown hair, blue eyes, an oversized yellow-orange hard hat, grey overalls with blue pockets and violet lightning patches, big work boots, and a round floating robot companion with one glowing eye hovering beside the shoulder. Pulling a giant lever as his round robot buddy grows three times bigger and releases a huge violet-yellow energy pulse, hard hat tilted. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark violet storm background with branching lightning, glowing lightning effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for remaining views",
+    "metadata": {
+      "id": "echo",
+      "title": "Echo – 4★ · Hồn · Hư Vô",
+      "palette": [
+        [
+          "Tóc",
+          "#F2E2A8"
+        ],
+        [
+          "Da",
+          "#F3DCD2"
+        ],
+        [
+          "Váy gương đen",
+          "#15151C"
+        ],
+        [
+          "Bạc",
+          "#C7CCD4"
+        ],
+        [
+          "Tím",
+          "#8E6FD8"
+        ],
+        [
+          "Vàng hồn",
+          "#F2D58A"
+        ],
+        [
+          "Mặt nạ trắng",
+          "#F4F4F4"
+        ],
+        [
+          "Mắt",
+          "#8E6FD8"
+        ]
+      ],
+      "personality": "Lạ lùng, hay nhại lời người khác, thật lòng ngây thơ.",
+      "identity": "Vàng hồn nhạt #F2D58A, đen gương, xám bạc, tím. Bóng đen: hai cái bóng chồng lệch nhau, mặt nạ nửa trắng nửa đen."
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. An enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her. Weapon: a hand mirror with a cracked silver frame. Holding the cracked hand mirror up beside her masked face, her shadow-copy mirroring the pose a beat later. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1b_front.png. Same character as the reference image: an enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_back.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: an enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her. ",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_weapon.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1c_weapon.png. Game prop design: a hand mirror with a cracked silver frame, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1d_pixel.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, half white half black mask, pale gold hair, black glass dress, faint offset double shadow, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": true
+      },
+      {
+        "asset": "1e_splash.png",
+        "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1e_splash.png. Anime key visual splash art of the same character as the reference image: an enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her. Surrounded by hundreds of floating mirror shards each reflecting her masked face, her shadow-copy reaching out, the shards about to shatter outward. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity consistent across views. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.",
+        "transparent_background": false
+      }
+    ]
+  }
+]

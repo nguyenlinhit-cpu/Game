@@ -1,0 +1,54 @@
+{
+ "owner": "mira",
+ "skill": "skill",
+ "fps": 12,
+ "frames": 10,
+ "hit_frame": 6,
+ "element_color": "#3A8DDE",
+ "anchors": {
+  "feet": [
+   256,
+   430
+  ],
+  "wand_tip": [
+   352,
+   168
+  ],
+  "flask": [
+   195,
+   250
+  ],
+  "hands": [
+   300,
+   185
+  ],
+  "chest": [
+   262,
+   230
+  ],
+  "target_center": [
+   256,
+   270
+  ]
+ },
+ "layers": {
+  "cast": {
+   "start_frame": 0,
+   "frames": 10,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "người dùng (khung trùng khung sprite trận, chân ở anchor)"
+  },
+  "hit": {
+   "start_frame": 6,
+   "frames": 8,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
+  }
+ }
+}

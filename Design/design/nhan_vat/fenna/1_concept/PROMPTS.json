@@ -1,0 +1,72 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for remaining views",
+  "metadata": {
+    "id": "fenna",
+    "title": "Fenna – 4★ · Mộc · Săn Bắn",
+    "palette": [
+      [
+        "Mũ trùm",
+        "#2E8B57"
+      ],
+      [
+        "Tóc",
+        "#B5562E"
+      ],
+      [
+        "Da",
+        "#F4D2BC"
+      ],
+      [
+        "Áo da",
+        "#6B4A2E"
+      ],
+      [
+        "Khăn cam",
+        "#E07B2E"
+      ],
+      [
+        "Lông vũ",
+        "#F4F2EC"
+      ],
+      [
+        "Mắt",
+        "#E0A33A"
+      ]
+    ],
+    "personality": "Hoang dã, thẳng thắn, ít nói trước người lạ; rất trung thành.",
+    "identity": "Xanh lá #2E8B57, nâu da, cam lá thu, trắng lông vũ. Bóng đen: mũ trùm tai cáo, cung ngắn cong và ống tên lông vũ."
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. Weapon: a short curved bow and a quiver of white-feathered arrows. Crouching low with an arrow nocked on the short bow, fox-ear hood perked up. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1b_front.png. Same character as the reference image: a nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves.  EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1c_weapon.png. Game prop design: a short curved bow and a quiver of white-feathered arrows, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. One isolated weapon design only, no collage.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, green hood with fox ears, orange scarf, brown vest, small curved bow, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": true
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1e_splash.png. Anime key visual splash art of the same character as the reference image: a nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. Kneeling on one knee aiming a glowing leaf-green arrow, a ring of leaves swirling around the arrowhead, fox-ear hood and orange scarf blowing. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    }
+  ]
+}

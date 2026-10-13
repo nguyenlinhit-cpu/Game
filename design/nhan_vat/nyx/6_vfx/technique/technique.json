@@ -1,0 +1,31 @@
+{
+ "owner": "nyx",
+ "skill": "technique",
+ "fps": 12,
+ "frames": 6,
+ "hit_frame": null,
+ "size": [
+  64,
+  64
+ ],
+ "colors": 4,
+ "anchors": {
+  "opener_origin": [
+   28,
+   41
+  ],
+  "opener_feet": [
+   16,
+   52
+  ],
+  "technique_feet": [
+   16,
+   52
+  ],
+  "technique_button": [
+   27,
+   41
+  ]
+ },
+ "placed_at": "khung 64×64, điểm neo ghi trong anchors (toạ độ pixel trong khung)"
+}

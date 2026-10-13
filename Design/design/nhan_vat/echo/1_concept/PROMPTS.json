@@ -1,0 +1,76 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for remaining views",
+  "metadata": {
+    "id": "echo",
+    "title": "Echo – 4★ · Hồn · Hư Vô",
+    "palette": [
+      [
+        "Tóc",
+        "#F2E2A8"
+      ],
+      [
+        "Da",
+        "#F3DCD2"
+      ],
+      [
+        "Váy gương đen",
+        "#15151C"
+      ],
+      [
+        "Bạc",
+        "#C7CCD4"
+      ],
+      [
+        "Tím",
+        "#8E6FD8"
+      ],
+      [
+        "Vàng hồn",
+        "#F2D58A"
+      ],
+      [
+        "Mặt nạ trắng",
+        "#F4F4F4"
+      ],
+      [
+        "Mắt",
+        "#8E6FD8"
+      ]
+    ],
+    "personality": "Lạ lùng, hay nhại lời người khác, thật lòng ngây thơ.",
+    "identity": "Vàng hồn nhạt #F2D58A, đen gương, xám bạc, tím. Bóng đen: hai cái bóng chồng lệch nhau, mặt nạ nửa trắng nửa đen."
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. An enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her. Weapon: a hand mirror with a cracked silver frame. Holding the cracked hand mirror up beside her masked face, her shadow-copy mirroring the pose a beat later. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1b_front.png. Same character as the reference image: an enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: an enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her.  EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1c_weapon.png. Game prop design: a hand mirror with a cracked silver frame, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. One isolated weapon design only, no collage.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, half white half black mask, pale gold hair, black glass dress, faint offset double shadow, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": true
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard echo 1e_splash.png. Anime key visual splash art of the same character as the reference image: an enigmatic quiet girl with pale gold hair, violet eyes, a mask covering half her face (one half white, one half black), a black mirror-glass dress with silver and violet glass shards, and a second translucent shadow-copy of herself standing slightly offset behind her. Surrounded by hundreds of floating mirror shards each reflecting her masked face, her shadow-copy reaching out, the shards about to shatter outward. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    }
+  ]
+}

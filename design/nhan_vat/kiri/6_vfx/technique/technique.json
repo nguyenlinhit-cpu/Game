@@ -1,0 +1,31 @@
+{
+ "owner": "kiri",
+ "skill": "technique",
+ "fps": 12,
+ "frames": 6,
+ "hit_frame": null,
+ "size": [
+  64,
+  64
+ ],
+ "colors": 6,
+ "anchors": {
+  "opener_origin": [
+   28,
+   37
+  ],
+  "opener_feet": [
+   16,
+   52
+  ],
+  "technique_feet": [
+   16,
+   52
+  ],
+  "technique_bag": [
+   6,
+   46
+  ]
+ },
+ "placed_at": "khung 64×64, điểm neo ghi trong anchors (toạ độ pixel trong khung)"
+}
