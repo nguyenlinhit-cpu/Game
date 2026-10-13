@@ -5,3 +5,7 @@
 
 # Bản build
 /build/
+
+# Python
+__pycache__/
+*.pyc
