@@ -43,6 +43,7 @@ func _ready() -> void:
 			and not SceneRouter.payload.has("battle_result"):
 		GameState.respawn_zone(scene_file_path, zone)
 	var rooms := _collect_rooms()
+	_apply_zone_tileset(rooms)
 	room_manager.setup(rooms, _connect_rooms(rooms))
 	room_manager.current_room_changed.connect(_on_current_room_changed)
 	_restore_and_track_state()
@@ -52,6 +53,7 @@ func _ready() -> void:
 	player.technique_requested.connect(use_technique)
 	player.obstacle_hit.connect(_on_obstacle_hit)
 	_show_battle_result()
+	AudioManager.play_music_id(PlaceholderMusic.zone_track(zone if zone != &"" else &"hub"))
 	quest_arrow = QuestArrow.new()
 	quest_arrow.map = self
 	add_child(quest_arrow)
@@ -309,6 +311,19 @@ func _all_descendants(root: Node) -> Array[Node]:
 	return result
 
 
+## Có tileset vẽ tay của khu (assets/tilesets/<khu>/) thì thay cho tileset tạm (cùng bố cục ô, Phase 13).
+func _apply_zone_tileset(rooms: Array[Room]) -> void:
+	var tile_set := ArtLibrary.zone_tileset(zone)
+	if tile_set == null:
+		return
+	corridor_layer.tile_set = tile_set
+	corridor_layer.modulate = Color.WHITE
+	for room in rooms:
+		for layer: TileMapLayer in [room.floor_layer, room.wall_layer]:
+			layer.tile_set = tile_set
+			layer.modulate = Color.WHITE
+
+
 # --- Cốt truyện (Phase 12) ---
 
 ## Ẩn/hiện vật có StoryGate theo cờ. Vật bị ẩn: không vẽ, không va chạm, quái không tính là còn trong phòng.
@@ -504,6 +519,7 @@ func use_technique() -> bool:
 	if technique.kind != TechniqueData.Kind.MAP_ENEMIES and not technique.battle_start_effects.is_empty():
 		GameState.add_pending_technique(leader.id)
 	EventBus.technique_used.emit(leader.id)
+	AudioManager.play_sfx(&"technique")
 	# Bí Kỹ có thông báo riêng thì không đè bằng thông báo chung.
 	if technique.map_action != TechniqueData.MapAction.HEAL_TEAM:
 		EventBus.toast_requested.emit(tr("TOAST_TECHNIQUE_USED") % tr(technique.name_key))

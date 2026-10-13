@@ -236,6 +236,16 @@ func speaker_name(speaker_id: String) -> String:
 	return format_text(tr(str(speaker.get("name", ""))))
 
 
+## Chân dung thật của người nói (Phase 13), null = vẽ tạm.
+func speaker_portrait(speaker_id: String, expression: String) -> Texture2D:
+	var speaker := get_speaker(speaker_id)
+	if speaker.has("character"):
+		return ArtLibrary.portrait(DataPaths.load_character(StringName(str(speaker["character"]))), expression)
+	if speaker_id == "narrator" or speaker.is_empty():
+		return null
+	return ArtLibrary.portrait_by_id(speaker_id, expression)
+
+
 func speaker_color(speaker_id: String) -> Color:
 	var speaker := get_speaker(speaker_id)
 	if speaker.has("character"):

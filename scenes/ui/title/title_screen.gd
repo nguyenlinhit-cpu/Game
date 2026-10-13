@@ -1,5 +1,6 @@
 extends Control
-## Màn hình tiêu đề: Bắt đầu, Tiếp tục (mờ khi chưa có save), Cài đặt, Thoát.
+## Màn hình tiêu đề: Bắt đầu (hỏi trước khi ghi đè ô tự lưu), Tiếp tục (ô lưu mới nhất), Tải game (chọn ô),
+## Cài đặt, Thoát. Phát nhạc tiêu đề.
 
 @onready var _menu: VBoxContainer = %Menu
 @onready var _start_button: Button = %StartButton
@@ -9,8 +10,24 @@ extends Control
 @onready var _settings_panel: SettingsPanel = %SettingsPanel
 
 
+## Nút Tải game và bảng chọn ô (test đọc).
+var load_button: Button
+var slots_panel: SaveSlotsPanel
+
+
 func _ready() -> void:
+	if BuildCheck.is_requested():
+		BuildCheck.run.call_deferred(get_tree())
+		return
 	_continue_button.disabled = not SaveManager.has_any_save()
+	load_button = Button.new()
+	load_button.text = tr("TITLE_LOAD")
+	load_button.custom_minimum_size = _continue_button.custom_minimum_size
+	load_button.disabled = _continue_button.disabled
+	load_button.pressed.connect(open_load)
+	_menu.add_child(load_button)
+	_menu.move_child(load_button, _continue_button.get_index() + 1)
+	AudioManager.play_music_id(&"title")
 	_start_button.pressed.connect(_on_start_pressed)
 	_continue_button.pressed.connect(_on_continue_pressed)
 	_settings_button.pressed.connect(_on_settings_pressed)
@@ -21,9 +38,23 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
-	# TODO Phase 14: hỏi xác nhận nếu sắp ghi đè ô tự lưu đang có.
+	# Game mới ghi vào ô tự lưu khi tạo nhân vật: có save cũ ở ô đó thì hỏi trước (3 ô lưu tay không bị đụng).
+	if SaveManager.has_save(SaveManager.AUTOSAVE_SLOT):
+		UiKit.confirm(self, tr("TITLE_CONFIRM_NEW_GAME"), start_new_game)
+	else:
+		start_new_game()
+
+
+func start_new_game() -> void:
 	GameState.reset_new_game()
 	SceneRouter.go_to(DataPaths.INTRO_SCENE)
+
+
+func open_load() -> void:
+	slots_panel = SaveSlotsPanel.new()
+	slots_panel.setup(SaveSlotsPanel.Mode.LOAD, false)
+	slots_panel.loaded.connect(func(_slot: int) -> void: SaveSlotsPanel.go_to_loaded_map(get_tree()))
+	add_child(slots_panel)
 
 
 func _on_continue_pressed() -> void:
@@ -31,10 +62,7 @@ func _on_continue_pressed() -> void:
 		_continue_button.disabled = true
 		_start_button.grab_focus()
 		return
-	var target := GameState.current_map_scene
-	if target.is_empty() or not ResourceLoader.exists(target):
-		target = DataPaths.HUB_SCENE
-	SceneRouter.go_to(target)
+	SaveSlotsPanel.go_to_loaded_map(get_tree())
 
 
 func _on_settings_pressed() -> void:

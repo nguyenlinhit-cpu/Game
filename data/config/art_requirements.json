@@ -1,0 +1,19 @@
+{
+	"directions": ["e", "se", "s", "sw", "w", "nw", "n", "ne"],
+	"default_fps": 10,
+	"character": {
+		"map": {"frame_size": 128, "actions": {"idle": 4, "run": 8, "dash": 4, "opener": 6, "technique": 6}, "loop": ["idle", "run"]},
+		"battle": {"frame_size": 512, "actions": {"idle": 6, "attack": 8, "skill": 10, "ultimate": 12, "hit": 4, "down": 6, "victory": 8}, "loop": ["idle", "victory"]},
+		"portrait": {"size": 1024, "expressions": ["neutral", "happy", "serious"]},
+		"splash": {"size": [2048, 1152]},
+		"vfx": {"frame_size": 512, "skills": {"attack": 8, "skill": 12, "ultimate": 16}}
+	},
+	"enemy": {
+		"map": {"frame_size": 128, "actions": {"idle": 4, "run": 6}, "loop": ["idle", "run"]},
+		"battle": {"frame_size": {"normal": 256, "elite": 384, "boss": 768}, "actions": {"idle": 6, "attack": 8, "skill": 10, "hit": 4, "down": 6}, "loop": ["idle"]}
+	},
+	"expression_map": {"neutral": "neutral", "smile": "happy", "smug": "happy", "surprised": "neutral",
+		"worried": "serious", "serious": "serious", "angry": "serious", "sad": "serious"},
+	"tileset": {"tile_size": 64, "columns": ["floor_a", "floor_b", "wall", "corridor_floor", "corridor_wall"],
+		"zones": ["hub", "library", "vault", "furnace", "tower"]}
+}

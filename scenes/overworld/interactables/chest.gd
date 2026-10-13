@@ -51,6 +51,7 @@ func _on_interact(_by: Node) -> void:
 	EventBus.chest_opened.emit(chest_id)
 	EventBus.reward_popup_requested.emit(tr("REWARD_CHEST_TITLE"), Loot.describe(last_rewards))
 	CameraRig.shake(6.0, 0.15)
+	AudioManager.play_sfx(&"chest")
 
 
 func _draw() -> void:

@@ -281,6 +281,28 @@ func _find_player() -> Player:
 
 # --- Hình tạm ---
 
+## Hình thật (Phase 13) của quái đại diện nhóm, null = vẽ tạm.
+var sprite: AnimatedSprite2D
+
+
+func _ensure_sprite() -> void:
+	if sprite or encounter == null:
+		return
+	var frames := ArtLibrary.enemy_frames(encounter.get_leader(), "map")
+	if frames:
+		sprite = ArtLibrary.make_sprite(frames, 130.0)
+		add_child(sprite)
+		move_child(sprite, 0)
+
+
+func _process(_delta: float) -> void:
+	_ensure_sprite()
+	if sprite:
+		var moving := velocity.length() > 5.0
+		var dir_index := wrapi(roundi(facing.angle() / (PI / 4.0)), 0, 8)
+		ArtLibrary.play(sprite, "run" if moving else "idle", Player.FACING_NAMES[dir_index])
+
+
 func _draw() -> void:
 	var leader := encounter.get_leader() if encounter else null
 	var body_color := leader.placeholder_color if leader else Color("8e2a3b")
@@ -303,9 +325,10 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, radius * 0.95, Color(0.0, 0.0, 0.0, 0.35))
 	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 	var bob := sin(_time * 5.0) * 3.0
-	draw_circle(Vector2(0.0, bob), radius, body_color)
-	draw_arc(Vector2(0.0, bob), radius, 0.0, TAU, 32, body_color.lightened(0.4), 3.0, true)
-	draw_circle(Vector2(0.0, bob) + facing * radius * 0.55, radius * 0.22, Color.WHITE)
+	if sprite == null:
+		draw_circle(Vector2(0.0, bob), radius, body_color)
+		draw_arc(Vector2(0.0, bob), radius, 0.0, TAU, 32, body_color.lightened(0.4), 3.0, true)
+		draw_circle(Vector2(0.0, bob) + facing * radius * 0.55, radius * 0.22, Color.WHITE)
 	var count := encounter.get_total_enemy_count() if encounter else 1
 	for i in mini(count, 8):
 		draw_circle(Vector2(-radius + i * 9.0, radius + 12.0), 3.5, body_color.lightened(0.3))

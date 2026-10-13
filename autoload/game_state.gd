@@ -10,7 +10,7 @@ const MAX_PLAYER_NAME_LENGTH: int = 12
 const PLAYER_CHARACTER_ID: StringName = &"traveler"
 ## Đội mẫu Phase 4 (dữ liệu tạm; Phase 6 thay bằng nhân vật miễn phí thật).
 const DEFAULT_TEAM: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren"]
-## Nhân vật đang có (gacha thêm qua grant_character). TODO Phase 12: nhận theo cốt truyện.
+## Nhân vật đang có (gacha qua grant_character, cốt truyện qua StoryManager.give_character).
 const DEFAULT_OWNED: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren", &"nyx"]
 const MAX_TECHNIQUE_POINTS: int = 5
 ## Số đội hình lưu sẵn.
@@ -66,12 +66,14 @@ var shop_state: Dictionary = {}
 
 
 func _ready() -> void:
-	TranslationServer.set_locale(UserSettings.get_locale())
+	UserSettings.apply_all()
 
 
 func _process(delta: float) -> void:
-	# TODO Phase 14: chỉ đếm khi đang ở trong map/trận, không đếm ở màn tiêu đề.
-	play_time_sec += delta
+	# Chỉ đếm khi đang chơi (map hoặc trận), không đếm ở màn tiêu đề / lời dẫn / khi tạm dừng (autoload dừng theo).
+	var scene := get_tree().current_scene
+	if scene and (scene is OverworldMap or scene.scene_file_path == DataPaths.BATTLE_SCENE):
+		play_time_sec += delta
 
 
 func reset_new_game() -> void:

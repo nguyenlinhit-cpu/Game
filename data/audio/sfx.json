@@ -1,0 +1,174 @@
+{
+	"_note": "Hiệu ứng âm thanh tạm tổng hợp bằng code (PlaceholderSfx). File thật assets/audio/sfx/<id>.ogg|.wav sẽ được dùng thay.",
+	"sounds": {
+		"ui_click": {
+			"wave": "square",
+			"f0": 880,
+			"f1": 660,
+			"dur": 0.05,
+			"vol": 0.25
+		},
+		"ui_confirm": {
+			"wave": "triangle",
+			"f0": 660,
+			"f1": 990,
+			"dur": 0.12,
+			"vol": 0.3
+		},
+		"hit": {
+			"wave": "noise",
+			"f0": 300,
+			"f1": 120,
+			"dur": 0.09,
+			"vol": 0.45
+		},
+		"crit": {
+			"wave": "saw",
+			"f0": 520,
+			"f1": 160,
+			"dur": 0.16,
+			"vol": 0.45
+		},
+		"break": {
+			"wave": "noise",
+			"f0": 900,
+			"f1": 80,
+			"dur": 0.35,
+			"vol": 0.55
+		},
+		"heal": {
+			"wave": "triangle",
+			"f0": 520,
+			"f1": 1040,
+			"dur": 0.25,
+			"vol": 0.3
+		},
+		"ultimate": {
+			"wave": "saw",
+			"f0": 110,
+			"f1": 440,
+			"dur": 0.6,
+			"vol": 0.4
+		},
+		"victory": {
+			"wave": "triangle",
+			"notes": [
+				72,
+				76,
+				79,
+				84
+			],
+			"note_dur": 0.12,
+			"vol": 0.35
+		},
+		"defeat": {
+			"wave": "triangle",
+			"notes": [
+				67,
+				63,
+				60,
+				55
+			],
+			"note_dur": 0.18,
+			"vol": 0.35
+		},
+		"dash": {
+			"wave": "noise",
+			"f0": 1200,
+			"f1": 400,
+			"dur": 0.12,
+			"vol": 0.25
+		},
+		"opener": {
+			"wave": "noise",
+			"f0": 1600,
+			"f1": 300,
+			"dur": 0.1,
+			"vol": 0.3
+		},
+		"chest": {
+			"wave": "triangle",
+			"notes": [
+				72,
+				79,
+				84
+			],
+			"note_dur": 0.08,
+			"vol": 0.35
+		},
+		"door": {
+			"wave": "square",
+			"f0": 160,
+			"f1": 90,
+			"dur": 0.2,
+			"vol": 0.3
+		},
+		"rest": {
+			"wave": "triangle",
+			"notes": [
+				60,
+				67,
+				72,
+				79
+			],
+			"note_dur": 0.1,
+			"vol": 0.3
+		},
+		"technique": {
+			"wave": "triangle",
+			"f0": 400,
+			"f1": 1200,
+			"dur": 0.3,
+			"vol": 0.3
+		},
+		"level_up": {
+			"wave": "square",
+			"notes": [
+				72,
+				76,
+				79
+			],
+			"note_dur": 0.07,
+			"vol": 0.25
+		},
+		"gacha_3": {
+			"wave": "triangle",
+			"f0": 600,
+			"f1": 900,
+			"dur": 0.3,
+			"vol": 0.3
+		},
+		"gacha_4": {
+			"wave": "triangle",
+			"notes": [
+				76,
+				79,
+				83,
+				88
+			],
+			"note_dur": 0.09,
+			"vol": 0.35
+		},
+		"gacha_5": {
+			"wave": "triangle",
+			"notes": [
+				72,
+				76,
+				79,
+				84,
+				88,
+				91,
+				96
+			],
+			"note_dur": 0.09,
+			"vol": 0.4
+		},
+		"dialogue": {
+			"wave": "square",
+			"f0": 740,
+			"f1": 740,
+			"dur": 0.025,
+			"vol": 0.12
+		}
+	}
+}

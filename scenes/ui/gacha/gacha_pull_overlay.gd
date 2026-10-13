@@ -60,6 +60,7 @@ func _ready() -> void:
 			"delay": 0.15 + k * (1.2 / maxf(order.size(), 1.0)), "rarity": rarity,
 			"width": 4.0 + (rarity - 3) * 3.0, "length": 260.0 + (rarity - 3) * 120.0,
 		})
+	AudioManager.play_sfx(StringName("gacha_%d" % get_best_rarity()))
 	_skip_button = UiKit.make_button(tr("UI_SKIP"), skip, Vector2(200.0, 56.0))
 	_skip_button.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT, Control.PRESET_MODE_KEEP_SIZE, 30)
 	_skip_button.position = Vector2(size.x - 230.0, 30.0)

@@ -32,6 +32,12 @@ func _ready() -> void:
 		if entry[1] == GameMenu.Page.QUESTS:
 			quest_dot = UiKit.attach_red_dot(button)
 	QuestManager.changed.connect(_refresh_quest_dot)
+	save_button = Button.new()
+	save_button.text = tr("PAUSE_SAVE_LOAD")
+	save_button.custom_minimum_size = Vector2(0.0, 72.0)
+	save_button.pressed.connect(open_save_slots)
+	_menu.add_child(save_button)
+	_menu.move_child(save_button, _settings_button.get_index())
 	if OS.is_debug_build():
 		# Bản debug: lối vào phòng thử trận (Phase 5).
 		var sandbox := Button.new()
@@ -66,6 +72,24 @@ func _ready() -> void:
 
 ## Chấm đỏ trên nút Nhiệm vụ.
 var quest_dot: Control
+var save_button: Button
+var save_panel: SaveSlotsPanel
+
+
+## Lưu / Tải (Phase 14): lưu được khi đang ở map.
+func open_save_slots() -> SaveSlotsPanel:
+	_menu.hide()
+	save_panel = SaveSlotsPanel.new()
+	save_panel.setup(SaveSlotsPanel.Mode.SAVE, SaveManager.can_save_now())
+	save_panel.closed.connect(func() -> void:
+		save_panel = null
+		if visible:
+			_menu.show())
+	save_panel.loaded.connect(func(_slot: int) -> void:
+		hide()
+		SaveSlotsPanel.go_to_loaded_map(get_tree()))
+	add_child(save_panel)
+	return save_panel
 
 
 func _refresh_quest_dot() -> void:
@@ -126,7 +150,7 @@ func _reload_map() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if _game_menu:
+	if _game_menu or save_panel:
 		return
 	# Bảng phủ của HUD (quầy hàng, dịch chuyển) đang mở: Esc đóng bảng đó.
 	var hud := get_parent() as OverworldHud

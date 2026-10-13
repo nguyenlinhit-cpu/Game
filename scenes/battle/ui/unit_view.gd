@@ -6,6 +6,9 @@ extends Node2D
 ## Hiện dấu mục tiêu (chính / bên cạnh), vòng sáng khi tới lượt, nháy khi trúng đòn, mờ dần khi ngã.
 ## Quái đang tích tụ đòn: biểu tượng cảnh báo "!" + số lượt còn lại; phe ta sắp trúng đòn đó: dấu cảnh báo đỏ.
 ## Boss/tinh anh vẽ to hơn (EnemyData.size_scale), boss hiện giai đoạn; quái không bị nhắm được thì mờ đi.
+## Phase 13: thân (sprite thật nếu có SpriteFrames "battle", không thì hình tạm) là node con mang shader unit_fx:
+## viền khi được chọn, nháy trắng khi trúng đòn, tan biến khi quái ngã. Hành động phát hoạt ảnh tương ứng
+## (attack / skill / ultimate / hit / down / victory, boss giai đoạn n thêm "-p<n>").
 
 const ALLY_RADIUS: float = 52.0
 const ENEMY_RADIUS: float = 56.0
@@ -43,6 +46,13 @@ var threatened: bool = false
 var _time: float = 0.0
 var _hit_flash: float = 0.0
 var _death_tween: Tween
+## Thân: hình tạm vẽ trong _draw_body, hoặc sprite thật.
+var body: Node2D
+var sprite: AnimatedSprite2D
+var fx_material: ShaderMaterial
+
+const UNIT_FX_SHADER: String = "res://assets/vfx/shaders/unit_fx.gdshader"
+const ACTION_ANIMS: Dictionary = {0: "attack", 1: "skill", 2: "ultimate", 3: "attack"}
 
 
 func setup(battle_unit: BattleUnit, at: Vector2) -> void:
@@ -53,6 +63,50 @@ func setup(battle_unit: BattleUnit, at: Vector2) -> void:
 	unit.toughness_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
 	unit.status_changed.connect(func(_u: BattleUnit) -> void: queue_redraw())
 	unit.died.connect(_on_died)
+	fx_material = ShaderMaterial.new()
+	fx_material.shader = load(UNIT_FX_SHADER)
+	body = Node2D.new()
+	body.name = "Body"
+	add_child(body)
+	body.draw.connect(_draw_body)
+	# Thanh máu, biểu tượng, dấu mục tiêu (vẽ ở node cha) luôn nằm trên thân.
+	body.show_behind_parent = true
+	var frames := ArtLibrary.character_frames(unit.character, "battle") if unit.character \
+			else ArtLibrary.enemy_frames(unit.enemy, "battle")
+	if frames and not unit.is_summon:
+		sprite = ArtLibrary.make_sprite(frames, get_radius() * 4.2)
+		sprite.position = Vector2(0.0, get_radius() * 0.9)
+		sprite.material = fx_material
+		if unit.is_ally():
+			sprite.flip_h = false
+		body.add_child(sprite)
+		sprite.animation_finished.connect(_on_sprite_finished)
+		_play_anim("idle")
+	else:
+		body.material = fx_material
+
+
+## Tên hoạt ảnh theo giai đoạn boss ("idle-p2"...), thiếu thì dùng bản thường.
+func _anim_name(action: String) -> String:
+	if unit.phase_index > 0 and sprite and sprite.sprite_frames.has_animation("%s-p%d" % [action, unit.phase_index + 1]):
+		return "%s-p%d" % [action, unit.phase_index + 1]
+	return action
+
+
+func _play_anim(action: String) -> void:
+	if sprite:
+		ArtLibrary.play(sprite, _anim_name(action))
+
+
+func _on_sprite_finished() -> void:
+	if unit.is_alive() and not sprite.sprite_frames.get_animation_loop(sprite.animation):
+		_play_anim("idle")
+
+
+## Thắng trận: nhân vật còn sống phát hoạt ảnh thắng.
+func play_victory() -> void:
+	if unit.is_alive():
+		_play_anim("victory")
 
 
 func get_radius() -> float:
@@ -85,6 +139,8 @@ func get_status_at(global_point: Vector2) -> StatusEffectInstance:
 
 func play_hit() -> void:
 	_hit_flash = 1.0
+	if unit.is_alive():
+		_play_anim("hit")
 	var back := -14.0 if unit.is_ally() else 14.0
 	var tween := create_tween()
 	tween.tween_property(self, "position", home_position + Vector2(back, 0.0), 0.05)
@@ -92,7 +148,8 @@ func play_hit() -> void:
 
 
 ## Ra đòn: lao về phía trước rồi quay lại.
-func play_action() -> void:
+func play_action(kind: int = 0) -> void:
+	_play_anim(ACTION_ANIMS.get(kind, "attack"))
 	var forward := 40.0 if unit.is_ally() else -40.0
 	var tween := create_tween()
 	tween.tween_property(self, "position", home_position + Vector2(forward, 0.0), 0.12)
@@ -102,12 +159,20 @@ func play_action() -> void:
 func _process(delta: float) -> void:
 	_time += delta
 	_hit_flash = maxf(_hit_flash - delta * 4.0, 0.0)
+	if fx_material:
+		fx_material.set_shader_parameter("flash", _hit_flash * 0.8)
+		fx_material.set_shader_parameter("outline_width", 3.0 if marker != Marker.NONE and unit.is_alive() else 0.0)
 	queue_redraw()
+	if body:
+		body.queue_redraw()
 
 
 func _on_died(_u: BattleUnit) -> void:
 	marker = Marker.NONE
+	_play_anim("down")
 	_death_tween = create_tween().set_parallel()
+	if not unit.is_ally():
+		_death_tween.tween_method(func(v: float) -> void: fx_material.set_shader_parameter("dissolve", v), 0.0, 1.0, 0.6)
 	_death_tween.tween_property(self, "modulate:a", 0.0 if not unit.is_ally() else 0.35, 0.5)
 	_death_tween.tween_property(self, "scale", Vector2(1.0, 0.6) if unit.is_ally() else Vector2(0.6, 0.6), 0.5)
 
@@ -119,6 +184,8 @@ func _on_hp_changed(_u: BattleUnit) -> void:
 		_death_tween = null
 		modulate.a = 1.0
 		scale = Vector2.ONE
+		fx_material.set_shader_parameter("dissolve", 0.0)
+		_play_anim("idle")
 	queue_redraw()
 
 
@@ -130,28 +197,7 @@ func _draw() -> void:
 		draw_set_transform(Vector2(0.0, radius * 0.95), 0.0, Vector2(1.0, 0.32))
 		draw_circle(Vector2.ZERO, radius * 1.35 + sin(_time * 5.0) * 4.0, TURN_COLOR)
 		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
-	var body := unit.color.lerp(Color.WHITE, _hit_flash * 0.7)
-	if unit.is_summon:
-		# Vật triệu hồi: hình thoi nhỏ.
-		var r := radius * 0.8
-		draw_colored_polygon(PackedVector2Array([Vector2(0, -r), Vector2(r, 0), Vector2(0, r), Vector2(-r, 0)]), body)
-		var font := ThemeDB.fallback_font
-		draw_string(font, Vector2(-10.0, 10.0), unit.letter, HORIZONTAL_ALIGNMENT_LEFT, -1, 30, Color.WHITE)
-		draw_string(font, Vector2(-r, r + 22.0), "%s (%d)" % [unit.display_name, unit.summon_turns_left],
-				HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color.WHITE)
-	elif unit.is_ally():
-		PlaceholderArt.draw_character(self, Vector2.ZERO, radius, body, unit.accent_color, unit.letter, false)
-	else:
-		draw_set_transform(Vector2(0.0, radius * 0.9), 0.0, Vector2(1.0, 0.3))
-		draw_circle(Vector2.ZERO, radius, Color(0.0, 0.0, 0.0, 0.35))
-		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
-		var bob := sin(_time * 3.0 + unit.slot) * 4.0
-		if unit.untargetable:
-			body = Color(body, 0.35)
-		draw_circle(Vector2(0.0, bob), radius, body)
-		draw_arc(Vector2(0.0, bob), radius, 0.0, TAU, 40, unit.accent_color, 4.0, true)
-		draw_circle(Vector2(-radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
-		draw_circle(Vector2(radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
+	if not unit.is_ally() and not unit.is_summon:
 		_draw_enemy_hp(radius)
 		_draw_toughness(radius)
 		_draw_weaknesses(radius)
@@ -268,3 +314,38 @@ func _draw_marker(radius: float) -> void:
 		top + Vector2(-size, -size * 1.2), top + Vector2(size, -size * 1.2), top]), MARKER_COLOR)
 	if marker == Marker.MAIN:
 		draw_arc(Vector2.ZERO, radius + 10.0, 0.0, TAU, 40, MARKER_COLOR, 3.0, true)
+
+## Thân hình tạm (vẽ trên node con "Body" để shader nháy / tan biến không ăn vào thanh máu, chữ).
+func _draw_body() -> void:
+	if unit == null:
+		return
+	var radius := get_radius()
+	var canvas := body
+	if sprite:
+		# Sprite thật: chỉ vẽ bóng đổ dưới chân.
+		canvas.draw_set_transform(Vector2(0.0, radius * 0.9), 0.0, Vector2(1.0, 0.3))
+		canvas.draw_circle(Vector2.ZERO, radius, Color(0.0, 0.0, 0.0, 0.35))
+		canvas.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+		return
+	var fill := unit.color.lerp(Color.WHITE, _hit_flash * 0.7)
+	if unit.is_summon:
+		# Vật triệu hồi: hình thoi nhỏ.
+		var r := radius * 0.8
+		canvas.draw_colored_polygon(PackedVector2Array([Vector2(0, -r), Vector2(r, 0), Vector2(0, r), Vector2(-r, 0)]), fill)
+		var font := ThemeDB.fallback_font
+		canvas.draw_string(font, Vector2(-10.0, 10.0), unit.letter, HORIZONTAL_ALIGNMENT_LEFT, -1, 30, Color.WHITE)
+		canvas.draw_string(font, Vector2(-r, r + 22.0), "%s (%d)" % [unit.display_name, unit.summon_turns_left],
+				HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color.WHITE)
+	elif unit.is_ally():
+		PlaceholderArt.draw_character(canvas, Vector2.ZERO, radius, fill, unit.accent_color, unit.letter, false)
+	else:
+		canvas.draw_set_transform(Vector2(0.0, radius * 0.9), 0.0, Vector2(1.0, 0.3))
+		canvas.draw_circle(Vector2.ZERO, radius, Color(0.0, 0.0, 0.0, 0.35))
+		canvas.draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+		var bob := sin(_time * 3.0 + unit.slot) * 4.0
+		if unit.untargetable:
+			fill = Color(fill, 0.35)
+		canvas.draw_circle(Vector2(0.0, bob), radius, fill)
+		canvas.draw_arc(Vector2(0.0, bob), radius, 0.0, TAU, 40, unit.accent_color, 4.0, true)
+		canvas.draw_circle(Vector2(-radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)
+		canvas.draw_circle(Vector2(radius * 0.35, bob - radius * 0.15), radius * 0.14, Color.WHITE)

@@ -15,8 +15,9 @@
 | 9. Tiến trình nhân vật (cấp 30) | Xong |
 | 10. Tài nguyên, rơi đồ, nhiệm vụ ngày/tuần | Xong |
 | 11. Gacha 2 banner, cửa hàng Bụi Sao | Xong |
-| 12. Bản đồ Pháo Đài Vọng Tinh và cốt truyện | Xong, chờ duyệt |
-| 13–14 | Chưa làm |
+| 12. Bản đồ Pháo Đài Vọng Tinh và cốt truyện | Xong |
+| 13. Đồ họa 2D với Blender và Krita (công cụ) | Xong |
+| 14. Lưu/tải, âm thanh, cài đặt, cảm ứng, cân bằng, xuất bản | Xong, chờ duyệt |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -532,6 +533,100 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 12.
 - Nyx gia nhập khi đội đã đủ 4 → người chơi tự đổi đội ở menu để mở cửa máy.
 - Cảnh cắt (camera di chuyển, nhân vật đi lại trong cảnh) chưa có; cảnh chỉ là hộp thoại.
 
+## Phase 13 – Đồ họa 2D với Blender và Krita
+
+### Đã làm
+
+- **Bảng thông số hình** `art_specs/` (45 file, sinh bằng `tools/data_builder/build_art_specs.py`): nhân vật chính 2 skin, 24 nhân vật, 18 họ quái / boss (biến thể nguyên tố, boss mỗi giai đoạn), NPC, tileset. Mỗi file: mã màu, dáng bóng đen, trang phục, vũ khí / động tác kỹ năng, bảng hoạt ảnh + số khung, kích thước, tên file.
+- **Yêu cầu hình dùng chung** `data/config/art_requirements.json` (128 px map 8 hướng, 512 px trận, quái 256 / 384 / 768, chân dung 1024 × 3 biểu cảm, tranh 2048×1152, hiệu ứng 512 px, ô 64 px).
+- **Blender** (`tools/blender/`): `make_sample_blend.py` tạo nhân vật mẫu có rig + Action idle / run / attack; `render_sprites.py` – camera trực giao, ánh sáng cố định, shader hoạt hình (Shader to RGB + Color Ramp), viền Solidify lật pháp tuyến, map 8 hướng / trận 3/4, ghép sprite sheet + JSON (khung, điểm neo, fps). Đã chạy thật trên Blender 5.2: mẫu render cho Mira (map 16 hoạt ảnh, trận idle + attack).
+- **Krita**: `docs/KRITA_PIPELINE.md` – canvas, lớp, chân dung 3 biểu cảm, tranh gacha, hiệu ứng bằng Animation Docker, xuất chuỗi PNG, tileset, quy tắc đặt tên.
+- **Công cụ nhập** `tools/import_assets/` (cảnh chạy dòng lệnh + EditorScript): đọc sheet Blender và từng khung theo tên, tạo SpriteFrames, tạo TileSet khu, in + ghi `docs/ASSET_STATUS.md` (đã nhận / thiếu khung / còn thiếu – hiện 262 mục).
+- **Game tự nhận hình** (`systems/art_library.gd`): người chơi và quái ngoài map (AnimatedSprite2D 8 hướng: đứng / chạy / lướt / Đòn Mở Màn), nhân vật và quái trong trận (idle / attack / skill / ultimate / hit / down / victory, boss theo giai đoạn), chân dung hội thoại và danh sách nhân vật, tranh gacha + cắt cảnh Tuyệt kỹ, tileset khu. Thiếu thì giữ hình tạm.
+- **Shader dùng chung**: `unit_fx` (viền khi chọn mục tiêu, nháy trắng khi trúng đòn, tan biến khi quái ngã), `ultimate_bg` (nền đổi màu nguyên tố khi dùng Tuyệt kỹ).
+- **Hiệu ứng kỹ năng tạm** `SkillVfx`: GPUParticles2D màu nguyên tố khi trúng đòn, tự thay bằng hoạt ảnh Krita `vfx_<id>_<attack|skill|ultimate>` nếu có.
+- Test `tests/phase13_test.tscn`: 34/34 đạt. Test Phase 1–12 vẫn đạt.
+
+### Hướng dẫn nhanh
+
+1. Dựng `.blend` theo `tools/blender/README.md` → `blender -b ignar.blend -P tools/blender/render_sprites.py -- --character ignar --mode map` (và `--mode battle`).
+2. Vẽ chân dung / tranh / hiệu ứng / tileset trong Krita theo `docs/KRITA_PIPELINE.md`, xuất PNG đúng tên vào `assets/...`.
+3. Mở editor (hoặc `godot --headless --path . --import`) rồi chạy `tools/import_assets` → xem `docs/ASSET_STATUS.md`.
+
+### File chính
+
+- `systems/art_library.gd`, `data/config/art_requirements.json`
+- `tools/blender/{make_sample_blend.py,render_sprites.py,README.md,sample_character.blend,.gdignore}`
+- `tools/import_assets/{asset_importer.gd,import_assets.gd,import_assets.tscn,import_assets_editor.gd}`
+- `tools/data_builder/build_art_specs.py` → `art_specs/*.md`; `docs/KRITA_PIPELINE.md`, `docs/ASSET_STATUS.md`
+- `assets/vfx/shaders/{unit_fx,ultimate_bg}.gdshader`, `scenes/battle/ui/skill_vfx.gd`
+- `assets/characters/mira/{map,battle}/` (hình mẫu Blender)
+- Sửa: `scenes/overworld/player/player.gd`, `overworld_enemy/overworld_enemy.gd`, `map/overworld_map.gd` (tileset), `scenes/battle/ui/unit_view.gd`, `battle_scene.gd`, `scenes/ui/dialogue_box/dialogue_box.gd`, `common/ui_kit.gd`, `gacha/gacha_art.gd`, `autoload/story_manager.gd`
+- `tests/phase13_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 13.
+
+### Việc còn nợ
+
+- Toàn bộ hình thật (262 mục trong `docs/ASSET_STATUS.md`) – phần việc vẽ / dựng của anh/chị.
+- Hình mẫu đang gắn cho Mira chỉ để thử pipeline; xóa khi có hình thật.
+- Hoạt ảnh Bí Kỹ (`technique`) và lướt ngoài map đã nhận tên nhưng game chỉ phát `dash` khi lướt và `opener` khi chém; Bí Kỹ chưa có lúc phát riêng.
+- Vật triệu hồi, vật tương tác trên map (rương, NPC, quầy, cổng) vẫn vẽ tạm; chưa có quy ước asset cho chúng.
+- Cắt cảnh Tuyệt kỹ mới là tranh trượt qua + nền shader, chưa có hoạt ảnh camera.
+
+## Phase 14 – Hoàn thiện và xuất bản
+
+### Đã làm
+
+- **Lưu / tải:** ô tự lưu (phòng nghỉ, tạo nhân vật, nhận thưởng, quay gacha) + 3 ô lưu tay; màn Lưu / Tải (menu tạm dừng → Lưu / Tải; màn tiêu đề → Tải game) hiện tên, chương, khu, giờ chơi, cấp đội, thời điểm lưu; lưu đè / tải / xóa có xác nhận; Bắt đầu mới hỏi trước khi ghi đè ô tự lưu. Save v5 (thêm tóm tắt), tự nâng save v1–v4, file hỏng báo rõ. Giờ chơi chỉ đếm khi ở map / trận.
+- **Âm thanh:** AudioManager bus Tổng / Nhạc / Hiệu ứng / Giọng; nhạc tiêu đề + 5 khu + trận + boss từng giai đoạn, chuyển chéo bằng 2 máy phát; 20 hiệu ứng (nút, trúng đòn, bạo kích, phá khiên, hồi máu, Tuyệt kỹ, thắng / thua, lướt, chém, rương, cửa, nghỉ, Bí Kỹ, lên cấp, gacha 3★/4★/5★) qua pool 10 máy phát. Tổng hợp bằng code từ `data/audio/*.json`, file thật trong `assets/audio/` được ưu tiên. Nguồn ghi ở `docs/CREDITS.md`.
+- **Cài đặt** (3 thẻ): âm lượng 4 bus; toàn màn hình, độ phân giải cửa sổ, tốc độ chữ (lời dẫn + hội thoại), ngôn ngữ Việt / Anh; bật joystick ảo, gán lại 15 phím, khôi phục mặc định. Lưu theo máy.
+- **Cảm ứng:** thêm nút ☰ Menu; kiểm tra giao diện ở 2400×1080 (tỉ lệ điện thoại).
+- **Cân bằng cuối:** báo cáo kinh tế ĐẠT; mô phỏng boss thêm bảng "đội đã nâng" – không cần đổi dữ liệu (xem dưới).
+- **Dọn TODO** (không còn TODO trong code), sửa nhãn nhắc nhiệm vụ bị cắt ở màn rộng.
+- **Xuất bản:** `export_presets.cfg` (Windows, Linux, Android), `docs/BUILD.md`, chế độ `--self-check` cho bản build.
+- Test `tests/phase14_test.tscn`: 44/44 đạt. Test Phase 1–13 vẫn đạt.
+
+### Kết quả cuối
+
+| Hạng mục | Kết quả |
+| --- | --- |
+| Báo cáo kinh tế (`docs/ECONOMY_REPORT.md`) | ĐẠT: 78 lượt quay một lần, ~32 + 10 lượt/tháng, Celestine chắc chắn sau ~4,8 tháng, đủ nâng tối đa 4,15 nhân vật, bản đồ khớp kế hoạch khu |
+| Boss, đội miễn phí cấp khuyến nghị, chưa nâng | 100% / 100% / 98% / 95% thắng (Thư Viện / Kho Chứa / Lò / Trùm cuối) |
+| Boss mức Khó, đội đã nâng tối đa theo cấp | 100% / 95% / 100% / 92% thắng |
+| Bản build | `build/windows/Aethelgard.exe` (+ `Aethelgard.console.exe`), `build/linux/Aethelgard.x86_64`; tự kiểm tra bản Linux 14/14 đạt (cấp 30, đội 4, cốt truyện tới hết Chương 4, 1 trận thật, lưu / tải) |
+
+### File chính
+
+- `autoload/save_manager.gd` (v5, tóm tắt, đọc an toàn), `scenes/ui/save/save_slots_panel.gd`, sửa `scenes/ui/title/title_screen.gd`, `scenes/ui/pause/pause_menu.gd`, `scenes/ui/common/ui_kit.gd` (hộp xác nhận)
+- `autoload/audio_manager.gd`, `systems/placeholder_sfx.gd`, sửa `systems/placeholder_music.gd`; `data/audio/{music,sfx}.json`; gắn âm thanh ở `battle_scene.gd`, `player.gd`, `room.gd`, `chest.gd`, `rest_point.gd`, `overworld_map.gd`, `gacha_pull_overlay.gd`
+- `systems/user_settings.gd` (hiển thị, chữ, phím), `scenes/ui/settings/settings_panel.gd`, sửa `dialogue_box.gd`, `intro.gd`, `scenes/ui/touch/touch_controls.gd`, `autoload/game_state.gd`
+- `tools/balance/boss_report.gd` (đội đã nâng) → `docs/BOSS_REPORT.md`; `docs/ECONOMY_REPORT.md`
+- `systems/build_check.gd`, `export_presets.cfg`, `docs/BUILD.md`, `docs/CREDITS.md`
+- `localization/world.csv`, `tests/phase14_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 14.
+
 ## Để sau
 
-(Chưa có.)
+### Lỗi / giới hạn đã biết
+
+- Bản Windows chưa chạy thử trên máy Windows thật (máy build là Linux, không có Wine); bản Linux chính thức không mở được cửa sổ trên NixOS (thiếu thư viện X11/Wayland ngoài môi trường FHS) – tự kiểm tra headless đạt. Cần chơi thử tay trọn 4 chương trên Windows.
+- APK Android chưa build (máy chưa có Android SDK / JDK / keystore) – preset đã sẵn, hướng dẫn ở `docs/BUILD.md`.
+- Toàn bộ hình thật còn thiếu (262 mục, `docs/ASSET_STATUS.md`); Mira đang dùng hình mẫu Blender.
+- Chữ tiếng Anh của cốt truyện và 20 nhân vật đang dùng lại tiếng Việt.
+- Nyx gia nhập khi đội đã đủ 4: người chơi phải tự đổi đội để mở cửa máy.
+- Cắt cảnh Tuyệt kỹ / cốt truyện chưa có chuyển động camera; rương, NPC, quầy, cổng, vật triệu hồi chưa có quy ước hình.
+- Gacha ra nhân vật trùng cũng tính là "nâng cấp nhân vật" cho nhiệm vụ ngày.
+- Báo cáo kinh tế chưa cộng Ký Ức / Xu từ vật phẩm 3★ của gacha.
+
+### Đề xuất cho bản cập nhật sau
+
+1. **Nâng giới hạn cấp lên 40–50:** đổi `GameConfig.MAX_LEVEL`; bảng EXP và mốc đột phá 30–70 đã có sẵn trong `data/config/progression.tres` (tự mở khi giới hạn vượt mốc). Thêm Tinh Thể bậc mới + Dấu Ấn bậc 4 cho kỹ năng cấp 6–8; chạy lại báo cáo kinh tế và mô phỏng boss.
+2. **Bản đồ mới bên kia vết nứt** (móc nối kết Chương 4): thêm khu vào `tools/level_builder/build_world.gd` + `data/zones/<khu>.tres` + quái cấp 30–40 bằng `build_enemies.py`, Chương 5 trong `build_story.py` (cờ `zone_<khu>_open`, Cổng Dịch Chuyển tự nhận). Mảnh Hồn thứ 7+ cho nhân vật chính (Tinh Mệnh mở rộng).
+3. **Banner giới hạn mới:** thêm `data/banners/limited_<id>.tres` cùng `pity_group = limited` (bộ đếm + bảo đảm 50/50 tự kế thừa) và đổi danh sách `banners` trong `data/banners/gacha_config.tres`; nhân vật 5★ mới qua `roster_design.py` / `build_roster.py`. Có thể thêm banner rerun Celestine.
+4. Lồng tiếng (bus Giọng đã có), nhạc thật thay nhạc tổng hợp, cửa hàng Bụi Sao bán Tinh Thể, tranh cắt cảnh động.

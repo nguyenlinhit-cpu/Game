@@ -51,7 +51,7 @@ func _load_script() -> void:
 func _process(delta: float) -> void:
 	match _state:
 		State.TYPING:
-			_typed_chars += _chars_per_second * delta
+			_typed_chars += _chars_per_second * UserSettings.text_speed() * delta
 			_current_label.visible_characters = int(_typed_chars)
 			if _typed_chars >= _current_label.get_total_character_count():
 				_complete_line()

@@ -7,8 +7,9 @@ extends RefCounted
 ## Vẽ tranh gacha của nhân vật vào `rect` trên `canvas`.
 static func draw_art(canvas: CanvasItem, rect: Rect2, data: CharacterData, alpha: float = 1.0) -> void:
 	var skin := data.get_skin(GameState.player_gender if data.id == GameState.PLAYER_CHARACTER_ID else &"default")
-	if skin and skin.gacha_art:
-		canvas.draw_texture_rect(skin.gacha_art, rect, false, Color(1, 1, 1, alpha))
+	var splash := ArtLibrary.splash(data)
+	if splash:
+		canvas.draw_texture_rect(splash, rect, false, Color(1, 1, 1, alpha))
 		return
 	var element_color := Element.color(data.element)
 	var body := skin.placeholder_color if skin else Color.GRAY

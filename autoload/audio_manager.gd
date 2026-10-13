@@ -1,5 +1,7 @@
 extends Node
-## Bus âm thanh và âm lượng. Phát nhạc theo khu/boss, hiệu ứng, giọng làm ở Phase 14.
+## Bus âm thanh (Master / Music / SFX / Voice) và âm lượng; nhạc theo khu / boss (chuyển mượt bằng 2 máy phát luân
+## phiên); hiệu ứng âm thanh qua pool máy phát. File thật trong assets/audio/music|sfx/<id>.(ogg|mp3|wav) được ưu tiên,
+## không có thì dùng âm tổng hợp (PlaceholderMusic / PlaceholderSfx). Giọng (bus Voice) chưa có nội dung.
 
 const BUS_NAMES: Array[String] = ["Master", "Music", "SFX", "Voice"]
 const DEFAULT_VOLUME: float = 0.8
@@ -7,6 +9,11 @@ const DEFAULT_VOLUME: float = 0.8
 
 func _ready() -> void:
 	_ensure_buses()
+	# Mọi nút giao diện kêu "tách" khi bấm.
+	get_tree().node_added.connect(func(node: Node) -> void:
+		if node is BaseButton and not (node as BaseButton).pressed.is_connected(_click):
+			(node as BaseButton).pressed.connect(_click))
+	EventBus.character_upgraded.connect(func(_id: StringName) -> void: play_sfx(&"level_up"))
 	for bus_name in BUS_NAMES:
 		_apply_volume(bus_name, get_volume(bus_name))
 
@@ -26,48 +33,116 @@ func save_settings() -> void:
 	UserSettings.save()
 
 
-var _music_player: AudioStreamPlayer
+const MUSIC_DIR: String = "res://assets/audio/music"
+const SFX_DIR: String = "res://assets/audio/sfx"
+const AUDIO_EXTENSIONS: Array[String] = ["ogg", "mp3", "wav"]
+const SFX_POOL_SIZE: int = 10
+
+var _music_players: Array[AudioStreamPlayer] = []
+var _music_index: int = 0
 var _music_tween: Tween
+var _sfx_pool: Array[AudioStreamPlayer] = []
+var _sfx_next: int = 0
+## Id bài đang phát (test đọc).
+var current_music_id: StringName = &""
+## Số lần phát hiệu ứng theo id (test đọc).
+var sfx_counts: Dictionary = {}
+var _file_cache: Dictionary = {}
 
 
-## Phát nhạc (bus Music), mờ dần nhạc cũ. Cùng stream đang phát thì giữ nguyên.
-## TODO Phase 14: 2 AudioStreamPlayer luân phiên để chuyển nhạc mượt hơn.
+func _music_player() -> AudioStreamPlayer:
+	if _music_players.is_empty():
+		for i in 2:
+			var player := AudioStreamPlayer.new()
+			player.bus = "Music"
+			player.process_mode = Node.PROCESS_MODE_ALWAYS
+			add_child(player)
+			_music_players.append(player)
+	return _music_players[_music_index]
+
+
+## Phát nhạc (bus Music), chuyển chéo mờ dần sang máy phát còn lại. Cùng stream đang phát thì giữ nguyên.
 func play_music(stream: AudioStream, fade_sec: float = 1.0) -> void:
-	if _music_player == null:
-		_music_player = AudioStreamPlayer.new()
-		_music_player.bus = "Music"
-		add_child(_music_player)
-	if stream == null or (_music_player.stream == stream and _music_player.playing):
+	var current := _music_player()
+	if stream == null or (current.stream == stream and current.playing):
 		return
 	if _music_tween:
 		_music_tween.kill()
-	_music_tween = create_tween()
-	if _music_player.playing:
-		_music_tween.tween_property(_music_player, "volume_db", -40.0, fade_sec * 0.5)
-	_music_tween.tween_callback(func() -> void:
-		_music_player.stream = stream
-		_music_player.volume_db = -40.0
-		_music_player.play())
-	_music_tween.tween_property(_music_player, "volume_db", 0.0, fade_sec * 0.5)
+	_music_index = 1 - _music_index
+	var next := _music_players[_music_index]
+	next.stream = stream
+	next.volume_db = -40.0
+	next.play()
+	_music_tween = create_tween().set_parallel()
+	_music_tween.tween_property(next, "volume_db", 0.0, fade_sec)
+	if current.playing:
+		_music_tween.tween_property(current, "volume_db", -40.0, fade_sec)
+		_music_tween.chain().tween_callback(current.stop)
+
+
+## Phát nhạc theo id: file thật nếu có, không thì nhạc tổng hợp.
+func play_music_id(id: StringName, fade_sec: float = 1.0) -> void:
+	if id == &"":
+		return
+	var stream := _load_file(MUSIC_DIR, id)
+	if stream == null:
+		stream = PlaceholderMusic.get_stream(id)
+	if stream:
+		current_music_id = id
+		play_music(stream, fade_sec)
 
 
 func stop_music(fade_sec: float = 0.5) -> void:
-	if _music_player == null or not _music_player.playing:
-		return
-	if _music_tween:
-		_music_tween.kill()
-	_music_tween = create_tween()
-	_music_tween.tween_property(_music_player, "volume_db", -40.0, fade_sec)
-	_music_tween.tween_callback(_music_player.stop)
+	current_music_id = &""
+	for player in _music_players:
+		if player.playing:
+			var tween := create_tween()
+			tween.tween_property(player, "volume_db", -40.0, fade_sec)
+			tween.tween_callback(player.stop)
 
 
 func get_music_stream() -> AudioStream:
-	return _music_player.stream if _music_player and _music_player.playing else null
+	var player := _music_player()
+	return player.stream if player.playing else null
 
 
-func play_sfx(_stream: AudioStream) -> void:
-	# TODO Phase 14: pool AudioStreamPlayer cho hiệu ứng.
-	pass
+## Phát hiệu ứng âm thanh theo id (bus SFX) qua pool máy phát.
+func play_sfx(id: StringName, pitch: float = 1.0) -> void:
+	var stream := _load_file(SFX_DIR, id)
+	if stream == null:
+		stream = PlaceholderSfx.get_stream(id)
+	if stream == null:
+		return
+	if _sfx_pool.is_empty():
+		for i in SFX_POOL_SIZE:
+			var player := AudioStreamPlayer.new()
+			player.bus = "SFX"
+			player.process_mode = Node.PROCESS_MODE_ALWAYS
+			add_child(player)
+			_sfx_pool.append(player)
+	var player := _sfx_pool[_sfx_next]
+	_sfx_next = (_sfx_next + 1) % SFX_POOL_SIZE
+	player.stream = stream
+	player.pitch_scale = pitch
+	player.play()
+	sfx_counts[id] = int(sfx_counts.get(id, 0)) + 1
+
+
+func _click() -> void:
+	play_sfx(&"ui_click")
+
+
+func _load_file(dir: String, id: StringName) -> AudioStream:
+	var key := dir + String(id)
+	if not _file_cache.has(key):
+		var stream: AudioStream = null
+		for ext in AUDIO_EXTENSIONS:
+			var path := dir.path_join("%s.%s" % [id, ext])
+			if ResourceLoader.exists(path):
+				stream = load(path) as AudioStream
+				break
+		_file_cache[key] = stream
+	return _file_cache[key]
 
 
 func _apply_volume(bus_name: String, linear: float) -> void:

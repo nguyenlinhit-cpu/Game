@@ -164,6 +164,7 @@ func get_doors() -> Array[Door]:
 
 
 func lock_doors() -> void:
+	AudioManager.play_sfx(&"door")
 	_doors_locked = true
 	for door in _doors:
 		door.set_closed(true)

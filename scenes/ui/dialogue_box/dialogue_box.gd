@@ -140,7 +140,7 @@ func has_choices() -> bool:
 func _process(delta: float) -> void:
 	if not visible or not _typing:
 		return
-	_typed += CHARS_PER_SECOND * delta
+	_typed += CHARS_PER_SECOND * UserSettings.text_speed() * delta
 	_text.visible_characters = int(_typed)
 	if _typed >= _text.get_total_character_count():
 		_finish_typing()
@@ -279,9 +279,11 @@ class Portrait:
 	var letter: String = ""
 	var expression: String = "neutral"
 	var narrator: bool = false
+	var texture: Texture2D
 
 	func setup(speaker_id: String, name_text: String, expression_id: String) -> void:
 		narrator = speaker_id == "narrator"
+		texture = StoryManager.speaker_portrait(speaker_id, expression_id)
 		color = StoryManager.speaker_color(speaker_id)
 		letter = name_text.left(1).to_upper()
 		expression = expression_id
@@ -293,6 +295,10 @@ class Portrait:
 			draw_rect(rect, Color(1, 1, 1, 0.04))
 			draw_string(get_theme_default_font(), Vector2(size.x * 0.5 - 24.0, size.y * 0.5 + 24.0), "✦",
 					HORIZONTAL_ALIGNMENT_LEFT, -1, 64, Color(color, 0.8))
+			return
+		if texture:
+			draw_texture_rect(texture, rect, false)
+			draw_rect(rect, UiKit.GOLD, false, 3.0)
 			return
 		draw_rect(rect, color.darkened(0.55))
 		draw_circle(Vector2(size.x * 0.5, size.y * 0.42), size.x * 0.28, color)

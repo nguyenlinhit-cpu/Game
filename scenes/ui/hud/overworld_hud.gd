@@ -37,7 +37,7 @@ func _ready() -> void:
 	EventBus.toast_requested.connect(show_toast)
 	quest_badge = UiKit.make_label(tr("HUD_QUEST_BADGE"), 22, Color("ff6b6b"))
 	quest_badge.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
-	quest_badge.offset_left = -352.0
+	quest_badge.offset_left = -620.0
 	quest_badge.offset_top = 292.0
 	quest_badge.offset_right = -32.0
 	quest_badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT

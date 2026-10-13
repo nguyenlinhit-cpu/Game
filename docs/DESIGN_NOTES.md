@@ -187,3 +187,27 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 13. **Quầy hàng của Bram** (`data/shop/hub_shop.tres`): Ký Ức bậc 1/2 và Hộp Bí Kỹ bằng Xu, giới hạn mỗi ngày. Chỉ là chỗ tiêu Xu, không bán tiền tệ gacha nên không đổi mục A của báo cáo kinh tế.
 14. **Báo cáo kinh tế mục F** đếm nội dung thật trên 4 scene khu (quái theo trận, rương theo bậc, Hộp Bí Kỹ, số phòng) so với kế hoạch khu, và chặn mọi sự kiện hội thoại trao vật phẩm (cốt truyện chỉ thưởng qua thưởng chương). Quái hướng dẫn ở Sảnh không tính.
 15. **Tinh Mệnh nhân vật chính**: Mảnh Hồn 1–4 ở cảnh kết 4 chương, 5–6 ở 2 nhiệm vụ phụ (mở sau Chương 2 và Chương 3).
+
+## Phase 13
+
+1. **Không sửa file dữ liệu nhân vật để gắn hình.** `data/characters/*.tres` do builder Python sinh lại được, nên hình thật được tìm theo quy ước đường dẫn (`ArtLibrary`): `assets/<characters|enemies>/<id>/<mode>/<id>_<mode>_frames.tres` do `tools/import_assets` tạo. Trường `CharacterSkin.map_frames / battle_frames / portrait / gacha_art` gán tay vẫn được ưu tiên.
+2. **Một file yêu cầu chung** `data/config/art_requirements.json` (hành động, số khung, kích thước, 8 hướng, biểu cảm, tileset) dùng cho bảng thông số `art_specs/`, script Blender, công cụ nhập và báo cáo còn thiếu – đổi một chỗ là cả quy trình theo.
+3. **Tên hoạt ảnh**: ngoài map `<hành động>_<hướng>` (idle_se...), trong trận `<hành động>`; boss giai đoạn n ≥ 2 thêm `-p<n>`. Thiếu hướng thì thử s / se / e, thiếu hành động thì idle. Tên file đọc từ phải sang trái nên id có dấu gạch dưới (`library_warden`) vẫn đúng; số khung nhận cả `03` lẫn `0003` (chuỗi PNG của Krita).
+4. **Quái dùng hình theo họ** (biến thể nguyên tố chung hình); muốn riêng thì đặt thư mục theo id biến thể, game tìm id trước. Nhân vật chính có 2 thư mục `traveler_male` / `traveler_female`. NPC chỉ nói chuyện chỉ cần chân dung.
+5. **Biểu cảm hội thoại** (8 loại) quy về 3 chân dung vẽ: smile/smug → happy; worried/serious/angry/sad → serious; neutral/surprised → neutral.
+6. **Shader `unit_fx`** gắn lên sprite (hoặc node con vẽ hình tạm) chứ không lên cả UnitView, để thanh máu, chữ không bị nháy / tan theo. Viền chọn mục tiêu chỉ có tác dụng với sprite có alpha; hình tạm vẫn có dấu mục tiêu riêng. Tan biến dùng nhiễu theo toạ độ màn hình nên chạy được cả với hình tạm.
+7. **Hiệu ứng kỹ năng**: mỗi đòn trúng phát `SkillVfx` tại mục tiêu – hoạt ảnh vẽ tay `vfx_<id>_<attack|skill|ultimate>` nếu có, không thì GPUParticles2D màu nguyên tố (số hạt / tốc độ tăng theo loại kỹ năng). Tuyệt kỹ thêm nền `ultimate_bg` màu nguyên tố và tranh cắt cảnh (splash) trượt qua nếu có.
+8. **Blender**: thư mục `tools/blender/` có `.gdignore` (Godot sẽ dừng import nếu gặp `.blend` mà chưa cài đường dẫn Blender). Script tự đổi vật liệu sang shader hoạt hình và thêm viền khi render, nên file `.blend` chỉ cần Principled BSDF với màu gốc. Điểm neo (chân) được chiếu từ gốc toạ độ ra khung hình và ghi vào JSON.
+9. **Mô hình mẫu gắn cho Mira** để thấy pipeline chạy thật trong game (map: idle + run 8 hướng; trận: idle + attack). Xóa `assets/characters/mira/map|battle` là về hình tạm.
+10. **Tileset khu**: một ảnh 5 ô cùng bố cục với tileset tạm; map thay tileset lúc nạp nếu khu có file, nên không cần dựng lại scene.
+
+## Phase 14
+
+1. **Lưu tay chỉ khi đang ở map** (không trong trận / chuyển cảnh); ô tự lưu (slot 0) không lưu tay được, chỉ tải. Game mới chỉ ghi đè ô tự lưu – hỏi trước nếu ô đó có dữ liệu; 3 ô lưu tay không bị đụng.
+2. **Save v5** thêm "summary" để màn chọn ô không phải nạp cả game; save cũ thiếu tóm tắt thì dựng từ game_state. File hỏng: báo "hỏng", không tải, không in lỗi engine.
+3. **Âm thanh không dùng file bên thứ ba**: nhạc + 20 hiệu ứng tổng hợp bằng code từ `data/audio/*.json` (tránh rủi ro giấy phép; `docs/CREDITS.md`). Thả file thật cùng id vào `assets/audio/` là được ưu tiên. Bus Giọng có sẵn nhưng chưa có nội dung lồng tiếng.
+4. **Gán lại phím** thay mọi phím bàn phím của hành động bằng 1 phím mới (tay cầm giữ nguyên); phím trùng hành động khác thì gỡ ở đó. "Khôi phục" trả đủ phím mặc định gốc (kể cả phím phụ như mũi tên).
+5. **Độ phân giải** chỉ đổi kích thước cửa sổ (khung hình game vẫn 1920×1080, co giãn canvas_items + expand nên hợp mọi tỉ lệ màn hình, kể cả điện thoại 20:9). Chỉ áp khi người chơi đã chọn, không ép cửa sổ ở lần chạy đầu.
+6. **Cảm ứng**: thêm nút ☰ Menu (điện thoại không có Esc); trận đánh vốn bấm được hết bằng chạm (nút kỹ năng, thẻ nhân vật cho Tuyệt kỹ, chạm quái để chọn mục tiêu).
+7. **Cân bằng cuối không cần đổi dữ liệu**: báo cáo kinh tế ĐẠT; mô phỏng boss thêm kịch bản "đội đã nâng" (kỹ năng ở giới hạn đột phá + đủ cây vận mệnh). Trùm cuối mức Khó: 0% khi chưa nâng, 92% khi đã nâng – đúng ý đồ mức Khó dành cho đội đã đầu tư.
+8. **Tự kiểm tra bản build** (`--self-check`) thay cho test (thư mục tests/ không vào bản build): giới hạn cấp, đội 4, dữ liệu / bản đồ / dịch có trong gói, 1 trận Tự Động thật, chạy cờ cốt truyện tới hết Chương 4, lưu → tải.

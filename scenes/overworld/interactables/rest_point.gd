@@ -24,6 +24,7 @@ func _on_interact(_by: Node) -> void:
 		GameState.unlock_fast_travel(map.zone_of(room), room.room_id)
 		GameState.set_map_player(map.scene_file_path, map.player.global_position, map.player.facing)
 	SaveManager.save_game()
+	AudioManager.play_sfx(&"rest")
 	EventBus.toast_requested.emit(tr("TOAST_RESTED"))
 	# Map thử (không thuộc pháo đài) không có nơi để dịch chuyển.
 	if map and StoryManager.get_scene_zone(map.scene_file_path) != &"":

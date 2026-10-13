@@ -17,6 +17,8 @@ signal obstacle_hit(obstacle: ElementalObstacle, opened: bool)
 ## Dùng cho tên file sprite theo mục 12, vd. map_ignar_run_se_03.png.
 const FACING_NAMES: Array[String] = ["e", "se", "s", "sw", "w", "nw", "n", "ne"]
 const BODY_RADIUS: float = 30.0
+## Chiều cao khung sprite thật trên map (khung 128 px, nhân vật chiếm ~70%).
+const SPRITE_HEIGHT: float = 170.0
 const INPUT_FACING_THRESHOLD: float = 0.2
 const RUN_ANIM_SPEED: float = 20.0
 const DASH_GHOST_COUNT: int = 4
@@ -36,6 +38,8 @@ var input_enabled: bool = true
 
 var _skin: CharacterSkin
 var _leader: CharacterData
+## Hình thật (Phase 13): AnimatedSprite2D 8 hướng nếu có SpriteFrames "map" cho người dẫn đầu, null = vẽ tạm.
+var sprite: AnimatedSprite2D
 var _phase_left: float = 0.0
 var _phase_direction: Vector2 = Vector2.ZERO
 var _phase_speed: float = 1600.0
@@ -113,6 +117,8 @@ func _physics_process(delta: float) -> void:
 
 	_anim_time += delta
 	_update_focus()
+	if sprite:
+		ArtLibrary.play(sprite, "opener" if _swing_left > 0.0 else get_animation_name(), get_facing_name())
 	queue_redraw()
 
 
@@ -149,6 +155,7 @@ func try_opener(aim: Vector2 = Vector2.ZERO) -> bool:
 		facing = aim.normalized()
 	_opener_cooldown_left = opener.cooldown_sec
 	_swing_left = SWING_SEC
+	AudioManager.play_sfx(&"opener", randf_range(0.9, 1.1))
 	var hits := 0
 	# Mỗi lần chém chỉ mở 1 trận: chọn con quái gần nhất trong quạt.
 	var target: OverworldEnemy = null
@@ -207,6 +214,7 @@ func set_leader(index: int) -> bool:
 	if _leader.opener:
 		opener = _leader.opener
 	_name_label.text = GameState.player_name if is_traveler else tr(_leader.name_key)
+	_refresh_sprite()
 	EventBus.leader_changed.emit(index)
 	queue_redraw()
 	return true
@@ -282,6 +290,7 @@ func try_dash(direction: Vector2 = Vector2.ZERO) -> bool:
 		return false
 	_dash_direction = (direction if direction.length() > INPUT_FACING_THRESHOLD else facing).normalized()
 	_dash_time_left = movement.dash_duration
+	AudioManager.play_sfx(&"dash")
 	_dash_cooldown_left = movement.dash_cooldown
 	_invincible_left = movement.dash_invincibility
 	_ghosts.clear()
@@ -344,6 +353,20 @@ func _update_focus() -> void:
 		focused_interactable_changed.emit(best)
 
 
+## Thay hình theo người dẫn đầu: có SpriteFrames thật thì dùng, không thì vẽ hình tạm.
+func _refresh_sprite() -> void:
+	if sprite:
+		sprite.queue_free()
+		sprite = null
+	var frames := ArtLibrary.character_frames(_leader, "map")
+	if frames:
+		sprite = ArtLibrary.make_sprite(frames, SPRITE_HEIGHT)
+		add_child(sprite)
+		move_child(sprite, 0)
+		ArtLibrary.play(sprite, "idle", get_facing_name())
+	queue_redraw()
+
+
 func _draw() -> void:
 	var body := _skin.placeholder_color if _skin else Color.GRAY
 	var accent := _skin.accent_color if _skin else Color.WHITE
@@ -356,8 +379,13 @@ func _draw() -> void:
 	var center := Vector2(0.0, -bob)
 	if is_invincible():
 		draw_arc(center, BODY_RADIUS + 6.0, 0.0, TAU, 32, Color(accent, 0.6), 3.0, true)
-	PlaceholderArt.draw_character(self, center, BODY_RADIUS, body, accent,
-			get_display_name().left(1).to_upper())
+	if sprite == null:
+		PlaceholderArt.draw_character(self, center, BODY_RADIUS, body, accent,
+				get_display_name().left(1).to_upper())
+	else:
+		draw_set_transform(Vector2(0.0, BODY_RADIUS * 0.9), 0.0, Vector2(1.0, 0.32))
+		draw_circle(Vector2.ZERO, BODY_RADIUS, Color(0.0, 0.0, 0.0, 0.35))
+		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 
 	if _swing_left > 0.0:
 		# Vệt chém hình quạt, mờ dần.

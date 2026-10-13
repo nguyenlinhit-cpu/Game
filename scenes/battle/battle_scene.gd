@@ -19,6 +19,9 @@ const ENEMY_STAGGER: float = 70.0
 const ENEMY_AREA_WIDTH: float = 1060.0
 const PREVIEW_COUNT: int = 8
 const ULTIMATE_BANNER_SEC: float = 0.9
+const ULTIMATE_BG_SHADER: String = "res://assets/vfx/shaders/ultimate_bg.gdshader"
+const SkillVfx_ACTIONS: Dictionary = {SkillData.Kind.BASIC: "attack", SkillData.Kind.SKILL: "skill",
+		SkillData.Kind.ULTIMATE: "ultimate", SkillData.Kind.FOLLOW_UP: "attack"}
 ## Chạm vào biểu tượng hiệu ứng (màn cảm ứng) thì giữ mô tả chừng này giây.
 const TOOLTIP_TAP_SEC: float = 3.0
 const HARD_MODE_CONFIG: String = "res://data/config/boss_hard_mode.tres"
@@ -50,6 +53,9 @@ var _phase_backdrop: ColorRect
 ## Phần thưởng trận vừa thắng (rỗng ở phòng thử / test): { "items", "first_clear", "coins_only", "hard" }.
 var rewards: Dictionary = {}
 
+## Nền Tuyệt kỹ (tạo khi dùng Tuyệt kỹ lần đầu).
+var ultimate_backdrop: ColorRect
+var _last_skill_kind: int = SkillData.Kind.BASIC
 @onready var _field: Node2D = %Field
 @onready var _numbers: DamageNumberPool = %Numbers
 @onready var _turn_order: TurnOrderBar = %TurnOrder
@@ -383,10 +389,13 @@ func _on_action_started(unit: BattleUnit, skill: SkillData, _targets: Array[Batt
 		_set_watch()
 	var view := get_view(unit)
 	if view:
-		view.play_action()
+		view.play_action(skill.kind)
+	_last_skill_kind = skill.kind
 	_info_label.text = "%s: %s" % [unit.display_name, tr(skill.name_key)]
 	if skill.kind == SkillData.Kind.ULTIMATE:
 		_show_banner(unit, skill)
+		_show_ultimate_backdrop(unit)
+		AudioManager.play_sfx(&"ultimate")
 	_refresh_cards()
 
 
@@ -411,6 +420,11 @@ func _show_events(events: Array[Dictionary]) -> void:
 		match str(event["type"]):
 			"damage":
 				view.play_hit()
+				AudioManager.play_sfx(&"crit" if event["crit"] else &"hit", randf_range(0.9, 1.1))
+				var source := event.get("source") as BattleUnit
+				SkillVfx.spawn(_field, view.position, int(event.get("element", Element.NONE)),
+						source.character if source else null, SkillVfx_ACTIONS.get(_last_skill_kind, "attack"),
+						maxf(view.get_radius() / UnitView.ALLY_RADIUS, 1.0))
 				if float(event.get("absorbed", 0.0)) > 0.0:
 					_numbers.spawn(tr("BATTLE_ABSORBED") % event["absorbed"], at + Vector2(0, -34), Color(0.85, 0.9, 1.0), 26)
 				if event["crit"]:
@@ -423,6 +437,7 @@ func _show_events(events: Array[Dictionary]) -> void:
 				_numbers.spawn("%d" % event["amount"], at, element_color.lightened(0.3), 32)
 			"break":
 				view.play_hit()
+				AudioManager.play_sfx(&"break")
 				_numbers.spawn("%s  %d" % [tr("BATTLE_BREAK"), event["amount"]], at, element_color.lightened(0.2), 46)
 				CameraShakeLite.shake(_field, 10.0)
 			"status_applied":
@@ -434,6 +449,7 @@ func _show_events(events: Array[Dictionary]) -> void:
 			"skip":
 				_numbers.spawn(tr("BATTLE_TURN_SKIPPED"), at, Color("7fb6ff"), 28)
 			"heal":
+				AudioManager.play_sfx(&"heal")
 				_numbers.spawn("+%d" % event["amount"], at, Color("6fdc8c"), 38)
 			"shield":
 				_numbers.spawn(tr("BATTLE_SHIELD_GAINED") % event["amount"], at, Color(0.85, 0.9, 1.0), 30)
@@ -487,6 +503,11 @@ func _on_skill_points_changed(value: int) -> void:
 
 func _on_battle_ended(battle_won: bool) -> void:
 	_set_watch()
+	AudioManager.play_sfx(&"victory" if battle_won else &"defeat")
+	if battle_won:
+		for view: UnitView in _views.values():
+			if is_instance_valid(view) and view.unit.is_ally():
+				view.play_victory()
 	_info_label.text = ""
 	_result_panel.show()
 	_continue_button.visible = battle_won
@@ -712,6 +733,42 @@ func _add_view(unit: BattleUnit, at: Vector2) -> void:
 	_views[unit] = view
 
 
+## Tuyệt kỹ: nền đổi màu theo nguyên tố (shader ultimate_bg) + tranh cắt cảnh (splash) trượt qua nếu có.
+func _show_ultimate_backdrop(unit: BattleUnit) -> void:
+	if ultimate_backdrop == null:
+		ultimate_backdrop = ColorRect.new()
+		ultimate_backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		ultimate_backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var mat := ShaderMaterial.new()
+		mat.shader = load(ULTIMATE_BG_SHADER)
+		ultimate_backdrop.material = mat
+		# Nằm trên nền, dưới sân đấu.
+		add_child(ultimate_backdrop)
+		move_child(ultimate_backdrop, _field.get_index())
+	var mat := ultimate_backdrop.material as ShaderMaterial
+	mat.set_shader_parameter("tint", Element.color(unit.element))
+	var tween := create_tween()
+	tween.tween_method(func(v: float) -> void: mat.set_shader_parameter("strength", v), 0.0, 1.0, 0.15)
+	tween.tween_interval(ULTIMATE_BANNER_SEC + 0.4)
+	tween.tween_method(func(v: float) -> void: mat.set_shader_parameter("strength", v), 1.0, 0.0, 0.4)
+	var splash := ArtLibrary.splash(unit.character) if unit.character else null
+	if splash:
+		var cut := TextureRect.new()
+		cut.texture = splash
+		cut.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		cut.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		cut.size = Vector2(1920.0, 540.0)
+		cut.position = Vector2(1920.0, 270.0)
+		cut.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(cut)
+		move_child(cut, _field.get_index() + 1)
+		var slide := create_tween()
+		slide.tween_property(cut, "position:x", 0.0, 0.2).set_ease(Tween.EASE_OUT)
+		slide.tween_interval(ULTIMATE_BANNER_SEC - 0.2)
+		slide.tween_property(cut, "modulate:a", 0.0, 0.25)
+		slide.tween_callback(cut.queue_free)
+
+
 func _show_banner(unit: BattleUnit, skill: SkillData) -> void:
 	_banner.text = "%s — %s" % [unit.display_name, tr(skill.name_key)]
 	_banner.modulate = Color(unit.color.lightened(0.5), 1.0)
@@ -737,7 +794,7 @@ func _initial_music_id() -> StringName:
 
 func _play_music(id: StringName) -> void:
 	if id != &"" and PlaceholderMusic.has_track(id):
-		AudioManager.play_music(PlaceholderMusic.get_stream(id), 0.6)
+		AudioManager.play_music_id(id, 0.6)
 
 
 ## Lớp phủ đoạn chuyển giai đoạn: nền màu giai đoạn chớp lên, tên giai đoạn trượt vào. Bấm để bỏ qua.

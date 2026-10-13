@@ -1,4 +1,4 @@
-# Báo cáo mô phỏng boss (Phase 8)
+# Báo cáo mô phỏng boss (Phase 8, cập nhật Phase 14)
 
 Sinh bởi `tools/balance/boss_report.tscn`. Đội miễn phí (chọn 4 trong Lữ khách, Mira, Kiri, Garren, Nyx),
 cấp khuyến nghị của trận, Tinh Mệnh 0, Tự Động, 40 seed. Đội được chọn = cách chọn 4 người thắng nhiều nhất
@@ -11,6 +11,18 @@ cấp khuyến nghị của trận, Tinh Mệnh 0, Tự Động, 40 seed. Đội
 | vault_boss_behemoth | 18 | traveler, kiri, garren, nyx | 100% | 43.3 | 53.5 | 55% | 100% | 0.1 | 1.6 | 30% | 63.8 |
 | furnace_boss_core | 26 | traveler, mira, kiri, garren | 98% | 53.0 | 70.8 | 83% | 100% | 0.2 | 1.9 | 57% | 95.0 |
 | tower_boss_devourer | 30 | traveler, mira, kiri, nyx | 95% | 62.9 | 90.3 | 74% | 98% | 0.8 | 0.7 | 0% | 0.0 |
+
+## Đội đã nâng cấp (Phase 14)
+
+Cùng đội, cùng cấp; kỹ năng ở giới hạn đột phá của cấp đó (cấp ≤10: 2, ≤20: 4, 30: 5) và mở đủ cây vận mệnh cho phép –
+mức người chơi đạt được khi dồn tài nguyên (báo cáo kinh tế: đủ nâng tối đa 4–5 nhân vật).
+
+| Boss | Cấp đội | Thường: thắng | Thường: lượt ta | Khó: thắng | Khó: lượt ta | Khó: máu còn |
+| --- | --- | --- | --- | --- | --- | --- |
+| library_boss_warden | 10 | 100% | 35.0 | 100% | 55.3 | 57% |
+| vault_boss_behemoth | 18 | 100% | 28.9 | 95% | 46.1 | 43% |
+| furnace_boss_core | 26 | 100% | 35.0 | 100% | 51.0 | 84% |
+| tower_boss_devourer | 30 | 100% | 36.2 | 92% | 59.9 | 79% |
 
 ## Trận thường và tinh anh
 
@@ -33,6 +45,7 @@ cấp khuyến nghị của trận, Tinh Mệnh 0, Tự Động, 40 seed. Đội
 | library_06_bees | library | Thường | 7 | 100% | 4.4 | 97% |
 | library_07_patrol | library | Thường | 8 | 100% | 7.0 | 98% |
 | library_elite_librarian | library | Tinh anh | 10 | 100% | 11.2 | 91% |
+| prologue_tutorial | hub | Thường | 1 | 100% | 4.0 | 100% |
 | tower_01_shade | tower | Thường | 26 | 100% | 6.1 | 97% |
 | tower_02_mirror | tower | Thường | 27 | 100% | 6.1 | 97% |
 | tower_03_bees | tower | Thường | 28 | 100% | 5.6 | 96% |

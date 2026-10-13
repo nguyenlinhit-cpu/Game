@@ -114,13 +114,18 @@ class Portrait:
 			draw_rect(Rect2(Vector2.ZERO, size), Color(1, 1, 1, 0.25), false, 2.0)
 			return
 		var color := UiKit.character_color(data)
-		draw_rect(Rect2(Vector2.ZERO, size), color.darkened(0.5) if dim else color)
+		var tex := ArtLibrary.portrait(data)
+		if tex:
+			draw_texture_rect(tex, Rect2(Vector2.ZERO, size), false, Color(1, 1, 1, 0.5) if dim else Color.WHITE)
+		else:
+			draw_rect(Rect2(Vector2.ZERO, size), color.darkened(0.5) if dim else color)
 		draw_rect(Rect2(Vector2.ZERO, size), UiKit.GOLD if selected else Element.color(data.element), false,
 				5.0 if selected else 3.0)
 		var font := get_theme_default_font()
-		var letter := UiKit.character_name(data).left(1).to_upper()
-		draw_string(font, Vector2(size.x * 0.5 - 14.0, size.y * 0.5 + 16.0), letter, HORIZONTAL_ALIGNMENT_LEFT, -1,
-				int(size.y * 0.45), Color.WHITE)
+		if tex == null:
+			var letter := UiKit.character_name(data).left(1).to_upper()
+			draw_string(font, Vector2(size.x * 0.5 - 14.0, size.y * 0.5 + 16.0), letter, HORIZONTAL_ALIGNMENT_LEFT, -1,
+					int(size.y * 0.45), Color.WHITE)
 		draw_string(font, Vector2(6.0, 22.0), "★".repeat(data.rarity), HORIZONTAL_ALIGNMENT_LEFT, -1, 16, UiKit.GOLD)
 
 
@@ -143,3 +148,48 @@ class RedDot extends Control:
 		var radius := minf(size.x, size.y) * 0.5
 		draw_circle(size * 0.5, radius, Color("ff4d4d"))
 		draw_arc(size * 0.5, radius, 0.0, TAU, 24, Color.WHITE, 2.0, true)
+
+
+## Hộp hỏi Có / Không phủ toàn màn hình, thêm vào `parent`. Trả về hộp (test bấm qua get_meta("yes") / ("no")).
+static func confirm(parent: Node, text: String, on_yes: Callable, yes_key: String = "UI_CONFIRM",
+		no_key: String = "UI_BACK") -> Control:
+	var overlay := Control.new()
+	overlay.name = "ConfirmBox"
+	overlay.process_mode = Node.PROCESS_MODE_ALWAYS
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	var dim := ColorRect.new()
+	dim.color = Color(0, 0, 0, 0.6)
+	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.add_child(dim)
+	var panel := make_panel()
+	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
+	panel.custom_minimum_size = Vector2(760.0, 0.0)
+	overlay.add_child(panel)
+	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 20)
+	panel.add_child(box)
+	var label := make_rich(28)
+	label.text = text
+	box.add_child(label)
+	var row := HBoxContainer.new()
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	row.add_theme_constant_override("separation", 20)
+	box.add_child(row)
+	var yes := make_button(TranslationServer.translate(yes_key), func() -> void:
+		overlay.queue_free()
+		on_yes.call(), Vector2(240.0, 64.0))
+	var no := make_button(TranslationServer.translate(no_key), overlay.queue_free, Vector2(240.0, 64.0))
+	row.add_child(yes)
+	row.add_child(no)
+	overlay.set_meta("yes", yes)
+	overlay.set_meta("no", no)
+	parent.add_child(overlay)
+	return overlay
+
+
+## "1:05:09" từ số giây.
+static func format_duration(seconds: int) -> String:
+	return "%d:%02d:%02d" % [seconds / 3600, (seconds / 60) % 60, seconds % 60]

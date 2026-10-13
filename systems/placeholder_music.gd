@@ -1,57 +1,46 @@
 class_name PlaceholderMusic
 extends RefCounted
 ## Nhạc tạm sinh bằng code (vòng lặp vài ô nhịp sóng vuông/tam giác) cho trận thường và từng giai đoạn boss.
-## Phase 14 thay bằng file nhạc thật: chỉ cần map id → AudioStream khác trong get_stream().
+## Số liệu bài nhạc trong data/audio/music.json. File nhạc thật (assets/audio/music/<id>.*) do AudioManager ưu tiên.
 
 const MIX_RATE: int = 22050
 ## id → { bpm, root (MIDI), lead: [bậc, −1 = nghỉ], bass: [bậc], wave: "square"|"triangle"|"saw" }
 ## Mỗi phần tử lead/bass dài 1 móc đơn (nửa phách).
-const TRACKS: Dictionary = {
-	&"battle_normal": {"bpm": 132, "root": 57, "wave": "square",
-		"lead": [0, 3, 7, 3, 10, 7, 3, -1, 0, 3, 7, 12, 10, 7, 5, -1],
-		"bass": [0, 0, 0, 0, -4, -4, -4, -4, -2, -2, -2, -2, -5, -5, -5, -5]},
-	&"boss_library": {"bpm": 112, "root": 50, "wave": "triangle",
-		"lead": [0, 1, 5, 1, 7, 8, 7, 5, 0, 1, 5, 8, 10, 8, 7, -1],
-		"bass": [0, 0, 0, 0, 1, 1, 1, 1, -2, -2, -2, -2, -5, -5, -5, -5]},
-	&"boss_library_2": {"bpm": 136, "root": 50, "wave": "square",
-		"lead": [12, 13, 12, 8, 7, 8, 7, 1, 0, 1, 0, -4, -5, -4, -5, -1],
-		"bass": [0, 0, 1, 1, 0, 0, -2, -2, -4, -4, -5, -5, -4, -4, -2, -2]},
-	&"boss_vault": {"bpm": 96, "root": 45, "wave": "triangle",
-		"lead": [0, -1, 7, -1, 3, 2, 0, -1, 5, -1, 3, -1, 2, 0, -2, -1],
-		"bass": [0, 0, 0, 0, 0, 0, 0, 0, -4, -4, -4, -4, -5, -5, -5, -5]},
-	&"boss_vault_2": {"bpm": 150, "root": 45, "wave": "saw",
-		"lead": [0, 3, 7, 10, 12, 10, 7, 3, 2, 5, 8, 12, 14, 12, 8, 5],
-		"bass": [0, 0, 0, 0, -4, -4, -4, -4, -2, -2, -2, -2, -5, -5, -7, -7]},
-	&"boss_furnace": {"bpm": 120, "root": 52, "wave": "square",
-		"lead": [0, 0, 3, 0, 6, 0, 3, 0, 0, 0, 3, 0, 7, 6, 3, -1],
-		"bass": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, -1, -1, -1, -1]},
-	&"boss_furnace_2": {"bpm": 156, "root": 52, "wave": "saw",
-		"lead": [0, 6, 0, 6, 1, 7, 1, 7, 3, 9, 3, 9, 6, 12, 6, 12],
-		"bass": [0, 0, 1, 1, 0, 0, 1, 1, 3, 3, 1, 1, 0, 0, -1, -1]},
-	&"boss_devourer": {"bpm": 100, "root": 48, "wave": "triangle",
-		"lead": [0, -1, 1, -1, 4, -1, 1, 0, 6, -1, 4, -1, 1, -1, 0, -1],
-		"bass": [0, 0, 0, 0, -6, -6, -6, -6, 0, 0, 0, 0, -5, -5, -5, -5]},
-	&"boss_devourer_2": {"bpm": 124, "root": 48, "wave": "square",
-		"lead": [0, 6, 1, 7, 0, 6, 1, 7, 3, 9, 4, 10, 3, 9, 1, -1],
-		"bass": [0, 0, 6, 6, 0, 0, 6, 6, 1, 1, 7, 7, 1, 1, 6, 6]},
-	&"boss_devourer_3": {"bpm": 168, "root": 48, "wave": "saw",
-		"lead": [12, 11, 12, 6, 13, 12, 13, 6, 12, 11, 12, 6, 15, 13, 12, 11],
-		"bass": [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, -1, -1, -2, -2]},
-}
+## Bài nhạc: data/audio/music.json → "tracks" { id: { bpm, root (MIDI), lead: [bậc, −1 = nghỉ], bass: [bậc],
+## wave: "square"|"triangle"|"saw" } }. Mỗi phần tử lead/bass dài 1 móc đơn (nửa phách).
+const DATA_PATH: String = "res://data/audio/music.json"
+static var _data: Dictionary = {}
+
+
+static func data() -> Dictionary:
+	if _data.is_empty():
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(DATA_PATH))
+		_data = parsed if parsed is Dictionary else {"tracks": {}}
+	return _data
+
+
+static func tracks() -> Dictionary:
+	return data().get("tracks", {})
+
+
+## Bài nhạc của khu (Sảnh, Thư Viện...), &"" nếu không có.
+static func zone_track(zone: StringName) -> StringName:
+	return StringName(str(data().get("zone_tracks", {}).get(String(zone), "")))
+
 
 static var _cache: Dictionary = {}
 
 
 static func has_track(id: StringName) -> bool:
-	return TRACKS.has(id)
+	return tracks().has(String(id))
 
 
 ## Vòng nhạc của id (sinh một lần rồi giữ lại). null nếu không có id.
 static func get_stream(id: StringName) -> AudioStream:
-	if not TRACKS.has(id):
+	if not has_track(id):
 		return null
 	if not _cache.has(id):
-		_cache[id] = _render(TRACKS[id])
+		_cache[id] = _render(tracks()[String(id)])
 	return _cache[id]
 
 

@@ -2,7 +2,7 @@ class_name StatBlock
 extends Resource
 ## Bảng 11 chỉ số gốc. Nhân vật/quái có 2 bảng: cấp 1 và cấp 80.
 ## Máu, Tấn Công, Phòng Thủ nội suy tuyến tính theo cấp; các chỉ số khác lấy theo bảng cấp 1.
-## TODO Phase 9: cộng thêm thưởng đột phá ở cấp 10/20.
+## Đột phá chỉ nâng giới hạn cấp, không cộng chỉ số riêng (DESIGN_NOTES Phase 9 mục 2).
 
 @export var hp: float = 100.0
 @export var atk: float = 50.0

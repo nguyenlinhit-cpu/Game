@@ -30,6 +30,8 @@ func _ready() -> void:
 
 
 var _trace: bool = false
+## Mô phỏng đội đã nâng kỹ năng + cây vận mệnh tối đa theo cấp (Phase 14).
+var _invested: bool = false
 
 
 func _run() -> void:
@@ -76,6 +78,11 @@ func _run() -> void:
 		var final: Dictionary = await _run_many(encounter, best["team"], final_seeds, 5000, false)
 		var hard: Dictionary = await _run_many(encounter, best["team"], final_seeds, 9000, true)
 		final["hard"] = hard
+		# Phase 14: đội đã nâng hết mức cho phép ở cấp đó (kỹ năng theo giới hạn đột phá, đủ cây vận mệnh).
+		_invested = true
+		final["invested"] = await _run_many(encounter, best["team"], final_seeds, 5000, false)
+		final["invested_hard"] = await _run_many(encounter, best["team"], final_seeds, 9000, true)
+		_invested = false
 		rows.append(final)
 		print("%s  đội %s  thắng %.0f%%  lượt ta %.1f  mọi lượt %.1f  máu còn %.0f%%  GĐ cuối %.0f%%  ngắt %.1f  | Khó: thắng %.0f%% lượt ta %.1f" % [
 				encounter.id, ",".join(final["team"]), final["win_rate"] * 100.0, final["ally_turns"], final["all_turns"], final["hp_left"] * 100.0,
@@ -148,6 +155,15 @@ func simulate(encounter: EncounterData, team_ids: Array, level: int, seed_value:
 	controller.rng.seed = seed_value
 	if hard:
 		controller.difficulty = load(HARD_CONFIG) as DifficultyConfig
+	if _invested:
+		var ascension := clampi((level - 1) / 10, 0, 2)
+		var cap := Progression.config().skill_cap(ascension)
+		for data in team:
+			var traces: Array[TraceNodeData] = []
+			for node in Progression.get_trace_tree(data.path).nodes:
+				if node.required_ascension <= ascension:
+					traces.append(node)
+			controller.ally_states[data.id] = {"skill_levels": {0: cap, 1: cap, 2: cap, -1: cap}, "traces": traces}
 	add_child(controller)
 	controller.setup(team, level, encounter, BattleTypes.Opening.NORMAL)
 	var result := {"won": false, "ally_turns": 0, "all_turns": 0, "final_phase": false, "interrupts": 0, "charges_hit": 0,
@@ -207,7 +223,7 @@ func _attach_trace(controller: BattleController) -> void:
 
 
 func _write_report(rows: Array[Dictionary], seeds: int, zone_rows: Array[Dictionary]) -> void:
-	var lines: Array[String] = ["# Báo cáo mô phỏng boss (Phase 8)", "",
+	var lines: Array[String] = ["# Báo cáo mô phỏng boss (Phase 8, cập nhật Phase 14)", "",
 		"Sinh bởi `tools/balance/boss_report.tscn`. Đội miễn phí (chọn 4 trong Lữ khách, Mira, Kiri, Garren, Nyx),",
 		"cấp khuyến nghị của trận, Tinh Mệnh 0, Tự Động, %d seed. Đội được chọn = cách chọn 4 người thắng nhiều nhất" % seeds,
 		"(hòa thì ít lượt hơn) qua %d seed thử. \"Lượt ta\" = số lượt phe ta trong trận thắng; \"mọi lượt\" tính cả quái." % SCOUT_SEEDS,
@@ -219,6 +235,18 @@ func _write_report(rows: Array[Dictionary], seeds: int, zone_rows: Array[Diction
 		lines.append("| %s | %d | %s | %.0f%% | %.1f | %.1f | %.0f%% | %.0f%% | %.1f | %.1f | %.0f%% | %.1f |" % [r["encounter"],
 				r["level"], ", ".join(r["team"]), r["win_rate"] * 100.0, r["ally_turns"], r["all_turns"], r["hp_left"] * 100.0,
 				r["final_phase_rate"] * 100.0, r["interrupts"], r["charges_hit"], hard["win_rate"] * 100.0, hard["ally_turns"]])
+	lines += ["", "## Đội đã nâng cấp (Phase 14)", "",
+		"Cùng đội, cùng cấp; kỹ năng ở giới hạn đột phá của cấp đó (cấp ≤10: 2, ≤20: 4, 30: 5) và mở đủ cây vận mệnh cho phép –",
+		"mức người chơi đạt được khi dồn tài nguyên (báo cáo kinh tế: đủ nâng tối đa 4–5 nhân vật).", "",
+		"| Boss | Cấp đội | Thường: thắng | Thường: lượt ta | Khó: thắng | Khó: lượt ta | Khó: máu còn |",
+		"| --- | --- | --- | --- | --- | --- | --- |"]
+	for r in rows:
+		if not r.has("invested"):
+			continue
+		var inv: Dictionary = r["invested"]
+		var inv_hard: Dictionary = r["invested_hard"]
+		lines.append("| %s | %d | %.0f%% | %.1f | %.0f%% | %.1f | %.0f%% |" % [r["encounter"], r["level"], inv["win_rate"] * 100.0,
+				inv["ally_turns"], inv_hard["win_rate"] * 100.0, inv_hard["ally_turns"], inv_hard["hp_left"] * 100.0])
 	lines += ["", "## Trận thường và tinh anh", "",
 		"Đội Lữ khách, Mira, Kiri, Garren; cấp khuyến nghị; Tự Động; %d seed. \"Máu còn\" = trung bình tỉ lệ máu cả đội cuối trận thắng." % ZONE_SEEDS, "",
 		"| Trận | Khu | Loại | Cấp đội | Thắng | Lượt ta | Máu còn |", "| --- | --- | --- | --- | --- | --- | --- |"]

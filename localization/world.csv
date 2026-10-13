@@ -16,3 +16,54 @@ TRAVEL_BOSS_REST,Phòng nghỉ trước boss,Rest room before the boss
 TRAVEL_EMPTY,Chưa mở phòng nghỉ nào khác.,No other rest rooms unlocked yet.
 TRAVEL_GATE_EMPTY,Cổng chưa nhận tọa độ khu nào. Hãy gặp ông Orwen.,The gate has no coordinates yet. Talk to Elder Orwen.
 SHOP_DAILY_LEFT,Còn %d/%d lần hôm nay,%d/%d left today
+TOUCH_MENU,☰ Menu,☰ Menu
+TITLE_LOAD,Tải game,Load game
+TITLE_CONFIRM_NEW_GAME,"Bắt đầu game mới sẽ ghi đè [b]ô tự lưu[/b] hiện có (3 ô lưu tay giữ nguyên). Tiếp tục?","Starting a new game overwrites the [b]autosave[/b] (the 3 manual slots are kept). Continue?"
+PAUSE_SAVE_LOAD,Lưu / Tải,Save / Load
+SAVE_TAB_SAVE,Lưu game,Save
+SAVE_TAB_LOAD,Tải game,Load
+SAVE_ACTION_SAVE,Lưu,Save
+SAVE_ACTION_LOAD,Tải,Load
+SAVE_ACTION_DELETE,Xóa,Delete
+SAVE_SLOT_AUTO,Tự lưu,Autosave
+SAVE_SLOT_N,Ô lưu %d,Slot %d
+SAVE_EMPTY,Trống,Empty
+SAVE_CORRUPT,File lưu bị hỏng,Save file is corrupted
+SAVE_UNKNOWN_PLACE,Không rõ nơi,Unknown place
+SAVE_PROLOGUE,Mở đầu,Prologue
+SAVE_CHAPTERS_DONE,Hết Chương %d,Chapter %d cleared
+SAVE_PLAY_TIME,Giờ chơi %s,Play time %s
+SAVE_TEAM_LEVEL,Cấp đội %d,Team Lv %d
+SAVE_CANNOT_NOW,Chỉ lưu được khi đang ở ngoài map.,You can only save while exploring.
+SAVE_DONE,Đã lưu vào ô %d,Saved to slot %d
+SAVE_CONFIRM_OVERWRITE,Ghi đè [b]ô lưu %d[/b]?,Overwrite [b]slot %d[/b]?
+SAVE_CONFIRM_LOAD,Tải ô lưu này? Tiến trình chưa lưu sẽ mất.,Load this save? Unsaved progress will be lost.
+SAVE_CONFIRM_DELETE,Xóa vĩnh viễn ô lưu này?,Delete this save permanently?
+SETTINGS_TAB_AUDIO,Âm thanh,Audio
+SETTINGS_TAB_DISPLAY,Hiển thị,Display
+SETTINGS_TAB_CONTROLS,Điều khiển,Controls
+SETTINGS_FULLSCREEN,Toàn màn hình,Fullscreen
+SETTINGS_RESOLUTION,Độ phân giải cửa sổ,Window resolution
+SETTINGS_TEXT_SPEED,Tốc độ chữ,Text speed
+SETTINGS_TEXT_SLOW,Chậm,Slow
+SETTINGS_TEXT_NORMAL,Vừa,Normal
+SETTINGS_TEXT_FAST,Nhanh,Fast
+SETTINGS_TEXT_INSTANT,Hiện ngay,Instant
+SETTINGS_LANGUAGE,Ngôn ngữ,Language
+SETTINGS_RESET_KEYS,Khôi phục phím mặc định,Reset default keys
+SETTINGS_PRESS_KEY,Nhấn phím… (Esc: hủy),Press a key… (Esc: cancel)
+ACTION_MOVE_UP,Đi lên,Move up
+ACTION_MOVE_DOWN,Đi xuống,Move down
+ACTION_MOVE_LEFT,Sang trái,Move left
+ACTION_MOVE_RIGHT,Sang phải,Move right
+ACTION_DASH,Lướt,Dash
+ACTION_OPENER_ATTACK,Đòn Mở Màn,Opener attack
+ACTION_TECHNIQUE,Bí Kỹ,Technique
+ACTION_INTERACT,Tương tác,Interact
+ACTION_MENU,Menu,Menu
+ACTION_SWITCH_CHARACTER_1,Dẫn đầu: nhân vật 1,Lead: character 1
+ACTION_SWITCH_CHARACTER_2,Dẫn đầu: nhân vật 2,Lead: character 2
+ACTION_SWITCH_CHARACTER_3,Dẫn đầu: nhân vật 3,Lead: character 3
+ACTION_SWITCH_CHARACTER_4,Dẫn đầu: nhân vật 4,Lead: character 4
+ACTION_BATTLE_BASIC,Trận: Đánh thường,Battle: Basic attack
+ACTION_BATTLE_SKILL,Trận: Chiến kỹ,Battle: Skill
