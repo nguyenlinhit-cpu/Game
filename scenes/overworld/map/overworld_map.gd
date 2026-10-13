@@ -71,7 +71,7 @@ func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening
 	# Bẫy Dây: nhóm quái bị bẫy luôn vào trận với Ưu Thế.
 	if opening != BattleTypes.Opening.ADVANTAGE and _has_forced_advantage(enemy):
 		opening = BattleTypes.Opening.ADVANTAGE
-	if opening == BattleTypes.Opening.ADVANTAGE and enemy.is_trivial_for(GameState.team_level):
+	if opening == BattleTypes.Opening.ADVANTAGE and enemy.is_trivial_for(GameState.get_team_level()):
 		_instant_win(enemy)
 		return
 	_encounter_started = true
@@ -261,8 +261,8 @@ func use_technique() -> bool:
 			_magnet_left = technique.duration_sec
 			_magnet_radius = technique.radius_tiles * tile
 		TechniqueData.MapAction.HEAL_TEAM:
-			# TODO Phase 9: máu giữ giữa các trận thì hồi thật (25% máu tối đa cả đội).
-			EventBus.toast_requested.emit(tr("TOAST_TEAM_HEALED"))
+			GameState.heal_team(technique.heal_ratio)
+			EventBus.toast_requested.emit(tr("TOAST_TEAM_HEALED") % roundi(technique.heal_ratio * 100.0))
 		TechniqueData.MapAction.RETURN_TO_REST:
 			var rest := _nearest_rest_room(player.global_position)
 			if rest:
@@ -326,9 +326,11 @@ func _on_obstacle_hit(obstacle: ElementalObstacle, opened: bool) -> void:
 				tr(Element.name_key(obstacle.get_required_element()))])
 
 
+## Debug F6/F7: ép cấp cả đội (về 0 = dùng cấp thật của từng nhân vật).
 func _change_team_level(delta: int) -> void:
-	GameState.team_level = clampi(GameState.team_level + delta, 1, 80)
-	EventBus.toast_requested.emit(tr("TOAST_TEAM_LEVEL") % GameState.team_level)
+	var base := GameState.team_level if GameState.team_level > 0 else GameState.get_team_level()
+	GameState.team_level = clampi(base + delta, 0, GameConfig.MAX_LEVEL)
+	EventBus.toast_requested.emit(tr("TOAST_TEAM_LEVEL") % GameState.get_team_level())
 
 
 # --- Dựng map ---

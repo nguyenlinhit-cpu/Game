@@ -1,0 +1,101 @@
+[gd_resource type="Resource" script_class="ProgressionConfig" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/progression_config.gd" id="1_progression_config"]
+[ext_resource type="Script" path="res://systems/resources/ascension_data.gd" id="2_ascension_data"]
+[ext_resource type="Script" path="res://systems/resources/skill_level_cost.gd" id="3_skill_level_cost"]
+
+[sub_resource type="Resource" id="Ascension_0"]
+script = ExtResource("2_ascension_data")
+at_level = 10
+new_cap = 20
+coin = 4000
+crystals = 4
+
+[sub_resource type="Resource" id="Ascension_1"]
+script = ExtResource("2_ascension_data")
+at_level = 20
+new_cap = 30
+coin = 12000
+crystals = 10
+
+[sub_resource type="Resource" id="Ascension_2"]
+script = ExtResource("2_ascension_data")
+at_level = 30
+new_cap = 40
+coin = 30000
+crystals = 15
+
+[sub_resource type="Resource" id="Ascension_3"]
+script = ExtResource("2_ascension_data")
+at_level = 40
+new_cap = 50
+coin = 60000
+crystals = 20
+
+[sub_resource type="Resource" id="Ascension_4"]
+script = ExtResource("2_ascension_data")
+at_level = 50
+new_cap = 60
+coin = 100000
+crystals = 25
+
+[sub_resource type="Resource" id="Ascension_5"]
+script = ExtResource("2_ascension_data")
+at_level = 60
+new_cap = 70
+coin = 160000
+crystals = 30
+
+[sub_resource type="Resource" id="Ascension_6"]
+script = ExtResource("2_ascension_data")
+at_level = 70
+new_cap = 80
+coin = 240000
+crystals = 40
+
+[sub_resource type="Resource" id="SkillCost_2"]
+script = ExtResource("3_skill_level_cost")
+level = 2
+coin = 1500
+sigil_tier = 1
+sigil_count = 3
+warp_cores = 0
+required_ascension = 0
+
+[sub_resource type="Resource" id="SkillCost_3"]
+script = ExtResource("3_skill_level_cost")
+level = 3
+coin = 4000
+sigil_tier = 2
+sigil_count = 2
+warp_cores = 0
+required_ascension = 1
+
+[sub_resource type="Resource" id="SkillCost_4"]
+script = ExtResource("3_skill_level_cost")
+level = 4
+coin = 8000
+sigil_tier = 2
+sigil_count = 4
+warp_cores = 0
+required_ascension = 1
+
+[sub_resource type="Resource" id="SkillCost_5"]
+script = ExtResource("3_skill_level_cost")
+level = 5
+coin = 16000
+sigil_tier = 3
+sigil_count = 3
+warp_cores = 1
+required_ascension = 2
+
+[resource]
+script = ExtResource("1_progression_config")
+exp_to_next = PackedInt32Array(150, 200, 250, 300, 370, 440, 530, 620, 710, 820, 930, 1060, 1190, 1320, 1470, 1620, 1790, 1960, 2130, 2320, 2510, 2720, 2930, 3140, 3370, 3600, 3850, 4100, 4350, 4620, 4890, 5180, 5470, 5760, 6070, 6380, 6710, 7040, 7370, 7720, 8070, 8440, 8810, 9180, 9570, 9960, 10370, 10780, 11190, 11620, 12050, 12500, 12950, 13400, 13870, 14340, 14830, 15320, 15810, 16320, 16830, 17360, 17890, 18420, 18970, 19520, 20090, 20660, 21230, 21820, 22410, 23020, 23630, 24240, 24870, 25500, 26150, 26800, 27450)
+coin_per_exp = 0.1
+ascensions = Array[ExtResource("2_ascension_data")]([SubResource("Ascension_0"), SubResource("Ascension_1"), SubResource("Ascension_2"), SubResource("Ascension_3"), SubResource("Ascension_4"), SubResource("Ascension_5"), SubResource("Ascension_6")])
+skill_cap_by_ascension = PackedInt32Array(2, 4, 5)
+max_skill_level = 5
+skill_costs = Array[ExtResource("3_skill_level_cost")]([SubResource("SkillCost_2"), SubResource("SkillCost_3"), SubResource("SkillCost_4"), SubResource("SkillCost_5")])
+skill_multiplier_scale = PackedFloat32Array(1.0, 1.1, 1.2, 1.3, 1.4)
+skill_status_scale = PackedFloat32Array(1.0, 1.05, 1.1, 1.15, 1.2)

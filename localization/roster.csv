@@ -565,4 +565,4 @@ TALENT_WISP,Lời Thì Thầm,Lời Thì Thầm
 TALENT_WISP_DESC,"Cuối lượt của quái mang từ 2 hiệu ứng xấu trở lên, Wisp trì hoãn lượt kế tiếp của quái đó 15%.","Cuối lượt của quái mang từ 2 hiệu ứng xấu trở lên, Wisp trì hoãn lượt kế tiếp của quái đó 15%."
 TALENT_ZEPHYRA,Gió Dây Chuyền,Gió Dây Chuyền
 TALENT_ZEPHYRA_DESC,"Khi đồng minh được Thuận Buồm kết thúc lượt, đồng minh đứng ngay sau trong thứ tự lượt được kéo lượt 25%.","Khi đồng minh được Thuận Buồm kết thúc lượt, đồng minh đứng ngay sau trong thứ tự lượt được kéo lượt 25%."
-TOAST_TEAM_HEALED,Đã hồi máu cả đội (có tác dụng khi máu giữ giữa các trận – Phase 9),Đã hồi máu cả đội (có tác dụng khi máu giữ giữa các trận – Phase 9)
+TOAST_TEAM_HEALED,Đã hồi %d%% máu cả đội,Đã hồi %d%% máu cả đội

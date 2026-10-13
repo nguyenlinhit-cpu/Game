@@ -358,7 +358,7 @@ EXTRA_TEXT = {
     "SANDBOX_LEVEL": "Cấp đội:",
     "SKILL_FENNA_ARROW": "Mũi Tên Thứ Hai",
     "SKILL_FENNA_ARROW_DESC": "60% Tấn Công lên quái đang Phá Vỡ.",
-    "TOAST_TEAM_HEALED": "Đã hồi máu cả đội (có tác dụng khi máu giữ giữa các trận – Phase 9)",
+    "TOAST_TEAM_HEALED": "Đã hồi %d%% máu cả đội",
 }
 
 

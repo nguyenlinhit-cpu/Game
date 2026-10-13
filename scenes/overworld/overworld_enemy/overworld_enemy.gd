@@ -321,6 +321,6 @@ func _draw() -> void:
 		draw_string(font, Vector2(-7.0, -radius - 34.0), "!", HORIZONTAL_ALIGNMENT_LEFT, -1, 40, ALERT_COLOR)
 	elif state == State.RETURN:
 		draw_string(font, Vector2(-9.0, -radius - 34.0), "?", HORIZONTAL_ALIGNMENT_LEFT, -1, 36, ALERT_COLOR)
-	var weak := is_trivial_for(GameState.team_level)
+	var weak := is_trivial_for(GameState.get_team_level())
 	draw_string(font, Vector2(-26.0, -radius - 6.0), "Lv %d" % get_level(), HORIZONTAL_ALIGNMENT_LEFT, -1, 22,
 			Color(0.7, 0.7, 0.7) if weak else Color.WHITE)

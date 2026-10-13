@@ -13,6 +13,8 @@ const DEFAULT_TEAM: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren
 ## Nhân vật đang có. TODO Phase 9/11/12: nhận theo cốt truyện và gacha.
 const DEFAULT_OWNED: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren", &"nyx"]
 const MAX_TECHNIQUE_POINTS: int = 5
+## Số đội hình lưu sẵn.
+const TEAM_PRESET_COUNT: int = 5
 const MAP_LIST_KEYS: Array[String] = ["defeated_enemies", "opened_chests", "broken_boxes", "visited_rooms",
 		"resolved_obstacles"]
 
@@ -22,11 +24,13 @@ var player_name: String = "Kael"
 var current_map_scene: String = ""
 var story_flags: Dictionary = {}
 var play_time_sec: float = 0.0
-## Cấp đội dùng để so với cấp quái (thắng ngay khi hơn ≥10 cấp).
-## TODO Phase 9: tính từ cấp các nhân vật trong đội thay vì giá trị cố định.
-var team_level: int = 1
-## Đội hình hiện tại (tối đa 4, không trùng). TODO Phase 9: nhiều đội hình lưu sẵn, chỉ chọn nhân vật đã sở hữu.
+## Ép cấp cả đội (phòng thử, phím debug F6/F7, test). 0 = dùng cấp thật của từng nhân vật (Phase 9).
+var team_level: int = 0
+## Đội hình đang dùng (tối đa 4, không trùng) = team_presets[active_preset].
 var team: Array[StringName] = DEFAULT_TEAM.duplicate()
+## Các đội hình lưu sẵn: [[id...], ...]. Ô trống = mảng rỗng.
+var team_presets: Array = []
+var active_preset: int = 0
 var owned_characters: Array[StringName] = DEFAULT_OWNED.duplicate()
 ## Người dẫn đầu ngoài map (chỉ số trong team).
 var leader_index: int = 0
@@ -34,8 +38,15 @@ var leader_index: int = 0
 var technique_points: int = MAX_TECHNIQUE_POINTS
 ## Bí Kỹ kiểu "trận kế tiếp" đang chờ: [character_id].
 var pending_techniques: Array[StringName] = []
-## Cấp Tinh Mệnh: { character_id: 0–6 }. TODO Phase 9/11/12: tăng theo trùng nhân vật / cốt truyện.
+## Cấp Tinh Mệnh: { character_id: 0–6 }. Tăng khi nhận nhân vật trùng (grant_character, Phase 11);
+## nhân vật chính: theo cờ cốt truyện soul_shard_1..6 (lấy giá trị lớn hơn).
 var eidolon_levels: Dictionary = {}
+## Túi đồ: { item_id: số lượng }.
+var inventory: Dictionary = {}
+## Tiến trình từng nhân vật: { id: { "level", "exp", "ascension", "skills": { basic, skill, ultimate, talent }, "traces": [id] } }.
+var character_progress: Dictionary = {}
+## Máu giữ giữa các trận (tỉ lệ máu tối đa): { id: 0–1 }. Thiếu = đầy. 0 = đang ngã (hồi ở phòng nghỉ).
+var hp_ratios: Dictionary = {}
 
 ## Trạng thái từng map, khóa theo đường dẫn scene:
 ## { scene_path: { "player_position": [x, y], "player_facing": [x, y], "respawn_at_rest": bool,
@@ -45,7 +56,6 @@ var map_states: Dictionary = {}
 ## Trận đang đánh: { "map_scene", "enemy_id", "encounter_path", "opening" }. Rỗng khi không trong trận.
 var pending_battle: Dictionary = {}
 
-# TODO Phase 9: danh sách nhân vật sở hữu, đội hình, kho đồ.
 
 
 func _ready() -> void:
@@ -63,9 +73,14 @@ func reset_new_game() -> void:
 	current_map_scene = ""
 	story_flags.clear()
 	play_time_sec = 0.0
-	team_level = 1
+	team_level = 0
 	team = DEFAULT_TEAM.duplicate()
+	team_presets = _default_presets()
+	active_preset = 0
 	owned_characters = DEFAULT_OWNED.duplicate()
+	inventory.clear()
+	character_progress.clear()
+	hp_ratios.clear()
 	leader_index = 0
 	technique_points = MAX_TECHNIQUE_POINTS
 	pending_techniques.clear()
@@ -128,7 +143,141 @@ func set_team(character_ids: Array[StringName]) -> bool:
 		return false
 	team = character_ids.duplicate()
 	leader_index = clampi(leader_index, 0, team.size() - 1)
+	if team_presets.size() != TEAM_PRESET_COUNT:
+		team_presets = _default_presets()
+	team_presets[active_preset] = team.map(func(id: StringName) -> String: return String(id))
 	return true
+
+
+func _default_presets() -> Array:
+	var presets: Array = []
+	for i in TEAM_PRESET_COUNT:
+		presets.append(team.map(func(id: StringName) -> String: return String(id)) if i == 0 else [])
+	return presets
+
+
+## Đội hình lưu sẵn thứ `index` (mảng rỗng nếu chưa đặt).
+func get_preset(index: int) -> Array[StringName]:
+	var result: Array[StringName] = []
+	if index >= 0 and index < team_presets.size():
+		for id: Variant in team_presets[index]:
+			result.append(StringName(str(id)))
+	return result
+
+
+## Lưu đội hình vào ô `index` (không đổi đội đang dùng trừ khi là ô đang dùng). Trả về false nếu quá 4 / trùng.
+func save_preset(index: int, character_ids: Array[StringName]) -> bool:
+	if index < 0 or index >= TEAM_PRESET_COUNT or character_ids.size() > GameConfig.MAX_TEAM_SIZE:
+		return false
+	var seen: Dictionary = {}
+	for id in character_ids:
+		if seen.has(id):
+			return false
+		seen[id] = true
+	if team_presets.size() != TEAM_PRESET_COUNT:
+		team_presets = _default_presets()
+	if index == active_preset:
+		return set_team(character_ids)
+	team_presets[index] = character_ids.map(func(id: StringName) -> String: return String(id))
+	return true
+
+
+## Dùng đội hình lưu sẵn `index` làm đội hiện tại. Ô trống thì từ chối.
+func use_preset(index: int) -> bool:
+	var ids := get_preset(index)
+	if ids.is_empty():
+		return false
+	var previous := active_preset
+	active_preset = index
+	if not set_team(ids):
+		active_preset = previous
+		return false
+	leader_index = 0
+	EventBus.leader_changed.emit(leader_index)
+	return true
+
+
+## Cấp đội để so với cấp quái: cấp ép (team_level) hoặc trung bình cấp các nhân vật trong đội.
+func get_team_level() -> int:
+	if team_level > 0:
+		return team_level
+	if team.is_empty():
+		return 1
+	var total := 0
+	for id in team:
+		total += Progression.get_level(id)
+	return roundi(float(total) / team.size())
+
+
+# --- Nhân vật sở hữu ---
+
+## Nhận nhân vật (gacha, cốt truyện). Đã có thì +1 Tinh Mệnh (tối đa 6; quá thì `overflow` để Phase 11 đổi Bụi Sao).
+## Trả về { "new": bool, "eidolon": int, "overflow": bool }.
+func grant_character(character_id: StringName) -> Dictionary:
+	if not owned_characters.has(character_id):
+		owned_characters.append(character_id)
+		return {"new": true, "eidolon": get_eidolon_level(character_id), "overflow": false}
+	var level := get_eidolon_level(character_id)
+	if level >= 6:
+		return {"new": false, "eidolon": 6, "overflow": true}
+	set_eidolon_level(character_id, level + 1)
+	EventBus.character_upgraded.emit(character_id)
+	return {"new": false, "eidolon": level + 1, "overflow": false}
+
+
+# --- Túi đồ ---
+
+func get_item_count(item_id: StringName) -> int:
+	return int(inventory.get(String(item_id), 0))
+
+
+func add_item(item_id: StringName, amount: int) -> void:
+	if amount == 0:
+		return
+	var value := maxi(get_item_count(item_id) + amount, 0)
+	if value == 0:
+		inventory.erase(String(item_id))
+	else:
+		inventory[String(item_id)] = value
+	EventBus.inventory_changed.emit(item_id, value)
+
+
+## Đủ mọi vật phẩm trong `cost` ({ item_id: số lượng }).
+func has_items(cost: Dictionary) -> bool:
+	for item_id: Variant in cost:
+		if get_item_count(StringName(str(item_id))) < int(cost[item_id]):
+			return false
+	return true
+
+
+## Trừ đủ `cost` nếu có, trả về false (không trừ gì) nếu thiếu.
+func spend_items(cost: Dictionary) -> bool:
+	if not has_items(cost):
+		return false
+	for item_id: Variant in cost:
+		add_item(StringName(str(item_id)), -int(cost[item_id]))
+	return true
+
+
+# --- Máu giữ giữa các trận ---
+
+func get_hp_ratio(character_id: StringName) -> float:
+	return clampf(float(hp_ratios.get(String(character_id), 1.0)), 0.0, 1.0)
+
+
+func set_hp_ratio(character_id: StringName, ratio: float) -> void:
+	hp_ratios[String(character_id)] = clampf(ratio, 0.0, 1.0)
+	EventBus.team_hp_changed.emit()
+
+
+## Hồi máu cả đội `ratio` phần máu tối đa (nhân vật đã ngã cũng đứng dậy). ratio ≥ 1 = hồi đầy mọi nhân vật.
+func heal_team(ratio: float) -> void:
+	if ratio >= 1.0:
+		hp_ratios.clear()
+		EventBus.team_hp_changed.emit()
+		return
+	for id in team:
+		set_hp_ratio(id, get_hp_ratio(id) + ratio)
 
 
 func get_leader_id() -> StringName:
@@ -156,7 +305,19 @@ func consume_pending_techniques() -> Array[StringName]:
 
 
 func get_eidolon_level(character_id: StringName) -> int:
-	return clampi(int(eidolon_levels.get(String(character_id), 0)), 0, 6)
+	var level := int(eidolon_levels.get(String(character_id), 0))
+	if character_id == PLAYER_CHARACTER_ID:
+		level = maxi(level, get_soul_shard_count())
+	return clampi(level, 0, 6)
+
+
+## Nhân vật chính: số Mảnh Hồn đã thu hồi theo cốt truyện (cờ soul_shard_1..6) = số Tinh Mệnh mở.
+func get_soul_shard_count() -> int:
+	var count := 0
+	for i in range(1, 7):
+		if bool(get_story_flag(StringName("soul_shard_%d" % i), false)):
+			count += 1
+	return count
 
 
 func set_eidolon_level(character_id: StringName, level: int) -> void:
@@ -246,6 +407,8 @@ func finish_battle(won: bool) -> String:
 		map_state_add(map_scene, "defeated_enemies", str(pending_battle.get("enemy_id", "")))
 	else:
 		get_map_state(map_scene)["respawn_at_rest"] = true
+		# Thua: về phòng nghỉ, cả đội được hồi đầy.
+		heal_team(1.0)
 	pending_battle.clear()
 	return map_scene
 
@@ -265,6 +428,11 @@ func to_dict() -> Dictionary:
 		"pending_techniques": pending_techniques.map(func(id: StringName) -> String: return String(id)),
 		"eidolon_levels": eidolon_levels.duplicate(),
 		"map_states": map_states.duplicate(true),
+		"team_presets": team_presets.duplicate(true),
+		"active_preset": active_preset,
+		"inventory": inventory.duplicate(),
+		"character_progress": character_progress.duplicate(true),
+		"hp_ratios": hp_ratios.duplicate(),
 	}
 
 
@@ -278,7 +446,7 @@ func from_dict(data: Dictionary) -> void:
 	var flags: Variant = data.get("story_flags", {})
 	story_flags = flags if flags is Dictionary else {}
 	play_time_sec = float(data.get("play_time_sec", 0.0))
-	team_level = int(data.get("team_level", 1))
+	team_level = int(data.get("team_level", 0))
 	team = DEFAULT_TEAM.duplicate()
 	var saved_team: Variant = data.get("team", [])
 	if saved_team is Array and not saved_team.is_empty():
@@ -304,4 +472,16 @@ func from_dict(data: Dictionary) -> void:
 	eidolon_levels = saved_eidolons.duplicate() if saved_eidolons is Dictionary else {}
 	var states: Variant = data.get("map_states", {})
 	map_states = states.duplicate(true) if states is Dictionary else {}
+	var presets: Variant = data.get("team_presets", [])
+	team_presets = presets.duplicate(true) if presets is Array and presets.size() == TEAM_PRESET_COUNT else _default_presets()
+	active_preset = clampi(int(data.get("active_preset", 0)), 0, TEAM_PRESET_COUNT - 1)
+	var saved_inventory: Variant = data.get("inventory", {})
+	inventory.clear()
+	if saved_inventory is Dictionary:
+		for key: Variant in saved_inventory:
+			inventory[str(key)] = int(saved_inventory[key])
+	var progress: Variant = data.get("character_progress", {})
+	character_progress = progress.duplicate(true) if progress is Dictionary else {}
+	var ratios: Variant = data.get("hp_ratios", {})
+	hp_ratios = ratios.duplicate() if ratios is Dictionary else {}
 	pending_battle.clear()

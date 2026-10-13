@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"soul_memory_2"
+name_key = "ITEM_SOUL_MEMORY_2"
+desc_key = "ITEM_SOUL_MEMORY_2_DESC"
+category = 1
+rarity = 3
+icon_text = "K2"
+icon_color = Color(0.55, 0.75, 1, 1)
+exp_value = 500

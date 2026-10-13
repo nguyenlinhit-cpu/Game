@@ -41,6 +41,8 @@ var _setup_failed: bool = false
 var _opener_element: int = Element.NONE
 var _tooltip_hold: float = 0.0
 var _phase_overlay: Control
+## Ghi máu cả đội về GameState khi rời trận thắng (trận thật, không phải phòng thử/test).
+var _persist_hp: bool = true
 var _phase_title: Label
 var _phase_subtitle: Label
 var _phase_backdrop: ColorRect
@@ -90,7 +92,14 @@ func _ready() -> void:
 	var team_override: Variant = SceneRouter.payload.get("team_override")
 	if team_override is Array:
 		team.assign(team_override)
-	var err := controller.setup(team, GameState.team_level, _encounter, _opening,
+	# Trận thật dùng tiến trình từng nhân vật và giữ máu; phòng thử / test dùng máu đầy.
+	_persist_hp = not SceneRouter.payload.has("sandbox_encounter") and not team_override is Array
+	for data in team:
+		var state := Progression.battle_snapshot(data.id, _persist_hp)
+		if GameState.team_level > 0:
+			state.erase("level")
+		controller.ally_states[data.id] = state
+	var err := controller.setup(team, maxi(GameState.team_level, 1), _encounter, _opening,
 			{GameState.PLAYER_CHARACTER_ID: GameState.player_gender},
 			{GameState.PLAYER_CHARACTER_ID: GameState.player_name}, _opener_element,
 			GameState.get_eidolon_levels_for_battle(), _get_payload_techniques())
@@ -807,6 +816,9 @@ func _apply_speed(fast: bool) -> void:
 func _leave(battle_won: bool) -> void:
 	if SceneRouter.is_busy():
 		return
+	if battle_won and _persist_hp:
+		for unit in controller.allies:
+			GameState.set_hp_ratio(unit.character.id, unit.get_hp_ratio())
 	Engine.time_scale = 1.0
 	var map_scene := GameState.finish_battle(battle_won)
 	SceneRouter.go_to(map_scene, {"battle_result": "win" if battle_won else "lose"})

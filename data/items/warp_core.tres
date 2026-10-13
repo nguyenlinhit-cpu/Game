@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"warp_core"
+name_key = "ITEM_WARP_CORE"
+desc_key = "ITEM_WARP_CORE_DESC"
+category = 4
+rarity = 5
+icon_text = "LÕ"
+icon_color = Color(0.75, 0.3, 0.6, 1)

@@ -1,0 +1,162 @@
+[gd_resource type="Resource" script_class="TraceTreeData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/trace_tree_data.gd" id="1_trace_tree_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+[ext_resource type="Script" path="res://systems/resources/trace_node_data.gd" id="3_trace_node_data"]
+
+[sub_resource type="Resource" id="Mod_abundance_s1_1"]
+script = ExtResource("2_stat_modifier_data")
+stat = 0
+flat = 0.0
+percent = 0.04
+
+[sub_resource type="Resource" id="Node_abundance_s1_1"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_s1_1"
+name_key = "TRACE_ABUNDANCE_S1_1"
+desc_key = "TRACE_ABUNDANCE_S1_1_DESC"
+required_ascension = 0
+coin = 1500
+sigil_tier = 1
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_abundance_s1_1")])
+
+[sub_resource type="Resource" id="Mod_abundance_s2_1"]
+script = ExtResource("2_stat_modifier_data")
+stat = 10
+flat = 0.03
+percent = 0.0
+
+[sub_resource type="Resource" id="Node_abundance_s2_1"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_s2_1"
+name_key = "TRACE_ABUNDANCE_S2_1"
+desc_key = "TRACE_ABUNDANCE_S2_1_DESC"
+required_ascension = 0
+coin = 1500
+sigil_tier = 1
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_abundance_s2_1")])
+
+[sub_resource type="Resource" id="Mod_abundance_m1_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 10
+flat = 0.08
+percent = 0.0
+
+[sub_resource type="Resource" id="Node_abundance_m1"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_m1"
+name_key = "TRACE_ABUNDANCE_M1"
+desc_key = "TRACE_ABUNDANCE_M1_DESC"
+major = true
+required_ascension = 0
+coin = 3000
+sigil_tier = 1
+sigil_count = 3
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_abundance_m1_0")])
+
+[sub_resource type="Resource" id="Mod_abundance_s1_2"]
+script = ExtResource("2_stat_modifier_data")
+stat = 0
+flat = 0.0
+percent = 0.06
+
+[sub_resource type="Resource" id="Node_abundance_s1_2"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_s1_2"
+name_key = "TRACE_ABUNDANCE_S1_2"
+desc_key = "TRACE_ABUNDANCE_S1_2_DESC"
+required_ascension = 1
+coin = 4000
+sigil_tier = 2
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_abundance_s1_2")])
+requires = &"abundance_s1_1"
+
+[sub_resource type="Resource" id="Mod_abundance_s2_2"]
+script = ExtResource("2_stat_modifier_data")
+stat = 10
+flat = 0.03
+percent = 0.0
+
+[sub_resource type="Resource" id="Node_abundance_s2_2"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_s2_2"
+name_key = "TRACE_ABUNDANCE_S2_2"
+desc_key = "TRACE_ABUNDANCE_S2_2_DESC"
+required_ascension = 1
+coin = 4000
+sigil_tier = 2
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_abundance_s2_2")])
+requires = &"abundance_s2_1"
+
+[sub_resource type="Resource" id="Node_abundance_m2"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_m2"
+name_key = "TRACE_ABUNDANCE_M2"
+desc_key = "TRACE_ABUNDANCE_M2_DESC"
+major = true
+required_ascension = 1
+coin = 8000
+sigil_tier = 2
+sigil_count = 4
+requires = &"abundance_m1"
+passive = 5
+passive_value = 0.15
+
+[sub_resource type="Resource" id="Mod_abundance_s1_3"]
+script = ExtResource("2_stat_modifier_data")
+stat = 0
+flat = 0.0
+percent = 0.06
+
+[sub_resource type="Resource" id="Node_abundance_s1_3"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_s1_3"
+name_key = "TRACE_ABUNDANCE_S1_3"
+desc_key = "TRACE_ABUNDANCE_S1_3_DESC"
+required_ascension = 2
+coin = 8000
+sigil_tier = 3
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_abundance_s1_3")])
+requires = &"abundance_s1_2"
+
+[sub_resource type="Resource" id="Mod_abundance_s2_3"]
+script = ExtResource("2_stat_modifier_data")
+stat = 10
+flat = 0.04
+percent = 0.0
+
+[sub_resource type="Resource" id="Node_abundance_s2_3"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_s2_3"
+name_key = "TRACE_ABUNDANCE_S2_3"
+desc_key = "TRACE_ABUNDANCE_S2_3_DESC"
+required_ascension = 2
+coin = 8000
+sigil_tier = 3
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_abundance_s2_3")])
+requires = &"abundance_s2_2"
+
+[sub_resource type="Resource" id="Node_abundance_m3"]
+script = ExtResource("3_trace_node_data")
+id = &"abundance_m3"
+name_key = "TRACE_ABUNDANCE_M3"
+desc_key = "TRACE_ABUNDANCE_M3_DESC"
+major = true
+required_ascension = 2
+coin = 16000
+sigil_tier = 3
+sigil_count = 4
+requires = &"abundance_m2"
+passive = 1
+passive_value = 0.2
+
+[resource]
+script = ExtResource("1_trace_tree_data")
+path = 6
+nodes = Array[ExtResource("3_trace_node_data")]([SubResource("Node_abundance_s1_1"), SubResource("Node_abundance_s2_1"), SubResource("Node_abundance_m1"), SubResource("Node_abundance_s1_2"), SubResource("Node_abundance_s2_2"), SubResource("Node_abundance_m2"), SubResource("Node_abundance_s1_3"), SubResource("Node_abundance_s2_3"), SubResource("Node_abundance_m3")])

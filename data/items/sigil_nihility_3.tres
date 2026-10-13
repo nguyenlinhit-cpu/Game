@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"sigil_nihility_3"
+name_key = "ITEM_SIGIL_NIHILITY_3"
+desc_key = "ITEM_SIGIL_NIHILITY_3_DESC"
+category = 3
+rarity = 4
+icon_text = "HV3"
+icon_color = Color(0.6, 0.4, 0.7, 1)
+path = 4
+tier = 3

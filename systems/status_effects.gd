@@ -15,26 +15,31 @@ static func hit_chance(data: StatusEffectData, source: BattleUnit, target: Battl
 
 ## Tung tỉ lệ trúng rồi gắn. Trả về hiệu ứng đã gắn, hoặc null nếu bị kháng.
 static func try_apply(data: StatusEffectData, source: BattleUnit, target: BattleUnit,
-		rng: RandomNumberGenerator, base_value: float = 0.0) -> StatusEffectInstance:
+		rng: RandomNumberGenerator, base_value: float = 0.0, potency: float = -1.0) -> StatusEffectInstance:
 	if not target.is_alive():
 		return null
 	if rng.randf() >= hit_chance(data, source, target):
 		return null
-	return apply(data, source, target, base_value)
+	return apply(data, source, target, base_value, potency)
 
 
 ## Gắn chắc chắn (không tung tỉ lệ). Đã có thì cộng tầng (ADD) hoặc làm mới số lượt.
+## `potency` < 0: lấy theo cấp Đặc tính của người gắn (hiệu ứng do Đặc tính/Tinh Mệnh gắn thẳng).
 static func apply(data: StatusEffectData, source: BattleUnit, target: BattleUnit,
-		base_value: float = 0.0) -> StatusEffectInstance:
+		base_value: float = 0.0, potency: float = -1.0) -> StatusEffectInstance:
+	if potency < 0.0:
+		potency = source.get_status_potency(-1) if source else 1.0
 	var instance := target.get_status(data.id)
 	if instance:
 		if data.stack_mode == StatusEffectData.StackMode.ADD:
 			instance.stacks = mini(instance.stacks + 1, data.max_stacks)
 		instance.turns_left = data.duration_turns
 		instance.base_value = maxf(instance.base_value, base_value)
+		instance.potency = maxf(instance.potency, potency)
 	else:
 		instance = StatusEffectInstance.new(data, source)
 		instance.base_value = base_value
+		instance.potency = potency
 		target.status_effects.append(instance)
 	_apply_modifiers(target, instance)
 	target.status_changed.emit(target)
@@ -64,7 +69,7 @@ static func tick_turn_start(target: BattleUnit) -> Dictionary:
 			break
 		var data := instance.data
 		if data.heal_per_turn_ratio > 0.0:
-			var raw_heal := target.get_max_hp() * data.heal_per_turn_ratio
+			var raw_heal := target.get_max_hp() * data.heal_per_turn_ratio * instance.potency
 			var healed := target.heal(raw_heal)
 			events.append({"type": "heal", "target": target, "amount": healed, "crit": false, "raw": raw_heal,
 					"source": instance.source})
@@ -166,5 +171,5 @@ static func refresh_modifiers(target: BattleUnit, instance: StatusEffectInstance
 static func _apply_modifiers(target: BattleUnit, instance: StatusEffectInstance) -> void:
 	target.stats.remove_source(instance.uid)
 	for modifier in instance.data.stat_modifiers:
-		target.stats.add_modifier(modifier.stat, modifier.flat * instance.stacks,
-				modifier.percent * instance.stacks, instance.uid)
+		target.stats.add_modifier(modifier.stat, modifier.flat * instance.stacks * instance.potency,
+				modifier.percent * instance.stacks * instance.potency, instance.uid)

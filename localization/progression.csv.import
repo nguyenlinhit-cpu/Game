@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://waksttfisfv7"
+
+[deps]
+
+files=["res://localization/progression.vi.translation", "res://localization/progression.en.translation"]
+
+source_file="res://localization/progression.csv"
+dest_files=["res://localization/progression.vi.translation", "res://localization/progression.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

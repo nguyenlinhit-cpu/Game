@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 	if _fps_timer <= 0.0:
 		_fps_timer = FPS_REFRESH_SEC
 		_info_label.text = "%s\n%s · FPS: %d" % [tr("HUD_HINT"),
-				tr("HUD_TEAM_LEVEL") % GameState.team_level, Engine.get_frames_per_second()]
+				tr("HUD_TEAM_LEVEL") % GameState.get_team_level(), Engine.get_frames_per_second()]
 	if _player and _touch_controls.visible:
 		_touch_controls.dash_button.cooldown_ratio = _player.get_dash_cooldown_ratio()
 		_touch_controls.opener_button.cooldown_ratio = _player.get_opener_cooldown_ratio()

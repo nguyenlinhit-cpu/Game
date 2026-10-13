@@ -35,9 +35,15 @@ func get_kind() -> int:
 	return skill.kind if skill else -1
 
 
-## Hệ số nhân thêm cho kỹ năng này (Tinh Mệnh tăng hệ số theo loại kỹ năng).
+## Hệ số nhân thêm cho kỹ năng này: Tinh Mệnh tăng hệ số theo loại × cấp kỹ năng
+## (sát thương/hồi máu/khiên do Đặc tính tạo trực tiếp và đòn phụ dùng cấp Đặc tính).
 func get_multiplier_scale() -> float:
-	return 1.0 + user.get_skill_multiplier_bonus(get_kind())
+	return (1.0 + user.get_skill_multiplier_bonus(get_kind())) * user.get_level_multiplier(get_kind())
+
+
+## Độ mạnh buff/debuff gắn bởi kỹ năng này (theo cấp kỹ năng).
+func get_status_potency() -> float:
+	return user.get_status_potency(get_kind())
 
 
 func entries(scope: SkillEffect.Scope) -> Array[Dictionary]:

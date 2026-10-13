@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"aether_coin"
+name_key = "ITEM_AETHER_COIN"
+desc_key = "ITEM_AETHER_COIN_DESC"
+category = 0
+rarity = 2
+icon_text = "Xu"
+icon_color = Color(0.95, 0.8, 0.35, 1)

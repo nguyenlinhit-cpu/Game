@@ -122,3 +122,18 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 12. **Kẻ Nuốt Mảnh Hồn:** GĐ2 (≤ 66%) tách 3 phân thân, mỗi phân thân ngã làm bản thể mất 8% máu tối đa; hạ hết thì GĐ3. GĐ3 xóa 1 Điểm Chiến Kỹ đầu mỗi lượt của boss; Nuốt Hồn đếm ngược 2 lượt, ngắt bằng 10% máu tối đa.
 13. **Nhạc tạm** sinh bằng code (`systems/placeholder_music.gd`, vòng lặp sóng vuông/tam giác/răng cưa), mỗi boss và mỗi giai đoạn một bài. AudioManager phát qua bus Music; Phase 14 thay file thật theo id.
 14. **Biến thể quái thường** có id `<họ>_<nguyên tố>`; quái cũ của Phase 3–7 (`warp_sprout`, `wandering_shade`, `rusted_knight`, bù nhìn, Quái Thử Sức) giữ nguyên làm dữ liệu test.
+
+## Phase 9
+
+1. **Giới hạn cấp một chỗ:** `GameConfig.MAX_LEVEL = 30`. Bảng EXP, đột phá, chi phí kỹ năng nằm ở `data/config/progression.tres` (sinh bằng `tools/data_builder/build_progression.py`); bảng EXP có sẵn tới cấp 80, mốc đột phá 30–70 có dữ liệu nhưng tự khóa khi giới hạn mới vượt MAX_LEVEL.
+2. **Chỉ số theo cấp giữ công thức cũ** (nội suy tuyến tính cấp 1 → 80), đột phá chỉ nâng giới hạn cấp, không cộng chỉ số riêng – để giữ nguyên cân bằng Phase 7–8. "Bảng tăng trưởng" = bảng cấp 1 / cấp 80 trong CharacterData.
+3. **EXP thừa ở giới hạn cấp bị bỏ;** nút "+1 cấp" / "Lên tới giới hạn" tự chọn Ký Ức (loại lớn trước, phần lẻ bù bằng loại nhỏ nhất đủ) để không phí nhiều. Nạp EXP tốn 0,1 Xu mỗi EXP.
+4. **Cấp kỹ năng:** hệ số sát thương/hồi/khiên ×1,0 / 1,1 / 1,2 / 1,3 / 1,4; độ mạnh buff/debuff (điều chỉnh chỉ số, hồi máu theo lượt, sát thương theo lượt tính theo chỉ số) ×1,0 → 1,2. Đặc tính: áp cho sát thương/hồi/khiên do Đặc tính tạo trực tiếp, đòn phụ, và hiệu ứng Đặc tính/Tinh Mệnh gắn thẳng. Hiệu ứng Phá Vỡ không đổi theo cấp. Giới hạn cấp kỹ năng: chưa đột phá 2, đột phá 1 lần 4, 2 lần 5.
+5. **Tinh Mệnh 3/5 giữ "+15% hệ số"** (không đổi sang +2 cấp kỹ năng) để không làm lệch cân bằng; hai thứ cộng dồn.
+6. **Cây vận mệnh dùng chung theo vận mệnh** (mục 6: vận mệnh quyết định cây). Mỗi cây 6 nút chỉ số nhỏ (2 chỉ số × 3 bậc, bậc sau cần bậc trước) + 3 nút lớn (nút sau cần nút trước); bậc / nút lớn thứ n cần đột phá n − 1 lần. Bị động có điều kiện chạy trong `TracePassives` (năng lượng đầu trận, khiên đầu trận, sát thương khi máu thấp, sát thương lên quái có debuff, năng lượng khi Phá Vỡ, hồi mạnh hơn cho người dưới 50% máu).
+7. **Tinh Mệnh nhân vật chính** = max(cấp lưu, số cờ `soul_shard_1..6`); Phase 12 đặt cờ theo cốt truyện. Nhân vật khác: `GameState.grant_character()` (Phase 11 gọi khi quay trùng), quá 6 thì báo `overflow`.
+8. **Máu giữ giữa các trận** lưu dạng tỉ lệ (vì máu tối đa đổi theo cấp). Thắng: ghi máu cuối trận; thua: về phòng nghỉ với máu đầy; người đã ngã (0%) vào trận ở trạng thái ngã cho tới khi nghỉ / được hồi sinh / Bí Kỹ hồi máu. Phòng thử và test luôn đầy máu, không ghi lại.
+9. **Cấp đội** (so với quái để thắng ngay) = trung bình cấp 4 người. `GameState.team_level` > 0 là cấp ép (phòng thử, phím debug F6/F7, test cũ).
+10. **5 đội hình lưu sẵn;** đổi đội ở menu xong thì map nạp lại tại chỗ. Đội luôn 1–4 người, không trùng.
+11. **Save v2:** thêm túi đồ, tiến trình, máu, đội hình; save v1 chuyển `team_level` cũ thành cấp từng nhân vật (tự coi như đã đột phá đủ).
+12. **Lệnh debug:** nút "+ Tài nguyên (debug)" ở menu tạm dừng và túi đồ (bản debug), hàm `Progression.debug_grant_resources()`.

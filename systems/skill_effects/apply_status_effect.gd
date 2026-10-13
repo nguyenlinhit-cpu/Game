@@ -14,12 +14,14 @@ extends SkillEffect
 func apply(ctx: SkillContext) -> void:
 	if status == null:
 		return
-	var base := ctx.user.stats.get_value(base_stat) * base_multiplier if base_multiplier > 0.0 \
+	# Cấp kỹ năng tăng cả độ mạnh buff/debuff lẫn sát thương theo lượt tính theo chỉ số.
+	var potency := ctx.get_status_potency()
+	var base := ctx.user.stats.get_value(base_stat) * base_multiplier * potency if base_multiplier > 0.0 \
 			else BreakSystem.break_base(ctx.user)
 	for entry in ctx.entries(scope):
 		var target: BattleUnit = entry["unit"]
 		if target.is_alive():
-			ctx.events.append_array(ctx.battle.apply_status(status, ctx.user, target, base))
+			ctx.events.append_array(ctx.battle.apply_status(status, ctx.user, target, base, potency))
 			if extend_if_self and target == ctx.user:
 				var instance := target.get_status(status.id)
 				if instance:

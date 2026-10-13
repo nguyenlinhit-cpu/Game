@@ -38,7 +38,7 @@ PROMPT_OPEN_CHEST,Mở rương,Open chest
 PROMPT_BREAK_BOX,Phá Hộp Bí Kỹ,Break Technique Box
 PROMPT_REST,Nghỉ ngơi,Rest
 TOAST_CHEST_OPENED,Đã mở rương (phần thưởng làm ở Phase 10),Chest opened (rewards in Phase 10)
-TOAST_RESTED,Đã nghỉ: hồi máu và lưu game (tạm),Rested: healed and saved (placeholder)
+TOAST_RESTED,Đã nghỉ: hồi đầy máu và Điểm Bí Kỹ,Rested: HP and Technique Points restored
 TOAST_ROOM_LOCKED,Cửa đã khóa! Hạ hết quái để mở,The doors are sealed! Defeat all enemies
 TOAST_ROOM_CLEARED,Đã dọn sạch phòng – cửa mở,Room cleared – doors open
 TOUCH_DASH,Lướt,Dash
@@ -353,3 +353,71 @@ BATTLE_SKILL_SEALED,Chiến kỹ đang bị Phong Ấn,Skill is Sealed
 BATTLE_HARD_MODE,Khó,Hard
 DIFFICULTY_HARD,Khó,Hard
 SANDBOX_HARD,Boss khó,Hard boss
+MENU_FILTER,Lọc:,Filter:
+FILTER_ALL_ELEMENTS,Mọi nguyên tố,All elements
+FILTER_ALL_PATHS,Mọi vận mệnh,All paths
+FILTER_ALL_RARITIES,Mọi hạng,All rarities
+DETAIL_TAB_STATS,Chỉ số,Stats
+DETAIL_TAB_SKILLS,Kỹ năng,Skills
+DETAIL_TAB_EIDOLONS,Tinh Mệnh,Eidolons
+DETAIL_TAB_TRACES,Cây vận mệnh,Traces
+DETAIL_ASCENSION,Đột phá %d/2,Ascension %d/2
+DETAIL_LEVEL,Cấp %d/%d,Level %d/%d
+DETAIL_ASCEND_TITLE,Đột phá: giới hạn cấp lên %d,Ascend: level cap rises to %d
+DETAIL_ASCEND,Đột phá,Ascend
+DETAIL_LEVEL_UP_TITLE,Lên cấp bằng Ký Ức Mảnh Hồn,Level up with Soul Memories
+DETAIL_USE_ONE,Dùng 1,Use 1
+DETAIL_LEVEL_UP_ONE,+1 cấp,+1 level
+DETAIL_LEVEL_UP_CAP,Lên tới giới hạn,Up to cap
+DETAIL_EXP_COST,Nạp EXP tốn %.1f Xu Aether mỗi EXP.,Each EXP costs %.1f Aether Coin.
+DETAIL_SKILL_CAP,Cấp kỹ năng tối đa hiện tại: %d (tối đa %d; mở thêm khi đột phá),Current skill level cap: %d (max %d; raised by ascension)
+SKILL_KIND_BASIC,Đánh thường,Basic ATK
+SKILL_KIND_SKILL,Chiến kỹ,Skill
+SKILL_KIND_ULTIMATE,Tuyệt kỹ,Ultimate
+SKILL_KIND_TALENT,Đặc tính,Talent
+DETAIL_SKILL_LEVEL,Cấp %d/%d,Lv %d/%d
+DETAIL_SKILL_SCALE,"Hệ số sát thương/hồi/khiên ×%d%%, độ mạnh buff/debuff ×%d%%","DMG/heal/shield ×%d%%, buff/debuff strength ×%d%%"
+DETAIL_UPGRADE,Nâng cấp,Upgrade
+DETAIL_EIDOLON,Tinh Mệnh,Eidolon
+DETAIL_EIDOLON_SOURCE_STORY,Mở bằng Mảnh Hồn thu hồi theo cốt truyện (đã có %d/6).,Unlocked by Soul Shards recovered in the story (%d/6).
+DETAIL_EIDOLON_SOURCE_DUPLICATE,Mỗi bản sao nhận thêm (Ước Nguyện) mở 1 Tinh Mệnh.,Each extra copy (Wish) unlocks one Eidolon.
+DETAIL_TRACE_INTRO,"Cây vận mệnh %s: nút nhỏ tăng chỉ số, 3 nút ◆ là bị động lớn. Mở thêm khi đột phá.","%s traces: small nodes add stats, the 3 ◆ nodes are major passives. More unlock with ascension."
+DETAIL_TRACE_OWNED,Đã mở,Unlocked
+DETAIL_NEED_ASCENSION,Cần đột phá %d lần,Requires ascension %d
+DETAIL_UNLOCK,Mở,Unlock
+PROG_DONE,Thành công!,Done!
+PROG_LEVELS_GAINED,Lên %d cấp!,Gained %d level(s)!
+PROG_ERR_INVALID,Không thực hiện được.,Cannot do that.
+PROG_ERR_MAX_LEVEL,Đã đạt cấp tối đa.,Already at max level.
+PROG_ERR_NEED_ASCEND,Cần đột phá để lên cấp tiếp.,Ascend to keep leveling.
+PROG_ERR_NEED_ASCENSION,Cần đột phá thêm.,Requires more ascension.
+PROG_ERR_NOT_AT_CAP,Chưa đạt giới hạn cấp.,Not at the level cap yet.
+PROG_ERR_NOT_ENOUGH,Không đủ nguyên liệu.,Not enough materials.
+PROG_ERR_ASCENSION_LOCKED,Đã đạt giới hạn cấp hiện tại của game (30).,Reached the game's current level cap (30).
+PROG_ERR_SKILL_MAX,Kỹ năng đã cấp tối đa.,Skill is at max level.
+PROG_ERR_SKILL_CAP,Cần đột phá để nâng kỹ năng tiếp.,Ascend to upgrade this skill further.
+PROG_ERR_TRACE_OWNED,Đã mở.,Already unlocked.
+PROG_ERR_REQUIRES_NODE,Cần mở nút trước.,Unlock the previous node first.
+TEAM_PRESETS,Đội hình:,Teams:
+TEAM_PRESET_N,Đội %d,Team %d
+TEAM_SAVE,Lưu đội,Save team
+TEAM_USE,Dùng đội này,Use this team
+TEAM_ROSTER_HINT,"Bấm nhân vật để thêm vào ô trống (bấm lại để bỏ ra), bấm ô để bỏ người. Tối đa 4.","Click a character to add it (again to remove), click a slot to clear it. Up to 4."
+TEAM_ACTIVE,Đang dùng đội này,This team is active
+TEAM_SAVED,Đã lưu,Saved
+TEAM_EMPTY_SLOT,(Trống),(Empty)
+INV_TAB_CURRENCY,Tiền tệ,Currency
+INV_TAB_EXP,Kinh nghiệm,EXP
+INV_TAB_ASCENSION,Đột phá,Ascension
+INV_TAB_SIGIL,Dấu Ấn,Sigils
+INV_TAB_UPGRADE,Nâng cấp,Upgrade
+INV_TAB_WISH,Ước Nguyện,Wish
+INV_TAB_CONSUMABLE,Tiêu hao,Consumables
+INV_DEBUG_GRANT,+ Tài nguyên (debug),+ Resources (debug)
+INV_USE,Dùng,Use
+INV_TECHNIQUE_FULL,Điểm Bí Kỹ đã đầy.,Technique Points are full.
+INV_EMPTY,Chưa có vật phẩm nào.,No items yet.
+TOAST_DEBUG_GRANTED,Đã cộng tài nguyên thử (debug),Test resources granted (debug)
+MENU_CHARACTERS,Nhân vật,Characters
+MENU_TEAM,Đội hình,Team
+MENU_INVENTORY,Túi đồ,Inventory

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"sigil_preservation_2"
+name_key = "ITEM_SIGIL_PRESERVATION_2"
+desc_key = "ITEM_SIGIL_PRESERVATION_2_DESC"
+category = 3
+rarity = 3
+icon_text = "BH2"
+icon_color = Color(0.5, 0.65, 0.8, 1)
+path = 5
+tier = 2

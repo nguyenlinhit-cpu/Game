@@ -1,0 +1,162 @@
+[gd_resource type="Resource" script_class="TraceTreeData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/trace_tree_data.gd" id="1_trace_tree_data"]
+[ext_resource type="Script" path="res://systems/resources/stat_modifier_data.gd" id="2_stat_modifier_data"]
+[ext_resource type="Script" path="res://systems/resources/trace_node_data.gd" id="3_trace_node_data"]
+
+[sub_resource type="Resource" id="Mod_destruction_s1_1"]
+script = ExtResource("2_stat_modifier_data")
+stat = 1
+flat = 0.0
+percent = 0.04
+
+[sub_resource type="Resource" id="Node_destruction_s1_1"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_s1_1"
+name_key = "TRACE_DESTRUCTION_S1_1"
+desc_key = "TRACE_DESTRUCTION_S1_1_DESC"
+required_ascension = 0
+coin = 1500
+sigil_tier = 1
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_destruction_s1_1")])
+
+[sub_resource type="Resource" id="Mod_destruction_s2_1"]
+script = ExtResource("2_stat_modifier_data")
+stat = 0
+flat = 0.0
+percent = 0.04
+
+[sub_resource type="Resource" id="Node_destruction_s2_1"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_s2_1"
+name_key = "TRACE_DESTRUCTION_S2_1"
+desc_key = "TRACE_DESTRUCTION_S2_1_DESC"
+required_ascension = 0
+coin = 1500
+sigil_tier = 1
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_destruction_s2_1")])
+
+[sub_resource type="Resource" id="Mod_destruction_m1_0"]
+script = ExtResource("2_stat_modifier_data")
+stat = 0
+flat = 0.0
+percent = 0.1
+
+[sub_resource type="Resource" id="Node_destruction_m1"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_m1"
+name_key = "TRACE_DESTRUCTION_M1"
+desc_key = "TRACE_DESTRUCTION_M1_DESC"
+major = true
+required_ascension = 0
+coin = 3000
+sigil_tier = 1
+sigil_count = 3
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_destruction_m1_0")])
+
+[sub_resource type="Resource" id="Mod_destruction_s1_2"]
+script = ExtResource("2_stat_modifier_data")
+stat = 1
+flat = 0.0
+percent = 0.04
+
+[sub_resource type="Resource" id="Node_destruction_s1_2"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_s1_2"
+name_key = "TRACE_DESTRUCTION_S1_2"
+desc_key = "TRACE_DESTRUCTION_S1_2_DESC"
+required_ascension = 1
+coin = 4000
+sigil_tier = 2
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_destruction_s1_2")])
+requires = &"destruction_s1_1"
+
+[sub_resource type="Resource" id="Mod_destruction_s2_2"]
+script = ExtResource("2_stat_modifier_data")
+stat = 0
+flat = 0.0
+percent = 0.06
+
+[sub_resource type="Resource" id="Node_destruction_s2_2"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_s2_2"
+name_key = "TRACE_DESTRUCTION_S2_2"
+desc_key = "TRACE_DESTRUCTION_S2_2_DESC"
+required_ascension = 1
+coin = 4000
+sigil_tier = 2
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_destruction_s2_2")])
+requires = &"destruction_s2_1"
+
+[sub_resource type="Resource" id="Node_destruction_m2"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_m2"
+name_key = "TRACE_DESTRUCTION_M2"
+desc_key = "TRACE_DESTRUCTION_M2_DESC"
+major = true
+required_ascension = 1
+coin = 8000
+sigil_tier = 2
+sigil_count = 4
+requires = &"destruction_m1"
+passive = 2
+passive_value = 0.15
+
+[sub_resource type="Resource" id="Mod_destruction_s1_3"]
+script = ExtResource("2_stat_modifier_data")
+stat = 1
+flat = 0.0
+percent = 0.06
+
+[sub_resource type="Resource" id="Node_destruction_s1_3"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_s1_3"
+name_key = "TRACE_DESTRUCTION_S1_3"
+desc_key = "TRACE_DESTRUCTION_S1_3_DESC"
+required_ascension = 2
+coin = 8000
+sigil_tier = 3
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_destruction_s1_3")])
+requires = &"destruction_s1_2"
+
+[sub_resource type="Resource" id="Mod_destruction_s2_3"]
+script = ExtResource("2_stat_modifier_data")
+stat = 0
+flat = 0.0
+percent = 0.06
+
+[sub_resource type="Resource" id="Node_destruction_s2_3"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_s2_3"
+name_key = "TRACE_DESTRUCTION_S2_3"
+desc_key = "TRACE_DESTRUCTION_S2_3_DESC"
+required_ascension = 2
+coin = 8000
+sigil_tier = 3
+sigil_count = 2
+stat_modifiers = Array[ExtResource("2_stat_modifier_data")]([SubResource("Mod_destruction_s2_3")])
+requires = &"destruction_s2_2"
+
+[sub_resource type="Resource" id="Node_destruction_m3"]
+script = ExtResource("3_trace_node_data")
+id = &"destruction_m3"
+name_key = "TRACE_DESTRUCTION_M3"
+desc_key = "TRACE_DESTRUCTION_M3_DESC"
+major = true
+required_ascension = 2
+coin = 16000
+sigil_tier = 3
+sigil_count = 4
+requires = &"destruction_m2"
+passive = 4
+passive_value = 10.0
+
+[resource]
+script = ExtResource("1_trace_tree_data")
+path = 0
+nodes = Array[ExtResource("3_trace_node_data")]([SubResource("Node_destruction_s1_1"), SubResource("Node_destruction_s2_1"), SubResource("Node_destruction_m1"), SubResource("Node_destruction_s1_2"), SubResource("Node_destruction_s2_2"), SubResource("Node_destruction_m2"), SubResource("Node_destruction_s1_3"), SubResource("Node_destruction_s2_3"), SubResource("Node_destruction_m3")])

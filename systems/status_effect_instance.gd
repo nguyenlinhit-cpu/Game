@@ -14,6 +14,8 @@ var base_value: float = 0.0
 var source_level: int = 1
 ## Nguồn gỡ bộ điều chỉnh chỉ số trong Stats.
 var uid: StringName
+## Độ mạnh theo cấp kỹ năng của người gắn (nhân điều chỉnh chỉ số và hồi máu theo lượt).
+var potency: float = 1.0
 
 
 func _init(effect: StatusEffectData, from: BattleUnit) -> void:

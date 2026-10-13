@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"crystal_lightning"
+name_key = "ITEM_CRYSTAL_LIGHTNING"
+desc_key = "ITEM_CRYSTAL_LIGHTNING_DESC"
+category = 2
+rarity = 4
+icon_text = "ST"
+icon_color = Color(0.65098, 0.356863, 0.94902, 1)
+element = 2

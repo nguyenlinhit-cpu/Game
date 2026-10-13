@@ -52,5 +52,5 @@ static func trigger_break(battle: BattleController, attacker: BattleUnit, target
 		battle.queue.delay(target, cfg.break_delay)
 	var effect := cfg.get_break_effect(element)
 	if effect and target.is_alive():
-		events.append_array(battle.apply_status(effect, attacker, target, base))
+		events.append_array(battle.apply_status(effect, attacker, target, base, 1.0))
 	return events

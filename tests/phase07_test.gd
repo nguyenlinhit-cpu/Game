@@ -192,7 +192,7 @@ func _technique_effect_visible(map: OverworldMap, data: CharacterData, enemy: Ov
 		TechniqueData.MapAction.MAGNET:
 			return map._magnet_left > 0.0
 		TechniqueData.MapAction.HEAL_TEAM:
-			return map.hud.get_toast_text() == tr("TOAST_TEAM_HEALED")
+			return map.hud.get_toast_text() == tr("TOAST_TEAM_HEALED") % roundi(technique.heal_ratio * 100.0)
 		TechniqueData.MapAction.RETURN_TO_REST:
 			var rest := map.room_manager.get_room(&"rest_01")
 			return map.player.global_position.distance_to(rest.get_spawn_point()) < 2.0

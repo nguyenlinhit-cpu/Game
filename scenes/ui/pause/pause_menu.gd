@@ -1,7 +1,7 @@
 class_name PauseMenu
 extends Control
-## Menu tạm dừng ngoài map (Esc): Tiếp tục, Cài đặt, Về màn hình tiêu đề.
-## TODO Phase 9: thêm Đội hình, Nhân vật, Túi đồ.
+## Menu tạm dừng ngoài map (Esc): Tiếp tục, Nhân vật, Đội hình, Túi đồ, Cài đặt, Về màn hình tiêu đề.
+## Nhân vật / Đội hình / Túi đồ mở GameMenu (Phase 9).
 
 @onready var _menu: VBoxContainer = %Menu
 @onready var _resume_button: Button = %ResumeButton
@@ -18,6 +18,16 @@ func _ready() -> void:
 	_settings_button.pressed.connect(_on_settings_pressed)
 	_title_button.pressed.connect(_on_title_pressed)
 	_settings_panel.closed.connect(_on_settings_closed)
+	var at := _settings_button.get_index()
+	for entry: Array in [["MENU_CHARACTERS", GameMenu.Page.CHARACTERS], ["MENU_TEAM", GameMenu.Page.TEAM],
+			["MENU_INVENTORY", GameMenu.Page.INVENTORY]]:
+		var button := Button.new()
+		button.text = tr(entry[0])
+		button.custom_minimum_size = Vector2(0.0, 72.0)
+		button.pressed.connect(open_game_menu.bind(entry[1]))
+		_menu.add_child(button)
+		_menu.move_child(button, at)
+		at += 1
 	if OS.is_debug_build():
 		# Bản debug: lối vào phòng thử trận (Phase 5).
 		var sandbox := Button.new()
@@ -34,6 +44,14 @@ func _ready() -> void:
 		cycle.pressed.connect(_cycle_test_team)
 		_menu.add_child(cycle)
 		_menu.move_child(cycle, _title_button.get_index())
+		var grant := Button.new()
+		grant.text = tr("INV_DEBUG_GRANT")
+		grant.custom_minimum_size = Vector2(0.0, 72.0)
+		grant.pressed.connect(func() -> void:
+			Progression.debug_grant_resources()
+			EventBus.toast_requested.emit(tr("TOAST_DEBUG_GRANTED")))
+		_menu.add_child(grant)
+		_menu.move_child(grant, _title_button.get_index())
 
 
 func open() -> void:
@@ -50,7 +68,43 @@ func close() -> void:
 	get_tree().paused = false
 
 
+var _game_menu: GameMenu
+
+
+## Mở menu Nhân vật / Đội hình / Túi đồ (game vẫn tạm dừng).
+func open_game_menu(page: int = GameMenu.Page.CHARACTERS) -> GameMenu:
+	if not visible:
+		open()
+	_menu.hide()
+	_game_menu = GameMenu.new()
+	add_child(_game_menu)
+	_game_menu.show_page(page)
+	_game_menu.closed.connect(func() -> void:
+		var changed := _game_menu.is_team_changed()
+		_game_menu = null
+		if changed:
+			_reload_map()
+		else:
+			_menu.show())
+	return _game_menu
+
+
+func get_game_menu() -> GameMenu:
+	return _game_menu
+
+
+## Nạp lại map giữ nguyên vị trí (đổi đội hình xong).
+func _reload_map() -> void:
+	var map := get_tree().current_scene as OverworldMap
+	if map:
+		GameState.set_map_player(map.scene_file_path, map.player.global_position, map.player.facing)
+	close()
+	SceneRouter.go_to(GameState.current_map_scene if GameState.current_map_scene != "" else DataPaths.TEST_MAP_SCENE)
+
+
 func _unhandled_input(event: InputEvent) -> void:
+	if _game_menu:
+		return
 	if not event.is_action_pressed("menu"):
 		return
 	get_viewport().set_input_as_handled()
@@ -81,13 +135,9 @@ func _cycle_test_team() -> void:
 	for i in owned.size():
 		if i != next_out_index and team.size() < GameConfig.MAX_TEAM_SIZE:
 			team.append(owned[i])
-	var map := get_tree().current_scene as OverworldMap
-	if map:
-		GameState.set_map_player(map.scene_file_path, map.player.global_position, map.player.facing)
 	GameState.set_team(team)
 	GameState.leader_index = 0
-	close()
-	SceneRouter.go_to(GameState.current_map_scene)
+	_reload_map()
 
 
 func _on_title_pressed() -> void:

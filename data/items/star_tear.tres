@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"star_tear"
+name_key = "ITEM_STAR_TEAR"
+desc_key = "ITEM_STAR_TEAR_DESC"
+category = 5
+rarity = 5
+icon_text = "LT"
+icon_color = Color(0.75, 0.85, 1, 1)

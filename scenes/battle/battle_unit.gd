@@ -54,6 +54,8 @@ var summon_skill: SkillData
 var summon_turns_left: int = 0
 ## Chỗ để Đặc tính/Tinh Mệnh ghi tham số riêng (vd. "hp_cost_reduction", "revive_uses_bonus").
 var custom: Dictionary = {}
+## Cấp kỹ năng (Phase 9): { SkillData.Kind: cấp, -1: cấp Đặc tính }. Thiếu = cấp 1.
+var skill_levels: Dictionary = {}
 
 # --- Quái (Phase 8) ---
 ## Bộ hành động AI hiện tại (đổi theo giai đoạn boss).
@@ -246,6 +248,23 @@ func add_shield(amount: float) -> void:
 
 func get_skill_multiplier_bonus(kind: int) -> float:
 	return float(skill_multiplier_bonus.get(kind, 0.0))
+
+
+## Cấp kỹ năng theo loại (-1 = Đặc tính; đòn phụ dùng cấp Đặc tính).
+func get_skill_level(kind: int) -> int:
+	if kind == SkillData.Kind.FOLLOW_UP:
+		kind = -1
+	return int(skill_levels.get(kind, 1))
+
+
+## Hệ số sát thương/hồi/khiên theo cấp kỹ năng.
+func get_level_multiplier(kind: int) -> float:
+	return ProgressionConfig.get_config().multiplier_scale(get_skill_level(kind))
+
+
+## Độ mạnh buff/debuff do kỹ năng loại này gắn.
+func get_status_potency(kind: int) -> float:
+	return ProgressionConfig.get_config().status_scale(get_skill_level(kind))
 
 
 func is_taunting() -> bool:

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"sigil_harmony_3"
+name_key = "ITEM_SIGIL_HARMONY_3"
+desc_key = "ITEM_SIGIL_HARMONY_3_DESC"
+category = 3
+rarity = 4
+icon_text = "HH3"
+icon_color = Color(0.95, 0.75, 0.35, 1)
+path = 3
+tier = 3

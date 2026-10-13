@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"crystal_poison"
+name_key = "ITEM_CRYSTAL_POISON"
+desc_key = "ITEM_CRYSTAL_POISON_DESC"
+category = 2
+rarity = 4
+icon_text = "ĐT"
+icon_color = Color(0.607843, 0.772549, 0.239216, 1)
+element = 4

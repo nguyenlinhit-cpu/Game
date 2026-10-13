@@ -11,8 +11,9 @@
 | 5. Nguyên tố, khiên, phá vỡ, hiệu ứng | Xong |
 | 6. Hệ thống kỹ năng, nhân vật chính, 4 nhân vật miễn phí | Xong |
 | 7. 20 nhân vật còn lại | Xong |
-| 8. Quái thường, tinh anh, boss | Xong, chờ duyệt |
-| 9–14 | Chưa làm |
+| 8. Quái thường, tinh anh, boss | Xong |
+| 9. Tiến trình nhân vật (cấp 30) | Xong, chờ duyệt |
+| 10–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -306,6 +307,52 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 8.
 - Trùm cuối mức Khó: đội miễn phí Tinh Mệnh 0 cấp 30 chưa thắng được (0%) – dành cho đội đã nâng kỹ năng/Tinh Mệnh (Phase 9); cân lại ở Phase 14.
 - Trận thường khá nhẹ (đội còn ~90% máu) vì máu chưa giữ giữa các trận; cân lại khi Phase 9 giữ máu.
 - Hình quái/boss thật, hiệu ứng đòn (Phase 13); nhạc thật (Phase 14). Chữ tiếng Anh của quái đã có, nhưng mô tả kỹ năng quái chưa hiện trong giao diện (chỉ hiện tên đòn và dòng nhắc).
+
+## Phase 9 – Tiến trình nhân vật (giới hạn cấp 30)
+
+### Đã làm
+
+- **Cấp 1–30** bằng Ký Ức Mảnh Hồn 3 bậc (100/500/2000 EXP), bảng EXP từng cấp (có sẵn tới 80), giới hạn ở `GameConfig.MAX_LEVEL`.
+- **Đột phá** ở cấp 10 và 20 (Xu Aether + Tinh Thể đúng nguyên tố); mốc 30–70 có dữ liệu nhưng khóa.
+- **Nâng kỹ năng** Đánh thường / Chiến kỹ / Tuyệt kỹ / Đặc tính tới cấp 5 (Xu + Dấu Ấn đúng vận mệnh, cấp 5 cần Lõi Ma Biến); giới hạn cấp kỹ năng mở theo đột phá. Cấp kỹ năng đổi số liệu trong trận (hệ số ×1,0–1,4, buff/debuff ×1,0–1,2).
+- **Cây vận mệnh** cho 7 vận mệnh: 6 nút chỉ số nhỏ + 3 nút bị động lớn, mở theo đột phá; chỉ số và bị động áp vào trận.
+- **Tinh Mệnh:** nhận nhân vật trùng (`GameState.grant_character`, sẵn cho Phase 11), nhân vật chính mở theo cờ cốt truyện `soul_shard_1..6`.
+- **Máu giữ giữa các trận;** phòng nghỉ hồi đầy; Bí Kỹ Túi Thuốc (Quill) hồi 25% thật; thua thì về phòng nghỉ máu đầy; thanh đội ngoài map có thanh máu.
+- **Túi đồ** (38 loại vật phẩm, 7 thẻ: tiền tệ, kinh nghiệm, đột phá, Dấu Ấn, nâng cấp, Ước Nguyện, tiêu hao; Hộp Bí Kỹ dùng được).
+- **Giao diện** (menu tạm dừng → Nhân vật / Đội hình / Túi đồ): danh sách nhân vật lọc theo nguyên tố, vận mệnh, hạng; chi tiết nhân vật 4 thẻ (Chỉ số + lên cấp + đột phá, Kỹ năng, Tinh Mệnh, Cây vận mệnh) với chi phí đủ/thiếu; màn đội hình 4 ô, 5 đội hình lưu sẵn.
+- **Lệnh debug** cộng tài nguyên (menu tạm dừng, túi đồ). Save lên v2 có chuyển đổi save cũ.
+- Test `tests/phase09_test.tscn`: 61/61 đạt. Test Phase 1–8 vẫn đạt.
+
+### Bảng chi phí (chi tiết: `docs/PROGRESSION.md`)
+
+| Hạng mục | Chi phí |
+| --- | --- |
+| Lên cấp 1 → 30 | 50.750 EXP (≈ 25 Ký Ức bậc 3) + 5.075 Xu |
+| Đột phá cấp 10 / 20 | 4.000 Xu + 4 Tinh Thể / 12.000 Xu + 10 Tinh Thể |
+| Kỹ năng cấp 2 / 3 / 4 / 5 (mỗi kỹ năng) | 1.500 Xu + 3 Dấu Ấn bậc 1 / 4.000 + 2 bậc 2 / 8.000 + 4 bậc 2 / 16.000 + 3 bậc 3 + 1 Lõi Ma Biến |
+| Cây vận mệnh (đủ 9 nút) | 54.000 Xu + Dấu Ấn bậc 1/2/3 |
+| **Tổng 1 nhân vật tối đa** | **50.750 EXP, ~193.000 Xu, 14 Tinh Thể, Dấu Ấn 19/32/20 (bậc 1/2/3), 4 Lõi Ma Biến** |
+
+### File chính
+
+- `systems/progression.gd`, `systems/resources/{item_data,progression_config,ascension_data,skill_level_cost,trace_node_data,trace_tree_data}.gd`
+- `scenes/battle/trace_passives.gd`; sửa `battle_controller.gd` (`ally_states`), `battle_unit.gd` (cấp kỹ năng), `skill_context.gd`, `battle_scene.gd` (giữ máu), `systems/status_effects.gd` + `status_effect_instance.gd` (độ mạnh hiệu ứng), `apply_status_effect.gd`, `break_system.gd`
+- `scenes/ui/menu/game_menu.gd`, `scenes/ui/character_list/`, `scenes/ui/character_detail/`, `scenes/ui/team/`, `scenes/ui/inventory/`, `scenes/ui/common/ui_kit.gd`; sửa `pause_menu.gd`, `hud/team_bar.gd`, `hud/overworld_hud.gd`
+- `autoload/game_state.gd` (túi đồ, tiến trình, máu, đội hình), `save_manager.gd` (v2), `event_bus.gd`; sửa `overworld_map.gd`, `overworld_enemy.gd`, `rest_point.gd`, `technique_data.gd`
+- `data/items/*.tres` (38), `data/config/progression.tres`, `data/progression/traces/*.tres` (7), `localization/progression.csv`
+- `tools/data_builder/build_progression.py`, `docs/PROGRESSION.md`, `tests/phase09_test.*`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 9.
+
+### Việc còn nợ
+
+- Nguồn tài nguyên (rơi đồ, rương, nhiệm vụ) làm ở Phase 10; hiện chỉ có lệnh debug. Phase 10 cân bảng rơi đồ theo bảng chi phí trên (4–5 nhân vật tối đa).
+- Mô tả kỹ năng trong màn chi tiết vẫn ghi số cấp 1 (hệ số theo cấp hiện bằng dòng "×%").
+- Cân bằng boss Phase 8 tính ở kỹ năng cấp 1, chưa có cây vận mệnh → khi người chơi nâng kỹ năng, boss sẽ dễ hơn; cân lại ở Phase 14.
+- Năng lượng chưa giữ giữa các trận (luôn vào trận 50%).
+- Hình chân dung thật (Phase 13).
 
 ## Để sau
 

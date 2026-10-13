@@ -27,5 +27,7 @@ enum MapAction {
 @export var radius_tiles: float = 2.0
 @export var duration_sec: float = 8.0
 @export var speed_bonus: float = 0.0
+## HEAL_TEAM: hồi chừng này phần máu tối đa cho cả đội (người đã ngã cũng đứng dậy).
+@export var heal_ratio: float = 0.25
 ## Chạm/chém nhóm quái mang dấu này luôn vào trận với Ưu Thế (Bẫy Dây).
 @export var marks_force_advantage: bool = false

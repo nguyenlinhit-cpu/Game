@@ -89,6 +89,9 @@ var auto_overrides: Dictionary = {}
 var auto_ultimate_blocklist: Array[BattleUnit] = []
 ## Mức khó cao hơn (null = thường). Đặt trước setup().
 var difficulty: DifficultyConfig
+## Tiến trình từng nhân vật (Phase 9), đặt trước setup(): { character_id: Progression.battle_snapshot() }
+## = { "level"?, "skill_levels"?, "traces"?, "hp_ratio"? }. Thiếu khóa thì dùng cấp chung, kỹ năng cấp 1, máu đầy.
+var ally_states: Dictionary = {}
 ## Số quái đã bị hạ trong trận (AI dùng cho "đồng minh bị hạ").
 var enemy_deaths: int = 0
 ## Hàng chen lượt: [{ "unit", "target", "skill"?: SkillData, "follow_up"?: bool }].
@@ -120,9 +123,28 @@ func setup(team: Array[CharacterData], team_level: int, battle_encounter: Encoun
 	var level := clampi(team_level, 1, GameConfig.MAX_LEVEL)
 	for i in team.size():
 		var data := team[i]
-		var unit := BattleUnit.create_ally(data, level, i, skins.get(data.id, &""), names.get(data.id, ""))
+		var state: Dictionary = ally_states.get(data.id, {})
+		var unit_level := clampi(int(state.get("level", level)), 1, GameConfig.MAX_LEVEL)
+		var unit := BattleUnit.create_ally(data, unit_level, i, skins.get(data.id, &""), names.get(data.id, ""))
+		unit.skill_levels = (state.get("skill_levels", {}) as Dictionary).duplicate()
+		var traces: Array[TraceNodeData] = []
+		traces.assign(state.get("traces", []))
+		Progression.apply_trace_modifiers(unit.stats, traces)
+		unit.hp = unit.get_max_hp() * clampf(float(state.get("hp_ratio", 1.0)), 0.0, 1.0)
+		if state.has("hp_ratio") and unit.hp <= 0.0:
+			unit.hp = 0.0
+		elif unit.hp < 1.0:
+			unit.hp = 1.0
 		allies.append(unit)
-		queue.add(unit)
+		# Nhân vật đang ngã (máu giữ từ trận trước) không vào hàng lượt.
+		if unit.is_alive():
+			queue.add(unit)
+		if not traces.is_empty():
+			var passives := TracePassives.new()
+			passives.setup(traces)
+			if not passives.is_empty():
+				passives.attach(self, unit, 0)
+				talents.append(passives)
 	_spawn_wave(0)
 	for unit in allies:
 		_attach_character_scripts(unit, int(eidolon_levels.get(unit.character.id, 0)))
@@ -363,9 +385,9 @@ func get_attack_element(unit: BattleUnit) -> int:
 
 ## Tung tỉ lệ trúng rồi gắn hiệu ứng, kèm trì hoãn thêm nếu có. Trả về sự kiện.
 func apply_status(data: StatusEffectData, source: BattleUnit, target: BattleUnit,
-		base_value: float = 0.0) -> Array[Dictionary]:
+		base_value: float = 0.0, potency: float = -1.0) -> Array[Dictionary]:
 	var events: Array[Dictionary] = []
-	var instance := StatusEffects.try_apply(data, source, target, rng, base_value)
+	var instance := StatusEffects.try_apply(data, source, target, rng, base_value, potency)
 	if instance == null:
 		events.append({"type": "status_resisted", "target": target, "amount": 0.0, "crit": false, "status": data.id, "name_key": data.name_key})
 		return events

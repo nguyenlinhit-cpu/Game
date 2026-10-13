@@ -5,7 +5,7 @@ extends Node
 signal game_saved(slot: int)
 signal game_loaded(slot: int)
 
-const SAVE_VERSION: int = 1
+const SAVE_VERSION: int = 2
 const AUTOSAVE_SLOT: int = 0
 const MANUAL_SLOTS: Array[int] = [1, 2, 3]
 
@@ -100,6 +100,14 @@ func _migrate(data: Dictionary) -> Dictionary:
 	var version := int(data.get("version", 0))
 	if version > SAVE_VERSION:
 		push_warning("SaveManager: save đến từ bản mới hơn (v%d), có thể thiếu dữ liệu" % version)
-	# TODO Phase 14: thêm các bước chuyển đổi v1 → v2 ... khi cấu trúc save thay đổi.
+	if version < 2 and data.get("game_state") is Dictionary:
+		# v1 → v2 (Phase 9): team_level cũ là cấp chung của đội → thành cấp riêng từng nhân vật đang có.
+		var state: Dictionary = data["game_state"]
+		var old_level := int(state.get("team_level", 1))
+		var progress := {}
+		for id: Variant in state.get("owned_characters", []):
+			progress[str(id)] = {"level": clampi(old_level, 1, GameConfig.MAX_LEVEL)}
+		state["character_progress"] = progress
+		state["team_level"] = 0
 	data["version"] = SAVE_VERSION
 	return data

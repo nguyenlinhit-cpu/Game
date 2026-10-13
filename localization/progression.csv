@@ -1,0 +1,203 @@
+keys,vi,en
+ITEM_AETHER_COIN,Xu Aether,Aether Coin
+ITEM_AETHER_COIN_DESC,"Đồng tiền chung của Pháo Đài, dùng cho mọi loại nâng cấp.","The Fortress's common currency, used for every upgrade."
+ITEM_CRYSTAL_FIRE,Tinh Thể Lửa,Fire Crystal
+ITEM_CRYSTAL_FIRE_DESC,Dùng để đột phá nhân vật hệ Lửa ở cấp 10 và 20.,Ascends Fire characters at levels 10 and 20.
+ITEM_CRYSTAL_LIGHTNING,Tinh Thể Sét,Lightning Crystal
+ITEM_CRYSTAL_LIGHTNING_DESC,Dùng để đột phá nhân vật hệ Sét ở cấp 10 và 20.,Ascends Lightning characters at levels 10 and 20.
+ITEM_CRYSTAL_POISON,Tinh Thể Độc,Poison Crystal
+ITEM_CRYSTAL_POISON_DESC,Dùng để đột phá nhân vật hệ Độc ở cấp 10 và 20.,Ascends Poison characters at levels 10 and 20.
+ITEM_CRYSTAL_SOUL,Tinh Thể Hồn,Soul Crystal
+ITEM_CRYSTAL_SOUL_DESC,Dùng để đột phá nhân vật hệ Hồn ở cấp 10 và 20.,Ascends Soul characters at levels 10 and 20.
+ITEM_CRYSTAL_WATER,Tinh Thể Nước,Water Crystal
+ITEM_CRYSTAL_WATER_DESC,Dùng để đột phá nhân vật hệ Nước ở cấp 10 và 20.,Ascends Water characters at levels 10 and 20.
+ITEM_CRYSTAL_WIND,Tinh Thể Phong,Wind Crystal
+ITEM_CRYSTAL_WIND_DESC,Dùng để đột phá nhân vật hệ Phong ở cấp 10 và 20.,Ascends Wind characters at levels 10 and 20.
+ITEM_CRYSTAL_WOOD,Tinh Thể Mộc,Wood Crystal
+ITEM_CRYSTAL_WOOD_DESC,Dùng để đột phá nhân vật hệ Mộc ở cấp 10 và 20.,Ascends Wood characters at levels 10 and 20.
+ITEM_SIGIL_ABUNDANCE_1,Dấu Ấn Trù Phú (Thô),Abundance Sigil (Rough)
+ITEM_SIGIL_ABUNDANCE_1_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Trù Phú.,Upgrades skills and traces of Abundance characters.
+ITEM_SIGIL_ABUNDANCE_2,Dấu Ấn Trù Phú (Tinh),Abundance Sigil (Refined)
+ITEM_SIGIL_ABUNDANCE_2_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Trù Phú.,Upgrades skills and traces of Abundance characters.
+ITEM_SIGIL_ABUNDANCE_3,Dấu Ấn Trù Phú (Thuần),Abundance Sigil (Pure)
+ITEM_SIGIL_ABUNDANCE_3_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Trù Phú.,Upgrades skills and traces of Abundance characters.
+ITEM_SIGIL_DESTRUCTION_1,Dấu Ấn Hủy Diệt (Thô),Destruction Sigil (Rough)
+ITEM_SIGIL_DESTRUCTION_1_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hủy Diệt.,Upgrades skills and traces of Destruction characters.
+ITEM_SIGIL_DESTRUCTION_2,Dấu Ấn Hủy Diệt (Tinh),Destruction Sigil (Refined)
+ITEM_SIGIL_DESTRUCTION_2_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hủy Diệt.,Upgrades skills and traces of Destruction characters.
+ITEM_SIGIL_DESTRUCTION_3,Dấu Ấn Hủy Diệt (Thuần),Destruction Sigil (Pure)
+ITEM_SIGIL_DESTRUCTION_3_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hủy Diệt.,Upgrades skills and traces of Destruction characters.
+ITEM_SIGIL_ERUDITION_1,Dấu Ấn Tri Thức (Thô),Erudition Sigil (Rough)
+ITEM_SIGIL_ERUDITION_1_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Tri Thức.,Upgrades skills and traces of Erudition characters.
+ITEM_SIGIL_ERUDITION_2,Dấu Ấn Tri Thức (Tinh),Erudition Sigil (Refined)
+ITEM_SIGIL_ERUDITION_2_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Tri Thức.,Upgrades skills and traces of Erudition characters.
+ITEM_SIGIL_ERUDITION_3,Dấu Ấn Tri Thức (Thuần),Erudition Sigil (Pure)
+ITEM_SIGIL_ERUDITION_3_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Tri Thức.,Upgrades skills and traces of Erudition characters.
+ITEM_SIGIL_HARMONY_1,Dấu Ấn Hòa Hợp (Thô),Harmony Sigil (Rough)
+ITEM_SIGIL_HARMONY_1_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hòa Hợp.,Upgrades skills and traces of Harmony characters.
+ITEM_SIGIL_HARMONY_2,Dấu Ấn Hòa Hợp (Tinh),Harmony Sigil (Refined)
+ITEM_SIGIL_HARMONY_2_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hòa Hợp.,Upgrades skills and traces of Harmony characters.
+ITEM_SIGIL_HARMONY_3,Dấu Ấn Hòa Hợp (Thuần),Harmony Sigil (Pure)
+ITEM_SIGIL_HARMONY_3_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hòa Hợp.,Upgrades skills and traces of Harmony characters.
+ITEM_SIGIL_HUNT_1,Dấu Ấn Săn Bắn (Thô),The Hunt Sigil (Rough)
+ITEM_SIGIL_HUNT_1_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Săn Bắn.,Upgrades skills and traces of The Hunt characters.
+ITEM_SIGIL_HUNT_2,Dấu Ấn Săn Bắn (Tinh),The Hunt Sigil (Refined)
+ITEM_SIGIL_HUNT_2_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Săn Bắn.,Upgrades skills and traces of The Hunt characters.
+ITEM_SIGIL_HUNT_3,Dấu Ấn Săn Bắn (Thuần),The Hunt Sigil (Pure)
+ITEM_SIGIL_HUNT_3_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Săn Bắn.,Upgrades skills and traces of The Hunt characters.
+ITEM_SIGIL_NIHILITY_1,Dấu Ấn Hư Vô (Thô),Nihility Sigil (Rough)
+ITEM_SIGIL_NIHILITY_1_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hư Vô.,Upgrades skills and traces of Nihility characters.
+ITEM_SIGIL_NIHILITY_2,Dấu Ấn Hư Vô (Tinh),Nihility Sigil (Refined)
+ITEM_SIGIL_NIHILITY_2_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hư Vô.,Upgrades skills and traces of Nihility characters.
+ITEM_SIGIL_NIHILITY_3,Dấu Ấn Hư Vô (Thuần),Nihility Sigil (Pure)
+ITEM_SIGIL_NIHILITY_3_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Hư Vô.,Upgrades skills and traces of Nihility characters.
+ITEM_SIGIL_PRESERVATION_1,Dấu Ấn Bảo Hộ (Thô),Preservation Sigil (Rough)
+ITEM_SIGIL_PRESERVATION_1_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Bảo Hộ.,Upgrades skills and traces of Preservation characters.
+ITEM_SIGIL_PRESERVATION_2,Dấu Ấn Bảo Hộ (Tinh),Preservation Sigil (Refined)
+ITEM_SIGIL_PRESERVATION_2_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Bảo Hộ.,Upgrades skills and traces of Preservation characters.
+ITEM_SIGIL_PRESERVATION_3,Dấu Ấn Bảo Hộ (Thuần),Preservation Sigil (Pure)
+ITEM_SIGIL_PRESERVATION_3_DESC,Nâng kỹ năng và cây vận mệnh của nhân vật vận mệnh Bảo Hộ.,Upgrades skills and traces of Preservation characters.
+ITEM_SOUL_MEMORY_1,Ký Ức Mảnh Hồn Vụn,Faint Soul Memory
+ITEM_SOUL_MEMORY_1_DESC,Nhân vật nhận 100 EXP.,Grants a character 100 EXP.
+ITEM_SOUL_MEMORY_2,Ký Ức Mảnh Hồn,Soul Memory
+ITEM_SOUL_MEMORY_2_DESC,Nhân vật nhận 500 EXP.,Grants a character 500 EXP.
+ITEM_SOUL_MEMORY_3,Ký Ức Mảnh Hồn Sáng,Radiant Soul Memory
+ITEM_SOUL_MEMORY_3_DESC,Nhân vật nhận 2000 EXP.,Grants a character 2000 EXP.
+ITEM_STARDUST,Bụi Sao,Stardust
+ITEM_STARDUST_DESC,Nhận khi có nhân vật trùng; đổi vé và Tinh Thể ở cửa hàng.,Earned from duplicate characters; exchange for tickets and crystals.
+ITEM_STAR_TEAR,Lệ Tinh,Star Tear
+ITEM_STAR_TEAR_DESC,Đá quý dùng để Ước Nguyện (gacha).,A gem used to make Wishes (gacha).
+ITEM_TECHNIQUE_BOX,Hộp Bí Kỹ,Technique Box
+ITEM_TECHNIQUE_BOX_DESC,Dùng: hồi 1 Điểm Bí Kỹ.,Use: restores 1 Technique Point.
+ITEM_WARP_CORE,Lõi Ma Biến,Warp Core
+ITEM_WARP_CORE_DESC,"Lõi năng lượng méo mó rơi từ boss, cần để nâng kỹ năng cấp cao.","A twisted energy core dropped by bosses, needed for high skill levels."
+ITEM_WISH_TICKET_LIMITED,Vé Ước Nguyện Giới Hạn,Limited Wish Ticket
+ITEM_WISH_TICKET_LIMITED_DESC,1 lượt quay banner giới hạn.,One pull on the limited banner.
+ITEM_WISH_TICKET_STANDARD,Vé Ước Nguyện Thường,Standard Wish Ticket
+ITEM_WISH_TICKET_STANDARD_DESC,1 lượt quay banner thường.,One pull on the standard banner.
+TRACE_ABUNDANCE_M1,Mạch Sống,Lifeblood
+TRACE_ABUNDANCE_M1_DESC,+8% Tăng Trị Liệu.,+8% Outgoing Healing.
+TRACE_ABUNDANCE_M2,Cấp Cứu,Triage
+TRACE_ABUNDANCE_M2_DESC,+15% lượng hồi lên đồng minh dưới 50% máu.,+15% healing on allies below 50% HP.
+TRACE_ABUNDANCE_M3,Chuẩn Bị,Preparation
+TRACE_ABUNDANCE_M3_DESC,Vào trận với thêm 20% năng lượng.,Starts battle with +20% Energy.
+TRACE_ABUNDANCE_S1_1,+4% Máu,+4% HP
+TRACE_ABUNDANCE_S1_1_DESC,+4% Máu,+4% HP
+TRACE_ABUNDANCE_S1_2,+6% Máu,+6% HP
+TRACE_ABUNDANCE_S1_2_DESC,+6% Máu,+6% HP
+TRACE_ABUNDANCE_S1_3,+6% Máu,+6% HP
+TRACE_ABUNDANCE_S1_3_DESC,+6% Máu,+6% HP
+TRACE_ABUNDANCE_S2_1,+3% Tăng Trị Liệu,+3% Outgoing Healing
+TRACE_ABUNDANCE_S2_1_DESC,+3% Tăng Trị Liệu,+3% Outgoing Healing
+TRACE_ABUNDANCE_S2_2,+3% Tăng Trị Liệu,+3% Outgoing Healing
+TRACE_ABUNDANCE_S2_2_DESC,+3% Tăng Trị Liệu,+3% Outgoing Healing
+TRACE_ABUNDANCE_S2_3,+4% Tăng Trị Liệu,+4% Outgoing Healing
+TRACE_ABUNDANCE_S2_3_DESC,+4% Tăng Trị Liệu,+4% Outgoing Healing
+TRACE_DESTRUCTION_M1,Thân Thép,Iron Body
+TRACE_DESTRUCTION_M1_DESC,+10% Máu tối đa.,+10% Max HP.
+TRACE_DESTRUCTION_M2,Liều Mạng,Desperation
+TRACE_DESTRUCTION_M2_DESC,Máu dưới 50%: +15% sát thương gây ra.,Below 50% HP: +15% DMG.
+TRACE_DESTRUCTION_M3,Đà Phá Vỡ,Breaking Momentum
+TRACE_DESTRUCTION_M3_DESC,Phá Vỡ khiên quái thì hồi 10 năng lượng.,Breaking an enemy restores 10 Energy.
+TRACE_DESTRUCTION_S1_1,+4% Tấn Công,+4% ATK
+TRACE_DESTRUCTION_S1_1_DESC,+4% Tấn Công,+4% ATK
+TRACE_DESTRUCTION_S1_2,+4% Tấn Công,+4% ATK
+TRACE_DESTRUCTION_S1_2_DESC,+4% Tấn Công,+4% ATK
+TRACE_DESTRUCTION_S1_3,+6% Tấn Công,+6% ATK
+TRACE_DESTRUCTION_S1_3_DESC,+6% Tấn Công,+6% ATK
+TRACE_DESTRUCTION_S2_1,+4% Máu,+4% HP
+TRACE_DESTRUCTION_S2_1_DESC,+4% Máu,+4% HP
+TRACE_DESTRUCTION_S2_2,+6% Máu,+6% HP
+TRACE_DESTRUCTION_S2_2_DESC,+6% Máu,+6% HP
+TRACE_DESTRUCTION_S2_3,+6% Máu,+6% HP
+TRACE_DESTRUCTION_S2_3_DESC,+6% Máu,+6% HP
+TRACE_ERUDITION_M1,Uyên Bác,Erudite
+TRACE_ERUDITION_M1_DESC,+8% Tấn Công.,+8% ATK.
+TRACE_ERUDITION_M2,Phân Tích,Analysis
+TRACE_ERUDITION_M2_DESC,+12% sát thương lên quái đang mang debuff.,+12% DMG to debuffed enemies.
+TRACE_ERUDITION_M3,Chuẩn Bị,Preparation
+TRACE_ERUDITION_M3_DESC,Vào trận với thêm 20% năng lượng.,Starts battle with +20% Energy.
+TRACE_ERUDITION_S1_1,+4% Tấn Công,+4% ATK
+TRACE_ERUDITION_S1_1_DESC,+4% Tấn Công,+4% ATK
+TRACE_ERUDITION_S1_2,+6% Tấn Công,+6% ATK
+TRACE_ERUDITION_S1_2_DESC,+6% Tấn Công,+6% ATK
+TRACE_ERUDITION_S1_3,+6% Tấn Công,+6% ATK
+TRACE_ERUDITION_S1_3_DESC,+6% Tấn Công,+6% ATK
+TRACE_ERUDITION_S2_1,+3% Tăng Sát Thương,+3% DMG Boost
+TRACE_ERUDITION_S2_1_DESC,+3% Tăng Sát Thương,+3% DMG Boost
+TRACE_ERUDITION_S2_2,+3% Tăng Sát Thương,+3% DMG Boost
+TRACE_ERUDITION_S2_2_DESC,+3% Tăng Sát Thương,+3% DMG Boost
+TRACE_ERUDITION_S2_3,+4% Tăng Sát Thương,+4% DMG Boost
+TRACE_ERUDITION_S2_3_DESC,+4% Tăng Sát Thương,+4% DMG Boost
+TRACE_HARMONY_M1,Nhịp Chung,Common Beat
+TRACE_HARMONY_M1_DESC,+5 Tốc Độ.,+5 SPD.
+TRACE_HARMONY_M2,Khởi Xướng,Opening Act
+TRACE_HARMONY_M2_DESC,Vào trận với thêm 20% năng lượng.,Starts battle with +20% Energy.
+TRACE_HARMONY_M3,Hòa Âm,Resonance
+TRACE_HARMONY_M3_DESC,+8% Hiệu Suất Hồi Năng Lượng.,+8% Energy Regeneration.
+TRACE_HARMONY_S1_1,+4% Máu,+4% HP
+TRACE_HARMONY_S1_1_DESC,+4% Máu,+4% HP
+TRACE_HARMONY_S1_2,+4% Máu,+4% HP
+TRACE_HARMONY_S1_2_DESC,+4% Máu,+4% HP
+TRACE_HARMONY_S1_3,+6% Máu,+6% HP
+TRACE_HARMONY_S1_3_DESC,+6% Máu,+6% HP
+TRACE_HARMONY_S2_1,+2 Tốc Độ,+2 SPD
+TRACE_HARMONY_S2_1_DESC,+2 Tốc Độ,+2 SPD
+TRACE_HARMONY_S2_2,+2 Tốc Độ,+2 SPD
+TRACE_HARMONY_S2_2_DESC,+2 Tốc Độ,+2 SPD
+TRACE_HARMONY_S2_3,+3 Tốc Độ,+3 SPD
+TRACE_HARMONY_S2_3_DESC,+3 Tốc Độ,+3 SPD
+TRACE_HUNT_M1,Mắt Diều Hâu,Hawk Eye
+TRACE_HUNT_M1_DESC,+12% Sát Thương Bạo Kích.,+12% CRIT DMG.
+TRACE_HUNT_M2,Phục Kích,Lie in Wait
+TRACE_HUNT_M2_DESC,Vào trận với thêm 15% năng lượng.,Starts battle with +15% Energy.
+TRACE_HUNT_M3,Kết Liễu,Finisher
+TRACE_HUNT_M3_DESC,+12% sát thương lên quái đang mang debuff.,+12% DMG to debuffed enemies.
+TRACE_HUNT_S1_1,+4% Tấn Công,+4% ATK
+TRACE_HUNT_S1_1_DESC,+4% Tấn Công,+4% ATK
+TRACE_HUNT_S1_2,+4% Tấn Công,+4% ATK
+TRACE_HUNT_S1_2_DESC,+4% Tấn Công,+4% ATK
+TRACE_HUNT_S1_3,+6% Tấn Công,+6% ATK
+TRACE_HUNT_S1_3_DESC,+6% Tấn Công,+6% ATK
+TRACE_HUNT_S2_1,+2% Tỉ Lệ Bạo Kích,+2% CRIT Rate
+TRACE_HUNT_S2_1_DESC,+2% Tỉ Lệ Bạo Kích,+2% CRIT Rate
+TRACE_HUNT_S2_2,+3% Tỉ Lệ Bạo Kích,+3% CRIT Rate
+TRACE_HUNT_S2_2_DESC,+3% Tỉ Lệ Bạo Kích,+3% CRIT Rate
+TRACE_HUNT_S2_3,+3% Tỉ Lệ Bạo Kích,+3% CRIT Rate
+TRACE_HUNT_S2_3_DESC,+3% Tỉ Lệ Bạo Kích,+3% CRIT Rate
+TRACE_NIHILITY_M1,Ám Ảnh,Haunting
+TRACE_NIHILITY_M1_DESC,+10% Chính Xác Hiệu Ứng.,+10% Effect Hit Rate.
+TRACE_NIHILITY_M2,Bào Mòn,Erosion
+TRACE_NIHILITY_M2_DESC,+15% sát thương lên quái đang mang debuff.,+15% DMG to debuffed enemies.
+TRACE_NIHILITY_M3,Rạn Vỡ,Fracture
+TRACE_NIHILITY_M3_DESC,Phá Vỡ khiên quái thì hồi 10 năng lượng.,Breaking an enemy restores 10 Energy.
+TRACE_NIHILITY_S1_1,+4% Tấn Công,+4% ATK
+TRACE_NIHILITY_S1_1_DESC,+4% Tấn Công,+4% ATK
+TRACE_NIHILITY_S1_2,+4% Tấn Công,+4% ATK
+TRACE_NIHILITY_S1_2_DESC,+4% Tấn Công,+4% ATK
+TRACE_NIHILITY_S1_3,+6% Tấn Công,+6% ATK
+TRACE_NIHILITY_S1_3_DESC,+6% Tấn Công,+6% ATK
+TRACE_NIHILITY_S2_1,+3% Chính Xác Hiệu Ứng,+3% Effect Hit Rate
+TRACE_NIHILITY_S2_1_DESC,+3% Chính Xác Hiệu Ứng,+3% Effect Hit Rate
+TRACE_NIHILITY_S2_2,+4% Chính Xác Hiệu Ứng,+4% Effect Hit Rate
+TRACE_NIHILITY_S2_2_DESC,+4% Chính Xác Hiệu Ứng,+4% Effect Hit Rate
+TRACE_NIHILITY_S2_3,+5% Chính Xác Hiệu Ứng,+5% Effect Hit Rate
+TRACE_NIHILITY_S2_3_DESC,+5% Chính Xác Hiệu Ứng,+5% Effect Hit Rate
+TRACE_PRESERVATION_M1,Tường Thành,Rampart
+TRACE_PRESERVATION_M1_DESC,+10% Phòng Thủ.,+10% DEF.
+TRACE_PRESERVATION_M2,Kiên Định,Steadfast
+TRACE_PRESERVATION_M2_DESC,+15% Kháng Hiệu Ứng.,+15% Effect RES.
+TRACE_PRESERVATION_M3,Lá Chắn Đầu Trận,Opening Guard
+TRACE_PRESERVATION_M3_DESC,Đầu trận nhận khiên bằng 40% Phòng Thủ trong 2 lượt.,Gains a shield equal to 40% DEF at battle start for 2 turns.
+TRACE_PRESERVATION_S1_1,+5% Phòng Thủ,+5% DEF
+TRACE_PRESERVATION_S1_1_DESC,+5% Phòng Thủ,+5% DEF
+TRACE_PRESERVATION_S1_2,+5% Phòng Thủ,+5% DEF
+TRACE_PRESERVATION_S1_2_DESC,+5% Phòng Thủ,+5% DEF
+TRACE_PRESERVATION_S1_3,+7.5% Phòng Thủ,+7.5% DEF
+TRACE_PRESERVATION_S1_3_DESC,+7.5% Phòng Thủ,+7.5% DEF
+TRACE_PRESERVATION_S2_1,+4% Máu,+4% HP
+TRACE_PRESERVATION_S2_1_DESC,+4% Máu,+4% HP
+TRACE_PRESERVATION_S2_2,+4% Máu,+4% HP
+TRACE_PRESERVATION_S2_2_DESC,+4% Máu,+4% HP
+TRACE_PRESERVATION_S2_3,+6% Máu,+6% HP
+TRACE_PRESERVATION_S2_3_DESC,+6% Máu,+6% HP

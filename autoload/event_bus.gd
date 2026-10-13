@@ -32,6 +32,9 @@ signal chest_opened(chest_id: StringName)
 
 # --- Tiến trình, gacha, nhiệm vụ (Phase 9–11) ---
 signal character_upgraded(character_id: StringName)
+signal inventory_changed(item_id: StringName, count: int)
+## Máu giữ giữa các trận thay đổi (phòng nghỉ, Bí Kỹ hồi máu) – thanh đội vẽ lại.
+signal team_hp_changed
 signal gacha_pulled(banner_id: StringName, results: Array)
 signal quest_completed(quest_id: StringName)
 signal story_flag_set(flag: StringName, value: Variant)

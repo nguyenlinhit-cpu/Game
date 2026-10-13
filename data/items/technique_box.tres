@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/item_data.gd" id="1_item_data"]
+
+[resource]
+script = ExtResource("1_item_data")
+id = &"technique_box"
+name_key = "ITEM_TECHNIQUE_BOX"
+desc_key = "ITEM_TECHNIQUE_BOX_DESC"
+category = 6
+rarity = 3
+icon_text = "BK"
+icon_color = Color(0.78, 0.55, 1, 1)
+usable = true
