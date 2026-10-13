@@ -1,11 +1,11 @@
 class_name GameMenu
 extends Control
-## Menu nhân vật (mở từ menu tạm dừng): thẻ Nhân vật (danh sách → chi tiết), Đội hình, Túi đồ, Nhiệm vụ.
+## Menu nhân vật (mở từ menu tạm dừng): thẻ Nhân vật (danh sách → chi tiết), Đội hình, Túi đồ, Nhiệm vụ, Ước Nguyện.
 ## Đổi đội hình thì khi đóng menu, map được nạp lại với đội mới.
 
 signal closed
 
-enum Page { CHARACTERS, TEAM, INVENTORY, QUESTS }
+enum Page { CHARACTERS, TEAM, INVENTORY, QUESTS, GACHA }
 
 var page: Page = Page.CHARACTERS
 var character_list: CharacterListScreen
@@ -13,6 +13,7 @@ var character_detail: CharacterDetailScreen
 var team_screen: TeamScreen
 var inventory_screen: InventoryScreen
 var quest_screen: QuestScreen
+var gacha_screen: GachaScreen
 
 var _team_changed: bool = false
 var _page_buttons: Dictionary = {}
@@ -36,8 +37,8 @@ func _ready() -> void:
 	var top := HBoxContainer.new()
 	top.add_theme_constant_override("separation", 10)
 	root.add_child(top)
-	for key: int in [Page.CHARACTERS, Page.TEAM, Page.INVENTORY, Page.QUESTS]:
-		var button := UiKit.make_button(tr(["MENU_CHARACTERS", "MENU_TEAM", "MENU_INVENTORY", "MENU_QUESTS"][key]),
+	for key: int in Page.values():
+		var button := UiKit.make_button(tr(["MENU_CHARACTERS", "MENU_TEAM", "MENU_INVENTORY", "MENU_QUESTS", "MENU_GACHA"][key]),
 				show_page.bind(key), Vector2(240.0, 60.0))
 		button.toggle_mode = true
 		top.add_child(button)
@@ -57,7 +58,8 @@ func _ready() -> void:
 	team_screen = TeamScreen.new()
 	inventory_screen = InventoryScreen.new()
 	quest_screen = QuestScreen.new()
-	for screen: Control in [character_list, character_detail, team_screen, inventory_screen, quest_screen]:
+	gacha_screen = GachaScreen.new()
+	for screen: Control in [character_list, character_detail, team_screen, inventory_screen, quest_screen, gacha_screen]:
 		screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 		body.add_child(screen)
 	character_list.character_selected.connect(open_character)
@@ -75,6 +77,7 @@ func show_page(value: int) -> void:
 	team_screen.visible = page == Page.TEAM
 	inventory_screen.visible = page == Page.INVENTORY
 	quest_screen.visible = page == Page.QUESTS
+	gacha_screen.visible = page == Page.GACHA
 	match page:
 		Page.CHARACTERS:
 			character_list.refresh()
@@ -84,6 +87,8 @@ func show_page(value: int) -> void:
 			inventory_screen.refresh()
 		Page.QUESTS:
 			quest_screen.refresh()
+		Page.GACHA:
+			gacha_screen.refresh()
 
 
 func open_character(id: StringName) -> void:
@@ -105,7 +110,9 @@ func close() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu") or event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
-		if character_detail.visible:
+		if gacha_screen.visible and gacha_screen.is_busy():
+			gacha_screen.close_popups()
+		elif character_detail.visible:
 			show_page(Page.CHARACTERS)
 		else:
 			close()

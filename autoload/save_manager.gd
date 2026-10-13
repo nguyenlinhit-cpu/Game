@@ -5,7 +5,7 @@ extends Node
 signal game_saved(slot: int)
 signal game_loaded(slot: int)
 
-const SAVE_VERSION: int = 3
+const SAVE_VERSION: int = 4
 const AUTOSAVE_SLOT: int = 0
 const MANUAL_SLOTS: Array[int] = [1, 2, 3]
 
@@ -109,5 +109,7 @@ func _migrate(data: Dictionary) -> Dictionary:
 			progress[str(id)] = {"level": clampi(old_level, 1, GameConfig.MAX_LEVEL)}
 		state["character_progress"] = progress
 		state["team_level"] = 0
+	# v3 → v4 (Phase 11): gacha lưu bộ đếm theo nhóm bảo hiểm, lịch sử theo banner; GachaManager.from_dict tự
+	# bỏ dạng cũ (mảng lịch sử rỗng), không cần chuyển gì thêm.
 	data["version"] = SAVE_VERSION
 	return data

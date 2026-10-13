@@ -13,3 +13,5 @@ extends Resource
 @export var map_frames: SpriteFrames
 @export var battle_frames: SpriteFrames
 @export var portrait: Texture2D
+## Tranh gacha (màn nhận nhân vật mới). Trống thì vẽ tạm.
+@export var gacha_art: Texture2D

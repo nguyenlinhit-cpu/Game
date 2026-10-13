@@ -1,7 +1,7 @@
 class_name PauseMenu
 extends Control
-## Menu tạm dừng ngoài map (Esc): Tiếp tục, Nhân vật, Đội hình, Túi đồ, Nhiệm vụ, Cài đặt, Về màn hình tiêu đề.
-## Nhân vật / Đội hình / Túi đồ / Nhiệm vụ mở GameMenu (Phase 9–10). Nút Nhiệm vụ có chấm đỏ khi còn thưởng chưa nhận.
+## Menu tạm dừng ngoài map (Esc): Tiếp tục, Nhân vật, Đội hình, Túi đồ, Nhiệm vụ, Ước Nguyện, Cài đặt, Về màn hình tiêu đề.
+## Nhân vật / Đội hình / Túi đồ / Nhiệm vụ / Ước Nguyện mở GameMenu (Phase 9–11). Nút Nhiệm vụ có chấm đỏ khi còn thưởng chưa nhận.
 
 @onready var _menu: VBoxContainer = %Menu
 @onready var _resume_button: Button = %ResumeButton
@@ -20,7 +20,8 @@ func _ready() -> void:
 	_settings_panel.closed.connect(_on_settings_closed)
 	var at := _settings_button.get_index()
 	for entry: Array in [["MENU_CHARACTERS", GameMenu.Page.CHARACTERS], ["MENU_TEAM", GameMenu.Page.TEAM],
-			["MENU_INVENTORY", GameMenu.Page.INVENTORY], ["MENU_QUESTS", GameMenu.Page.QUESTS]]:
+			["MENU_INVENTORY", GameMenu.Page.INVENTORY], ["MENU_QUESTS", GameMenu.Page.QUESTS],
+			["MENU_GACHA", GameMenu.Page.GACHA]]:
 		var button := Button.new()
 		button.text = tr(entry[0])
 		button.custom_minimum_size = Vector2(0.0, 72.0)
@@ -55,6 +56,12 @@ func _ready() -> void:
 			EventBus.toast_requested.emit(tr("TOAST_DEBUG_GRANTED")))
 		_menu.add_child(grant)
 		_menu.move_child(grant, _title_button.get_index())
+	if _menu.get_child_count() > 9:
+		# Nhiều nút (bản debug): thu gọn cho vừa màn 1080.
+		_menu.add_theme_constant_override("separation", 8)
+		for child in _menu.get_children():
+			if child is Button:
+				(child as Button).custom_minimum_size.y = 62.0
 
 
 ## Chấm đỏ trên nút Nhiệm vụ.

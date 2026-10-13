@@ -1,0 +1,48 @@
+keys,vi,en
+MENU_GACHA,Ước Nguyện,Wish
+BANNER_STANDARD,Ước Nguyện Vĩnh Hằng,Eternal Wish
+BANNER_STANDARD_DESC,"Banner luôn mở. 5★ là 1 trong 7 nhân vật thường, 4★ là 1 trong 16 nhân vật 4★. Đủ 300 lượt được chọn miễn phí 1 nhân vật 5★ (một lần).","Always available. 5★ is one of 7 standard characters, 4★ one of 16 4★ characters. After 300 pulls, pick one free 5★ (once)."
+BANNER_LIMITED_CELESTINE,Tiếng Gọi Của Nhãn,Call of the Eye
+BANNER_LIMITED_CELESTINE_DESC,"Celestine tăng tỉ lệ. Khi ra 5★: 50% là Celestine, lệch thì lần 5★ sau chắc chắn là Celestine. 3 nhân vật 4★ nổi bật cũng có 50/50 và bảo đảm.","Celestine rate-up. On a 5★: 50% Celestine; if not, the next 5★ is guaranteed Celestine. The 3 featured 4★ characters also have 50/50 with a guarantee."
+GACHA_TYPE_STANDARD,Banner thường · dùng Vé Thường,Standard banner · uses Standard Tickets
+GACHA_TYPE_LIMITED,Banner giới hạn · dùng Vé Giới Hạn,Limited banner · uses Limited Tickets
+GACHA_LOCKED,Ước Nguyện mở sau khi hoàn thành Chương 1,Wishes unlock after finishing Chapter 1
+GACHA_DEBUG_UNLOCK,Mở khóa (debug: hết Chương 1),Unlock (debug: finish Chapter 1)
+GACHA_PULL_1,Quay 1,Wish ×1
+GACHA_PULL_10,Quay 10,Wish ×10
+GACHA_TICKET_COST,%d vé,%d tickets
+GACHA_DETAILS,Tỉ lệ,Rates
+GACHA_HISTORY,Lịch sử,History
+GACHA_SHOP,Cửa hàng Bụi Sao,Stardust Shop
+GACHA_SELECTOR,Chọn 5★,Pick a 5★
+GACHA_PITY_5,Bảo hiểm 5★: %d/%d,5★ pity: %d/%d
+GACHA_PITY_4,4★: %d/%d,4★: %d/%d
+GACHA_5050,[color=#aaaabb]5★ kế tiếp: 50/50[/color],[color=#aaaabb]Next 5★: 50/50[/color]
+GACHA_GUARANTEED,[color=#ffd257]5★ kế tiếp: chắc chắn nổi bật[/color],[color=#ffd257]Next 5★: guaranteed featured[/color]
+GACHA_SELECTOR_PROGRESS,Chọn 5★: %d/%d lượt,5★ pick: %d/%d pulls
+GACHA_SELECTOR_DONE,Đã nhận quà chọn 5★,5★ pick claimed
+GACHA_SELECTOR_INFO,"Quay đủ %d lượt ở banner này để chọn miễn phí 1 nhân vật 5★ (một lần). Tiến độ: %d/%d.","Make %d pulls on this banner to pick one free 5★ character (once). Progress: %d/%d."
+GACHA_SELECTOR_PICK,Chọn,Pick
+GACHA_RATES,"5★: %.1f%% mỗi lượt; từ lượt %d cộng thêm %.0f%% mỗi lượt; lượt %d chắc chắn.\n4★: %.1f%%; cứ %d lượt chắc chắn có ít nhất 1 nhân vật 4★ trở lên.\nCòn lại là vật phẩm 3★.","5★: %.1f%% per pull; from pull %d, +%.0f%% per pull; guaranteed at pull %d.\n4★: %.1f%%; at least one 4★ or higher every %d pulls.\nThe rest are 3★ items."
+GACHA_RULE_FEATURED_5,"[color=#%s]5★ nổi bật:[/color] %s – %d%% khi ra 5★, lệch thì lần sau chắc chắn.","[color=#%s]Featured 5★:[/color] %s – %d%% on a 5★, guaranteed next time if missed."
+GACHA_RULE_FEATURED_4,"[color=#%s]4★ nổi bật:[/color] %s – %d%% khi ra 4★, lệch thì lần sau chắc chắn.","[color=#%s]Featured 4★:[/color] %s – %d%% on a 4★, guaranteed next time if missed."
+GACHA_RULE_INHERIT,Bộ đếm bảo hiểm và trạng thái bảo đảm được giữ sang banner giới hạn sau.,Pity and guarantee carry over to future limited banners.
+GACHA_RULE_SELECTOR,Đủ %d lượt được chọn miễn phí 1 nhân vật 5★ thường (một lần).,After %d pulls pick one free standard 5★ (once).
+GACHA_POOL_5,5★:,5★:
+GACHA_POOL_4,4★:,4★:
+GACHA_POOL_3,3★:,3★:
+GACHA_RULE_DUPES,"Mỗi lần trùng nhân vật tặng Bụi Sao (5★: %d, 4★: %d). Trùng lần 1–6 mở Tinh Mệnh 1–6, từ lần 7 đổi thành Bụi Sao (thêm 5★: %d, 4★: %d).","Every duplicate gives Stardust (5★: %d, 4★: %d). Duplicates 1–6 unlock Eidolons 1–6; from the 7th they convert to Stardust (extra 5★: %d, 4★: %d)."
+GACHA_RULE_TICKETS,%d %s đổi được 1 %s khi thiếu vé.,%d %s can be exchanged for 1 %s when short on tickets.
+GACHA_HISTORY_EMPTY,Chưa quay lượt nào ở banner này.,No pulls on this banner yet.
+GACHA_SHOP_INFO,"%s đang có: %d. Làm mới 4:00 ngày 1 hằng tháng (còn %.1f ngày).","%s owned: %d. Refreshes at 4:00 on the 1st of each month (%.1f days left)."
+GACHA_SHOP_LIMIT,Còn %d/%d lần tháng này,%d/%d left this month
+GACHA_TOAST_BOUGHT,Đã mua %s,Bought %s
+GACHA_TOAST_NOT_ENOUGH,Không đủ %s hoặc %s,Not enough %s or %s
+GACHA_TOAST_UNLOCKED,Ước Nguyện đã mở! Quà mở Ước Nguyện:,Wishes unlocked! Opening gift:
+GACHA_EXCHANGE_ASK,"Không đủ vé. Đổi [b]%d %s[/b] lấy [b]%d %s[/b] rồi quay?\n[color=#aaaabb]Đang có %d.[/color]","Not enough tickets. Exchange [b]%d %s[/b] for [b]%d %s[/b] and wish?\n[color=#aaaabb]You have %d.[/color]"
+GACHA_RESULTS,Kết quả Ước Nguyện,Wish results
+GACHA_NEW,MỚI!,NEW!
+GACHA_EIDOLON_UP,Tinh Mệnh %d,Eidolon %d
+GACHA_EIDOLON_MAX,Tinh Mệnh đã tối đa,Eidolons maxed
+GACHA_LOST_5050,"Lệch 50/50 – lần 5★ sau chắc chắn là nhân vật nổi bật.","Lost the 50/50 – the next 5★ is guaranteed featured."
+GACHA_TAP_CONTINUE,Chạm để tiếp tục,Tap to continue

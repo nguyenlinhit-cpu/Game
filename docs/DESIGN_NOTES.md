@@ -153,3 +153,19 @@ Các chỗ đặc tả chưa rõ hoặc có thể hiểu nhiều cách, kèm ph�
 11. **Kế hoạch khu** (`data/zones/*.tres`): mỗi trận thường đặt 2 nhóm, tinh anh và boss 1; mỗi khu 6 rương thường + 4 quý + 4 giải đố (150 Lệ Tinh/khu), 8 Hộp Bí Kỹ. Rương khu sau nhiều Xu/Ký Ức hơn. Phase 12 dựng map theo các con số này (đổi thì chạy lại báo cáo).
 12. **Thành tựu** (15 cái, 800 Lệ Tinh) + khám phá 100% mỗi khu (160 Lệ Tinh): % khám phá = (phòng đã vào + rương đã mở + vật cản đã mở + Hộp Bí Kỹ đã phá) / tổng trong khu. Map thử không có khu nên không tính.
 13. **Quà mở Gacha** (10 Vé Giới Hạn) khai báo trong `quest_config.tres` để báo cáo cộng, Phase 11 trao.
+
+## Phase 11
+
+1. **Thứ tự lăn mỗi lượt:** lăn 5★ trước theo bảo hiểm (0,6%; lượt n ≥ 74: 0,6% + 6% × (n − 73); lượt 90 = 100%); trượt thì 4★ nếu bộ đếm 4★ chạm 10 hoặc trúng 5,1%; còn lại 3★. Ra 5★ thì cả bộ đếm 5★ lẫn 4★ về 0 (mục 10: "4★ trở lên"). Tỉ lệ 4★ thực tế ≈ 12,8%.
+2. **Bộ đếm theo nhóm bảo hiểm** (`BannerData.pity_group`), không theo banner: mọi banner giới hạn dùng nhóm `limited`, nên banner giới hạn sau kế thừa bộ đếm 5★/4★ và trạng thái bảo đảm 50/50. Tổng lượt (cho quà chọn 5★) và lịch sử vẫn tính theo từng banner.
+3. **4★ nổi bật 50/50:** trúng → 1 trong 3 người nổi bật (đều nhau); lệch → 1 trong 13 nhân vật 4★ còn lại, lần 4★ sau chắc chắn nổi bật. 5★ lệch → 1 trong 7 nhân vật 5★ thường (đều nhau). Celestine chiếm 2/3 số 5★ về lâu dài.
+4. **Vật phẩm 3★:** 50% 1 Ký Ức Mảnh Hồn bậc 2 (500 EXP), 50% 600 Xu Aether, khai báo trong file banner. ~73 lượt 3★ từ 78 lượt một lần ≈ 18.000 EXP + 22.000 Xu – dưới nửa nhân vật, không lệch mục tiêu 4–5 nhân vật của báo cáo kinh tế.
+5. **Trùng nhân vật:** mỗi lần trùng +40 (5★) / +8 (4★) Bụi Sao; lần 1–6 mở Tinh Mệnh 1–6. Từ lần 7 ("đổi thành Bụi Sao") cộng thêm 100 (5★) / 20 (4★) Bụi Sao thay cho Tinh Mệnh. Nhân vật có sẵn (Mira, Kiri, Garren, Nyx) quay ra lần đầu đã tính là trùng. Số liệu ở `data/banners/gacha_config.tres`.
+6. **Vé và Lệ Tinh:** mỗi lượt tốn đúng 1 vé của banner. Thiếu vé mà đủ Lệ Tinh thì màn Gacha hỏi đổi (160 Lệ Tinh/vé) phần còn thiếu rồi quay; không tự tiêu Lệ Tinh khi chưa hỏi.
+7. **Quay xong tự lưu** (ô tự lưu), để thoát game giữa chừng không mất bộ đếm/kết quả. RNG gacha có seed + state trong save: tải lại rồi quay cho kết quả giống hệt (test kiểm tra).
+8. **Quà chọn 5★ banner thường:** đủ 300 lượt ở banner thường, chọn 1 trong 7 nhân vật 5★ thường (có thể chọn người đã có → tính như trùng). Một lần duy nhất.
+9. **Cửa hàng Bụi Sao** dùng kỳ ngày chống chỉnh giờ của QuestManager: tháng đổi lúc 4:00 ngày 1; giờ máy lùi thì không làm mới. Chỉ bán vé (theo phase); dòng `shop_entries` là dữ liệu nên thêm Tinh Thể sau không cần sửa code.
+10. **Quà mở Gacha** (10 Vé Giới Hạn, nguồn `quest_config.tres`) trao khi cờ `chapter_1_complete` bật, đi cùng thưởng chương 1 (+3 Vé Giới Hạn). Save cũ đã qua Chương 1 nhận bù khi tải. Màn Gacha bản debug có nút mở khóa (bật cờ chương 1) vì map thử chưa có cốt truyện.
+11. **Lịch sử:** 100 lượt gần nhất **mỗi banner** (mới nhất trước), có hạng, nhân vật/vật phẩm, giờ quay.
+12. **Hiệu ứng quay:** mỗi lượt một sao băng màu theo hạng (vệt hiếm nhất bay sau cùng, to nhất), cuối lóe màu hạng cao nhất; bấm nền để sang màn nhận nhân vật (mọi kết quả 4★+), "Bỏ qua" tới thẳng tổng kết. Tranh gacha tạm vẽ bằng khối màu; `CharacterSkin.gacha_art` / `BannerData.art` để Phase 13 gắn hình thật.
+13. **Save v4:** gacha lưu bộ đếm theo nhóm, lịch sử theo banner, cửa hàng, quà. Save v3 tải được (lịch sử cũ dạng mảng rỗng bị bỏ).

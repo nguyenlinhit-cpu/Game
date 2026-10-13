@@ -104,15 +104,15 @@ static func week_of_day(day: int) -> int:
 
 ## Giây còn lại tới lần làm mới ngày / tuần kế tiếp.
 func seconds_until_daily_reset() -> int:
-	return maxi(_day_start_unix(day_of(now_unix()) + 1) - now_unix(), 0)
+	return maxi(day_start_unix(day_of(now_unix()) + 1) - now_unix(), 0)
 
 
 func seconds_until_weekly_reset() -> int:
 	var next_monday := (week_of_day(day_of(now_unix())) + 1) * 7 + FIRST_MONDAY_DAY
-	return maxi(_day_start_unix(next_monday) - now_unix(), 0)
+	return maxi(day_start_unix(next_monday) - now_unix(), 0)
 
 
-func _day_start_unix(day: int) -> int:
+func day_start_unix(day: int) -> int:
 	return day * 86400 + config.reset_hour * 3600 - utc_bias_minutes * 60
 
 

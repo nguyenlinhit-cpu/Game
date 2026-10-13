@@ -13,8 +13,9 @@
 | 7. 20 nhân vật còn lại | Xong |
 | 8. Quái thường, tinh anh, boss | Xong |
 | 9. Tiến trình nhân vật (cấp 30) | Xong |
-| 10. Tài nguyên, rơi đồ, nhiệm vụ ngày/tuần | Xong, chờ duyệt |
-| 11–14 | Chưa làm |
+| 10. Tài nguyên, rơi đồ, nhiệm vụ ngày/tuần | Xong |
+| 11. Gacha 2 banner, cửa hàng Bụi Sao | Xong, chờ duyệt |
+| 12–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -404,10 +405,53 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 10.
 ### Việc còn nợ
 
 - Đặt khu cho phòng và dựng map đúng `data/zones/*.tres` (số nhóm quái, rương), cờ `chapter_<n>_complete`, bảng chọn mức Khó khi đánh lại boss (Phase 12). Map thử hiện không có khu (rương dùng bảng Thư Viện, không tính khám phá).
-- Quà mở Gacha 10 Vé Giới Hạn, cửa hàng Bụi Sao, Ký Ức/Xu 3★ từ gacha (Phase 11; báo cáo đã cộng quà mở Gacha).
+- ~~Quà mở Gacha 10 Vé Giới Hạn, cửa hàng Bụi Sao~~ (Phase 11). Ký Ức/Xu 3★ từ gacha chưa cộng vào báo cáo kinh tế (ước tính ở DESIGN_NOTES Phase 11 mục 4).
 - Hồi quái khi rời khu áp ở lần nạp map kế tiếp, chưa hồi ngay trước mắt người chơi.
 - Biểu tượng vật phẩm thật (Phase 13); chữ tiếng Anh của nhiệm vụ đã có, mô tả vật phẩm giữ như Phase 9.
 - Cân lại cùng boss khi người chơi đã nâng kỹ năng (Phase 14); chạy lại báo cáo kinh tế sau mỗi lần đổi dữ liệu.
+
+## Phase 11 – Gacha 2 banner và cửa hàng Bụi Sao
+
+### Đã làm
+
+- **BannerData** (`data/banners/`): banner thường "Ước Nguyện Vĩnh Hằng" (7 nhân vật 5★ thường, 16 nhân vật 4★, chọn 1 nhân vật 5★ sau 300 lượt, một lần) và banner giới hạn "Tiếng Gọi Của Nhãn" (Celestine 50/50 + bảo đảm; 3 nhân vật 4★ nổi bật Pip, Echo, Neris với 50/50 + bảo đảm). Tỉ lệ, bảo hiểm, nhóm nhân vật, vật phẩm 3★, vé đều nằm trong file banner. `GachaConfig` giữ danh sách banner đang mở, 160 Lệ Tinh/vé, Bụi Sao khi trùng, cửa hàng.
+- **GachaManager** viết đầy đủ: 5★ 0,6% → +6%/lượt từ lượt 74 → chắc chắn lượt 90; 4★ 5,1%, chắc chắn 4★+ mỗi 10 lượt; còn lại Ký Ức bậc 2 hoặc 600 Xu. Bộ đếm theo nhóm bảo hiểm (`pity_group`), nên banner giới hạn sau kế thừa bộ đếm + trạng thái 50/50. `roll()` là hàm thuần dùng chung cho game và giả lập.
+- **Vé:** Vé Thường chỉ banner thường, Vé Giới Hạn chỉ banner giới hạn; thiếu vé thì hỏi đổi 160 Lệ Tinh/vé phần còn thiếu.
+- **Trùng nhân vật:** lần 1–6 mở Tinh Mệnh 1–6, từ lần 7 đổi thành Bụi Sao (+100 / +20); mỗi lần trùng +40 (5★) / +8 (4★) Bụi Sao. Nhân vật mới vào danh sách sở hữu, dùng được ở màn đội hình.
+- **Cửa hàng Bụi Sao:** 20 Bụi Sao/vé, mỗi tháng tối đa 5 Vé Thường + 5 Vé Giới Hạn, làm mới 4:00 ngày 1 (dùng kỳ ngày chống chỉnh giờ của QuestManager).
+- **Quà mở Gacha:** 10 Vé Giới Hạn khi cờ `chapter_1_complete` bật (một lần; save cũ đã qua Chương 1 nhận bù khi tải).
+- **Lưu:** bộ đếm, 50/50, tổng lượt, lịch sử 100 lượt mỗi banner, quà chọn 5★, cửa hàng, seed + state RNG. Quay/mua xong tự lưu. Save lên v4.
+- **Màn Gacha** (menu tạm dừng → Ước Nguyện, hoặc thẻ trong menu nhân vật): tranh banner tạm, nút Quay 1 / Quay 10, bộ đếm bảo hiểm + 50/50 + tiến độ 300 lượt, bảng bên phải Tỉ lệ / Lịch sử / Cửa hàng / Chọn 5★, ví tiền. Kết quả: sao băng 2D màu theo hạng (xanh 3★, tím 4★, vàng 5★, lóe màu hạng cao nhất) → màn nhận nhân vật 4★+ có tranh gacha (MỚI / Tinh Mệnh / Bụi Sao, báo lệch 50/50) → tổng kết; "Bỏ qua" tới thẳng tổng kết. Bản debug có nút mở khóa (bật cờ Chương 1) và nút cộng tài nguyên có thêm Lệ Tinh, Bụi Sao.
+- Test `tests/phase11_test.tscn`: 130/130 đạt (chỉ giả lập: `-- --sim-only`). Test Phase 1–10 vẫn đạt (Phase 10 sửa kiểm tra số phiên bản save thành ≥ 3).
+
+### Kết quả giả lập (1.000.000 lượt mỗi banner, ≈ 4 giây/banner)
+
+| Banner | 5★ | Lượt trung bình / 5★ | Không 5★ dài nhất | 4★ | Không 4★+ dài nhất |
+| --- | --- | --- | --- | --- | --- |
+| Ước Nguyện Vĩnh Hằng | 1,616% | 61,9 | 87 | 11,72% | 10 |
+| Tiếng Gọi Của Nhãn | 1,600% | 62,5 | 87 | 11,73% | 10 |
+
+Banner giới hạn: Celestine 1,067% mỗi lượt (66,6% số 5★, trung bình 93,8 lượt / Celestine), hai lần Celestine cách nhau tối đa 167 lượt (≤ 180); 4★ nổi bật 66,7% số 4★; lệch 50/50 thì lần 5★ sau luôn là Celestine.
+
+### File chính
+
+- `systems/resources/{banner_data,gacha_config}.gd`, `data/banners/{standard,limited_celestine,gacha_config}.tres`
+- `autoload/gacha_manager.gd` (viết đầy đủ); sửa `game_state.gd` (reset gacha), `save_manager.gd` (v4), `quest_manager.gd` (`day_start_unix` công khai)
+- `scenes/ui/gacha/{gacha_screen,gacha_pull_overlay,gacha_art}.gd`; sửa `scenes/ui/menu/game_menu.gd`, `scenes/ui/pause/pause_menu.gd`
+- `systems/resources/character_skin.gd` (`gacha_art`), `systems/progression.gd` (debug cộng Lệ Tinh/Bụi Sao)
+- `localization/gacha.csv`, `project.godot`; `tests/phase11_test.*`, sửa `tests/phase10_test.gd`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 11.
+
+### Việc còn nợ
+
+- Nhân vật miễn phí (Nyx, Garren...) vẫn có sẵn từ đầu; nhận theo cốt truyện ở Phase 12. Map thử chưa có cờ Chương 1 → dùng nút mở khóa debug trên màn Gacha.
+- Tranh banner, tranh gacha, hiệu ứng sao băng thật (Phase 13; hiện vẽ khối màu, gắn qua `BannerData.art`, `CharacterSkin.gacha_art`). Âm thanh quay (Phase 14).
+- Cửa hàng Bụi Sao chỉ bán vé (theo phase); mục 11 có ghi Bụi Sao đổi Tinh Thể – thêm dòng `shop_entries` khi cần, mô tả vật phẩm Bụi Sao đang nhắc Tinh Thể.
+- Báo cáo kinh tế chưa cộng Ký Ức/Xu từ 3★ gacha (≈ 18.000 EXP + 22.000 Xu cho 78 lượt).
+- Trùng nhân vật cũng tính là "nâng cấp nhân vật" cho nhiệm vụ ngày (dùng chung tín hiệu `character_upgraded`).
 
 ## Để sau
 

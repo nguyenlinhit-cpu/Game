@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="GachaConfig" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/gacha_config.gd" id="1_config"]
+[ext_resource type="Script" path="res://systems/resources/banner_data.gd" id="4_banner"]
+[ext_resource type="Resource" path="res://data/banners/limited_celestine.tres" id="2_limited"]
+[ext_resource type="Resource" path="res://data/banners/standard.tres" id="3_standard"]
+
+[resource]
+script = ExtResource("1_config")
+banners = Array[ExtResource("4_banner")]([ExtResource("2_limited"), ExtResource("3_standard")])
+unlock_flag = &"chapter_1_complete"
+currency_item = &"star_tear"
+currency_per_ticket = 160
+exchangeable_tickets = Array[StringName]([&"wish_ticket_standard", &"wish_ticket_limited"])
+stardust_item = &"stardust"
+dupe_stardust = {4: 8, 5: 40}
+overflow_stardust = {4: 20, 5: 100}
+shop_entries = Array[Dictionary]([{"item": "wish_ticket_standard", "count": 1, "price": 20, "monthly_limit": 5}, {"item": "wish_ticket_limited", "count": 1, "price": 20, "monthly_limit": 5}])
+history_limit = 100

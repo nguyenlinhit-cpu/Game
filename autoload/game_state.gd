@@ -10,7 +10,7 @@ const MAX_PLAYER_NAME_LENGTH: int = 12
 const PLAYER_CHARACTER_ID: StringName = &"traveler"
 ## Đội mẫu Phase 4 (dữ liệu tạm; Phase 6 thay bằng nhân vật miễn phí thật).
 const DEFAULT_TEAM: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren"]
-## Nhân vật đang có. TODO Phase 9/11/12: nhận theo cốt truyện và gacha.
+## Nhân vật đang có (gacha thêm qua grant_character). TODO Phase 12: nhận theo cốt truyện.
 const DEFAULT_OWNED: Array[StringName] = [&"traveler", &"mira", &"kiri", &"garren", &"nyx"]
 const MAX_TECHNIQUE_POINTS: int = 5
 ## Số đội hình lưu sẵn.
@@ -92,6 +92,7 @@ func reset_new_game() -> void:
 	pending_battle.clear()
 	loot_state = _empty_loot_state()
 	QuestManager.reset()
+	GachaManager.reset()
 
 
 static func get_default_name(gender: StringName) -> String:
@@ -216,7 +217,7 @@ func get_team_level() -> int:
 
 # --- Nhân vật sở hữu ---
 
-## Nhận nhân vật (gacha, cốt truyện). Đã có thì +1 Tinh Mệnh (tối đa 6; quá thì `overflow` để Phase 11 đổi Bụi Sao).
+## Nhận nhân vật (gacha, cốt truyện). Đã có thì +1 Tinh Mệnh (tối đa 6; quá thì `overflow` – GachaManager đổi Bụi Sao).
 ## Trả về { "new": bool, "eidolon": int, "overflow": bool }.
 func grant_character(character_id: StringName) -> Dictionary:
 	if not owned_characters.has(character_id):

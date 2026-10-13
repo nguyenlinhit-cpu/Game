@@ -302,3 +302,6 @@ static func debug_grant_resources(multiplier: int = 1) -> void:
 		for tier in [1, 2, 3]:
 			GameState.add_item(sigil_id(path, tier), 40 * multiplier)
 	GameState.add_item(&"technique_box", 5 * multiplier)
+	# Gacha (Phase 11): đủ 20 lượt + Bụi Sao để thử cửa hàng.
+	GameState.add_item(&"star_tear", 3200 * multiplier)
+	GameState.add_item(&"stardust", 100 * multiplier)

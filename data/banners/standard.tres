@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BannerData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/banner_data.gd" id="1_banner"]
+
+[resource]
+script = ExtResource("1_banner")
+id = &"standard"
+name_key = "BANNER_STANDARD"
+desc_key = "BANNER_STANDARD_DESC"
+type = 0
+pity_group = &"standard"
+ticket_item = &"wish_ticket_standard"
+featured_5 = Array[StringName]([])
+featured_4 = Array[StringName]([])
+pool_5 = Array[StringName]([&"ignar", &"marisol", &"raiko", &"zephyra", &"vesper", &"sylvaine", &"orrin"])
+pool_4 = Array[StringName]([&"mira", &"kiri", &"garren", &"nyx", &"quill", &"aldric", &"rook", &"fenna", &"kestrel", &"vael", &"wisp", &"selka", &"ember", &"neris", &"pip", &"echo"])
+three_star_rewards = Array[Dictionary]([{"item": "soul_memory_2", "count": 1, "weight": 1}, {"item": "aether_coin", "count": 600, "weight": 1}])
+selector_pulls = 300
+art_color_top = Color(0.22, 0.3, 0.62, 1)
+art_color_bottom = Color(0.05, 0.06, 0.16, 1)

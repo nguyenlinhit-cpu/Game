@@ -390,7 +390,7 @@ func _test_save_load() -> void:
 			and QuestManager.activity_points == points and QuestManager.last_seen_unix >= last_seen
 			and not QuestManager.is_milestone_claimable(0), "Tải lại: túi đồ, mốc đã nhận, Hoạt Động, mốc giờ được giữ")
 	var saved := JSON.parse_string(FileAccess.get_file_as_string(SaveManager.get_slot_path(SaveManager.AUTOSAVE_SLOT))) as Dictionary
-	_check(int(saved.get("version", 0)) == 3 and (saved["game_state"] as Dictionary).has("loot_state"), "Save v3 có loot_state")
+	_check(int(saved.get("version", 0)) >= 3 and (saved["game_state"] as Dictionary).has("loot_state"), "Save v3 có loot_state")
 	QuestManager.autosave_on_claim = false
 
 
