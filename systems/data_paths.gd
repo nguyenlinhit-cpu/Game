@@ -6,6 +6,8 @@ const TITLE_SCENE: String = "res://scenes/ui/title/title_screen.tscn"
 const INTRO_SCENE: String = "res://scenes/ui/intro/intro.tscn"
 const CHARACTER_SELECT_SCENE: String = "res://scenes/ui/character_select/character_select.tscn"
 const TEST_MAP_SCENE: String = "res://scenes/overworld/map/test_map.tscn"
+## Sảnh Trung Tâm (Phase 12): game mới bắt đầu ở đây.
+const HUB_SCENE: String = "res://scenes/overworld/world/hub.tscn"
 ## Trận tạm của Phase 3 (Phase 4 thay bằng trận thật, giữ đường dẫn).
 const BATTLE_SCENE: String = "res://scenes/battle/battle_scene.tscn"
 const BATTLE_SANDBOX_SCENE: String = "res://scenes/battle/sandbox/battle_sandbox.tscn"

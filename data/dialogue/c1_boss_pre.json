@@ -1,0 +1,25 @@
+{
+	"id": "c1_boss_pre",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_PRE_01"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_PRE_02"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_C1_BOSS_PRE_03"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "angry",
+			"text": "DLG_C1_BOSS_PRE_04"
+		}
+	]
+}

@@ -24,6 +24,7 @@ SceneRouter="*res://autoload/scene_router.gd"
 AudioManager="*res://autoload/audio_manager.gd"
 GachaManager="*res://autoload/gacha_manager.gd"
 QuestManager="*res://autoload/quest_manager.gd"
+StoryManager="*res://autoload/story_manager.gd"
 
 [display]
 
@@ -164,7 +165,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/strings.vi.translation", "res://localization/strings.en.translation", "res://localization/roster.vi.translation", "res://localization/roster.en.translation", "res://localization/enemies.vi.translation", "res://localization/enemies.en.translation", "res://localization/progression.vi.translation", "res://localization/progression.en.translation", "res://localization/economy.vi.translation", "res://localization/economy.en.translation", "res://localization/gacha.vi.translation", "res://localization/gacha.en.translation")
+locale/translations=PackedStringArray("res://localization/strings.vi.translation", "res://localization/strings.en.translation", "res://localization/roster.vi.translation", "res://localization/roster.en.translation", "res://localization/enemies.vi.translation", "res://localization/enemies.en.translation", "res://localization/progression.vi.translation", "res://localization/progression.en.translation", "res://localization/economy.vi.translation", "res://localization/economy.en.translation", "res://localization/gacha.vi.translation", "res://localization/gacha.en.translation", "res://localization/story.vi.translation", "res://localization/story.en.translation", "res://localization/world.vi.translation", "res://localization/world.en.translation")
 locale/fallback="vi"
 
 [layer_names]

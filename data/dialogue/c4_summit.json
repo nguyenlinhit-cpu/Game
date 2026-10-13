@@ -1,0 +1,36 @@
+{
+	"id": "c4_summit",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C4_SUMMIT_01"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "serious",
+			"text": "DLG_C4_SUMMIT_02"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "sad",
+			"text": "DLG_C4_SUMMIT_03"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "serious",
+			"text": "DLG_C4_SUMMIT_04"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "neutral",
+			"text": "DLG_C4_SUMMIT_05",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "tower_summit_seen"
+				}
+			]
+		}
+	]
+}

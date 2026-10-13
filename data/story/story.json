@@ -1,0 +1,672 @@
+{
+	"speakers": {
+		"narrator": {
+			"name": "",
+			"color": "#c9c3e6"
+		},
+		"traveler": {
+			"name": "{player}",
+			"character": "traveler"
+		},
+		"mira": {
+			"name": "Mira",
+			"character": "mira"
+		},
+		"kiri": {
+			"name": "Kiri",
+			"character": "kiri"
+		},
+		"garren": {
+			"name": "Garren",
+			"character": "garren"
+		},
+		"nyx": {
+			"name": "Nyx",
+			"character": "nyx"
+		},
+		"celestine": {
+			"name": "Celestine",
+			"character": "celestine"
+		},
+		"orwen": {
+			"name": "SPEAKER_ORWEN",
+			"color": "#8fa7d9"
+		},
+		"lio": {
+			"name": "SPEAKER_LIO",
+			"color": "#d9b38f"
+		},
+		"bram": {
+			"name": "SPEAKER_BRAM",
+			"color": "#b07a4a"
+		},
+		"devourer": {
+			"name": "SPEAKER_DEVOURER",
+			"color": "#5a3a7a"
+		}
+	},
+	"zones": {
+		"hub": "res://scenes/overworld/world/hub.tscn",
+		"library": "res://scenes/overworld/world/library.tscn",
+		"vault": "res://scenes/overworld/world/vault.tscn",
+		"furnace": "res://scenes/overworld/world/furnace.tscn",
+		"tower": "res://scenes/overworld/world/tower.tscn"
+	},
+	"gate_zones": [
+		{
+			"zone": "library",
+			"flag": "zone_library_open",
+			"room": "L01"
+		},
+		{
+			"zone": "vault",
+			"flag": "zone_vault_open",
+			"room": "V01"
+		},
+		{
+			"zone": "furnace",
+			"flag": "zone_furnace_open",
+			"room": "F01"
+		},
+		{
+			"zone": "tower",
+			"flag": "zone_tower_open",
+			"room": "T01"
+		}
+	],
+	"npcs": {
+		"orwen": {
+			"speaker": "orwen",
+			"options": [
+				{
+					"dialogue": "p0_orwen",
+					"if": [
+						"prologue_done"
+					],
+					"unless": [
+						"ch1_briefed"
+					]
+				},
+				{
+					"dialogue": "c2_orwen",
+					"if": [
+						"chapter_1_complete"
+					],
+					"unless": [
+						"ch2_briefed"
+					]
+				},
+				{
+					"dialogue": "c3_orwen",
+					"if": [
+						"chapter_2_complete"
+					],
+					"unless": [
+						"ch3_briefed"
+					]
+				},
+				{
+					"dialogue": "c4_orwen",
+					"if": [
+						"chapter_3_complete"
+					],
+					"unless": [
+						"ch4_briefed"
+					]
+				},
+				{
+					"dialogue": "orwen_ending",
+					"if": [
+						"story_complete"
+					],
+					"unless": []
+				},
+				{
+					"dialogue": "p0_orwen_idle",
+					"if": [],
+					"unless": []
+				}
+			]
+		},
+		"lio": {
+			"speaker": "lio",
+			"options": [
+				{
+					"dialogue": "sq1_offer",
+					"if": [
+						"chapter_2_complete"
+					],
+					"unless": [
+						"sq1_started"
+					]
+				},
+				{
+					"dialogue": "sq1_turnin",
+					"if": [
+						"sq1_item"
+					],
+					"unless": [
+						"sq1_done"
+					]
+				},
+				{
+					"dialogue": "sq1_wait",
+					"if": [
+						"sq1_started"
+					],
+					"unless": [
+						"sq1_done"
+					]
+				},
+				{
+					"dialogue": "lio_idle",
+					"if": [],
+					"unless": []
+				}
+			]
+		},
+		"bram": {
+			"speaker": "bram",
+			"options": [
+				{
+					"dialogue": "sq2_offer",
+					"if": [
+						"chapter_3_complete"
+					],
+					"unless": [
+						"sq2_started"
+					]
+				},
+				{
+					"dialogue": "sq2_turnin",
+					"if": [
+						"sq2_item"
+					],
+					"unless": [
+						"sq2_done"
+					]
+				},
+				{
+					"dialogue": "sq2_wait",
+					"if": [
+						"sq2_started"
+					],
+					"unless": [
+						"sq2_done"
+					]
+				},
+				{
+					"dialogue": "bram_idle",
+					"if": [],
+					"unless": []
+				}
+			]
+		},
+		"kiri": {
+			"speaker": "kiri",
+			"options": [
+				{
+					"dialogue": "c1_kiri_join",
+					"if": [],
+					"unless": [
+						"kiri_joined"
+					]
+				}
+			]
+		},
+		"garren": {
+			"speaker": "garren",
+			"options": [
+				{
+					"dialogue": "c2_garren_join",
+					"if": [],
+					"unless": [
+						"garren_joined"
+					]
+				}
+			]
+		},
+		"nyx": {
+			"speaker": "nyx",
+			"options": [
+				{
+					"dialogue": "c3_nyx_join",
+					"if": [],
+					"unless": [
+						"nyx_joined"
+					]
+				}
+			]
+		}
+	},
+	"triggers": {
+		"hub_wake": {
+			"kind": "map",
+			"zone": "hub",
+			"dialogue": "p0_wake",
+			"if": [],
+			"unless": [
+				"prologue_awake"
+			]
+		},
+		"hub_training": {
+			"kind": "area",
+			"dialogue": "p0_training",
+			"if": [
+				"prologue_awake"
+			],
+			"unless": [
+				"training_seen",
+				"prologue_done"
+			]
+		},
+		"library_entry": {
+			"kind": "map",
+			"zone": "library",
+			"dialogue": "c1_entry",
+			"if": [],
+			"unless": [
+				"library_entered"
+			]
+		},
+		"library_map": {
+			"kind": "area",
+			"dialogue": "c1_map_found",
+			"if": [],
+			"unless": [
+				"library_map_found"
+			]
+		},
+		"library_boss": {
+			"kind": "area",
+			"dialogue": "c1_boss_pre",
+			"if": [],
+			"unless": [
+				"boss_library_seen",
+				"chapter_1_complete"
+			],
+			"set": "boss_library_seen"
+		},
+		"vault_entry": {
+			"kind": "map",
+			"zone": "vault",
+			"dialogue": "c2_entry",
+			"if": [],
+			"unless": [
+				"vault_entered"
+			],
+			"set": "vault_entered"
+		},
+		"vault_boss": {
+			"kind": "area",
+			"dialogue": "c2_boss_pre",
+			"if": [],
+			"unless": [
+				"boss_vault_seen",
+				"chapter_2_complete"
+			],
+			"set": "boss_vault_seen"
+		},
+		"furnace_entry": {
+			"kind": "map",
+			"zone": "furnace",
+			"dialogue": "c3_entry",
+			"if": [],
+			"unless": [
+				"furnace_entered"
+			],
+			"set": "furnace_entered"
+		},
+		"furnace_boss": {
+			"kind": "area",
+			"dialogue": "c3_boss_pre",
+			"if": [],
+			"unless": [
+				"boss_furnace_seen",
+				"chapter_3_complete"
+			],
+			"set": "boss_furnace_seen"
+		},
+		"tower_entry": {
+			"kind": "map",
+			"zone": "tower",
+			"dialogue": "c4_entry",
+			"if": [],
+			"unless": [
+				"tower_entered"
+			],
+			"set": "tower_entered"
+		},
+		"tower_summit": {
+			"kind": "area",
+			"dialogue": "c4_summit",
+			"if": [],
+			"unless": [
+				"tower_summit_seen"
+			]
+		},
+		"tower_boss": {
+			"kind": "area",
+			"dialogue": "c4_boss_pre",
+			"if": [],
+			"unless": [
+				"boss_tower_seen",
+				"chapter_4_complete"
+			],
+			"set": "boss_tower_seen"
+		},
+		"sq1_diary": {
+			"kind": "item",
+			"dialogue": "sq1_item",
+			"if": [
+				"sq1_started"
+			],
+			"unless": [
+				"sq1_item"
+			]
+		},
+		"sq2_core": {
+			"kind": "item",
+			"dialogue": "sq2_item",
+			"if": [
+				"sq2_started"
+			],
+			"unless": [
+				"sq2_item"
+			]
+		}
+	},
+	"battle_hooks": {
+		"prologue_tutorial": {
+			"flag": "prologue_battle_won",
+			"dialogue": "p0_after_battle",
+			"unless": [
+				"prologue_done"
+			]
+		},
+		"library_boss_warden": {
+			"flag": "boss_library_defeated",
+			"dialogue": "c1_boss_post",
+			"unless": [
+				"chapter_1_complete"
+			]
+		},
+		"vault_boss_behemoth": {
+			"flag": "boss_vault_defeated",
+			"dialogue": "c2_boss_post",
+			"unless": [
+				"chapter_2_complete"
+			]
+		},
+		"furnace_boss_core": {
+			"flag": "boss_furnace_defeated",
+			"dialogue": "c3_boss_post",
+			"unless": [
+				"chapter_3_complete"
+			]
+		},
+		"tower_boss_devourer": {
+			"flag": "boss_tower_defeated",
+			"dialogue": "c4_ending",
+			"unless": [
+				"chapter_4_complete"
+			]
+		}
+	},
+	"main_quest": [
+		{
+			"id": "tutorial",
+			"title": "QUEST_MAIN_TUTORIAL",
+			"done": "prologue_done",
+			"target": {
+				"zone": "hub",
+				"room": "H02"
+			}
+		},
+		{
+			"id": "orwen1",
+			"title": "QUEST_MAIN_ORWEN1",
+			"done": "ch1_briefed",
+			"target": {
+				"zone": "hub",
+				"room": "H01",
+				"node": "NpcOrwen"
+			}
+		},
+		{
+			"id": "library",
+			"title": "QUEST_MAIN_LIBRARY",
+			"done": "library_entered",
+			"target": {
+				"zone": "library",
+				"room": "L01"
+			}
+		},
+		{
+			"id": "kiri",
+			"title": "QUEST_MAIN_KIRI",
+			"done": "kiri_joined",
+			"target": {
+				"zone": "library",
+				"room": "L04",
+				"node": "NpcKiri"
+			}
+		},
+		{
+			"id": "map",
+			"title": "QUEST_MAIN_MAP",
+			"done": "library_map_found",
+			"target": {
+				"zone": "library",
+				"room": "L10"
+			}
+		},
+		{
+			"id": "boss1",
+			"title": "QUEST_MAIN_BOSS1",
+			"done": "chapter_1_complete",
+			"target": {
+				"zone": "library",
+				"room": "L11"
+			}
+		},
+		{
+			"id": "orwen2",
+			"title": "QUEST_MAIN_ORWEN2",
+			"done": "ch2_briefed",
+			"target": {
+				"zone": "hub",
+				"room": "H01",
+				"node": "NpcOrwen"
+			}
+		},
+		{
+			"id": "vault",
+			"title": "QUEST_MAIN_VAULT",
+			"done": "vault_entered",
+			"target": {
+				"zone": "vault",
+				"room": "V01"
+			}
+		},
+		{
+			"id": "garren",
+			"title": "QUEST_MAIN_GARREN",
+			"done": "garren_joined",
+			"target": {
+				"zone": "vault",
+				"room": "V04",
+				"node": "NpcGarren"
+			}
+		},
+		{
+			"id": "boss2",
+			"title": "QUEST_MAIN_BOSS2",
+			"done": "chapter_2_complete",
+			"target": {
+				"zone": "vault",
+				"room": "V10"
+			}
+		},
+		{
+			"id": "orwen3",
+			"title": "QUEST_MAIN_ORWEN3",
+			"done": "ch3_briefed",
+			"target": {
+				"zone": "hub",
+				"room": "H01",
+				"node": "NpcOrwen"
+			}
+		},
+		{
+			"id": "furnace",
+			"title": "QUEST_MAIN_FURNACE",
+			"done": "furnace_entered",
+			"target": {
+				"zone": "furnace",
+				"room": "F01"
+			}
+		},
+		{
+			"id": "nyx",
+			"title": "QUEST_MAIN_NYX",
+			"done": "nyx_joined",
+			"target": {
+				"zone": "furnace",
+				"room": "F04",
+				"node": "NpcNyx"
+			}
+		},
+		{
+			"id": "boss3",
+			"title": "QUEST_MAIN_BOSS3",
+			"done": "chapter_3_complete",
+			"target": {
+				"zone": "furnace",
+				"room": "F10"
+			}
+		},
+		{
+			"id": "orwen4",
+			"title": "QUEST_MAIN_ORWEN4",
+			"done": "ch4_briefed",
+			"target": {
+				"zone": "hub",
+				"room": "H01",
+				"node": "NpcOrwen"
+			}
+		},
+		{
+			"id": "tower",
+			"title": "QUEST_MAIN_TOWER",
+			"done": "tower_entered",
+			"target": {
+				"zone": "tower",
+				"room": "T01"
+			}
+		},
+		{
+			"id": "summit",
+			"title": "QUEST_MAIN_SUMMIT",
+			"done": "tower_summit_seen",
+			"target": {
+				"zone": "tower",
+				"room": "T11"
+			}
+		},
+		{
+			"id": "boss4",
+			"title": "QUEST_MAIN_BOSS4",
+			"done": "chapter_4_complete",
+			"target": {
+				"zone": "tower",
+				"room": "T12"
+			}
+		}
+	],
+	"main_quest_done": "QUEST_MAIN_DONE",
+	"side_quests": [
+		{
+			"id": "sq1",
+			"title": "QUEST_SIDE_SQ1",
+			"unlock": "chapter_2_complete",
+			"reward_key": "QUEST_SIDE_SQ1_REWARD",
+			"steps": [
+				{
+					"id": "sq1_talk",
+					"title": "QUEST_MAIN_SQ1_TALK",
+					"done": "sq1_started",
+					"target": {
+						"zone": "hub",
+						"room": "H01",
+						"node": "NpcLio"
+					}
+				},
+				{
+					"id": "sq1_find",
+					"title": "QUEST_MAIN_SQ1_FIND",
+					"done": "sq1_item",
+					"target": {
+						"zone": "library",
+						"room": "L07",
+						"node": "StoryItemDiary"
+					}
+				},
+				{
+					"id": "sq1_return",
+					"title": "QUEST_MAIN_SQ1_RETURN",
+					"done": "sq1_done",
+					"target": {
+						"zone": "hub",
+						"room": "H01",
+						"node": "NpcLio"
+					}
+				}
+			]
+		},
+		{
+			"id": "sq2",
+			"title": "QUEST_SIDE_SQ2",
+			"unlock": "chapter_3_complete",
+			"reward_key": "QUEST_SIDE_SQ2_REWARD",
+			"steps": [
+				{
+					"id": "sq2_talk",
+					"title": "QUEST_MAIN_SQ2_TALK",
+					"done": "sq2_started",
+					"target": {
+						"zone": "hub",
+						"room": "H01",
+						"node": "NpcBram"
+					}
+				},
+				{
+					"id": "sq2_find",
+					"title": "QUEST_MAIN_SQ2_FIND",
+					"done": "sq2_item",
+					"target": {
+						"zone": "furnace",
+						"room": "F08",
+						"node": "StoryItemCore"
+					}
+				},
+				{
+					"id": "sq2_return",
+					"title": "QUEST_MAIN_SQ2_RETURN",
+					"done": "sq2_done",
+					"target": {
+						"zone": "hub",
+						"room": "H01",
+						"node": "NpcBram"
+					}
+				}
+			]
+		}
+	],
+	"free_characters": {
+		"mira": 0,
+		"kiri": 1,
+		"garren": 2,
+		"nyx": 3
+	}
+}

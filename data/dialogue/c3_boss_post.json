@@ -1,0 +1,52 @@
+{
+	"id": "c3_boss_post",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_BOSS_POST_01"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "smile",
+			"text": "DLG_C3_BOSS_POST_02"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_BOSS_POST_03"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_BOSS_POST_04",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "soul_shard_3"
+				}
+			]
+		},
+		{
+			"speaker": "traveler",
+			"expression": "sad",
+			"text": "DLG_C3_BOSS_POST_05"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_C3_BOSS_POST_06"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "serious",
+			"text": "DLG_C3_BOSS_POST_07",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "chapter_3_complete"
+				}
+			]
+		}
+	]
+}

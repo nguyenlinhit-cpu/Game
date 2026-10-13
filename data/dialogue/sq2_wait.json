@@ -1,0 +1,10 @@
+{
+	"id": "sq2_wait",
+	"lines": [
+		{
+			"speaker": "bram",
+			"expression": "neutral",
+			"text": "DLG_SQ2_WAIT_01"
+		}
+	]
+}

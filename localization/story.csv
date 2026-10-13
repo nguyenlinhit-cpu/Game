@@ -1,0 +1,242 @@
+keys,vi,en
+DLG_P0_WAKE_01,"Bóng tối. Rồi một nhịp đập – không phải của tim, mà của thứ gì đó sáng rực nằm trong lồng ngực.","Bóng tối. Rồi một nhịp đập – không phải của tim, mà của thứ gì đó sáng rực nằm trong lồng ngực."
+DLG_P0_WAKE_02,…Ánh sáng này… là gì vậy?,…Ánh sáng này… là gì vậy?
+DLG_P0_WAKE_03,"Cậu tỉnh rồi! Đừng ngồi dậy vội, vết thương Ma Biến trên vai cậu vừa mới khép lại thôi.","Cậu tỉnh rồi! Đừng ngồi dậy vội, vết thương Ma Biến trên vai cậu vừa mới khép lại thôi."
+DLG_P0_WAKE_04,"Mình là Mira, thực tập sinh dược sĩ ở trạm y tế này. Mình tìm thấy cậu nằm bất tỉnh dưới bể sao hai ngày trước.","Mình là Mira, thực tập sinh dược sĩ ở trạm y tế này. Mình tìm thấy cậu nằm bất tỉnh dưới bể sao hai ngày trước."
+DLG_P0_WAKE_C4_1,Đây là đâu?,Đây là đâu?
+DLG_P0_WAKE_C4_2,Tôi… không nhớ gì cả.,Tôi… không nhớ gì cả.
+DLG_P0_WAKE_05,"Pháo Đài Vọng Tinh – trạm quan sát sao trôi giữa hư vô. Đây là Sảnh Trung Tâm, nơi duy nhất Ma Biến chưa tràn vào.","Pháo Đài Vọng Tinh – trạm quan sát sao trôi giữa hư vô. Đây là Sảnh Trung Tâm, nơi duy nhất Ma Biến chưa tràn vào."
+DLG_P0_WAKE_06,"Không nhớ gì sao? Nhưng cậu nhớ tên mình chứ? …{player}. Ừm, ít ra vẫn còn cái tên.","Không nhớ gì sao? Nhưng cậu nhớ tên mình chứ? …{player}. Ừm, ít ra vẫn còn cái tên."
+DLG_P0_WAKE_07,"Từ đêm Tâm Thần Nhãn vỡ, Ma Biến biến sách, máy móc, cả băng tuyết thành quái vật. Mọi người kẹt lại khắp pháo đài.","Từ đêm Tâm Thần Nhãn vỡ, Ma Biến biến sách, máy móc, cả băng tuyết thành quái vật. Mọi người kẹt lại khắp pháo đài."
+DLG_P0_WAKE_08,Khoan… ngực cậu đang phát sáng. Đó là… một Mảnh Hồn? Mảnh vỡ của chính Tâm Thần Nhãn?,Khoan… ngực cậu đang phát sáng. Đó là… một Mảnh Hồn? Mảnh vỡ của chính Tâm Thần Nhãn?
+DLG_P0_WAKE_09,Nó đập như một trái tim thứ hai.,Nó đập như một trái tim thứ hai.
+DLG_P0_WAKE_10,Ông Orwen phải biết chuyện này. Nhưng trước tiên – có tiếng động ở Sân Tập phía Đông. Lại một con Mầm Ma Biến lọt vào rồi.,Ông Orwen phải biết chuyện này. Nhưng trước tiên – có tiếng động ở Sân Tập phía Đông. Lại một con Mầm Ma Biến lọt vào rồi.
+DLG_P0_WAKE_11,"Mình đi cùng cậu. Mình không giỏi đánh nhau, nhưng nước tinh lọc của mình chữa được vết thương Ma Biến!","Mình đi cùng cậu. Mình không giỏi đánh nhau, nhưng nước tinh lọc của mình chữa được vết thương Ma Biến!"
+DLG_P0_WAKE_12,"Mira gia nhập đội. Dùng phím di chuyển để đi, Shift để lướt. Đi về phía Đông tới Sân Tập.","Mira gia nhập đội. Dùng phím di chuyển để đi, Shift để lướt. Đi về phía Đông tới Sân Tập."
+DLG_P0_TRAINING_01,Kia rồi! Mầm Ma Biến – nhỏ nhưng nổ được đấy.,Kia rồi! Mầm Ma Biến – nhỏ nhưng nổ được đấy.
+DLG_P0_TRAINING_02,Nghe này: chém trúng nó trước bằng Đòn Mở Màn (phím J hoặc chuột trái) thì mình sẽ ra tay trước trong trận.,Nghe này: chém trúng nó trước bằng Đòn Mở Màn (phím J hoặc chuột trái) thì mình sẽ ra tay trước trong trận.
+DLG_P0_TRAINING_03,"Còn nếu để nó vồ trúng, nó sẽ tấn công trước. Cẩn thận nhé, {player}!","Còn nếu để nó vồ trúng, nó sẽ tấn công trước. Cẩn thận nhé, {player}!"
+DLG_P0_AFTER_BATTLE_01,Cậu… chém một nhát mà ánh sáng trong ngực bùng lên như sao băng. Đó là nguyên tố Hồn sao?,Cậu… chém một nhát mà ánh sáng trong ngực bùng lên như sao băng. Đó là nguyên tố Hồn sao?
+DLG_P0_AFTER_BATTLE_02,Tôi không biết. Cơ thể tôi tự cử động.,Tôi không biết. Cơ thể tôi tự cử động.
+DLG_P0_AFTER_BATTLE_03,"Trong trận, cậu dùng Đánh thường để tích Điểm Chiến Kỹ, rồi tiêu nó cho Chiến kỹ. Khi đủ năng lượng thì tung Tuyệt kỹ bất cứ lúc nào!","Trong trận, cậu dùng Đánh thường để tích Điểm Chiến Kỹ, rồi tiêu nó cho Chiến kỹ. Khi đủ năng lượng thì tung Tuyệt kỹ bất cứ lúc nào!"
+DLG_P0_AFTER_BATTLE_04,"Đánh đúng điểm yếu nguyên tố sẽ phá khiên quái, làm nó chậm lại. Nhớ nhìn biểu tượng dưới thanh máu của nó.","Đánh đúng điểm yếu nguyên tố sẽ phá khiên quái, làm nó chậm lại. Nhớ nhìn biểu tượng dưới thanh máu của nó."
+DLG_P0_AFTER_BATTLE_05,Giờ đi gặp ông Orwen ở bàn chỉ huy giữa sảnh. Ông ấy là người giữ sảnh – và biết về Tâm Thần Nhãn nhiều hơn ai hết.,Giờ đi gặp ông Orwen ở bàn chỉ huy giữa sảnh. Ông ấy là người giữ sảnh – và biết về Tâm Thần Nhãn nhiều hơn ai hết.
+DLG_P0_ORWEN_01,Vậy ra cậu là người mang Mảnh Hồn trong tim. Ta đã nghe tiếng nó đập từ tận bên kia sảnh.,Vậy ra cậu là người mang Mảnh Hồn trong tim. Ta đã nghe tiếng nó đập từ tận bên kia sảnh.
+DLG_P0_ORWEN_02,"Ta là Orwen, người giữ sảnh, kẻ ngắm sao già nhất còn sót lại ở pháo đài này.","Ta là Orwen, người giữ sảnh, kẻ ngắm sao già nhất còn sót lại ở pháo đài này."
+DLG_P0_ORWEN_03,"Đêm Tâm Thần Nhãn vỡ, sức mạnh của chính nó hóa thành nguyên tố thứ bảy – Hồn. Chỉ người có Mảnh Hồn hòa vào thân mới dùng được.","Đêm Tâm Thần Nhãn vỡ, sức mạnh của chính nó hóa thành nguyên tố thứ bảy – Hồn. Chỉ người có Mảnh Hồn hòa vào thân mới dùng được."
+DLG_P0_ORWEN_04,Mỗi Mảnh Hồn cậu thu hồi sẽ trả lại một đoạn ký ức. Có lẽ cũng trả lại cho Aethelgard một chút ánh sáng.,Mỗi Mảnh Hồn cậu thu hồi sẽ trả lại một đoạn ký ức. Có lẽ cũng trả lại cho Aethelgard một chút ánh sáng.
+DLG_P0_ORWEN_C4_1,Tôi phải bắt đầu từ đâu?,Tôi phải bắt đầu từ đâu?
+DLG_P0_ORWEN_C4_2,Tại sao lại là tôi?,Tại sao lại là tôi?
+DLG_P0_ORWEN_05,Vì Mảnh Hồn đã chọn cậu. Thứ ánh sáng ấy không chui vào trái tim của kẻ bỏ chạy.,Vì Mảnh Hồn đã chọn cậu. Thứ ánh sáng ấy không chui vào trái tim của kẻ bỏ chạy.
+DLG_P0_ORWEN_06,"Sơ đồ pháo đài nằm trong Thư Viện Câm Lặng. Không có nó, chúng ta mù giữa các tầng bị xé vụn.","Sơ đồ pháo đài nằm trong Thư Viện Câm Lặng. Không có nó, chúng ta mù giữa các tầng bị xé vụn."
+DLG_P0_ORWEN_07,"Cổng Dịch Chuyển ở phòng phía Tây sẽ đưa cậu tới đó. Trên đường, mỗi phòng nghỉ có tinh thể sao – chạm vào để hồi sức, lưu lại và dịch chuyển nhanh.","Cổng Dịch Chuyển ở phòng phía Tây sẽ đưa cậu tới đó. Trên đường, mỗi phòng nghỉ có tinh thể sao – chạm vào để hồi sức, lưu lại và dịch chuyển nhanh."
+DLG_P0_ORWEN_08,Thư Viện… đêm đó có người vào tìm sách rồi không thấy ra nữa.,Thư Viện… đêm đó có người vào tìm sách rồi không thấy ra nữa.
+DLG_P0_ORWEN_09,"Vậy thì càng phải đi. Bàn Ước Nguyện, bảng nhiệm vụ và bàn nâng cấp trong sảnh sẽ sẵn sàng khi cậu cần.","Vậy thì càng phải đi. Bàn Ước Nguyện, bảng nhiệm vụ và bàn nâng cấp trong sảnh sẽ sẵn sàng khi cậu cần."
+DLG_P0_ORWEN_IDLE_01,"Sao trên vòm trời vẫn chưa sáng lại hết. Đi đi, {player}, ta sẽ giữ sảnh này cho tới khi cậu trở về.","Sao trên vòm trời vẫn chưa sáng lại hết. Đi đi, {player}, ta sẽ giữ sảnh này cho tới khi cậu trở về."
+DLG_C1_ENTRY_01,"Thư Viện Câm Lặng. Hàng vạn cuốn sách trôi lơ lửng, trang giấy lật mà không gây một tiếng động.","Thư Viện Câm Lặng. Hàng vạn cuốn sách trôi lơ lửng, trang giấy lật mà không gây một tiếng động."
+DLG_C1_ENTRY_02,Lạnh sống lưng quá… Ở đây đến tiếng bước chân cũng bị nuốt mất.,Lạnh sống lưng quá… Ở đây đến tiếng bước chân cũng bị nuốt mất.
+DLG_C1_ENTRY_03,Có tiếng gì đó. Phía trước – như pháo nổ.,Có tiếng gì đó. Phía trước – như pháo nổ.
+DLG_C1_ENTRY_04,"Pháo nổ? Trong thư viện? Ai lại… À, mình đoán được là ai rồi.","Pháo nổ? Trong thư viện? Ai lại… À, mình đoán được là ai rồi."
+DLG_C1_ENTRY_05,Bức tường lửa phía trước chặn đường. Nước của mình dập được – đổi mình lên dẫn đầu (phím 2) rồi chém vào nó nhé!,Bức tường lửa phía trước chặn đường. Nước của mình dập được – đổi mình lên dẫn đầu (phím 2) rồi chém vào nó nhé!
+DLG_C1_KIRI_JOIN_01,"Lùi lại! Còn một bước nữa là tôi cho nổ tung cả kệ sách này đấy, lũ sách bay chết tiệt!","Lùi lại! Còn một bước nữa là tôi cho nổ tung cả kệ sách này đấy, lũ sách bay chết tiệt!"
+DLG_C1_KIRI_JOIN_02,Kiri! Là cậu thật à? Cả pháo đài đang tìm cậu đấy!,Kiri! Là cậu thật à? Cả pháo đài đang tìm cậu đấy!
+DLG_C1_KIRI_JOIN_03,Mira-giọt-nước?! Ơ… thế cái người phát sáng bên cạnh cậu là ai thế?,Mira-giọt-nước?! Ơ… thế cái người phát sáng bên cạnh cậu là ai thế?
+DLG_C1_KIRI_JOIN_04,{player}. Tôi mới tỉnh dậy hôm qua.,{player}. Tôi mới tỉnh dậy hôm qua.
+DLG_C1_KIRI_JOIN_05,Ngực cậu sáng như pháo sao băng loại xịn nhất của tôi! Từ giờ tôi gọi cậu là… Đèn Lồng!,Ngực cậu sáng như pháo sao băng loại xịn nhất của tôi! Từ giờ tôi gọi cậu là… Đèn Lồng!
+DLG_C1_KIRI_JOIN_C5_1,Đừng gọi tôi như thế.,Đừng gọi tôi như thế.
+DLG_C1_KIRI_JOIN_C5_2,…Cũng được.,…Cũng được.
+DLG_C1_KIRI_JOIN_06,"Muộn rồi, Đèn Lồng. Tên đã đặt là không đổi!","Muộn rồi, Đèn Lồng. Tên đã đặt là không đổi!"
+DLG_C1_KIRI_JOIN_07,"Thấy chưa, Mira-giọt-nước? Người này hiểu chuyện ghê!","Thấy chưa, Mira-giọt-nước? Người này hiểu chuyện ghê!"
+DLG_C1_KIRI_JOIN_08,"Tôi vào tìm sách công thức pháo cho lễ ngắm sao. Rồi đêm đó… sách tự bay lên, đóng sầm mọi lối ra.","Tôi vào tìm sách công thức pháo cho lễ ngắm sao. Rồi đêm đó… sách tự bay lên, đóng sầm mọi lối ra."
+DLG_C1_KIRI_JOIN_09,Ánh sáng xua được Ma Biến – tôi tin chắc thế. Nên tôi đi cùng hai người. Pháo của tôi đốt được cả đống dây leo chắn lối phía Đông!,Ánh sáng xua được Ma Biến – tôi tin chắc thế. Nên tôi đi cùng hai người. Pháo của tôi đốt được cả đống dây leo chắn lối phía Đông!
+DLG_C1_KIRI_JOIN_10,Kiri gia nhập đội. Đòn Mở Màn của Kiri (Lửa) đốt được dây leo.,Kiri gia nhập đội. Đòn Mở Màn của Kiri (Lửa) đốt được dây leo.
+DLG_C1_MAP_FOUND_01,"Phòng đọc sâu nhất của Thư Viện. Trên bàn đá, những mảnh giấy da vẽ hình pháo đài ghép lại thành một tấm sơ đồ.","Phòng đọc sâu nhất của Thư Viện. Trên bàn đá, những mảnh giấy da vẽ hình pháo đài ghép lại thành một tấm sơ đồ."
+DLG_C1_MAP_FOUND_02,"Sơ đồ pháo đài! Ê, nó vẽ cả Kho Chứa, Lò Năng Lượng, Đỉnh Tháp nữa này!","Sơ đồ pháo đài! Ê, nó vẽ cả Kho Chứa, Lò Năng Lượng, Đỉnh Tháp nữa này!"
+DLG_C1_MAP_FOUND_03,Có chỗ bị cào rách… như thể ai đó đã cố xé đi đường lên Đỉnh Tháp.,Có chỗ bị cào rách… như thể ai đó đã cố xé đi đường lên Đỉnh Tháp.
+DLG_C1_MAP_FOUND_04,Sau cánh cửa kia có thứ gì đó đang canh. Tôi nghe tiếng giấy sột soạt.,Sau cánh cửa kia có thứ gì đó đang canh. Tôi nghe tiếng giấy sột soạt.
+DLG_C1_MAP_FOUND_05,"Thì ta cho nó một tràng pháo chào mừng! Nhớ ghé tinh thể sao nghỉ một chút đã nhé, Đèn Lồng.","Thì ta cho nó một tràng pháo chào mừng! Nhớ ghé tinh thể sao nghỉ một chút đã nhé, Đèn Lồng."
+DLG_C1_BOSS_PRE_01,"Giữa phòng, một bóng người khoác áo choàng bằng giấy đứng bất động. Hàng trăm cuốn sách xoay quanh nó như vệ tinh.","Giữa phòng, một bóng người khoác áo choàng bằng giấy đứng bất động. Hàng trăm cuốn sách xoay quanh nó như vệ tinh."
+DLG_C1_BOSS_PRE_02,"""…Im lặng. Thư viện… phải… im lặng.""","""…Im lặng. Thư viện… phải… im lặng."""
+DLG_C1_BOSS_PRE_03,Đó từng là người gác thư viện… Ma Biến đã nuốt cả ông ấy.,Đó từng là người gác thư viện… Ma Biến đã nuốt cả ông ấy.
+DLG_C1_BOSS_PRE_04,Thế thì ồn ào chút cho ông ấy tỉnh lại nào!,Thế thì ồn ào chút cho ông ấy tỉnh lại nào!
+DLG_C1_BOSS_POST_01,"Người Gác Thư Viện tan thành những trang giấy trắng. Giữa đống giấy, một Mảnh Hồn nhỏ lơ lửng, đập nhẹ như đáp lại trái tim {player}.","Người Gác Thư Viện tan thành những trang giấy trắng. Giữa đống giấy, một Mảnh Hồn nhỏ lơ lửng, đập nhẹ như đáp lại trái tim {player}."
+DLG_C1_BOSS_POST_02,Nó… đang gọi tôi.,Nó… đang gọi tôi.
+DLG_C1_BOSS_POST_03,"Mảnh Hồn hòa vào lồng ngực. Một ký ức vụt qua: bầu trời đầy sao, một bàn tay đeo găng bạc đẩy {player} ra khỏi ánh sáng đang vỡ.","Mảnh Hồn hòa vào lồng ngực. Một ký ức vụt qua: bầu trời đầy sao, một bàn tay đeo găng bạc đẩy {player} ra khỏi ánh sáng đang vỡ."
+DLG_C1_BOSS_POST_04,Rồi tất cả trắng xóa. Một vầng sáng hình con mắt mở ra trên trần thư viện.,Rồi tất cả trắng xóa. Một vầng sáng hình con mắt mở ra trên trần thư viện.
+DLG_C1_BOSS_POST_05,Người mang Mảnh Hồn trong tim. Cuối cùng ta cũng tìm thấy ngươi.,Người mang Mảnh Hồn trong tim. Cuối cùng ta cũng tìm thấy ngươi.
+DLG_C1_BOSS_POST_06,Cô là ai?,Cô là ai?
+DLG_C1_BOSS_POST_07,Celestine. Người Gác Nhãn cuối cùng. Ta chỉ còn là một ảo ảnh trong những mảnh vỡ của Nhãn.,Celestine. Người Gác Nhãn cuối cùng. Ta chỉ còn là một ảo ảnh trong những mảnh vỡ của Nhãn.
+DLG_C1_BOSS_POST_08,"Có kẻ đang nuốt các Mảnh Hồn. Nếu nó nuốt đủ, sẽ không còn Aethelgard nào để cứu.","Có kẻ đang nuốt các Mảnh Hồn. Nếu nó nuốt đủ, sẽ không còn Aethelgard nào để cứu."
+DLG_C1_BOSS_POST_09,Hãy dùng Bàn Ước Nguyện ở sảnh. Lời ước của người mang Mảnh Hồn có thể gọi những linh hồn lạc lối tới bên ngươi – và gọi cả ta.,Hãy dùng Bàn Ước Nguyện ở sảnh. Lời ước của người mang Mảnh Hồn có thể gọi những linh hồn lạc lối tới bên ngươi – và gọi cả ta.
+DLG_C1_BOSS_POST_10,Ảo ảnh tan biến. Bàn Ước Nguyện và nhiệm vụ hằng ngày đã mở.,Ảo ảnh tan biến. Bàn Ước Nguyện và nhiệm vụ hằng ngày đã mở.
+DLG_C1_BOSS_POST_11,"…Đèn Lồng, cậu vừa nói chuyện với không khí đấy à?","…Đèn Lồng, cậu vừa nói chuyện với không khí đấy à?"
+DLG_C1_BOSS_POST_12,Mình cũng thấy cô ấy. Mau về báo cho ông Orwen thôi.,Mình cũng thấy cô ấy. Mau về báo cho ông Orwen thôi.
+DLG_C2_ORWEN_01,"Celestine… Người Gác Nhãn vẫn còn đó, dù chỉ là ảo ảnh. Vậy là hy vọng chưa tắt.","Celestine… Người Gác Nhãn vẫn còn đó, dù chỉ là ảo ảnh. Vậy là hy vọng chưa tắt."
+DLG_C2_ORWEN_02,Sơ đồ cho thấy Kho Chứa Băng Giá ở tầng dưới. Đội cận vệ của Garren đã xuống đó giữ chân một con quái khổng lồ đêm Nhãn vỡ.,Sơ đồ cho thấy Kho Chứa Băng Giá ở tầng dưới. Đội cận vệ của Garren đã xuống đó giữ chân một con quái khổng lồ đêm Nhãn vỡ.
+DLG_C2_ORWEN_03,Từ đó không một ai trở về.,Từ đó không một ai trở về.
+DLG_C2_ORWEN_04,"Ông Garren? Cái ông râu rậm hay kể chuyện chiến trận cả buổi ấy hả? Ông ấy cứng lắm, chắc chắn còn sống!","Ông Garren? Cái ông râu rậm hay kể chuyện chiến trận cả buổi ấy hả? Ông ấy cứng lắm, chắc chắn còn sống!"
+DLG_C2_ORWEN_05,"Cổng Dịch Chuyển đã nhận tọa độ Kho Chứa. Mang họ về, {player}.","Cổng Dịch Chuyển đã nhận tọa độ Kho Chứa. Mang họ về, {player}."
+DLG_C2_ENTRY_01,"Kho Chứa Băng Giá. Những thùng hàng đóng băng thành từng khối, hơi thở hóa khói trắng.","Kho Chứa Băng Giá. Những thùng hàng đóng băng thành từng khối, hơi thở hóa khói trắng."
+DLG_C2_ENTRY_02,Nhiệt độ ở đây… nước của mình sắp đông cứng rồi.,Nhiệt độ ở đây… nước của mình sắp đông cứng rồi.
+DLG_C2_ENTRY_03,Có tôi đây! Pháo sưởi miễn phí cho cả đội!,Có tôi đây! Pháo sưởi miễn phí cho cả đội!
+DLG_C2_ENTRY_04,"Có dấu chân. Rất nhiều, và tất cả đều đi vào trong.","Có dấu chân. Rất nhiều, và tất cả đều đi vào trong."
+DLG_C2_GARREN_JOIN_01,"Giữa phòng, một khối băng lớn giam một người đàn ông râu rậm, khiên gỗ giơ cao như vẫn đang đỡ đòn.","Giữa phòng, một khối băng lớn giam một người đàn ông râu rậm, khiên gỗ giơ cao như vẫn đang đỡ đòn."
+DLG_C2_GARREN_JOIN_02,"Ông Garren! Mira, giúp tôi – lửa của tôi làm tan băng, nước của cậu giữ cho ông ấy khỏi bị bỏng!","Ông Garren! Mira, giúp tôi – lửa của tôi làm tan băng, nước của cậu giữ cho ông ấy khỏi bị bỏng!"
+DLG_C2_GARREN_JOIN_03,"Băng nứt ra. Garren khuỵu xuống, rồi lập tức đứng dậy, khiên đã chắn trước cả đội.","Băng nứt ra. Garren khuỵu xuống, rồi lập tức đứng dậy, khiên đã chắn trước cả đội."
+DLG_C2_GARREN_JOIN_04,Lùi lại! Cự Thú vẫn còn… Hửm? Các cháu là ai?,Lùi lại! Cự Thú vẫn còn… Hửm? Các cháu là ai?
+DLG_C2_GARREN_JOIN_05,"Là tụi cháu đây, chú Garren! Chú bị đóng băng ở đây từ đêm Nhãn vỡ đấy ạ.","Là tụi cháu đây, chú Garren! Chú bị đóng băng ở đây từ đêm Nhãn vỡ đấy ạ."
+DLG_C2_GARREN_JOIN_06,"Hừm. Vậy là ta đã ngủ quên trong ca trực. Năm mươi năm cầm khiên, lần đầu tiên đấy.","Hừm. Vậy là ta đã ngủ quên trong ca trực. Năm mươi năm cầm khiên, lần đầu tiên đấy."
+DLG_C2_GARREN_JOIN_07,"Còn cậu – cái ánh sáng trong ngực kia. Ta từng thấy nó một lần, trên ngực Người Gác Nhãn.","Còn cậu – cái ánh sáng trong ngực kia. Ta từng thấy nó một lần, trên ngực Người Gác Nhãn."
+DLG_C2_GARREN_JOIN_C7_1,Ông biết về Celestine?,Ông biết về Celestine?
+DLG_C2_GARREN_JOIN_C7_2,Đội cận vệ của ông đâu?,Đội cận vệ của ông đâu?
+DLG_C2_GARREN_JOIN_08,Ta từng đứng gác dưới chân cô ấy suốt ba mươi năm. Chuyện đó để sau – giờ còn lính của ta.,Ta từng đứng gác dưới chân cô ấy suốt ba mươi năm. Chuyện đó để sau – giờ còn lính của ta.
+DLG_C2_GARREN_JOIN_09,"Lính của ta bị lũ quái lôi vào sâu bên trong, gần hang Cự Thú.","Lính của ta bị lũ quái lôi vào sâu bên trong, gần hang Cự Thú."
+DLG_C2_GARREN_JOIN_10,"Từ giờ cậu là lính mới của ta, {player}. Ta đi trước, cậu theo sau. Khiên của ta mọc rễ, bắc cầu qua khe vực được.","Từ giờ cậu là lính mới của ta, {player}. Ta đi trước, cậu theo sau. Khiên của ta mọc rễ, bắc cầu qua khe vực được."
+DLG_C2_GARREN_JOIN_11,Garren gia nhập đội. Đội đã đủ 4 người. Đòn Mở Màn của Garren (Mộc) bắc cầu qua khe vực.,Garren gia nhập đội. Đội đã đủ 4 người. Đòn Mở Màn của Garren (Mộc) bắc cầu qua khe vực.
+DLG_C2_BOSS_PRE_01,"Hang băng rung chuyển. Từ lớp băng dày, một con thú khổng lồ chui ra, lưng mọc đầy thùng hàng đóng băng.","Hang băng rung chuyển. Từ lớp băng dày, một con thú khổng lồ chui ra, lưng mọc đầy thùng hàng đóng băng."
+DLG_C2_BOSS_PRE_02,Lại là mày! Lần trước tao chưa kịp nói hết câu chào hỏi.,Lại là mày! Lần trước tao chưa kịp nói hết câu chào hỏi.
+DLG_C2_BOSS_PRE_03,Nó to gấp mười lần cái kho này luôn ấy!,Nó to gấp mười lần cái kho này luôn ấy!
+DLG_C2_BOSS_PRE_04,"Đứng sau khiên của ta. Lính mới, đánh vào chỗ băng nứt!","Đứng sau khiên của ta. Lính mới, đánh vào chỗ băng nứt!"
+DLG_C2_BOSS_POST_01,"Cự Thú gục xuống, lớp băng trên lưng vỡ vụn. Bên trong, đội cận vệ còn sống – lạnh cóng nhưng còn thở.","Cự Thú gục xuống, lớp băng trên lưng vỡ vụn. Bên trong, đội cận vệ còn sống – lạnh cóng nhưng còn thở."
+DLG_C2_BOSS_POST_02,"…Đủ cả. Không thiếu một ai. Hừm. Giỏi lắm, lính mới.","…Đủ cả. Không thiếu một ai. Hừm. Giỏi lắm, lính mới."
+DLG_C2_BOSS_POST_03,Một Mảnh Hồn trồi lên từ tim băng của Cự Thú và hòa vào ngực {player}.,Một Mảnh Hồn trồi lên từ tim băng của Cự Thú và hòa vào ngực {player}.
+DLG_C2_BOSS_POST_04,"Ký ức thứ hai: một căn phòng trên cao, bản đồ sao trải khắp tường. {player} đang tranh cãi với ai đó về một vết nứt trên bầu trời.","Ký ức thứ hai: một căn phòng trên cao, bản đồ sao trải khắp tường. {player} đang tranh cãi với ai đó về một vết nứt trên bầu trời."
+DLG_C2_BOSS_POST_05,Tôi từng ở Đỉnh Tháp. Tôi đã biết trước vết nứt sẽ mở ra.,Tôi từng ở Đỉnh Tháp. Tôi đã biết trước vết nứt sẽ mở ra.
+DLG_C2_BOSS_POST_06,Vậy cậu là… người của đài quan sát sao?,Vậy cậu là… người của đài quan sát sao?
+DLG_C2_BOSS_POST_07,Chuyện ký ức để sau. Đưa lính của ta về sảnh trước đã.,Chuyện ký ức để sau. Đưa lính của ta về sảnh trước đã.
+DLG_C3_ORWEN_01,"Garren, lão già cứng đầu, ông vẫn còn sống!","Garren, lão già cứng đầu, ông vẫn còn sống!"
+DLG_C3_ORWEN_02,"Ông cũng chưa chết, Orwen. Ta coi như hòa.","Ông cũng chưa chết, Orwen. Ta coi như hòa."
+DLG_C3_ORWEN_03,"Nhưng tin xấu: Lò Năng Lượng đang tắt dần. Không có lò, Sảnh Trung Tâm sẽ mất kết giới trong vài ngày nữa.","Nhưng tin xấu: Lò Năng Lượng đang tắt dần. Không có lò, Sảnh Trung Tâm sẽ mất kết giới trong vài ngày nữa."
+DLG_C3_ORWEN_04,Người trực lò là một kỹ sư trẻ tên Nyx. Tín hiệu từ ống dẫn vẫn còn nhấp nháy – có thể cô bé còn sống.,Người trực lò là một kỹ sư trẻ tên Nyx. Tín hiệu từ ống dẫn vẫn còn nhấp nháy – có thể cô bé còn sống.
+DLG_C3_ORWEN_05,Nyx? Cái cô hay cau mày với mọi người ấy hả? Tôi thích cô ấy!,Nyx? Cái cô hay cau mày với mọi người ấy hả? Tôi thích cô ấy!
+DLG_C3_ENTRY_01,"Lò Năng Lượng. Ống dẫn chằng chịt như mạch máu, lửa Ma Biến chập chờn màu tím.","Lò Năng Lượng. Ống dẫn chằng chịt như mạch máu, lửa Ma Biến chập chờn màu tím."
+DLG_C3_ENTRY_02,Nóng như lò rèn. Áo giáp của ta bắt đầu rụng lá rồi.,Nóng như lò rèn. Áo giáp của ta bắt đầu rụng lá rồi.
+DLG_C3_ENTRY_03,"Có tiếng gõ trong ống dẫn. Ba nhịp ngắn, ba nhịp dài.","Có tiếng gõ trong ống dẫn. Ba nhịp ngắn, ba nhịp dài."
+DLG_C3_ENTRY_04,Là tín hiệu cầu cứu! Ai đó trong ống!,Là tín hiệu cầu cứu! Ai đó trong ống!
+DLG_C3_NYX_JOIN_01,"Một tấm lưới ống dẫn bật ra. Một cô gái đeo kính bảo hộ trượt xuống, găng tay còn tóe tia điện.","Một tấm lưới ống dẫn bật ra. Một cô gái đeo kính bảo hộ trượt xuống, găng tay còn tóe tia điện."
+DLG_C3_NYX_JOIN_02,Mất bốn ngày. Bốn ngày gõ tín hiệu. Các người đi bộ từ bên kia vũ trụ tới à?,Mất bốn ngày. Bốn ngày gõ tín hiệu. Các người đi bộ từ bên kia vũ trụ tới à?
+DLG_C3_NYX_JOIN_03,"Nyx! Tụi mình tới cứu cậu đây, nhóc!","Nyx! Tụi mình tới cứu cậu đây, nhóc!"
+DLG_C3_NYX_JOIN_04,Gọi ai là nhóc? Tôi biết mọi đường dây trong pháo đài này. Còn cậu biết mỗi châm ngòi.,Gọi ai là nhóc? Tôi biết mọi đường dây trong pháo đài này. Còn cậu biết mỗi châm ngòi.
+DLG_C3_NYX_JOIN_05,Nghe đây. Lò không tự hỏng. Có kẻ đã moi Mảnh Hồn ra khỏi lõi – tôi ghi lại được.,Nghe đây. Lò không tự hỏng. Có kẻ đã moi Mảnh Hồn ra khỏi lõi – tôi ghi lại được.
+DLG_C3_NYX_JOIN_06,"Nyx bật một màn chiếu nhỏ: một bóng người mờ ảo, cái miệng mở rộng như vết nứt, hút một mảnh sáng vào trong.","Nyx bật một màn chiếu nhỏ: một bóng người mờ ảo, cái miệng mở rộng như vết nứt, hút một mảnh sáng vào trong."
+DLG_C3_NYX_JOIN_07,Thứ đó… ta đã thấy nó ở rìa Kho Chứa. Nó đứng nhìn bọn ta bị đóng băng.,Thứ đó… ta đã thấy nó ở rìa Kho Chứa. Nó đứng nhìn bọn ta bị đóng băng.
+DLG_C3_NYX_JOIN_C7_1,Nó đang ở đâu?,Nó đang ở đâu?
+DLG_C3_NYX_JOIN_C7_2,Cô đi cùng chúng tôi chứ?,Cô đi cùng chúng tôi chứ?
+DLG_C3_NYX_JOIN_08,"Tín hiệu của nó dẫn lên Đỉnh Tháp. Nhưng trước hết phải khởi động lại lò, nếu không cả sảnh sẽ tắt.","Tín hiệu của nó dẫn lên Đỉnh Tháp. Nhưng trước hết phải khởi động lại lò, nếu không cả sảnh sẽ tắt."
+DLG_C3_NYX_JOIN_09,Không có tôi thì các người còn chẳng mở nổi một cánh cửa máy. Đi thôi. Và đừng có gọi tôi là nhóc.,Không có tôi thì các người còn chẳng mở nổi một cánh cửa máy. Đi thôi. Và đừng có gọi tôi là nhóc.
+DLG_C3_NYX_JOIN_10,Nyx gia nhập đội. Đòn Mở Màn của Nyx (Sét) mở được cửa máy. Đổi đội hình ở menu khi cần.,Nyx gia nhập đội. Đòn Mở Màn của Nyx (Sét) mở được cửa máy. Đổi đội hình ở menu khi cần.
+DLG_C3_BOSS_PRE_01,"Lõi lò khổng lồ quay chậm, hai cánh tay máy cắm sâu vào tường. Mỗi nhịp quay phả ra một luồng nhiệt tím.","Lõi lò khổng lồ quay chậm, hai cánh tay máy cắm sâu vào tường. Mỗi nhịp quay phả ra một luồng nhiệt tím."
+DLG_C3_BOSS_PRE_02,Lõi Lò đã biến dạng. Nhiệt tích đủ năm tầng là nó nổ – phá khiên để xả nhiệt ra!,Lõi Lò đã biến dạng. Nhiệt tích đủ năm tầng là nó nổ – phá khiên để xả nhiệt ra!
+DLG_C3_BOSS_PRE_03,"Nghe cô bé nói chưa, lính mới.","Nghe cô bé nói chưa, lính mới."
+DLG_C3_BOSS_PRE_04,"Đừng có—! …Thôi, đánh đi.","Đừng có—! …Thôi, đánh đi."
+DLG_C3_BOSS_POST_01,"Lõi Lò rên lên rồi quay đều trở lại, ánh lửa chuyển từ tím sang vàng ấm. Khắp pháo đài, đèn bật sáng.","Lõi Lò rên lên rồi quay đều trở lại, ánh lửa chuyển từ tím sang vàng ấm. Khắp pháo đài, đèn bật sáng."
+DLG_C3_BOSS_POST_02,"…Lò chạy lại rồi. Ổn định. Hừ, cũng không tệ lắm.","…Lò chạy lại rồi. Ổn định. Hừ, cũng không tệ lắm."
+DLG_C3_BOSS_POST_03,"Từ khe tản nhiệt, một Mảnh Hồn rơi xuống tay {player}.","Từ khe tản nhiệt, một Mảnh Hồn rơi xuống tay {player}."
+DLG_C3_BOSS_POST_04,"Ký ức thứ ba: Đỉnh Tháp, đêm Nhãn vỡ. Một người đồng hành của {player} quỳ trước vết nứt, há miệng nuốt lấy ánh sáng đang rơi.","Ký ức thứ ba: Đỉnh Tháp, đêm Nhãn vỡ. Một người đồng hành của {player} quỳ trước vết nứt, há miệng nuốt lấy ánh sáng đang rơi."
+DLG_C3_BOSS_POST_05,Kẻ nuốt Mảnh Hồn… từng là bạn của tôi.,Kẻ nuốt Mảnh Hồn… từng là bạn của tôi.
+DLG_C3_BOSS_POST_06,{player}…,{player}…
+DLG_C3_BOSS_POST_07,"Bạn hay không thì nó cũng đang ngồi trên Đỉnh Tháp, ôm cả đống Mảnh Hồn. Tôi mở được thang máy lên đó.","Bạn hay không thì nó cũng đang ngồi trên Đỉnh Tháp, ôm cả đống Mảnh Hồn. Tôi mở được thang máy lên đó."
+DLG_C4_ORWEN_01,"Kẻ Nuốt Mảnh Hồn. Ta đã nghe truyền thuyết về thứ đó, nhưng không ngờ nó là người.","Kẻ Nuốt Mảnh Hồn. Ta đã nghe truyền thuyết về thứ đó, nhưng không ngờ nó là người."
+DLG_C4_ORWEN_02,Tôi phải lên đó. Không chỉ vì Mảnh Hồn – tôi phải biết vì sao.,Tôi phải lên đó. Không chỉ vì Mảnh Hồn – tôi phải biết vì sao.
+DLG_C4_ORWEN_03,Cả đội đi cùng. Khiên của ta chưa bao giờ bỏ lính lại phía sau.,Cả đội đi cùng. Khiên của ta chưa bao giờ bỏ lính lại phía sau.
+DLG_C4_ORWEN_04,Tôi để dành tràng pháo to nhất cho trận này đấy!,Tôi để dành tràng pháo to nhất cho trận này đấy!
+DLG_C4_ORWEN_05,"Vậy thì đi đi, những ngôi sao của ta. Cổng Dịch Chuyển đã mở đường lên Đỉnh Tháp.","Vậy thì đi đi, những ngôi sao của ta. Cổng Dịch Chuyển đã mở đường lên Đỉnh Tháp."
+DLG_C4_ENTRY_01,"Đỉnh Tháp Quan Sát. Vòm kính vỡ, bầu trời bên ngoài không có sao – chỉ có một vết nứt chạy dài như vết sẹo.","Đỉnh Tháp Quan Sát. Vòm kính vỡ, bầu trời bên ngoài không có sao – chỉ có một vết nứt chạy dài như vết sẹo."
+DLG_C4_ENTRY_02,Tín hiệu Mảnh Hồn đậm đặc ở tầng trên cùng. Nó đang chờ chúng ta.,Tín hiệu Mảnh Hồn đậm đặc ở tầng trên cùng. Nó đang chờ chúng ta.
+DLG_C4_ENTRY_03,Mọi người… hứa với mình là tất cả cùng quay về nhé.,Mọi người… hứa với mình là tất cả cùng quay về nhé.
+DLG_C4_ENTRY_04,Hứa.,Hứa.
+DLG_C4_SUMMIT_01,Phòng nghỉ cuối cùng trước đỉnh tháp. Tinh thể sao rung lên khi {player} lại gần.,Phòng nghỉ cuối cùng trước đỉnh tháp. Tinh thể sao rung lên khi {player} lại gần.
+DLG_C4_SUMMIT_02,Người mang Mảnh Hồn. Phía trên là kẻ từng là đồng đội của ngươi.,Người mang Mảnh Hồn. Phía trên là kẻ từng là đồng đội của ngươi.
+DLG_C4_SUMMIT_03,Hắn tin rằng nuốt hết Mảnh Hồn sẽ hàn được vết nứt. Hắn đã sai. Vết nứt chỉ đói thêm.,Hắn tin rằng nuốt hết Mảnh Hồn sẽ hàn được vết nứt. Hắn đã sai. Vết nứt chỉ đói thêm.
+DLG_C4_SUMMIT_04,"Nếu tôi đánh bại hắn, tôi có cứu được hắn không?","Nếu tôi đánh bại hắn, tôi có cứu được hắn không?"
+DLG_C4_SUMMIT_05,Ta không biết. Nhưng ngươi sẽ cứu được những người đứng sau lưng ngươi.,Ta không biết. Nhưng ngươi sẽ cứu được những người đứng sau lưng ngươi.
+DLG_C4_BOSS_PRE_01,"Trên đỉnh tháp, một bóng người ngồi giữa vòng tròn Mảnh Hồn trôi nổi. Miệng hắn là một vết nứt nhỏ đang mở rộng.","Trên đỉnh tháp, một bóng người ngồi giữa vòng tròn Mảnh Hồn trôi nổi. Miệng hắn là một vết nứt nhỏ đang mở rộng."
+DLG_C4_BOSS_PRE_02,{player}. Ngươi còn sống. Ta đã đẩy ngươi ra khỏi ánh sáng đêm đó – để ngươi không phải thấy cảnh này.,{player}. Ngươi còn sống. Ta đã đẩy ngươi ra khỏi ánh sáng đêm đó – để ngươi không phải thấy cảnh này.
+DLG_C4_BOSS_PRE_03,Ngươi nuốt Mảnh Hồn của cả pháo đài.,Ngươi nuốt Mảnh Hồn của cả pháo đài.
+DLG_C4_BOSS_PRE_04,Ta giữ chúng. Để vết nứt không nuốt chúng trước. Đưa nốt Mảnh Hồn trong tim ngươi đây – rồi mọi thứ sẽ yên.,Ta giữ chúng. Để vết nứt không nuốt chúng trước. Đưa nốt Mảnh Hồn trong tim ngươi đây – rồi mọi thứ sẽ yên.
+DLG_C4_BOSS_PRE_C4_1,Không bao giờ.,Không bao giờ.
+DLG_C4_BOSS_PRE_C4_2,Ngươi đã sai.,Ngươi đã sai.
+DLG_C4_BOSS_PRE_05,Vậy thì ta sẽ lấy nó.,Vậy thì ta sẽ lấy nó.
+DLG_C4_BOSS_PRE_06,Có lẽ. Nhưng đã quá muộn để quay lại.,Có lẽ. Nhưng đã quá muộn để quay lại.
+DLG_C4_BOSS_PRE_07,"Đội hình! Lính mới, lần này ngươi dẫn đầu.","Đội hình! Lính mới, lần này ngươi dẫn đầu."
+DLG_C4_ENDING_01,"Kẻ Nuốt Mảnh Hồn quỵ xuống. Những Mảnh Hồn hắn giữ bay lên như đàn đom đóm, rồi một mảnh sáng nhất tìm về ngực {player}.","Kẻ Nuốt Mảnh Hồn quỵ xuống. Những Mảnh Hồn hắn giữ bay lên như đàn đom đóm, rồi một mảnh sáng nhất tìm về ngực {player}."
+DLG_C4_ENDING_02,"Ký ức thứ tư: hai người trẻ trên Đỉnh Tháp, chỉ lên trời đặt tên cho từng vì sao. Một trong hai người là {player}.","Ký ức thứ tư: hai người trẻ trên Đỉnh Tháp, chỉ lên trời đặt tên cho từng vì sao. Một trong hai người là {player}."
+DLG_C4_ENDING_03,…Ta chỉ muốn giữ cho ánh sáng khỏi rơi mất.,…Ta chỉ muốn giữ cho ánh sáng khỏi rơi mất.
+DLG_C4_ENDING_04,Tôi biết. Giờ để chúng tôi giữ nó.,Tôi biết. Giờ để chúng tôi giữ nó.
+DLG_C4_ENDING_05,"Bóng người tan thành bụi sao. Nhưng vết nứt trên bầu trời không khép lại – nó rung lên, rồi mở toang.","Bóng người tan thành bụi sao. Nhưng vết nứt trên bầu trời không khép lại – nó rung lên, rồi mở toang."
+DLG_C4_ENDING_06,Khoan đã… bên kia vết nứt có tín hiệu. Một vùng đất. Một vùng đất hoàn toàn mới!,Khoan đã… bên kia vết nứt có tín hiệu. Một vùng đất. Một vùng đất hoàn toàn mới!
+DLG_C4_ENDING_07,"Những Mảnh Hồn còn lại đã rơi qua đó. Hành trình của ngươi chưa kết thúc, người mang Mảnh Hồn.","Những Mảnh Hồn còn lại đã rơi qua đó. Hành trình của ngươi chưa kết thúc, người mang Mảnh Hồn."
+DLG_C4_ENDING_08,"Thế thì đi thôi, Đèn Lồng! Tôi còn cả đống pháo chưa bắn!","Thế thì đi thôi, Đèn Lồng! Tôi còn cả đống pháo chưa bắn!"
+DLG_C4_ENDING_09,Lính mới… làm tốt lắm.,Lính mới… làm tốt lắm.
+DLG_C4_ENDING_10,"Lần này cũng hứa cùng quay về nhé, {player}.","Lần này cũng hứa cùng quay về nhé, {player}."
+DLG_C4_ENDING_11,Hết Chương 4. Vết nứt đã mở ra vùng đất mới – còn tiếp…,Hết Chương 4. Vết nứt đã mở ra vùng đất mới – còn tiếp…
+DLG_ORWEN_ENDING_01,"Vết nứt mở ra một chân trời mới. Khi cậu sẵn sàng, Aethelgard sẽ chờ.","Vết nứt mở ra một chân trời mới. Khi cậu sẵn sàng, Aethelgard sẽ chờ."
+DLG_SQ1_OFFER_01,"Anh… chị {player}! Xin lỗi, em là Lio, thủ thư tập sự của ông Orwen.","Anh… chị {player}! Xin lỗi, em là Lio, thủ thư tập sự của ông Orwen."
+DLG_SQ1_OFFER_02,Người Gác Thư Viện – thầy em – có giữ một cuốn nhật ký. Thầy giấu nó sau bức tường nứt trong phòng lưu trữ.,Người Gác Thư Viện – thầy em – có giữ một cuốn nhật ký. Thầy giấu nó sau bức tường nứt trong phòng lưu trữ.
+DLG_SQ1_OFFER_03,Bức tường đó chỉ mở bằng ánh sáng Hồn. Anh chị mang nó về giúp em được không?,Bức tường đó chỉ mở bằng ánh sáng Hồn. Anh chị mang nó về giúp em được không?
+DLG_SQ1_OFFER_04,Được. Tôi sẽ tìm.,Được. Tôi sẽ tìm.
+DLG_SQ1_WAIT_01,Phòng lưu trữ ở phía Bắc phòng chiến đấu thứ ba trong Thư Viện. Bức tường nứt… để người dẫn đầu là anh chị mới mở được.,Phòng lưu trữ ở phía Bắc phòng chiến đấu thứ ba trong Thư Viện. Bức tường nứt… để người dẫn đầu là anh chị mới mở được.
+DLG_SQ1_ITEM_01,"Sau bức tường nứt, một cuốn sổ bìa da nằm trên giá. Trang cuối viết dở: ""Nếu ai mang Mảnh Hồn đọc được dòng này…""","Sau bức tường nứt, một cuốn sổ bìa da nằm trên giá. Trang cuối viết dở: ""Nếu ai mang Mảnh Hồn đọc được dòng này…"""
+DLG_SQ1_ITEM_02,Mang về cho Lio thôi.,Mang về cho Lio thôi.
+DLG_SQ1_TURNIN_01,"Đây là chữ của thầy… ""Nếu ai mang Mảnh Hồn đọc được dòng này, hãy nhận lấy thứ ta giấu trong gáy sách.""","Đây là chữ của thầy… ""Nếu ai mang Mảnh Hồn đọc được dòng này, hãy nhận lấy thứ ta giấu trong gáy sách."""
+DLG_SQ1_TURNIN_02,"Trong gáy cuốn nhật ký, một Mảnh Hồn nhỏ xíu lóe sáng rồi hòa vào ngực {player}.","Trong gáy cuốn nhật ký, một Mảnh Hồn nhỏ xíu lóe sáng rồi hòa vào ngực {player}."
+DLG_SQ1_TURNIN_03,"Ký ức thứ năm: Người Gác Thư Viện cười hiền, đưa cho {player} một cuốn sách về các vì sao.","Ký ức thứ năm: Người Gác Thư Viện cười hiền, đưa cho {player} một cuốn sách về các vì sao."
+DLG_SQ1_TURNIN_04,Thầy vẫn luôn tin vào anh chị. Cảm ơn… thật nhiều.,Thầy vẫn luôn tin vào anh chị. Cảm ơn… thật nhiều.
+DLG_SQ2_OFFER_01,"Này, người mang Mảnh Hồn. Bram đây, thợ máy kiêm chủ quầy hàng.","Này, người mang Mảnh Hồn. Bram đây, thợ máy kiêm chủ quầy hàng."
+DLG_SQ2_OFFER_02,"Từ lúc lò chạy lại, máy đo của tôi bắt được một tiếng vọng lạ ở phòng tinh anh phía Nam của Lò.","Từ lúc lò chạy lại, máy đo của tôi bắt được một tiếng vọng lạ ở phòng tinh anh phía Nam của Lò."
+DLG_SQ2_OFFER_03,"Tôi đoán là một Lõi Tiếng Vọng – mảnh lõi cũ còn giữ năng lượng Hồn. Mang về đây, tôi trả công xứng đáng.","Tôi đoán là một Lõi Tiếng Vọng – mảnh lõi cũ còn giữ năng lượng Hồn. Mang về đây, tôi trả công xứng đáng."
+DLG_SQ2_WAIT_01,"Lõi Tiếng Vọng ở phòng tinh anh, nhánh phía Nam gần cuối Lò Năng Lượng. Cẩn thận Mẫu Thể Ma Biến đấy.","Lõi Tiếng Vọng ở phòng tinh anh, nhánh phía Nam gần cuối Lò Năng Lượng. Cẩn thận Mẫu Thể Ma Biến đấy."
+DLG_SQ2_ITEM_01,"Giữa đống mảnh máy vỡ, một khối lõi nhỏ ngân lên một giai điệu quen thuộc.","Giữa đống mảnh máy vỡ, một khối lõi nhỏ ngân lên một giai điệu quen thuộc."
+DLG_SQ2_ITEM_02,Giai điệu này… tôi từng nghe ở Đỉnh Tháp.,Giai điệu này… tôi từng nghe ở Đỉnh Tháp.
+DLG_SQ2_TURNIN_01,Đúng là nó! Nhưng… nó đang hát theo nhịp tim của cậu kìa.,Đúng là nó! Nhưng… nó đang hát theo nhịp tim của cậu kìa.
+DLG_SQ2_TURNIN_02,"Lõi Tiếng Vọng vỡ ra, để lại một Mảnh Hồn. Mảnh Hồn hòa vào ngực {player}.","Lõi Tiếng Vọng vỡ ra, để lại một Mảnh Hồn. Mảnh Hồn hòa vào ngực {player}."
+DLG_SQ2_TURNIN_03,"Ký ức thứ sáu: Celestine trao cho {player} một nửa ánh sáng của mình, nói ""Hãy sống, và nhớ"".","Ký ức thứ sáu: Celestine trao cho {player} một nửa ánh sáng của mình, nói ""Hãy sống, và nhớ""."
+DLG_SQ2_TURNIN_04,Coi như tôi trả công bằng một ký ức vậy. Quầy hàng luôn mở cho cậu.,Coi như tôi trả công bằng một ký ức vậy. Quầy hàng luôn mở cho cậu.
+DLG_BRAM_IDLE_01,Cần Ký Ức hay Hộp Bí Kỹ thì ghé quầy bên cạnh nhé. Giá hữu nghị!,Cần Ký Ức hay Hộp Bí Kỹ thì ghé quầy bên cạnh nhé. Giá hữu nghị!
+DLG_LIO_IDLE_01,Em đang chép lại sơ đồ pháo đài. Anh chị đi đâu cũng cẩn thận nhé!,Em đang chép lại sơ đồ pháo đài. Anh chị đi đâu cũng cẩn thận nhé!
+DLG_BOSS_DIFFICULTY_01,Kẻ địch này đã bị đánh bại trước đây. Chọn mức độ khiêu chiến.,Kẻ địch này đã bị đánh bại trước đây. Chọn mức độ khiêu chiến.
+DLG_BOSS_DIFFICULTY_C1_1,Thường,Thường
+DLG_BOSS_DIFFICULTY_C1_2,"Khó (thưởng nguyên liệu ×2, thêm Lõi Ma Biến)","Khó (thưởng nguyên liệu ×2, thêm Lõi Ma Biến)"
+DLG_BOSS_DIFFICULTY_C1_3,Để sau,Để sau
+SPEAKER_ORWEN,Ông Orwen,Elder Orwen
+SPEAKER_LIO,Lio,Lio
+SPEAKER_BRAM,Bram,Bram
+SPEAKER_DEVOURER,Kẻ Nuốt Mảnh Hồn,Shard Devourer
+EXPRESSION_NEUTRAL,Bình thường,Neutral
+EXPRESSION_SMILE,Mỉm cười,Smiling
+EXPRESSION_WORRIED,Lo lắng,Worried
+EXPRESSION_SURPRISED,Ngạc nhiên,Surprised
+EXPRESSION_SERIOUS,Nghiêm túc,Serious
+EXPRESSION_ANGRY,Giận,Angry
+EXPRESSION_SAD,Buồn,Sad
+EXPRESSION_SMUG,Đắc ý,Smug
+ZONE_HUB,Sảnh Trung Tâm,Central Hall
+QUEST_MAIN_TUTORIAL,Dẹp con Mầm Ma Biến ở Sân Tập,Dẹp con Mầm Ma Biến ở Sân Tập
+QUEST_MAIN_ORWEN1,Gặp ông Orwen ở Sảnh Trung Tâm,Gặp ông Orwen ở Sảnh Trung Tâm
+QUEST_MAIN_LIBRARY,Tới Thư Viện Câm Lặng qua Cổng Dịch Chuyển,Tới Thư Viện Câm Lặng qua Cổng Dịch Chuyển
+QUEST_MAIN_KIRI,Tìm nguồn tiếng nổ trong Thư Viện,Tìm nguồn tiếng nổ trong Thư Viện
+QUEST_MAIN_MAP,Tìm sơ đồ pháo đài ở phòng đọc sâu trong Thư Viện,Tìm sơ đồ pháo đài ở phòng đọc sâu trong Thư Viện
+QUEST_MAIN_BOSS1,Hạ Người Gác Thư Viện,Hạ Người Gác Thư Viện
+QUEST_MAIN_ORWEN2,Về Sảnh báo tin cho ông Orwen,Về Sảnh báo tin cho ông Orwen
+QUEST_MAIN_VAULT,Tới Kho Chứa Băng Giá,Tới Kho Chứa Băng Giá
+QUEST_MAIN_GARREN,Tìm đội cận vệ bị đóng băng,Tìm đội cận vệ bị đóng băng
+QUEST_MAIN_BOSS2,Hạ Cự Thú Kho Chứa,Hạ Cự Thú Kho Chứa
+QUEST_MAIN_ORWEN3,Về Sảnh gặp ông Orwen,Về Sảnh gặp ông Orwen
+QUEST_MAIN_FURNACE,Tới Lò Năng Lượng,Tới Lò Năng Lượng
+QUEST_MAIN_NYX,Lần theo tín hiệu cầu cứu trong ống dẫn,Lần theo tín hiệu cầu cứu trong ống dẫn
+QUEST_MAIN_BOSS3,Khởi động lại lò: hạ Lõi Lò Biến Dạng,Khởi động lại lò: hạ Lõi Lò Biến Dạng
+QUEST_MAIN_ORWEN4,Về Sảnh gặp ông Orwen,Về Sảnh gặp ông Orwen
+QUEST_MAIN_TOWER,Tới Đỉnh Tháp Quan Sát,Tới Đỉnh Tháp Quan Sát
+QUEST_MAIN_SUMMIT,Leo tới phòng nghỉ cuối cùng của Đỉnh Tháp,Leo tới phòng nghỉ cuối cùng của Đỉnh Tháp
+QUEST_MAIN_BOSS4,Đối đầu Kẻ Nuốt Mảnh Hồn,Đối đầu Kẻ Nuốt Mảnh Hồn
+QUEST_MAIN_DONE,Hết Chương 4 – vết nứt đã mở ra vùng đất mới (còn tiếp…),End of Chapter 4 – the rift has opened (to be continued…)
+QUEST_SIDE_SQ1,Nhật Ký Người Gác,The Warden's Diary
+QUEST_SIDE_SQ1_REWARD,Tinh Mệnh 5 của nhân vật chính,Protagonist Eidolon 5
+QUEST_MAIN_SQ1_TALK,Gặp Lio ở Sảnh Trung Tâm,Gặp Lio ở Sảnh Trung Tâm
+QUEST_MAIN_SQ1_FIND,Tìm nhật ký sau bức tường nứt trong Thư Viện (người dẫn đầu: nhân vật chính),Tìm nhật ký sau bức tường nứt trong Thư Viện (người dẫn đầu: nhân vật chính)
+QUEST_MAIN_SQ1_RETURN,Mang nhật ký về cho Lio,Mang nhật ký về cho Lio
+QUEST_SIDE_SQ2,Tiếng Vọng Trong Lò,Echo in the Furnace
+QUEST_SIDE_SQ2_REWARD,Tinh Mệnh 6 của nhân vật chính,Protagonist Eidolon 6
+QUEST_MAIN_SQ2_TALK,Gặp Bram ở Sảnh Trung Tâm,Gặp Bram ở Sảnh Trung Tâm
+QUEST_MAIN_SQ2_FIND,Tìm Lõi Tiếng Vọng ở phòng tinh anh của Lò Năng Lượng,Tìm Lõi Tiếng Vọng ở phòng tinh anh của Lò Năng Lượng
+QUEST_MAIN_SQ2_RETURN,Mang Lõi Tiếng Vọng về cho Bram,Mang Lõi Tiếng Vọng về cho Bram

@@ -1,0 +1,10 @@
+{
+	"id": "p0_orwen_idle",
+	"lines": [
+		{
+			"speaker": "orwen",
+			"expression": "smile",
+			"text": "DLG_P0_ORWEN_IDLE_01"
+		}
+	]
+}

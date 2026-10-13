@@ -1,0 +1,10 @@
+{
+	"id": "lio_idle",
+	"lines": [
+		{
+			"speaker": "lio",
+			"expression": "smile",
+			"text": "DLG_LIO_IDLE_01"
+		}
+	]
+}

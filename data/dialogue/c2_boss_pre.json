@@ -1,0 +1,25 @@
+{
+	"id": "c2_boss_pre",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_BOSS_PRE_01"
+		},
+		{
+			"speaker": "garren",
+			"expression": "angry",
+			"text": "DLG_C2_BOSS_PRE_02"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "surprised",
+			"text": "DLG_C2_BOSS_PRE_03"
+		},
+		{
+			"speaker": "garren",
+			"expression": "serious",
+			"text": "DLG_C2_BOSS_PRE_04"
+		}
+	]
+}

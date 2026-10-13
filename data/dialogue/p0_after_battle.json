@@ -1,0 +1,36 @@
+{
+	"id": "p0_after_battle",
+	"lines": [
+		{
+			"speaker": "mira",
+			"expression": "surprised",
+			"text": "DLG_P0_AFTER_BATTLE_01"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "neutral",
+			"text": "DLG_P0_AFTER_BATTLE_02"
+		},
+		{
+			"speaker": "mira",
+			"expression": "smile",
+			"text": "DLG_P0_AFTER_BATTLE_03"
+		},
+		{
+			"speaker": "mira",
+			"expression": "neutral",
+			"text": "DLG_P0_AFTER_BATTLE_04"
+		},
+		{
+			"speaker": "mira",
+			"expression": "serious",
+			"text": "DLG_P0_AFTER_BATTLE_05",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "prologue_done"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"id": "c4_orwen",
+	"lines": [
+		{
+			"speaker": "orwen",
+			"expression": "serious",
+			"text": "DLG_C4_ORWEN_01"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "neutral",
+			"text": "DLG_C4_ORWEN_02"
+		},
+		{
+			"speaker": "garren",
+			"expression": "serious",
+			"text": "DLG_C4_ORWEN_03"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smile",
+			"text": "DLG_C4_ORWEN_04"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "smile",
+			"text": "DLG_C4_ORWEN_05",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "ch4_briefed"
+				},
+				{
+					"type": "set_flag",
+					"flag": "zone_tower_open"
+				}
+			]
+		}
+	]
+}

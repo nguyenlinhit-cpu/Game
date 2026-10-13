@@ -1,7 +1,7 @@
 class_name RestPoint
 extends Interactable
-## Điểm nghỉ trong phòng nghỉ: hồi máu cả đội, lưu game, dịch chuyển nhanh.
-## Hồi đầy máu cả đội (kể cả người đã ngã) và Điểm Bí Kỹ. TODO Phase 14: tự lưu. TODO Phase 12: dịch chuyển nhanh.
+## Điểm nghỉ trong phòng nghỉ: hồi đầy máu cả đội (kể cả người đã ngã) và Điểm Bí Kỹ, mở phòng nghỉ này cho
+## dịch chuyển nhanh, tự lưu, rồi mở bảng dịch chuyển nhanh (OverworldMap.open_travel_menu).
 
 const CRYSTAL_COLOR := Color("f2d58a")
 
@@ -18,8 +18,16 @@ func _process(delta: float) -> void:
 func _on_interact(_by: Node) -> void:
 	GameState.change_technique_points(GameState.MAX_TECHNIQUE_POINTS)
 	GameState.heal_team(1.0)
-	print("[RestPoint] %s: lưu game – TODO Phase 14" % rest_point_id)
+	var map := get_tree().current_scene as OverworldMap
+	var room := Room.find_room_of(self)
+	if map and room:
+		GameState.unlock_fast_travel(map.zone_of(room), room.room_id)
+		GameState.set_map_player(map.scene_file_path, map.player.global_position, map.player.facing)
+	SaveManager.save_game()
 	EventBus.toast_requested.emit(tr("TOAST_RESTED"))
+	# Map thử (không thuộc pháo đài) không có nơi để dịch chuyển.
+	if map and StoryManager.get_scene_zone(map.scene_file_path) != &"":
+		map.open_travel_menu()
 
 
 func _draw() -> void:

@@ -1,0 +1,10 @@
+{
+	"id": "sq1_wait",
+	"lines": [
+		{
+			"speaker": "lio",
+			"expression": "neutral",
+			"text": "DLG_SQ1_WAIT_01"
+		}
+	]
+}

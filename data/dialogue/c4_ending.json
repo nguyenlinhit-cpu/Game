@@ -1,0 +1,76 @@
+{
+	"id": "c4_ending",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C4_ENDING_01",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "soul_shard_4"
+				}
+			]
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C4_ENDING_02"
+		},
+		{
+			"speaker": "devourer",
+			"expression": "sad",
+			"text": "DLG_C4_ENDING_03"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "sad",
+			"text": "DLG_C4_ENDING_04"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C4_ENDING_05"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "surprised",
+			"text": "DLG_C4_ENDING_06"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "serious",
+			"text": "DLG_C4_ENDING_07"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smile",
+			"text": "DLG_C4_ENDING_08"
+		},
+		{
+			"speaker": "garren",
+			"expression": "smile",
+			"text": "DLG_C4_ENDING_09"
+		},
+		{
+			"speaker": "mira",
+			"expression": "smile",
+			"text": "DLG_C4_ENDING_10"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C4_ENDING_11",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "chapter_4_complete"
+				},
+				{
+					"type": "set_flag",
+					"flag": "story_complete"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,54 @@
+{
+	"id": "c4_boss_pre",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C4_BOSS_PRE_01"
+		},
+		{
+			"speaker": "devourer",
+			"expression": "smug",
+			"text": "DLG_C4_BOSS_PRE_02"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "angry",
+			"text": "DLG_C4_BOSS_PRE_03"
+		},
+		{
+			"speaker": "devourer",
+			"expression": "serious",
+			"text": "DLG_C4_BOSS_PRE_04",
+			"choices": [
+				{
+					"text": "DLG_C4_BOSS_PRE_C4_1",
+					"goto": "no"
+				},
+				{
+					"text": "DLG_C4_BOSS_PRE_C4_2",
+					"goto": "wrong"
+				}
+			]
+		},
+		{
+			"speaker": "devourer",
+			"expression": "angry",
+			"text": "DLG_C4_BOSS_PRE_05",
+			"label": "no",
+			"goto": "end"
+		},
+		{
+			"speaker": "devourer",
+			"expression": "sad",
+			"text": "DLG_C4_BOSS_PRE_06",
+			"label": "wrong"
+		},
+		{
+			"speaker": "garren",
+			"expression": "serious",
+			"text": "DLG_C4_BOSS_PRE_07",
+			"label": "end"
+		}
+	]
+}

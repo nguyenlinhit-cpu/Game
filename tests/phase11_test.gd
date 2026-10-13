@@ -559,8 +559,8 @@ func _test_screen() -> void:
 	screen.get_pull_button(1).pressed.emit()
 	await _frames(2)
 	_check(screen.confirm_box == null and screen.overlay == null, "Thiếu cả vé lẫn Lệ Tinh: không quay")
-	# Cửa hàng.
-	GameState.add_item(&"stardust", 40)
+	# Cửa hàng (các lượt quay trước có thể ra nhân vật trùng → đã có Bụi Sao, nên đặt lại đúng 40).
+	GameState.add_item(&"stardust", 40 - GameState.get_item_count(&"stardust"))
 	screen.show_side(GachaScreen.Pane.SHOP)
 	var buy := screen.get_shop_button(&"wish_ticket_standard")
 	_check(buy != null and not buy.disabled, "Cửa hàng: nút mua Vé Thường")

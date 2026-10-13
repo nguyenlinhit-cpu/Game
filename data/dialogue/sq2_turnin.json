@@ -1,0 +1,35 @@
+{
+	"id": "sq2_turnin",
+	"lines": [
+		{
+			"speaker": "bram",
+			"expression": "surprised",
+			"text": "DLG_SQ2_TURNIN_01"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_SQ2_TURNIN_02"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_SQ2_TURNIN_03",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "soul_shard_6"
+				},
+				{
+					"type": "set_flag",
+					"flag": "sq2_done"
+				}
+			]
+		},
+		{
+			"speaker": "bram",
+			"expression": "smile",
+			"text": "DLG_SQ2_TURNIN_04"
+		}
+	]
+}

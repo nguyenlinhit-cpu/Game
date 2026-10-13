@@ -25,6 +25,7 @@ func _run() -> void:
 	SaveManager.save_dir = TEST_SAVE_DIR
 	_clear_test_saves()
 
+	get_tree().paused = false
 	SceneRouter.go_to(DataPaths.TITLE_SCENE, {}, 0.01)
 	await SceneRouter.transition_finished
 	var title := get_tree().current_scene
@@ -60,7 +61,10 @@ func _run() -> void:
 	select.get_node("%ConfirmButton").pressed.emit()
 	await SceneRouter.transition_finished
 	var room := get_tree().current_scene
-	_check(room.scene_file_path == DataPaths.TEST_MAP_SCENE, "Xác nhận phải vào map thử")
+	_check(room.scene_file_path == DataPaths.HUB_SCENE, "Xác nhận phải vào Sảnh Trung Tâm (Phase 12)")
+	# Cảnh tỉnh dậy tự mở ở Sảnh: bỏ qua cho test chạy tiếp.
+	await get_tree().process_frame
+	StoryManager.box.skip()
 	var player: Player = room.get_node("%Player")
 	_check(player.get_display_name() == "Linh", "Tên trên đầu phải là Linh")
 	_check(player.get_skin_id() == &"female", "Skin phải là female")
@@ -73,6 +77,7 @@ func _run() -> void:
 	_check(GameState.player_name == "Linh" and GameState.player_gender == &"female",
 			"Save giữ đúng tên và giới tính")
 
+	get_tree().paused = false
 	SceneRouter.go_to(DataPaths.TITLE_SCENE, {}, 0.01)
 	await SceneRouter.transition_finished
 	_check(not get_tree().current_scene.get_node("%ContinueButton").disabled,

@@ -1,0 +1,77 @@
+{
+	"id": "c1_boss_post",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_POST_01"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "surprised",
+			"text": "DLG_C1_BOSS_POST_02"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_POST_03",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "soul_shard_1"
+				}
+			]
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_POST_04"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "serious",
+			"text": "DLG_C1_BOSS_POST_05"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "surprised",
+			"text": "DLG_C1_BOSS_POST_06"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_POST_07"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "serious",
+			"text": "DLG_C1_BOSS_POST_08"
+		},
+		{
+			"speaker": "celestine",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_POST_09"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_BOSS_POST_10"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "surprised",
+			"text": "DLG_C1_BOSS_POST_11"
+		},
+		{
+			"speaker": "mira",
+			"expression": "serious",
+			"text": "DLG_C1_BOSS_POST_12",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "chapter_1_complete"
+				}
+			]
+		}
+	]
+}

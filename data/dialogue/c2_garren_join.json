@@ -1,0 +1,82 @@
+{
+	"id": "c2_garren_join",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_GARREN_JOIN_01"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "serious",
+			"text": "DLG_C2_GARREN_JOIN_02"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_GARREN_JOIN_03"
+		},
+		{
+			"speaker": "garren",
+			"expression": "angry",
+			"text": "DLG_C2_GARREN_JOIN_04"
+		},
+		{
+			"speaker": "mira",
+			"expression": "smile",
+			"text": "DLG_C2_GARREN_JOIN_05"
+		},
+		{
+			"speaker": "garren",
+			"expression": "serious",
+			"text": "DLG_C2_GARREN_JOIN_06"
+		},
+		{
+			"speaker": "garren",
+			"expression": "neutral",
+			"text": "DLG_C2_GARREN_JOIN_07",
+			"choices": [
+				{
+					"text": "DLG_C2_GARREN_JOIN_C7_1",
+					"goto": "celes"
+				},
+				{
+					"text": "DLG_C2_GARREN_JOIN_C7_2",
+					"goto": "guards"
+				}
+			]
+		},
+		{
+			"speaker": "garren",
+			"expression": "sad",
+			"text": "DLG_C2_GARREN_JOIN_08",
+			"label": "celes"
+		},
+		{
+			"speaker": "garren",
+			"expression": "serious",
+			"text": "DLG_C2_GARREN_JOIN_09",
+			"label": "guards"
+		},
+		{
+			"speaker": "garren",
+			"expression": "neutral",
+			"text": "DLG_C2_GARREN_JOIN_10",
+			"events": [
+				{
+					"type": "give_character",
+					"id": "garren"
+				},
+				{
+					"type": "set_flag",
+					"flag": "garren_joined"
+				}
+			]
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_GARREN_JOIN_11"
+		}
+	]
+}

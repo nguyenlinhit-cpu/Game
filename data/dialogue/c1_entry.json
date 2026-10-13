@@ -1,0 +1,36 @@
+{
+	"id": "c1_entry",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_ENTRY_01"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_C1_ENTRY_02"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "serious",
+			"text": "DLG_C1_ENTRY_03"
+		},
+		{
+			"speaker": "mira",
+			"expression": "surprised",
+			"text": "DLG_C1_ENTRY_04"
+		},
+		{
+			"speaker": "mira",
+			"expression": "neutral",
+			"text": "DLG_C1_ENTRY_05",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "library_entered"
+				}
+			]
+		}
+	]
+}

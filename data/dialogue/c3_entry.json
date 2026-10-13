@@ -1,0 +1,25 @@
+{
+	"id": "c3_entry",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_ENTRY_01"
+		},
+		{
+			"speaker": "garren",
+			"expression": "serious",
+			"text": "DLG_C3_ENTRY_02"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "neutral",
+			"text": "DLG_C3_ENTRY_03"
+		},
+		{
+			"speaker": "mira",
+			"expression": "surprised",
+			"text": "DLG_C3_ENTRY_04"
+		}
+	]
+}

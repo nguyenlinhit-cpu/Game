@@ -1,0 +1,42 @@
+{
+	"id": "boss_difficulty",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_BOSS_DIFFICULTY_01",
+			"choices": [
+				{
+					"text": "DLG_BOSS_DIFFICULTY_C1_1",
+					"end": true,
+					"events": [
+						{
+							"type": "result",
+							"value": "normal"
+						}
+					]
+				},
+				{
+					"text": "DLG_BOSS_DIFFICULTY_C1_2",
+					"end": true,
+					"events": [
+						{
+							"type": "result",
+							"value": "hard"
+						}
+					]
+				},
+				{
+					"text": "DLG_BOSS_DIFFICULTY_C1_3",
+					"end": true,
+					"events": [
+						{
+							"type": "result",
+							"value": "cancel"
+						}
+					]
+				}
+			]
+		}
+	]
+}

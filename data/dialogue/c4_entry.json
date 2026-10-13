@@ -1,0 +1,25 @@
+{
+	"id": "c4_entry",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C4_ENTRY_01"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "serious",
+			"text": "DLG_C4_ENTRY_02"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_C4_ENTRY_03"
+		},
+		{
+			"speaker": "garren",
+			"expression": "neutral",
+			"text": "DLG_C4_ENTRY_04"
+		}
+	]
+}

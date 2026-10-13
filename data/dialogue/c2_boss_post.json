@@ -1,0 +1,52 @@
+{
+	"id": "c2_boss_post",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_BOSS_POST_01"
+		},
+		{
+			"speaker": "garren",
+			"expression": "smile",
+			"text": "DLG_C2_BOSS_POST_02"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_BOSS_POST_03"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_BOSS_POST_04",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "soul_shard_2"
+				}
+			]
+		},
+		{
+			"speaker": "traveler",
+			"expression": "serious",
+			"text": "DLG_C2_BOSS_POST_05"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_C2_BOSS_POST_06"
+		},
+		{
+			"speaker": "garren",
+			"expression": "neutral",
+			"text": "DLG_C2_BOSS_POST_07",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "chapter_2_complete"
+				}
+			]
+		}
+	]
+}

@@ -827,11 +827,14 @@ func enter_boss_phase(unit: BattleUnit, index: int) -> void:
 
 
 func _wait(seconds: float) -> void:
+	# Màn trận đã bị gỡ (thắng ngay bằng phím debug rồi rời trận): dừng vòng chờ.
+	if not is_inside_tree():
+		return
 	if instant:
 		await get_tree().process_frame
 		return
 	_skip_wait = false
 	var left := seconds
-	while left > 0.0 and not _skip_wait:
+	while left > 0.0 and not _skip_wait and is_inside_tree():
 		await get_tree().process_frame
 		left -= get_process_delta_time()

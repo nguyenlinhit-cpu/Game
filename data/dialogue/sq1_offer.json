@@ -1,0 +1,31 @@
+{
+	"id": "sq1_offer",
+	"lines": [
+		{
+			"speaker": "lio",
+			"expression": "worried",
+			"text": "DLG_SQ1_OFFER_01"
+		},
+		{
+			"speaker": "lio",
+			"expression": "sad",
+			"text": "DLG_SQ1_OFFER_02"
+		},
+		{
+			"speaker": "lio",
+			"expression": "neutral",
+			"text": "DLG_SQ1_OFFER_03"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "neutral",
+			"text": "DLG_SQ1_OFFER_04",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "sq1_started"
+				}
+			]
+		}
+	]
+}

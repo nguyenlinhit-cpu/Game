@@ -58,6 +58,10 @@ var pending_battle: Dictionary = {}
 ## Rơi đồ (Phase 10): { "first_clears": [id trận đã hạ lần đầu], "boss_claims": { id trận boss: số lần nhận đủ
 ## thưởng }, "boss_claims_day": kỳ ngày của boss_claims }.
 var loot_state: Dictionary = _empty_loot_state()
+## Phòng nghỉ đã mở để dịch chuyển nhanh (Phase 12): "<khu>/<room_id>".
+var fast_travel: Array[String] = []
+## Cửa hàng Xu ở Sảnh: { "day": kỳ ngày, "bought": { item_id: số lần } }.
+var shop_state: Dictionary = {}
 
 
 
@@ -91,6 +95,8 @@ func reset_new_game() -> void:
 	map_states.clear()
 	pending_battle.clear()
 	loot_state = _empty_loot_state()
+	fast_travel.clear()
+	shop_state.clear()
 	QuestManager.reset()
 	GachaManager.reset()
 
@@ -216,6 +222,15 @@ func get_team_level() -> int:
 
 
 # --- Nhân vật sở hữu ---
+
+## Mở dịch chuyển nhanh tới phòng nghỉ `room_id` của khu `zone`.
+func unlock_fast_travel(zone: StringName, room_id: StringName) -> bool:
+	var key := "%s/%s" % [zone, room_id]
+	if fast_travel.has(key):
+		return false
+	fast_travel.append(key)
+	return true
+
 
 ## Nhận nhân vật (gacha, cốt truyện). Đã có thì +1 Tinh Mệnh (tối đa 6; quá thì `overflow` – GachaManager đổi Bụi Sao).
 ## Trả về { "new": bool, "eidolon": int, "overflow": bool }.
@@ -510,6 +525,8 @@ func to_dict() -> Dictionary:
 		"character_progress": character_progress.duplicate(true),
 		"hp_ratios": hp_ratios.duplicate(),
 		"loot_state": loot_state.duplicate(true),
+		"fast_travel": fast_travel.duplicate(),
+		"shop_state": shop_state.duplicate(true),
 	}
 
 
@@ -565,4 +582,11 @@ func from_dict(data: Dictionary) -> void:
 	loot_state = _empty_loot_state()
 	if loot is Dictionary:
 		loot_state.merge(loot.duplicate(true), true)
+	fast_travel.clear()
+	var travel: Variant = data.get("fast_travel", [])
+	if travel is Array:
+		for key: Variant in travel:
+			fast_travel.append(str(key))
+	var shop: Variant = data.get("shop_state", {})
+	shop_state = shop.duplicate(true) if shop is Dictionary else {}
 	pending_battle.clear()

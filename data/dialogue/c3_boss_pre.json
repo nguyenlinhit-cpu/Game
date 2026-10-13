@@ -1,0 +1,25 @@
+{
+	"id": "c3_boss_pre",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_BOSS_PRE_01"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "serious",
+			"text": "DLG_C3_BOSS_PRE_02"
+		},
+		{
+			"speaker": "garren",
+			"expression": "neutral",
+			"text": "DLG_C3_BOSS_PRE_03"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "angry",
+			"text": "DLG_C3_BOSS_PRE_04"
+		}
+	]
+}

@@ -33,7 +33,7 @@ func _on_continue_pressed() -> void:
 		return
 	var target := GameState.current_map_scene
 	if target.is_empty() or not ResourceLoader.exists(target):
-		target = DataPaths.TEST_MAP_SCENE
+		target = DataPaths.HUB_SCENE
 	SceneRouter.go_to(target)
 
 

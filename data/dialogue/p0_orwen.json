@@ -1,0 +1,72 @@
+{
+	"id": "p0_orwen",
+	"lines": [
+		{
+			"speaker": "orwen",
+			"expression": "serious",
+			"text": "DLG_P0_ORWEN_01"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "neutral",
+			"text": "DLG_P0_ORWEN_02"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "sad",
+			"text": "DLG_P0_ORWEN_03"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "serious",
+			"text": "DLG_P0_ORWEN_04",
+			"choices": [
+				{
+					"text": "DLG_P0_ORWEN_C4_1",
+					"goto": "start"
+				},
+				{
+					"text": "DLG_P0_ORWEN_C4_2",
+					"goto": "why"
+				}
+			]
+		},
+		{
+			"speaker": "orwen",
+			"expression": "smile",
+			"text": "DLG_P0_ORWEN_05",
+			"label": "why"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "neutral",
+			"text": "DLG_P0_ORWEN_06",
+			"label": "start"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "serious",
+			"text": "DLG_P0_ORWEN_07"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_P0_ORWEN_08"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "neutral",
+			"text": "DLG_P0_ORWEN_09",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "ch1_briefed"
+				},
+				{
+					"type": "set_flag",
+					"flag": "zone_library_open"
+				}
+			]
+		}
+	]
+}

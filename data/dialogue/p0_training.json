@@ -1,0 +1,26 @@
+{
+	"id": "p0_training",
+	"lines": [
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_P0_TRAINING_01"
+		},
+		{
+			"speaker": "mira",
+			"expression": "serious",
+			"text": "DLG_P0_TRAINING_02"
+		},
+		{
+			"speaker": "mira",
+			"expression": "neutral",
+			"text": "DLG_P0_TRAINING_03",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "training_seen"
+				}
+			]
+		}
+	]
+}

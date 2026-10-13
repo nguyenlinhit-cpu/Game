@@ -1,0 +1,25 @@
+{
+	"id": "c2_entry",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C2_ENTRY_01"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_C2_ENTRY_02"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smile",
+			"text": "DLG_C2_ENTRY_03"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "serious",
+			"text": "DLG_C2_ENTRY_04"
+		}
+	]
+}

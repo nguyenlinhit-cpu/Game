@@ -1,0 +1,89 @@
+{
+	"id": "p0_wake",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_P0_WAKE_01"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "surprised",
+			"text": "DLG_P0_WAKE_02"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_P0_WAKE_03"
+		},
+		{
+			"speaker": "mira",
+			"expression": "smile",
+			"text": "DLG_P0_WAKE_04",
+			"choices": [
+				{
+					"text": "DLG_P0_WAKE_C4_1",
+					"goto": "where"
+				},
+				{
+					"text": "DLG_P0_WAKE_C4_2",
+					"goto": "who"
+				}
+			]
+		},
+		{
+			"speaker": "mira",
+			"expression": "neutral",
+			"text": "DLG_P0_WAKE_05",
+			"label": "where",
+			"goto": "after"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_P0_WAKE_06",
+			"label": "who"
+		},
+		{
+			"speaker": "mira",
+			"expression": "serious",
+			"text": "DLG_P0_WAKE_07",
+			"label": "after"
+		},
+		{
+			"speaker": "mira",
+			"expression": "surprised",
+			"text": "DLG_P0_WAKE_08"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "neutral",
+			"text": "DLG_P0_WAKE_09"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_P0_WAKE_10"
+		},
+		{
+			"speaker": "mira",
+			"expression": "smile",
+			"text": "DLG_P0_WAKE_11",
+			"events": [
+				{
+					"type": "give_character",
+					"id": "mira"
+				},
+				{
+					"type": "set_flag",
+					"flag": "prologue_awake"
+				}
+			]
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_P0_WAKE_12"
+		}
+	]
+}

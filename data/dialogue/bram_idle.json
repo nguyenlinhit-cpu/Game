@@ -1,0 +1,10 @@
+{
+	"id": "bram_idle",
+	"lines": [
+		{
+			"speaker": "bram",
+			"expression": "smile",
+			"text": "DLG_BRAM_IDLE_01"
+		}
+	]
+}

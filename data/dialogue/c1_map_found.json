@@ -1,0 +1,36 @@
+{
+	"id": "c1_map_found",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_MAP_FOUND_01"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "surprised",
+			"text": "DLG_C1_MAP_FOUND_02"
+		},
+		{
+			"speaker": "mira",
+			"expression": "worried",
+			"text": "DLG_C1_MAP_FOUND_03"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "serious",
+			"text": "DLG_C1_MAP_FOUND_04"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smile",
+			"text": "DLG_C1_MAP_FOUND_05",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "library_map_found"
+				}
+			]
+		}
+	]
+}

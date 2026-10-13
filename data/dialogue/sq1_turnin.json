@@ -1,0 +1,35 @@
+{
+	"id": "sq1_turnin",
+	"lines": [
+		{
+			"speaker": "lio",
+			"expression": "sad",
+			"text": "DLG_SQ1_TURNIN_01"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_SQ1_TURNIN_02"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_SQ1_TURNIN_03",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "soul_shard_5"
+				},
+				{
+					"type": "set_flag",
+					"flag": "sq1_done"
+				}
+			]
+		},
+		{
+			"speaker": "lio",
+			"expression": "smile",
+			"text": "DLG_SQ1_TURNIN_04"
+		}
+	]
+}

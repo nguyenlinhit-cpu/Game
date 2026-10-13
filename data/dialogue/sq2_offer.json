@@ -1,0 +1,26 @@
+{
+	"id": "sq2_offer",
+	"lines": [
+		{
+			"speaker": "bram",
+			"expression": "serious",
+			"text": "DLG_SQ2_OFFER_01"
+		},
+		{
+			"speaker": "bram",
+			"expression": "neutral",
+			"text": "DLG_SQ2_OFFER_02"
+		},
+		{
+			"speaker": "bram",
+			"expression": "smile",
+			"text": "DLG_SQ2_OFFER_03",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "sq2_started"
+				}
+			]
+		}
+	]
+}

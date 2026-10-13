@@ -88,7 +88,7 @@ func _confirm() -> void:
 	if SceneRouter.is_busy():
 		return
 	GameState.set_player_identity(_gender, _name_edit.text)
-	GameState.current_map_scene = DataPaths.TEST_MAP_SCENE
+	StoryManager.begin_new_story()
 	SaveManager.save_game(SaveManager.AUTOSAVE_SLOT)
 	EventBus.game_started.emit()
-	SceneRouter.go_to(DataPaths.TEST_MAP_SCENE)
+	SceneRouter.go_to(DataPaths.HUB_SCENE)

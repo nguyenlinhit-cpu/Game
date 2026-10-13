@@ -91,8 +91,9 @@ func close() -> void:
 var _game_menu: GameMenu
 
 
-## Mở menu Nhân vật / Đội hình / Túi đồ (game vẫn tạm dừng).
-func open_game_menu(page: int = GameMenu.Page.CHARACTERS) -> GameMenu:
+## Mở menu Nhân vật / Đội hình / Túi đồ (game vẫn tạm dừng). `direct` = mở thẳng từ quầy trên map:
+## đóng menu thì về luôn map thay vì về menu tạm dừng.
+func open_game_menu(page: int = GameMenu.Page.CHARACTERS, direct: bool = false) -> GameMenu:
 	if not visible:
 		open()
 	_menu.hide()
@@ -104,6 +105,8 @@ func open_game_menu(page: int = GameMenu.Page.CHARACTERS) -> GameMenu:
 		_game_menu = null
 		if changed:
 			_reload_map()
+		elif direct:
+			close()
 		else:
 			_menu.show())
 	return _game_menu
@@ -124,6 +127,12 @@ func _reload_map() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if _game_menu:
+		return
+	# Bảng phủ của HUD (quầy hàng, dịch chuyển) đang mở: Esc đóng bảng đó.
+	var hud := get_parent() as OverworldHud
+	if hud and hud.panel_overlay and (event.is_action_pressed("menu") or event.is_action_pressed("ui_cancel")):
+		get_viewport().set_input_as_handled()
+		hud.close_panel()
 		return
 	if not event.is_action_pressed("menu"):
 		return

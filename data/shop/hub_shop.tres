@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ShopData" format=3]
+
+[ext_resource type="Script" path="res://systems/resources/shop_data.gd" id="1_shop"]
+
+[resource]
+script = ExtResource("1_shop")
+currency_item = &"aether_coin"
+entries = Array[Dictionary]([{"item": "soul_memory_1", "count": 1, "price": 300, "daily_limit": 20}, {"item": "soul_memory_2", "count": 1, "price": 1500, "daily_limit": 5}, {"item": "technique_box", "count": 1, "price": 600, "daily_limit": 3}])

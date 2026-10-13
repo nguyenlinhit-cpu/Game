@@ -1,7 +1,8 @@
 class_name OverworldHud
 extends CanvasLayer
 ## HUD ngoài map: hướng dẫn + FPS + cấp đội, minimap, lời nhắc tương tác, thông báo nhỏ,
-## bảng phần thưởng tạm, điều khiển cảm ứng, menu tạm dừng.
+## bảng phần thưởng tạm, điều khiển cảm ứng, menu tạm dừng, nhiệm vụ chính / phụ ở góc trái (Phase 12),
+## bảng phủ (quầy hàng, dịch chuyển) tạm dừng game.
 
 const TOAST_SECONDS: float = 2.2
 const FPS_REFRESH_SEC: float = 0.25
@@ -13,6 +14,10 @@ var _fps_timer: float = 0.0
 var _reward_tween: Tween
 ## Nhắc "có thưởng nhiệm vụ chưa nhận" dưới bản đồ nhỏ.
 var quest_badge: Label
+## Nhiệm vụ chính / phụ đang làm (góc trái).
+var quest_tracker: RichTextLabel
+## Bảng phủ đang mở (quầy hàng, dịch chuyển).
+var panel_overlay: Control
 
 @onready var _info_label: Label = %InfoLabel
 @onready var _minimap: Minimap = %Minimap
@@ -41,6 +46,17 @@ func _ready() -> void:
 	move_child(quest_badge, get_node("PauseMenu").get_index())
 	QuestManager.changed.connect(_refresh_quest_badge)
 	_refresh_quest_badge()
+	quest_tracker = UiKit.make_rich(24)
+	quest_tracker.position = Vector2(32.0, 140.0)
+	quest_tracker.custom_minimum_size = Vector2(760.0, 0.0)
+	quest_tracker.size = Vector2(760.0, 0.0)
+	quest_tracker.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	quest_tracker.add_theme_color_override("font_outline_color", Color.BLACK)
+	quest_tracker.add_theme_constant_override("outline_size", 6)
+	add_child(quest_tracker)
+	move_child(quest_tracker, get_node("PauseMenu").get_index())
+	StoryManager.story_changed.connect(refresh_quest_tracker)
+	refresh_quest_tracker()
 	EventBus.reward_popup_requested.connect(func(title: String, lines: Array) -> void:
 		var text_lines: Array[String] = []
 		text_lines.assign(lines)
@@ -78,6 +94,78 @@ func show_toast(text: String) -> void:
 
 func _refresh_quest_badge() -> void:
 	quest_badge.visible = QuestManager.has_any_claimable()
+
+
+## Dòng nhiệm vụ: chính (vàng) + phụ (xanh); ghi tên khu nếu mục tiêu ở khu khác. Map thử thì ẩn.
+func refresh_quest_tracker() -> void:
+	var map := get_parent() as OverworldMap
+	var zone := StoryManager.get_scene_zone(map.scene_file_path) if map else &""
+	if zone == &"":
+		quest_tracker.text = ""
+		return
+	var lines: Array[String] = []
+	var main := StoryManager.get_main_step()
+	if main.is_empty():
+		lines.append("[color=#%s]◆ %s[/color]" % [UiKit.GOLD.to_html(false), tr(str(StoryManager.data.get("main_quest_done", "")))])
+	else:
+		lines.append("[color=#%s]◆ %s[/color]%s" % [UiKit.GOLD.to_html(false), tr(str(main["title"])), _where(main, zone)])
+	for entry in StoryManager.get_side_steps():
+		var step: Dictionary = entry["step"]
+		lines.append("[color=#8fd3ff]◇ %s: %s[/color]%s" % [tr(str(entry["quest"]["title"])), tr(str(step["title"])),
+				_where(step, zone)])
+	quest_tracker.text = "\n".join(lines)
+
+
+func _where(step: Dictionary, zone: StringName) -> String:
+	var target_zone := StringName(str(step.get("target", {}).get("zone", "")))
+	if target_zone == &"" or target_zone == zone:
+		return ""
+	return "  [color=#aaaabb](%s)[/color]" % StoryManager.zone_name(target_zone)
+
+
+## Bảng phủ giữa màn hình (tạm dừng game) chứa `content`; Esc hoặc nút Đóng để đóng. Trả về bảng phủ.
+func open_panel(title: String, content: Control) -> Control:
+	close_panel()
+	var overlay := Control.new()
+	overlay.process_mode = Node.PROCESS_MODE_ALWAYS
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	var dim := ColorRect.new()
+	dim.color = Color(0, 0, 0, 0.6)
+	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.add_child(dim)
+	var panel := UiKit.make_panel()
+	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
+	panel.custom_minimum_size = Vector2(900.0, 0.0)
+	overlay.add_child(panel)
+	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 18)
+	panel.add_child(box)
+	var header := HBoxContainer.new()
+	box.add_child(header)
+	var label := UiKit.make_label(title, 34, UiKit.GOLD)
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	header.add_child(label)
+	header.add_child(UiKit.make_button(tr("UI_CLOSE"), close_panel, Vector2(160.0, 56.0)))
+	box.add_child(content)
+	add_child(overlay)
+	move_child(overlay, get_node("PauseMenu").get_index())
+	panel_overlay = overlay
+	get_tree().paused = true
+	return overlay
+
+
+func close_panel() -> void:
+	if panel_overlay:
+		panel_overlay.queue_free()
+		panel_overlay = null
+		get_tree().paused = false
+
+
+func open_game_menu(page: int) -> GameMenu:
+	return (get_node("PauseMenu") as PauseMenu).open_game_menu(page, true)
 
 
 ## Bảng phần thưởng nhỏ giữa màn hình, tự ẩn.

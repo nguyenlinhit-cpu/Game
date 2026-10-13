@@ -7,6 +7,9 @@ extends Node2D
 ## và chạy Bí Kỹ của người dẫn đầu (tốn Điểm Bí Kỹ dùng chung).
 ## Phase 10: thưởng thắng ngay theo bảng rơi đồ, hồi quái (thường + boss khi rời khu, tinh anh mỗi ngày),
 ## báo % khám phá từng khu cho nhiệm vụ.
+## Phase 12: vật có StoryGate ẩn/hiện theo cờ cốt truyện, xuất hiện ở phòng chỉ định (payload "spawn_room" khi
+## dịch chuyển), quầy dịch vụ ở Sảnh, Cổng Dịch Chuyển / dịch chuyển nhanh, chọn mức Khó khi đánh lại boss,
+## mũi tên chỉ đường tới mục tiêu nhiệm vụ.
 
 const CORRIDOR_HALF_WIDTH: int = 1
 ## Bất tử ngắn khi vừa từ trận quay về, để quái gần đó không kéo vào trận ngay.
@@ -19,6 +22,7 @@ const DEBUG_TEAM_LEVEL_STEP: int = 5
 @export var zone: StringName = &""
 
 var _encounter_started: bool = false
+var quest_arrow: QuestArrow
 ## Bí Kỹ hút vật phẩm: còn bao nhiêu giây, bán kính (px).
 var _magnet_left: float = 0.0
 var _magnet_radius: float = 0.0
@@ -32,7 +36,12 @@ var _magnet_radius: float = 0.0
 
 
 func _ready() -> void:
+	var previous_scene := GameState.current_map_scene
 	GameState.current_map_scene = scene_file_path
+	# Vào map từ map khác (không phải từ trận về, không phải tải save): coi như vừa vào khu → quái thường + boss hồi.
+	if previous_scene != scene_file_path and previous_scene != "" and zone != &"" \
+			and not SceneRouter.payload.has("battle_result"):
+		GameState.respawn_zone(scene_file_path, zone)
 	var rooms := _collect_rooms()
 	room_manager.setup(rooms, _connect_rooms(rooms))
 	room_manager.current_room_changed.connect(_on_current_room_changed)
@@ -43,6 +52,13 @@ func _ready() -> void:
 	player.technique_requested.connect(use_technique)
 	player.obstacle_hit.connect(_on_obstacle_hit)
 	_show_battle_result()
+	quest_arrow = QuestArrow.new()
+	quest_arrow.map = self
+	add_child(quest_arrow)
+	StoryManager.story_changed.connect(_apply_story_gates)
+	var story_zone := StoryManager.get_scene_zone(scene_file_path)
+	if story_zone != &"":
+		StoryManager.map_ready.call_deferred(story_zone)
 
 
 func _physics_process(delta: float) -> void:
@@ -70,7 +86,7 @@ func get_state() -> Dictionary:
 # --- Vào trận ---
 
 func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening) -> void:
-	if _encounter_started or SceneRouter.is_busy():
+	if _encounter_started or SceneRouter.is_busy() or StoryManager.is_playing():
 		return
 	# Bẫy Dây: nhóm quái bị bẫy luôn vào trận với Ưu Thế.
 	if opening != BattleTypes.Opening.ADVANTAGE and _has_forced_advantage(enemy):
@@ -78,6 +94,21 @@ func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening
 	if opening == BattleTypes.Opening.ADVANTAGE and enemy.is_trivial_for(GameState.get_team_level()):
 		_instant_win(enemy)
 		return
+	var hard := false
+	if enemy.encounter and enemy.encounter.is_boss() and GameState.has_first_clear(String(enemy.encounter.id)):
+		# Đánh lại boss: hỏi mức Thường / Khó.
+		_encounter_started = true
+		var choice := await StoryManager.play("boss_difficulty")
+		_encounter_started = false
+		if choice != "normal" and choice != "hard":
+			player.grant_invincibility(2.0)
+			enemy.daze(2.0)
+			return
+		hard = choice == "hard"
+	_start_battle(enemy, opening, hard)
+
+
+func _start_battle(enemy: OverworldEnemy, opening: BattleTypes.Opening, hard: bool) -> void:
 	_encounter_started = true
 	enemy.set_triggered(true)
 	player.input_enabled = false
@@ -90,7 +121,7 @@ func _on_encounter_triggered(enemy: OverworldEnemy, opening: BattleTypes.Opening
 		if not techniques.has(mark):
 			techniques.append(mark)
 	SceneRouter.go_to(DataPaths.BATTLE_SCENE, {"encounter": enemy.encounter, "opening": opening,
-			"opener_element": opener_element, "techniques": techniques})
+			"opener_element": opener_element, "techniques": techniques, "hard_mode": hard})
 
 
 ## Quái yếu hơn đội ≥10 cấp bị chém trúng: thắng luôn, không vào trận.
@@ -99,6 +130,9 @@ func _instant_win(enemy: OverworldEnemy) -> void:
 	var result := Loot.claim_encounter(enemy.encounter)
 	hud.show_reward_popup(tr("REWARD_INSTANT_TITLE"), Loot.describe(result["items"]))
 	EventBus.battle_won.emit(enemy.encounter)
+	# Cảnh cốt truyện sau trận (nếu có) chạy luôn vì không nạp lại map.
+	for dialogue_id: Variant in StoryManager.pop_pending():
+		StoryManager.play(str(dialogue_id))
 
 
 func _show_battle_result() -> void:
@@ -117,6 +151,7 @@ func _show_battle_result() -> void:
 func _restore_and_track_state() -> void:
 	var scene := scene_file_path
 	_apply_respawns()
+	_apply_story_gates()
 	for node in _all_descendants(rooms_root):
 		var id := _persistent_id(node)
 		if node is OverworldEnemy:
@@ -157,6 +192,8 @@ func _restore_and_track_state() -> void:
 	room_manager.restore_visited(get_state().get("visited_rooms", []))
 	room_manager.room_visited.connect(func(room: Room) -> void:
 		GameState.map_state_add(scene, "visited_rooms", String(room.room_id))
+		if room.room_type == Room.RoomType.REST:
+			GameState.unlock_fast_travel(zone_of(room), room.room_id)
 		_report_exploration())
 	_report_exploration()
 
@@ -215,6 +252,14 @@ func _report_exploration() -> void:
 
 func _place_player() -> void:
 	var state := get_state()
+	# Dịch chuyển (cổng / phòng nghỉ): xuất hiện ở phòng chỉ định.
+	var spawn_room := room_manager.get_room(StringName(str(SceneRouter.payload.get("spawn_room", ""))))
+	if spawn_room:
+		SceneRouter.payload.erase("spawn_room")
+		state.erase("respawn_at_rest")
+		player.global_position = spawn_room.get_spawn_point()
+		GameState.set_map_player(scene_file_path, player.global_position, Vector2.DOWN)
+		return
 	if bool(state.get("respawn_at_rest", false)):
 		state.erase("respawn_at_rest")
 		var saved: Variant = GameState.get_map_player_position(scene_file_path)
@@ -262,6 +307,128 @@ func _all_descendants(root: Node) -> Array[Node]:
 		result.append(child)
 		result.append_array(_all_descendants(child))
 	return result
+
+
+# --- Cốt truyện (Phase 12) ---
+
+## Ẩn/hiện vật có StoryGate theo cờ. Vật bị ẩn: không vẽ, không va chạm, quái không tính là còn trong phòng.
+func _apply_story_gates() -> void:
+	for node in _all_descendants(rooms_root):
+		if not _has_story_gate(node):
+			continue
+		var allowed := StoryGate.allows(node)
+		var item := node as CanvasItem
+		if item:
+			item.visible = allowed
+		node.process_mode = Node.PROCESS_MODE_INHERIT if allowed else Node.PROCESS_MODE_DISABLED
+		if node is OverworldEnemy:
+			for group: StringName in [Room.ENEMY_GROUP, OverworldEnemy.GROUP]:
+				if allowed and not node.is_in_group(group):
+					node.add_to_group(group)
+				elif not allowed and node.is_in_group(group):
+					node.remove_from_group(group)
+
+
+func _has_story_gate(node: Node) -> bool:
+	for child in node.get_children():
+		if child is StoryGate:
+			return true
+	return false
+
+
+## Quầy dịch vụ ở Sảnh.
+func open_station(kind: Station.Kind) -> void:
+	match kind:
+		Station.Kind.GACHA:
+			hud.open_game_menu(GameMenu.Page.GACHA)
+		Station.Kind.QUESTS:
+			hud.open_game_menu(GameMenu.Page.QUESTS)
+		Station.Kind.UPGRADE:
+			hud.open_game_menu(GameMenu.Page.CHARACTERS)
+		Station.Kind.TEAM:
+			hud.open_game_menu(GameMenu.Page.TEAM)
+		Station.Kind.SHOP:
+			hud.open_panel(tr("STATION_SHOP"), ShopScreen.new())
+		Station.Kind.GATE:
+			var items: Array[Dictionary] = []
+			for dest in StoryManager.get_gate_destinations():
+				items.append({"label": StoryManager.zone_name(dest["zone"]), "scene": dest["scene"], "room": dest["room"]})
+			_open_destinations(tr("STATION_GATE"), items, "TRAVEL_GATE_EMPTY")
+
+
+## Bảng dịch chuyển nhanh: Sảnh Trung Tâm + mọi phòng nghỉ đã mở (trừ phòng đang đứng).
+func open_travel_menu() -> Control:
+	var items: Array[Dictionary] = []
+	var here := room_manager.current_room
+	var my_zone := StoryManager.get_scene_zone(scene_file_path)
+	var hub_scene := StoryManager.get_zone_scene(StoryManager.HUB_ZONE)
+	if my_zone != StoryManager.HUB_ZONE and hub_scene != "":
+		items.append({"label": StoryManager.zone_name(StoryManager.HUB_ZONE), "scene": hub_scene, "room": "H01"})
+	for key in GameState.fast_travel:
+		var parts := key.split("/")
+		if parts.size() != 2:
+			continue
+		var travel_zone := StringName(parts[0])
+		var room_id := StringName(parts[1])
+		if travel_zone == my_zone and here and here.room_id == room_id:
+			continue
+		var scene := StoryManager.get_zone_scene(travel_zone)
+		if scene == "" or travel_zone == StoryManager.HUB_ZONE:
+			continue
+		items.append({"label": tr("TRAVEL_REST_LABEL") % [StoryManager.zone_name(travel_zone),
+				StoryManager.rest_room_name(travel_zone, room_id)],
+				"scene": scene, "room": room_id})
+	return _open_destinations(tr("TRAVEL_TITLE"), items, "TRAVEL_EMPTY")
+
+
+func _open_destinations(title: String, items: Array[Dictionary], empty_key: String) -> Control:
+	var menu := TravelMenu.new()
+	menu.setup(items, empty_key)
+	menu.destination_chosen.connect(travel_to)
+	return hud.open_panel(title, menu)
+
+
+## Đi tới phòng `room_id` của scene `scene_path` (cùng map thì đặt người chơi luôn, khác map thì chuyển scene).
+func travel_to(scene_path: String, room_id: StringName) -> void:
+	hud.close_panel()
+	if scene_path == scene_file_path:
+		var room := room_manager.get_room(room_id)
+		if room:
+			player.global_position = room.get_spawn_point()
+			camera.snap_to_target()
+		return
+	GameState.set_map_player(scene_file_path, player.global_position, player.facing)
+	SceneRouter.go_to(scene_path, {"spawn_room": room_id})
+
+
+## Vị trí mục tiêu nhiệm vụ để mũi tên chỉ: mục tiêu trong map này → phòng / node đó; ở Sảnh mà mục tiêu ở khu
+## khác → Cổng Dịch Chuyển; ở khu mà mục tiêu ở nơi khác → phòng nghỉ gần nhất (dịch chuyển nhanh). null = không chỉ.
+func get_quest_target_position() -> Variant:
+	var step := StoryManager.get_main_step()
+	if step.is_empty():
+		var sides := StoryManager.get_side_steps()
+		if sides.is_empty():
+			return null
+		step = sides[0]["step"]
+	var my_zone := StoryManager.get_scene_zone(scene_file_path)
+	if my_zone == &"":
+		return null
+	var target: Dictionary = step.get("target", {})
+	var target_zone := StringName(str(target.get("zone", "")))
+	if target_zone == my_zone:
+		var room := room_manager.get_room(StringName(str(target.get("room", ""))))
+		if room == null:
+			return null
+		var node_name := str(target.get("node", ""))
+		var node := room.find_child(node_name, true, false) as Node2D if node_name != "" else null
+		return node.global_position if node and node.visible else room.get_center_world()
+	if my_zone == StoryManager.HUB_ZONE:
+		for node in get_tree().get_nodes_in_group(Station.GROUP):
+			if node is Station and (node as Station).kind == Station.Kind.GATE:
+				return (node as Node2D).global_position
+		return null
+	var rest := _nearest_rest_room(player.global_position)
+	return rest.get_center_world() if rest else null
 
 
 # --- Bí Kỹ ---
@@ -499,3 +666,40 @@ class TechniqueTrap extends Node2D:
 		draw_arc(Vector2.ZERO, radius, 0.0, TAU, 32, Color(color, 0.8), 3.0, true)
 		draw_line(Vector2(-radius * 0.6, 0), Vector2(radius * 0.6, 0), color, 2.0)
 		draw_line(Vector2(0, -radius * 0.6), Vector2(0, radius * 0.6), color, 2.0)
+
+
+## Mũi tên vàng quanh người chơi chỉ về mục tiêu nhiệm vụ (ẩn khi đã ở gần).
+class QuestArrow extends Node2D:
+	const RADIUS: float = 96.0
+	const HIDE_DISTANCE: float = 220.0
+	var map: OverworldMap
+	var _refresh: float = 0.0
+	var _target: Variant = null
+
+	func _ready() -> void:
+		z_index = 50
+
+	func _process(delta: float) -> void:
+		_refresh -= delta
+		if _refresh <= 0.0:
+			_refresh = 0.25
+			_target = map.get_quest_target_position()
+		global_position = map.player.global_position
+		queue_redraw()
+
+	func get_target() -> Variant:
+		return _target
+
+	func _draw() -> void:
+		if not _target is Vector2:
+			return
+		var offset: Vector2 = (_target as Vector2) - global_position
+		if offset.length() < HIDE_DISTANCE:
+			return
+		var dir := offset.normalized()
+		var tip := dir * (RADIUS + 26.0)
+		var base := dir * RADIUS
+		var side := dir.orthogonal() * 16.0
+		var pulse := 0.7 + 0.3 * sin(Time.get_ticks_msec() / 200.0)
+		draw_colored_polygon(PackedVector2Array([tip, base + side, base - side]), Color(UiKit.GOLD, pulse))
+		draw_polyline(PackedVector2Array([tip, base + side, base - side, tip]), Color(0, 0, 0, 0.6), 2.0, true)

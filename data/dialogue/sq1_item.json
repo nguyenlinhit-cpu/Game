@@ -1,0 +1,21 @@
+{
+	"id": "sq1_item",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_SQ1_ITEM_01"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "neutral",
+			"text": "DLG_SQ1_ITEM_02",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "sq1_item"
+				}
+			]
+		}
+	]
+}

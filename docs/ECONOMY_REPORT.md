@@ -77,6 +77,17 @@ Thiếu ít (✗ gần 1,0) bù bằng cày thêm quái thường hoặc đánh 
 
 - ✓ Mọi quái trên map có bảng rơi đồ, mọi vật phẩm tồn tại, tổng nhiệm vụ đúng mục 11b.
 
+## F. Bản đồ khớp kế hoạch khu
+
+| Khu | Phòng | Nhóm quái (thường / tinh anh / boss) | Rương (thường / quý / giải đố) | Hộp Bí Kỹ | Khớp |
+| --- | --- | --- | --- | --- | --- |
+| library | 11 | 14 / 1 / 1 | 6 / 4 / 4 | 8 | ✓ |
+| vault | 10 | 12 / 1 / 1 | 6 / 4 / 4 | 8 | ✓ |
+| furnace | 10 | 12 / 1 / 1 | 6 / 4 / 4 | 8 | ✓ |
+| tower | 12 | 12 / 3 / 1 | 6 / 4 / 4 | 8 | ✓ |
+
+- ✓ Mọi khu đặt đúng số nhóm quái, rương, Hộp Bí Kỹ như kế hoạch; tổng thưởng trên map = số ở mục A–D.
+
 ## Kết luận
 
 **ĐẠT – mọi chỉ số trong ngưỡng.**

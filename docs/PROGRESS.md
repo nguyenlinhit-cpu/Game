@@ -14,8 +14,9 @@
 | 8. Quái thường, tinh anh, boss | Xong |
 | 9. Tiến trình nhân vật (cấp 30) | Xong |
 | 10. Tài nguyên, rơi đồ, nhiệm vụ ngày/tuần | Xong |
-| 11. Gacha 2 banner, cửa hàng Bụi Sao | Xong, chờ duyệt |
-| 12–14 | Chưa làm |
+| 11. Gacha 2 banner, cửa hàng Bụi Sao | Xong |
+| 12. Bản đồ Pháo Đài Vọng Tinh và cốt truyện | Xong, chờ duyệt |
+| 13–14 | Chưa làm |
 
 ## Phase 1 – Khung dự án, lời dẫn, chọn nhân vật chính
 
@@ -404,7 +405,7 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 10.
 
 ### Việc còn nợ
 
-- Đặt khu cho phòng và dựng map đúng `data/zones/*.tres` (số nhóm quái, rương), cờ `chapter_<n>_complete`, bảng chọn mức Khó khi đánh lại boss (Phase 12). Map thử hiện không có khu (rương dùng bảng Thư Viện, không tính khám phá).
+- ~~Dựng map đúng `data/zones/*.tres`, cờ `chapter_<n>_complete`, bảng chọn mức Khó khi đánh lại boss~~ (Phase 12).
 - ~~Quà mở Gacha 10 Vé Giới Hạn, cửa hàng Bụi Sao~~ (Phase 11). Ký Ức/Xu 3★ từ gacha chưa cộng vào báo cáo kinh tế (ước tính ở DESIGN_NOTES Phase 11 mục 4).
 - Hồi quái khi rời khu áp ở lần nạp map kế tiếp, chưa hồi ngay trước mắt người chơi.
 - Biểu tượng vật phẩm thật (Phase 13); chữ tiếng Anh của nhiệm vụ đã có, mô tả vật phẩm giữ như Phase 9.
@@ -447,11 +448,89 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 11.
 
 ### Việc còn nợ
 
-- Nhân vật miễn phí (Nyx, Garren...) vẫn có sẵn từ đầu; nhận theo cốt truyện ở Phase 12. Map thử chưa có cờ Chương 1 → dùng nút mở khóa debug trên màn Gacha.
+- ~~Nhân vật miễn phí nhận theo cốt truyện~~ (Phase 12). Map thử vẫn không có cờ Chương 1 → nút mở khóa debug trên màn Gacha vẫn giữ.
 - Tranh banner, tranh gacha, hiệu ứng sao băng thật (Phase 13; hiện vẽ khối màu, gắn qua `BannerData.art`, `CharacterSkin.gacha_art`). Âm thanh quay (Phase 14).
 - Cửa hàng Bụi Sao chỉ bán vé (theo phase); mục 11 có ghi Bụi Sao đổi Tinh Thể – thêm dòng `shop_entries` khi cần, mô tả vật phẩm Bụi Sao đang nhắc Tinh Thể.
 - Báo cáo kinh tế chưa cộng Ký Ức/Xu từ 3★ gacha (≈ 18.000 EXP + 22.000 Xu cho 78 lượt).
 - Trùng nhân vật cũng tính là "nâng cấp nhân vật" cho nhiệm vụ ngày (dùng chung tín hiệu `character_upgraded`).
+
+## Phase 12 – Bản đồ Pháo Đài Vọng Tinh và cốt truyện
+
+### Đã làm
+
+- **Bản đồ:** Sảnh Trung Tâm + 4 khu, mỗi khu một scene (`scenes/overworld/world/`), sinh bằng `tools/level_builder/build_world.gd`. Thư Viện 11 phòng, Kho Chứa 10, Lò 10, Đỉnh Tháp 12: phòng nghỉ (lối vào + trước boss), chiến đấu, rương, giải đố (4 hốc), tinh anh, boss. Trận, rương, Hộp Bí Kỹ đặt đúng kế hoạch khu Phase 10 (báo cáo kinh tế mục F khớp 100%). Mỗi khu tô màu riêng.
+- **Sảnh Trung Tâm:** phòng y tế (nơi tỉnh dậy), sảnh chính có ông Orwen, Lio, Bram, điểm nghỉ, bàn Ước Nguyện, bảng nhiệm vụ, bàn nâng cấp, bàn đội hình, quầy hàng; Sân Tập (quái hướng dẫn); phòng Cổng Dịch Chuyển tới các khu đã mở.
+- **Giải đố:** cổng nguyên tố chắn cửa trên đường chính chỉ dùng nguyên tố đội miễn phí có ở thời điểm đó; hốc giải đố mỗi khu có 2 rương ẩn cần nhân vật gacha (Sương mù / Cổng gỉ); tường nứt (Hồn) dẫn tới phòng phụ.
+- **Hội thoại JSON** (37 cảnh, 184 câu) sinh bằng `tools/data_builder/build_story.py`: người nói, chân dung + biểu cảm, câu thoại, lựa chọn, sự kiện. **Hộp thoại**: chữ chạy, bấm để hiện hết / sang câu, lựa chọn, Bỏ qua (tới lựa chọn kế tiếp), Lịch sử; tạm dừng game khi thoại.
+- **Cốt truyện Mở đầu → Chương 4** (mỗi chương 4–5 cảnh chính): tỉnh dậy + Mira gia nhập, Sân Tập, gặp Orwen; Thư Viện – Kiri gia nhập, tìm sơ đồ, boss, Mảnh Hồn 1 + ảo ảnh Celestine; Kho Chứa – Garren (đóng băng) gia nhập, đội đủ 4, boss, Mảnh Hồn 2; Lò – Nyx gia nhập mang bản ghi kẻ trộm, boss, Mảnh Hồn 3; Đỉnh Tháp – Celestine báo trước, đối đầu Kẻ Nuốt Mảnh Hồn (bạn cũ), Mảnh Hồn 4, vết nứt mở ra vùng đất mới (còn tiếp).
+- **StoryManager** (autoload mới): cờ cốt truyện điều khiển mở khu, mở Gacha + nhiệm vụ ngày sau Chương 1, thưởng chương, Tinh Mệnh nhân vật chính, nhận nhân vật miễn phí; NPC chọn cảnh theo cờ; điểm kích hoạt khi vào map / vào vùng / nhặt vật; cảnh sau trận boss.
+- **Nhiệm vụ** ở góc trái HUD (chính màu vàng, phụ màu xanh, ghi tên khu nếu ở nơi khác) + **mũi tên chỉ đường** quanh người chơi. **2 nhiệm vụ phụ**: Nhật Ký Người Gác (Lio, sau Chương 2 → Tinh Mệnh 5), Tiếng Vọng Trong Lò (Bram, sau Chương 3 → Tinh Mệnh 6).
+- **Dịch chuyển nhanh** giữa Sảnh và mọi phòng nghỉ đã mở (điểm nghỉ hồi đầy + tự lưu + mở bảng dịch chuyển).
+- **Thêm:** hồi quái thường + boss khi vào lại khu; hỏi mức Thường / Khó khi đánh lại boss; quầy hàng bằng Xu (Ký Ức, Hộp Bí Kỹ, giới hạn ngày); nhân vật gia nhập ở cấp trung bình của đội; sửa BattleController không lỗi khi rời trận giữa chừng.
+- Game mới: tạo nhân vật → Sảnh Trung Tâm (chỉ có nhân vật chính). "Tiếp tục" không có map → Sảnh.
+- Test `tests/phase12_test.tscn`: 109/109 đạt. Test Phase 1–11 vẫn đạt (Phase 1 sửa: tạo nhân vật xong vào Sảnh; Phase 11 sửa một kiểm tra phụ thuộc may rủi Bụi Sao).
+
+### Sơ đồ phòng
+
+Ký hiệu: `=X=` cổng nguyên tố trên cửa (cần nguyên tố X), ★ boss, ◆ tinh anh, ♥ phòng nghỉ, $ rương, ? giải đố (hốc: nguyên tố cần).
+
+```text
+SẢNH TRUNG TÂM
+                [H03 Cổng Dịch Chuyển]—[H01 Sảnh chính: Orwen, Lio, Bram, ♥, các quầy]—[H02 Sân Tập (quái hướng dẫn)]
+                                                    |
+                                          [H04 Phòng y tế (bắt đầu)]
+
+THƯ VIỆN CÂM LẶNG (Chương 1, cấp 1–8)
+            [L03 $ quý×2]                       [L07 $ quý×2 + thường, nhật ký NV phụ 1]
+                 |                                   =Hồn=
+[L01 ♥]—[L02 3 nhóm]=Nước=[L04 3 nhóm, Kiri]=Lửa=[L06 3 nhóm]—[L08 3 nhóm]—[L10 ♥ sơ đồ]—[L11 ★ Người Gác]
+                                  |                              |
+                     [L05 ? Nước/Lửa/Phong/Độc]       [L09 ◆ Thủ Thư + 2 nhóm]
+
+KHO CHỨA BĂNG GIÁ (Chương 2, cấp 8–16)
+                                          [V06 ? Mộc/Nước/Phong/Độc]
+                                                 |
+[V01 ♥]—[V02 3 nhóm]—[V04 3 nhóm, Garren]=Mộc=[V05 3 nhóm]—[V07 3 nhóm]—[V09 ♥ $]—[V10 ★ Cự Thú]
+            =Lửa=                                                |
+       [V03 $ quý×2 + thường]                          [V08 ◆ Kỵ Sĩ, $ quý×2]
+
+LÒ NĂNG LƯỢNG (Chương 3, cấp 16–24)
+       [F03 $ quý×2 + thường]                 [F06 ? Sét/Mộc/Phong/Độc]
+            =Mộc=                                    |
+[F01 ♥]—[F02 3 nhóm]—[F04 3 nhóm, Nyx]=Sét=[F05 3 nhóm]—[F07 3 nhóm]—[F09 ♥ $]—[F10 ★ Lõi Lò]
+                                                             |
+                                          [F08 ◆ Mẫu Thể, $ quý×2, lõi NV phụ 2]
+
+ĐỈNH THÁP QUAN SÁT (Chương 4, cấp 24–30)
+       [T03 $ quý×2 + thường]              [T08 ◆ Thủ Thư, $ quý×2]
+            =Nước=                                |
+[T01 ♥]—[T02 3 nhóm]=Sét=[T04 3 nhóm]=Mộc=[T07 3 nhóm]—[T09 3 nhóm]—[T11 ♥ Celestine]—[T12 ★ Kẻ Nuốt Mảnh Hồn]
+                              |                           |
+                     [T05 ◆ Kỵ Sĩ]—[T06 ? Lửa/Hồn/Phong/Độc]  [T10 ◆ Mẫu Thể]
+```
+
+### File chính
+
+- `autoload/story_manager.gd` (mới), sửa `game_state.gd` (dịch chuyển nhanh, quầy hàng), `project.godot` (autoload, file dịch)
+- `scenes/ui/dialogue_box/dialogue_box.gd`, `scenes/ui/travel/travel_menu.gd`, `scenes/ui/shop/shop_screen.gd`; sửa `scenes/ui/hud/overworld_hud.gd` (nhiệm vụ, bảng phủ), `pause/pause_menu.gd`, `title/title_screen.gd`, `character_select/character_select.gd`
+- `scenes/overworld/interactables/{npc,station,story_trigger,story_item,story_gate}.gd`; sửa `rest_point.gd`, `scenes/overworld/map/overworld_map.gd`, `scenes/battle/battle_controller.gd`
+- `scenes/overworld/world/{hub,library,vault,furnace,tower}.tscn`, `tools/level_builder/build_world.{gd,tscn}`
+- `tools/data_builder/build_story.py` → `data/dialogue/*.json`, `data/story/story.json`, `localization/story.csv`; `localization/world.csv`
+- `data/encounters/prologue_tutorial.tres`, `systems/resources/shop_data.gd`, `data/shop/hub_shop.tres`, `systems/data_paths.gd`
+- Sửa `systems/economy_report.gd` (mục F) → `docs/ECONOMY_REPORT.md`; `tests/phase12_test.*`, sửa `tests/phase01_smoke_test.gd`, `tests/phase11_test.gd`
+
+### Quyết định quan trọng
+
+Xem `docs/DESIGN_NOTES.md` mục Phase 12.
+
+### Việc còn nợ
+
+- Chữ tiếng Anh của cốt truyện (đang dùng lại tiếng Việt); chân dung, biểu cảm, tranh khu vực thật (Phase 13); nhạc từng khu (Phase 14).
+- Phòng dựng từ khối chữ nhật của builder, chưa có trang trí / bố cục riêng từng phòng (Phase 13 vẽ tileset từng khu).
+- Map thử `test_map.tscn` vẫn giữ cho test cũ và lối debug.
+- Chưa chơi tay trọn 4 chương; test kiểm tra không kẹt bằng đồ thị phòng + cổng và chạy cốt truyện bằng logic, cân bằng boss dựa trên mô phỏng Phase 8 (cân lại ở Phase 14).
+- Nyx gia nhập khi đội đã đủ 4 → người chơi tự đổi đội ở menu để mở cửa máy.
+- Cảnh cắt (camera di chuyển, nhân vật đi lại trong cảnh) chưa có; cảnh chỉ là hộp thoại.
 
 ## Để sau
 

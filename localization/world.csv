@@ -1,0 +1,18 @@
+keys,vi,en
+PROMPT_TALK,Nói chuyện với %s,Talk to %s
+PROMPT_USE,Dùng %s,Use %s
+PROMPT_PICK_UP,Nhặt lên,Pick up
+STATION_GACHA,Bàn Ước Nguyện,Wish Altar
+STATION_QUESTS,Bảng Nhiệm Vụ,Quest Board
+STATION_UPGRADE,Bàn Nâng Cấp,Upgrade Bench
+STATION_TEAM,Bàn Đội Hình,Team Console
+STATION_SHOP,Quầy Hàng,Shop Counter
+STATION_GATE,Cổng Dịch Chuyển,Warp Gate
+DIALOGUE_HISTORY,Lịch sử,Log
+TRAVEL_TITLE,Dịch chuyển nhanh,Fast travel
+TRAVEL_REST_LABEL,%s · %s,%s · %s
+TRAVEL_ENTRANCE,Lối vào,Entrance
+TRAVEL_BOSS_REST,Phòng nghỉ trước boss,Rest room before the boss
+TRAVEL_EMPTY,Chưa mở phòng nghỉ nào khác.,No other rest rooms unlocked yet.
+TRAVEL_GATE_EMPTY,Cổng chưa nhận tọa độ khu nào. Hãy gặp ông Orwen.,The gate has no coordinates yet. Talk to Elder Orwen.
+SHOP_DAILY_LEFT,Còn %d/%d lần hôm nay,%d/%d left today

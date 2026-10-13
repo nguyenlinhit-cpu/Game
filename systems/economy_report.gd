@@ -7,6 +7,8 @@ extends Node
 ##   C. Cộng EXP, Xu, nguyên liệu toàn bản đồ, so với chi phí nâng 1 nhân vật tối đa → số nhân vật nâng được.
 ##   D. Nhịp cốt truyện: đội miễn phí có đủ EXP / Tinh Thể cho cấp khuyến nghị từng boss không.
 ##   E. Kiểm tra dữ liệu (thiếu bảng rơi đồ, vật phẩm không tồn tại, tổng nhiệm vụ).
+##   F. Bản đồ thật (scenes/overworld/world/<khu>.tscn) khớp kế hoạch khu: số nhóm quái từng trận, rương từng bậc,
+##      Hộp Bí Kỹ, số phòng; cốt truyện không cho thêm Lệ Tinh / vé ngoài thưởng chương.
 ## Chạy: godot --headless --path . res://systems/economy_report.tscn  (hoặc mở scene trong editor rồi F6)
 ## → in ra màn hình và ghi docs/ECONOMY_REPORT.md. Thoát mã 1 nếu lệch quá ngưỡng.
 
@@ -60,6 +62,7 @@ static func generate(model_path: String = MODEL_PATH) -> Dictionary:
 	ok = _section_materials(model, quests, out, result) and ok
 	_section_pacing(model, quests, out, result)
 	ok = _section_checks(model, quests, out, result) and ok
+	ok = _section_map(model, out, result) and ok
 	out.append("")
 	out.append("## Kết luận")
 	out.append("")
@@ -514,6 +517,91 @@ static func _section_checks(model: EconomyModel, quests: QuestConfig, out: Array
 		out.append("- ⚠ " + message)
 	(result["errors"] as Array).append_array(errors)
 	(result["warnings"] as Array).append_array(warnings)
+	return errors.is_empty()
+
+
+## Đếm nội dung đặt trên map của một khu: { "rooms", "encounters": { id: số nhóm }, "chests": [3 bậc], "boxes" }.
+static func count_map(scene_path: String) -> Dictionary:
+	var counts := {"rooms": 0, "encounters": {}, "chests": [0, 0, 0], "boxes": 0}
+	if not ResourceLoader.exists(scene_path):
+		return {}
+	var root := (load(scene_path) as PackedScene).instantiate()
+	var stack: Array[Node] = [root]
+	while not stack.is_empty():
+		var node: Node = stack.pop_back()
+		stack.append_array(node.get_children())
+		if node is Room:
+			counts["rooms"] += 1
+		elif node is OverworldEnemy and (node as OverworldEnemy).encounter:
+			# Quái chỉ có mặt theo cờ (trận hướng dẫn) không tính vào kinh tế khu.
+			var gated := node.get_children().any(func(c: Node) -> bool: return c is StoryGate)
+			if not gated:
+				var id := String((node as OverworldEnemy).encounter.id)
+				counts["encounters"][id] = int(counts["encounters"].get(id, 0)) + 1
+		elif node is Chest:
+			counts["chests"][(node as Chest).tier] += 1
+		elif node is TechniqueBox:
+			counts["boxes"] += 1
+	root.free()
+	return counts
+
+
+static func _section_map(model: EconomyModel, out: Array[String], result: Dictionary) -> bool:
+	var errors: Array[String] = []
+	out.append("")
+	out.append("## F. Bản đồ khớp kế hoạch khu")
+	out.append("")
+	out.append("| Khu | Phòng | Nhóm quái (thường / tinh anh / boss) | Rương (thường / quý / giải đố) | Hộp Bí Kỹ | Khớp |")
+	out.append("| --- | --- | --- | --- | --- | --- |")
+	for zone in model.zones:
+		var path := "res://scenes/overworld/world/%s.tscn" % zone.id
+		var counts := count_map(path)
+		if counts.is_empty():
+			errors.append("%s: chưa có bản đồ %s" % [zone.id, path])
+			continue
+		var zone_errors: Array[String] = []
+		var kinds := [0, 0, 0]
+		for i in zone.encounters.size():
+			var encounter := zone.encounters[i]
+			var placed := int(counts["encounters"].get(String(encounter.id), 0))
+			kinds[encounter.kind] += placed
+			if placed != zone.get_placement_count(i):
+				zone_errors.append("%s đặt %d nhóm (kế hoạch %d)" % [encounter.id, placed, zone.get_placement_count(i)])
+		for id: String in counts["encounters"]:
+			if not zone.encounters.any(func(e: EncounterData) -> bool: return String(e.id) == id):
+				zone_errors.append("trận %s không có trong kế hoạch khu" % id)
+		for tier in 3:
+			if int(counts["chests"][tier]) != zone.chest_counts[tier]:
+				zone_errors.append("rương bậc %d: %d (kế hoạch %d)" % [tier, counts["chests"][tier], zone.chest_counts[tier]])
+		if int(counts["boxes"]) != zone.technique_boxes:
+			zone_errors.append("Hộp Bí Kỹ: %d (kế hoạch %d)" % [counts["boxes"], zone.technique_boxes])
+		if int(counts["rooms"]) != zone.room_count or zone.room_count < 8 or zone.room_count > 12:
+			zone_errors.append("số phòng %d (kế hoạch %d, mục 4: 8–12)" % [counts["rooms"], zone.room_count])
+		out.append("| %s | %d | %d / %d / %d | %d / %d / %d | %d | %s |" % [zone.id, counts["rooms"], kinds[0], kinds[1], kinds[2],
+				counts["chests"][0], counts["chests"][1], counts["chests"][2], counts["boxes"],
+				"✓" if zone_errors.is_empty() else "✗"])
+		for message in zone_errors:
+			errors.append("%s: %s" % [zone.id, message])
+	# Cốt truyện: chỉ thưởng chương (QuestConfig) cho Lệ Tinh / vé – sự kiện hội thoại không được trao tiền tệ gacha.
+	for file in DirAccess.get_files_at("res://data/dialogue"):
+		if not file.ends_with(".json"):
+			continue
+		var dialogue: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/dialogue/" + file))
+		if not dialogue is Dictionary:
+			continue
+		for line: Dictionary in dialogue.get("lines", []):
+			var events: Array = line.get("events", []).duplicate()
+			for choice: Dictionary in line.get("choices", []):
+				events.append_array(choice.get("events", []))
+			for event: Dictionary in events:
+				if not str(event.get("type", "")) in ["set_flag", "give_character", "result"]:
+					errors.append("%s: sự kiện %s ngoài kế hoạch kinh tế" % [file, event.get("type")])
+	out.append("")
+	if errors.is_empty():
+		out.append("- ✓ Mọi khu đặt đúng số nhóm quái, rương, Hộp Bí Kỹ như kế hoạch; tổng thưởng trên map = số ở mục A–D.")
+	for message in errors:
+		out.append("- ✗ " + message)
+	(result["errors"] as Array).append_array(errors)
 	return errors.is_empty()
 
 

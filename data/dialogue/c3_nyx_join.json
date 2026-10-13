@@ -1,0 +1,77 @@
+{
+	"id": "c3_nyx_join",
+	"lines": [
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_NYX_JOIN_01"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "angry",
+			"text": "DLG_C3_NYX_JOIN_02"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smile",
+			"text": "DLG_C3_NYX_JOIN_03"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "angry",
+			"text": "DLG_C3_NYX_JOIN_04"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "serious",
+			"text": "DLG_C3_NYX_JOIN_05"
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_NYX_JOIN_06"
+		},
+		{
+			"speaker": "garren",
+			"expression": "angry",
+			"text": "DLG_C3_NYX_JOIN_07",
+			"choices": [
+				{
+					"text": "DLG_C3_NYX_JOIN_C7_1",
+					"goto": "where"
+				},
+				{
+					"text": "DLG_C3_NYX_JOIN_C7_2",
+					"goto": "join"
+				}
+			]
+		},
+		{
+			"speaker": "nyx",
+			"expression": "serious",
+			"text": "DLG_C3_NYX_JOIN_08",
+			"label": "where"
+		},
+		{
+			"speaker": "nyx",
+			"expression": "smug",
+			"text": "DLG_C3_NYX_JOIN_09",
+			"label": "join",
+			"events": [
+				{
+					"type": "give_character",
+					"id": "nyx"
+				},
+				{
+					"type": "set_flag",
+					"flag": "nyx_joined"
+				}
+			]
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C3_NYX_JOIN_10"
+		}
+	]
+}

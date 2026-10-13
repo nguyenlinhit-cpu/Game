@@ -1,0 +1,79 @@
+{
+	"id": "c1_kiri_join",
+	"lines": [
+		{
+			"speaker": "kiri",
+			"expression": "angry",
+			"text": "DLG_C1_KIRI_JOIN_01"
+		},
+		{
+			"speaker": "mira",
+			"expression": "surprised",
+			"text": "DLG_C1_KIRI_JOIN_02"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "surprised",
+			"text": "DLG_C1_KIRI_JOIN_03"
+		},
+		{
+			"speaker": "traveler",
+			"expression": "neutral",
+			"text": "DLG_C1_KIRI_JOIN_04"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smile",
+			"text": "DLG_C1_KIRI_JOIN_05",
+			"choices": [
+				{
+					"text": "DLG_C1_KIRI_JOIN_C5_1",
+					"goto": "no"
+				},
+				{
+					"text": "DLG_C1_KIRI_JOIN_C5_2",
+					"goto": "ok"
+				}
+			]
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smug",
+			"text": "DLG_C1_KIRI_JOIN_06",
+			"label": "no",
+			"goto": "story"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "smile",
+			"text": "DLG_C1_KIRI_JOIN_07",
+			"label": "ok"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "serious",
+			"text": "DLG_C1_KIRI_JOIN_08",
+			"label": "story"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "neutral",
+			"text": "DLG_C1_KIRI_JOIN_09",
+			"events": [
+				{
+					"type": "give_character",
+					"id": "kiri"
+				},
+				{
+					"type": "set_flag",
+					"flag": "kiri_joined"
+				}
+			]
+		},
+		{
+			"speaker": "narrator",
+			"expression": "neutral",
+			"text": "DLG_C1_KIRI_JOIN_10"
+		}
+	]
+}

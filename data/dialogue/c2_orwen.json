@@ -1,0 +1,40 @@
+{
+	"id": "c2_orwen",
+	"lines": [
+		{
+			"speaker": "orwen",
+			"expression": "surprised",
+			"text": "DLG_C2_ORWEN_01"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "serious",
+			"text": "DLG_C2_ORWEN_02"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "sad",
+			"text": "DLG_C2_ORWEN_03"
+		},
+		{
+			"speaker": "kiri",
+			"expression": "serious",
+			"text": "DLG_C2_ORWEN_04"
+		},
+		{
+			"speaker": "orwen",
+			"expression": "neutral",
+			"text": "DLG_C2_ORWEN_05",
+			"events": [
+				{
+					"type": "set_flag",
+					"flag": "ch2_briefed"
+				},
+				{
+					"type": "set_flag",
+					"flag": "zone_vault_open"
+				}
+			]
+		}
+	]
+}
