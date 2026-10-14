@@ -1,0 +1,22 @@
+{
+  "en_rat_shred": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Xé Trang",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#A65BF2",
+    "screen": false
+  },
+  "en_rat_steal": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Cắn Trộm",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#A65BF2",
+    "screen": false
+  }
+}

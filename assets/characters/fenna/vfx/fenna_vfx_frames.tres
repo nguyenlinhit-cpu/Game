@@ -1,0 +1,360 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_00.png" id="1_gkpyn"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_01.png" id="2_fj216"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_02.png" id="3_rglh3"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_03.png" id="4_1g12x"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_04.png" id="5_0fpfa"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_05.png" id="6_2g5im"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_06.png" id="7_fpcvd"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack_07.png" id="8_1j467"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_00.png" id="9_imp5x"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_01.png" id="10_hmvee"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_02.png" id="11_je2ol"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_03.png" id="12_1s8in"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_04.png" id="13_6c8fk"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_05.png" id="14_qufbp"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_06.png" id="15_w6hls"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_attack-cast_07.png" id="16_pxsnr"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_opener_00.png" id="17_v5y6u"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_opener_01.png" id="18_f5jqm"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_opener_02.png" id="19_4y7k8"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_opener_03.png" id="20_psckq"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_opener_04.png" id="21_4bpaq"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_00.png" id="22_gh07f"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_01.png" id="23_bwi3m"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_02.png" id="24_vahtv"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_03.png" id="25_nb70a"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_04.png" id="26_bpg36"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_05.png" id="27_cc4fj"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_06.png" id="28_vxhp8"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill_07.png" id="29_y3tbl"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_00.png" id="30_bnvmh"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_01.png" id="31_a683q"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_02.png" id="32_dgruq"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_03.png" id="33_ux2lg"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_04.png" id="34_wheb1"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_05.png" id="35_yyjoy"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_06.png" id="36_x2b4s"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_07.png" id="37_u2s1g"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_08.png" id="38_ydiyh"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_skill-cast_09.png" id="39_hxhds"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_technique_00.png" id="40_jb8uq"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_technique_01.png" id="41_wbhqk"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_technique_02.png" id="42_32p4p"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_technique_03.png" id="43_gbctb"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_technique_04.png" id="44_j6f46"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_technique_05.png" id="45_x28wa"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_00.png" id="46_i6c3h"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_01.png" id="47_pdgo4"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_02.png" id="48_20l24"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_03.png" id="49_5r3n3"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_04.png" id="50_v5xpb"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_05.png" id="51_ri8oq"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_06.png" id="52_73b03"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate_07.png" id="53_lntyk"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_00.png" id="54_ongrq"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_01.png" id="55_dl4rk"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_02.png" id="56_pbd6i"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_03.png" id="57_j14ha"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_04.png" id="58_wyurt"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_05.png" id="59_pqesw"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_06.png" id="60_vfjyc"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_07.png" id="61_0v6be"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_08.png" id="62_rsxxh"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_09.png" id="63_donju"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_10.png" id="64_3vlro"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-cast_11.png" id="65_trpda"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_00.png" id="66_r3tnb"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_01.png" id="67_s2456"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_02.png" id="68_j02e1"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_03.png" id="69_xru2d"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_04.png" id="70_5b2yn"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_05.png" id="71_kvcr1"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_06.png" id="72_pea6k"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_07.png" id="73_q82nl"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_08.png" id="74_gr4lb"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_09.png" id="75_t5t4f"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_10.png" id="76_vi40o"]
+[ext_resource type="Texture2D" path="res://assets/characters/fenna/vfx/vfx_fenna_ultimate-screen_11.png" id="77_0odr2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gkpyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fj216")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rglh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1g12x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0fpfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2g5im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fpcvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1j467")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_imp5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hmvee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_je2ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1s8in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6c8fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qufbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w6hls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pxsnr")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_v5y6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_f5jqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4y7k8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_psckq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4bpaq")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_gh07f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bwi3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vahtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nb70a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_bpg36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cc4fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vxhp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_y3tbl")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_bnvmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_a683q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dgruq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ux2lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wheb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yyjoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_x2b4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_u2s1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ydiyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hxhds")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_jb8uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_wbhqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_32p4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_gbctb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_j6f46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_x28wa")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_i6c3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_pdgo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_20l24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_5r3n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_v5xpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ri8oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_73b03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_lntyk")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_ongrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_dl4rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_pbd6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_j14ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_wyurt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_pqesw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_vfjyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_0v6be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_rsxxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_donju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_3vlro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_trpda")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_r3tnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_s2456")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_j02e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_xru2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_5b2yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_kvcr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_pea6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_q82nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_gr4lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_t5t4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_vi40o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_0odr2")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

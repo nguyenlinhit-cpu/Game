@@ -1,0 +1,72 @@
+{
+ "asset_id": "soul_devourer",
+ "mode": "vfx",
+ "frame_size": [
+  1024,
+  576
+ ],
+ "anchor": [
+  0.5,
+  0.84
+ ],
+ "fps": 12,
+ "frames": [
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 1,
+   "x": 1024,
+   "y": 0
+  },
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 2,
+   "x": 2048,
+   "y": 0
+  },
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 3,
+   "x": 3072,
+   "y": 0
+  },
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 4,
+   "x": 0,
+   "y": 576
+  },
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 5,
+   "x": 1024,
+   "y": 576
+  },
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 6,
+   "x": 2048,
+   "y": 576
+  },
+  {
+   "action": "en_dev_bite-screen",
+   "dir": "",
+   "index": 7,
+   "x": 3072,
+   "y": 576
+  }
+ ],
+ "loop": []
+}

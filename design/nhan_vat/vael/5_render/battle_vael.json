@@ -10,7 +10,7 @@
   0.8398
  ],
  "fps": 12,
- "source": "design/nhan_vat/vael/4_rig2d/rig_battle.py (xương 2D trên 1a_battle.png)",
+ "source": "design/nhan_vat/vael/4_rig2d/rig_battle.py (xương 2D trên 1a_clean.png)",
  "loop": [
   "idle",
   "victory"

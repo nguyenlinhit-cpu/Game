@@ -33,11 +33,43 @@ func _play_frames(frames: SpriteFrames, action: String, size: float) -> void:
 	sprite = AnimatedSprite2D.new()
 	sprite.sprite_frames = frames
 	# Khung hit vẽ trùng khung sprite trận mục tiêu: cùng tỉ lệ với sprite trận (cao ALLY_RADIUS × 4.2).
-	var frame_h := ArtLibrary.frame_size_of(frames).y
+	var frame_h := float(frames.get_frame_texture(action, 0).get_height())
 	sprite.scale = Vector2.ONE * (UnitView.ALLY_RADIUS * 4.2 / frame_h if frame_h > 0.0 else 0.6) * size
 	add_child(sprite)
 	sprite.play(action)
 	sprite.animation_finished.connect(queue_free)
+
+
+## VFX quái theo id kỹ năng, ưu tiên bộ màu của biến thể.
+static func spawn_enemy(parent: Node, at: Vector2, source: EnemyData, skill_id: StringName,
+		size: float = 1.0) -> SkillVfx:
+	if not parent.is_inside_tree():
+		return null
+	var vfx := SkillVfx.new()
+	vfx.position = at
+	parent.add_child(vfx)
+	var frames := ArtLibrary.enemy_frames(source, "vfx")
+	var action := ArtLibrary.enemy_skill_asset_id(skill_id)
+	if frames and frames.has_animation(action):
+		vfx._play_frames(frames, action, size)
+	else:
+		vfx._emit(Element.color(source.element), "skill", size)
+	return vfx
+
+
+static func spawn_enemy_screen(parent: Node, source: EnemyData, skill_id: StringName, viewport_size: Vector2) -> SkillVfx:
+	var frames := ArtLibrary.enemy_frames(source, "vfx")
+	var action := ArtLibrary.enemy_skill_asset_id(skill_id) + "-screen"
+	if not parent.is_inside_tree() or frames == null or not frames.has_animation(action):
+		return null
+	var vfx := SkillVfx.new()
+	vfx.position = viewport_size * 0.5
+	vfx.z_index = 8
+	parent.add_child(vfx)
+	vfx._play_frames(frames, action, 1.0)
+	var texture := frames.get_frame_texture(action, 0)
+	vfx.sprite.scale = viewport_size / texture.get_size()
+	return vfx
 
 
 func _emit(color: Color, action: String, size: float) -> void:

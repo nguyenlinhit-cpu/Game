@@ -1,78 +1,101 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_00.png" id="1_lfnt0"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_01.png" id="2_bc6wl"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_02.png" id="3_qes6t"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_03.png" id="4_hk8q8"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_04.png" id="5_xntqh"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_05.png" id="6_3tf5q"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_00.png" id="7_q4w8b"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_01.png" id="8_kglm2"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_02.png" id="9_icpla"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_03.png" id="10_oc3kp"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_04.png" id="11_a4xel"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_05.png" id="12_o4aln"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_06.png" id="13_b5enl"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_07.png" id="14_02eqk"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_00.png" id="15_o7rbs"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_01.png" id="16_otlmi"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_02.png" id="17_jrd78"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_03.png" id="18_0uvd4"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_04.png" id="19_yi0de"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_05.png" id="20_ac2yg"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_06.png" id="21_8boc8"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_07.png" id="22_4o7mo"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_00.png" id="23_wsnd2"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_01.png" id="24_824gh"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_02.png" id="25_cir6b"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_03.png" id="26_f2xgv"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_04.png" id="27_mf7x5"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_05.png" id="28_hifqd"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_06.png" id="29_u3x5t"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_07.png" id="30_e6hau"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_08.png" id="31_bsnmv"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_09.png" id="32_72dqs"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_00.png" id="33_by88n"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_01.png" id="34_lh6ca"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_02.png" id="35_c76uw"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_03.png" id="36_00740"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_04.png" id="37_pl3ce"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_05.png" id="38_vcp8c"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_06.png" id="39_v0fte"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_07.png" id="40_r5623"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_00.png" id="41_wkr5r"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_01.png" id="42_hrkk0"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_02.png" id="43_vg2qk"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_03.png" id="44_73rcw"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_04.png" id="45_je8yw"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_05.png" id="46_rpdlx"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_06.png" id="47_05ja4"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_07.png" id="48_yptw2"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_08.png" id="49_4ax12"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_09.png" id="50_18kt4"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_10.png" id="51_c7u81"]
-[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_11.png" id="52_ujsex"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_00.png" id="1_824gh"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_01.png" id="2_cir6b"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_02.png" id="3_f2xgv"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_03.png" id="4_mf7x5"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_04.png" id="5_hifqd"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack_05.png" id="6_u3x5t"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_00.png" id="7_e6hau"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_01.png" id="8_bsnmv"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_02.png" id="9_72dqs"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_03.png" id="10_by88n"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_04.png" id="11_lh6ca"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_05.png" id="12_c76uw"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_06.png" id="13_00740"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_attack-cast_07.png" id="14_pl3ce"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_opener_00.png" id="15_vcp8c"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_opener_01.png" id="16_v0fte"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_opener_02.png" id="17_r5623"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_opener_03.png" id="18_wkr5r"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_opener_04.png" id="19_hrkk0"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_00.png" id="20_vg2qk"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_01.png" id="21_73rcw"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_02.png" id="22_je8yw"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_03.png" id="23_rpdlx"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_04.png" id="24_05ja4"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_05.png" id="25_yptw2"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_06.png" id="26_4ax12"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill_07.png" id="27_18kt4"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_00.png" id="28_c7u81"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_01.png" id="29_ujsex"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_02.png" id="30_205e0"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_03.png" id="31_mw3xq"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_04.png" id="32_jblpq"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_05.png" id="33_pljmx"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_06.png" id="34_1p835"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_07.png" id="35_2l66k"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_08.png" id="36_n1adg"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_skill-cast_09.png" id="37_clqcx"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_technique_00.png" id="38_8sdk6"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_technique_01.png" id="39_6skxo"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_technique_02.png" id="40_lmlec"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_technique_03.png" id="41_t01ep"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_technique_04.png" id="42_aj6yd"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_technique_05.png" id="43_537ij"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_00.png" id="44_4negn"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_01.png" id="45_lrw6m"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_02.png" id="46_01sof"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_03.png" id="47_sfpi4"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_04.png" id="48_h2oqe"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_05.png" id="49_xnvnv"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_06.png" id="50_6tvnk"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate_07.png" id="51_cdxtf"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_00.png" id="52_npddx"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_01.png" id="53_imiqn"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_02.png" id="54_eugsg"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_03.png" id="55_0ypee"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_04.png" id="56_7g22u"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_05.png" id="57_naoip"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_06.png" id="58_of2hp"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_07.png" id="59_col00"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_08.png" id="60_6l1rq"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_09.png" id="61_ncfrt"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_10.png" id="62_ix2kt"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-cast_11.png" id="63_1240j"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_00.png" id="64_xocxg"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_01.png" id="65_qb6dk"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_02.png" id="66_7y4nk"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_03.png" id="67_srp3e"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_04.png" id="68_vmplh"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_05.png" id="69_due1x"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_06.png" id="70_xy23w"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_07.png" id="71_7s5fg"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_08.png" id="72_xhkb2"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_09.png" id="73_vflho"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_10.png" id="74_6tyq4"]
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/vfx/vfx_kiri_ultimate-screen_11.png" id="75_2g7yx"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_lfnt0")
+"texture": ExtResource("1_824gh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_bc6wl")
+"texture": ExtResource("2_cir6b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qes6t")
+"texture": ExtResource("3_f2xgv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_hk8q8")
+"texture": ExtResource("4_mf7x5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_xntqh")
+"texture": ExtResource("5_hifqd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_3tf5q")
+"texture": ExtResource("6_u3x5t")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +103,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_q4w8b")
+"texture": ExtResource("7_e6hau")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_kglm2")
+"texture": ExtResource("8_bsnmv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_icpla")
+"texture": ExtResource("9_72dqs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_oc3kp")
+"texture": ExtResource("10_by88n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_a4xel")
+"texture": ExtResource("11_lh6ca")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_o4aln")
+"texture": ExtResource("12_c76uw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_b5enl")
+"texture": ExtResource("13_00740")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_02eqk")
+"texture": ExtResource("14_pl3ce")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +132,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_o7rbs")
+"texture": ExtResource("15_vcp8c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_otlmi")
+"texture": ExtResource("16_v0fte")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_jrd78")
+"texture": ExtResource("17_r5623")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_0uvd4")
+"texture": ExtResource("18_wkr5r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_yi0de")
+"texture": ExtResource("19_hrkk0")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_vg2qk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_ac2yg")
+"texture": ExtResource("21_73rcw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_8boc8")
+"texture": ExtResource("22_je8yw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_4o7mo")
+"texture": ExtResource("23_rpdlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_05ja4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yptw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4ax12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_18kt4")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +181,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_wsnd2")
+"texture": ExtResource("28_c7u81")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_824gh")
+"texture": ExtResource("29_ujsex")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_cir6b")
+"texture": ExtResource("30_205e0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_f2xgv")
+"texture": ExtResource("31_mw3xq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_mf7x5")
+"texture": ExtResource("32_jblpq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_hifqd")
+"texture": ExtResource("33_pljmx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_u3x5t")
+"texture": ExtResource("34_1p835")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_e6hau")
+"texture": ExtResource("35_2l66k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_bsnmv")
+"texture": ExtResource("36_n1adg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_72dqs")
+"texture": ExtResource("37_clqcx")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +216,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_by88n")
+"texture": ExtResource("38_8sdk6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_lh6ca")
+"texture": ExtResource("39_6skxo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_c76uw")
+"texture": ExtResource("40_lmlec")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_00740")
+"texture": ExtResource("41_t01ep")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_pl3ce")
+"texture": ExtResource("42_aj6yd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_vcp8c")
+"texture": ExtResource("43_537ij")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_4negn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_v0fte")
+"texture": ExtResource("45_lrw6m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_r5623")
+"texture": ExtResource("46_01sof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sfpi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_h2oqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_xnvnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_6tvnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_cdxtf")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +268,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_wkr5r")
+"texture": ExtResource("52_npddx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_hrkk0")
+"texture": ExtResource("53_imiqn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_vg2qk")
+"texture": ExtResource("54_eugsg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_73rcw")
+"texture": ExtResource("55_0ypee")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_je8yw")
+"texture": ExtResource("56_7g22u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_rpdlx")
+"texture": ExtResource("57_naoip")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_05ja4")
+"texture": ExtResource("58_of2hp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_yptw2")
+"texture": ExtResource("59_col00")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_4ax12")
+"texture": ExtResource("60_6l1rq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_18kt4")
+"texture": ExtResource("61_ncfrt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_c7u81")
+"texture": ExtResource("62_ix2kt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_ujsex")
+"texture": ExtResource("63_1240j")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_xocxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_qb6dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_7y4nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_srp3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_vmplh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_due1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_xy23w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_7s5fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_xhkb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_vflho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_6tyq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_2g7yx")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

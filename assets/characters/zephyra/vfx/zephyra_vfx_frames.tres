@@ -1,78 +1,101 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_00.png" id="1_8q68m"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_01.png" id="2_xuuul"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_02.png" id="3_mlfc3"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_03.png" id="4_u3fkn"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_04.png" id="5_pi0cs"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_05.png" id="6_l8yit"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_00.png" id="7_grr6p"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_01.png" id="8_sylqw"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_02.png" id="9_6spom"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_03.png" id="10_74dx2"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_04.png" id="11_rlb8h"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_05.png" id="12_hr126"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_06.png" id="13_mhkln"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_07.png" id="14_cmf7i"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_00.png" id="15_tx52k"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_01.png" id="16_77tkt"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_02.png" id="17_fpcv7"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_03.png" id="18_kp15l"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_04.png" id="19_u4hr8"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_05.png" id="20_yqhfp"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_06.png" id="21_kt1sf"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_07.png" id="22_4ihgp"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_00.png" id="23_02x10"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_01.png" id="24_d3l28"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_02.png" id="25_du87i"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_03.png" id="26_cjw7m"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_04.png" id="27_npdl2"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_05.png" id="28_sihrf"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_06.png" id="29_m7vra"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_07.png" id="30_dhgax"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_08.png" id="31_rtss5"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_09.png" id="32_r7ufr"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_00.png" id="33_wgfd1"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_01.png" id="34_5uirq"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_02.png" id="35_bc45d"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_03.png" id="36_n22p1"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_04.png" id="37_3vwcn"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_05.png" id="38_tlhne"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_06.png" id="39_13ty5"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_07.png" id="40_qh42h"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_00.png" id="41_8k1yk"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_01.png" id="42_pp1y3"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_02.png" id="43_r45g5"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_03.png" id="44_emtlj"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_04.png" id="45_jnndx"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_05.png" id="46_4vutw"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_06.png" id="47_jblh8"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_07.png" id="48_fsr7h"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_08.png" id="49_tg6u6"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_09.png" id="50_cu2ow"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_10.png" id="51_if7cr"]
-[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_11.png" id="52_gx5co"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_00.png" id="1_d3l28"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_01.png" id="2_du87i"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_02.png" id="3_cjw7m"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_03.png" id="4_npdl2"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_04.png" id="5_sihrf"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack_05.png" id="6_m7vra"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_00.png" id="7_dhgax"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_01.png" id="8_rtss5"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_02.png" id="9_r7ufr"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_03.png" id="10_wgfd1"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_04.png" id="11_5uirq"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_05.png" id="12_bc45d"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_06.png" id="13_n22p1"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_attack-cast_07.png" id="14_3vwcn"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_opener_00.png" id="15_tlhne"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_opener_01.png" id="16_13ty5"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_opener_02.png" id="17_qh42h"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_opener_03.png" id="18_8k1yk"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_opener_04.png" id="19_pp1y3"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_00.png" id="20_r45g5"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_01.png" id="21_emtlj"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_02.png" id="22_jnndx"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_03.png" id="23_4vutw"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_04.png" id="24_jblh8"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_05.png" id="25_fsr7h"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_06.png" id="26_tg6u6"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill_07.png" id="27_cu2ow"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_00.png" id="28_if7cr"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_01.png" id="29_gx5co"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_02.png" id="30_7snko"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_03.png" id="31_pnko1"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_04.png" id="32_kocsj"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_05.png" id="33_8xf5i"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_06.png" id="34_d88yy"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_07.png" id="35_shcdd"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_08.png" id="36_akcbk"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_skill-cast_09.png" id="37_go36k"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_technique_00.png" id="38_k4j2t"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_technique_01.png" id="39_h8hfl"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_technique_02.png" id="40_oog4g"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_technique_03.png" id="41_4wuq4"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_technique_04.png" id="42_irxgf"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_technique_05.png" id="43_gga3o"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_00.png" id="44_yo7ub"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_01.png" id="45_1mcxt"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_02.png" id="46_7ao17"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_03.png" id="47_7wl6e"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_04.png" id="48_jgxs3"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_05.png" id="49_2ngos"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_06.png" id="50_1prxj"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate_07.png" id="51_r5vmf"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_00.png" id="52_36rf4"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_01.png" id="53_qouk5"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_02.png" id="54_lh4rn"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_03.png" id="55_b7eer"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_04.png" id="56_qgwk7"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_05.png" id="57_4n1vl"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_06.png" id="58_10diw"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_07.png" id="59_nmjaj"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_08.png" id="60_2qu45"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_09.png" id="61_xjfb4"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_10.png" id="62_e2usi"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-cast_11.png" id="63_vbigb"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_00.png" id="64_3oy64"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_01.png" id="65_fm0xx"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_02.png" id="66_3i154"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_03.png" id="67_b01lb"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_04.png" id="68_u13wq"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_05.png" id="69_kl58g"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_06.png" id="70_jn5di"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_07.png" id="71_iy5ag"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_08.png" id="72_ti76v"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_09.png" id="73_rfsi3"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_10.png" id="74_rfv44"]
+[ext_resource type="Texture2D" path="res://assets/characters/zephyra/vfx/vfx_zephyra_ultimate-screen_11.png" id="75_t0wrq"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8q68m")
+"texture": ExtResource("1_d3l28")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_xuuul")
+"texture": ExtResource("2_du87i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_mlfc3")
+"texture": ExtResource("3_cjw7m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_u3fkn")
+"texture": ExtResource("4_npdl2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_pi0cs")
+"texture": ExtResource("5_sihrf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_l8yit")
+"texture": ExtResource("6_m7vra")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +103,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_grr6p")
+"texture": ExtResource("7_dhgax")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_sylqw")
+"texture": ExtResource("8_rtss5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_6spom")
+"texture": ExtResource("9_r7ufr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_74dx2")
+"texture": ExtResource("10_wgfd1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_rlb8h")
+"texture": ExtResource("11_5uirq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_hr126")
+"texture": ExtResource("12_bc45d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_mhkln")
+"texture": ExtResource("13_n22p1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_cmf7i")
+"texture": ExtResource("14_3vwcn")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +132,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_tx52k")
+"texture": ExtResource("15_tlhne")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_77tkt")
+"texture": ExtResource("16_13ty5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_fpcv7")
+"texture": ExtResource("17_qh42h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_kp15l")
+"texture": ExtResource("18_8k1yk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_u4hr8")
+"texture": ExtResource("19_pp1y3")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_r45g5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_yqhfp")
+"texture": ExtResource("21_emtlj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_kt1sf")
+"texture": ExtResource("22_jnndx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_4ihgp")
+"texture": ExtResource("23_4vutw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jblh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fsr7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tg6u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cu2ow")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +181,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_02x10")
+"texture": ExtResource("28_if7cr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_d3l28")
+"texture": ExtResource("29_gx5co")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_du87i")
+"texture": ExtResource("30_7snko")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_cjw7m")
+"texture": ExtResource("31_pnko1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_npdl2")
+"texture": ExtResource("32_kocsj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_sihrf")
+"texture": ExtResource("33_8xf5i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_m7vra")
+"texture": ExtResource("34_d88yy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_dhgax")
+"texture": ExtResource("35_shcdd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_rtss5")
+"texture": ExtResource("36_akcbk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_r7ufr")
+"texture": ExtResource("37_go36k")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +216,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_wgfd1")
+"texture": ExtResource("38_k4j2t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_5uirq")
+"texture": ExtResource("39_h8hfl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_bc45d")
+"texture": ExtResource("40_oog4g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_n22p1")
+"texture": ExtResource("41_4wuq4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_3vwcn")
+"texture": ExtResource("42_irxgf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_tlhne")
+"texture": ExtResource("43_gga3o")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_yo7ub")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_13ty5")
+"texture": ExtResource("45_1mcxt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_qh42h")
+"texture": ExtResource("46_7ao17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_7wl6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jgxs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_2ngos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_1prxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_r5vmf")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +268,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_8k1yk")
+"texture": ExtResource("52_36rf4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_pp1y3")
+"texture": ExtResource("53_qouk5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_r45g5")
+"texture": ExtResource("54_lh4rn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_emtlj")
+"texture": ExtResource("55_b7eer")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_jnndx")
+"texture": ExtResource("56_qgwk7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_4vutw")
+"texture": ExtResource("57_4n1vl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_jblh8")
+"texture": ExtResource("58_10diw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_fsr7h")
+"texture": ExtResource("59_nmjaj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_tg6u6")
+"texture": ExtResource("60_2qu45")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_cu2ow")
+"texture": ExtResource("61_xjfb4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_if7cr")
+"texture": ExtResource("62_e2usi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_gx5co")
+"texture": ExtResource("63_vbigb")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_3oy64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_fm0xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_3i154")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_b01lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_u13wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_kl58g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_jn5di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_iy5ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ti76v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_rfsi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_rfv44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_t0wrq")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

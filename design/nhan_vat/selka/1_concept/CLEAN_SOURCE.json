@@ -1,0 +1,9 @@
+{
+  "tool": "image_gen built-in",
+  "date": "2026-10-15",
+  "input": "1a_battle.png",
+  "output": "1a_clean.png",
+  "edit": "Dùng 1a_clean.png đã bỏ khói vẽ sẵn, giữ bản gốc. Gậy, xích và lư hương chuyển động riêng; tay áo có xương. Skill/ultimate đặt VFX lên đồng minh; vòng khói hồng-xanh và hoa hương.",
+  "input_sha256": "a158857cf7249e7a2632ae439ca16b0b9a46405ef6053fa7ae9c17607b781808",
+  "output_sha256": "5e3ac808db11af9d9e42ec4aaf3bd93ee9574b88a7d938b264e5840aaec05d40"
+}

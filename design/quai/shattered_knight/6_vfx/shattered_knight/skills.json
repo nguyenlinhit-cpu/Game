@@ -1,0 +1,32 @@
+{
+  "en_sk_slash": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Kiếm Gãy",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  },
+  "en_sk_sweep": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Vung Mảnh Vỡ",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  },
+  "en_sk_charge": {
+    "action": "skill",
+    "prepare": "charge",
+    "title": "Lao Vỡ Vụn",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  }
+}

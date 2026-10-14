@@ -46,6 +46,8 @@ var threatened: bool = false
 var _time: float = 0.0
 var _hit_flash: float = 0.0
 var _death_tween: Tween
+var _action_visual_left: float = 0.0
+var _aiming: bool = false
 ## Thân: hình tạm vẽ trong _draw_body, hoặc sprite thật.
 var body: Node2D
 var sprite: AnimatedSprite2D
@@ -103,7 +105,23 @@ func _play_anim(action: String) -> void:
 
 func _on_sprite_finished() -> void:
 	if unit.is_alive() and not sprite.sprite_frames.get_animation_loop(sprite.animation):
-		_play_anim("idle")
+		_play_anim(_rest_action())
+
+
+func _rest_action() -> String:
+	if unit.enemy:
+		if unit.charge:
+			var meta := ArtLibrary.enemy_skill_meta(unit.enemy, unit.charge.action.skill.id)
+			return str(meta.get("prepare", "telegraph"))
+		if unit.has_status(&"en_guard"):
+			return "guard"
+		if _aiming:
+			return "aim"
+	return "idle"
+
+
+func play_phase(index: int) -> void:
+	_play_anim("phase%d" % (index + 1))
 
 
 ## Thắng trận: nhân vật còn sống phát hoạt ảnh thắng.
@@ -151,10 +169,26 @@ func play_hit() -> void:
 
 
 ## Ra đòn: lao về phía trước rồi quay lại.
-func play_action(kind: int = 0) -> void:
+func play_action(kind: int = 0, skill: SkillData = null, preparing: bool = false) -> void:
 	var action: String = ACTION_ANIMS.get(kind, "attack")
+	if unit.enemy and skill:
+		var meta := ArtLibrary.enemy_skill_meta(unit.enemy, skill.id)
+		if skill.id == &"en_archer_mark":
+			_aiming = true
+		elif skill.id == &"en_archer_snipe":
+			_aiming = false
+		action = str(meta.get("prepare" if preparing else "action", action))
+		# These poses loop while a countdown is active; the released spell uses skill.
+		if not preparing and action in ["curse", "swallow"]:
+			action = "skill"
 	_play_anim(action)
-	_play_cast_vfx(action)
+	if sprite:
+		_action_visual_left = sprite.sprite_frames.get_frame_count(sprite.animation) / maxf(
+				sprite.sprite_frames.get_animation_speed(sprite.animation), 1.0)
+	if not preparing:
+		_play_cast_vfx(ArtLibrary.enemy_skill_asset_id(skill.id) if unit.enemy and skill else action)
+	if preparing:
+		return
 	var forward := 40.0 if unit.is_ally() else -40.0
 	var tween := create_tween()
 	tween.tween_property(self, "position", home_position + Vector2(forward, 0.0), 0.12)
@@ -163,15 +197,17 @@ func play_action(kind: int = 0) -> void:
 
 ## Lớp cast vẽ tay ("<hành động>-cast"): khung trùng khung sprite trận nên đặt chồng đúng lên sprite.
 func _play_cast_vfx(action: String) -> void:
-	var frames := ArtLibrary.vfx_frames(unit.character) if unit.character else null
+	var frames := ArtLibrary.vfx_frames(unit.character) if unit.character else ArtLibrary.enemy_frames(unit.enemy, "vfx")
 	if sprite == null or frames == null or not frames.has_animation(action + "-cast"):
 		return
 	var cast := AnimatedSprite2D.new()
 	cast.name = "CastVfx"
 	cast.sprite_frames = frames
 	cast.position = sprite.position
-	cast.scale = sprite.scale
-	cast.offset = sprite.offset
+	var texture := frames.get_frame_texture(action + "-cast", 0)
+	var ratio := ArtLibrary.frame_size_of(sprite.sprite_frames).y / texture.get_height()
+	cast.scale = sprite.scale * ratio
+	cast.offset = sprite.offset / ratio
 	cast.flip_h = sprite.flip_h
 	body.add_child(cast)
 	cast.play(action + "-cast")
@@ -181,6 +217,12 @@ func _play_cast_vfx(action: String) -> void:
 func _process(delta: float) -> void:
 	_time += delta
 	_hit_flash = maxf(_hit_flash - delta * 4.0, 0.0)
+	_action_visual_left = maxf(0.0, _action_visual_left - delta)
+	if sprite and unit.is_alive() and unit.enemy and _action_visual_left <= 0.0 \
+			and sprite.sprite_frames.get_animation_loop(sprite.animation):
+		var rest := _anim_name(_rest_action())
+		if sprite.animation != StringName(rest) and sprite.sprite_frames.has_animation(rest):
+			_play_anim(_rest_action())
 	if fx_material:
 		fx_material.set_shader_parameter("flash", _hit_flash * 0.8)
 		fx_material.set_shader_parameter("outline_width", 3.0 if marker != Marker.NONE and unit.is_alive() else 0.0)

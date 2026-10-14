@@ -1,0 +1,9 @@
+{
+  "tool": "image_gen built-in",
+  "date": "2026-10-15",
+  "input": "1a_battle.png",
+  "output": "1a_clean.png",
+  "edit": "Dùng 1a_clean.png đã bỏ sương và bài bay, giữ quạt bài trong tay. Mũ và ba đoạn áo choàng có xương. Rèm, đèn sân khấu và bài bay thuộc VFX, không dính vào sprite.",
+  "input_sha256": "5cc003ee6efa762fcaf6581103f8a96838e428c98b96e378c9c0e5e7f5cc9e2a",
+  "output_sha256": "22b62161b80b57de49e09d0cda595126679f565243a7d2b2416f24ab2c2312ee"
+}

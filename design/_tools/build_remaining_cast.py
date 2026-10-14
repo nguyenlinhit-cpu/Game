@@ -170,7 +170,12 @@ def map_grid(ident):
  # Reassert the face after hats/hoods have been drawn so the right-facing eye reads at 1x.
  if ident != 'echo':
   rect(20,14,22,16,'S');dot(21,14,'W');dot(22,14,'E');dot(22,15,'E');dot(24,16,'S')
- return [''.join(r) for r in g]
+ # Leave room for lean, recoil, companion movement and the generated 1px outline.
+ compact=[['.']*32 for _ in range(32)]
+ for y,row in enumerate(g):
+  for x,ch in enumerate(row):
+   if ch!='.':compact[3+round(y*.75)][3+round(x*.75)]=ch
+ return [''.join(r) for r in compact]
 
 
 def main():

@@ -1,0 +1,32 @@
+{
+  "en_mirror_copy": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Soi Gương",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": false
+  },
+  "en_mirror_flash": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Lóe Gương",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": false
+  },
+  "en_mirror_strike": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Đòn Phản Chiếu",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": false
+  }
+}

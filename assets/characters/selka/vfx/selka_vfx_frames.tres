@@ -1,0 +1,360 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_00.png" id="1_o7j2j"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_01.png" id="2_hng8o"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_02.png" id="3_km84p"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_03.png" id="4_e5moe"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_04.png" id="5_5yqpb"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_05.png" id="6_tsl2e"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_06.png" id="7_dcts5"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack_07.png" id="8_f32x8"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_00.png" id="9_sslq6"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_01.png" id="10_gd6m2"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_02.png" id="11_0mcu7"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_03.png" id="12_64x3v"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_04.png" id="13_o8qkg"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_05.png" id="14_tr0x8"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_06.png" id="15_eiimo"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_attack-cast_07.png" id="16_gxmsr"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_opener_00.png" id="17_5cqmk"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_opener_01.png" id="18_u7u8w"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_opener_02.png" id="19_74e2m"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_opener_03.png" id="20_mnrtd"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_opener_04.png" id="21_16qc5"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_00.png" id="22_611yb"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_01.png" id="23_8ix8h"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_02.png" id="24_nm8vt"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_03.png" id="25_w20qq"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_04.png" id="26_ubw80"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_05.png" id="27_3yxhi"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_06.png" id="28_ojd1c"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill_07.png" id="29_h0ik7"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_00.png" id="30_dsfgk"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_01.png" id="31_y1vq0"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_02.png" id="32_dpv2g"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_03.png" id="33_np4js"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_04.png" id="34_0yx0a"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_05.png" id="35_h10h7"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_06.png" id="36_3mnyr"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_07.png" id="37_m24fj"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_08.png" id="38_gg2i5"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_skill-cast_09.png" id="39_rdfig"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_technique_00.png" id="40_21gl8"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_technique_01.png" id="41_5p8sh"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_technique_02.png" id="42_v11c3"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_technique_03.png" id="43_i6y6v"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_technique_04.png" id="44_pwk34"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_technique_05.png" id="45_lt20j"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_00.png" id="46_sul3e"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_01.png" id="47_usky1"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_02.png" id="48_dg4rs"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_03.png" id="49_vpqft"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_04.png" id="50_wjvns"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_05.png" id="51_47goa"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_06.png" id="52_igu7g"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate_07.png" id="53_s8s7e"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_00.png" id="54_hrdxb"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_01.png" id="55_p77ir"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_02.png" id="56_1l86h"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_03.png" id="57_wdk41"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_04.png" id="58_5hfca"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_05.png" id="59_go0mv"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_06.png" id="60_cr65e"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_07.png" id="61_kqrbf"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_08.png" id="62_vecoi"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_09.png" id="63_w5o8w"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_10.png" id="64_hcxrj"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-cast_11.png" id="65_x03tp"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_00.png" id="66_n8ejg"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_01.png" id="67_ejodv"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_02.png" id="68_y20fb"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_03.png" id="69_0fikq"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_04.png" id="70_hx4c8"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_05.png" id="71_pq8ln"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_06.png" id="72_s3ier"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_07.png" id="73_ibu2l"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_08.png" id="74_ko5at"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_09.png" id="75_wihbp"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_10.png" id="76_c07r8"]
+[ext_resource type="Texture2D" path="res://assets/characters/selka/vfx/vfx_selka_ultimate-screen_11.png" id="77_uuyj8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o7j2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hng8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_km84p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e5moe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5yqpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tsl2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dcts5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f32x8")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sslq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gd6m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0mcu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_64x3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_o8qkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tr0x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eiimo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gxmsr")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_5cqmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u7u8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_74e2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mnrtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_16qc5")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_611yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8ix8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nm8vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w20qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ubw80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3yxhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ojd1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_h0ik7")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_dsfgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_y1vq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dpv2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_np4js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0yx0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_h10h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3mnyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_m24fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_gg2i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_rdfig")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_21gl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5p8sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_v11c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_i6y6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_pwk34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_lt20j")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_sul3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_usky1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_dg4rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_vpqft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_wjvns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_47goa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_igu7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_s8s7e")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_hrdxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_p77ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_1l86h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_wdk41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_5hfca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_go0mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_cr65e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_kqrbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_vecoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_w5o8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_hcxrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_x03tp")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_n8ejg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ejodv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_y20fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_0fikq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_hx4c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_pq8ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_s3ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ibu2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ko5at")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_wihbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_c07r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_uuyj8")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

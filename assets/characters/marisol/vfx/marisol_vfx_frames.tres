@@ -1,78 +1,106 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_00.png" id="1_8nu6b"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_01.png" id="2_r50rf"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_02.png" id="3_mmf85"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_03.png" id="4_krsqk"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_04.png" id="5_ratlk"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_05.png" id="6_5vkbt"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_00.png" id="7_j1pjw"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_01.png" id="8_qy3cx"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_02.png" id="9_p8all"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_03.png" id="10_2h642"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_04.png" id="11_nvcvh"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_05.png" id="12_u40c5"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_06.png" id="13_v1ohk"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_07.png" id="14_oxms0"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_00.png" id="15_khjqg"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_01.png" id="16_j3qbm"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_02.png" id="17_e8kbr"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_03.png" id="18_w6i6m"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_04.png" id="19_g5nw4"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_05.png" id="20_yutbd"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_06.png" id="21_67iso"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_07.png" id="22_61fu7"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_00.png" id="23_xy1k5"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_01.png" id="24_k4gjf"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_02.png" id="25_a74gu"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_03.png" id="26_liaox"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_04.png" id="27_6gynx"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_05.png" id="28_iul2m"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_06.png" id="29_3ufg1"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_07.png" id="30_pbg3q"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_08.png" id="31_pyico"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_09.png" id="32_wdubm"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_00.png" id="33_7flwr"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_01.png" id="34_jw2fv"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_02.png" id="35_32aku"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_03.png" id="36_rnb5b"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_04.png" id="37_ids0w"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_05.png" id="38_ad8qg"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_06.png" id="39_16oc1"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_07.png" id="40_nh4pe"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_00.png" id="41_76gqy"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_01.png" id="42_nb7k4"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_02.png" id="43_jsufi"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_03.png" id="44_ij8u2"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_04.png" id="45_mahb0"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_05.png" id="46_fmdr6"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_06.png" id="47_30y7d"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_07.png" id="48_ptenn"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_08.png" id="49_hoyjx"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_09.png" id="50_b2nv1"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_10.png" id="51_1kktu"]
-[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_11.png" id="52_q41hk"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_00.png" id="1_3ufg1"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_01.png" id="2_pbg3q"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_02.png" id="3_pyico"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_03.png" id="4_wdubm"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_04.png" id="5_7flwr"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack_05.png" id="6_jw2fv"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_00.png" id="7_32aku"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_01.png" id="8_rnb5b"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_02.png" id="9_ids0w"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_03.png" id="10_ad8qg"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_04.png" id="11_16oc1"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_05.png" id="12_nh4pe"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_06.png" id="13_76gqy"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_attack-cast_07.png" id="14_nb7k4"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_opener_00.png" id="15_jsufi"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_opener_01.png" id="16_ij8u2"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_opener_02.png" id="17_mahb0"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_opener_03.png" id="18_fmdr6"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_opener_04.png" id="19_30y7d"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_00.png" id="20_ptenn"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_01.png" id="21_hoyjx"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_02.png" id="22_b2nv1"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_03.png" id="23_1kktu"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_04.png" id="24_q41hk"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_05.png" id="25_soxfy"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_06.png" id="26_x1eqr"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill_07.png" id="27_thhpv"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_00.png" id="28_shgtk"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_01.png" id="29_xiaei"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_02.png" id="30_os5ah"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_03.png" id="31_yvjyl"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_04.png" id="32_mf3ty"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_05.png" id="33_hkwvf"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_06.png" id="34_55o8j"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_07.png" id="35_no7e0"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_08.png" id="36_33a1q"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-cast_09.png" id="37_kva6c"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-screen_00.png" id="38_w2aro"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-screen_01.png" id="39_d3cx6"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-screen_02.png" id="40_bpsxv"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-screen_03.png" id="41_b885r"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_skill-screen_04.png" id="42_otax7"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_technique_00.png" id="43_8imfu"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_technique_01.png" id="44_aqkw7"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_technique_02.png" id="45_gwy36"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_technique_03.png" id="46_7re4m"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_technique_04.png" id="47_cffc5"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_technique_05.png" id="48_r5cmn"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_00.png" id="49_3tvw2"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_01.png" id="50_41e2l"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_02.png" id="51_wbsdt"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_03.png" id="52_snckk"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_04.png" id="53_a0b10"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_05.png" id="54_rqpgt"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_06.png" id="55_vmp3h"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate_07.png" id="56_qd3qs"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_00.png" id="57_x3y73"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_01.png" id="58_mqkas"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_02.png" id="59_i3203"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_03.png" id="60_oah5m"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_04.png" id="61_jh71f"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_05.png" id="62_cwse2"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_06.png" id="63_3fx5f"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_07.png" id="64_wb25p"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_08.png" id="65_ixis7"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_09.png" id="66_evm2j"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_10.png" id="67_r8xct"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-cast_11.png" id="68_cx8hm"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_00.png" id="69_8c6qk"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_01.png" id="70_ipwp6"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_02.png" id="71_ehy5f"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_03.png" id="72_ae376"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_04.png" id="73_y2rte"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_05.png" id="74_lel22"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_06.png" id="75_ufv5x"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_07.png" id="76_ofynm"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_08.png" id="77_gj42u"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_09.png" id="78_b6fd0"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_10.png" id="79_qmpx7"]
+[ext_resource type="Texture2D" path="res://assets/characters/marisol/vfx/vfx_marisol_ultimate-screen_11.png" id="80_5xpbu"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8nu6b")
+"texture": ExtResource("1_3ufg1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_r50rf")
+"texture": ExtResource("2_pbg3q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_mmf85")
+"texture": ExtResource("3_pyico")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_krsqk")
+"texture": ExtResource("4_wdubm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ratlk")
+"texture": ExtResource("5_7flwr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_5vkbt")
+"texture": ExtResource("6_jw2fv")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +108,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_j1pjw")
+"texture": ExtResource("7_32aku")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_qy3cx")
+"texture": ExtResource("8_rnb5b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_p8all")
+"texture": ExtResource("9_ids0w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_2h642")
+"texture": ExtResource("10_ad8qg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_nvcvh")
+"texture": ExtResource("11_16oc1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_u40c5")
+"texture": ExtResource("12_nh4pe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_v1ohk")
+"texture": ExtResource("13_76gqy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_oxms0")
+"texture": ExtResource("14_nb7k4")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +137,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_khjqg")
+"texture": ExtResource("15_jsufi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_j3qbm")
+"texture": ExtResource("16_ij8u2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_e8kbr")
+"texture": ExtResource("17_mahb0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_w6i6m")
+"texture": ExtResource("18_fmdr6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_g5nw4")
+"texture": ExtResource("19_30y7d")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ptenn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_yutbd")
+"texture": ExtResource("21_hoyjx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_67iso")
+"texture": ExtResource("22_b2nv1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_61fu7")
+"texture": ExtResource("23_1kktu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_q41hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_soxfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_x1eqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_thhpv")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +186,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_xy1k5")
+"texture": ExtResource("28_shgtk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_k4gjf")
+"texture": ExtResource("29_xiaei")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_a74gu")
+"texture": ExtResource("30_os5ah")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_liaox")
+"texture": ExtResource("31_yvjyl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_6gynx")
+"texture": ExtResource("32_mf3ty")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_iul2m")
+"texture": ExtResource("33_hkwvf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_3ufg1")
+"texture": ExtResource("34_55o8j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_pbg3q")
+"texture": ExtResource("35_no7e0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_pyico")
+"texture": ExtResource("36_33a1q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_wdubm")
+"texture": ExtResource("37_kva6c")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +221,71 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_7flwr")
+"texture": ExtResource("38_w2aro")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_jw2fv")
+"texture": ExtResource("39_d3cx6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_32aku")
+"texture": ExtResource("40_bpsxv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_rnb5b")
+"texture": ExtResource("41_b885r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_ids0w")
+"texture": ExtResource("42_otax7")
+}],
+"loop": 0,
+"name": &"skill-screen",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_8imfu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_ad8qg")
+"texture": ExtResource("44_aqkw7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_16oc1")
+"texture": ExtResource("45_gwy36")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_nh4pe")
+"texture": ExtResource("46_7re4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_cffc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_r5cmn")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_3tvw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_41e2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_wbsdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_snckk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_a0b10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_rqpgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vmp3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_qd3qs")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +293,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_76gqy")
+"texture": ExtResource("57_x3y73")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_nb7k4")
+"texture": ExtResource("58_mqkas")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_jsufi")
+"texture": ExtResource("59_i3203")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_ij8u2")
+"texture": ExtResource("60_oah5m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_mahb0")
+"texture": ExtResource("61_jh71f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_fmdr6")
+"texture": ExtResource("62_cwse2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_30y7d")
+"texture": ExtResource("63_3fx5f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_ptenn")
+"texture": ExtResource("64_wb25p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_hoyjx")
+"texture": ExtResource("65_ixis7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_b2nv1")
+"texture": ExtResource("66_evm2j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_1kktu")
+"texture": ExtResource("67_r8xct")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_q41hk")
+"texture": ExtResource("68_cx8hm")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("69_8c6qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_ipwp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ehy5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ae376")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_y2rte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_lel22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ufv5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_ofynm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_gj42u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_b6fd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_qmpx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_5xpbu")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

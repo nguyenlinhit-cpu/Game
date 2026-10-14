@@ -1,0 +1,185 @@
+{
+ "owner": "ember",
+ "skill": "ultimate",
+ "fps": 12,
+ "frames": 12,
+ "hit_frame": 8,
+ "element_color": "#E8552B",
+ "anchors": {
+  "feet": [
+   256,
+   430
+  ],
+  "effect_origin_per_frame": {
+   "attack": [
+    [
+     170,
+     269
+    ],
+    [
+     166,
+     270
+    ],
+    [
+     161,
+     270
+    ],
+    [
+     175,
+     264
+    ],
+    [
+     188,
+     258
+    ],
+    [
+     188,
+     258
+    ],
+    [
+     179,
+     264
+    ],
+    [
+     170,
+     269
+    ]
+   ],
+   "skill": [
+    [
+     170,
+     269
+    ],
+    [
+     169,
+     269
+    ],
+    [
+     166,
+     270
+    ],
+    [
+     163,
+     270
+    ],
+    [
+     161,
+     270
+    ],
+    [
+     175,
+     264
+    ],
+    [
+     188,
+     258
+    ],
+    [
+     188,
+     258
+    ],
+    [
+     179,
+     264
+    ],
+    [
+     170,
+     269
+    ]
+   ],
+   "ultimate": [
+    [
+     170,
+     269
+    ],
+    [
+     169,
+     268
+    ],
+    [
+     168,
+     264
+    ],
+    [
+     165,
+     259
+    ],
+    [
+     162,
+     254
+    ],
+    [
+     160,
+     251
+    ],
+    [
+     159,
+     249
+    ],
+    [
+     175,
+     243
+    ],
+    [
+     191,
+     238
+    ],
+    [
+     191,
+     238
+    ],
+    [
+     173,
+     257
+    ],
+    [
+     173,
+     257
+    ]
+   ]
+  },
+  "target_center": [
+   256,
+   275
+  ]
+ },
+ "layers": {
+  "cast": {
+   "start_frame": 0,
+   "frames": 12,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "người dùng (khung trùng khung sprite trận, chân ở anchor)"
+  },
+  "hit": {
+   "start_frame": 8,
+   "frames": 8,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
+  },
+  "screen": {
+   "start_frame": 6,
+   "frames": 12,
+   "size": [
+    1024,
+    576
+   ],
+   "placed_at": "giữa màn hình"
+  }
+ },
+ "cutin": {
+  "frames": 10,
+  "size": [
+   1920,
+   540
+  ],
+  "seconds": 0.8,
+  "source": "1_concept/1e_splash.png",
+  "plays": "trước khung 0 của ultimate"
+ }
+}

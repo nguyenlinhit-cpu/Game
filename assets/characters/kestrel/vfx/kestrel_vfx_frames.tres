@@ -1,0 +1,360 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_00.png" id="1_37ebm"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_01.png" id="2_ymf3k"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_02.png" id="3_33n1y"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_03.png" id="4_v4bsh"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_04.png" id="5_guypb"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_05.png" id="6_u43t6"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_06.png" id="7_kom1h"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack_07.png" id="8_rnqab"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_00.png" id="9_f3cer"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_01.png" id="10_oryks"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_02.png" id="11_pf1tk"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_03.png" id="12_2hgjn"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_04.png" id="13_tkbac"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_05.png" id="14_etgv6"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_06.png" id="15_chwwn"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_attack-cast_07.png" id="16_6wj47"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_opener_00.png" id="17_rvyls"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_opener_01.png" id="18_4h1tc"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_opener_02.png" id="19_mx6tj"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_opener_03.png" id="20_5320x"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_opener_04.png" id="21_wgav5"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_00.png" id="22_188fs"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_01.png" id="23_fgxkl"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_02.png" id="24_5oai8"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_03.png" id="25_6orb4"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_04.png" id="26_0cp0v"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_05.png" id="27_eykf7"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_06.png" id="28_8t0cs"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill_07.png" id="29_v6xnq"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_00.png" id="30_voshb"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_01.png" id="31_u0fho"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_02.png" id="32_27q5t"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_03.png" id="33_ynx5e"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_04.png" id="34_5fbak"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_05.png" id="35_27uu3"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_06.png" id="36_14ogi"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_07.png" id="37_dcqwa"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_08.png" id="38_j2ik6"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_skill-cast_09.png" id="39_kamo7"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_technique_00.png" id="40_8rsy6"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_technique_01.png" id="41_4nn24"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_technique_02.png" id="42_1hohh"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_technique_03.png" id="43_2d2jt"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_technique_04.png" id="44_iydr0"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_technique_05.png" id="45_6hjoh"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_00.png" id="46_ja730"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_01.png" id="47_krubu"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_02.png" id="48_k5tmo"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_03.png" id="49_ju0tc"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_04.png" id="50_p21q6"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_05.png" id="51_1c65o"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_06.png" id="52_dj6xn"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate_07.png" id="53_668gr"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_00.png" id="54_ni2ti"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_01.png" id="55_14jax"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_02.png" id="56_gutml"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_03.png" id="57_nshi2"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_04.png" id="58_ybgmq"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_05.png" id="59_g1hdr"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_06.png" id="60_kaes5"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_07.png" id="61_8dr6v"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_08.png" id="62_u8ae8"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_09.png" id="63_deg8e"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_10.png" id="64_poqcn"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-cast_11.png" id="65_s4g1b"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_00.png" id="66_menlt"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_01.png" id="67_tb3bx"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_02.png" id="68_hwp68"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_03.png" id="69_ps6u8"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_04.png" id="70_vlaix"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_05.png" id="71_l53av"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_06.png" id="72_67d5m"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_07.png" id="73_1n73w"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_08.png" id="74_k46gx"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_09.png" id="75_jgeqq"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_10.png" id="76_pm7mk"]
+[ext_resource type="Texture2D" path="res://assets/characters/kestrel/vfx/vfx_kestrel_ultimate-screen_11.png" id="77_sp3cd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_37ebm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ymf3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_33n1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v4bsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_guypb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u43t6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kom1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rnqab")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_f3cer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oryks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pf1tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2hgjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tkbac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_etgv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_chwwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6wj47")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_rvyls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4h1tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mx6tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5320x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wgav5")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_188fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_fgxkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5oai8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6orb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0cp0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_eykf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8t0cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_v6xnq")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_voshb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_u0fho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_27q5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ynx5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5fbak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_27uu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_14ogi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dcqwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_j2ik6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_kamo7")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_8rsy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_4nn24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1hohh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_2d2jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_iydr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_6hjoh")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_ja730")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_krubu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_k5tmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ju0tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_p21q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_1c65o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_dj6xn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_668gr")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_ni2ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_14jax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_gutml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_nshi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ybgmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_g1hdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_kaes5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_8dr6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_u8ae8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_deg8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_poqcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_s4g1b")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_menlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_tb3bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_hwp68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ps6u8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_vlaix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_l53av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_67d5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_1n73w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_k46gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_jgeqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_pm7mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_sp3cd")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

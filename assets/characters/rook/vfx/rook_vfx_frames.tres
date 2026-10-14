@@ -1,78 +1,101 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_00.png" id="1_yqgg5"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_01.png" id="2_wq4yb"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_02.png" id="3_7pkyd"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_03.png" id="4_nnlv4"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_04.png" id="5_8xj3p"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_05.png" id="6_hg5e6"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_00.png" id="7_jy5is"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_01.png" id="8_6lsht"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_02.png" id="9_6ju7b"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_03.png" id="10_ix7rp"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_04.png" id="11_tqmso"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_05.png" id="12_x0mtm"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_06.png" id="13_j41qv"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_07.png" id="14_dhuu3"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_00.png" id="15_8fiyj"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_01.png" id="16_72mk1"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_02.png" id="17_t1o7q"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_03.png" id="18_xrpmp"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_04.png" id="19_p00ni"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_05.png" id="20_ywkr4"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_06.png" id="21_ujpat"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_07.png" id="22_tikxa"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_00.png" id="23_6ynfk"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_01.png" id="24_wr7vl"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_02.png" id="25_hy8i8"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_03.png" id="26_x8pxc"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_04.png" id="27_aym7x"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_05.png" id="28_vp6bx"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_06.png" id="29_lyvhg"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_07.png" id="30_3vt6j"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_08.png" id="31_7ol0a"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_09.png" id="32_1fegg"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_00.png" id="33_80pc7"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_01.png" id="34_7celi"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_02.png" id="35_dyvur"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_03.png" id="36_04mss"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_04.png" id="37_3laqp"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_05.png" id="38_w6r0n"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_06.png" id="39_xx5yq"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_07.png" id="40_1tg18"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_00.png" id="41_dmdgh"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_01.png" id="42_21o87"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_02.png" id="43_neewp"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_03.png" id="44_s3rlo"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_04.png" id="45_x14mw"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_05.png" id="46_68v3f"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_06.png" id="47_2queb"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_07.png" id="48_1okys"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_08.png" id="49_87vti"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_09.png" id="50_y67kg"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_10.png" id="51_8h3ay"]
-[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_11.png" id="52_726pc"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_00.png" id="1_wr7vl"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_01.png" id="2_hy8i8"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_02.png" id="3_x8pxc"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_03.png" id="4_aym7x"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_04.png" id="5_vp6bx"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack_05.png" id="6_lyvhg"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_00.png" id="7_3vt6j"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_01.png" id="8_7ol0a"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_02.png" id="9_1fegg"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_03.png" id="10_80pc7"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_04.png" id="11_7celi"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_05.png" id="12_dyvur"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_06.png" id="13_04mss"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_attack-cast_07.png" id="14_3laqp"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_opener_00.png" id="15_w6r0n"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_opener_01.png" id="16_xx5yq"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_opener_02.png" id="17_1tg18"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_opener_03.png" id="18_dmdgh"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_opener_04.png" id="19_21o87"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_00.png" id="20_neewp"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_01.png" id="21_s3rlo"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_02.png" id="22_x14mw"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_03.png" id="23_68v3f"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_04.png" id="24_2queb"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_05.png" id="25_1okys"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_06.png" id="26_87vti"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill_07.png" id="27_y67kg"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_00.png" id="28_8h3ay"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_01.png" id="29_726pc"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_02.png" id="30_2truy"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_03.png" id="31_irfha"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_04.png" id="32_s1gcw"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_05.png" id="33_2wu54"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_06.png" id="34_utkoj"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_07.png" id="35_4g30n"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_08.png" id="36_ud67x"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_skill-cast_09.png" id="37_etmtr"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_technique_00.png" id="38_nlkom"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_technique_01.png" id="39_sch3s"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_technique_02.png" id="40_fsg6p"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_technique_03.png" id="41_gp071"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_technique_04.png" id="42_vjmuf"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_technique_05.png" id="43_trer8"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_00.png" id="44_qxvv7"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_01.png" id="45_wo6ie"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_02.png" id="46_mhgrb"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_03.png" id="47_vxtnd"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_04.png" id="48_8goc3"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_05.png" id="49_ldf2o"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_06.png" id="50_cct1h"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate_07.png" id="51_oid1i"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_00.png" id="52_fm5fb"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_01.png" id="53_v82xi"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_02.png" id="54_lep5l"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_03.png" id="55_qsx3n"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_04.png" id="56_yub7b"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_05.png" id="57_xw00f"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_06.png" id="58_en57u"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_07.png" id="59_ko2xx"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_08.png" id="60_bhsq5"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_09.png" id="61_gj0q3"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_10.png" id="62_fognu"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-cast_11.png" id="63_xm26b"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_00.png" id="64_nyydk"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_01.png" id="65_g2rwa"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_02.png" id="66_ycwyw"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_03.png" id="67_h2oyh"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_04.png" id="68_piapl"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_05.png" id="69_m40p3"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_06.png" id="70_o652e"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_07.png" id="71_44eqs"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_08.png" id="72_lnbwt"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_09.png" id="73_jk5o6"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_10.png" id="74_bbyyu"]
+[ext_resource type="Texture2D" path="res://assets/characters/rook/vfx/vfx_rook_ultimate-screen_11.png" id="75_7owq8"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_yqgg5")
+"texture": ExtResource("1_wr7vl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_wq4yb")
+"texture": ExtResource("2_hy8i8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_7pkyd")
+"texture": ExtResource("3_x8pxc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_nnlv4")
+"texture": ExtResource("4_aym7x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_8xj3p")
+"texture": ExtResource("5_vp6bx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_hg5e6")
+"texture": ExtResource("6_lyvhg")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +103,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_jy5is")
+"texture": ExtResource("7_3vt6j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_6lsht")
+"texture": ExtResource("8_7ol0a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_6ju7b")
+"texture": ExtResource("9_1fegg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_ix7rp")
+"texture": ExtResource("10_80pc7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_tqmso")
+"texture": ExtResource("11_7celi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_x0mtm")
+"texture": ExtResource("12_dyvur")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_j41qv")
+"texture": ExtResource("13_04mss")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_dhuu3")
+"texture": ExtResource("14_3laqp")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +132,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_8fiyj")
+"texture": ExtResource("15_w6r0n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_72mk1")
+"texture": ExtResource("16_xx5yq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_t1o7q")
+"texture": ExtResource("17_1tg18")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_xrpmp")
+"texture": ExtResource("18_dmdgh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_p00ni")
+"texture": ExtResource("19_21o87")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_neewp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_ywkr4")
+"texture": ExtResource("21_s3rlo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_ujpat")
+"texture": ExtResource("22_x14mw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_tikxa")
+"texture": ExtResource("23_68v3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2queb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1okys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_87vti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_y67kg")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +181,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_6ynfk")
+"texture": ExtResource("28_8h3ay")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_wr7vl")
+"texture": ExtResource("29_726pc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_hy8i8")
+"texture": ExtResource("30_2truy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_x8pxc")
+"texture": ExtResource("31_irfha")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_aym7x")
+"texture": ExtResource("32_s1gcw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_vp6bx")
+"texture": ExtResource("33_2wu54")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_lyvhg")
+"texture": ExtResource("34_utkoj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_3vt6j")
+"texture": ExtResource("35_4g30n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_7ol0a")
+"texture": ExtResource("36_ud67x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_1fegg")
+"texture": ExtResource("37_etmtr")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +216,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_80pc7")
+"texture": ExtResource("38_nlkom")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_7celi")
+"texture": ExtResource("39_sch3s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_dyvur")
+"texture": ExtResource("40_fsg6p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_04mss")
+"texture": ExtResource("41_gp071")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_3laqp")
+"texture": ExtResource("42_vjmuf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_w6r0n")
+"texture": ExtResource("43_trer8")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_qxvv7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_xx5yq")
+"texture": ExtResource("45_wo6ie")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_1tg18")
+"texture": ExtResource("46_mhgrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_vxtnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_8goc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ldf2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_cct1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_oid1i")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +268,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_dmdgh")
+"texture": ExtResource("52_fm5fb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_21o87")
+"texture": ExtResource("53_v82xi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_neewp")
+"texture": ExtResource("54_lep5l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_s3rlo")
+"texture": ExtResource("55_qsx3n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_x14mw")
+"texture": ExtResource("56_yub7b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_68v3f")
+"texture": ExtResource("57_xw00f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_2queb")
+"texture": ExtResource("58_en57u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_1okys")
+"texture": ExtResource("59_ko2xx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_87vti")
+"texture": ExtResource("60_bhsq5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_y67kg")
+"texture": ExtResource("61_gj0q3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_8h3ay")
+"texture": ExtResource("62_fognu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_726pc")
+"texture": ExtResource("63_xm26b")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_nyydk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_g2rwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ycwyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_h2oyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_piapl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_m40p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_o652e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_44eqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_lnbwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_jk5o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_bbyyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_7owq8")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

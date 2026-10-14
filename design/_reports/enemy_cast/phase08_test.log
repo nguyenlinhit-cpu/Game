@@ -1,0 +1,91 @@
+Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
+
+--- Dữ liệu ---
+  ĐẠT  Mọi quái có hành động, đòn mạnh có báo trước, có tên dịch
+  ĐẠT  8 quái thường, mỗi loại ≥ 2 biến thể nguyên tố
+  ĐẠT  3 quái tinh anh
+  ĐẠT  library_warden: 2 giai đoạn, đổi điểm yếu, luôn có điểm yếu thuộc đội miễn phí, có nhạc riêng
+  ĐẠT  vault_behemoth: 2 giai đoạn, đổi điểm yếu, luôn có điểm yếu thuộc đội miễn phí, có nhạc riêng
+  ĐẠT  warped_core: 2 giai đoạn, đổi điểm yếu, luôn có điểm yếu thuộc đội miễn phí, có nhạc riêng
+  ĐẠT  soul_devourer: 3 giai đoạn, đổi điểm yếu, luôn có điểm yếu thuộc đội miễn phí, có nhạc riêng
+  ĐẠT  Cấp quái theo chương: 1–8, 8–16, 16–24, 24–30
+  ĐẠT  Mỗi khu có ≥ 6 trận thường, ≥ 1 tinh anh, 1 boss ({ &"furnace": { 0: 6, 2: 1, 1: 1 }, &"library": { 0: 7, 2: 1, 1: 1 }, &"tower": { 0: 6, 2: 1, 1: 3 }, &"vault": { 0: 6, 2: 1, 1: 1 } })
+  ĐẠT  Trùm cuối cấp 30
+--- AI ---
+  ĐẠT  Trọng số theo tình huống: vừa bị Phá Vỡ thì Thủ Thế ×5
+  ĐẠT  Máu thấp: tăng trọng số Thủ Thế
+  ĐẠT  Hồi chiêu 2 lượt
+  ĐẠT  Xạ Thủ: lượt sau bắn gấp đôi vào người Bị Ngắm
+  ĐẠT  Bầy Ong: chỉ gọi thêm khi còn 1 con
+  ĐẠT  Khiêu Khích: đòn đơn phải nhắm người khiêu khích
+--- Quái thường ---
+  ĐẠT  Mầm Ma Biến: nổ khi chết, gây sát thương cả đội
+  ĐẠT  Hồn Ảnh: tạo khiên cho quái đồng minh
+  ĐẠT  Giáp Sĩ: Thủ Thế giảm sát thương (75 → 45), giữ tới hết lượt sau
+  ĐẠT  Xạ Thủ: bắn xuyên gấp đôi (44 → 88) và gỡ Bị Ngắm
+  ĐẠT  Pháp Sư Méo: 3 biến thể gắn Bỏng/Độc/Gió Cắt, mất máu đầu lượt
+  ĐẠT  Chuột Mực Sách: trộm 1 Điểm Chiến Kỹ
+  ĐẠT  Chuột Mực Sách: hết điểm thì không trộm được thêm
+  ĐẠT  Bầy Ong: còn 1 con thì gọi thêm 2 Ong Thợ
+  ĐẠT  Giới hạn 5 quái: quái gọi ra vẫn tính, hết chỗ thì không gọi
+  ĐẠT  Bóng Gương: sao chép buff của người nhiều buff nhất
+--- Tinh anh ---
+  ĐẠT  Kỵ Sĩ: lượt đầu chỉ tích tụ (báo trước, có mục tiêu)
+  ĐẠT  Kỵ Sĩ: phá khiên lúc tích tụ thì hủy đòn
+  ĐẠT  Kỵ Sĩ: không ngắt thì lượt sau lao trúng (225 sát thương)
+  ĐẠT  Mẫu Thể: khiên 120 với 2 Mầm, 90 với 1 Mầm
+  ĐẠT  Mẫu Thể: gọi 2 Mầm, khiên dày lại
+  ĐẠT  Mẫu Thể: cứ 2 lượt triệu hồi một lần ([true, false, true, false])
+  ĐẠT  Thủ Thư Câm: Phong Ấn Chiến kỹ người Tấn Công cao nhất (Lữ Khách)
+  ĐẠT  Phong Ấn kéo dài 2 lượt của người bị ấn
+--- Người Gác Thư Viện ---
+  ĐẠT  GĐ1 yếu Lửa, Hồn
+  ĐẠT  Lượt đầu triệu hồi 2 Sách Bay
+  ĐẠT  Sát thương dừng ở ngưỡng 50%
+  ĐẠT  Sang GĐ2: đổi điểm yếu (Phong, Hồn), hồi khiên
+  ĐẠT  GĐ2: đọc Lời Nguyền Câm Lặng, đếm ngược 3 lượt
+  ĐẠT  Đang đếm ngược vẫn hành động (["en_warden_strike"])
+  ĐẠT  Phá khiên ngắt lời nguyền
+  ĐẠT  Không ngắt: hết đếm ngược thì cả đội bị Phong Ấn
+--- Cự Thú Kho Chứa ---
+  ĐẠT  Đóng băng 1 nhân vật: mất lượt kế tiếp
+  ĐẠT  GĐ2 Băng Vỡ: tăng tốc, đổi điểm yếu (Sét, Hồn)
+  ĐẠT  GĐ2: Lở Băng báo trước, cảnh báo cả đội
+  ĐẠT  GĐ2: đánh lan
+--- Lõi Lò Biến Dạng ---
+  ĐẠT  Có 2 tay máy là mục tiêu phụ
+  ĐẠT  Mỗi lượt tích 1 tầng Nhiệt, tay máy Nạp Nhiệt thêm 1
+  ĐẠT  Đủ 4 tầng: chọn Quá Nhiệt
+  ĐẠT  Quá Nhiệt báo trước 1 lượt
+  ĐẠT  Phá khiên: hủy Quá Nhiệt, giảm 3 tầng Nhiệt
+  ĐẠT  Không ngắt: nổ cả đội và xả hết Nhiệt
+  ĐẠT  GĐ2 Lò Quá Tải: dựng lại tay máy, đổi điểm yếu (Mộc, Hồn)
+--- Kẻ Nuốt Mảnh Hồn ---
+  ĐẠT  GĐ1: hút buff của cả đội
+  ĐẠT  GĐ2: tách 3 phân thân khác điểm yếu, bản thể không bị nhắm được
+  ĐẠT  Hạ hết phân thân: bản thể mất máu, sang GĐ3 (yếu Hồn, Lửa, Sét)
+  ĐẠT  GĐ3: mỗi lượt xóa 1 Điểm Chiến Kỹ
+  ĐẠT  GĐ3: Nuốt Hồn đếm ngược
+  ĐẠT  Gây đủ 10% máu tối đa trong lúc đếm ngược thì ngắt Nuốt Hồn
+--- Mức Khó ---
+  ĐẠT  Boss khó: máu ×1.6, Tấn Công, khiên cao hơn
+--- Màn trận ---
+  ĐẠT  Boss vẽ to hơn quái thường
+  ĐẠT  Nhạc riêng của boss
+  ĐẠT  Quái gọi ra giữa trận có hình trên sân
+  ĐẠT  Cảnh báo: đánh dấu đúng người sắp trúng đòn tích tụ
+  ĐẠT  Chuyển giai đoạn: hiện đoạn chuyển cảnh
+  ĐẠT  Đổi nhạc theo giai đoạn
+--- Phòng thử ---
+  ĐẠT  Phòng thử: chọn đội 4 người + boss + cấp + mức Khó
+--- Đánh Tự Động từng boss ---
+  ĐẠT  library_warden: đội miễn phí cấp 10 thắng Tự Động qua đủ 2 giai đoạn (56 lượt)
+  ĐẠT  vault_behemoth: đội miễn phí cấp 18 thắng Tự Động qua đủ 2 giai đoạn (54 lượt)
+  ĐẠT  warped_core: đội miễn phí cấp 26 thắng Tự Động qua đủ 2 giai đoạn (73 lượt)
+  ĐẠT  soul_devourer: đội miễn phí cấp 30 thắng Tự Động qua đủ 3 giai đoạn (86 lượt)
+  ĐẠT  Không có lỗi engine/script trong lúc chạy
+Phase 8: 72/72 kiểm tra đạt
+WARNING: 263 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 214 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

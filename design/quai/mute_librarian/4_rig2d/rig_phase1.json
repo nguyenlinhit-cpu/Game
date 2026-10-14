@@ -1,0 +1,175 @@
+{
+  "id": "mute_librarian",
+  "folder": "mute_librarian",
+  "kind": "quai",
+  "concept": "1a_battle.png",
+  "frame": 384,
+  "char_h": 276.48,
+  "foot_x": 596.0,
+  "feet": [
+    192,
+    319
+  ],
+  "bones": {
+    "root": {
+      "parent": null,
+      "pivot": [
+        635.47,
+        1233.28
+      ],
+      "zone": [],
+      "depth": 0,
+      "prio": 0.025
+    },
+    "body": {
+      "parent": "root",
+      "pivot": [
+        635.47,
+        813.4399999999999
+      ],
+      "zone": [
+        [
+          635.47,
+          629.76,
+          635.47,
+          944.64,
+          215.82
+        ]
+      ],
+      "depth": 1,
+      "prio": 1
+    },
+    "head": {
+      "parent": "body",
+      "pivot": [
+        599.5,
+        495.936
+      ],
+      "zone": [
+        [
+          599.5,
+          275.52,
+          599.5,
+          380.47999999999996,
+          191.84
+        ]
+      ],
+      "depth": 3,
+      "prio": 2
+    },
+    "limb0": {
+      "parent": "body",
+      "pivot": [
+        395.67,
+        616.64
+      ],
+      "zone": [
+        [
+          395.67,
+          616.64,
+          263.78000000000003,
+          656.0,
+          83.93
+        ]
+      ],
+      "depth": 3.5,
+      "prio": 2
+    },
+    "limb1": {
+      "parent": "body",
+      "pivot": [
+        803.33,
+        669.12
+      ],
+      "zone": [
+        [
+          803.33,
+          669.12,
+          935.22,
+          787.1999999999999,
+          83.93
+        ]
+      ],
+      "depth": 3.5,
+      "prio": 2
+    },
+    "extra0": {
+      "parent": "body",
+      "pivot": [
+        419.65,
+        918.4
+      ],
+      "zone": [
+        [
+          419.65,
+          918.4,
+          263.78000000000003,
+          1167.68,
+          107.91
+        ]
+      ],
+      "depth": 2.5,
+      "prio": 2
+    },
+    "extra1": {
+      "parent": "body",
+      "pivot": [
+        839.3,
+        931.52
+      ],
+      "zone": [
+        [
+          839.3,
+          931.52,
+          1019.15,
+          1193.92,
+          119.9
+        ]
+      ],
+      "depth": 2.5,
+      "prio": 2
+    },
+    "lantern": {
+      "parent": "limb0",
+      "pivot": [
+        239.8,
+        524.8000000000001
+      ],
+      "zone": [
+        [
+          239.8,
+          551.04,
+          239.8,
+          800.3199999999999,
+          95.92
+        ]
+      ],
+      "depth": 5,
+      "prio": 2.4
+    }
+  },
+  "soft": 26.378,
+  "actions": {
+    "idle": 6,
+    "attack": 8,
+    "skill": 10,
+    "hit": 4,
+    "down": 6
+  },
+  "loops": [
+    "idle",
+    "guard",
+    "aim",
+    "charge",
+    "telegraph",
+    "curse",
+    "swallow"
+  ],
+  "hit_frames": {
+    "attack": 4,
+    "skill": 6,
+    "summon": 6,
+    "down": 4
+  },
+  "shadow_below": 1259
+}

@@ -9,7 +9,8 @@
 		"vfx": {"frame_size": 512, "fps": 12, "skills": {"attack": 8, "skill": 12, "ultimate": 16}}
 	},
 	"enemy": {
-		"map": {"frame_size": 128, "actions": {"idle": 4, "run": 6}, "loop": ["idle", "run"]},
+		"directions": ["e"],
+		"map": {"frame_size": {"normal": 32, "elite": 32, "boss": 48}, "actions": {"idle": 4, "run": 6}, "loop": ["idle", "run"]},
 		"battle": {"frame_size": {"normal": 256, "elite": 384, "boss": 768}, "actions": {"idle": 6, "attack": 8, "skill": 10, "hit": 4, "down": 6}, "loop": ["idle"]}
 	},
 	"expression_map": {"neutral": "neutral", "smile": "happy", "smug": "happy", "surprised": "neutral",

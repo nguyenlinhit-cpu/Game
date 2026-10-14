@@ -1,0 +1,185 @@
+{
+ "owner": "traveler_male",
+ "skill": "ultimate_blast",
+ "fps": 12,
+ "frames": 12,
+ "hit_frame": 8,
+ "element_color": "#F2D58A",
+ "anchors": {
+  "feet": [
+   256,
+   430
+  ],
+  "effect_origin_per_frame": {
+   "attack": [
+    [
+     164,
+     286
+    ],
+    [
+     159,
+     290
+    ],
+    [
+     155,
+     295
+    ],
+    [
+     165,
+     285
+    ],
+    [
+     175,
+     275
+    ],
+    [
+     175,
+     275
+    ],
+    [
+     169,
+     281
+    ],
+    [
+     164,
+     286
+    ]
+   ],
+   "skill": [
+    [
+     164,
+     286
+    ],
+    [
+     162,
+     288
+    ],
+    [
+     159,
+     290
+    ],
+    [
+     157,
+     293
+    ],
+    [
+     155,
+     295
+    ],
+    [
+     165,
+     285
+    ],
+    [
+     175,
+     275
+    ],
+    [
+     175,
+     275
+    ],
+    [
+     169,
+     281
+    ],
+    [
+     164,
+     286
+    ]
+   ],
+   "ultimate": [
+    [
+     164,
+     286
+    ],
+    [
+     163,
+     285
+    ],
+    [
+     161,
+     281
+    ],
+    [
+     159,
+     276
+    ],
+    [
+     157,
+     271
+    ],
+    [
+     156,
+     268
+    ],
+    [
+     155,
+     266
+    ],
+    [
+     165,
+     265
+    ],
+    [
+     175,
+     265
+    ],
+    [
+     175,
+     265
+    ],
+    [
+     164,
+     300
+    ],
+    [
+     164,
+     300
+    ]
+   ]
+  },
+  "target_center": [
+   256,
+   275
+  ]
+ },
+ "layers": {
+  "cast": {
+   "start_frame": 0,
+   "frames": 12,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "người dùng (khung trùng khung sprite trận, chân ở anchor)"
+  },
+  "hit": {
+   "start_frame": 8,
+   "frames": 8,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
+  },
+  "screen": {
+   "start_frame": 6,
+   "frames": 12,
+   "size": [
+    1024,
+    576
+   ],
+   "placed_at": "giữa màn hình"
+  }
+ },
+ "cutin": {
+  "frames": 10,
+  "size": [
+   1920,
+   540
+  ],
+  "seconds": 0.8,
+  "source": "1_concept/1e_splash.png",
+  "plays": "trước khung 0 của ultimate_blast"
+ }
+}

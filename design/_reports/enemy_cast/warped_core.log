@@ -1,0 +1,21 @@
+BlenderMCP addon registered
+[warped_core rig] idle: 6 khung
+[warped_core rig] attack: 8 khung
+[warped_core rig] skill: 10 khung
+[warped_core rig] hit: 4 khung
+[warped_core rig] down: 6 khung
+[warped_core rig] telegraph: 6 khung
+[warped_core rig] sheet 7680×4608 → /home/linh/Game/design/quai/warped_core/5_render/battle_warped_core.png
+[warped_core-p2 rig] idle-p2: 6 khung
+[warped_core-p2 rig] attack-p2: 8 khung
+[warped_core-p2 rig] skill-p2: 10 khung
+[warped_core-p2 rig] hit-p2: 4 khung
+[warped_core-p2 rig] down-p2: 6 khung
+[warped_core-p2 rig] telegraph-p2: 6 khung
+[warped_core-p2 rig] sheet 7680×4608 → /home/linh/Game/design/quai/warped_core/5_render/battle_warped_core-p2.png
+warped_core: VFX for 3 skills × 1 variants
+COMPLETE warped_core: 1 variants, 2 phases
+BlenderMCP addon unregistered
+Blender 5.2.2 LTS
+
+Blender quit

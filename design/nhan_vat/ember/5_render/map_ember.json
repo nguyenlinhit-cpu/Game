@@ -7,7 +7,7 @@
  ],
  "anchor": [
   0.5,
-  0.9062
+  0.7812
  ],
  "fps": 12,
  "source": "design/nhan_vat/ember/4_rig2d/pixel_map.py (map_base.txt vẽ tay theo 1d_pixel.png)",

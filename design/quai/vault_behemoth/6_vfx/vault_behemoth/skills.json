@@ -1,0 +1,62 @@
+{
+  "en_beh_avalanche": {
+    "action": "skill",
+    "prepare": "telegraph",
+    "title": "Lở Băng",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#3A8DDE"
+  },
+  "en_beh_claw": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Vuốt Băng",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#3A8DDE"
+  },
+  "en_beh_freeze": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Hơi Thở Đóng Băng",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#3A8DDE"
+  },
+  "en_beh_rampage": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Giẫm Nát",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#3A8DDE"
+  },
+  "en_beh_roar": {
+    "action": "skill",
+    "prepare": "telegraph",
+    "title": "Gầm Băng Giá",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#3A8DDE"
+  },
+  "en_beh_shards": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Mưa Mảnh Băng",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#3A8DDE"
+  }
+}

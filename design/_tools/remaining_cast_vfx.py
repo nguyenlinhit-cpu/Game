@@ -23,6 +23,12 @@ PALETTES={
  'lightning':dict(main='#A65BF2',light='#EED8FF',mid='#CE99FF',deep='#6736AA',core='#FFFAFF'),
 }
 ELEMENT={'fenna':'nature','kestrel':'wind','neris':'water','pip':'lightning','ember':'fire','selka':'poison','vael':'poison','wisp':'wind','echo':'soul','traveler_male':'soul','traveler_female':'soul'}
+
+
+class CastContext(V._Ctx):
+ """Variant effects use the same source motion as the base ultimate."""
+ def sprite_frames(self,mode,action):
+  return super().sprite_frames(mode,'ultimate' if action=='ultimate_blast' else action)
 PINK=hexc('#EDA8CD'); PURPLE=hexc('#A68BD0'); GOLD=hexc('#F2D58A'); SILVER=hexc('#E5EAF5'); RED=hexc('#DF7664')
 
 
@@ -345,6 +351,7 @@ def trap_assets(folder):
 
 
 def run_character(ident):
+ V._Ctx=CastContext
  V.set_palette(**PALETTES[ELEMENT[ident]])
  anchors=anchors_for(ident);fx=Effects(ident,anchors)
  battle={}
@@ -362,3 +369,16 @@ def run_character(ident):
   battle['ultimate_blast']=dict(battle['ultimate'],layers={'cast':(0,12,lambda i:fx.cast('ultimate',i)),'hit':(8,8,blast),'screen':(6,12,fx.screen)})
  V.run(dict(id=ident,element_color=PALETTES[ELEMENT[ident]]['main'],battle_anchors={'feet':(256,430),'effect_origin_per_frame':anchors,'target_center':(256,275)},map_anchors={'opener_origin':(31,39),'opener_feet':(16,52),'technique_feet':(16,52)},battle=battle,map={name:dict(frames=n,hit_frame=2 if name=='opener' else None,fn=lambda i,a=name:fx.map(a,i),char=(16,52)) for name,n in [('opener',5),('technique',6)]}))
  if ident=='fenna':trap_assets(ROOT/'nhan_vat'/ident)
+ # Record recipients explicitly for later review/import; no game import is performed here.
+ import json
+ for name,spec in battle.items():
+  path=ROOT/'nhan_vat'/ident/'6_vfx'/name/(name+'.json')
+  if path.exists():
+   meta=json.loads(path.read_text());meta['target']=spec['target']
+   meta['sprite_action']='ultimate' if name=='ultimate_blast' else name
+   if ident in ('ember','vael') and name in ('skill','ultimate') or name=='ultimate' and ident in ('kestrel','wisp','echo'):
+    meta['target_scope']='all_enemies'
+   elif ident in ('pip','selka') and name=='ultimate':meta['target_scope']='all_allies'
+   elif name=='ultimate_blast' or ident=='kestrel' and name=='skill' or ident.startswith('traveler') and name=='skill':meta['target_scope']='primary_and_adjacent'
+   else:meta['target_scope']='single'
+   path.write_text(json.dumps(meta,ensure_ascii=False,indent=1))

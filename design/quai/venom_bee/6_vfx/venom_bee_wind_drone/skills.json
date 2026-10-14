@@ -1,0 +1,12 @@
+{
+  "en_bee_sting": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Chích",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#4FD1B5"
+  }
+}

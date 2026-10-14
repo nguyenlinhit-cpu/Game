@@ -1,0 +1,32 @@
+{
+  "en_knight_slash": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Chém Gỉ",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  },
+  "en_knight_sweep": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Quét Giáp",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  },
+  "en_knight_guard": {
+    "action": "guard",
+    "prepare": "guard",
+    "title": "Thủ Thế",
+    "hit_frame": 3,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  }
+}

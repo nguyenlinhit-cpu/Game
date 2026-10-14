@@ -1,0 +1,34 @@
+BlenderMCP addon registered
+[soul_devourer rig] idle: 6 khung
+[soul_devourer rig] attack: 8 khung
+[soul_devourer rig] skill: 10 khung
+[soul_devourer rig] hit: 4 khung
+[soul_devourer rig] down: 6 khung
+[soul_devourer rig] telegraph: 6 khung
+[soul_devourer rig] swallow: 6 khung
+[soul_devourer rig] summon: 10 khung
+[soul_devourer rig] sheet 7680×6144 → /home/linh/Game/design/quai/soul_devourer/5_render/battle_soul_devourer.png
+[soul_devourer-p2 rig] idle-p2: 6 khung
+[soul_devourer-p2 rig] attack-p2: 8 khung
+[soul_devourer-p2 rig] skill-p2: 10 khung
+[soul_devourer-p2 rig] hit-p2: 4 khung
+[soul_devourer-p2 rig] down-p2: 6 khung
+[soul_devourer-p2 rig] telegraph-p2: 6 khung
+[soul_devourer-p2 rig] swallow-p2: 6 khung
+[soul_devourer-p2 rig] summon-p2: 10 khung
+[soul_devourer-p2 rig] sheet 7680×6144 → /home/linh/Game/design/quai/soul_devourer/5_render/battle_soul_devourer-p2.png
+[soul_devourer-p3 rig] idle-p3: 6 khung
+[soul_devourer-p3 rig] attack-p3: 8 khung
+[soul_devourer-p3 rig] skill-p3: 10 khung
+[soul_devourer-p3 rig] hit-p3: 4 khung
+[soul_devourer-p3 rig] down-p3: 6 khung
+[soul_devourer-p3 rig] telegraph-p3: 6 khung
+[soul_devourer-p3 rig] swallow-p3: 6 khung
+[soul_devourer-p3 rig] summon-p3: 10 khung
+[soul_devourer-p3 rig] sheet 7680×6144 → /home/linh/Game/design/quai/soul_devourer/5_render/battle_soul_devourer-p3.png
+soul_devourer: VFX for 5 skills × 1 variants
+COMPLETE soul_devourer: 1 variants, 3 phases
+BlenderMCP addon unregistered
+Blender 5.2.2 LTS
+
+Blender quit

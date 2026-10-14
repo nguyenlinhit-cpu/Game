@@ -389,7 +389,7 @@ func _on_action_started(unit: BattleUnit, skill: SkillData, _targets: Array[Batt
 		_set_watch()
 	var view := get_view(unit)
 	if view:
-		view.play_action(skill.kind)
+		view.play_action(skill.kind, skill, _targets.is_empty())
 	_last_skill_kind = skill.kind
 	_info_label.text = "%s: %s" % [unit.display_name, tr(skill.name_key)]
 	if skill.kind == SkillData.Kind.ULTIMATE:
@@ -400,6 +400,19 @@ func _on_action_started(unit: BattleUnit, skill: SkillData, _targets: Array[Batt
 
 
 func _on_action_resolved(_unit: BattleUnit, _skill: SkillData, events: Array[Dictionary]) -> void:
+	if _unit.enemy:
+		var affected: Array[BattleUnit] = []
+		for event: Dictionary in events:
+			var target := event.get("target") as BattleUnit
+			if target and not affected.has(target) and str(event.get("type", "")) in [
+					"damage", "shield", "heal", "status_applied"]:
+				affected.append(target)
+		for target in affected:
+			var view := get_view(target)
+			if view:
+				SkillVfx.spawn_enemy(_field, view.position, _unit.enemy, _skill.id,
+						maxf(view.get_radius() / UnitView.ALLY_RADIUS, 1.0))
+		SkillVfx.spawn_enemy_screen(_field, _unit.enemy, _skill.id, size)
 	_show_events(events)
 
 
@@ -422,9 +435,10 @@ func _show_events(events: Array[Dictionary]) -> void:
 				view.play_hit()
 				AudioManager.play_sfx(&"crit" if event["crit"] else &"hit", randf_range(0.9, 1.1))
 				var source := event.get("source") as BattleUnit
-				SkillVfx.spawn(_field, view.position, int(event.get("element", Element.NONE)),
-						source.character if source else null, SkillVfx_ACTIONS.get(_last_skill_kind, "attack"),
-						maxf(view.get_radius() / UnitView.ALLY_RADIUS, 1.0))
+				if source == null or source.enemy == null:
+					SkillVfx.spawn(_field, view.position, int(event.get("element", Element.NONE)),
+							source.character if source else null, SkillVfx_ACTIONS.get(_last_skill_kind, "attack"),
+							maxf(view.get_radius() / UnitView.ALLY_RADIUS, 1.0))
 				if float(event.get("absorbed", 0.0)) > 0.0:
 					_numbers.spawn(tr("BATTLE_ABSORBED") % event["absorbed"], at + Vector2(0, -34), Color(0.85, 0.9, 1.0), 26)
 				if event["crit"]:
@@ -830,6 +844,9 @@ func _build_phase_overlay() -> void:
 
 func _on_boss_phase_started(unit: BattleUnit, index: int, data: BossPhaseData) -> void:
 	_set_watch()
+	var view := get_view(unit)
+	if view:
+		view.play_phase(index)
 	_phase_subtitle.text = "%s — %s" % [unit.display_name, tr("BATTLE_PHASE_TITLE") % (index + 1)]
 	_phase_title.text = tr(data.name_key)
 	_phase_title.add_theme_color_override("font_color", data.color.lightened(0.6))

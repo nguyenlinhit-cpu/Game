@@ -115,6 +115,8 @@ CONFIG = {'id': 'pip',
  'strict_pockets': 350,
  'shadow_below': 975,
  'erase': [(175, 425, 280, 520, 45), (260, 545, 365, 590, 35), (400, 520, 455, 555, 25)]}
+CONFIG["bones"]["robot"]["layer_depth"] = 0.5
+CONFIG["bones"]["robot_eye"]["layer_depth"] = 0.6
 CONFIG["poses"] = poses_for('robot', [])
 if __name__ == "__main__":
     run(CONFIG)

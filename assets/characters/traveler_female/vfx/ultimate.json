@@ -1,0 +1,185 @@
+{
+ "owner": "traveler_female",
+ "skill": "ultimate",
+ "fps": 12,
+ "frames": 12,
+ "hit_frame": 8,
+ "element_color": "#F2D58A",
+ "anchors": {
+  "feet": [
+   256,
+   430
+  ],
+  "effect_origin_per_frame": {
+   "attack": [
+    [
+     183,
+     271
+    ],
+    [
+     178,
+     275
+    ],
+    [
+     174,
+     279
+    ],
+    [
+     184,
+     269
+    ],
+    [
+     195,
+     260
+    ],
+    [
+     195,
+     260
+    ],
+    [
+     189,
+     266
+    ],
+    [
+     183,
+     271
+    ]
+   ],
+   "skill": [
+    [
+     183,
+     271
+    ],
+    [
+     181,
+     272
+    ],
+    [
+     178,
+     275
+    ],
+    [
+     175,
+     278
+    ],
+    [
+     174,
+     279
+    ],
+    [
+     184,
+     269
+    ],
+    [
+     195,
+     260
+    ],
+    [
+     195,
+     260
+    ],
+    [
+     189,
+     266
+    ],
+    [
+     183,
+     271
+    ]
+   ],
+   "ultimate": [
+    [
+     183,
+     271
+    ],
+    [
+     182,
+     269
+    ],
+    [
+     180,
+     266
+    ],
+    [
+     178,
+     261
+    ],
+    [
+     176,
+     256
+    ],
+    [
+     175,
+     252
+    ],
+    [
+     174,
+     250
+    ],
+    [
+     184,
+     250
+    ],
+    [
+     195,
+     250
+    ],
+    [
+     195,
+     250
+    ],
+    [
+     183,
+     287
+    ],
+    [
+     183,
+     287
+    ]
+   ]
+  },
+  "target_center": [
+   256,
+   275
+  ]
+ },
+ "layers": {
+  "cast": {
+   "start_frame": 0,
+   "frames": 12,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "người dùng (khung trùng khung sprite trận, chân ở anchor)"
+  },
+  "hit": {
+   "start_frame": 8,
+   "frames": 8,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
+  },
+  "screen": {
+   "start_frame": 6,
+   "frames": 12,
+   "size": [
+    1024,
+    576
+   ],
+   "placed_at": "giữa màn hình"
+  }
+ },
+ "cutin": {
+  "frames": 10,
+  "size": [
+   1920,
+   540
+  ],
+  "seconds": 0.8,
+  "source": "1_concept/1e_splash.png",
+  "plays": "trước khung 0 của ultimate"
+ }
+}

@@ -1,0 +1,1 @@
+# Editable art sources are rendered into assets/ before Godot imports them.

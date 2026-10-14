@@ -1,0 +1,427 @@
+{
+ "asset_id": "soul_devourer",
+ "mode": "battle",
+ "frame_size": [
+  768,
+  768
+ ],
+ "anchor": [
+  0.5,
+  0.8294
+ ],
+ "fps": 12,
+ "source": "design/quai/soul_devourer/4_rig2d/rig_battle.py (x\u01b0\u01a1ng 2D tr\u00ean 1a_battle_p2.png)",
+ "loop": [
+  "idle-p2",
+  "guard-p2",
+  "aim-p2",
+  "charge-p2",
+  "telegraph-p2",
+  "curse-p2",
+  "swallow-p2"
+ ],
+ "hit_frame": {
+  "attack-p2": 4,
+  "skill-p2": 6,
+  "summon-p2": 6,
+  "down-p2": 4
+ },
+ "frames": [
+  {
+   "action": "idle-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "idle-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 0
+  },
+  {
+   "action": "idle-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 0
+  },
+  {
+   "action": "idle-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 0
+  },
+  {
+   "action": "idle-p2",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 0
+  },
+  {
+   "action": "idle-p2",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 0
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 768
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 768
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 768
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 768
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 768,
+   "hit": true
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 768
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 6,
+   "x": 4608,
+   "y": 768
+  },
+  {
+   "action": "attack-p2",
+   "dir": "",
+   "index": 7,
+   "x": 5376,
+   "y": 768
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 6,
+   "x": 4608,
+   "y": 1536,
+   "hit": true
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 7,
+   "x": 5376,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 8,
+   "x": 6144,
+   "y": 1536
+  },
+  {
+   "action": "skill-p2",
+   "dir": "",
+   "index": 9,
+   "x": 6912,
+   "y": 1536
+  },
+  {
+   "action": "hit-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 2304
+  },
+  {
+   "action": "hit-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 2304
+  },
+  {
+   "action": "hit-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 2304
+  },
+  {
+   "action": "hit-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 2304
+  },
+  {
+   "action": "down-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 3072
+  },
+  {
+   "action": "down-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 3072
+  },
+  {
+   "action": "down-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 3072
+  },
+  {
+   "action": "down-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 3072
+  },
+  {
+   "action": "down-p2",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 3072,
+   "hit": true
+  },
+  {
+   "action": "down-p2",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 3072
+  },
+  {
+   "action": "telegraph-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 3840
+  },
+  {
+   "action": "telegraph-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 3840
+  },
+  {
+   "action": "telegraph-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 3840
+  },
+  {
+   "action": "telegraph-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 3840
+  },
+  {
+   "action": "telegraph-p2",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 3840
+  },
+  {
+   "action": "telegraph-p2",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 3840
+  },
+  {
+   "action": "swallow-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 4608
+  },
+  {
+   "action": "swallow-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 4608
+  },
+  {
+   "action": "swallow-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 4608
+  },
+  {
+   "action": "swallow-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 4608
+  },
+  {
+   "action": "swallow-p2",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 4608
+  },
+  {
+   "action": "swallow-p2",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 4608
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 6,
+   "x": 4608,
+   "y": 5376,
+   "hit": true
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 7,
+   "x": 5376,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 8,
+   "x": 6144,
+   "y": 5376
+  },
+  {
+   "action": "summon-p2",
+   "dir": "",
+   "index": 9,
+   "x": 6912,
+   "y": 5376
+  }
+ ]
+}

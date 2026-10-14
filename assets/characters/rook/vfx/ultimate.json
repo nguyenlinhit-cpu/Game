@@ -1,0 +1,211 @@
+{
+ "owner": "rook",
+ "skill": "ultimate",
+ "fps": 12,
+ "frames": 12,
+ "hit_frame": 8,
+ "element_color": "#2E8B57",
+ "anchors": {
+  "feet": [
+   256,
+   430
+  ],
+  "head": [
+   232,
+   187
+  ],
+  "eye": [
+   250,
+   196
+  ],
+  "chest": [
+   226,
+   271
+  ],
+  "target_center": [
+   256,
+   270
+  ],
+  "target_feet": [
+   256,
+   430
+  ],
+  "side_targets_in_hit": [
+   [
+    70,
+    430
+   ],
+   [
+    442,
+    430
+   ]
+  ],
+  "axe_head_per_frame": {
+   "attack": [
+    [
+     85,
+     214
+    ],
+    [
+     87,
+     140
+    ],
+    [
+     108,
+     73
+    ],
+    [
+     357,
+     -11
+    ],
+    [
+     269,
+     482
+    ],
+    [
+     281,
+     485
+    ],
+    [
+     350,
+     -20
+    ],
+    [
+     85,
+     214
+    ]
+   ],
+   "skill": [
+    [
+     85,
+     214
+    ],
+    [
+     81,
+     141
+    ],
+    [
+     94,
+     76
+    ],
+    [
+     214,
+     -20
+    ],
+    [
+     407,
+     -2
+    ],
+    [
+     549,
+     132
+    ],
+    [
+     433,
+     468
+    ],
+    [
+     391,
+     474
+    ],
+    [
+     347,
+     474
+    ],
+    [
+     347,
+     474
+    ]
+   ],
+   "ultimate": [
+    [
+     85,
+     214
+    ],
+    [
+     495,
+     52
+    ],
+    [
+     352,
+     470
+    ],
+    [
+     356,
+     466
+    ],
+    [
+     363,
+     459
+    ],
+    [
+     367,
+     456
+    ],
+    [
+     272,
+     -26
+    ],
+    [
+     269,
+     480
+    ],
+    [
+     269,
+     480
+    ],
+    [
+     541,
+     118
+    ],
+    [
+     85,
+     214
+    ],
+    [
+     85,
+     214
+    ]
+   ]
+  }
+ },
+ "layers": {
+  "cast": {
+   "start_frame": 0,
+   "frames": 12,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "người dùng (khung trùng khung sprite trận, chân ở anchor)"
+  },
+  "hit": {
+   "start_frame": 8,
+   "frames": 8,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
+  },
+  "screen": {
+   "start_frame": 6,
+   "frames": 12,
+   "size": [
+    1024,
+    576
+   ],
+   "placed_at": "giữa màn hình"
+  }
+ },
+ "cutin": {
+  "frames": 10,
+  "size": [
+   1920,
+   540
+  ],
+  "seconds": 0.8,
+  "source": "1_concept/1e_splash.png",
+  "plays": "trước khung 0 của ultimate"
+ }
+}

@@ -16,9 +16,10 @@ from build_remaining_cast import CAST
 ROOT=Path(__file__).resolve().parents[1]
 REPORT=ROOT/'_reports/remaining_cast';REPORT.mkdir(parents=True,exist_ok=True)
 
-def render(ident,resume):
+def render(ident,resume,selected):
  folder=ROOT/'nhan_vat'/ident;beg=time.monotonic();stages=[]
  for stage,script,check in [('battle',folder/'4_rig2d/rig_battle.py',folder/'5_render'/f'battle_{ident}.json'),('map',folder/'4_rig2d/pixel_map.py',folder/'5_render'/f'map_{ident}.json'),('vfx',folder/'6_vfx'/f'make_{ident}_vfx.py',folder/'6_vfx/technique/technique.json')]:
+  if stage not in selected:continue
   if not (resume and check.exists()):
    log=REPORT/f'{ident}_{stage}.log';t=time.monotonic()
    with log.open('w') as out:
@@ -34,10 +35,10 @@ def render(ident,resume):
  return dict(id=ident,ok=True,seconds=round(time.monotonic()-beg,1),stages=stages)
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--ids',default=','.join(CAST));ap.add_argument('--resume',action='store_true');args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--ids',default=','.join(CAST));ap.add_argument('--resume',action='store_true');ap.add_argument('--stages',default='battle,map,vfx');ap.add_argument('--report-tag',default='render');args=ap.parse_args()
  with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
-  results=list(pool.map(lambda x:render(x,args.resume),args.ids.split(',')))
- (REPORT/'render_results.json').write_text(json.dumps(results,indent=2))
+  results=list(pool.map(lambda x:render(x,args.resume,args.stages.split(',')),args.ids.split(',')))
+ (REPORT/(args.report_tag+'_results.json')).write_text(json.dumps(results,indent=2))
  print('FINISHED',sum(r['ok'] for r in results),'/',len(results),flush=True)
  if not all(r['ok'] for r in results):raise SystemExit(1)
 if __name__=='__main__':main()

@@ -1,0 +1,32 @@
+{
+  "en_archer_mark": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Ngắm Bắn",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#A65BF2",
+    "screen": false
+  },
+  "en_archer_shot": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Tên Hư Không",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#A65BF2",
+    "screen": false
+  },
+  "en_archer_snipe": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Phát Bắn Xuyên Hư Không",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#A65BF2",
+    "screen": false
+  }
+}

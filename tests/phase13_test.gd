@@ -29,6 +29,7 @@ func _cleanup() -> void:
 		SaveManager.delete_slot(slot)
 	SaveManager.save_dir = "user://saves"
 	GameState.reset_new_game()
+	ArtLibrary.clear_cache()
 
 
 func _test_specs() -> void:
@@ -84,9 +85,9 @@ func _test_importer() -> void:
 			func(e: String) -> bool: return e.contains("mira_battle_frames")), "Nhận sprite sheet Blender của Mira (map + trận)")
 	var missing: Array = report["missing"]
 	var text := importer.get_missing_text()
-	_check(missing.size() > 200 and text.contains("traveler_male") and text.contains("Quái library_warden")
+	_check(missing.size() > 200 and text.contains("traveler_male") and not text.contains("Quái library_warden")
 			and text.contains("Tileset library") and text.contains("NPC orwen"),
-			"Liệt kê đủ asset còn thiếu (%d mục: nhân vật, quái, tileset, NPC)" % missing.size())
+			"Liệt kê asset còn thiếu, boss đã đủ hình (%d mục: nhân vật, tileset, NPC)" % missing.size())
 	_check(text.contains("map: idle_n") and not text.contains("map: run_e") and not text.contains("map: idle_e"),
 			"Mira: chỉ báo thiếu hướng chưa vẽ (idle_n...), không báo hướng phải")
 	var frames := ArtLibrary.character_frames(DataPaths.load_character(&"mira"), "map")
@@ -96,9 +97,21 @@ func _test_importer() -> void:
 	var battle := ArtLibrary.character_frames(DataPaths.load_character(&"mira"), "battle")
 	_check(battle and battle.get_frame_count("attack") == 8 and not battle.get_animation_loop("attack")
 			and ArtLibrary.frame_size_of(battle) == Vector2(512, 512), "SpriteFrames trận: attack 8 khung 512 px, không lặp")
-	_check(ArtLibrary.character_frames(DataPaths.load_character(&"echo"), "map") == null
-			and ArtLibrary.portrait(DataPaths.load_character(&"echo")) == null and ArtLibrary.zone_tileset(&"library") == null,
-			"Thiếu hình → trả về null (giữ hình tạm)")
+	_check(ArtLibrary.portrait(DataPaths.load_character(&"echo")) == null and ArtLibrary.zone_tileset(&"library") == null,
+			"Thiếu chân dung / tileset → trả về null (giữ hình tạm)")
+	for id in DataPaths.list_character_ids():
+		var data := DataPaths.load_character(id)
+		var genders: Array = [&"male", &"female"] if id == &"traveler" else [&"male"]
+		for gender in genders:
+			GameState.player_gender = gender
+			var map_frames := ArtLibrary.character_frames(data, "map")
+			var battle_frames := ArtLibrary.character_frames(data, "battle")
+			var vfx := ArtLibrary.vfx_frames(data)
+			_check(map_frames != null and map_frames.has_animation("run_e")
+					and battle_frames != null and battle_frames.has_animation("ultimate")
+					and vfx != null and vfx.has_animation("attack") and vfx.has_animation("skill-cast")
+					and vfx.has_animation("ultimate"), "%s (%s): tải sprite map, trận và VFX từ design" % [id, gender])
+	GameState.player_gender = &"male"
 
 
 func _test_tileset() -> void:
@@ -117,7 +130,7 @@ func _test_map_sprite() -> void:
 	var map := get_tree().current_scene as OverworldMap
 	var player := map.player
 	player.set_leader(0)
-	_check(player.sprite == null, "Lữ khách chưa có hình: vẽ tạm")
+	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Lữ khách dùng sprite pixel từ design")
 	player.set_leader(1)
 	await _frames(2)
 	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Mira dẫn đầu: dùng sprite pixel")
@@ -136,7 +149,8 @@ func _test_map_sprite() -> void:
 	await _seconds(0.6)
 	_check(player.sprite.animation == &"idle_e" and not player.sprite.flip_h, "Dừng lại nhìn lên: chưa có idle_n, dùng idle_e")
 	player.set_leader(0)
-	_check(player.sprite == null, "Đổi về Lữ khách: bỏ sprite")
+	_check(player.sprite != null and player.sprite.sprite_frames == ArtLibrary.character_frames(
+			DataPaths.load_character(&"traveler"), "map"), "Đổi về Lữ khách: dùng đúng sprite Lữ khách")
 
 
 func _test_battle_sprite() -> void:
@@ -154,7 +168,9 @@ func _test_battle_sprite() -> void:
 		elif not view.unit.is_ally() and enemy == null:
 			enemy = view
 	_check(mira and mira.sprite and mira.sprite.material is ShaderMaterial, "Mira trong trận: sprite + shader unit_fx")
-	_check(enemy and enemy.sprite == null and enemy.body.material is ShaderMaterial, "Quái chưa có hình: hình tạm + shader")
+	_check(enemy and enemy.fx_material is ShaderMaterial
+			and ((enemy.sprite != null and enemy.sprite.material == enemy.fx_material)
+			or (enemy.sprite == null and enemy.body.material == enemy.fx_material)), "Quái: thân dùng shader unit_fx")
 	mira.play_action(SkillData.Kind.BASIC)
 	_check(mira.sprite.animation == &"attack", "Đánh thường: phát attack")
 	await _seconds(1.2)
@@ -173,6 +189,12 @@ func _test_battle_sprite() -> void:
 	_check(vfx.particles != null and vfx.particles.emitting and vfx.particles.amount == 48, "Hiệu ứng kỹ năng: particle Lửa (chưa có hình Krita)")
 	await _seconds(1.2)
 	_check(not is_instance_valid(vfx), "Hiệu ứng tự hủy")
+	var rendered_vfx := SkillVfx.spawn(scene._field, Vector2(900, 500), Element.Type.WIND,
+			DataPaths.load_character(&"fenna"), "skill")
+	_check(rendered_vfx.sprite != null and rendered_vfx.sprite.animation == &"skill"
+			and rendered_vfx.particles == null, "Fenna: phát VFX vẽ từ design thay cho particle")
+	await _seconds(2.0)
+	_check(not is_instance_valid(rendered_vfx), "VFX từ design tự hủy sau hoạt ảnh")
 	scene._show_ultimate_backdrop(mira.unit)
 	await _seconds(0.3)
 	var mat := scene.ultimate_backdrop.material as ShaderMaterial

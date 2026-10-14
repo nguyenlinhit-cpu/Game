@@ -1,0 +1,130 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/enemies/flying_book/vfx/vfx_flying_book-en_book_cut-effects.png" id="1_atram"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qrfo"]
+atlas = ExtResource("1_atram")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffxsj"]
+atlas = ExtResource("1_atram")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mqjm"]
+atlas = ExtResource("1_atram")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ci2i"]
+atlas = ExtResource("1_atram")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1medf"]
+atlas = ExtResource("1_atram")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtyft"]
+atlas = ExtResource("1_atram")
+region = Rect2(512, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ledbb"]
+atlas = ExtResource("1_atram")
+region = Rect2(1024, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ek75"]
+atlas = ExtResource("1_atram")
+region = Rect2(1536, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_depe5"]
+atlas = ExtResource("1_atram")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1t4o"]
+atlas = ExtResource("1_atram")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i36xk"]
+atlas = ExtResource("1_atram")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kppg7"]
+atlas = ExtResource("1_atram")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fscob"]
+atlas = ExtResource("1_atram")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0fv0"]
+atlas = ExtResource("1_atram")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxrvy"]
+atlas = ExtResource("1_atram")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eer8a"]
+atlas = ExtResource("1_atram")
+region = Rect2(1536, 512, 512, 512)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qrfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffxsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mqjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ci2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1medf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtyft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ledbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ek75")
+}],
+"loop": 0,
+"name": &"en_book_cut",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_depe5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1t4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i36xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kppg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fscob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0fv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxrvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eer8a")
+}],
+"loop": 0,
+"name": &"en_book_cut-cast",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.84)
+metadata/hit_frame = {}

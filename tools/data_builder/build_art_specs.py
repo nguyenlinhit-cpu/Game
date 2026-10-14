@@ -242,6 +242,9 @@ def enemy_spec(family, data, req):
     e = req["enemy"]
     kind = data["kind"]
     size = e["battle"]["frame_size"][KINDS[kind]]
+    map_spec = dict(e["map"])
+    if isinstance(map_spec["frame_size"], dict):
+        map_spec["frame_size"] = map_spec["frame_size"][KINDS[kind]]
     design, silhouette = ENEMY_DESIGNS.get(family, ("", ""))
     lines = ["# %s (%s)" % (data["name"], KIND_NAMES[kind]), "",
              "Sinh tự động bởi `tools/data_builder/build_art_specs.py`.", "",
@@ -252,8 +255,9 @@ def enemy_spec(family, data, req):
              "| Id | Tên | Nguyên tố | Màu |", "| --- | --- | --- | --- |"]
     for eid, name, element in data["variants"]:
         lines.append("| `%s` | %s | %s | `%s` |" % (eid, name, ELEMENTS[element], ELEMENT_COLORS[element]))
-    lines += ["", "## Ngoài map – %d×%d px/khung, 8 hướng" % (e["map"]["frame_size"], e["map"]["frame_size"]), ""]
-    lines += anim_table(e["map"], True)
+    direction_text = "hướng e, lật ngang khi đi trái" if e.get("directions") == ["e"] else "8 hướng"
+    lines += ["", "## Ngoài map – %d×%d px/khung, %s" % (map_spec["frame_size"], map_spec["frame_size"], direction_text), ""]
+    lines += anim_table(map_spec, True)
     battle = dict(e["battle"])
     actions = dict(battle["actions"])
     if data["phases"] > 1:
@@ -264,7 +268,7 @@ def enemy_spec(family, data, req):
     lines += ["", "## Trong trận – %d×%d px/khung, nghiêng 3/4 quay sang trái%s" % (
         size, size, " · %d giai đoạn: hành động giai đoạn n ≥ 2 thêm hậu tố `-p<n>`" % data["phases"] if data["phases"] > 1 else ""), ""]
     lines += anim_table(battle, False)
-    lines += [""] + naming(family, "enemies", e["map"], battle)
+    lines += [""] + naming(family, "enemies", map_spec, battle)
     lines.append("- Muốn biến thể có hình riêng: đặt thư mục theo id biến thể (`assets/enemies/<id>/`), game ưu tiên id trước họ quái.")
     write(os.path.join(OUT, family + ".md"), lines)
 

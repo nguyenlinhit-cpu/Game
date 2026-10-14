@@ -1,0 +1,17 @@
+[
+  {
+    "id": "vael",
+    "ok": true,
+    "seconds": 70.4,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 66.8
+      },
+      {
+        "stage": "map",
+        "seconds": 3.6
+      }
+    ]
+  }
+]

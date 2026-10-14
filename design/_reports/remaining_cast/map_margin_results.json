@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fenna",
+    "ok": true,
+    "seconds": 3.8,
+    "stages": [
+      {
+        "stage": "map",
+        "seconds": 3.8
+      }
+    ]
+  },
+  {
+    "id": "ember",
+    "ok": true,
+    "seconds": 3.8,
+    "stages": [
+      {
+        "stage": "map",
+        "seconds": 3.8
+      }
+    ]
+  },
+  {
+    "id": "selka",
+    "ok": true,
+    "seconds": 3.6,
+    "stages": [
+      {
+        "stage": "map",
+        "seconds": 3.6
+      }
+    ]
+  },
+  {
+    "id": "wisp",
+    "ok": true,
+    "seconds": 3.6,
+    "stages": [
+      {
+        "stage": "map",
+        "seconds": 3.6
+      }
+    ]
+  }
+]

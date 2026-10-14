@@ -1,0 +1,360 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_00.png" id="1_16qws"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_01.png" id="2_7j6mq"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_02.png" id="3_br06o"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_03.png" id="4_k117d"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_04.png" id="5_owluh"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_05.png" id="6_kjx7o"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_06.png" id="7_y8vkg"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack_07.png" id="8_jy286"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_00.png" id="9_rmqvt"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_01.png" id="10_3n7uq"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_02.png" id="11_gymto"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_03.png" id="12_vr4i2"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_04.png" id="13_1y5ja"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_05.png" id="14_sf4a6"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_06.png" id="15_7y863"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_attack-cast_07.png" id="16_tvsht"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_opener_00.png" id="17_7wlb7"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_opener_01.png" id="18_askbv"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_opener_02.png" id="19_ce0kb"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_opener_03.png" id="20_qe6rt"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_opener_04.png" id="21_8c1en"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_00.png" id="22_0ua0i"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_01.png" id="23_ehedg"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_02.png" id="24_guoc7"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_03.png" id="25_urqeg"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_04.png" id="26_lwlux"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_05.png" id="27_pmega"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_06.png" id="28_rfk2q"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill_07.png" id="29_wdlwe"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_00.png" id="30_dskks"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_01.png" id="31_rnbll"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_02.png" id="32_w3q4j"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_03.png" id="33_wnf3b"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_04.png" id="34_gvjq2"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_05.png" id="35_hyig5"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_06.png" id="36_efo8c"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_07.png" id="37_533cw"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_08.png" id="38_egpi0"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_skill-cast_09.png" id="39_e6rr0"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_technique_00.png" id="40_hws1m"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_technique_01.png" id="41_5jcck"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_technique_02.png" id="42_6ymbk"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_technique_03.png" id="43_uyijh"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_technique_04.png" id="44_tlkmk"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_technique_05.png" id="45_dqjem"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_00.png" id="46_tvs0l"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_01.png" id="47_uasfy"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_02.png" id="48_75b7c"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_03.png" id="49_bfu5x"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_04.png" id="50_ske68"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_05.png" id="51_vixtm"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_06.png" id="52_eygyu"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate_07.png" id="53_qylmj"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_00.png" id="54_dh5sc"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_01.png" id="55_dlcm6"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_02.png" id="56_vyawr"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_03.png" id="57_0yecf"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_04.png" id="58_rngk7"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_05.png" id="59_lb6jn"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_06.png" id="60_bu1uc"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_07.png" id="61_c2ssy"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_08.png" id="62_gr2wd"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_09.png" id="63_mpt50"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_10.png" id="64_8st3e"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-cast_11.png" id="65_cclx6"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_00.png" id="66_x08yd"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_01.png" id="67_3yr2j"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_02.png" id="68_gan83"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_03.png" id="69_smo02"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_04.png" id="70_oxts7"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_05.png" id="71_qqkmb"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_06.png" id="72_5o83n"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_07.png" id="73_gk1yp"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_08.png" id="74_6e0v8"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_09.png" id="75_dyqs7"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_10.png" id="76_p0wwr"]
+[ext_resource type="Texture2D" path="res://assets/characters/ember/vfx/vfx_ember_ultimate-screen_11.png" id="77_b3bb8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_16qws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7j6mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_br06o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k117d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_owluh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kjx7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y8vkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jy286")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_rmqvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3n7uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gymto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vr4i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1y5ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sf4a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7y863")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tvsht")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_7wlb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_askbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ce0kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qe6rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8c1en")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_0ua0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ehedg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_guoc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_urqeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lwlux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_pmega")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rfk2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wdlwe")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_dskks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_rnbll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_w3q4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wnf3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gvjq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_hyig5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_efo8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_533cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_egpi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_e6rr0")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_hws1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5jcck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_6ymbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_uyijh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_tlkmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_dqjem")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_tvs0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_uasfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_75b7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bfu5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ske68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_vixtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_eygyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_qylmj")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_dh5sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_dlcm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_vyawr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_0yecf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_rngk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_lb6jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_bu1uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_c2ssy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_gr2wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_mpt50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_8st3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_cclx6")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_x08yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_3yr2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_gan83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_smo02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_oxts7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_qqkmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_5o83n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_gk1yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_6e0v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_dyqs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_p0wwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_b3bb8")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

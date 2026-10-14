@@ -1,0 +1,32 @@
+{
+  "en_matrix_lash": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Roi Rễ Méo",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#9BC53D"
+  },
+  "en_matrix_spawn": {
+    "action": "summon",
+    "prepare": "summon",
+    "title": "Nảy Mầm",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#9BC53D"
+  },
+  "en_matrix_spew": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Phun Ma Biến",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#9BC53D"
+  }
+}

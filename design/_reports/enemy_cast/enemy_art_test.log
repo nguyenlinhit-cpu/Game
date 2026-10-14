@@ -1,0 +1,629 @@
+Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
+
+  ĐẠT  devourer_clone_flame: map idle/run/windup
+  ĐẠT  devourer_clone_flame: tải trận và VFX
+  ĐẠT  devourer_clone_flame: idle
+  ĐẠT  devourer_clone_flame: attack
+  ĐẠT  devourer_clone_flame: skill
+  ĐẠT  devourer_clone_flame: hit
+  ĐẠT  devourer_clone_flame: down
+  ĐẠT  devourer_clone_flame: VFX đúng màu nguyên tố en_clone_strike
+  ĐẠT  devourer_clone_flame: chiêu en_clone_strike có VFX và timing
+  ĐẠT  devourer_clone_flame: phát cast en_clone_strike
+  ĐẠT  devourer_clone_flame: phát hit en_clone_strike
+  ĐẠT  devourer_clone_flame: VFX đúng màu nguyên tố en_clone_wail
+  ĐẠT  devourer_clone_flame: chiêu en_clone_wail có VFX và timing
+  ĐẠT  devourer_clone_flame: phát cast en_clone_wail
+  ĐẠT  devourer_clone_flame: phát hit en_clone_wail
+  ĐẠT  devourer_clone_storm: map idle/run/windup
+  ĐẠT  devourer_clone_storm: tải trận và VFX
+  ĐẠT  devourer_clone_storm: idle
+  ĐẠT  devourer_clone_storm: attack
+  ĐẠT  devourer_clone_storm: skill
+  ĐẠT  devourer_clone_storm: hit
+  ĐẠT  devourer_clone_storm: down
+  ĐẠT  devourer_clone_storm: VFX đúng màu nguyên tố en_clone_strike
+  ĐẠT  devourer_clone_storm: chiêu en_clone_strike có VFX và timing
+  ĐẠT  devourer_clone_storm: phát cast en_clone_strike
+  ĐẠT  devourer_clone_storm: phát hit en_clone_strike
+  ĐẠT  devourer_clone_storm: VFX đúng màu nguyên tố en_clone_wail
+  ĐẠT  devourer_clone_storm: chiêu en_clone_wail có VFX và timing
+  ĐẠT  devourer_clone_storm: phát cast en_clone_wail
+  ĐẠT  devourer_clone_storm: phát hit en_clone_wail
+  ĐẠT  devourer_clone_tide: map idle/run/windup
+  ĐẠT  devourer_clone_tide: tải trận và VFX
+  ĐẠT  devourer_clone_tide: idle
+  ĐẠT  devourer_clone_tide: attack
+  ĐẠT  devourer_clone_tide: skill
+  ĐẠT  devourer_clone_tide: hit
+  ĐẠT  devourer_clone_tide: down
+  ĐẠT  devourer_clone_tide: VFX đúng màu nguyên tố en_clone_strike
+  ĐẠT  devourer_clone_tide: chiêu en_clone_strike có VFX và timing
+  ĐẠT  devourer_clone_tide: phát cast en_clone_strike
+  ĐẠT  devourer_clone_tide: phát hit en_clone_strike
+  ĐẠT  devourer_clone_tide: VFX đúng màu nguyên tố en_clone_wail
+  ĐẠT  devourer_clone_tide: chiêu en_clone_wail có VFX và timing
+  ĐẠT  devourer_clone_tide: phát cast en_clone_wail
+  ĐẠT  devourer_clone_tide: phát hit en_clone_wail
+  ĐẠT  flying_book: map idle/run/windup
+  ĐẠT  flying_book: tải trận và VFX
+  ĐẠT  flying_book: idle
+  ĐẠT  flying_book: attack
+  ĐẠT  flying_book: skill
+  ĐẠT  flying_book: hit
+  ĐẠT  flying_book: down
+  ĐẠT  flying_book: VFX đúng màu nguyên tố en_book_cut
+  ĐẠT  flying_book: chiêu en_book_cut có VFX và timing
+  ĐẠT  flying_book: phát cast en_book_cut
+  ĐẠT  flying_book: phát hit en_book_cut
+  ĐẠT  furnace_arm: map idle/run/windup
+  ĐẠT  furnace_arm: tải trận và VFX
+  ĐẠT  furnace_arm: idle
+  ĐẠT  furnace_arm: attack
+  ĐẠT  furnace_arm: skill
+  ĐẠT  furnace_arm: hit
+  ĐẠT  furnace_arm: down
+  ĐẠT  furnace_arm: VFX đúng màu nguyên tố en_arm_strike
+  ĐẠT  furnace_arm: chiêu en_arm_strike có VFX và timing
+  ĐẠT  furnace_arm: phát cast en_arm_strike
+  ĐẠT  furnace_arm: phát hit en_arm_strike
+  ĐẠT  furnace_arm: VFX đúng màu nguyên tố en_arm_stoke
+  ĐẠT  furnace_arm: chiêu en_arm_stoke có VFX và timing
+  ĐẠT  furnace_arm: phát cast en_arm_stoke
+  ĐẠT  furnace_arm: phát hit en_arm_stoke
+  ĐẠT  ink_rat_lightning: map idle/run/windup
+  ĐẠT  ink_rat_lightning: tải trận và VFX
+  ĐẠT  ink_rat_lightning: idle
+  ĐẠT  ink_rat_lightning: attack
+  ĐẠT  ink_rat_lightning: skill
+  ĐẠT  ink_rat_lightning: hit
+  ĐẠT  ink_rat_lightning: down
+  ĐẠT  ink_rat_lightning: VFX đúng màu nguyên tố en_rat_steal
+  ĐẠT  ink_rat_lightning: chiêu en_rat_steal có VFX và timing
+  ĐẠT  ink_rat_lightning: phát cast en_rat_steal
+  ĐẠT  ink_rat_lightning: phát hit en_rat_steal
+  ĐẠT  ink_rat_lightning: VFX đúng màu nguyên tố en_rat_shred
+  ĐẠT  ink_rat_lightning: chiêu en_rat_shred có VFX và timing
+  ĐẠT  ink_rat_lightning: phát cast en_rat_shred
+  ĐẠT  ink_rat_lightning: phát hit en_rat_shred
+  ĐẠT  ink_rat_wind: map idle/run/windup
+  ĐẠT  ink_rat_wind: tải trận và VFX
+  ĐẠT  ink_rat_wind: idle
+  ĐẠT  ink_rat_wind: attack
+  ĐẠT  ink_rat_wind: skill
+  ĐẠT  ink_rat_wind: hit
+  ĐẠT  ink_rat_wind: down
+  ĐẠT  ink_rat_wind: VFX đúng màu nguyên tố en_rat_steal
+  ĐẠT  ink_rat_wind: chiêu en_rat_steal có VFX và timing
+  ĐẠT  ink_rat_wind: phát cast en_rat_steal
+  ĐẠT  ink_rat_wind: phát hit en_rat_steal
+  ĐẠT  ink_rat_wind: VFX đúng màu nguyên tố en_rat_shred
+  ĐẠT  ink_rat_wind: chiêu en_rat_shred có VFX và timing
+  ĐẠT  ink_rat_wind: phát cast en_rat_shred
+  ĐẠT  ink_rat_wind: phát hit en_rat_shred
+  ĐẠT  library_warden: map idle/run/windup
+  ĐẠT  library_warden: tải trận và VFX
+  ĐẠT  library_warden: idle
+  ĐẠT  library_warden: attack
+  ĐẠT  library_warden: skill
+  ĐẠT  library_warden: hit
+  ĐẠT  library_warden: down
+  ĐẠT  library_warden: idle-p2
+  ĐẠT  library_warden: attack-p2
+  ĐẠT  library_warden: skill-p2
+  ĐẠT  library_warden: hit-p2
+  ĐẠT  library_warden: down-p2
+  ĐẠT  library_warden: chuyển giai đoạn 2
+  ĐẠT  library_warden: idle đúng giai đoạn
+  ĐẠT  library_warden: VFX đúng màu nguyên tố en_warden_books
+  ĐẠT  library_warden: chiêu en_warden_books có VFX và timing
+  ĐẠT  library_warden: phát cast en_warden_books
+  ĐẠT  library_warden: phát hit en_warden_books
+  ĐẠT  library_warden: VFX screen đúng tỉ lệ
+  ĐẠT  library_warden: VFX đúng màu nguyên tố en_warden_strike
+  ĐẠT  library_warden: chiêu en_warden_strike có VFX và timing
+  ĐẠT  library_warden: phát cast en_warden_strike
+  ĐẠT  library_warden: phát hit en_warden_strike
+  ĐẠT  library_warden: VFX screen đúng tỉ lệ
+  ĐẠT  library_warden: VFX đúng màu nguyên tố en_warden_pages
+  ĐẠT  library_warden: chiêu en_warden_pages có VFX và timing
+  ĐẠT  library_warden: phát cast en_warden_pages
+  ĐẠT  library_warden: phát hit en_warden_pages
+  ĐẠT  library_warden: VFX screen đúng tỉ lệ
+  ĐẠT  library_warden: VFX đúng màu nguyên tố en_warden_curse
+  ĐẠT  library_warden: chiêu en_warden_curse có VFX và timing
+  ĐẠT  library_warden: phát cast en_warden_curse
+  ĐẠT  library_warden: phát hit en_warden_curse
+  ĐẠT  library_warden: VFX screen đúng tỉ lệ
+  ĐẠT  library_warden: hoạt ảnh tích tụ en_warden_curse
+  ĐẠT  mirror_shade_soul: map idle/run/windup
+  ĐẠT  mirror_shade_soul: tải trận và VFX
+  ĐẠT  mirror_shade_soul: idle
+  ĐẠT  mirror_shade_soul: attack
+  ĐẠT  mirror_shade_soul: skill
+  ĐẠT  mirror_shade_soul: hit
+  ĐẠT  mirror_shade_soul: down
+  ĐẠT  mirror_shade_soul: VFX đúng màu nguyên tố en_mirror_strike
+  ĐẠT  mirror_shade_soul: chiêu en_mirror_strike có VFX và timing
+  ĐẠT  mirror_shade_soul: phát cast en_mirror_strike
+  ĐẠT  mirror_shade_soul: phát hit en_mirror_strike
+  ĐẠT  mirror_shade_soul: VFX đúng màu nguyên tố en_mirror_copy
+  ĐẠT  mirror_shade_soul: chiêu en_mirror_copy có VFX và timing
+  ĐẠT  mirror_shade_soul: phát cast en_mirror_copy
+  ĐẠT  mirror_shade_soul: phát hit en_mirror_copy
+  ĐẠT  mirror_shade_soul: VFX đúng màu nguyên tố en_mirror_flash
+  ĐẠT  mirror_shade_soul: chiêu en_mirror_flash có VFX và timing
+  ĐẠT  mirror_shade_soul: phát cast en_mirror_flash
+  ĐẠT  mirror_shade_soul: phát hit en_mirror_flash
+  ĐẠT  mirror_shade_water: map idle/run/windup
+  ĐẠT  mirror_shade_water: tải trận và VFX
+  ĐẠT  mirror_shade_water: idle
+  ĐẠT  mirror_shade_water: attack
+  ĐẠT  mirror_shade_water: skill
+  ĐẠT  mirror_shade_water: hit
+  ĐẠT  mirror_shade_water: down
+  ĐẠT  mirror_shade_water: VFX đúng màu nguyên tố en_mirror_strike
+  ĐẠT  mirror_shade_water: chiêu en_mirror_strike có VFX và timing
+  ĐẠT  mirror_shade_water: phát cast en_mirror_strike
+  ĐẠT  mirror_shade_water: phát hit en_mirror_strike
+  ĐẠT  mirror_shade_water: VFX đúng màu nguyên tố en_mirror_copy
+  ĐẠT  mirror_shade_water: chiêu en_mirror_copy có VFX và timing
+  ĐẠT  mirror_shade_water: phát cast en_mirror_copy
+  ĐẠT  mirror_shade_water: phát hit en_mirror_copy
+  ĐẠT  mirror_shade_water: VFX đúng màu nguyên tố en_mirror_flash
+  ĐẠT  mirror_shade_water: chiêu en_mirror_flash có VFX và timing
+  ĐẠT  mirror_shade_water: phát cast en_mirror_flash
+  ĐẠT  mirror_shade_water: phát hit en_mirror_flash
+  ĐẠT  mute_librarian: map idle/run/windup
+  ĐẠT  mute_librarian: tải trận và VFX
+  ĐẠT  mute_librarian: idle
+  ĐẠT  mute_librarian: attack
+  ĐẠT  mute_librarian: skill
+  ĐẠT  mute_librarian: hit
+  ĐẠT  mute_librarian: down
+  ĐẠT  mute_librarian: VFX đúng màu nguyên tố en_ml_strike
+  ĐẠT  mute_librarian: chiêu en_ml_strike có VFX và timing
+  ĐẠT  mute_librarian: phát cast en_ml_strike
+  ĐẠT  mute_librarian: phát hit en_ml_strike
+  ĐẠT  mute_librarian: VFX đúng màu nguyên tố en_ml_seal
+  ĐẠT  mute_librarian: chiêu en_ml_seal có VFX và timing
+  ĐẠT  mute_librarian: phát cast en_ml_seal
+  ĐẠT  mute_librarian: phát hit en_ml_seal
+  ĐẠT  mute_librarian: VFX đúng màu nguyên tố en_ml_hush
+  ĐẠT  mute_librarian: chiêu en_ml_hush có VFX và timing
+  ĐẠT  mute_librarian: phát cast en_ml_hush
+  ĐẠT  mute_librarian: phát hit en_ml_hush
+  ĐẠT  mute_librarian: VFX screen đúng tỉ lệ
+  ĐẠT  rusted_knight_lightning: map idle/run/windup
+  ĐẠT  rusted_knight_lightning: tải trận và VFX
+  ĐẠT  rusted_knight_lightning: idle
+  ĐẠT  rusted_knight_lightning: attack
+  ĐẠT  rusted_knight_lightning: skill
+  ĐẠT  rusted_knight_lightning: hit
+  ĐẠT  rusted_knight_lightning: down
+  ĐẠT  rusted_knight_lightning: VFX đúng màu nguyên tố en_knight_slash
+  ĐẠT  rusted_knight_lightning: chiêu en_knight_slash có VFX và timing
+  ĐẠT  rusted_knight_lightning: phát cast en_knight_slash
+  ĐẠT  rusted_knight_lightning: phát hit en_knight_slash
+  ĐẠT  rusted_knight_lightning: VFX đúng màu nguyên tố en_knight_sweep
+  ĐẠT  rusted_knight_lightning: chiêu en_knight_sweep có VFX và timing
+  ĐẠT  rusted_knight_lightning: phát cast en_knight_sweep
+  ĐẠT  rusted_knight_lightning: phát hit en_knight_sweep
+  ĐẠT  rusted_knight_lightning: VFX đúng màu nguyên tố en_knight_guard
+  ĐẠT  rusted_knight_lightning: chiêu en_knight_guard có VFX và timing
+  ĐẠT  rusted_knight_lightning: phát cast en_knight_guard
+  ĐẠT  rusted_knight_lightning: phát hit en_knight_guard
+  ĐẠT  rusted_knight_water: map idle/run/windup
+  ĐẠT  rusted_knight_water: tải trận và VFX
+  ĐẠT  rusted_knight_water: idle
+  ĐẠT  rusted_knight_water: attack
+  ĐẠT  rusted_knight_water: skill
+  ĐẠT  rusted_knight_water: hit
+  ĐẠT  rusted_knight_water: down
+  ĐẠT  rusted_knight_water: VFX đúng màu nguyên tố en_knight_slash
+  ĐẠT  rusted_knight_water: chiêu en_knight_slash có VFX và timing
+  ĐẠT  rusted_knight_water: phát cast en_knight_slash
+  ĐẠT  rusted_knight_water: phát hit en_knight_slash
+  ĐẠT  rusted_knight_water: VFX đúng màu nguyên tố en_knight_sweep
+  ĐẠT  rusted_knight_water: chiêu en_knight_sweep có VFX và timing
+  ĐẠT  rusted_knight_water: phát cast en_knight_sweep
+  ĐẠT  rusted_knight_water: phát hit en_knight_sweep
+  ĐẠT  rusted_knight_water: VFX đúng màu nguyên tố en_knight_guard
+  ĐẠT  rusted_knight_water: chiêu en_knight_guard có VFX và timing
+  ĐẠT  rusted_knight_water: phát cast en_knight_guard
+  ĐẠT  rusted_knight_water: phát hit en_knight_guard
+  ĐẠT  shattered_knight: map idle/run/windup
+  ĐẠT  shattered_knight: tải trận và VFX
+  ĐẠT  shattered_knight: idle
+  ĐẠT  shattered_knight: attack
+  ĐẠT  shattered_knight: skill
+  ĐẠT  shattered_knight: hit
+  ĐẠT  shattered_knight: down
+  ĐẠT  shattered_knight: VFX đúng màu nguyên tố en_sk_slash
+  ĐẠT  shattered_knight: chiêu en_sk_slash có VFX và timing
+  ĐẠT  shattered_knight: phát cast en_sk_slash
+  ĐẠT  shattered_knight: phát hit en_sk_slash
+  ĐẠT  shattered_knight: VFX đúng màu nguyên tố en_sk_sweep
+  ĐẠT  shattered_knight: chiêu en_sk_sweep có VFX và timing
+  ĐẠT  shattered_knight: phát cast en_sk_sweep
+  ĐẠT  shattered_knight: phát hit en_sk_sweep
+  ĐẠT  shattered_knight: VFX đúng màu nguyên tố en_sk_charge
+  ĐẠT  shattered_knight: chiêu en_sk_charge có VFX và timing
+  ĐẠT  shattered_knight: phát cast en_sk_charge
+  ĐẠT  shattered_knight: phát hit en_sk_charge
+  ĐẠT  shattered_knight: hoạt ảnh tích tụ en_sk_charge
+  ĐẠT  soul_devourer: map idle/run/windup
+  ĐẠT  soul_devourer: tải trận và VFX
+  ĐẠT  soul_devourer: idle
+  ĐẠT  soul_devourer: attack
+  ĐẠT  soul_devourer: skill
+  ĐẠT  soul_devourer: hit
+  ĐẠT  soul_devourer: down
+  ĐẠT  soul_devourer: idle-p2
+  ĐẠT  soul_devourer: attack-p2
+  ĐẠT  soul_devourer: skill-p2
+  ĐẠT  soul_devourer: hit-p2
+  ĐẠT  soul_devourer: down-p2
+  ĐẠT  soul_devourer: chuyển giai đoạn 2
+  ĐẠT  soul_devourer: idle đúng giai đoạn
+  ĐẠT  soul_devourer: idle-p3
+  ĐẠT  soul_devourer: attack-p3
+  ĐẠT  soul_devourer: skill-p3
+  ĐẠT  soul_devourer: hit-p3
+  ĐẠT  soul_devourer: down-p3
+  ĐẠT  soul_devourer: chuyển giai đoạn 3
+  ĐẠT  soul_devourer: idle đúng giai đoạn
+  ĐẠT  soul_devourer: VFX đúng màu nguyên tố en_dev_bite
+  ĐẠT  soul_devourer: chiêu en_dev_bite có VFX và timing
+  ĐẠT  soul_devourer: phát cast en_dev_bite
+  ĐẠT  soul_devourer: phát hit en_dev_bite
+  ĐẠT  soul_devourer: VFX screen đúng tỉ lệ
+  ĐẠT  soul_devourer: VFX đúng màu nguyên tố en_dev_devour
+  ĐẠT  soul_devourer: chiêu en_dev_devour có VFX và timing
+  ĐẠT  soul_devourer: phát cast en_dev_devour
+  ĐẠT  soul_devourer: phát hit en_dev_devour
+  ĐẠT  soul_devourer: VFX screen đúng tỉ lệ
+  ĐẠT  soul_devourer: VFX đúng màu nguyên tố en_dev_pulse
+  ĐẠT  soul_devourer: chiêu en_dev_pulse có VFX và timing
+  ĐẠT  soul_devourer: phát cast en_dev_pulse
+  ĐẠT  soul_devourer: phát hit en_dev_pulse
+  ĐẠT  soul_devourer: VFX screen đúng tỉ lệ
+  ĐẠT  soul_devourer: hoạt ảnh tích tụ en_dev_pulse
+  ĐẠT  soul_devourer: VFX đúng màu nguyên tố en_dev_shadow
+  ĐẠT  soul_devourer: chiêu en_dev_shadow có VFX và timing
+  ĐẠT  soul_devourer: phát cast en_dev_shadow
+  ĐẠT  soul_devourer: phát hit en_dev_shadow
+  ĐẠT  soul_devourer: VFX screen đúng tỉ lệ
+  ĐẠT  soul_devourer: VFX đúng màu nguyên tố en_dev_swallow
+  ĐẠT  soul_devourer: chiêu en_dev_swallow có VFX và timing
+  ĐẠT  soul_devourer: phát cast en_dev_swallow
+  ĐẠT  soul_devourer: phát hit en_dev_swallow
+  ĐẠT  soul_devourer: VFX screen đúng tỉ lệ
+  ĐẠT  soul_devourer: hoạt ảnh tích tụ en_dev_swallow
+  ĐẠT  vault_behemoth: map idle/run/windup
+  ĐẠT  vault_behemoth: tải trận và VFX
+  ĐẠT  vault_behemoth: idle
+  ĐẠT  vault_behemoth: attack
+  ĐẠT  vault_behemoth: skill
+  ĐẠT  vault_behemoth: hit
+  ĐẠT  vault_behemoth: down
+  ĐẠT  vault_behemoth: idle-p2
+  ĐẠT  vault_behemoth: attack-p2
+  ĐẠT  vault_behemoth: skill-p2
+  ĐẠT  vault_behemoth: hit-p2
+  ĐẠT  vault_behemoth: down-p2
+  ĐẠT  vault_behemoth: chuyển giai đoạn 2
+  ĐẠT  vault_behemoth: idle đúng giai đoạn
+  ĐẠT  vault_behemoth: VFX đúng màu nguyên tố en_beh_claw
+  ĐẠT  vault_behemoth: chiêu en_beh_claw có VFX và timing
+  ĐẠT  vault_behemoth: phát cast en_beh_claw
+  ĐẠT  vault_behemoth: phát hit en_beh_claw
+  ĐẠT  vault_behemoth: VFX screen đúng tỉ lệ
+  ĐẠT  vault_behemoth: VFX đúng màu nguyên tố en_beh_freeze
+  ĐẠT  vault_behemoth: chiêu en_beh_freeze có VFX và timing
+  ĐẠT  vault_behemoth: phát cast en_beh_freeze
+  ĐẠT  vault_behemoth: phát hit en_beh_freeze
+  ĐẠT  vault_behemoth: VFX screen đúng tỉ lệ
+  ĐẠT  vault_behemoth: VFX đúng màu nguyên tố en_beh_roar
+  ĐẠT  vault_behemoth: chiêu en_beh_roar có VFX và timing
+  ĐẠT  vault_behemoth: phát cast en_beh_roar
+  ĐẠT  vault_behemoth: phát hit en_beh_roar
+  ĐẠT  vault_behemoth: VFX screen đúng tỉ lệ
+  ĐẠT  vault_behemoth: hoạt ảnh tích tụ en_beh_roar
+  ĐẠT  vault_behemoth: VFX đúng màu nguyên tố en_beh_rampage
+  ĐẠT  vault_behemoth: chiêu en_beh_rampage có VFX và timing
+  ĐẠT  vault_behemoth: phát cast en_beh_rampage
+  ĐẠT  vault_behemoth: phát hit en_beh_rampage
+  ĐẠT  vault_behemoth: VFX screen đúng tỉ lệ
+  ĐẠT  vault_behemoth: VFX đúng màu nguyên tố en_beh_shards
+  ĐẠT  vault_behemoth: chiêu en_beh_shards có VFX và timing
+  ĐẠT  vault_behemoth: phát cast en_beh_shards
+  ĐẠT  vault_behemoth: phát hit en_beh_shards
+  ĐẠT  vault_behemoth: VFX screen đúng tỉ lệ
+  ĐẠT  vault_behemoth: VFX đúng màu nguyên tố en_beh_avalanche
+  ĐẠT  vault_behemoth: chiêu en_beh_avalanche có VFX và timing
+  ĐẠT  vault_behemoth: phát cast en_beh_avalanche
+  ĐẠT  vault_behemoth: phát hit en_beh_avalanche
+  ĐẠT  vault_behemoth: VFX screen đúng tỉ lệ
+  ĐẠT  vault_behemoth: hoạt ảnh tích tụ en_beh_avalanche
+  ĐẠT  venom_bee_poison: map idle/run/windup
+  ĐẠT  venom_bee_poison: tải trận và VFX
+  ĐẠT  venom_bee_poison: idle
+  ĐẠT  venom_bee_poison: attack
+  ĐẠT  venom_bee_poison: skill
+  ĐẠT  venom_bee_poison: hit
+  ĐẠT  venom_bee_poison: down
+  ĐẠT  venom_bee_poison: VFX đúng màu nguyên tố en_bee_sting
+  ĐẠT  venom_bee_poison: chiêu en_bee_sting có VFX và timing
+  ĐẠT  venom_bee_poison: phát cast en_bee_sting
+  ĐẠT  venom_bee_poison: phát hit en_bee_sting
+  ĐẠT  venom_bee_poison: VFX đúng màu nguyên tố en_bee_call_poison
+  ĐẠT  venom_bee_poison: chiêu en_bee_call_poison có VFX và timing
+  ĐẠT  venom_bee_poison: phát cast en_bee_call_poison
+  ĐẠT  venom_bee_poison: phát hit en_bee_call_poison
+  ĐẠT  venom_bee_poison_drone: map idle/run/windup
+  ĐẠT  venom_bee_poison_drone: tải trận và VFX
+  ĐẠT  venom_bee_poison_drone: idle
+  ĐẠT  venom_bee_poison_drone: attack
+  ĐẠT  venom_bee_poison_drone: skill
+  ĐẠT  venom_bee_poison_drone: hit
+  ĐẠT  venom_bee_poison_drone: down
+  ĐẠT  venom_bee_poison_drone: VFX đúng màu nguyên tố en_bee_sting
+  ĐẠT  venom_bee_poison_drone: chiêu en_bee_sting có VFX và timing
+  ĐẠT  venom_bee_poison_drone: phát cast en_bee_sting
+  ĐẠT  venom_bee_poison_drone: phát hit en_bee_sting
+  ĐẠT  venom_bee_wind: map idle/run/windup
+  ĐẠT  venom_bee_wind: tải trận và VFX
+  ĐẠT  venom_bee_wind: idle
+  ĐẠT  venom_bee_wind: attack
+  ĐẠT  venom_bee_wind: skill
+  ĐẠT  venom_bee_wind: hit
+  ĐẠT  venom_bee_wind: down
+  ĐẠT  venom_bee_wind: VFX đúng màu nguyên tố en_bee_sting
+  ĐẠT  venom_bee_wind: chiêu en_bee_sting có VFX và timing
+  ĐẠT  venom_bee_wind: phát cast en_bee_sting
+  ĐẠT  venom_bee_wind: phát hit en_bee_sting
+  ĐẠT  venom_bee_wind: VFX đúng màu nguyên tố en_bee_call_wind
+  ĐẠT  venom_bee_wind: chiêu en_bee_call_wind có VFX và timing
+  ĐẠT  venom_bee_wind: phát cast en_bee_call_wind
+  ĐẠT  venom_bee_wind: phát hit en_bee_call_wind
+  ĐẠT  venom_bee_wind_drone: map idle/run/windup
+  ĐẠT  venom_bee_wind_drone: tải trận và VFX
+  ĐẠT  venom_bee_wind_drone: idle
+  ĐẠT  venom_bee_wind_drone: attack
+  ĐẠT  venom_bee_wind_drone: skill
+  ĐẠT  venom_bee_wind_drone: hit
+  ĐẠT  venom_bee_wind_drone: down
+  ĐẠT  venom_bee_wind_drone: VFX đúng màu nguyên tố en_bee_sting
+  ĐẠT  venom_bee_wind_drone: chiêu en_bee_sting có VFX và timing
+  ĐẠT  venom_bee_wind_drone: phát cast en_bee_sting
+  ĐẠT  venom_bee_wind_drone: phát hit en_bee_sting
+  ĐẠT  void_archer_lightning: map idle/run/windup
+  ĐẠT  void_archer_lightning: tải trận và VFX
+  ĐẠT  void_archer_lightning: idle
+  ĐẠT  void_archer_lightning: attack
+  ĐẠT  void_archer_lightning: skill
+  ĐẠT  void_archer_lightning: hit
+  ĐẠT  void_archer_lightning: down
+  ĐẠT  void_archer_lightning: VFX đúng màu nguyên tố en_archer_shot
+  ĐẠT  void_archer_lightning: chiêu en_archer_shot có VFX và timing
+  ĐẠT  void_archer_lightning: phát cast en_archer_shot
+  ĐẠT  void_archer_lightning: phát hit en_archer_shot
+  ĐẠT  void_archer_lightning: VFX đúng màu nguyên tố en_archer_mark
+  ĐẠT  void_archer_lightning: chiêu en_archer_mark có VFX và timing
+  ĐẠT  void_archer_lightning: phát cast en_archer_mark
+  ĐẠT  void_archer_lightning: phát hit en_archer_mark
+  ĐẠT  void_archer_lightning: VFX đúng màu nguyên tố en_archer_snipe
+  ĐẠT  void_archer_lightning: chiêu en_archer_snipe có VFX và timing
+  ĐẠT  void_archer_lightning: phát cast en_archer_snipe
+  ĐẠT  void_archer_lightning: phát hit en_archer_snipe
+  ĐẠT  void_archer_wind: map idle/run/windup
+  ĐẠT  void_archer_wind: tải trận và VFX
+  ĐẠT  void_archer_wind: idle
+  ĐẠT  void_archer_wind: attack
+  ĐẠT  void_archer_wind: skill
+  ĐẠT  void_archer_wind: hit
+  ĐẠT  void_archer_wind: down
+  ĐẠT  void_archer_wind: VFX đúng màu nguyên tố en_archer_shot
+  ĐẠT  void_archer_wind: chiêu en_archer_shot có VFX và timing
+  ĐẠT  void_archer_wind: phát cast en_archer_shot
+  ĐẠT  void_archer_wind: phát hit en_archer_shot
+  ĐẠT  void_archer_wind: VFX đúng màu nguyên tố en_archer_mark
+  ĐẠT  void_archer_wind: chiêu en_archer_mark có VFX và timing
+  ĐẠT  void_archer_wind: phát cast en_archer_mark
+  ĐẠT  void_archer_wind: phát hit en_archer_mark
+  ĐẠT  void_archer_wind: VFX đúng màu nguyên tố en_archer_snipe
+  ĐẠT  void_archer_wind: chiêu en_archer_snipe có VFX và timing
+  ĐẠT  void_archer_wind: phát cast en_archer_snipe
+  ĐẠT  void_archer_wind: phát hit en_archer_snipe
+  ĐẠT  wandering_shade_soul: map idle/run/windup
+  ĐẠT  wandering_shade_soul: tải trận và VFX
+  ĐẠT  wandering_shade_soul: idle
+  ĐẠT  wandering_shade_soul: attack
+  ĐẠT  wandering_shade_soul: skill
+  ĐẠT  wandering_shade_soul: hit
+  ĐẠT  wandering_shade_soul: down
+  ĐẠT  wandering_shade_soul: VFX đúng màu nguyên tố en_shade_touch
+  ĐẠT  wandering_shade_soul: chiêu en_shade_touch có VFX và timing
+  ĐẠT  wandering_shade_soul: phát cast en_shade_touch
+  ĐẠT  wandering_shade_soul: phát hit en_shade_touch
+  ĐẠT  wandering_shade_soul: VFX đúng màu nguyên tố en_shade_veil
+  ĐẠT  wandering_shade_soul: chiêu en_shade_veil có VFX và timing
+  ĐẠT  wandering_shade_soul: phát cast en_shade_veil
+  ĐẠT  wandering_shade_soul: phát hit en_shade_veil
+  ĐẠT  wandering_shade_water: map idle/run/windup
+  ĐẠT  wandering_shade_water: tải trận và VFX
+  ĐẠT  wandering_shade_water: idle
+  ĐẠT  wandering_shade_water: attack
+  ĐẠT  wandering_shade_water: skill
+  ĐẠT  wandering_shade_water: hit
+  ĐẠT  wandering_shade_water: down
+  ĐẠT  wandering_shade_water: VFX đúng màu nguyên tố en_shade_touch
+  ĐẠT  wandering_shade_water: chiêu en_shade_touch có VFX và timing
+  ĐẠT  wandering_shade_water: phát cast en_shade_touch
+  ĐẠT  wandering_shade_water: phát hit en_shade_touch
+  ĐẠT  wandering_shade_water: VFX đúng màu nguyên tố en_shade_veil
+  ĐẠT  wandering_shade_water: chiêu en_shade_veil có VFX và timing
+  ĐẠT  wandering_shade_water: phát cast en_shade_veil
+  ĐẠT  wandering_shade_water: phát hit en_shade_veil
+  ĐẠT  wandering_shade_wind: map idle/run/windup
+  ĐẠT  wandering_shade_wind: tải trận và VFX
+  ĐẠT  wandering_shade_wind: idle
+  ĐẠT  wandering_shade_wind: attack
+  ĐẠT  wandering_shade_wind: skill
+  ĐẠT  wandering_shade_wind: hit
+  ĐẠT  wandering_shade_wind: down
+  ĐẠT  wandering_shade_wind: VFX đúng màu nguyên tố en_shade_touch
+  ĐẠT  wandering_shade_wind: chiêu en_shade_touch có VFX và timing
+  ĐẠT  wandering_shade_wind: phát cast en_shade_touch
+  ĐẠT  wandering_shade_wind: phát hit en_shade_touch
+  ĐẠT  wandering_shade_wind: VFX đúng màu nguyên tố en_shade_veil
+  ĐẠT  wandering_shade_wind: chiêu en_shade_veil có VFX và timing
+  ĐẠT  wandering_shade_wind: phát cast en_shade_veil
+  ĐẠT  wandering_shade_wind: phát hit en_shade_veil
+  ĐẠT  warp_matrix: map idle/run/windup
+  ĐẠT  warp_matrix: tải trận và VFX
+  ĐẠT  warp_matrix: idle
+  ĐẠT  warp_matrix: attack
+  ĐẠT  warp_matrix: skill
+  ĐẠT  warp_matrix: hit
+  ĐẠT  warp_matrix: down
+  ĐẠT  warp_matrix: VFX đúng màu nguyên tố en_matrix_spawn
+  ĐẠT  warp_matrix: chiêu en_matrix_spawn có VFX và timing
+  ĐẠT  warp_matrix: phát cast en_matrix_spawn
+  ĐẠT  warp_matrix: phát hit en_matrix_spawn
+  ĐẠT  warp_matrix: VFX đúng màu nguyên tố en_matrix_lash
+  ĐẠT  warp_matrix: chiêu en_matrix_lash có VFX và timing
+  ĐẠT  warp_matrix: phát cast en_matrix_lash
+  ĐẠT  warp_matrix: phát hit en_matrix_lash
+  ĐẠT  warp_matrix: VFX đúng màu nguyên tố en_matrix_spew
+  ĐẠT  warp_matrix: chiêu en_matrix_spew có VFX và timing
+  ĐẠT  warp_matrix: phát cast en_matrix_spew
+  ĐẠT  warp_matrix: phát hit en_matrix_spew
+  ĐẠT  warp_sprout_fire: map idle/run/windup
+  ĐẠT  warp_sprout_fire: tải trận và VFX
+  ĐẠT  warp_sprout_fire: idle
+  ĐẠT  warp_sprout_fire: attack
+  ĐẠT  warp_sprout_fire: skill
+  ĐẠT  warp_sprout_fire: hit
+  ĐẠT  warp_sprout_fire: down
+  ĐẠT  warp_sprout_fire: VFX đúng màu nguyên tố en_sprout_bite
+  ĐẠT  warp_sprout_fire: chiêu en_sprout_bite có VFX và timing
+  ĐẠT  warp_sprout_fire: phát cast en_sprout_bite
+  ĐẠT  warp_sprout_fire: phát hit en_sprout_bite
+  ĐẠT  warp_sprout_poison: map idle/run/windup
+  ĐẠT  warp_sprout_poison: tải trận và VFX
+  ĐẠT  warp_sprout_poison: idle
+  ĐẠT  warp_sprout_poison: attack
+  ĐẠT  warp_sprout_poison: skill
+  ĐẠT  warp_sprout_poison: hit
+  ĐẠT  warp_sprout_poison: down
+  ĐẠT  warp_sprout_poison: VFX đúng màu nguyên tố en_sprout_bite
+  ĐẠT  warp_sprout_poison: chiêu en_sprout_bite có VFX và timing
+  ĐẠT  warp_sprout_poison: phát cast en_sprout_bite
+  ĐẠT  warp_sprout_poison: phát hit en_sprout_bite
+  ĐẠT  warp_sprout_water: map idle/run/windup
+  ĐẠT  warp_sprout_water: tải trận và VFX
+  ĐẠT  warp_sprout_water: idle
+  ĐẠT  warp_sprout_water: attack
+  ĐẠT  warp_sprout_water: skill
+  ĐẠT  warp_sprout_water: hit
+  ĐẠT  warp_sprout_water: down
+  ĐẠT  warp_sprout_water: VFX đúng màu nguyên tố en_sprout_bite
+  ĐẠT  warp_sprout_water: chiêu en_sprout_bite có VFX và timing
+  ĐẠT  warp_sprout_water: phát cast en_sprout_bite
+  ĐẠT  warp_sprout_water: phát hit en_sprout_bite
+  ĐẠT  warped_core: map idle/run/windup
+  ĐẠT  warped_core: tải trận và VFX
+  ĐẠT  warped_core: idle
+  ĐẠT  warped_core: attack
+  ĐẠT  warped_core: skill
+  ĐẠT  warped_core: hit
+  ĐẠT  warped_core: down
+  ĐẠT  warped_core: idle-p2
+  ĐẠT  warped_core: attack-p2
+  ĐẠT  warped_core: skill-p2
+  ĐẠT  warped_core: hit-p2
+  ĐẠT  warped_core: down-p2
+  ĐẠT  warped_core: chuyển giai đoạn 2
+  ĐẠT  warped_core: idle đúng giai đoạn
+  ĐẠT  warped_core: VFX đúng màu nguyên tố en_core_meltdown
+  ĐẠT  warped_core: chiêu en_core_meltdown có VFX và timing
+  ĐẠT  warped_core: phát cast en_core_meltdown
+  ĐẠT  warped_core: phát hit en_core_meltdown
+  ĐẠT  warped_core: VFX screen đúng tỉ lệ
+  ĐẠT  warped_core: hoạt ảnh tích tụ en_core_meltdown
+  ĐẠT  warped_core: VFX đúng màu nguyên tố en_core_flare
+  ĐẠT  warped_core: chiêu en_core_flare có VFX và timing
+  ĐẠT  warped_core: phát cast en_core_flare
+  ĐẠT  warped_core: phát hit en_core_flare
+  ĐẠT  warped_core: VFX screen đúng tỉ lệ
+  ĐẠT  warped_core: VFX đúng màu nguyên tố en_core_wave
+  ĐẠT  warped_core: chiêu en_core_wave có VFX và timing
+  ĐẠT  warped_core: phát cast en_core_wave
+  ĐẠT  warped_core: phát hit en_core_wave
+  ĐẠT  warped_core: VFX screen đúng tỉ lệ
+  ĐẠT  warped_mage_fire: map idle/run/windup
+  ĐẠT  warped_mage_fire: tải trận và VFX
+  ĐẠT  warped_mage_fire: idle
+  ĐẠT  warped_mage_fire: attack
+  ĐẠT  warped_mage_fire: skill
+  ĐẠT  warped_mage_fire: hit
+  ĐẠT  warped_mage_fire: down
+  ĐẠT  warped_mage_fire: VFX đúng màu nguyên tố en_mage_bolt
+  ĐẠT  warped_mage_fire: chiêu en_mage_bolt có VFX và timing
+  ĐẠT  warped_mage_fire: phát cast en_mage_bolt
+  ĐẠT  warped_mage_fire: phát hit en_mage_bolt
+  ĐẠT  warped_mage_fire: VFX đúng màu nguyên tố en_mage_hex_fire
+  ĐẠT  warped_mage_fire: chiêu en_mage_hex_fire có VFX và timing
+  ĐẠT  warped_mage_fire: phát cast en_mage_hex_fire
+  ĐẠT  warped_mage_fire: phát hit en_mage_hex_fire
+  ĐẠT  warped_mage_fire: VFX đúng màu nguyên tố en_mage_storm
+  ĐẠT  warped_mage_fire: chiêu en_mage_storm có VFX và timing
+  ĐẠT  warped_mage_fire: phát cast en_mage_storm
+  ĐẠT  warped_mage_fire: phát hit en_mage_storm
+  ĐẠT  warped_mage_fire: VFX screen đúng tỉ lệ
+  ĐẠT  warped_mage_poison: map idle/run/windup
+  ĐẠT  warped_mage_poison: tải trận và VFX
+  ĐẠT  warped_mage_poison: idle
+  ĐẠT  warped_mage_poison: attack
+  ĐẠT  warped_mage_poison: skill
+  ĐẠT  warped_mage_poison: hit
+  ĐẠT  warped_mage_poison: down
+  ĐẠT  warped_mage_poison: VFX đúng màu nguyên tố en_mage_bolt
+  ĐẠT  warped_mage_poison: chiêu en_mage_bolt có VFX và timing
+  ĐẠT  warped_mage_poison: phát cast en_mage_bolt
+  ĐẠT  warped_mage_poison: phát hit en_mage_bolt
+  ĐẠT  warped_mage_poison: VFX đúng màu nguyên tố en_mage_hex_poison
+  ĐẠT  warped_mage_poison: chiêu en_mage_hex_poison có VFX và timing
+  ĐẠT  warped_mage_poison: phát cast en_mage_hex_poison
+  ĐẠT  warped_mage_poison: phát hit en_mage_hex_poison
+  ĐẠT  warped_mage_poison: VFX đúng màu nguyên tố en_mage_storm
+  ĐẠT  warped_mage_poison: chiêu en_mage_storm có VFX và timing
+  ĐẠT  warped_mage_poison: phát cast en_mage_storm
+  ĐẠT  warped_mage_poison: phát hit en_mage_storm
+  ĐẠT  warped_mage_poison: VFX screen đúng tỉ lệ
+  ĐẠT  warped_mage_wind: map idle/run/windup
+  ĐẠT  warped_mage_wind: tải trận và VFX
+  ĐẠT  warped_mage_wind: idle
+  ĐẠT  warped_mage_wind: attack
+  ĐẠT  warped_mage_wind: skill
+  ĐẠT  warped_mage_wind: hit
+  ĐẠT  warped_mage_wind: down
+  ĐẠT  warped_mage_wind: VFX đúng màu nguyên tố en_mage_bolt
+  ĐẠT  warped_mage_wind: chiêu en_mage_bolt có VFX và timing
+  ĐẠT  warped_mage_wind: phát cast en_mage_bolt
+  ĐẠT  warped_mage_wind: phát hit en_mage_bolt
+  ĐẠT  warped_mage_wind: VFX đúng màu nguyên tố en_mage_hex_wind
+  ĐẠT  warped_mage_wind: chiêu en_mage_hex_wind có VFX và timing
+  ĐẠT  warped_mage_wind: phát cast en_mage_hex_wind
+  ĐẠT  warped_mage_wind: phát hit en_mage_hex_wind
+  ĐẠT  warped_mage_wind: VFX đúng màu nguyên tố en_mage_storm
+  ĐẠT  warped_mage_wind: chiêu en_mage_storm có VFX và timing
+  ĐẠT  warped_mage_wind: phát cast en_mage_storm
+  ĐẠT  warped_mage_wind: phát hit en_mage_storm
+  ĐẠT  warped_mage_wind: VFX screen đúng tỉ lệ
+  ĐẠT  Đủ 33 biến thể thuộc 18 họ quái
+  ĐẠT  Biến thể Nước / Sét tải bộ texture riêng
+  ĐẠT  Không có lỗi engine/script trong lúc chạy
+Enemy art: 626/626 kiểm tra đạt

@@ -1,78 +1,101 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_00.png" id="1_otgj7"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_01.png" id="2_nooff"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_02.png" id="3_vg73i"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_03.png" id="4_044up"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_04.png" id="5_4443l"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_05.png" id="6_tng3l"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_00.png" id="7_j67dr"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_01.png" id="8_xw81g"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_02.png" id="9_7231h"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_03.png" id="10_8i5kd"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_04.png" id="11_lbaa4"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_05.png" id="12_trcqo"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_06.png" id="13_u5nfx"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_07.png" id="14_hwtdv"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_00.png" id="15_6yx1w"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_01.png" id="16_n28ic"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_02.png" id="17_xvv44"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_03.png" id="18_wnk0o"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_04.png" id="19_ie1fl"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_05.png" id="20_drcve"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_06.png" id="21_og760"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_07.png" id="22_fl55v"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_00.png" id="23_nx1uy"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_01.png" id="24_34ahb"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_02.png" id="25_yf32o"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_03.png" id="26_wp1fo"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_04.png" id="27_twe6c"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_05.png" id="28_hhiiy"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_06.png" id="29_027nc"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_07.png" id="30_0w87a"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_08.png" id="31_a2wil"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_09.png" id="32_4m5x2"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_00.png" id="33_dmk4b"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_01.png" id="34_7ov71"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_02.png" id="35_aixwv"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_03.png" id="36_auqta"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_04.png" id="37_wofiq"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_05.png" id="38_6tkf8"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_06.png" id="39_6yo3f"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_07.png" id="40_kxv1w"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_00.png" id="41_df2q0"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_01.png" id="42_wdvxj"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_02.png" id="43_o7vov"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_03.png" id="44_lvdre"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_04.png" id="45_b63ql"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_05.png" id="46_hyn5p"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_06.png" id="47_aikj4"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_07.png" id="48_geof0"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_08.png" id="49_ojvwo"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_09.png" id="50_mtvrp"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_10.png" id="51_rrpdd"]
-[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_11.png" id="52_cnpe7"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_00.png" id="1_34ahb"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_01.png" id="2_yf32o"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_02.png" id="3_wp1fo"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_03.png" id="4_twe6c"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_04.png" id="5_hhiiy"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack_05.png" id="6_027nc"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_00.png" id="7_0w87a"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_01.png" id="8_a2wil"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_02.png" id="9_4m5x2"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_03.png" id="10_dmk4b"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_04.png" id="11_7ov71"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_05.png" id="12_aixwv"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_06.png" id="13_auqta"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_attack-cast_07.png" id="14_wofiq"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_opener_00.png" id="15_6tkf8"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_opener_01.png" id="16_6yo3f"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_opener_02.png" id="17_kxv1w"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_opener_03.png" id="18_df2q0"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_opener_04.png" id="19_wdvxj"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_00.png" id="20_o7vov"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_01.png" id="21_lvdre"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_02.png" id="22_b63ql"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_03.png" id="23_hyn5p"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_04.png" id="24_aikj4"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_05.png" id="25_geof0"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_06.png" id="26_ojvwo"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill_07.png" id="27_mtvrp"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_00.png" id="28_rrpdd"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_01.png" id="29_cnpe7"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_02.png" id="30_qfthk"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_03.png" id="31_f8x2s"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_04.png" id="32_aelib"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_05.png" id="33_d7xx5"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_06.png" id="34_6yle7"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_07.png" id="35_78i7l"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_08.png" id="36_yhieu"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_skill-cast_09.png" id="37_n0yww"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_technique_00.png" id="38_wx2nq"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_technique_01.png" id="39_wjnly"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_technique_02.png" id="40_hbffr"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_technique_03.png" id="41_yyu6e"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_technique_04.png" id="42_cg2i5"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_technique_05.png" id="43_j0kf4"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_00.png" id="44_otqn7"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_01.png" id="45_mmgnd"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_02.png" id="46_r862f"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_03.png" id="47_43eyb"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_04.png" id="48_egncq"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_05.png" id="49_2swmc"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_06.png" id="50_f4an1"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate_07.png" id="51_1th0j"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_00.png" id="52_nlxbf"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_01.png" id="53_5uo6c"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_02.png" id="54_216g0"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_03.png" id="55_2058g"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_04.png" id="56_kofuu"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_05.png" id="57_dsaad"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_06.png" id="58_b2vaj"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_07.png" id="59_uj7og"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_08.png" id="60_4ie6k"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_09.png" id="61_1oqnb"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_10.png" id="62_k8u32"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-cast_11.png" id="63_vn1uu"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_00.png" id="64_3ibw6"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_01.png" id="65_f7m34"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_02.png" id="66_tk4h7"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_03.png" id="67_cd6qa"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_04.png" id="68_xmw0x"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_05.png" id="69_4he4s"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_06.png" id="70_piji5"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_07.png" id="71_ukls2"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_08.png" id="72_yjbkt"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_09.png" id="73_j4lup"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_10.png" id="74_17mjj"]
+[ext_resource type="Texture2D" path="res://assets/characters/raiko/vfx/vfx_raiko_ultimate-screen_11.png" id="75_rqhpq"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_otgj7")
+"texture": ExtResource("1_34ahb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nooff")
+"texture": ExtResource("2_yf32o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_vg73i")
+"texture": ExtResource("3_wp1fo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_044up")
+"texture": ExtResource("4_twe6c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_4443l")
+"texture": ExtResource("5_hhiiy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_tng3l")
+"texture": ExtResource("6_027nc")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +103,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_j67dr")
+"texture": ExtResource("7_0w87a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_xw81g")
+"texture": ExtResource("8_a2wil")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_7231h")
+"texture": ExtResource("9_4m5x2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_8i5kd")
+"texture": ExtResource("10_dmk4b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_lbaa4")
+"texture": ExtResource("11_7ov71")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_trcqo")
+"texture": ExtResource("12_aixwv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_u5nfx")
+"texture": ExtResource("13_auqta")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_hwtdv")
+"texture": ExtResource("14_wofiq")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +132,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_6yx1w")
+"texture": ExtResource("15_6tkf8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_n28ic")
+"texture": ExtResource("16_6yo3f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_xvv44")
+"texture": ExtResource("17_kxv1w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_wnk0o")
+"texture": ExtResource("18_df2q0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_ie1fl")
+"texture": ExtResource("19_wdvxj")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_o7vov")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_drcve")
+"texture": ExtResource("21_lvdre")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_og760")
+"texture": ExtResource("22_b63ql")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_fl55v")
+"texture": ExtResource("23_hyn5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_aikj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_geof0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ojvwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mtvrp")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +181,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_nx1uy")
+"texture": ExtResource("28_rrpdd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_34ahb")
+"texture": ExtResource("29_cnpe7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_yf32o")
+"texture": ExtResource("30_qfthk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_wp1fo")
+"texture": ExtResource("31_f8x2s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_twe6c")
+"texture": ExtResource("32_aelib")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_hhiiy")
+"texture": ExtResource("33_d7xx5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_027nc")
+"texture": ExtResource("34_6yle7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_0w87a")
+"texture": ExtResource("35_78i7l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_a2wil")
+"texture": ExtResource("36_yhieu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_4m5x2")
+"texture": ExtResource("37_n0yww")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +216,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_dmk4b")
+"texture": ExtResource("38_wx2nq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_7ov71")
+"texture": ExtResource("39_wjnly")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_aixwv")
+"texture": ExtResource("40_hbffr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_auqta")
+"texture": ExtResource("41_yyu6e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_wofiq")
+"texture": ExtResource("42_cg2i5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_6tkf8")
+"texture": ExtResource("43_j0kf4")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_otqn7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_6yo3f")
+"texture": ExtResource("45_mmgnd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_kxv1w")
+"texture": ExtResource("46_r862f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_43eyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_egncq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_2swmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_f4an1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_1th0j")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +268,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_df2q0")
+"texture": ExtResource("52_nlxbf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_wdvxj")
+"texture": ExtResource("53_5uo6c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_o7vov")
+"texture": ExtResource("54_216g0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_lvdre")
+"texture": ExtResource("55_2058g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_b63ql")
+"texture": ExtResource("56_kofuu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_hyn5p")
+"texture": ExtResource("57_dsaad")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_aikj4")
+"texture": ExtResource("58_b2vaj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_geof0")
+"texture": ExtResource("59_uj7og")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_ojvwo")
+"texture": ExtResource("60_4ie6k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_mtvrp")
+"texture": ExtResource("61_1oqnb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_rrpdd")
+"texture": ExtResource("62_k8u32")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_cnpe7")
+"texture": ExtResource("63_vn1uu")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_3ibw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_f7m34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_tk4h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_cd6qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_xmw0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_4he4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_piji5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ukls2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_yjbkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_j4lup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_17mjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_rqhpq")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

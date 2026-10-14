@@ -1,0 +1,32 @@
+{
+  "en_mage_bolt": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Tia Méo",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#4FD1B5"
+  },
+  "en_mage_hex_wind": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Phù Lửa Méo",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#4FD1B5"
+  },
+  "en_mage_storm": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Mưa Méo",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#4FD1B5"
+  }
+}

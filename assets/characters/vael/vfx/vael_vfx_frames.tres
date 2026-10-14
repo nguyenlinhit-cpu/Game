@@ -1,0 +1,360 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_00.png" id="1_2rtbe"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_01.png" id="2_3k0td"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_02.png" id="3_wtt88"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_03.png" id="4_pas5i"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_04.png" id="5_fdjhh"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_05.png" id="6_p6bqk"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_06.png" id="7_jyat5"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack_07.png" id="8_lipy7"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_00.png" id="9_dldfa"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_01.png" id="10_80ye7"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_02.png" id="11_3mnq6"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_03.png" id="12_yinor"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_04.png" id="13_5rg57"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_05.png" id="14_leoh4"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_06.png" id="15_bn3wl"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_attack-cast_07.png" id="16_i2g2s"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_opener_00.png" id="17_17s6m"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_opener_01.png" id="18_4hqlr"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_opener_02.png" id="19_5i4or"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_opener_03.png" id="20_r7yhu"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_opener_04.png" id="21_sdwwj"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_00.png" id="22_p53kd"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_01.png" id="23_m1ga7"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_02.png" id="24_k71y8"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_03.png" id="25_byuyv"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_04.png" id="26_gkqhw"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_05.png" id="27_w7hql"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_06.png" id="28_gfub8"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill_07.png" id="29_nfq46"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_00.png" id="30_2tbbu"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_01.png" id="31_1y5dk"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_02.png" id="32_fg6ul"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_03.png" id="33_syo1o"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_04.png" id="34_cup6i"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_05.png" id="35_syb0u"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_06.png" id="36_f4htg"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_07.png" id="37_40swa"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_08.png" id="38_l2kib"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_skill-cast_09.png" id="39_d53h5"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_technique_00.png" id="40_u7opr"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_technique_01.png" id="41_sok77"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_technique_02.png" id="42_xxlgp"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_technique_03.png" id="43_isdax"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_technique_04.png" id="44_d712d"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_technique_05.png" id="45_5xq0d"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_00.png" id="46_2r1oy"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_01.png" id="47_sdfv6"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_02.png" id="48_5raq5"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_03.png" id="49_57cbv"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_04.png" id="50_cymbo"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_05.png" id="51_jojcs"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_06.png" id="52_xsxju"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate_07.png" id="53_fj3qt"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_00.png" id="54_r05k0"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_01.png" id="55_swi4w"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_02.png" id="56_5frmw"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_03.png" id="57_nusiy"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_04.png" id="58_0g2bh"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_05.png" id="59_dpisl"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_06.png" id="60_kavdt"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_07.png" id="61_7maxt"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_08.png" id="62_mhkid"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_09.png" id="63_nhk8h"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_10.png" id="64_cptuk"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-cast_11.png" id="65_kggw5"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_00.png" id="66_es5da"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_01.png" id="67_x71dj"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_02.png" id="68_ws64u"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_03.png" id="69_bywws"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_04.png" id="70_dicp1"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_05.png" id="71_48hn3"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_06.png" id="72_ejt7q"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_07.png" id="73_0r7ya"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_08.png" id="74_gqw34"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_09.png" id="75_2i5iw"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_10.png" id="76_lstjx"]
+[ext_resource type="Texture2D" path="res://assets/characters/vael/vfx/vfx_vael_ultimate-screen_11.png" id="77_4guqg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2rtbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3k0td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wtt88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pas5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fdjhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p6bqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jyat5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lipy7")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dldfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_80ye7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3mnq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yinor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5rg57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_leoh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bn3wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i2g2s")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_17s6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4hqlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5i4or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_r7yhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sdwwj")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_p53kd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_m1ga7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_k71y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_byuyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gkqhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_w7hql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gfub8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nfq46")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_2tbbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1y5dk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_fg6ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_syo1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cup6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_syb0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_f4htg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_40swa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_l2kib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_d53h5")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_u7opr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_sok77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_xxlgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_isdax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_d712d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_5xq0d")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_2r1oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sdfv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5raq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_57cbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_cymbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_jojcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_xsxju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_fj3qt")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_r05k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_swi4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_5frmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_nusiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_0g2bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_dpisl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_kavdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_7maxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_mhkid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_nhk8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_cptuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_kggw5")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_es5da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_x71dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_ws64u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_bywws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_dicp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_48hn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ejt7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_0r7ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_gqw34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_2i5iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_lstjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_4guqg")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

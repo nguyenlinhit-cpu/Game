@@ -69,6 +69,7 @@ CONFIG = {'id': 'vael',
  'strict_pockets': 350,
  'shadow_below': 975,
  'drop_islands': (800, 500)}
+CONFIG["concept"] = "1a_clean.png"
 CONFIG["poses"] = poses_for('cards', ['hat', 'cape1', 'cape2', 'cape3'])
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ Sinh tự động bởi `tools/data_builder/build_art_specs.py`.
 | --- | --- | --- | --- |
 | `shattered_knight` | Kỵ Sĩ Vỡ Vụn | Nước | `#3A8DDE` |
 
-## Ngoài map – 128×128 px/khung, 8 hướng
+## Ngoài map – 32×32 px/khung, hướng e, lật ngang khi đi trái
 
 | Hành động | Số khung | Ghi chú |
 | --- | --- | --- |

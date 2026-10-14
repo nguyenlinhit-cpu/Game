@@ -1,0 +1,20 @@
+{
+  "enemy_art": {
+    "passed": 626,
+    "total": 626,
+    "shutdown_resource_warning": false
+  },
+  "phase08": {
+    "passed": 72,
+    "total": 72,
+    "shutdown_resource_warning": true
+  },
+  "phase13": {
+    "passed": 63,
+    "total": 63,
+    "shutdown_resource_warning": true
+  },
+  "map_sets": 33,
+  "import_files": 403,
+  "rendered_families": 18
+}

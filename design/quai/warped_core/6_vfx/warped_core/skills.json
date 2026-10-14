@@ -1,0 +1,32 @@
+{
+  "en_core_flare": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Lửa Lõi",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#E8552B"
+  },
+  "en_core_meltdown": {
+    "action": "skill",
+    "prepare": "telegraph",
+    "title": "Quá Nhiệt",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#E8552B"
+  },
+  "en_core_wave": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Sóng Nhiệt",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#E8552B"
+  }
+}

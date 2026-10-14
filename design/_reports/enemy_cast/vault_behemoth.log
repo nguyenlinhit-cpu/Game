@@ -1,0 +1,21 @@
+BlenderMCP addon registered
+[vault_behemoth rig] idle: 6 khung
+[vault_behemoth rig] attack: 8 khung
+[vault_behemoth rig] skill: 10 khung
+[vault_behemoth rig] hit: 4 khung
+[vault_behemoth rig] down: 6 khung
+[vault_behemoth rig] telegraph: 6 khung
+[vault_behemoth rig] sheet 7680×4608 → /home/linh/Game/design/quai/vault_behemoth/5_render/battle_vault_behemoth.png
+[vault_behemoth-p2 rig] idle-p2: 6 khung
+[vault_behemoth-p2 rig] attack-p2: 8 khung
+[vault_behemoth-p2 rig] skill-p2: 10 khung
+[vault_behemoth-p2 rig] hit-p2: 4 khung
+[vault_behemoth-p2 rig] down-p2: 6 khung
+[vault_behemoth-p2 rig] telegraph-p2: 6 khung
+[vault_behemoth-p2 rig] sheet 7680×4608 → /home/linh/Game/design/quai/vault_behemoth/5_render/battle_vault_behemoth-p2.png
+vault_behemoth: VFX for 6 skills × 1 variants
+COMPLETE vault_behemoth: 1 variants, 2 phases
+BlenderMCP addon unregistered
+Blender 5.2.2 LTS
+
+Blender quit

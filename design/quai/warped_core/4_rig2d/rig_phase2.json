@@ -1,0 +1,158 @@
+{
+  "id": "warped_core-p2",
+  "folder": "warped_core",
+  "kind": "quai",
+  "concept": "1a_battle_p2.png",
+  "frame": 768,
+  "char_h": 539.5310799670239,
+  "foot_x": 631.0,
+  "feet": [
+    384,
+    637
+  ],
+  "bones": {
+    "root": {
+      "parent": null,
+      "pivot": [
+        652.08,
+        1178.76
+      ],
+      "zone": [],
+      "depth": 0,
+      "prio": 0.025
+    },
+    "body": {
+      "parent": "root",
+      "pivot": [
+        652.08,
+        652.08
+      ],
+      "zone": [
+        [
+          652.08,
+          476.52,
+          652.08,
+          777.48,
+          225.72
+        ]
+      ],
+      "depth": 1,
+      "prio": 1
+    },
+    "head": {
+      "parent": "body",
+      "pivot": [
+        627.0,
+        777.48
+      ],
+      "zone": [
+        [
+          627.0,
+          576.84,
+          627.0,
+          677.1600000000001,
+          188.1
+        ]
+      ],
+      "depth": 3,
+      "prio": 2
+    },
+    "limb0": {
+      "parent": "body",
+      "pivot": [
+        388.74,
+        438.9
+      ],
+      "zone": [
+        [
+          388.74,
+          438.9,
+          225.72,
+          677.1600000000001,
+          125.4
+        ]
+      ],
+      "depth": 3.5,
+      "prio": 2
+    },
+    "limb1": {
+      "parent": "body",
+      "pivot": [
+        902.88,
+        476.52
+      ],
+      "zone": [
+        [
+          902.88,
+          476.52,
+          1053.36,
+          752.4,
+          125.4
+        ]
+      ],
+      "depth": 3.5,
+      "prio": 2
+    },
+    "extra0": {
+      "parent": "body",
+      "pivot": [
+        614.46,
+        263.34
+      ],
+      "zone": [
+        [
+          614.46,
+          263.34,
+          815.1,
+          288.42,
+          100.32000000000001
+        ]
+      ],
+      "depth": 2.5,
+      "prio": 2
+    },
+    "extra1": {
+      "parent": "body",
+      "pivot": [
+        489.06,
+        1003.2
+      ],
+      "zone": [
+        [
+          489.06,
+          1003.2,
+          739.86,
+          1040.82,
+          100.32000000000001
+        ]
+      ],
+      "depth": 2.5,
+      "prio": 2
+    }
+  },
+  "soft": 27.587999999999997,
+  "actions": {
+    "idle-p2": 6,
+    "attack-p2": 8,
+    "skill-p2": 10,
+    "hit-p2": 4,
+    "down-p2": 6,
+    "telegraph-p2": 6
+  },
+  "loops": [
+    "idle-p2",
+    "guard-p2",
+    "aim-p2",
+    "charge-p2",
+    "telegraph-p2",
+    "curse-p2",
+    "swallow-p2"
+  ],
+  "hit_frames": {
+    "attack-p2": 4,
+    "skill-p2": 6,
+    "summon-p2": 6,
+    "down-p2": 4
+  },
+  "shadow_below": 1203
+}

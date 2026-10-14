@@ -14,9 +14,22 @@ const CHARACTER_DIR: String = "res://assets/characters"
 const ENEMY_DIR: String = "res://assets/enemies"
 const TILESET_DIR: String = "res://assets/tilesets"
 const REQUIREMENTS_PATH: String = "res://data/config/art_requirements.json"
+## Các trận hướng dẫn / thử cũ dùng id trước khi có biến thể nguyên tố.
+const LEGACY_ENEMY_ASSETS: Dictionary = {
+	"warp_sprout": "warp_sprout_poison",
+	"wandering_shade": "wandering_shade_soul",
+	"rusted_knight": "rusted_knight_lightning",
+}
+const LEGACY_ENEMY_SKILLS: Dictionary = {
+	"warp_sprout_bite": "en_sprout_bite",
+	"wandering_shade_touch": "en_shade_touch",
+	"rusted_knight_slash": "en_knight_slash",
+	"rusted_knight_sweep": "en_knight_sweep",
+}
 
 static var _cache: Dictionary = {}
 static var _requirements: Dictionary = {}
+static var _enemy_skill_metadata: Dictionary = {}
 
 
 static func requirements() -> Dictionary:
@@ -29,6 +42,7 @@ static func requirements() -> Dictionary:
 ## Xóa bộ nhớ đệm (sau khi chạy công cụ nhập asset).
 static func clear_cache() -> void:
 	_cache.clear()
+	_enemy_skill_metadata.clear()
 
 
 static func _load(path: String) -> Resource:
@@ -118,13 +132,45 @@ static func vfx_frames(data: CharacterData) -> SpriteFrames:
 static func enemy_frames(data: EnemyData, mode: String) -> SpriteFrames:
 	if data == null:
 		return null
-	for asset_id: String in [String(data.id), String(data.family)]:
+	for asset_id: String in enemy_asset_ids(data):
 		if asset_id.is_empty():
 			continue
 		var frames := _load(frames_path(ENEMY_DIR, asset_id, mode)) as SpriteFrames
 		if frames:
 			return frames
 	return null
+
+
+static func enemy_asset_ids(data: EnemyData) -> Array[String]:
+	var ids: Array[String] = []
+	if data == null:
+		return ids
+	if LEGACY_ENEMY_ASSETS.has(String(data.id)):
+		ids.append(LEGACY_ENEMY_ASSETS[String(data.id)])
+	for id: String in [String(data.id), String(data.family)]:
+		if not id.is_empty() and not ids.has(id):
+			ids.append(id)
+	return ids
+
+
+static func enemy_skill_asset_id(skill_id: StringName) -> String:
+	return str(LEGACY_ENEMY_SKILLS.get(String(skill_id), String(skill_id)))
+
+
+## Tư thế và khung trúng của từng chiêu quái, cùng thứ tự ưu tiên biến thể / họ quái.
+static func enemy_skill_meta(data: EnemyData, skill_id: StringName) -> Dictionary:
+	if data == null:
+		return {}
+	for asset_id: String in enemy_asset_ids(data):
+		var path := ENEMY_DIR.path_join(asset_id).path_join("vfx/skills.json")
+		if not _enemy_skill_metadata.has(path):
+			var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path)) \
+					if FileAccess.file_exists(path) else {}
+			_enemy_skill_metadata[path] = parsed if parsed is Dictionary else {}
+		var entry: Dictionary = _enemy_skill_metadata[path].get(enemy_skill_asset_id(skill_id), {})
+		if not entry.is_empty():
+			return entry
+	return {}
 
 
 # --- Khu ---

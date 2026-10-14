@@ -1,0 +1,176 @@
+{
+  "id": "shattered_knight",
+  "folder": "shattered_knight",
+  "kind": "quai",
+  "concept": "1a_battle.png",
+  "frame": 384,
+  "char_h": 171.56815841584157,
+  "foot_x": 764.0,
+  "feet": [
+    192,
+    319
+  ],
+  "bones": {
+    "root": {
+      "parent": null,
+      "pivot": [
+        814.08,
+        962.56
+      ],
+      "zone": [],
+      "depth": 0,
+      "prio": 0.025
+    },
+    "body": {
+      "parent": "root",
+      "pivot": [
+        814.08,
+        634.88
+      ],
+      "zone": [
+        [
+          814.08,
+          491.52,
+          814.08,
+          737.28,
+          184.32
+        ]
+      ],
+      "depth": 1,
+      "prio": 1
+    },
+    "head": {
+      "parent": "body",
+      "pivot": [
+        814.08,
+        407.552
+      ],
+      "zone": [
+        [
+          814.08,
+          235.52,
+          814.08,
+          317.44,
+          163.84
+        ]
+      ],
+      "depth": 3,
+      "prio": 2
+    },
+    "limb0": {
+      "parent": "body",
+      "pivot": [
+        614.4000000000001,
+        491.52
+      ],
+      "zone": [
+        [
+          614.4000000000001,
+          491.52,
+          445.43999999999994,
+          471.04,
+          81.92
+        ]
+      ],
+      "depth": 3.5,
+      "prio": 2
+    },
+    "limb1": {
+      "parent": "body",
+      "pivot": [
+        1013.76,
+        481.28
+      ],
+      "zone": [
+        [
+          1013.76,
+          481.28,
+          1090.56,
+          634.88,
+          81.92
+        ]
+      ],
+      "depth": 3.5,
+      "prio": 2
+    },
+    "extra0": {
+      "parent": "body",
+      "pivot": [
+        1121.28,
+        614.4
+      ],
+      "zone": [
+        [
+          1121.28,
+          614.4,
+          1305.6,
+          860.16,
+          81.92
+        ]
+      ],
+      "depth": 2.5,
+      "prio": 2
+    },
+    "extra1": {
+      "parent": "body",
+      "pivot": [
+        675.84,
+        716.8
+      ],
+      "zone": [
+        [
+          675.84,
+          716.8,
+          537.5999999999999,
+          921.6,
+          61.44
+        ]
+      ],
+      "depth": 2.5,
+      "prio": 2
+    },
+    "blade": {
+      "parent": "limb0",
+      "pivot": [
+        645.12,
+        532.48
+      ],
+      "zone": [
+        [
+          92.16,
+          225.28,
+          814.08,
+          593.92,
+          46.08
+        ]
+      ],
+      "depth": 5,
+      "prio": 2.5
+    }
+  },
+  "soft": 22.528,
+  "actions": {
+    "idle": 6,
+    "attack": 8,
+    "skill": 10,
+    "hit": 4,
+    "down": 6,
+    "charge": 6
+  },
+  "loops": [
+    "idle",
+    "guard",
+    "aim",
+    "charge",
+    "telegraph",
+    "curse",
+    "swallow"
+  ],
+  "hit_frames": {
+    "attack": 4,
+    "skill": 6,
+    "summon": 6,
+    "down": 4
+  },
+  "shadow_below": 983
+}

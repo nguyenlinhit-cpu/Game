@@ -60,7 +60,7 @@ def poses_for(style, extras=()):
             strike.update(weapon={'rot': 7}, robot={'dx': 200, 'dy': -40})
             if action == 'ultimate':
                 wind['arm_l'] = {'rot': -35}
-                strike['robot'] = {'dx': 80, 'dy': 10, 'sx': 1.4, 'sy': 1.4}
+                strike['robot'] = {'dx': 430, 'dy': 40, 'sx': 3, 'sy': 3}
                 end = {'root': {'sy': .87}, 'head': {'rot': -5}}
         elif style == 'incense':
             wind.update(weapon={'rot': -12}, arm_l={'rot': -15})
@@ -90,7 +90,8 @@ def poses_for(style, extras=()):
         if action == 'ultimate' and i >= n - 2:
             p = end
         for k, name in enumerate(extras):
-            p[name] = {'rot': 4 * math.sin(i * .65 - k * .5)}
+            transform = p.setdefault(name, {})
+            transform['rot'] = transform.get('rot', 0) + 4 * math.sin(i * .65 - k * .5)
         return p
 
     def hit(i, n):
@@ -137,6 +138,8 @@ def run_echo(config):
     class EchoRig(original_class):
         def render(self, pose):
             action, i, n = pose['_action'], pose['_index'], pose['_count']
+            if action == 'ultimate':
+                i = min(i, n - 2)
             current = super().render(pose)
             lag = (i - 2) % n if action in ('idle', 'victory') else max(0, i - 2)
             old = super().render(original_poses[action](lag, n))

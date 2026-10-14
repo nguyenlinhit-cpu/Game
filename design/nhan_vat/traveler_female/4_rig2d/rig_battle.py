@@ -88,8 +88,8 @@ CONFIG = {'id': 'traveler_female',
            (615, 547, 720, 547, 5),
            (615, 555, 720, 555, 5),
            (615, 563, 720, 563, 5)])],
- 'char_h': 300,
- 'foot_x': 970,
+ 'char_h': 270,
+ 'foot_x': 850,
  'strict_pockets': 350,
  'shadow_below': 975}
 CONFIG["poses"] = poses_for('sword', ['cape1', 'cape2', 'cape3', 'cape4', 'hair1', 'hair2'])

@@ -1,0 +1,360 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_00.png" id="1_u8old"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_01.png" id="2_tam3t"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_02.png" id="3_afy6b"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_03.png" id="4_fwugt"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_04.png" id="5_baxsq"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_05.png" id="6_sabd0"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_06.png" id="7_ch4bn"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack_07.png" id="8_gdpec"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_00.png" id="9_i6xlm"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_01.png" id="10_rqkdn"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_02.png" id="11_daw38"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_03.png" id="12_3at37"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_04.png" id="13_5tj6n"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_05.png" id="14_a15yx"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_06.png" id="15_ieosy"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_attack-cast_07.png" id="16_m0w8q"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_opener_00.png" id="17_o7368"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_opener_01.png" id="18_1pp5t"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_opener_02.png" id="19_c6qwh"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_opener_03.png" id="20_cvbyi"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_opener_04.png" id="21_nbcxn"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_00.png" id="22_vwk5j"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_01.png" id="23_bhtcl"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_02.png" id="24_1s7ej"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_03.png" id="25_v6248"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_04.png" id="26_m80mf"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_05.png" id="27_d73nq"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_06.png" id="28_a8tnw"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill_07.png" id="29_vrx35"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_00.png" id="30_52hrl"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_01.png" id="31_bpybs"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_02.png" id="32_wsicq"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_03.png" id="33_e6dmx"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_04.png" id="34_526s7"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_05.png" id="35_rs2an"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_06.png" id="36_j2mrk"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_07.png" id="37_crdox"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_08.png" id="38_ojl46"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_skill-cast_09.png" id="39_6ptau"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_technique_00.png" id="40_2rqqb"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_technique_01.png" id="41_cyvpy"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_technique_02.png" id="42_3u4pa"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_technique_03.png" id="43_14wiq"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_technique_04.png" id="44_c8p1y"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_technique_05.png" id="45_m3pf2"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_00.png" id="46_h0u3s"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_01.png" id="47_er6xs"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_02.png" id="48_d3e55"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_03.png" id="49_m75n7"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_04.png" id="50_07yyd"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_05.png" id="51_kgqny"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_06.png" id="52_xv58b"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate_07.png" id="53_m7etw"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_00.png" id="54_p7tgn"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_01.png" id="55_ygcc4"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_02.png" id="56_nafsk"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_03.png" id="57_ejmyq"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_04.png" id="58_gofvp"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_05.png" id="59_d7bwf"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_06.png" id="60_12abk"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_07.png" id="61_e2p2k"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_08.png" id="62_hai3y"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_09.png" id="63_s2abi"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_10.png" id="64_xuqh0"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-cast_11.png" id="65_qiyl4"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_00.png" id="66_r8681"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_01.png" id="67_wxs3j"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_02.png" id="68_52evo"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_03.png" id="69_5rvxf"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_04.png" id="70_k82m3"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_05.png" id="71_jqdqo"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_06.png" id="72_yjbdl"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_07.png" id="73_5a5bc"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_08.png" id="74_44k16"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_09.png" id="75_gqjom"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_10.png" id="76_y7jon"]
+[ext_resource type="Texture2D" path="res://assets/characters/traveler_female/vfx/vfx_traveler_female_ultimate-screen_11.png" id="77_cidbq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u8old")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tam3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_afy6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fwugt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_baxsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sabd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ch4bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gdpec")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i6xlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rqkdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_daw38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3at37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5tj6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a15yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ieosy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m0w8q")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_o7368")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1pp5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_c6qwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cvbyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nbcxn")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_vwk5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bhtcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1s7ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_v6248")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_m80mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_d73nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_a8tnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vrx35")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_52hrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_bpybs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wsicq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_e6dmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_526s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_rs2an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_j2mrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_crdox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ojl46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6ptau")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_2rqqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cyvpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_3u4pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_14wiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_c8p1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_m3pf2")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_h0u3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_er6xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_d3e55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_m75n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_07yyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_kgqny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_xv58b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_m7etw")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_p7tgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ygcc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_nafsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ejmyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_gofvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_d7bwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_12abk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_e2p2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_hai3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_s2abi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_xuqh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_qiyl4")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_r8681")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_wxs3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_52evo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_5rvxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_k82m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_jqdqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_yjbdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_5a5bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_44k16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_gqjom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_y7jon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_cidbq")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

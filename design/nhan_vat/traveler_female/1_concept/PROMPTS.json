@@ -1,0 +1,33 @@
+{
+  "tool": "image_gen built-in",
+  "date": "2026-10-15",
+  "reference": "1a_battle.png for remaining views",
+  "brief_prompts": {
+    "1a": [
+      "Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A calm young woman with long dark-navy hair tied in a low ponytail and soft side bangs, warm golden eyes, a plum-red long cloak whose back splits into two tails, gold trim, a glowing golden crystal shard embedded at the center of her chest, dark fitted tunic with crossed leather belts, knee-high boots. Weapon: a long slender single-edged sword with a pale gold glowing edge and a dark navy hilt (same sword as the male version). Holding the long sword low and diagonal behind her, leaning slightly forward toward the enemy, cloak tails and ponytail flowing. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\n",
+      "realistic, photo, 3d render, extra fingers, extra limbs, deformed hands, blurry, low quality, watermark, text, logo, signature, multiple characters, cropped body, busy background\n"
+    ],
+    "1b": [
+      "Same character as the reference image: a calm young woman with long dark-navy hair tied in a low ponytail and soft side bangs, warm golden eyes, a plum-red long cloak whose back splits into two tails, gold trim, a glowing golden crystal shard embedded at the center of her chest, dark fitted tunic with crossed leather belts, knee-high boots. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\n",
+      "Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\n"
+    ],
+    "1c": [
+      "Game prop design: a long slender single-edged sword with a pale gold glowing edge and a dark navy hilt (same sword as the male version), shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\n"
+    ],
+    "1d": [
+      "Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, dark navy ponytail, plum-red cloak with two split tails and gold trim, tiny glowing gold dot on the chest, long sword with a pale gold edge, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\n"
+    ],
+    "1e": [
+      "Anime key visual splash art of the same character as the reference image: a calm young woman with long dark-navy hair tied in a low ponytail and soft side bangs, warm golden eyes, a plum-red long cloak whose back splits into two tails, gold trim, a glowing golden crystal shard embedded at the center of her chest, dark fitted tunic with crossed leather belts, knee-high boots. Flying above the ground with both hands raising the glowing long sword overhead, a giant golden eye opening behind him, cloak and hair blown upward. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\n"
+    ]
+  },
+  "notes": "Lời gọi bổ sung ràng buộc bố cục, nền trắng và giữ nhân vật. Pixel 1d là lưới vẽ tay từ 4_rig2d/map_base.txt, không phải ảnh AI thu nhỏ. Hai skin dùng chung ảnh thiết kế kiếm.",
+  "files": {
+    "1a_battle.png": "70fdd14c3578676cdb977ce42d9d80587400086019a99e818cce473c93dff47a",
+    "1b_back.png": "eb180d087f827a0e8382f94912b0d2e605bdf03b3d7c86c72ae766d7f01fe042",
+    "1b_front.png": "05610b43250fb8833611fb71f8215c881817a43bf99d783cabe357f617bd427c",
+    "1c_weapon.png": "a2c2639890d99ff330ba3336525ab0c291371f229e29738dbd3dbde1c09923e3",
+    "1d_pixel.png": "6d0ca1c045ce5159a7d22debca8e65e96a5406c34fbb38a662f989f8f5dbc91f",
+    "1e_splash.png": "c0385b1693471a10f7fa022f7568e6b9cda0ea92e7d84b3f3fc15405f53347f5"
+  }
+}

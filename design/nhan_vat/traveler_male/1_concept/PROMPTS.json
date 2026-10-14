@@ -1,0 +1,33 @@
+{
+  "tool": "image_gen built-in",
+  "date": "2026-10-15",
+  "reference": "1a_battle.png for remaining views",
+  "brief_prompts": {
+    "1a": [
+      "Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A quiet young man with short messy dark-navy hair and a long side bang, warm golden eyes, a midnight-blue long cloak whose back splits into two tails, gold trim, a glowing golden crystal shard embedded at the center of his chest, dark fitted tunic with crossed leather belts, knee-high boots. Weapon: a long slender single-edged sword with a pale gold glowing edge and a dark navy hilt. Holding the long sword low and diagonal behind him, leaning slightly forward toward the enemy, cloak tails flowing. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\n",
+      "realistic, photo, 3d render, extra fingers, extra limbs, deformed hands, blurry, low quality, watermark, text, logo, signature, multiple characters, cropped body, busy background\n"
+    ],
+    "1b": [
+      "Same character as the reference image: a quiet young man with short messy dark-navy hair and a long side bang, warm golden eyes, a midnight-blue long cloak whose back splits into two tails, gold trim, a glowing golden crystal shard embedded at the center of his chest, dark fitted tunic with crossed leather belts, knee-high boots. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\n",
+      "Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\n"
+    ],
+    "1c": [
+      "Game prop design: a long slender single-edged sword with a pale gold glowing edge and a dark navy hilt, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\n"
+    ],
+    "1d": [
+      "Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, dark navy hair, midnight-blue cloak with two split tails and gold trim, tiny glowing gold dot on the chest, long sword with a pale gold edge, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\n"
+    ],
+    "1e": [
+      "Anime key visual splash art of the same character as the reference image: a quiet young man with short messy dark-navy hair and a long side bang, warm golden eyes, a midnight-blue long cloak whose back splits into two tails, gold trim, a glowing golden crystal shard embedded at the center of his chest, dark fitted tunic with crossed leather belts, knee-high boots. Flying above the ground with both hands raising the glowing long sword overhead, a giant golden eye opening behind him, cloak and hair blown upward. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\n"
+    ]
+  },
+  "notes": "Lời gọi bổ sung ràng buộc bố cục, nền trắng và giữ nhân vật. Pixel 1d là lưới vẽ tay từ 4_rig2d/map_base.txt, không phải ảnh AI thu nhỏ. Hai skin dùng chung ảnh thiết kế kiếm.",
+  "files": {
+    "1a_battle.png": "3785d45cb4e758abf9c8928d9441ca64e1cf344b9582340d21c126cb8e454b75",
+    "1b_back.png": "6af67185033f6e66c2713493d5d0347fea406ec3e948627157333e2404f71c15",
+    "1b_front.png": "e069e806c7e32e5f2bb7c7e691f9d63ac073545394b78d3daf18844a5c71614b",
+    "1c_weapon.png": "a2c2639890d99ff330ba3336525ab0c291371f229e29738dbd3dbde1c09923e3",
+    "1d_pixel.png": "9f66c72807d94755accc8d9924781414b44f807e41bf7a635b928e841626c853",
+    "1e_splash.png": "00db55fcba60527721e18b3c24339a6fe61b81ad1a0f4b12902f85c21cbe9742"
+  }
+}

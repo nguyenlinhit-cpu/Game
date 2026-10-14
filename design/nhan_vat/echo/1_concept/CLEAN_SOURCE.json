@@ -1,0 +1,9 @@
+{
+  "tool": "image_gen built-in",
+  "date": "2026-10-15",
+  "input": "1a_battle.png",
+  "output": "1a_clean.png",
+  "edit": "Dùng 1a_clean.png đã bỏ bản sao vẽ sẵn. Bóng được ghép ở 40% độ mờ, trễ hai khung và nhập lại khi victory. Tuyệt kỹ giữ cả thân lẫn bóng ở hai khung cuối. Technique map biến mất từ khung 3.",
+  "input_sha256": "196388b97783cb217776075ec27d0162e0ab48d4337e8c208ac15381cdac5255",
+  "output_sha256": "b1b337af54387cc3bb166924e85bd21efe72c74127208d7ff5b6d0e5103829e2"
+}

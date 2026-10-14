@@ -1,0 +1,130 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/enemies/venom_bee_poison_drone/vfx/vfx_venom_bee_poison_drone-en_bee_sting-effects.png" id="1_qi8rw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swyjt"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlkcx"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbtru"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md2nm"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em5ko"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxno5"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(512, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q7lt"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1024, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb14u"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1536, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4obtv"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtgiv"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mi1t"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdhip"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmmuv"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i6ng"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snkng"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcjb4"]
+atlas = ExtResource("1_qi8rw")
+region = Rect2(1536, 512, 512, 512)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swyjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlkcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbtru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md2nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em5ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxno5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q7lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb14u")
+}],
+"loop": 0,
+"name": &"en_bee_sting",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4obtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtgiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mi1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdhip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmmuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i6ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snkng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcjb4")
+}],
+"loop": 0,
+"name": &"en_bee_sting-cast",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.84)
+metadata/hit_frame = {}

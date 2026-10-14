@@ -1,0 +1,22 @@
+{
+  "en_arm_strike": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Kẹp Máy",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#E8552B"
+  },
+  "en_arm_stoke": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Nạp Nhiệt",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#E8552B"
+  }
+}

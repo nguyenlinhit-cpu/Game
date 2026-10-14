@@ -1,0 +1,32 @@
+{
+  "en_ml_strike": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Gáy Sách",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#4FD1B5"
+  },
+  "en_ml_seal": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Suỵt",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#4FD1B5"
+  },
+  "en_ml_hush": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Tĩnh Lặng",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": true,
+    "element_color": "#4FD1B5"
+  }
+}

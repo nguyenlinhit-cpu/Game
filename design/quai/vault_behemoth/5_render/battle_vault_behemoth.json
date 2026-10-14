@@ -1,0 +1,314 @@
+{
+ "asset_id": "vault_behemoth",
+ "mode": "battle",
+ "frame_size": [
+  768,
+  768
+ ],
+ "anchor": [
+  0.5,
+  0.8294
+ ],
+ "fps": 12,
+ "source": "design/quai/vault_behemoth/4_rig2d/rig_battle.py (xương 2D trên 1a_battle.png)",
+ "loop": [
+  "idle",
+  "guard",
+  "aim",
+  "charge",
+  "telegraph",
+  "curse",
+  "swallow"
+ ],
+ "hit_frame": {
+  "attack": 4,
+  "skill": 6,
+  "summon": 6,
+  "down": 4
+ },
+ "frames": [
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 0
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 768
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 768
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 768
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 768
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 768,
+   "hit": true
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 768
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 6,
+   "x": 4608,
+   "y": 768
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 7,
+   "x": 5376,
+   "y": 768
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 6,
+   "x": 4608,
+   "y": 1536,
+   "hit": true
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 7,
+   "x": 5376,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 8,
+   "x": 6144,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 9,
+   "x": 6912,
+   "y": 1536
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 2304
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 2304
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 2304
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 2304
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 3072
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 3072
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 3072
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 3072
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 3072,
+   "hit": true
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 3072
+  },
+  {
+   "action": "telegraph",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 3840
+  },
+  {
+   "action": "telegraph",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 3840
+  },
+  {
+   "action": "telegraph",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 3840
+  },
+  {
+   "action": "telegraph",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 3840
+  },
+  {
+   "action": "telegraph",
+   "dir": "",
+   "index": 4,
+   "x": 3072,
+   "y": 3840
+  },
+  {
+   "action": "telegraph",
+   "dir": "",
+   "index": 5,
+   "x": 3840,
+   "y": 3840
+  }
+ ]
+}

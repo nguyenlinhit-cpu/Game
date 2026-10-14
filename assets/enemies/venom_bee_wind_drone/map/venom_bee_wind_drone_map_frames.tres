@@ -1,0 +1,114 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/enemies/venom_bee_wind_drone/map/map_venom_bee_wind_drone.png" id="1_cjxa4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvxmp"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q2y1"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvyg0"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob305"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7smm"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijoyf"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us0rs"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmem0"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2smid"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esjhj"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g88pb"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju318"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d4ay"]
+atlas = ExtResource("1_cjxa4")
+region = Rect2(64, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvxmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q2y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvyg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob305")
+}],
+"loop": 1,
+"name": &"idle_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7smm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijoyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us0rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmem0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2smid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esjhj")
+}],
+"loop": 1,
+"name": &"run_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g88pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju318")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d4ay")
+}],
+"loop": 0,
+"name": &"windup_e",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.875)
+metadata/hit_frame = {}

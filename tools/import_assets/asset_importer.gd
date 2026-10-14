@@ -92,9 +92,13 @@ func _enemy_families() -> Array[Dictionary]:
 		if not clean.ends_with(".tres"):
 			continue
 		var enemy := load("res://data/enemies/" + clean) as EnemyData
-		if enemy == null or String(enemy.id).begins_with("training_dummy") or enemy.id == &"balance_brute":
+		if enemy == null:
 			continue
-		var asset_id := String(enemy.family) if enemy.family != &"" else String(enemy.id)
+		var asset_id := String(enemy.id)
+		for candidate: String in ArtLibrary.enemy_asset_ids(enemy):
+			if DirAccess.dir_exists_absolute(ArtLibrary.ENEMY_DIR.path_join(candidate)):
+				asset_id = candidate
+				break
 		if seen.has(asset_id):
 			continue
 		seen[asset_id] = true
@@ -107,7 +111,10 @@ func _import_enemy(asset_id: String, kind: int, phases: int) -> void:
 	var base := ArtLibrary.ENEMY_DIR.path_join(asset_id)
 	var spec: Dictionary = _req["enemy"]
 	var label := "Quái %s" % asset_id
-	_import_mode(base, asset_id, "map", spec["map"], _req["directions"], label)
+	var map_spec: Dictionary = spec["map"].duplicate(true)
+	if map_spec["frame_size"] is Dictionary:
+		map_spec["frame_size"] = int(map_spec["frame_size"][["normal", "elite", "boss"][kind]])
+	_import_mode(base, asset_id, "map", map_spec, spec.get("directions", _req["directions"]), label)
 	var battle: Dictionary = spec["battle"].duplicate(true)
 	battle["frame_size"] = int(spec["battle"]["frame_size"][["normal", "elite", "boss"][kind]])
 	if phases > 1:
@@ -118,6 +125,18 @@ func _import_enemy(asset_id: String, kind: int, phases: int) -> void:
 		battle["actions"] = actions
 		battle["loop"] = ["idle"] + range(2, phases + 1).map(func(p: int) -> String: return "idle-p%d" % p)
 	_import_mode(base, asset_id, "battle", battle, [], label)
+	var skills_path := base.path_join("vfx/skills.json")
+	if FileAccess.file_exists(skills_path):
+		var skills: Variant = JSON.parse_string(FileAccess.get_file_as_string(skills_path))
+		if skills is Dictionary:
+			var effects: Dictionary = {}
+			for skill: String in skills:
+				for layer: String in ["", "-cast"]:
+					effects[skill + layer] = int(skills[skill].get("effect_frames", 8))
+				if skills[skill].get("screen", false):
+					effects[skill + "-screen"] = int(skills[skill].get("effect_frames", 8))
+			_import_mode(base, asset_id, "vfx", {"actions": effects, "loop": [], "frame_size": 512,
+					"fps": 12}, [], label, true)
 
 
 # --- Hoạt ảnh ---
@@ -143,7 +162,8 @@ func _import_mode(base: String, asset_id: String, mode: String, spec: Dictionary
 		return
 	var frames := SpriteFrames.new()
 	frames.remove_animation(&"default")
-	var loops: Array = spec.get("loop", [])
+	var loops: Array = spec.get("loop", []).duplicate()
+	loops.append_array(meta.get("loop", []))
 	for anim: String in frames_by_anim:
 		var list: Array = frames_by_anim[anim]
 		list.sort_custom(func(a: Array, b: Array) -> bool: return a[0] < b[0])
@@ -154,6 +174,7 @@ func _import_mode(base: String, asset_id: String, mode: String, spec: Dictionary
 		for entry: Array in list:
 			frames.add_frame(anim, entry[1])
 	frames.set_meta("anchor", meta["anchor"])
+	frames.set_meta("hit_frame", meta.get("hit_frame", {}))
 	# Đối chiếu yêu cầu: đủ hành động × hướng, đủ số khung.
 	for action: String in actions:
 		var wanted := int(actions[action])
@@ -178,14 +199,22 @@ func _import_mode(base: String, asset_id: String, mode: String, spec: Dictionary
 
 ## Sprite sheet + JSON của Blender.
 func _collect_sheet(dir: String, asset_id: String, mode: String, out: Dictionary, meta: Dictionary) -> void:
-	var json_path := dir.path_join("%s_%s.json" % [mode, asset_id])
-	var png_path := dir.path_join("%s_%s.png" % [mode, asset_id])
+	var prefix := "%s_%s" % [mode, asset_id]
+	for file: String in DirAccess.get_files_at(dir):
+		if file == prefix + ".json" or (file.begins_with(prefix + "-") and file.ends_with(".json")):
+			_collect_one_sheet(dir.path_join(file), out, meta)
+
+
+func _collect_one_sheet(json_path: String, out: Dictionary, meta: Dictionary) -> void:
+	var png_path := json_path.trim_suffix(".json") + ".png"
+	if not FileAccess.file_exists(png_path):
+		png_path = json_path.trim_suffix(".json") + ".svg"
 	if not FileAccess.file_exists(json_path):
 		return
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(json_path))
 	var texture := load(png_path) as Texture2D if ResourceLoader.exists(png_path) else null
 	if not parsed is Dictionary or texture == null:
-		report["warnings"].append("%s: sheet chưa import hoặc JSON hỏng (%s)" % [asset_id, png_path])
+		report["warnings"].append("sheet chưa import hoặc JSON hỏng (%s)" % png_path)
 		return
 	var data: Dictionary = parsed
 	var size: Array = data.get("frame_size", [128, 128])
@@ -193,6 +222,12 @@ func _collect_sheet(dir: String, asset_id: String, mode: String, out: Dictionary
 		meta["anchor"] = Vector2(float(data["anchor"][0]), float(data["anchor"][1]))
 	if data.has("fps"):
 		meta["fps"] = float(data["fps"])
+	var loops: Array = meta.get("loop", [])
+	loops.append_array(data.get("loop", []))
+	meta["loop"] = loops
+	var hits: Dictionary = meta.get("hit_frame", {})
+	hits.merge(data.get("hit_frame", {}), true)
+	meta["hit_frame"] = hits
 	for frame: Dictionary in data.get("frames", []):
 		var atlas := AtlasTexture.new()
 		atlas.atlas = texture

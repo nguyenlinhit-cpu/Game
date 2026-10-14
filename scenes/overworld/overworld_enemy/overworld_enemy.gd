@@ -290,7 +290,8 @@ func _ensure_sprite() -> void:
 		return
 	var frames := ArtLibrary.enemy_frames(encounter.get_leader(), "map")
 	if frames:
-		sprite = ArtLibrary.make_sprite(frames, 130.0)
+		var height := ArtLibrary.frame_size_of(frames).y
+		sprite = ArtLibrary.make_sprite(frames, height * 4.0 if height <= 64.0 else 130.0)
 		add_child(sprite)
 		move_child(sprite, 0)
 
@@ -300,7 +301,8 @@ func _process(_delta: float) -> void:
 	if sprite:
 		var moving := velocity.length() > 5.0
 		var dir_index := wrapi(roundi(facing.angle() / (PI / 4.0)), 0, 8)
-		ArtLibrary.play(sprite, "run" if moving else "idle", Player.FACING_NAMES[dir_index])
+		var action := "windup" if state == State.WINDUP else ("run" if moving else "idle")
+		ArtLibrary.play(sprite, action, Player.FACING_NAMES[dir_index])
 
 
 func _draw() -> void:

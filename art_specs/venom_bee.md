@@ -15,7 +15,7 @@ Sinh tự động bởi `tools/data_builder/build_art_specs.py`.
 | `venom_bee_wind` | Ong Độc Phong | Phong | `#4FD1B5` |
 | `venom_bee_wind_drone` | Ong Thợ Phong | Phong | `#4FD1B5` |
 
-## Ngoài map – 128×128 px/khung, 8 hướng
+## Ngoài map – 32×32 px/khung, hướng e, lật ngang khi đi trái
 
 | Hành động | Số khung | Ghi chú |
 | --- | --- | --- |

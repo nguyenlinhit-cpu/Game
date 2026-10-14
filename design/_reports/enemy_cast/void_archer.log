@@ -1,0 +1,14 @@
+BlenderMCP addon registered
+[void_archer rig] idle: 6 khung
+[void_archer rig] attack: 8 khung
+[void_archer rig] skill: 10 khung
+[void_archer rig] hit: 4 khung
+[void_archer rig] down: 6 khung
+[void_archer rig] aim: 6 khung
+[void_archer rig] sheet 2560×1536 → /home/linh/Game/design/quai/void_archer/5_render/battle_void_archer.png
+void_archer: VFX for 3 skills × 2 variants
+COMPLETE void_archer: 2 variants, 1 phases
+BlenderMCP addon unregistered
+Blender 5.2.2 LTS
+
+Blender quit

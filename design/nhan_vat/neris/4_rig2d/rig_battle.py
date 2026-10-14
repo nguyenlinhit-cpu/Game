@@ -104,8 +104,8 @@ CONFIG = {'id': 'neris',
            (115, 700, 150, 800, 30),
            (330, 590, 380, 610, 48),
            (800, 425, 850, 435, 50)])],
- 'char_h': 245,
- 'foot_x': 780,
+ 'char_h': 220,
+ 'foot_x': 830,
  'strict_pockets': 350,
  'shadow_below': 975}
 CONFIG["poses"] = poses_for('spear', ['hair1', 'hair2'])

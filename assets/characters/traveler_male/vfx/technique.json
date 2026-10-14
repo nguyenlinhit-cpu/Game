@@ -1,0 +1,27 @@
+{
+ "owner": "traveler_male",
+ "skill": "technique",
+ "fps": 12,
+ "frames": 6,
+ "hit_frame": null,
+ "size": [
+  64,
+  64
+ ],
+ "colors": 2,
+ "anchors": {
+  "opener_origin": [
+   31,
+   39
+  ],
+  "opener_feet": [
+   16,
+   52
+  ],
+  "technique_feet": [
+   16,
+   52
+  ]
+ },
+ "placed_at": "khung 64×64, điểm neo ghi trong anchors (toạ độ pixel trong khung)"
+}

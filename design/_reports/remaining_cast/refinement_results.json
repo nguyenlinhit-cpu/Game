@@ -1,0 +1,122 @@
+[
+  {
+    "id": "fenna",
+    "ok": true,
+    "seconds": 73.1,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 70.9
+      },
+      {
+        "stage": "map",
+        "seconds": 2.2
+      }
+    ]
+  },
+  {
+    "id": "kestrel",
+    "ok": true,
+    "seconds": 66.4,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 63.5
+      },
+      {
+        "stage": "map",
+        "seconds": 2.9
+      }
+    ]
+  },
+  {
+    "id": "neris",
+    "ok": true,
+    "seconds": 55.8,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 53.5
+      },
+      {
+        "stage": "map",
+        "seconds": 2.3
+      }
+    ]
+  },
+  {
+    "id": "pip",
+    "ok": true,
+    "seconds": 51.5,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 49.3
+      },
+      {
+        "stage": "map",
+        "seconds": 2.2
+      }
+    ]
+  },
+  {
+    "id": "ember",
+    "ok": true,
+    "seconds": 59.7,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 57.4
+      },
+      {
+        "stage": "map",
+        "seconds": 2.3
+      }
+    ]
+  },
+  {
+    "id": "selka",
+    "ok": true,
+    "seconds": 60.7,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 58.5
+      },
+      {
+        "stage": "map",
+        "seconds": 2.2
+      }
+    ]
+  },
+  {
+    "id": "traveler_male",
+    "ok": true,
+    "seconds": 52.7,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 50.1
+      },
+      {
+        "stage": "map",
+        "seconds": 2.6
+      }
+    ]
+  },
+  {
+    "id": "traveler_female",
+    "ok": true,
+    "seconds": 54.1,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 52.0
+      },
+      {
+        "stage": "map",
+        "seconds": 2.1
+      }
+    ]
+  }
+]

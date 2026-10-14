@@ -1,0 +1,92 @@
+[
+  {
+    "id": "kestrel",
+    "ok": true,
+    "seconds": 63.5,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 61.3
+      },
+      {
+        "stage": "map",
+        "seconds": 2.3
+      }
+    ]
+  },
+  {
+    "id": "neris",
+    "ok": true,
+    "seconds": 57.9,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 55.0
+      },
+      {
+        "stage": "map",
+        "seconds": 2.9
+      }
+    ]
+  },
+  {
+    "id": "pip",
+    "ok": true,
+    "seconds": 57.2,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 53.2
+      },
+      {
+        "stage": "map",
+        "seconds": 4.0
+      }
+    ]
+  },
+  {
+    "id": "echo",
+    "ok": true,
+    "seconds": 113.7,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 111.5
+      },
+      {
+        "stage": "map",
+        "seconds": 2.2
+      }
+    ]
+  },
+  {
+    "id": "traveler_male",
+    "ok": true,
+    "seconds": 62.1,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 60.0
+      },
+      {
+        "stage": "map",
+        "seconds": 2.2
+      }
+    ]
+  },
+  {
+    "id": "traveler_female",
+    "ok": true,
+    "seconds": 47.6,
+    "stages": [
+      {
+        "stage": "battle",
+        "seconds": 45.3
+      },
+      {
+        "stage": "map",
+        "seconds": 2.3
+      }
+    ]
+  }
+]

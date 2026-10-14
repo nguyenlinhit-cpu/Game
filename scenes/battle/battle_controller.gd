@@ -512,7 +512,12 @@ func _perform(unit: BattleUnit, skill: SkillData, target: BattleUnit, follow_up:
 		return
 	action_started.emit(unit, skill, targets)
 	var is_ultimate := skill.kind == SkillData.Kind.ULTIMATE
-	await _wait(ULTIMATE_PAUSE_SEC if is_ultimate else WINDUP_PAUSE_SEC)
+	var windup := ULTIMATE_PAUSE_SEC if is_ultimate else WINDUP_PAUSE_SEC
+	if unit.enemy:
+		var meta := ArtLibrary.enemy_skill_meta(unit.enemy, skill.id)
+		if not meta.is_empty():
+			windup = float(meta.get("hit_frame", 4)) / maxf(float(meta.get("fps", 12)), 1.0)
+	await _wait(windup)
 	if phase == Phase.ENDED:
 		return
 	var events := SkillExecutor.execute(self, unit, skill, target, follow_up)
@@ -593,6 +598,9 @@ func _apply_technique_effects() -> Array[Dictionary]:
 
 
 func _exit_tree() -> void:
+	# Coroutine đang chờ hoạt ảnh phải dừng khi phòng thử thay trận / đổi scene.
+	phase = Phase.ENDED
+	_interrupts.clear()
 	for talent in talents:
 		talent.detach()
 	talents.clear()

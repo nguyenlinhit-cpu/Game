@@ -1,78 +1,101 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_00.png" id="1_r21cv"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_01.png" id="2_l6a32"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_02.png" id="3_jyfyn"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_03.png" id="4_h3oqs"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_04.png" id="5_4l1qw"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_05.png" id="6_t2r52"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_00.png" id="7_0tq27"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_01.png" id="8_tm03w"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_02.png" id="9_c7yft"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_03.png" id="10_4mc6o"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_04.png" id="11_ut8my"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_05.png" id="12_yhho7"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_06.png" id="13_xqtw1"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_07.png" id="14_cfdni"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_00.png" id="15_c8wj0"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_01.png" id="16_olfkj"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_02.png" id="17_6fhuv"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_03.png" id="18_gnwql"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_04.png" id="19_fooas"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_05.png" id="20_61e25"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_06.png" id="21_kl688"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_07.png" id="22_hv1to"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_00.png" id="23_5ccyu"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_01.png" id="24_ln6qb"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_02.png" id="25_lkwlg"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_03.png" id="26_no3o8"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_04.png" id="27_m33i0"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_05.png" id="28_g0obc"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_06.png" id="29_t1403"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_07.png" id="30_y2ybk"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_08.png" id="31_cpnwn"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_09.png" id="32_mrfwc"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_00.png" id="33_87g0x"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_01.png" id="34_a7u7k"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_02.png" id="35_q84wa"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_03.png" id="36_xpc81"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_04.png" id="37_3brdn"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_05.png" id="38_2lhaj"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_06.png" id="39_vkyfv"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_07.png" id="40_sdjg6"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_00.png" id="41_4mwsq"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_01.png" id="42_jrdr4"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_02.png" id="43_l3ci1"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_03.png" id="44_lvk7i"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_04.png" id="45_hknjo"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_05.png" id="46_8m3gu"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_06.png" id="47_vuvb1"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_07.png" id="48_vya40"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_08.png" id="49_qhy1v"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_09.png" id="50_uwp0s"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_10.png" id="51_k4s4j"]
-[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_11.png" id="52_46r1t"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_00.png" id="1_ln6qb"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_01.png" id="2_lkwlg"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_02.png" id="3_no3o8"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_03.png" id="4_m33i0"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_04.png" id="5_g0obc"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack_05.png" id="6_t1403"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_00.png" id="7_y2ybk"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_01.png" id="8_cpnwn"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_02.png" id="9_mrfwc"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_03.png" id="10_87g0x"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_04.png" id="11_a7u7k"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_05.png" id="12_q84wa"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_06.png" id="13_xpc81"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_attack-cast_07.png" id="14_3brdn"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_opener_00.png" id="15_2lhaj"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_opener_01.png" id="16_vkyfv"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_opener_02.png" id="17_sdjg6"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_opener_03.png" id="18_4mwsq"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_opener_04.png" id="19_jrdr4"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_00.png" id="20_l3ci1"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_01.png" id="21_lvk7i"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_02.png" id="22_hknjo"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_03.png" id="23_8m3gu"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_04.png" id="24_vuvb1"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_05.png" id="25_vya40"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_06.png" id="26_qhy1v"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill_07.png" id="27_uwp0s"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_00.png" id="28_k4s4j"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_01.png" id="29_46r1t"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_02.png" id="30_mwxqv"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_03.png" id="31_du44l"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_04.png" id="32_kmxhn"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_05.png" id="33_5ayq4"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_06.png" id="34_v40q4"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_07.png" id="35_rrrd2"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_08.png" id="36_qnesm"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_skill-cast_09.png" id="37_p4uai"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_technique_00.png" id="38_sc3ti"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_technique_01.png" id="39_pbdkk"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_technique_02.png" id="40_lj2ts"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_technique_03.png" id="41_5udn5"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_technique_04.png" id="42_tcxcc"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_technique_05.png" id="43_rewks"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_00.png" id="44_lmoee"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_01.png" id="45_0584x"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_02.png" id="46_wais5"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_03.png" id="47_c2f5x"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_04.png" id="48_eo3x0"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_05.png" id="49_wipuk"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_06.png" id="50_c7sau"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate_07.png" id="51_hgmui"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_00.png" id="52_sbdii"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_01.png" id="53_j1foa"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_02.png" id="54_lhoka"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_03.png" id="55_1dj16"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_04.png" id="56_e1kgr"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_05.png" id="57_2w7vs"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_06.png" id="58_qp5j6"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_07.png" id="59_0dsii"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_08.png" id="60_l4cqp"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_09.png" id="61_jwm24"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_10.png" id="62_5a7uv"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-cast_11.png" id="63_1e68c"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_00.png" id="64_lwrfy"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_01.png" id="65_mla3d"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_02.png" id="66_abo4o"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_03.png" id="67_uwcm7"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_04.png" id="68_0w5mt"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_05.png" id="69_bs74u"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_06.png" id="70_p262v"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_07.png" id="71_1pejw"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_08.png" id="72_mqwg6"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_09.png" id="73_uwlr8"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_10.png" id="74_1kmk1"]
+[ext_resource type="Texture2D" path="res://assets/characters/sylvaine/vfx/vfx_sylvaine_ultimate-screen_11.png" id="75_yt7n2"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_r21cv")
+"texture": ExtResource("1_ln6qb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_l6a32")
+"texture": ExtResource("2_lkwlg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_jyfyn")
+"texture": ExtResource("3_no3o8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_h3oqs")
+"texture": ExtResource("4_m33i0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_4l1qw")
+"texture": ExtResource("5_g0obc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_t2r52")
+"texture": ExtResource("6_t1403")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +103,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_0tq27")
+"texture": ExtResource("7_y2ybk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_tm03w")
+"texture": ExtResource("8_cpnwn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_c7yft")
+"texture": ExtResource("9_mrfwc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_4mc6o")
+"texture": ExtResource("10_87g0x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_ut8my")
+"texture": ExtResource("11_a7u7k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_yhho7")
+"texture": ExtResource("12_q84wa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_xqtw1")
+"texture": ExtResource("13_xpc81")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_cfdni")
+"texture": ExtResource("14_3brdn")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +132,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_c8wj0")
+"texture": ExtResource("15_2lhaj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_olfkj")
+"texture": ExtResource("16_vkyfv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_6fhuv")
+"texture": ExtResource("17_sdjg6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_gnwql")
+"texture": ExtResource("18_4mwsq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_fooas")
+"texture": ExtResource("19_jrdr4")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_l3ci1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_61e25")
+"texture": ExtResource("21_lvk7i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_kl688")
+"texture": ExtResource("22_hknjo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_hv1to")
+"texture": ExtResource("23_8m3gu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vuvb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vya40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_qhy1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_uwp0s")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +181,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_5ccyu")
+"texture": ExtResource("28_k4s4j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_ln6qb")
+"texture": ExtResource("29_46r1t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_lkwlg")
+"texture": ExtResource("30_mwxqv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_no3o8")
+"texture": ExtResource("31_du44l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_m33i0")
+"texture": ExtResource("32_kmxhn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_g0obc")
+"texture": ExtResource("33_5ayq4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_t1403")
+"texture": ExtResource("34_v40q4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_y2ybk")
+"texture": ExtResource("35_rrrd2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_cpnwn")
+"texture": ExtResource("36_qnesm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_mrfwc")
+"texture": ExtResource("37_p4uai")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +216,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_87g0x")
+"texture": ExtResource("38_sc3ti")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_a7u7k")
+"texture": ExtResource("39_pbdkk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_q84wa")
+"texture": ExtResource("40_lj2ts")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_xpc81")
+"texture": ExtResource("41_5udn5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_3brdn")
+"texture": ExtResource("42_tcxcc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_2lhaj")
+"texture": ExtResource("43_rewks")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_lmoee")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_vkyfv")
+"texture": ExtResource("45_0584x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_sdjg6")
+"texture": ExtResource("46_wais5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_c2f5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_eo3x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_wipuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_c7sau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_hgmui")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +268,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_4mwsq")
+"texture": ExtResource("52_sbdii")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_jrdr4")
+"texture": ExtResource("53_j1foa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_l3ci1")
+"texture": ExtResource("54_lhoka")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_lvk7i")
+"texture": ExtResource("55_1dj16")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_hknjo")
+"texture": ExtResource("56_e1kgr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_8m3gu")
+"texture": ExtResource("57_2w7vs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_vuvb1")
+"texture": ExtResource("58_qp5j6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_vya40")
+"texture": ExtResource("59_0dsii")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_qhy1v")
+"texture": ExtResource("60_l4cqp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_uwp0s")
+"texture": ExtResource("61_jwm24")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_k4s4j")
+"texture": ExtResource("62_5a7uv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_46r1t")
+"texture": ExtResource("63_1e68c")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_lwrfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_mla3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_abo4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_uwcm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_0w5mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_bs74u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_p262v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_1pejw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_mqwg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_uwlr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_1kmk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_yt7n2")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

@@ -1,0 +1,35 @@
+{
+ "owner": "ignar",
+ "skill": "technique",
+ "fps": 12,
+ "frames": 6,
+ "hit_frame": null,
+ "size": [
+  64,
+  64
+ ],
+ "colors": 5,
+ "anchors": {
+  "opener_feet": [
+   16,
+   52
+  ],
+  "opener_impact": [
+   40,
+   50
+  ],
+  "hammer_head": [
+   3,
+   31
+  ],
+  "technique_feet": [
+   40,
+   52
+  ],
+  "technique_mark": [
+   56,
+   30
+  ]
+ },
+ "placed_at": "khung 64×64, điểm neo ghi trong anchors (toạ độ pixel trong khung)"
+}

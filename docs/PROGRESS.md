@@ -538,6 +538,7 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 12.
 ### Đã làm
 
 - **Bảng thông số hình** `art_specs/` (45 file, sinh bằng `tools/data_builder/build_art_specs.py`): nhân vật chính 2 skin, 24 nhân vật, 18 họ quái / boss (biến thể nguyên tố, boss mỗi giai đoạn), NPC, tileset. Mỗi file: mã màu, dáng bóng đen, trang phục, vũ khí / động tác kỹ năng, bảng hoạt ảnh + số khung, kích thước, tên file.
+- **15/10/2026 – toàn bộ quái:** đã xuất và đưa vào game 18 họ / 33 biến thể, 4 boss đủ hình các giai đoạn, 55 chiêu với cast/hit/screen theo biến thể. Map pixel 32 px / boss 48 px, hướng e và lật trái, idle/run/windup. Có phòng thử `tools/enemy_preview/enemy_preview.tscn`. Chi tiết và giới hạn hình: `docs/DESIGN_ENEMY_IMPORT.md`; bảng duyệt: `design/ENEMIES_IN_GAME.md`.
 - **Yêu cầu hình dùng chung** `data/config/art_requirements.json` (128 px map 8 hướng, 512 px trận, quái 256 / 384 / 768, chân dung 1024 × 3 biểu cảm, tranh 2048×1152, hiệu ứng 512 px, ô 64 px).
 - **Blender** (`tools/blender/`): `make_sample_blend.py` tạo nhân vật mẫu có rig + Action idle / run / attack; `render_sprites.py` – camera trực giao, ánh sáng cố định, shader hoạt hình (Shader to RGB + Color Ramp), viền Solidify lật pháp tuyến, map 8 hướng / trận 3/4, ghép sprite sheet + JSON (khung, điểm neo, fps). Đã chạy thật trên Blender 5.2: mẫu render cho Mira (map 16 hoạt ảnh, trận idle + attack).
 - **Krita**: `docs/KRITA_PIPELINE.md` – canvas, lớp, chân dung 3 biểu cảm, tranh gacha, hiệu ứng bằng Animation Docker, xuất chuỗi PNG, tileset, quy tắc đặt tên.
@@ -570,8 +571,8 @@ Xem `docs/DESIGN_NOTES.md` mục Phase 13.
 
 ### Việc còn nợ
 
-- Toàn bộ hình thật (262 mục trong `docs/ASSET_STATUS.md`) – phần việc vẽ / dựng của anh/chị.
-- Hình mẫu đang gắn cho Mira chỉ để thử pipeline; xóa khi có hình thật.
+- Chân dung, splash, NPC, tileset và những mục còn thiếu trong `docs/ASSET_STATUS.md`; nhân vật và quái đã có bộ sprite từ design.
+- Các bản sprite và VFX mới vẫn chờ người dùng duyệt mỹ thuật trong `design/REVIEW.md`.
 - Hoạt ảnh Bí Kỹ (`technique`) và lướt ngoài map đã nhận tên nhưng game chỉ phát `dash` khi lướt và `opener` khi chém; Bí Kỹ chưa có lúc phát riêng.
 - Vật triệu hồi, vật tương tác trên map (rương, NPC, quầy, cổng) vẫn vẽ tạm; chưa có quy ước asset cho chúng.
 - Cắt cảnh Tuyệt kỹ mới là tranh trượt qua + nền shader, chưa có hoạt ảnh camera.

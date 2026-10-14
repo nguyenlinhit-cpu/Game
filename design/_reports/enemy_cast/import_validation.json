@@ -1,0 +1,204 @@
+{
+  "enemies": [
+    {
+      "id": "devourer_clone_flame",
+      "family": "devourer_clone",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "devourer_clone_storm",
+      "family": "devourer_clone",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "devourer_clone_tide",
+      "family": "devourer_clone",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "flying_book",
+      "family": "flying_book",
+      "phases": 1,
+      "skills": 1
+    },
+    {
+      "id": "furnace_arm",
+      "family": "furnace_arm",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "ink_rat_lightning",
+      "family": "ink_rat",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "ink_rat_wind",
+      "family": "ink_rat",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "library_warden",
+      "family": "library_warden",
+      "phases": 2,
+      "skills": 4
+    },
+    {
+      "id": "mirror_shade_soul",
+      "family": "mirror_shade",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "mirror_shade_water",
+      "family": "mirror_shade",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "mute_librarian",
+      "family": "mute_librarian",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "rusted_knight_lightning",
+      "family": "rusted_knight",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "rusted_knight_water",
+      "family": "rusted_knight",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "shattered_knight",
+      "family": "shattered_knight",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "soul_devourer",
+      "family": "soul_devourer",
+      "phases": 3,
+      "skills": 5
+    },
+    {
+      "id": "vault_behemoth",
+      "family": "vault_behemoth",
+      "phases": 2,
+      "skills": 6
+    },
+    {
+      "id": "venom_bee_poison",
+      "family": "venom_bee",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "venom_bee_poison_drone",
+      "family": "venom_bee",
+      "phases": 1,
+      "skills": 1
+    },
+    {
+      "id": "venom_bee_wind",
+      "family": "venom_bee",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "venom_bee_wind_drone",
+      "family": "venom_bee",
+      "phases": 1,
+      "skills": 1
+    },
+    {
+      "id": "void_archer_lightning",
+      "family": "void_archer",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "void_archer_wind",
+      "family": "void_archer",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "wandering_shade_soul",
+      "family": "wandering_shade",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "wandering_shade_water",
+      "family": "wandering_shade",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "wandering_shade_wind",
+      "family": "wandering_shade",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "warp_matrix",
+      "family": "warp_matrix",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "warp_sprout_fire",
+      "family": "warp_sprout",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "warp_sprout_poison",
+      "family": "warp_sprout",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "warp_sprout_water",
+      "family": "warp_sprout",
+      "phases": 1,
+      "skills": 2
+    },
+    {
+      "id": "warped_core",
+      "family": "warped_core",
+      "phases": 2,
+      "skills": 3
+    },
+    {
+      "id": "warped_mage_fire",
+      "family": "warped_mage",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "warped_mage_poison",
+      "family": "warped_mage",
+      "phases": 1,
+      "skills": 3
+    },
+    {
+      "id": "warped_mage_wind",
+      "family": "warped_mage",
+      "phases": 1,
+      "skills": 3
+    }
+  ],
+  "files": 403,
+  "changed": 0
+}

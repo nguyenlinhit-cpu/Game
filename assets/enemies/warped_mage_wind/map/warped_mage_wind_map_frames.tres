@@ -1,0 +1,114 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/enemies/warped_mage_wind/map/map_warped_mage_wind.png" id="1_qlsol"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5n5v"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ab85"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dik68"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxvqs"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ml8w"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_louqe"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23qmc"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pca85"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86e0y"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix5ns"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o24jp"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6eic"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka8s7"]
+atlas = ExtResource("1_qlsol")
+region = Rect2(64, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5n5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ab85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dik68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxvqs")
+}],
+"loop": 1,
+"name": &"idle_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ml8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_louqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23qmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pca85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86e0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix5ns")
+}],
+"loop": 1,
+"name": &"run_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o24jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6eic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka8s7")
+}],
+"loop": 0,
+"name": &"windup_e",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.875)
+metadata/hit_frame = {}

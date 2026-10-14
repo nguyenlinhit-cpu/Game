@@ -21,14 +21,20 @@ def character_frames(p, cfg):
             seq[name] = frames
     if ident == 'pip':
         # Detach Bolt from the head group so that it bobs independently.
+        yy, xx = np.indices((32, 32))
+        def robot_mask(f):
+            colors = [cfg['keys'][key] for key in ('W', 'E', 'L')]
+            colored = np.zeros((32, 32), bool)
+            for value in colors:
+                rgb = np.array([int(value[k:k+2], 16) / 255 for k in (1, 3, 5)])
+                colored |= np.abs(f[..., :3] - rgb).sum(axis=2) < .04
+            return colored & (xx < 10) & (yy >= 11) & (yy < 21) & (f[..., 3] > .5)
         robot = p.base.copy()
-        robot[:, 8:] = 0
-        robot[:11] = 0
-        robot[20:] = 0
+        robot[~robot_mask(robot)] = 0
         for name, frames in seq.items():
             for i, old in enumerate(frames):
                 f = strip_outline(old)
-                f[11:20, :8] = 0
+                f[robot_mask(f)] = 0
                 dx = (0, 2, 6, 3, 0)[i] if name == 'opener' else round(math.sin(i * 1.2))
                 rob = shift(robot, -int(i % 3 == 1), dx)
                 m = rob[..., 3] > .5

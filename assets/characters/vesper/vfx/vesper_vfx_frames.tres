@@ -1,78 +1,101 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_00.png" id="1_xdgxw"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_01.png" id="2_r3ec7"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_02.png" id="3_qn56j"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_03.png" id="4_78fi0"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_04.png" id="5_ddbys"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_05.png" id="6_aooyv"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_00.png" id="7_8e7en"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_01.png" id="8_7hgd6"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_02.png" id="9_1lv77"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_03.png" id="10_nn8y4"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_04.png" id="11_poqds"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_05.png" id="12_q6pq1"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_06.png" id="13_cum62"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_07.png" id="14_q6ldv"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_00.png" id="15_nmtbh"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_01.png" id="16_r6xcm"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_02.png" id="17_wfa17"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_03.png" id="18_j0vuo"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_04.png" id="19_jqu3s"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_05.png" id="20_rr2mk"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_06.png" id="21_pnkyy"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_07.png" id="22_1butl"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_00.png" id="23_cdn8i"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_01.png" id="24_iph0w"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_02.png" id="25_rjhu1"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_03.png" id="26_5v6gf"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_04.png" id="27_5xpp6"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_05.png" id="28_cjcde"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_06.png" id="29_bvhe7"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_07.png" id="30_6wtxk"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_08.png" id="31_ukafu"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_09.png" id="32_swgd4"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_00.png" id="33_kbm87"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_01.png" id="34_nyriv"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_02.png" id="35_d24i7"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_03.png" id="36_r8fjf"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_04.png" id="37_n6faw"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_05.png" id="38_iw8gn"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_06.png" id="39_0sfrh"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_07.png" id="40_emi0g"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_00.png" id="41_8vytr"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_01.png" id="42_8mbh7"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_02.png" id="43_pbuwy"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_03.png" id="44_i0rrp"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_04.png" id="45_eud4d"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_05.png" id="46_rk78f"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_06.png" id="47_c5bks"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_07.png" id="48_suqa8"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_08.png" id="49_6md3l"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_09.png" id="50_ekpua"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_10.png" id="51_4v5r5"]
-[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_11.png" id="52_d05ej"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_00.png" id="1_iph0w"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_01.png" id="2_rjhu1"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_02.png" id="3_5v6gf"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_03.png" id="4_5xpp6"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_04.png" id="5_cjcde"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack_05.png" id="6_bvhe7"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_00.png" id="7_6wtxk"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_01.png" id="8_ukafu"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_02.png" id="9_swgd4"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_03.png" id="10_kbm87"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_04.png" id="11_nyriv"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_05.png" id="12_d24i7"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_06.png" id="13_r8fjf"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_attack-cast_07.png" id="14_n6faw"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_opener_00.png" id="15_iw8gn"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_opener_01.png" id="16_0sfrh"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_opener_02.png" id="17_emi0g"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_opener_03.png" id="18_8vytr"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_opener_04.png" id="19_8mbh7"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_00.png" id="20_pbuwy"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_01.png" id="21_i0rrp"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_02.png" id="22_eud4d"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_03.png" id="23_rk78f"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_04.png" id="24_c5bks"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_05.png" id="25_suqa8"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_06.png" id="26_6md3l"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill_07.png" id="27_ekpua"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_00.png" id="28_4v5r5"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_01.png" id="29_d05ej"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_02.png" id="30_hkia0"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_03.png" id="31_vdfmx"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_04.png" id="32_pjipd"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_05.png" id="33_r6ka6"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_06.png" id="34_qn62w"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_07.png" id="35_squqi"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_08.png" id="36_3i6ao"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_skill-cast_09.png" id="37_3ssbm"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_technique_00.png" id="38_af3l6"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_technique_01.png" id="39_4nvy6"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_technique_02.png" id="40_dl11j"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_technique_03.png" id="41_4qoth"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_technique_04.png" id="42_vfv6f"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_technique_05.png" id="43_tcms5"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_00.png" id="44_i3fpx"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_01.png" id="45_xs6gn"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_02.png" id="46_0suxm"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_03.png" id="47_ho0xa"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_04.png" id="48_6o54x"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_05.png" id="49_y7ndg"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_06.png" id="50_cqgld"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate_07.png" id="51_ej43n"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_00.png" id="52_7ts7c"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_01.png" id="53_wxi6t"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_02.png" id="54_tkeet"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_03.png" id="55_u7tyr"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_04.png" id="56_hy0sh"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_05.png" id="57_gu6qj"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_06.png" id="58_25he4"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_07.png" id="59_31cel"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_08.png" id="60_f6cwq"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_09.png" id="61_flsnf"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_10.png" id="62_kq32m"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-cast_11.png" id="63_w4oip"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_00.png" id="64_xnyon"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_01.png" id="65_qd3do"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_02.png" id="66_f0002"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_03.png" id="67_xxsk7"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_04.png" id="68_6dy0o"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_05.png" id="69_j8s7g"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_06.png" id="70_p1p3d"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_07.png" id="71_wei7u"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_08.png" id="72_y8lnl"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_09.png" id="73_717je"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_10.png" id="74_58yh1"]
+[ext_resource type="Texture2D" path="res://assets/characters/vesper/vfx/vfx_vesper_ultimate-screen_11.png" id="75_t1yni"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xdgxw")
+"texture": ExtResource("1_iph0w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_r3ec7")
+"texture": ExtResource("2_rjhu1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qn56j")
+"texture": ExtResource("3_5v6gf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_78fi0")
+"texture": ExtResource("4_5xpp6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ddbys")
+"texture": ExtResource("5_cjcde")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_aooyv")
+"texture": ExtResource("6_bvhe7")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +103,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_8e7en")
+"texture": ExtResource("7_6wtxk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7hgd6")
+"texture": ExtResource("8_ukafu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_1lv77")
+"texture": ExtResource("9_swgd4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_nn8y4")
+"texture": ExtResource("10_kbm87")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_poqds")
+"texture": ExtResource("11_nyriv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_q6pq1")
+"texture": ExtResource("12_d24i7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_cum62")
+"texture": ExtResource("13_r8fjf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_q6ldv")
+"texture": ExtResource("14_n6faw")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +132,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_nmtbh")
+"texture": ExtResource("15_iw8gn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_r6xcm")
+"texture": ExtResource("16_0sfrh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_wfa17")
+"texture": ExtResource("17_emi0g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_j0vuo")
+"texture": ExtResource("18_8vytr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_jqu3s")
+"texture": ExtResource("19_8mbh7")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_pbuwy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_rr2mk")
+"texture": ExtResource("21_i0rrp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_pnkyy")
+"texture": ExtResource("22_eud4d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_1butl")
+"texture": ExtResource("23_rk78f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_c5bks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_suqa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6md3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ekpua")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +181,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_cdn8i")
+"texture": ExtResource("28_4v5r5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_iph0w")
+"texture": ExtResource("29_d05ej")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_rjhu1")
+"texture": ExtResource("30_hkia0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_5v6gf")
+"texture": ExtResource("31_vdfmx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_5xpp6")
+"texture": ExtResource("32_pjipd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_cjcde")
+"texture": ExtResource("33_r6ka6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_bvhe7")
+"texture": ExtResource("34_qn62w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_6wtxk")
+"texture": ExtResource("35_squqi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_ukafu")
+"texture": ExtResource("36_3i6ao")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_swgd4")
+"texture": ExtResource("37_3ssbm")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +216,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_kbm87")
+"texture": ExtResource("38_af3l6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_nyriv")
+"texture": ExtResource("39_4nvy6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_d24i7")
+"texture": ExtResource("40_dl11j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_r8fjf")
+"texture": ExtResource("41_4qoth")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_n6faw")
+"texture": ExtResource("42_vfv6f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_iw8gn")
+"texture": ExtResource("43_tcms5")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_i3fpx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_0sfrh")
+"texture": ExtResource("45_xs6gn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_emi0g")
+"texture": ExtResource("46_0suxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ho0xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_6o54x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_y7ndg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_cqgld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ej43n")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +268,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_8vytr")
+"texture": ExtResource("52_7ts7c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_8mbh7")
+"texture": ExtResource("53_wxi6t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_pbuwy")
+"texture": ExtResource("54_tkeet")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_i0rrp")
+"texture": ExtResource("55_u7tyr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_eud4d")
+"texture": ExtResource("56_hy0sh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_rk78f")
+"texture": ExtResource("57_gu6qj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_c5bks")
+"texture": ExtResource("58_25he4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_suqa8")
+"texture": ExtResource("59_31cel")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_6md3l")
+"texture": ExtResource("60_f6cwq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_ekpua")
+"texture": ExtResource("61_flsnf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_4v5r5")
+"texture": ExtResource("62_kq32m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_d05ej")
+"texture": ExtResource("63_w4oip")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_xnyon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_qd3do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_f0002")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_xxsk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_6dy0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_j8s7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_p1p3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_wei7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_y8lnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_717je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_58yh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_t1yni")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

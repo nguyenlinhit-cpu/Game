@@ -1,0 +1,22 @@
+{
+  "en_clone_strike": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Vuốt Hồn",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#A65BF2",
+    "screen": false
+  },
+  "en_clone_wail": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Tiếng Vọng",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#A65BF2",
+    "screen": false
+  }
+}

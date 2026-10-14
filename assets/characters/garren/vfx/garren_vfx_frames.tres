@@ -1,78 +1,107 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_00.png" id="1_f3vof"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_01.png" id="2_uj16f"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_02.png" id="3_epdrl"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_03.png" id="4_i555q"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_04.png" id="5_ea23k"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_05.png" id="6_35gfd"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_00.png" id="7_bd1qm"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_01.png" id="8_3yaqa"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_02.png" id="9_qwp7d"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_03.png" id="10_gl1bs"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_04.png" id="11_q8jnl"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_05.png" id="12_aejxi"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_06.png" id="13_fadt0"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_07.png" id="14_t0k7c"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_00.png" id="15_jqxn8"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_01.png" id="16_ybx73"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_02.png" id="17_qct8v"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_03.png" id="18_8e71j"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_04.png" id="19_exy5x"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_05.png" id="20_fmv5j"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_06.png" id="21_or55e"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_07.png" id="22_2rfec"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_00.png" id="23_cq7yd"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_01.png" id="24_x5fyi"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_02.png" id="25_lema8"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_03.png" id="26_fi374"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_04.png" id="27_4d3q5"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_05.png" id="28_3xg5n"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_06.png" id="29_rx47t"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_07.png" id="30_mu7c6"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_08.png" id="31_bk1j7"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_09.png" id="32_bdnov"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_00.png" id="33_q8j18"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_01.png" id="34_0wur3"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_02.png" id="35_k777v"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_03.png" id="36_kh2ej"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_04.png" id="37_es8ix"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_05.png" id="38_gq46b"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_06.png" id="39_c2aea"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_07.png" id="40_p0cvt"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_00.png" id="41_k256d"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_01.png" id="42_bq6iu"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_02.png" id="43_yeaea"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_03.png" id="44_4kj68"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_04.png" id="45_d2us6"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_05.png" id="46_naadv"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_06.png" id="47_l6txg"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_07.png" id="48_i6ixu"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_08.png" id="49_cmge2"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_09.png" id="50_0o7ng"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_10.png" id="51_a15vb"]
-[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_11.png" id="52_goth1"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_00.png" id="1_mu7c6"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_01.png" id="2_bk1j7"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_02.png" id="3_bdnov"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_03.png" id="4_q8j18"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_04.png" id="5_0wur3"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack_05.png" id="6_k777v"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_00.png" id="7_kh2ej"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_01.png" id="8_es8ix"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_02.png" id="9_gq46b"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_03.png" id="10_c2aea"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_04.png" id="11_p0cvt"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_05.png" id="12_k256d"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_06.png" id="13_bq6iu"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_attack-cast_07.png" id="14_yeaea"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_opener_00.png" id="15_4kj68"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_opener_01.png" id="16_d2us6"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_opener_02.png" id="17_naadv"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_opener_03.png" id="18_l6txg"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_opener_04.png" id="19_i6ixu"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_00.png" id="20_cmge2"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_01.png" id="21_0o7ng"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_02.png" id="22_a15vb"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_03.png" id="23_goth1"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_04.png" id="24_hqgme"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_05.png" id="25_7wc2b"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_06.png" id="26_1pe7p"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill_07.png" id="27_rlxwt"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_00.png" id="28_ux8pn"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_01.png" id="29_3ab1v"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_02.png" id="30_x30gb"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_03.png" id="31_2h7xr"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_04.png" id="32_vcaox"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_05.png" id="33_g3qc3"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_06.png" id="34_mbei5"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_07.png" id="35_wx44o"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_08.png" id="36_rfxdh"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-cast_09.png" id="37_yvv7e"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-screen_00.png" id="38_fx4g2"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-screen_01.png" id="39_afvhj"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-screen_02.png" id="40_h1cqx"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-screen_03.png" id="41_jdre1"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-screen_04.png" id="42_47gds"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_skill-screen_05.png" id="43_cu6bx"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_technique_00.png" id="44_i30y5"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_technique_01.png" id="45_tkvsv"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_technique_02.png" id="46_036m2"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_technique_03.png" id="47_koddu"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_technique_04.png" id="48_tpetn"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_technique_05.png" id="49_ogw7a"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_00.png" id="50_2x1eo"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_01.png" id="51_i7kgk"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_02.png" id="52_akaeh"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_03.png" id="53_g6n8j"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_04.png" id="54_tip5x"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_05.png" id="55_0ccny"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_06.png" id="56_d66n3"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate_07.png" id="57_erdp1"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_00.png" id="58_o63cf"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_01.png" id="59_yd34w"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_02.png" id="60_fysca"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_03.png" id="61_q3iif"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_04.png" id="62_cc0b1"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_05.png" id="63_tx4oe"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_06.png" id="64_8fq61"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_07.png" id="65_stsdy"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_08.png" id="66_mcldh"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_09.png" id="67_2ngqc"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_10.png" id="68_at7hg"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-cast_11.png" id="69_l0mcs"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_00.png" id="70_32rwm"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_01.png" id="71_wqjtw"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_02.png" id="72_gu6c8"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_03.png" id="73_1ubt5"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_04.png" id="74_vx1qr"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_05.png" id="75_ol87n"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_06.png" id="76_jkrmt"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_07.png" id="77_aoxf3"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_08.png" id="78_kcy12"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_09.png" id="79_8ayoi"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_10.png" id="80_e7425"]
+[ext_resource type="Texture2D" path="res://assets/characters/garren/vfx/vfx_garren_ultimate-screen_11.png" id="81_r14mq"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_f3vof")
+"texture": ExtResource("1_mu7c6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_uj16f")
+"texture": ExtResource("2_bk1j7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_epdrl")
+"texture": ExtResource("3_bdnov")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_i555q")
+"texture": ExtResource("4_q8j18")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ea23k")
+"texture": ExtResource("5_0wur3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_35gfd")
+"texture": ExtResource("6_k777v")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +109,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_bd1qm")
+"texture": ExtResource("7_kh2ej")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_3yaqa")
+"texture": ExtResource("8_es8ix")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_qwp7d")
+"texture": ExtResource("9_gq46b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_gl1bs")
+"texture": ExtResource("10_c2aea")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_q8jnl")
+"texture": ExtResource("11_p0cvt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_aejxi")
+"texture": ExtResource("12_k256d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_fadt0")
+"texture": ExtResource("13_bq6iu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_t0k7c")
+"texture": ExtResource("14_yeaea")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +138,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_jqxn8")
+"texture": ExtResource("15_4kj68")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_ybx73")
+"texture": ExtResource("16_d2us6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_qct8v")
+"texture": ExtResource("17_naadv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_8e71j")
+"texture": ExtResource("18_l6txg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_exy5x")
+"texture": ExtResource("19_i6ixu")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_cmge2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_fmv5j")
+"texture": ExtResource("21_0o7ng")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_or55e")
+"texture": ExtResource("22_a15vb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_2rfec")
+"texture": ExtResource("23_goth1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hqgme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7wc2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1pe7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rlxwt")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +187,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_cq7yd")
+"texture": ExtResource("28_ux8pn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_x5fyi")
+"texture": ExtResource("29_3ab1v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_lema8")
+"texture": ExtResource("30_x30gb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_fi374")
+"texture": ExtResource("31_2h7xr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_4d3q5")
+"texture": ExtResource("32_vcaox")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_3xg5n")
+"texture": ExtResource("33_g3qc3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_rx47t")
+"texture": ExtResource("34_mbei5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_mu7c6")
+"texture": ExtResource("35_wx44o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_bk1j7")
+"texture": ExtResource("36_rfxdh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_bdnov")
+"texture": ExtResource("37_yvv7e")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +222,74 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_q8j18")
+"texture": ExtResource("38_fx4g2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_0wur3")
+"texture": ExtResource("39_afvhj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_k777v")
+"texture": ExtResource("40_h1cqx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_kh2ej")
+"texture": ExtResource("41_jdre1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_es8ix")
+"texture": ExtResource("42_47gds")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_gq46b")
+"texture": ExtResource("43_cu6bx")
+}],
+"loop": 0,
+"name": &"skill-screen",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_i30y5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_c2aea")
+"texture": ExtResource("45_tkvsv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_p0cvt")
+"texture": ExtResource("46_036m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_koddu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_tpetn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ogw7a")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_2x1eo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_i7kgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_akaeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_g6n8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_tip5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_0ccny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_d66n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_erdp1")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +297,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_k256d")
+"texture": ExtResource("58_o63cf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_bq6iu")
+"texture": ExtResource("59_yd34w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_yeaea")
+"texture": ExtResource("60_fysca")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_4kj68")
+"texture": ExtResource("61_q3iif")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_d2us6")
+"texture": ExtResource("62_cc0b1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_naadv")
+"texture": ExtResource("63_tx4oe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_l6txg")
+"texture": ExtResource("64_8fq61")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_i6ixu")
+"texture": ExtResource("65_stsdy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_cmge2")
+"texture": ExtResource("66_mcldh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_0o7ng")
+"texture": ExtResource("67_2ngqc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_a15vb")
+"texture": ExtResource("68_at7hg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_goth1")
+"texture": ExtResource("69_l0mcs")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_32rwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_wqjtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_gu6c8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_1ubt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_vx1qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ol87n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_jkrmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_aoxf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_kcy12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_8ayoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_e7425")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_r14mq")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

@@ -1,0 +1,110 @@
+[
+  {
+    "family": "devourer_clone",
+    "ok": true,
+    "seconds": 27.6,
+    "log": "design/_reports/enemy_cast/devourer_clone.log"
+  },
+  {
+    "family": "flying_book",
+    "ok": true,
+    "seconds": 4.0,
+    "log": "design/_reports/enemy_cast/flying_book.log"
+  },
+  {
+    "family": "furnace_arm",
+    "ok": true,
+    "seconds": 22.1,
+    "log": "design/_reports/enemy_cast/furnace_arm.log"
+  },
+  {
+    "family": "ink_rat",
+    "ok": true,
+    "seconds": 7.1,
+    "log": "design/_reports/enemy_cast/ink_rat.log"
+  },
+  {
+    "family": "library_warden",
+    "ok": true,
+    "seconds": 101.0,
+    "log": "design/_reports/enemy_cast/library_warden.log"
+  },
+  {
+    "family": "mirror_shade",
+    "ok": true,
+    "seconds": 27.9,
+    "log": "design/_reports/enemy_cast/mirror_shade.log"
+  },
+  {
+    "family": "mute_librarian",
+    "ok": true,
+    "seconds": 36.5,
+    "log": "design/_reports/enemy_cast/mute_librarian.log"
+  },
+  {
+    "family": "rusted_knight",
+    "ok": true,
+    "seconds": 10.5,
+    "log": "design/_reports/enemy_cast/rusted_knight.log"
+  },
+  {
+    "family": "shattered_knight",
+    "ok": true,
+    "seconds": 37.9,
+    "log": "design/_reports/enemy_cast/shattered_knight.log"
+  },
+  {
+    "family": "soul_devourer",
+    "ok": true,
+    "seconds": 584.3,
+    "log": "design/_reports/enemy_cast/soul_devourer.log"
+  },
+  {
+    "family": "vault_behemoth",
+    "ok": true,
+    "seconds": 628.8,
+    "log": "design/_reports/enemy_cast/vault_behemoth.log"
+  },
+  {
+    "family": "venom_bee",
+    "ok": true,
+    "seconds": 28.6,
+    "log": "design/_reports/enemy_cast/venom_bee.log"
+  },
+  {
+    "family": "void_archer",
+    "ok": true,
+    "seconds": 28.4,
+    "log": "design/_reports/enemy_cast/void_archer.log"
+  },
+  {
+    "family": "wandering_shade",
+    "ok": true,
+    "seconds": 11.0,
+    "log": "design/_reports/enemy_cast/wandering_shade.log"
+  },
+  {
+    "family": "warp_matrix",
+    "ok": true,
+    "seconds": 36.8,
+    "log": "design/_reports/enemy_cast/warp_matrix.log"
+  },
+  {
+    "family": "warp_sprout",
+    "ok": true,
+    "seconds": 12.8,
+    "log": "design/_reports/enemy_cast/warp_sprout.log"
+  },
+  {
+    "family": "warped_core",
+    "ok": true,
+    "seconds": 303.4,
+    "log": "design/_reports/enemy_cast/warped_core.log"
+  },
+  {
+    "family": "warped_mage",
+    "ok": true,
+    "seconds": 32.2,
+    "log": "design/_reports/enemy_cast/warped_mage.log"
+  }
+]

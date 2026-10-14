@@ -1,0 +1,188 @@
+{
+ "owner": "kestrel",
+ "skill": "ultimate",
+ "fps": 12,
+ "frames": 12,
+ "hit_frame": 8,
+ "element_color": "#4FD1B5",
+ "anchors": {
+  "feet": [
+   256,
+   430
+  ],
+  "effect_origin_per_frame": {
+   "attack": [
+    [
+     378,
+     341
+    ],
+    [
+     373,
+     336
+    ],
+    [
+     369,
+     331
+    ],
+    [
+     382,
+     337
+    ],
+    [
+     394,
+     343
+    ],
+    [
+     394,
+     343
+    ],
+    [
+     386,
+     342
+    ],
+    [
+     378,
+     341
+    ]
+   ],
+   "skill": [
+    [
+     378,
+     341
+    ],
+    [
+     376,
+     339
+    ],
+    [
+     373,
+     336
+    ],
+    [
+     370,
+     333
+    ],
+    [
+     369,
+     331
+    ],
+    [
+     382,
+     337
+    ],
+    [
+     394,
+     343
+    ],
+    [
+     394,
+     343
+    ],
+    [
+     386,
+     342
+    ],
+    [
+     378,
+     341
+    ]
+   ],
+   "ultimate": [
+    [
+     378,
+     341
+    ],
+    [
+     377,
+     338
+    ],
+    [
+     375,
+     331
+    ],
+    [
+     373,
+     323
+    ],
+    [
+     371,
+     315
+    ],
+    [
+     370,
+     308
+    ],
+    [
+     369,
+     306
+    ],
+    [
+     382,
+     319
+    ],
+    [
+     394,
+     333
+    ],
+    [
+     394,
+     333
+    ],
+    [
+     378,
+     349
+    ],
+    [
+     378,
+     349
+    ]
+   ]
+  },
+  "target_center": [
+   256,
+   275
+  ]
+ },
+ "layers": {
+  "cast": {
+   "start_frame": 0,
+   "frames": 12,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "người dùng (khung trùng khung sprite trận, chân ở anchor)"
+  },
+  "hit": {
+   "start_frame": 8,
+   "frames": 8,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
+  },
+  "screen": {
+   "start_frame": 6,
+   "frames": 12,
+   "size": [
+    1024,
+    576
+   ],
+   "placed_at": "giữa màn hình"
+  }
+ },
+ "cutin": {
+  "frames": 10,
+  "size": [
+   1920,
+   540
+  ],
+  "seconds": 0.8,
+  "source": "1_concept/1e_splash.png",
+  "plays": "trước khung 0 của ultimate"
+ },
+ "target": "enemy",
+ "sprite_action": "ultimate",
+ "target_scope": "all_enemies"
+}

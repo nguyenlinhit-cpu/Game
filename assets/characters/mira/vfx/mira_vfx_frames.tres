@@ -1,78 +1,101 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_00.png" id="1_krs3y"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_01.png" id="2_0yscy"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_02.png" id="3_hjx6c"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_03.png" id="4_q03ov"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_04.png" id="5_6sdcd"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_05.png" id="6_wnot6"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_00.png" id="7_43mnc"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_01.png" id="8_cdvoc"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_02.png" id="9_u6ohy"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_03.png" id="10_kux8o"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_04.png" id="11_hjuss"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_05.png" id="12_ngf05"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_06.png" id="13_45opo"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_07.png" id="14_wffe7"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_00.png" id="15_uvtp5"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_01.png" id="16_hxi20"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_02.png" id="17_72e1b"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_03.png" id="18_8f78g"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_04.png" id="19_iv4g8"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_05.png" id="20_jlk7u"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_06.png" id="21_r5b0f"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_07.png" id="22_3nvd6"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_00.png" id="23_41oxp"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_01.png" id="24_mfs2f"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_02.png" id="25_syj5g"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_03.png" id="26_ts77m"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_04.png" id="27_46a8h"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_05.png" id="28_mdo6m"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_06.png" id="29_qp6p3"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_07.png" id="30_tto3y"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_08.png" id="31_mwxcw"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_09.png" id="32_xh1x7"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_00.png" id="33_wj1cm"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_01.png" id="34_gd3rc"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_02.png" id="35_rot6i"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_03.png" id="36_4n4xn"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_04.png" id="37_aj0k8"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_05.png" id="38_t0pxo"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_06.png" id="39_aaw63"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_07.png" id="40_vovas"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_00.png" id="41_uwj2x"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_01.png" id="42_mv7k5"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_02.png" id="43_u450t"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_03.png" id="44_m3w80"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_04.png" id="45_at87n"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_05.png" id="46_ou42v"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_06.png" id="47_lsoyj"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_07.png" id="48_8jn40"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_08.png" id="49_dyphy"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_09.png" id="50_g7j6q"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_10.png" id="51_0m2x1"]
-[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_11.png" id="52_wr6uf"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_00.png" id="1_mfs2f"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_01.png" id="2_syj5g"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_02.png" id="3_ts77m"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_03.png" id="4_46a8h"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_04.png" id="5_mdo6m"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack_05.png" id="6_qp6p3"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_00.png" id="7_tto3y"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_01.png" id="8_mwxcw"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_02.png" id="9_xh1x7"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_03.png" id="10_wj1cm"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_04.png" id="11_gd3rc"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_05.png" id="12_rot6i"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_06.png" id="13_4n4xn"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_attack-cast_07.png" id="14_aj0k8"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_opener_00.png" id="15_t0pxo"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_opener_01.png" id="16_aaw63"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_opener_02.png" id="17_vovas"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_opener_03.png" id="18_uwj2x"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_opener_04.png" id="19_mv7k5"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_00.png" id="20_u450t"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_01.png" id="21_m3w80"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_02.png" id="22_at87n"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_03.png" id="23_ou42v"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_04.png" id="24_lsoyj"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_05.png" id="25_8jn40"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_06.png" id="26_dyphy"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill_07.png" id="27_g7j6q"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_00.png" id="28_0m2x1"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_01.png" id="29_wr6uf"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_02.png" id="30_18e4m"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_03.png" id="31_cjjgf"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_04.png" id="32_agxo8"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_05.png" id="33_n4jkj"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_06.png" id="34_73xf2"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_07.png" id="35_h4pu0"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_08.png" id="36_wixh6"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_skill-cast_09.png" id="37_bhkg3"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_technique_00.png" id="38_07r7b"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_technique_01.png" id="39_j84kb"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_technique_02.png" id="40_8iiyy"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_technique_03.png" id="41_hwhr6"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_technique_04.png" id="42_rqr16"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_technique_05.png" id="43_yl1ri"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_00.png" id="44_iug6i"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_01.png" id="45_x2fa3"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_02.png" id="46_ky0vh"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_03.png" id="47_hq7g4"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_04.png" id="48_54quv"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_05.png" id="49_13a1x"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_06.png" id="50_ep6on"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate_07.png" id="51_ce7pp"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_00.png" id="52_ka32d"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_01.png" id="53_42wcn"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_02.png" id="54_701nd"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_03.png" id="55_o7yhb"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_04.png" id="56_78lh0"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_05.png" id="57_poqiv"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_06.png" id="58_u578u"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_07.png" id="59_4hhay"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_08.png" id="60_ahglx"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_09.png" id="61_cdbeq"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_10.png" id="62_wxdko"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-cast_11.png" id="63_g8yos"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_00.png" id="64_0xgab"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_01.png" id="65_n0byi"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_02.png" id="66_dmt7q"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_03.png" id="67_0glfn"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_04.png" id="68_y43d5"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_05.png" id="69_wd2cu"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_06.png" id="70_87j6m"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_07.png" id="71_ogrjt"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_08.png" id="72_y2ya7"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_09.png" id="73_g04a6"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_10.png" id="74_evdil"]
+[ext_resource type="Texture2D" path="res://assets/characters/mira/vfx/vfx_mira_ultimate-screen_11.png" id="75_sopj2"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_krs3y")
+"texture": ExtResource("1_mfs2f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_0yscy")
+"texture": ExtResource("2_syj5g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_hjx6c")
+"texture": ExtResource("3_ts77m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_q03ov")
+"texture": ExtResource("4_46a8h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_6sdcd")
+"texture": ExtResource("5_mdo6m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_wnot6")
+"texture": ExtResource("6_qp6p3")
 }],
 "loop": 0,
 "name": &"attack",
@@ -80,28 +103,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_43mnc")
+"texture": ExtResource("7_tto3y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_cdvoc")
+"texture": ExtResource("8_mwxcw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_u6ohy")
+"texture": ExtResource("9_xh1x7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_kux8o")
+"texture": ExtResource("10_wj1cm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_hjuss")
+"texture": ExtResource("11_gd3rc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_ngf05")
+"texture": ExtResource("12_rot6i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_45opo")
+"texture": ExtResource("13_4n4xn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_wffe7")
+"texture": ExtResource("14_aj0k8")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -109,28 +132,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_uvtp5")
+"texture": ExtResource("15_t0pxo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_hxi20")
+"texture": ExtResource("16_aaw63")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_72e1b")
+"texture": ExtResource("17_vovas")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_8f78g")
+"texture": ExtResource("18_uwj2x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_iv4g8")
+"texture": ExtResource("19_mv7k5")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_u450t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_jlk7u")
+"texture": ExtResource("21_m3w80")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_r5b0f")
+"texture": ExtResource("22_at87n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_3nvd6")
+"texture": ExtResource("23_ou42v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lsoyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8jn40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dyphy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_g7j6q")
 }],
 "loop": 0,
 "name": &"skill",
@@ -138,34 +181,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_41oxp")
+"texture": ExtResource("28_0m2x1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_mfs2f")
+"texture": ExtResource("29_wr6uf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_syj5g")
+"texture": ExtResource("30_18e4m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_ts77m")
+"texture": ExtResource("31_cjjgf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_46a8h")
+"texture": ExtResource("32_agxo8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_mdo6m")
+"texture": ExtResource("33_n4jkj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_qp6p3")
+"texture": ExtResource("34_73xf2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_tto3y")
+"texture": ExtResource("35_h4pu0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_mwxcw")
+"texture": ExtResource("36_wixh6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_xh1x7")
+"texture": ExtResource("37_bhkg3")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -173,28 +216,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_wj1cm")
+"texture": ExtResource("38_07r7b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_gd3rc")
+"texture": ExtResource("39_j84kb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_rot6i")
+"texture": ExtResource("40_8iiyy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_4n4xn")
+"texture": ExtResource("41_hwhr6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_aj0k8")
+"texture": ExtResource("42_rqr16")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_t0pxo")
+"texture": ExtResource("43_yl1ri")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_iug6i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_aaw63")
+"texture": ExtResource("45_x2fa3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_vovas")
+"texture": ExtResource("46_ky0vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_hq7g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_54quv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_13a1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ep6on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ce7pp")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -202,43 +268,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_uwj2x")
+"texture": ExtResource("52_ka32d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_mv7k5")
+"texture": ExtResource("53_42wcn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_u450t")
+"texture": ExtResource("54_701nd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_m3w80")
+"texture": ExtResource("55_o7yhb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_at87n")
+"texture": ExtResource("56_78lh0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_ou42v")
+"texture": ExtResource("57_poqiv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_lsoyj")
+"texture": ExtResource("58_u578u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_8jn40")
+"texture": ExtResource("59_4hhay")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_dyphy")
+"texture": ExtResource("60_ahglx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_g7j6q")
+"texture": ExtResource("61_cdbeq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_0m2x1")
+"texture": ExtResource("62_wxdko")
 }, {
 "duration": 1.0,
-"texture": ExtResource("52_wr6uf")
+"texture": ExtResource("63_g8yos")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_0xgab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_n0byi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_dmt7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_0glfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_y43d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_wd2cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_87j6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ogrjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_y2ya7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_g04a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_evdil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_sopj2")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

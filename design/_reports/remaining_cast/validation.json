@@ -1,0 +1,308 @@
+{
+  "characters": [
+    {
+      "id": "fenna",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 12,
+          "edge_frames": [
+            "dash:0"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "kestrel",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 11,
+          "edge_frames": [
+            "dash:0",
+            "dash:1",
+            "technique:1",
+            "technique:2",
+            "technique:3",
+            "technique:4"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "neris",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 11,
+          "edge_frames": [
+            "dash:0"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "pip",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 12,
+          "edge_frames": [
+            "dash:0",
+            "dash:1"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "ember",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 11,
+          "edge_frames": [
+            "dash:0",
+            "dash:1"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "selka",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 11,
+          "edge_frames": [
+            "dash:0"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "vael",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 11,
+          "edge_frames": [
+            "dash:0",
+            "dash:1"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "wisp",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 9,
+          "edge_frames": []
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "echo",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 11,
+          "edge_frames": [
+            "dash:0"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "traveler_male",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 12,
+          "edge_frames": [
+            "dash:0",
+            "dash:1",
+            "technique:2",
+            "technique:4"
+          ]
+        }
+      },
+      "ok": true
+    },
+    {
+      "id": "traveler_female",
+      "modes": {
+        "battle": {
+          "frames": 54,
+          "colors": null,
+          "edge_frames": []
+        },
+        "map": {
+          "frames": 24,
+          "colors": 12,
+          "edge_frames": [
+            "dash:0",
+            "dash:1",
+            "technique:2",
+            "technique:4"
+          ]
+        }
+      },
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "id": "fenna",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0"
+      ]
+    },
+    {
+      "id": "kestrel",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0",
+        "dash:1",
+        "technique:1",
+        "technique:2",
+        "technique:3",
+        "technique:4"
+      ]
+    },
+    {
+      "id": "neris",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0"
+      ]
+    },
+    {
+      "id": "pip",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0",
+        "dash:1"
+      ]
+    },
+    {
+      "id": "ember",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0",
+        "dash:1"
+      ]
+    },
+    {
+      "id": "selka",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0"
+      ]
+    },
+    {
+      "id": "vael",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0",
+        "dash:1"
+      ]
+    },
+    {
+      "id": "echo",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0"
+      ]
+    },
+    {
+      "id": "traveler_male",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0",
+        "dash:1",
+        "technique:2",
+        "technique:4"
+      ]
+    },
+    {
+      "id": "traveler_female",
+      "mode": "map",
+      "frame_edges": [
+        "dash:0",
+        "dash:1",
+        "technique:2",
+        "technique:4"
+      ]
+    }
+  ],
+  "counts": {
+    "battle_frames": 594,
+    "map_frames": 264,
+    "vfx_frames": 1041,
+    "skills": 57
+  },
+  "ok": true
+}

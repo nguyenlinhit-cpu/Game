@@ -1,0 +1,167 @@
+[
+  {
+    "id": "warp_sprout_fire",
+    "colors": 10,
+    "edges": []
+  },
+  {
+    "id": "warp_sprout_poison",
+    "colors": 10,
+    "edges": []
+  },
+  {
+    "id": "warp_sprout_water",
+    "colors": 10,
+    "edges": []
+  },
+  {
+    "id": "wandering_shade_soul",
+    "colors": 9,
+    "edges": []
+  },
+  {
+    "id": "wandering_shade_water",
+    "colors": 9,
+    "edges": []
+  },
+  {
+    "id": "wandering_shade_wind",
+    "colors": 9,
+    "edges": []
+  },
+  {
+    "id": "rusted_knight_lightning",
+    "colors": 5,
+    "edges": []
+  },
+  {
+    "id": "rusted_knight_water",
+    "colors": 5,
+    "edges": []
+  },
+  {
+    "id": "void_archer_lightning",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "void_archer_wind",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "warped_mage_fire",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "warped_mage_poison",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "warped_mage_wind",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "ink_rat_lightning",
+    "colors": 10,
+    "edges": []
+  },
+  {
+    "id": "ink_rat_wind",
+    "colors": 9,
+    "edges": []
+  },
+  {
+    "id": "venom_bee_poison",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "venom_bee_poison_drone",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "venom_bee_wind",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "venom_bee_wind_drone",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "mirror_shade_soul",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "mirror_shade_water",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "flying_book",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "furnace_arm",
+    "colors": 4,
+    "edges": []
+  },
+  {
+    "id": "devourer_clone_flame",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "devourer_clone_storm",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "devourer_clone_tide",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "shattered_knight",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "warp_matrix",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "mute_librarian",
+    "colors": 6,
+    "edges": []
+  },
+  {
+    "id": "library_warden",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "vault_behemoth",
+    "colors": 8,
+    "edges": []
+  },
+  {
+    "id": "warped_core",
+    "colors": 7,
+    "edges": []
+  },
+  {
+    "id": "soul_devourer",
+    "colors": 6,
+    "edges": []
+  }
+]

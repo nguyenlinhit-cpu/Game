@@ -1,0 +1,100 @@
+{
+ "asset_id": "vault_behemoth",
+ "mode": "battle",
+ "frame_size": [
+  768,
+  768
+ ],
+ "anchor": [
+  0.5,
+  0.83
+ ],
+ "fps": 12,
+ "loop": [],
+ "frames": [
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 1,
+   "x": 768,
+   "y": 0
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 2,
+   "x": 1536,
+   "y": 0
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 3,
+   "x": 2304,
+   "y": 0
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 4,
+   "x": 0,
+   "y": 768
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 5,
+   "x": 768,
+   "y": 768
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 6,
+   "x": 1536,
+   "y": 768
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 7,
+   "x": 2304,
+   "y": 768
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 8,
+   "x": 0,
+   "y": 1536
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 9,
+   "x": 768,
+   "y": 1536
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 10,
+   "x": 1536,
+   "y": 1536
+  },
+  {
+   "action": "phase2",
+   "dir": "",
+   "index": 11,
+   "x": 2304,
+   "y": 1536
+  }
+ ]
+}

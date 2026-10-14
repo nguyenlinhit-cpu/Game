@@ -12,7 +12,7 @@ Sinh tự động bởi `tools/data_builder/build_art_specs.py`.
 | --- | --- | --- | --- |
 | `warped_core` | Lõi Lò Biến Dạng | Lửa | `#E8552B` |
 
-## Ngoài map – 128×128 px/khung, 8 hướng
+## Ngoài map – 48×48 px/khung, hướng e, lật ngang khi đi trái
 
 | Hành động | Số khung | Ghi chú |
 | --- | --- | --- |

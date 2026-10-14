@@ -184,8 +184,8 @@ CONFIG = {'id': 'kestrel',
            (160, 782, 390, 782, 5),
            (160, 790, 390, 790, 5),
            (335, 475, 505, 540, 45)])],
- 'char_h': 290,
- 'foot_x': 860,
+ 'char_h': 270,
+ 'foot_x': 820,
  'strict_pockets': 350,
  'shadow_below': 975}
 CONFIG["poses"] = poses_for('dual', ['scarf1', 'scarf2', 'scarf3', 'scarf4', 'wing_l', 'wing_r'])

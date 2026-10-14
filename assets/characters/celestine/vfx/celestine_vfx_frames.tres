@@ -1,74 +1,97 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_00.png" id="1_eey6n"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_01.png" id="2_mooq1"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_02.png" id="3_bvsnh"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_03.png" id="4_os17p"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_04.png" id="5_53ytf"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_00.png" id="6_bchkn"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_01.png" id="7_n42rv"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_02.png" id="8_gutp6"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_03.png" id="9_x4jhb"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_04.png" id="10_n7mh3"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_05.png" id="11_f7qk2"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_06.png" id="12_xhrky"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_07.png" id="13_o02f6"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_00.png" id="14_2q6qe"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_01.png" id="15_pa8c8"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_02.png" id="16_8vgdi"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_03.png" id="17_eblxe"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_04.png" id="18_n7i40"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_05.png" id="19_e84y7"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_06.png" id="20_pqcwc"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_07.png" id="21_r1yon"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_00.png" id="22_mv12o"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_01.png" id="23_n2nkf"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_02.png" id="24_gvjoq"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_03.png" id="25_suq66"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_04.png" id="26_40ct7"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_05.png" id="27_8e0tg"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_06.png" id="28_fjcmu"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_07.png" id="29_dj1db"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_08.png" id="30_n4g3b"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_09.png" id="31_eov7c"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_00.png" id="32_r5yv6"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_01.png" id="33_s2t4p"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_02.png" id="34_e1e7p"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_03.png" id="35_oaefi"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_04.png" id="36_f8nnb"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_05.png" id="37_d5ess"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_06.png" id="38_f5gei"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_07.png" id="39_krbmd"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_00.png" id="40_pd30f"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_01.png" id="41_k0deq"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_02.png" id="42_1tn4r"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_03.png" id="43_unvke"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_04.png" id="44_qwe0i"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_05.png" id="45_pipeh"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_06.png" id="46_iomhq"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_07.png" id="47_kuld0"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_08.png" id="48_yv828"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_09.png" id="49_iwfhs"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_10.png" id="50_6t1ch"]
-[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_11.png" id="51_5pras"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_00.png" id="1_gvjoq"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_01.png" id="2_suq66"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_02.png" id="3_40ct7"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_03.png" id="4_8e0tg"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack_04.png" id="5_fjcmu"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_00.png" id="6_dj1db"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_01.png" id="7_n4g3b"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_02.png" id="8_eov7c"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_03.png" id="9_r5yv6"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_04.png" id="10_s2t4p"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_05.png" id="11_e1e7p"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_06.png" id="12_oaefi"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_attack-cast_07.png" id="13_f8nnb"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_opener_00.png" id="14_d5ess"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_opener_01.png" id="15_f5gei"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_opener_02.png" id="16_krbmd"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_opener_03.png" id="17_pd30f"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_opener_04.png" id="18_k0deq"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_00.png" id="19_1tn4r"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_01.png" id="20_unvke"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_02.png" id="21_qwe0i"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_03.png" id="22_pipeh"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_04.png" id="23_iomhq"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_05.png" id="24_kuld0"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_06.png" id="25_yv828"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill_07.png" id="26_iwfhs"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_00.png" id="27_6t1ch"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_01.png" id="28_5pras"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_02.png" id="29_ctqhj"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_03.png" id="30_7v1ev"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_04.png" id="31_fsmig"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_05.png" id="32_h7es1"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_06.png" id="33_2y3l7"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_07.png" id="34_m1srr"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_08.png" id="35_ny6eq"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_skill-cast_09.png" id="36_fvs5b"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_technique_00.png" id="37_b84ag"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_technique_01.png" id="38_8eb4t"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_technique_02.png" id="39_g16kr"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_technique_03.png" id="40_fayum"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_technique_04.png" id="41_g7tlw"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_technique_05.png" id="42_nxhn4"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_00.png" id="43_h2b2x"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_01.png" id="44_f3v5u"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_02.png" id="45_go6nx"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_03.png" id="46_c06rq"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_04.png" id="47_ey273"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_05.png" id="48_gl55a"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_06.png" id="49_vvv4r"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate_07.png" id="50_egiuv"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_00.png" id="51_0pfn2"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_01.png" id="52_wa6a7"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_02.png" id="53_yr8tu"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_03.png" id="54_sopqg"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_04.png" id="55_ljgy8"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_05.png" id="56_bqr0r"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_06.png" id="57_gy5lr"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_07.png" id="58_kn3m6"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_08.png" id="59_fhq31"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_09.png" id="60_almal"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_10.png" id="61_n3dnp"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-cast_11.png" id="62_vvaof"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_00.png" id="63_4pdl5"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_01.png" id="64_4gy0o"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_02.png" id="65_k1r4e"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_03.png" id="66_7mghh"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_04.png" id="67_vo0y1"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_05.png" id="68_esrib"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_06.png" id="69_i7h1h"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_07.png" id="70_hu816"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_08.png" id="71_n657l"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_09.png" id="72_2dks5"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_10.png" id="73_d7hdc"]
+[ext_resource type="Texture2D" path="res://assets/characters/celestine/vfx/vfx_celestine_ultimate-screen_11.png" id="74_xtxk7"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_eey6n")
+"texture": ExtResource("1_gvjoq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_mooq1")
+"texture": ExtResource("2_suq66")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_bvsnh")
+"texture": ExtResource("3_40ct7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_os17p")
+"texture": ExtResource("4_8e0tg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_53ytf")
+"texture": ExtResource("5_fjcmu")
 }],
 "loop": 0,
 "name": &"attack",
@@ -76,28 +99,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_bchkn")
+"texture": ExtResource("6_dj1db")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_n42rv")
+"texture": ExtResource("7_n4g3b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_gutp6")
+"texture": ExtResource("8_eov7c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_x4jhb")
+"texture": ExtResource("9_r5yv6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_n7mh3")
+"texture": ExtResource("10_s2t4p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_f7qk2")
+"texture": ExtResource("11_e1e7p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_xhrky")
+"texture": ExtResource("12_oaefi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_o02f6")
+"texture": ExtResource("13_f8nnb")
 }],
 "loop": 0,
 "name": &"attack-cast",
@@ -105,28 +128,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_2q6qe")
+"texture": ExtResource("14_d5ess")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_pa8c8")
+"texture": ExtResource("15_f5gei")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_8vgdi")
+"texture": ExtResource("16_krbmd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_eblxe")
+"texture": ExtResource("17_pd30f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_n7i40")
+"texture": ExtResource("18_k0deq")
+}],
+"loop": 0,
+"name": &"opener",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_1tn4r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_e84y7")
+"texture": ExtResource("20_unvke")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_pqcwc")
+"texture": ExtResource("21_qwe0i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_r1yon")
+"texture": ExtResource("22_pipeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_iomhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kuld0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yv828")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_iwfhs")
 }],
 "loop": 0,
 "name": &"skill",
@@ -134,34 +177,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_mv12o")
+"texture": ExtResource("27_6t1ch")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_n2nkf")
+"texture": ExtResource("28_5pras")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_gvjoq")
+"texture": ExtResource("29_ctqhj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_suq66")
+"texture": ExtResource("30_7v1ev")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_40ct7")
+"texture": ExtResource("31_fsmig")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_8e0tg")
+"texture": ExtResource("32_h7es1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_fjcmu")
+"texture": ExtResource("33_2y3l7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_dj1db")
+"texture": ExtResource("34_m1srr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_n4g3b")
+"texture": ExtResource("35_ny6eq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_eov7c")
+"texture": ExtResource("36_fvs5b")
 }],
 "loop": 0,
 "name": &"skill-cast",
@@ -169,28 +212,51 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("32_r5yv6")
+"texture": ExtResource("37_b84ag")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_s2t4p")
+"texture": ExtResource("38_8eb4t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_e1e7p")
+"texture": ExtResource("39_g16kr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_oaefi")
+"texture": ExtResource("40_fayum")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_f8nnb")
+"texture": ExtResource("41_g7tlw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_d5ess")
+"texture": ExtResource("42_nxhn4")
+}],
+"loop": 0,
+"name": &"technique",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_h2b2x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_f5gei")
+"texture": ExtResource("44_f3v5u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_krbmd")
+"texture": ExtResource("45_go6nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_c06rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ey273")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_gl55a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_vvv4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_egiuv")
 }],
 "loop": 0,
 "name": &"ultimate",
@@ -198,43 +264,85 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("40_pd30f")
+"texture": ExtResource("51_0pfn2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_k0deq")
+"texture": ExtResource("52_wa6a7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_1tn4r")
+"texture": ExtResource("53_yr8tu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_unvke")
+"texture": ExtResource("54_sopqg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_qwe0i")
+"texture": ExtResource("55_ljgy8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_pipeh")
+"texture": ExtResource("56_bqr0r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_iomhq")
+"texture": ExtResource("57_gy5lr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_kuld0")
+"texture": ExtResource("58_kn3m6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_yv828")
+"texture": ExtResource("59_fhq31")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_iwfhs")
+"texture": ExtResource("60_almal")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_6t1ch")
+"texture": ExtResource("61_n3dnp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_5pras")
+"texture": ExtResource("62_vvaof")
 }],
 "loop": 0,
 "name": &"ultimate-cast",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_4pdl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_4gy0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_k1r4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_7mghh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_vo0y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_esrib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_i7h1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_hu816")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_n657l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_2dks5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_d7hdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_xtxk7")
+}],
+"loop": 0,
+"name": &"ultimate-screen",
+"speed": 12.0
 }]
 metadata/anchor = Vector2(0.5, 0.85)
+metadata/hit_frame = {}

@@ -1,0 +1,111 @@
+{
+ "asset_id": "mirror_shade_water",
+ "mode": "map",
+ "frame_size": [
+  32,
+  32
+ ],
+ "anchor": [
+  0.5,
+  0.875
+ ],
+ "fps": 12,
+ "loop": [
+  "idle",
+  "run"
+ ],
+ "frames": [
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 3,
+   "x": 96,
+   "y": 0
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 3,
+   "x": 96,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 4,
+   "x": 128,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 5,
+   "x": 160,
+   "y": 32
+  },
+  {
+   "action": "windup",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 64
+  },
+  {
+   "action": "windup",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 64
+  },
+  {
+   "action": "windup",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 64
+  }
+ ],
+ "source": "editable pixel grids in 4_rig2d/"
+}

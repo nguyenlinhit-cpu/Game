@@ -13,7 +13,7 @@ Sinh tự động bởi `tools/data_builder/build_art_specs.py`.
 | `void_archer_lightning` | Xạ Thủ Hư Không Sét | Sét | `#A65BF2` |
 | `void_archer_wind` | Xạ Thủ Hư Không Phong | Phong | `#4FD1B5` |
 
-## Ngoài map – 128×128 px/khung, 8 hướng
+## Ngoài map – 32×32 px/khung, hướng e, lật ngang khi đi trái
 
 | Hành động | Số khung | Ghi chú |
 | --- | --- | --- |

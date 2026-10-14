@@ -1,0 +1,52 @@
+{
+  "en_dev_bite": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Cắn Hồn",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": true
+  },
+  "en_dev_devour": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Nuốt Ánh Sáng",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": true
+  },
+  "en_dev_pulse": {
+    "action": "skill",
+    "prepare": "telegraph",
+    "title": "Xung Hư Không",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": true
+  },
+  "en_dev_shadow": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Bóng Nuốt",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": true
+  },
+  "en_dev_swallow": {
+    "action": "swallow",
+    "prepare": "swallow",
+    "title": "Nuốt Hồn",
+    "hit_frame": 3,
+    "fps": 12,
+    "effect_frames": 8,
+    "element_color": "#F2D58A",
+    "screen": true
+  }
+}

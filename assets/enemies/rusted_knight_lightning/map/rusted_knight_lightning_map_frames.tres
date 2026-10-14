@@ -1,0 +1,114 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/enemies/rusted_knight_lightning/map/map_rusted_knight_lightning.png" id="1_1odqc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71xev"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nign"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mdfr"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvb43"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqova"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcqrm"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4rpb"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0ex2"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1flaf"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqavf"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c74i4"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1cut"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyt3o"]
+atlas = ExtResource("1_1odqc")
+region = Rect2(64, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71xev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nign")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mdfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvb43")
+}],
+"loop": 1,
+"name": &"idle_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqova")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcqrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4rpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0ex2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1flaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqavf")
+}],
+"loop": 1,
+"name": &"run_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c74i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1cut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyt3o")
+}],
+"loop": 0,
+"name": &"windup_e",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.875)
+metadata/hit_frame = {}

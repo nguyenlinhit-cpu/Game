@@ -1,0 +1,263 @@
+{
+ "asset_id": "wandering_shade_water",
+ "mode": "battle",
+ "frame_size": [
+  256,
+  256
+ ],
+ "anchor": [
+  0.5,
+  0.9062
+ ],
+ "fps": 12,
+ "source": "design/quai/wandering_shade/4_rig2d/rig_battle.py (x\u01b0\u01a1ng 2D tr\u00ean 1a_battle.png)",
+ "loop": [
+  "idle"
+ ],
+ "hit_frame": {
+  "attack": 4,
+  "skill": 6
+ },
+ "frames": [
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 1,
+   "x": 256,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 2,
+   "x": 512,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 3,
+   "x": 768,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 4,
+   "x": 1024,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 5,
+   "x": 1280,
+   "y": 0
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 256
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 1,
+   "x": 256,
+   "y": 256
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 2,
+   "x": 512,
+   "y": 256
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 3,
+   "x": 768,
+   "y": 256
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 4,
+   "x": 1024,
+   "y": 256,
+   "hit": true
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 5,
+   "x": 1280,
+   "y": 256
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 6,
+   "x": 1536,
+   "y": 256
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 7,
+   "x": 1792,
+   "y": 256
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 1,
+   "x": 256,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 2,
+   "x": 512,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 3,
+   "x": 768,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 4,
+   "x": 1024,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 5,
+   "x": 1280,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 6,
+   "x": 1536,
+   "y": 512,
+   "hit": true
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 7,
+   "x": 1792,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 8,
+   "x": 2048,
+   "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 9,
+   "x": 2304,
+   "y": 512
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 768
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 1,
+   "x": 256,
+   "y": 768
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 2,
+   "x": 512,
+   "y": 768
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 3,
+   "x": 768,
+   "y": 768
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 1024
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 1,
+   "x": 256,
+   "y": 1024
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 2,
+   "x": 512,
+   "y": 1024
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 3,
+   "x": 768,
+   "y": 1024
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 4,
+   "x": 1024,
+   "y": 1024
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 5,
+   "x": 1280,
+   "y": 1024
+  }
+ ]
+}

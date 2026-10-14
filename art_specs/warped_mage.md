@@ -14,7 +14,7 @@ Sinh tự động bởi `tools/data_builder/build_art_specs.py`.
 | `warped_mage_poison` | Pháp Sư Méo Độc | Độc | `#9BC53D` |
 | `warped_mage_wind` | Pháp Sư Méo Phong | Phong | `#4FD1B5` |
 
-## Ngoài map – 128×128 px/khung, 8 hướng
+## Ngoài map – 32×32 px/khung, hướng e, lật ngang khi đi trái
 
 | Hành động | Số khung | Ghi chú |
 | --- | --- | --- |

@@ -1,0 +1,22 @@
+{
+  "en_shade_touch": {
+    "action": "attack",
+    "prepare": "attack",
+    "title": "Chạm Lạnh",
+    "hit_frame": 4,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  },
+  "en_shade_veil": {
+    "action": "skill",
+    "prepare": "skill",
+    "title": "Màn Hồn",
+    "hit_frame": 6,
+    "fps": 12,
+    "effect_frames": 8,
+    "screen": false,
+    "element_color": "#3A8DDE"
+  }
+}

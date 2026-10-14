@@ -162,5 +162,8 @@
    ],
    "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
   }
- }
+ },
+ "target": "enemy",
+ "sprite_action": "attack",
+ "target_scope": "single"
 }
