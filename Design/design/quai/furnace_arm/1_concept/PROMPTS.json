@@ -1,0 +1,76 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for views phases variants",
+  "metadata": {
+    "id": "furnace_arm",
+    "title": "Q10. Tay Máy Lò – Thường",
+    "palette": [
+      [
+        "Sắt",
+        "#3E3A3A"
+      ],
+      [
+        "Đinh tán",
+        "#8A8580"
+      ],
+      [
+        "Khớp nóng",
+        "#E8552B"
+      ],
+      [
+        "Tia lửa",
+        "#FFB347"
+      ],
+      [
+        "Ống dẫn",
+        "#5A5F66"
+      ]
+    ],
+    "variants": [
+      {
+        "id": "furnace_arm",
+        "element": "Lửa",
+        "color": "#E8552B"
+      }
+    ],
+    "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 3,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+    "phases": [],
+    "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+    "category": "Thường",
+    "has_pixel": true
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #E8552B. Material palette: Sắt #3E3A3A, Đinh tán #8A8580, Khớp nóng #E8552B, Tia lửa #FFB347, Ống dẫn #5A5F66.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "STRICT ORTHOGRAPHIC FRONT VIEW looking straight at camera, left/right sides equally visible, neutral resting pose. ROTATE the subject from its reference pose to front. ONE front view only. Same creature as the reference image: a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_side.png",
+      "prompt": "STRICT 90-DEGREE SIDE PROFILE facing LEFT, only near side visible, far side foreshortened completely, flat side silhouette. ROTATE the subject from reference to side view, neutral resting pose. ONE profile only. Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_pixel.png",
+      "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, curved mechanical arm with a clamp claw and glowing joints, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": true
+    },
+    {
+      "asset": "variants/furnace_arm.png",
+      "prompt": "Use case: precise-object-edit. Create furnace_arm variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #E8552B (Lửa). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": true
+    }
+  ],
+  "revisions": [
+    {
+      "asset": "1b_side.png",
+      "prompt": "Redraw this exact monster as a TRUE 90-degree orthographic LEFT SIDE PROFILE turnaround. Camera is exactly perpendicular to the creature's side. Change its pose and orientation substantially from the reference. Show ONLY its LEFT side; the front/chest/face must NOT face the viewer. One visible eye (if eyes), overlapping far limbs, nose/muzzle pointing horizontally LEFT, chest in profile. Lower weapons into resting position. For winged creatures only one side wing silhouette, wings partially folded. For the mechanical furnace arm show a horizontal arm in exact side elevation, wall edge-on at RIGHT. For the flying book show narrow thickness/spine in side profile with one folded wing, do NOT show the broad front cover. Keep same identity, anatomy, costume details and colors. Single full body with all appendages visible, plain white background, crisp cel-shaded game concept, no text, no duplicate or sheet."
+    }
+  ]
+}

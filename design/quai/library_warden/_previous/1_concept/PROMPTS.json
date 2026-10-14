@@ -1,0 +1,82 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for views phases variants",
+  "metadata": {
+    "id": "library_warden",
+    "title": "Q15. Người Gác Thư Viện – Boss",
+    "palette": [
+      [
+        "Áo giấy",
+        "#EDE4CF"
+      ],
+      [
+        "Chữ đen",
+        "#1E1A22"
+      ],
+      [
+        "Bìa sách",
+        "#5A3A2E"
+      ],
+      [
+        "Phép (Phong)",
+        "#4FD1B5"
+      ],
+      [
+        "Mắt GĐ2",
+        "#A65BF2"
+      ],
+      [
+        "Mặt nạ",
+        "#D9D2C2"
+      ]
+    ],
+    "variants": [
+      {
+        "id": "library_warden",
+        "element": "Phong",
+        "color": "#4FD1B5"
+      }
+    ],
+    "scale": "Khung trận 768 px, quay sang trái. Ngoài map 48×48 px. Cao khoảng 6,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+    "phases": [
+      "- GĐ1: áo giấy kín, sách xoay đều, màu sáng",
+      "- GĐ2 – Lời Nguyền Câm Lặng (máu ≤ 50%): áo giấy bung thành chữ đen bay, mắt tím, sách đen cháy mép"
+    ],
+    "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+    "category": "Boss",
+    "has_pixel": true
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #4FD1B5. Material palette: Áo giấy #EDE4CF, Chữ đen #1E1A22, Bìa sách #5A3A2E, Phép (Phong) #4FD1B5, Mắt GĐ2 #A65BF2, Mặt nạ #D9D2C2.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1a_battle_p2.png",
+      "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, the same huge library guardian in its second phase: the paper cloak has burst open into a storm of flying black letters and torn pages, eyes glowing intense violet, the orbiting books now black and burning at the edges, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "STRICT ORTHOGRAPHIC FRONT VIEW looking straight at camera, left/right sides equally visible, neutral resting pose. ROTATE the subject from its reference pose to front. ONE front view only. Same creature as the reference image: a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_side.png",
+      "prompt": "STRICT 90-DEGREE SIDE PROFILE facing LEFT, only near side visible, far side foreshortened completely, flat side silhouette. ROTATE the subject from reference to side view, neutral resting pose. ONE profile only. Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_pixel.png",
+      "prompt": "Pixel art game sprite, 48x48 pixels, small fantasy monster, side view facing right, very tall figure in a flared paper cloak with a ring of books orbiting it, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": true
+    },
+    {
+      "asset": "variants/library_warden.png",
+      "prompt": "Use case: precise-object-edit. Create library_warden variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": true
+    }
+  ]
+}

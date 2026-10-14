@@ -1,0 +1,1497 @@
+[
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "warp_sprout",
+      "title": "Q01. Mầm Ma Biến – Thường",
+      "palette": [
+        [
+          "Thân củ",
+          "#C9B98A"
+        ],
+        [
+          "Lá mầm",
+          "#7DBF5A"
+        ],
+        [
+          "Miệng, vết nứt (màu biến thể)",
+          "#9BC53D"
+        ],
+        [
+          "Chân rễ",
+          "#7A5A3A"
+        ],
+        [
+          "Mảnh pha lê Ma Biến",
+          "#B58CFF"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "warp_sprout",
+          "element": "Độc",
+          "color": "#9BC53D"
+        },
+        {
+          "id": "warp_sprout_poison",
+          "element": "Độc",
+          "color": "#9BC53D"
+        },
+        {
+          "id": "warp_sprout_water",
+          "element": "Nước",
+          "color": "#3A8DDE"
+        },
+        {
+          "id": "warp_sprout_fire",
+          "element": "Lửa",
+          "color": "#E8552B"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 0,9 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a small round bulb-shaped sprout creature with two leaf sprouts on top of its head, a jagged cracked mouth glowing from inside, stubby little root feet, tiny crystal shards floating around it, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a small round bulb-shaped sprout creature with two leaf sprouts on top of its head, a jagged cracked mouth glowing from inside, stubby little root feet, tiny crystal shards floating around it, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #9BC53D. Material palette: Thân củ #C9B98A, Lá mầm #7DBF5A, Miệng, vết nứt (màu biến thể) #9BC53D, Chân rễ #7A5A3A, Mảnh pha lê Ma Biến #B58CFF.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a small round bulb-shaped sprout creature with two leaf sprouts on top of its head, a jagged cracked mouth glowing from inside, stubby little root feet, tiny crystal shards floating around it. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a small round bulb-shaped sprout creature with two leaf sprouts on top of its head, a jagged cracked mouth glowing from inside, stubby little root feet, tiny crystal shards floating around it, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, tiny round bulb with two leaves on top and a glowing cracked mouth, hopping, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/warp_sprout.png",
+        "prompt": "Use case: precise-object-edit. Create warp_sprout variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/warp_sprout_poison.png",
+        "prompt": "Use case: precise-object-edit. Create warp_sprout_poison variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/warp_sprout_water.png",
+        "prompt": "Use case: precise-object-edit. Create warp_sprout_water variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/warp_sprout_fire.png",
+        "prompt": "Use case: precise-object-edit. Create warp_sprout_fire variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #E8552B (Lửa). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "wandering_shade",
+      "title": "Q02. Hồn Ảnh Lang Thang – Thường",
+      "palette": [
+        [
+          "Áo choàng rách",
+          "#5B5F7A"
+        ],
+        [
+          "Thân hồn trong suốt",
+          "#C9D6E8"
+        ],
+        [
+          "Mắt, tay phát sáng (màu biến thể)",
+          "#4FD1B5"
+        ],
+        [
+          "Viền tối",
+          "#2B2D3A"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "wandering_shade",
+          "element": "Hồn",
+          "color": "#F2D58A"
+        },
+        {
+          "id": "wandering_shade_wind",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        },
+        {
+          "id": "wandering_shade_water",
+          "element": "Nước",
+          "color": "#3A8DDE"
+        },
+        {
+          "id": "wandering_shade_soul",
+          "element": "Hồn",
+          "color": "#F2D58A"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 1,8 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #F2D58A. Material palette: Áo choàng rách #5B5F7A, Thân hồn trong suốt #C9D6E8, Mắt, tay phát sáng (màu biến thể) #4FD1B5, Viền tối #2B2D3A.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, ghost in a tattered hood, pointed wispy tail, long thin arms, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/wandering_shade.png",
+        "prompt": "Use case: precise-object-edit. Create wandering_shade variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #F2D58A (Hồn). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/wandering_shade_wind.png",
+        "prompt": "Use case: precise-object-edit. Create wandering_shade_wind variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/wandering_shade_water.png",
+        "prompt": "Use case: precise-object-edit. Create wandering_shade_water variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/wandering_shade_soul.png",
+        "prompt": "Use case: precise-object-edit. Create wandering_shade_soul variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #F2D58A (Hồn). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "rusted_knight",
+      "title": "Q03. Giáp Sĩ Rỉ Sét – Thường",
+      "palette": [
+        [
+          "Giáp gỉ",
+          "#8A5A3A"
+        ],
+        [
+          "Thép cũ",
+          "#6E7378"
+        ],
+        [
+          "Rỉ sét đậm",
+          "#5A3524"
+        ],
+        [
+          "Khe mắt (màu biến thể)",
+          "#3A8DDE"
+        ],
+        [
+          "Bên trong rỗng",
+          "#1A1A20"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "rusted_knight",
+          "element": "Sét",
+          "color": "#A65BF2"
+        },
+        {
+          "id": "rusted_knight_water",
+          "element": "Nước",
+          "color": "#3A8DDE"
+        },
+        {
+          "id": "rusted_knight_lightning",
+          "element": "Sét",
+          "color": "#A65BF2"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 2,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a hollow suit of rusted plate armor walking on its own, a bucket helmet with a glowing visor slit, a huge rusty tower shield as tall as the body, a notched broadsword, flakes of rust falling, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a hollow suit of rusted plate armor walking on its own, a bucket helmet with a glowing visor slit, a huge rusty tower shield as tall as the body, a notched broadsword, flakes of rust falling, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #A65BF2. Material palette: Giáp gỉ #8A5A3A, Thép cũ #6E7378, Rỉ sét đậm #5A3524, Khe mắt (màu biến thể) #3A8DDE, Bên trong rỗng #1A1A20.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a hollow suit of rusted plate armor walking on its own, a bucket helmet with a glowing visor slit, a huge rusty tower shield as tall as the body, a notched broadsword, flakes of rust falling. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a hollow suit of rusted plate armor walking on its own, a bucket helmet with a glowing visor slit, a huge rusty tower shield as tall as the body, a notched broadsword, flakes of rust falling, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, hollow rusty armor with a glowing visor slit and a tall tower shield, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/rusted_knight.png",
+        "prompt": "Use case: precise-object-edit. Create rusted_knight variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #A65BF2 (Sét). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/rusted_knight_water.png",
+        "prompt": "Use case: precise-object-edit. Create rusted_knight_water variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/rusted_knight_lightning.png",
+        "prompt": "Use case: precise-object-edit. Create rusted_knight_lightning variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #A65BF2 (Sét). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "void_archer",
+      "title": "Q04. Xạ Thủ Hư Không – Thường",
+      "palette": [
+        [
+          "Vải tối",
+          "#2B2838"
+        ],
+        [
+          "Băng quấn",
+          "#5A566A"
+        ],
+        [
+          "Cung vết nứt (màu biến thể)",
+          "#4FD1B5"
+        ],
+        [
+          "Lõi hư không",
+          "#120F1A"
+        ],
+        [
+          "Mắt sáng",
+          "#E8E8FF"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "void_archer_wind",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        },
+        {
+          "id": "void_archer_lightning",
+          "element": "Sét",
+          "color": "#A65BF2"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 2,2 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a gaunt tall faceless archer wrapped in dark cloth with the face fully hooded and masked, holding a long curved bow made from a glowing rift in space, arrows of dark void energy, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a gaunt tall faceless archer wrapped in dark cloth with the face fully hooded and masked, holding a long curved bow made from a glowing rift in space, arrows of dark void energy, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #4FD1B5. Material palette: Vải tối #2B2838, Băng quấn #5A566A, Cung vết nứt (màu biến thể) #4FD1B5, Lõi hư không #120F1A, Mắt sáng #E8E8FF.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a gaunt tall faceless archer wrapped in dark cloth with the face fully hooded and masked, holding a long curved bow made from a glowing rift in space, arrows of dark void energy. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a gaunt tall faceless archer wrapped in dark cloth with the face fully hooded and masked, holding a long curved bow made from a glowing rift in space, arrows of dark void energy, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, tall thin hooded archer with a long glowing rift bow taller than itself, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/void_archer_wind.png",
+        "prompt": "Use case: precise-object-edit. Create void_archer_wind variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/void_archer_lightning.png",
+        "prompt": "Use case: precise-object-edit. Create void_archer_lightning variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #A65BF2 (Sét). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "warped_mage",
+      "title": "Q05. Pháp Sư Méo – Thường",
+      "palette": [
+        [
+          "Áo chùng",
+          "#4A3B5E"
+        ],
+        [
+          "Mũ",
+          "#3A2E4A"
+        ],
+        [
+          "Sách",
+          "#C9B98A"
+        ],
+        [
+          "Phép (màu biến thể)",
+          "#9BC53D"
+        ],
+        [
+          "Mặt tối",
+          "#1E1A26"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "warped_mage_poison",
+          "element": "Độc",
+          "color": "#9BC53D"
+        },
+        {
+          "id": "warped_mage_fire",
+          "element": "Lửa",
+          "color": "#E8552B"
+        },
+        {
+          "id": "warped_mage_wind",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 1,9 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a twisted warped mage in a flared robe, a tall pointed hat bent and folded at sharp angles, a spellbook floating open in front of the chest, the body subtly distorted like a bad reflection, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a twisted warped mage in a flared robe, a tall pointed hat bent and folded at sharp angles, a spellbook floating open in front of the chest, the body subtly distorted like a bad reflection, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #9BC53D. Material palette: Áo chùng #4A3B5E, Mũ #3A2E4A, Sách #C9B98A, Phép (màu biến thể) #9BC53D, Mặt tối #1E1A26.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a twisted warped mage in a flared robe, a tall pointed hat bent and folded at sharp angles, a spellbook floating open in front of the chest, the body subtly distorted like a bad reflection. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a twisted warped mage in a flared robe, a tall pointed hat bent and folded at sharp angles, a spellbook floating open in front of the chest, the body subtly distorted like a bad reflection, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, mage with a bent folded pointed hat, flared robe, floating book, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/warped_mage_poison.png",
+        "prompt": "Use case: precise-object-edit. Create warped_mage_poison variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/warped_mage_fire.png",
+        "prompt": "Use case: precise-object-edit. Create warped_mage_fire variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #E8552B (Lửa). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/warped_mage_wind.png",
+        "prompt": "Use case: precise-object-edit. Create warped_mage_wind variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "ink_rat",
+      "title": "Q06. Chuột Mực Sách – Thường",
+      "palette": [
+        [
+          "Lông mực",
+          "#1C1C26"
+        ],
+        [
+          "Bụng",
+          "#4A4A5A"
+        ],
+        [
+          "Ngòi bút đuôi",
+          "#B89A4A"
+        ],
+        [
+          "Mắt, điện (màu biến thể)",
+          "#4FD1B5"
+        ],
+        [
+          "Giọt mực",
+          "#2E2A4A"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "ink_rat_wind",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        },
+        {
+          "id": "ink_rat_lightning",
+          "element": "Sét",
+          "color": "#A65BF2"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 0,6 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a small fast rat with fur soaked and dripping with black ink, beady glowing eyes, a long tail shaped like a curved fountain-pen nib, ink paw prints, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a small fast rat with fur soaked and dripping with black ink, beady glowing eyes, a long tail shaped like a curved fountain-pen nib, ink paw prints, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #4FD1B5. Material palette: Lông mực #1C1C26, Bụng #4A4A5A, Ngòi bút đuôi #B89A4A, Mắt, điện (màu biến thể) #4FD1B5, Giọt mực #2E2A4A.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a small fast rat with fur soaked and dripping with black ink, beady glowing eyes, a long tail shaped like a curved fountain-pen nib, ink paw prints. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a small fast rat with fur soaked and dripping with black ink, beady glowing eyes, a long tail shaped like a curved fountain-pen nib, ink paw prints, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, small ink-black rat with a curved pen-nib tail, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/ink_rat_wind.png",
+        "prompt": "Use case: precise-object-edit. Create ink_rat_wind variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/ink_rat_lightning.png",
+        "prompt": "Use case: precise-object-edit. Create ink_rat_lightning variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #A65BF2 (Sét). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "venom_bee",
+      "title": "Q07. Ong Độc – Thường",
+      "palette": [
+        [
+          "Sọc thân",
+          "#2A2620"
+        ],
+        [
+          "Thân (màu biến thể)",
+          "#9BC53D"
+        ],
+        [
+          "Cánh",
+          "#E6F2F2"
+        ],
+        [
+          "Mắt",
+          "#5A3A66"
+        ],
+        [
+          "Nọc",
+          "#C9F27A"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "venom_bee_poison",
+          "element": "Độc",
+          "color": "#9BC53D"
+        },
+        {
+          "id": "venom_bee_poison_drone",
+          "element": "Độc (ong thợ, nhỏ hơn 30%)",
+          "color": "#9BC53D"
+        },
+        {
+          "id": "venom_bee_wind",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        },
+        {
+          "id": "venom_bee_wind_drone",
+          "element": "Phong (ong thợ, nhỏ hơn 30%)",
+          "color": "#4FD1B5"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 0,8 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes; the worker bee drone version is 30 percent smaller, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #9BC53D. Material palette: Sọc thân #2A2620, Thân (màu biến thể) #9BC53D, Cánh #E6F2F2, Mắt #5A3A66, Nọc #C9F27A.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes; the worker bee drone version is 30 percent smaller, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, fat bee with four translucent wings and a dripping stinger, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/venom_bee_poison.png",
+        "prompt": "Use case: precise-object-edit. Create venom_bee_poison variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/venom_bee_poison_drone.png",
+        "prompt": "Use case: precise-object-edit. Create venom_bee_poison_drone variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc (ong thợ, nhỏ hơn 30%)). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark. Worker drone: physically 30 percent smaller than parent on SAME size canvas; four wings stinger fuzzy striped body unchanged. Do not show parent.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/venom_bee_wind.png",
+        "prompt": "Use case: precise-object-edit. Create venom_bee_wind variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/venom_bee_wind_drone.png",
+        "prompt": "Use case: precise-object-edit. Create venom_bee_wind_drone variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong (ong thợ, nhỏ hơn 30%)). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark. Worker drone: physically 30 percent smaller than parent on SAME size canvas; four wings stinger fuzzy striped body unchanged. Do not show parent.",
+        "transparent_background": false,
+        "copy_base": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "mirror_shade",
+      "title": "Q08. Bóng Gương – Thường",
+      "palette": [
+        [
+          "Mảnh gương",
+          "#C7CCD4"
+        ],
+        [
+          "Phản chiếu tối",
+          "#3A3F4A"
+        ],
+        [
+          "Vết nứt (màu biến thể)",
+          "#3A8DDE"
+        ],
+        [
+          "Viền sáng",
+          "#F4F6FA"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "mirror_shade_water",
+          "element": "Nước",
+          "color": "#3A8DDE"
+        },
+        {
+          "id": "mirror_shade_soul",
+          "element": "Hồn",
+          "color": "#F2D58A"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 2,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a humanoid silhouette made of jagged broken mirror shards pieced together, its body reflecting distorted images, glowing cracks between the shards, no face, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a humanoid silhouette made of jagged broken mirror shards pieced together, its body reflecting distorted images, glowing cracks between the shards, no face, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #3A8DDE. Material palette: Mảnh gương #C7CCD4, Phản chiếu tối #3A3F4A, Vết nứt (màu biến thể) #3A8DDE, Viền sáng #F4F6FA.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a humanoid silhouette made of jagged broken mirror shards pieced together, its body reflecting distorted images, glowing cracks between the shards, no face. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a humanoid silhouette made of jagged broken mirror shards pieced together, its body reflecting distorted images, glowing cracks between the shards, no face, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, human-shaped figure made of jagged mirror shards, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/mirror_shade_water.png",
+        "prompt": "Use case: precise-object-edit. Create mirror_shade_water variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/mirror_shade_soul.png",
+        "prompt": "Use case: precise-object-edit. Create mirror_shade_soul variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #F2D58A (Hồn). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "flying_book",
+      "title": "Q09. Sách Bay – Thường",
+      "palette": [
+        [
+          "Bìa sách",
+          "#5A3A2E"
+        ],
+        [
+          "Trang giấy",
+          "#F4EEDF"
+        ],
+        [
+          "Rune (Phong)",
+          "#4FD1B5"
+        ],
+        [
+          "Mép tối",
+          "#2B1E18"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "flying_book",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 0,6 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an animated old flying book with its pages flapping like bird wings, a cursed glowing rune on the cover, paper edges sharp like blades, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an animated old flying book with its pages flapping like bird wings, a cursed glowing rune on the cover, paper edges sharp like blades, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #4FD1B5. Material palette: Bìa sách #5A3A2E, Trang giấy #F4EEDF, Rune (Phong) #4FD1B5, Mép tối #2B1E18.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: an animated old flying book with its pages flapping like bird wings, a cursed glowing rune on the cover, paper edges sharp like blades. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, an animated old flying book with its pages flapping like bird wings, a cursed glowing rune on the cover, paper edges sharp like blades, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, small open book flapping like a bird, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/flying_book.png",
+        "prompt": "Use case: precise-object-edit. Create flying_book variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "furnace_arm",
+      "title": "Q10. Tay Máy Lò – Thường",
+      "palette": [
+        [
+          "Sắt",
+          "#3E3A3A"
+        ],
+        [
+          "Đinh tán",
+          "#8A8580"
+        ],
+        [
+          "Khớp nóng",
+          "#E8552B"
+        ],
+        [
+          "Tia lửa",
+          "#FFB347"
+        ],
+        [
+          "Ống dẫn",
+          "#5A5F66"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "furnace_arm",
+          "element": "Lửa",
+          "color": "#E8552B"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 3,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #E8552B. Material palette: Sắt #3E3A3A, Đinh tán #8A8580, Khớp nóng #E8552B, Tia lửa #FFB347, Ống dẫn #5A5F66.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a huge curved mechanical arm emerging from a furnace wall socket, riveted dark iron segments, glowing orange joints spitting sparks, a three-fingered clamp claw, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, curved mechanical arm with a clamp claw and glowing joints, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/furnace_arm.png",
+        "prompt": "Use case: precise-object-edit. Create furnace_arm variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #E8552B (Lửa). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "devourer_clone",
+      "title": "Q11. Phân Thân – Thường",
+      "palette": [
+        [
+          "Thân bóng",
+          "#1E1A26"
+        ],
+        [
+          "Áo khoác rách",
+          "#2E2838"
+        ],
+        [
+          "Viền nguyên tố (màu biến thể)",
+          "#E8552B"
+        ],
+        [
+          "Vết nứt mặt",
+          "#F2D58A"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "devourer_clone_flame",
+          "element": "Lửa",
+          "color": "#E8552B"
+        },
+        {
+          "id": "devourer_clone_tide",
+          "element": "Nước",
+          "color": "#3A8DDE"
+        },
+        {
+          "id": "devourer_clone_storm",
+          "element": "Sét",
+          "color": "#A65BF2"
+        }
+      ],
+      "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 2,4 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a blurred smaller shadow copy of a tall figure in a long tattered coat with a vertical crack across its face, its outline burning with one element color, smoky edges, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Thường",
+      "has_pixel": false
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a blurred smaller shadow copy of a tall figure in a long tattered coat with a vertical crack across its face, its outline burning with one element color, smoky edges, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #E8552B. Material palette: Thân bóng #1E1A26, Áo khoác rách #2E2838, Viền nguyên tố (màu biến thể) #E8552B, Vết nứt mặt #F2D58A.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a blurred smaller shadow copy of a tall figure in a long tattered coat with a vertical crack across its face, its outline burning with one element color, smoky edges. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a blurred smaller shadow copy of a tall figure in a long tattered coat with a vertical crack across its face, its outline burning with one element color, smoky edges, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "variants/devourer_clone_flame.png",
+        "prompt": "Use case: precise-object-edit. Create devourer_clone_flame variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #E8552B (Lửa). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      },
+      {
+        "asset": "variants/devourer_clone_tide.png",
+        "prompt": "Use case: precise-object-edit. Create devourer_clone_tide variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      },
+      {
+        "asset": "variants/devourer_clone_storm.png",
+        "prompt": "Use case: precise-object-edit. Create devourer_clone_storm variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #A65BF2 (Sét). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": false
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "shattered_knight",
+      "title": "Q12. Kỵ Sĩ Vỡ Vụn – Tinh anh",
+      "palette": [
+        [
+          "Giáp",
+          "#6E7A88"
+        ],
+        [
+          "Băng bên trong",
+          "#9FE3FF"
+        ],
+        [
+          "Vết nứt sáng",
+          "#3A8DDE"
+        ],
+        [
+          "Áo choàng rách",
+          "#2E3A55"
+        ],
+        [
+          "Thương",
+          "#B8C4D0"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "shattered_knight",
+          "element": "Nước",
+          "color": "#3A8DDE"
+        }
+      ],
+      "scale": "Khung trận 384 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 3,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite giant knight, 1.5 times the height of a person, with cracked shattered plate armor revealing glowing pale-blue ice inside the cracks, a broken cape, a very long lance pointed forward, a cracked helmet with one horn missing, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Tinh anh",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite giant knight, 1.5 times the height of a person, with cracked shattered plate armor revealing glowing pale-blue ice inside the cracks, a broken cape, a very long lance pointed forward, a cracked helmet with one horn missing, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #3A8DDE. Material palette: Giáp #6E7A88, Băng bên trong #9FE3FF, Vết nứt sáng #3A8DDE, Áo choàng rách #2E3A55, Thương #B8C4D0.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: an elite giant knight, 1.5 times the height of a person, with cracked shattered plate armor revealing glowing pale-blue ice inside the cracks, a broken cape, a very long lance pointed forward, a cracked helmet with one horn missing. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite giant knight, 1.5 times the height of a person, with cracked shattered plate armor revealing glowing pale-blue ice inside the cracks, a broken cape, a very long lance pointed forward, a cracked helmet with one horn missing, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, big knight with cracked armor showing blue ice, very long lance pointed forward, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/shattered_knight.png",
+        "prompt": "Use case: precise-object-edit. Create shattered_knight variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "warp_matrix",
+      "title": "Q13. Mẫu Thể Ma Biến – Tinh anh",
+      "palette": [
+        [
+          "Màng kén",
+          "#7A6A8A"
+        ],
+        [
+          "Xúc tu",
+          "#5A4A6A"
+        ],
+        [
+          "Lõi (Độc)",
+          "#9BC53D"
+        ],
+        [
+          "Vết nứt Ma Biến",
+          "#B58CFF"
+        ],
+        [
+          "Mầm bám",
+          "#C9B98A"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "warp_matrix",
+          "element": "Độc",
+          "color": "#9BC53D"
+        }
+      ],
+      "scale": "Khung trận 384 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 2,6 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite pulsing cocoon-like nest mass of warped organic matter with several tentacle roots, glowing cracks, smaller round sprout creatures clinging to it, a big glowing core visible through the membrane, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Tinh anh",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite pulsing cocoon-like nest mass of warped organic matter with several tentacle roots, glowing cracks, smaller round sprout creatures clinging to it, a big glowing core visible through the membrane, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #9BC53D. Material palette: Màng kén #7A6A8A, Xúc tu #5A4A6A, Lõi (Độc) #9BC53D, Vết nứt Ma Biến #B58CFF, Mầm bám #C9B98A.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: an elite pulsing cocoon-like nest mass of warped organic matter with several tentacle roots, glowing cracks, smaller round sprout creatures clinging to it, a big glowing core visible through the membrane. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite pulsing cocoon-like nest mass of warped organic matter with several tentacle roots, glowing cracks, smaller round sprout creatures clinging to it, a big glowing core visible through the membrane, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, pulsing round cocoon nest with tentacles and small sprouts clinging, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/warp_matrix.png",
+        "prompt": "Use case: precise-object-edit. Create warp_matrix variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "mute_librarian",
+      "title": "Q14. Thủ Thư Câm – Tinh anh",
+      "palette": [
+        [
+          "Áo dài",
+          "#3A4A5E"
+        ],
+        [
+          "Da xám",
+          "#C9C2B8"
+        ],
+        [
+          "Chỉ khâu",
+          "#8E2A2A"
+        ],
+        [
+          "Đèn lồng sách (Phong)",
+          "#4FD1B5"
+        ],
+        [
+          "Giấy",
+          "#F4EEDF"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "mute_librarian",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        }
+      ],
+      "scale": "Khung trận 384 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 2,8 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite tall silent librarian in a long robe that drags on the floor, mouth stitched shut with thread, hollow tired eyes, holding high a lantern shaped like a book that glows, loose pages orbiting slowly, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Tinh anh",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite tall silent librarian in a long robe that drags on the floor, mouth stitched shut with thread, hollow tired eyes, holding high a lantern shaped like a book that glows, loose pages orbiting slowly, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #4FD1B5. Material palette: Áo dài #3A4A5E, Da xám #C9C2B8, Chỉ khâu #8E2A2A, Đèn lồng sách (Phong) #4FD1B5, Giấy #F4EEDF.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: an elite tall silent librarian in a long robe that drags on the floor, mouth stitched shut with thread, hollow tired eyes, holding high a lantern shaped like a book that glows, loose pages orbiting slowly. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, an elite monster, bigger and more detailed than normal enemies, an elite tall silent librarian in a long robe that drags on the floor, mouth stitched shut with thread, hollow tired eyes, holding high a lantern shaped like a book that glows, loose pages orbiting slowly, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, tall robed figure holding up a glowing book-shaped lantern, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/mute_librarian.png",
+        "prompt": "Use case: precise-object-edit. Create mute_librarian variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "library_warden",
+      "title": "Q15. Người Gác Thư Viện – Boss",
+      "palette": [
+        [
+          "Áo giấy",
+          "#EDE4CF"
+        ],
+        [
+          "Chữ đen",
+          "#1E1A22"
+        ],
+        [
+          "Bìa sách",
+          "#5A3A2E"
+        ],
+        [
+          "Phép (Phong)",
+          "#4FD1B5"
+        ],
+        [
+          "Mắt GĐ2",
+          "#A65BF2"
+        ],
+        [
+          "Mặt nạ",
+          "#D9D2C2"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "library_warden",
+          "element": "Phong",
+          "color": "#4FD1B5"
+        }
+      ],
+      "scale": "Khung trận 768 px, quay sang trái. Ngoài map 48×48 px. Cao khoảng 6,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [
+        "- GĐ1: áo giấy kín, sách xoay đều, màu sáng",
+        "- GĐ2 – Lời Nguyền Câm Lặng (máu ≤ 50%): áo giấy bung thành chữ đen bay, mắt tím, sách đen cháy mép"
+      ],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Boss",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #4FD1B5. Material palette: Áo giấy #EDE4CF, Chữ đen #1E1A22, Bìa sách #5A3A2E, Phép (Phong) #4FD1B5, Mắt GĐ2 #A65BF2, Mặt nạ #D9D2C2.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1a_battle_p2.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, the same huge library guardian in its second phase: the paper cloak has burst open into a storm of flying black letters and torn pages, eyes glowing intense violet, the orbiting books now black and burning at the edges, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a very tall librarian guardian wearing a flared cloak made entirely of layered paper pages, a high collar, a calm masked face, hundreds of books orbiting around it like satellites, long sleeves, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 48x48 pixels, small fantasy monster, side view facing right, very tall figure in a flared paper cloak with a ring of books orbiting it, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/library_warden.png",
+        "prompt": "Use case: precise-object-edit. Create library_warden variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "vault_behemoth",
+      "title": "Q16. Cự Thú Kho Chứa – Boss",
+      "palette": [
+        [
+          "Da thú",
+          "#4A5A6E"
+        ],
+        [
+          "Băng",
+          "#BFE8F7"
+        ],
+        [
+          "Thùng hàng",
+          "#8A6A4A"
+        ],
+        [
+          "Ngà",
+          "#EDE6D6"
+        ],
+        [
+          "Thân đỏ GĐ2",
+          "#B23A3A"
+        ],
+        [
+          "Mắt",
+          "#9FE3FF"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "vault_behemoth",
+          "element": "Nước",
+          "color": "#3A8DDE"
+        }
+      ],
+      "scale": "Khung trận 768 px, quay sang trái. Ngoài map 48×48 px. Cao khoảng 5,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [
+        "- GĐ1: lưng phủ băng và thùng hàng, chậm",
+        "- GĐ2 – Băng Vỡ (máu ≤ 50%): băng nứt rơi, lộ thân đỏ, hơi nóng, nhanh và dữ hơn"
+      ],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a massive four-legged beast, wide and low with its head lowered, its back piled high with frozen cargo crates like a mountain, thick frost and icicles all over, small fierce eyes, heavy tusks, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Boss",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a massive four-legged beast, wide and low with its head lowered, its back piled high with frozen cargo crates like a mountain, thick frost and icicles all over, small fierce eyes, heavy tusks, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #3A8DDE. Material palette: Da thú #4A5A6E, Băng #BFE8F7, Thùng hàng #8A6A4A, Ngà #EDE6D6, Thân đỏ GĐ2 #B23A3A, Mắt #9FE3FF.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1a_battle_p2.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, the same massive four-legged beast in its second phase: the ice on its back has cracked and fallen apart revealing an angry red scarred body underneath, steam rising, eyes blazing, crates shattered, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a huge imposing boss: a massive four-legged beast, wide and low with its head lowered, its back piled high with frozen cargo crates like a mountain, thick frost and icicles all over, small fierce eyes, heavy tusks. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a massive four-legged beast, wide and low with its head lowered, its back piled high with frozen cargo crates like a mountain, thick frost and icicles all over, small fierce eyes, heavy tusks, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 48x48 pixels, small fantasy monster, side view facing right, huge low four-legged beast with a mountain of frozen crates on its back, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/vault_behemoth.png",
+        "prompt": "Use case: precise-object-edit. Create vault_behemoth variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "warped_core",
+      "title": "Q17. Lõi Lò Biến Dạng – Boss",
+      "palette": [
+        [
+          "Vỏ kim loại",
+          "#3E3A44"
+        ],
+        [
+          "Vành quay",
+          "#6E6A72"
+        ],
+        [
+          "Lửa tím GĐ1",
+          "#9B5BF2"
+        ],
+        [
+          "Lửa trắng GĐ2",
+          "#FFF4E0"
+        ],
+        [
+          "Mép nung đỏ",
+          "#E8552B"
+        ],
+        [
+          "Ống dẫn",
+          "#5A5F66"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "warped_core",
+          "element": "Lửa",
+          "color": "#E8552B"
+        }
+      ],
+      "scale": "Khung trận 768 px, quay sang trái. Ngoài map 48×48 px. Cao khoảng 5,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [
+        "- GĐ1: lửa tím trong khe nứt, quay chậm",
+        "- GĐ2 – Lò Quá Tải (máu ≤ 50%): lửa trắng chói, vỏ bung các tấm tản nhiệt"
+      ],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a giant spherical furnace core slowly rotating inside a mechanical ring, cracked dark metal shell revealing violet fire inside, heavy pipes and rivets, heat haze around it, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Boss",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a giant spherical furnace core slowly rotating inside a mechanical ring, cracked dark metal shell revealing violet fire inside, heavy pipes and rivets, heat haze around it, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #E8552B. Material palette: Vỏ kim loại #3E3A44, Vành quay #6E6A72, Lửa tím GĐ1 #9B5BF2, Lửa trắng GĐ2 #FFF4E0, Mép nung đỏ #E8552B, Ống dẫn #5A5F66.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1a_battle_p2.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, the same giant spherical furnace core in its overloaded second phase: the fire inside has turned blinding white, heat fins and plates of the shell have burst open, glowing red-hot edges, sparks everywhere, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a huge imposing boss: a giant spherical furnace core slowly rotating inside a mechanical ring, cracked dark metal shell revealing violet fire inside, heavy pipes and rivets, heat haze around it. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing boss: a giant spherical furnace core slowly rotating inside a mechanical ring, cracked dark metal shell revealing violet fire inside, heavy pipes and rivets, heat haze around it, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 48x48 pixels, small fantasy monster, side view facing right, big mechanical sphere with a ring around it and violet fire in the cracks, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/warped_core.png",
+        "prompt": "Use case: precise-object-edit. Create warped_core variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #E8552B (Lửa). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  },
+  {
+    "tool": "image_gen built-in",
+    "reference": "1a_battle.png for views phases variants",
+    "metadata": {
+      "id": "soul_devourer",
+      "title": "Q18. Kẻ Nuốt Mảnh Hồn – Boss",
+      "palette": [
+        [
+          "Áo khoác rách",
+          "#1E1A26"
+        ],
+        [
+          "Da xám",
+          "#8A8696"
+        ],
+        [
+          "Vết nứt, mảnh hồn",
+          "#F2D58A"
+        ],
+        [
+          "Hư không",
+          "#0A0810"
+        ],
+        [
+          "GĐ2 lửa",
+          "#E8552B"
+        ],
+        [
+          "GĐ2 nước",
+          "#3A8DDE"
+        ],
+        [
+          "GĐ2 sét",
+          "#A65BF2"
+        ]
+      ],
+      "variants": [
+        {
+          "id": "soul_devourer",
+          "element": "Hồn",
+          "color": "#F2D58A"
+        }
+      ],
+      "scale": "Khung trận 768 px, quay sang trái. Ngoài map 48×48 px. Cao khoảng 6,0 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+      "phases": [
+        "- GĐ1: dáng người, vòng Mảnh Hồn vàng",
+        "- GĐ2 – Phân Thân (máu ≤ 66%): thân tách mảnh, vòng sáng chia 3 màu, gọi 3 Phân Thân",
+        "- GĐ3 – Nuốt Hồn (hạ hết phân thân): vết nứt nuốt nửa thân, nền tối"
+      ],
+      "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing final boss: a tall gaunt figure in a long tattered coat, once a friend of the hero, a vertical glowing crack splitting its face that acts as a mouth, a ring of stolen glowing soul shards floating behind its back like a halo, long clawed hands, dark night colors with golden soul light, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+      "category": "Boss",
+      "has_pixel": true
+    },
+    "prompts": [
+      {
+        "asset": "1a_battle.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing final boss: a tall gaunt figure in a long tattered coat, once a friend of the hero, a vertical glowing crack splitting its face that acts as a mouth, a ring of stolen glowing soul shards floating behind its back like a halo, long clawed hands, dark night colors with golden soul light, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #F2D58A. Material palette: Áo khoác rách #1E1A26, Da xám #8A8696, Vết nứt, mảnh hồn #F2D58A, Hư không #0A0810, GĐ2 lửa #E8552B, GĐ2 nước #3A8DDE, GĐ2 sét #A65BF2.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1a_battle_p2.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, the same final boss in phase two: its body splitting into fragments, the ring of soul shards behind it divided into three colors (orange fire, blue water, violet lightning), corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1a_battle_p3.png",
+        "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, the same final boss in phase three: the vertical crack has swallowed half of its body into a void, the background darkening, soul shards being sucked into the crack, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_front.png",
+        "prompt": "Same creature as the reference image: a huge imposing final boss: a tall gaunt figure in a long tattered coat, once a friend of the hero, a vertical glowing crack splitting its face that acts as a mouth, a ring of stolen glowing soul shards floating behind its back like a halo, long clawed hands, dark night colors with golden soul light. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1b_side.png",
+        "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a large imposing boss monster with a strong readable silhouette, a huge imposing final boss: a tall gaunt figure in a long tattered coat, once a friend of the hero, a vertical glowing crack splitting its face that acts as a mouth, a ring of stolen glowing soul shards floating behind its back like a halo, long clawed hands, dark night colors with golden soul light, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": false
+      },
+      {
+        "asset": "1c_pixel.png",
+        "prompt": "Pixel art game sprite, 48x48 pixels, small fantasy monster, side view facing right, tall figure in a long tattered coat with a ring of glowing shards behind its back, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+        "transparent_background": true
+      },
+      {
+        "asset": "variants/soul_devourer.png",
+        "prompt": "Use case: precise-object-edit. Create soul_devourer variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #F2D58A (Hồn). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+        "transparent_background": false,
+        "copy_base": true
+      }
+    ]
+  }
+]

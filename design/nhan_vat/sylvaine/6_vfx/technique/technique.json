@@ -1,0 +1,31 @@
+{
+ "owner": "sylvaine",
+ "skill": "technique",
+ "fps": 12,
+ "frames": 6,
+ "hit_frame": null,
+ "size": [
+  64,
+  64
+ ],
+ "colors": 5,
+ "anchors": {
+  "opener_origin": [
+   28,
+   30
+  ],
+  "opener_feet": [
+   16,
+   52
+  ],
+  "technique_feet": [
+   24,
+   52
+  ],
+  "technique_seed": [
+   32,
+   52
+  ]
+ },
+ "placed_at": "khung 64×64, điểm neo ghi trong anchors (toạ độ pixel trong khung)"
+}

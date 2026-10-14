@@ -1,0 +1,579 @@
+{
+ "asset_id": "celestine",
+ "mode": "battle",
+ "frame_size": [
+  512,
+  512
+ ],
+ "anchor": [
+  0.5,
+  0.8398
+ ],
+ "fps": 12,
+ "source": "design/nhan_vat/celestine/4_rig2d/rig_battle.py (xương 2D trên 1a_battle.png)",
+ "loop": [
+  "idle",
+  "idle_judge",
+  "victory"
+ ],
+ "hit_frame": {
+  "attack": 4,
+  "attack_judge": 4,
+  "skill": 6,
+  "skill_guard": 6,
+  "ultimate": 8
+ },
+ "frames": [
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 0
+  },
+  {
+   "action": "idle_judge",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 512
+  },
+  {
+   "action": "idle_judge",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 512
+  },
+  {
+   "action": "idle_judge",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 512
+  },
+  {
+   "action": "idle_judge",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 512
+  },
+  {
+   "action": "idle_judge",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 512
+  },
+  {
+   "action": "idle_judge",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 512
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 1024
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 1024
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 1024
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 1024
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 1024,
+   "hit": true
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 1024
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 1024
+  },
+  {
+   "action": "attack",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 1024
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 1536
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 1536
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 1536
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 1536
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 1536,
+   "hit": true
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 1536
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 1536
+  },
+  {
+   "action": "attack_judge",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 1536
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 2048,
+   "hit": true
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 8,
+   "x": 4096,
+   "y": 2048
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 9,
+   "x": 4608,
+   "y": 2048
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 2560,
+   "hit": true
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 8,
+   "x": 4096,
+   "y": 2560
+  },
+  {
+   "action": "skill_guard",
+   "dir": "",
+   "index": 9,
+   "x": 4608,
+   "y": 2560
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 8,
+   "x": 4096,
+   "y": 3072,
+   "hit": true
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 9,
+   "x": 4608,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 10,
+   "x": 5120,
+   "y": 3072
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 11,
+   "x": 5632,
+   "y": 3072
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 3584
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 3584
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 3584
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 3584
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 4096
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 4096
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 4096
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 4096
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 4096
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 4096
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 4608
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 4608
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 4608
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 4608
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 4608
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 4608
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 4608
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 4608
+  }
+ ]
+}

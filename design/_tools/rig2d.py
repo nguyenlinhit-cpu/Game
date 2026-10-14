@@ -11,6 +11,10 @@ Khai báo (dict CONFIG):
     fill_under [xương lớp trên] tô lấp cả phần lớp đó chìa ra ngoài hình (mặc định để trống), ví dụ kính trên mũ
               kéo xuống mắt thì chỗ cũ thành mũ chứ không thành lỗ.
     erase     [zone...] vùng xoá khỏi ảnh (hiệu ứng vẽ sẵn trong concept); keep: [zone...] vùng giữ lại trong đó.
+    clones    [(xương, [zone...]), ...] chép điểm ảnh trong zone thành lớp trên mới gắn vào xương (ảnh gốc giữ nguyên),
+              ví dụ thanh kiếm thứ hai cho tay kia; ẩn bằng sx/sy ≈ 0 ở tư thế không dùng.
+    strict_pockets  N: nền lọt chỉ là vùng trắng tuyệt đối (≥ 0.995) bị bao kín, rộng ≥ N px (tóc/áo trắng không bao
+              giờ trắng tới mức đó); dùng thay white_holes khi nhân vật có tóc hoặc áo trắng tinh.
     poses     {action: hàm(i, n) -> {xương: {"rot", "dx", "dy", "sx", "sy"}}}
     pose_filter  hàm(pose) -> pose (tuỳ chọn, ví dụ tách "arms" thành tay + vũ khí)
     actions, hit_frames, loops (mặc định theo 00_CHUNG.md mục 6); soft (độ mềm mép vùng, px ảnh gốc)
@@ -91,6 +95,28 @@ def cutout(a, white_holes=0):
     edge = neighbours(bg) & ~bg
     soft = np.clip((1.0 - a[..., :3].min(axis=2)) / 0.25, 0, 1)
     a[..., 3] = np.where(bg, 0.0, np.where(edge, soft, 1.0))
+    return a
+
+
+def strict_pockets(a, min_px, grow=4):
+    """Đánh dấu nền lọt cho cutout(white_holes): vùng trắng tuyệt đối (≥ 0.995) bị bao kín, loang thêm tới nét viền,
+    tô trắng tinh; mọi điểm trắng khác (≥ 0.96: tóc, áo) hạ xuống 0.95 để white_holes không khoét."""
+    a = a.copy()
+    mn = a[..., :3].min(axis=2)
+    strict = mn > 0.995
+    bg = np.zeros_like(strict)
+    bg[0, :] = bg[-1, :] = bg[:, 0] = bg[:, -1] = True
+    bg &= strict
+    while True:
+        grown = neighbours(bg) & strict
+        if (grown == bg).all():
+            break
+        bg = grown
+    pocket = _components(strict & ~bg, min_px)
+    for _ in range(grow):
+        pocket = neighbours(pocket) & (mn > 0.97) | pocket
+    a[~pocket & ~bg & (mn > 0.96), :3] = 0.95
+    a[pocket, :3] = 1.0
     return a
 
 
@@ -236,7 +262,10 @@ class Rig:
         self.bones = cfg["bones"]
         self.frame = cfg.get("frame", 512)
         self.feet = cfg.get("feet", (self.frame // 2, round(self.frame * 0.84)))
-        a = cutout(load_rgba(folder / "1_concept" / cfg.get("concept", "1a_battle.png")), cfg.get("white_holes", 0))
+        a = load_rgba(folder / "1_concept" / cfg.get("concept", "1a_battle.png"))
+        if cfg.get("strict_pockets"):
+            a = strict_pockets(a, cfg["strict_pockets"])
+        a = cutout(a, 30 if cfg.get("strict_pockets") else cfg.get("white_holes", 0))
         kill = np.zeros(a.shape[:2], bool)
         if cfg.get("erase"):
             kill |= zone_mask(a.shape[:2], cfg["erase"]) & ~zone_mask(a.shape[:2], cfg.get("keep", []))
@@ -278,12 +307,19 @@ class Rig:
         bx, by = xs.astype(np.float32), ys.astype(np.float32)
         names, Wb = bone_weights(self.bones, bx, by, cfg.get("soft", 22.0))
         ty, tx = np.nonzero(top_m)
+        tb = owner[ty, tx]
+        tcol = a[ty, tx]
+        for bone, zones in cfg.get("clones", []):  # bản sao điểm ảnh (vũ khí thứ hai…), ảnh gốc giữ nguyên
+            cy, cx = np.nonzero(zone_mask(a.shape[:2], zones) & (a[..., 3] > 0.02))
+            ty, tx = np.concatenate([ty, cy]), np.concatenate([tx, cx])
+            tb = np.concatenate([tb, np.full(len(cx), names.index(bone))])
+            tcol = np.concatenate([tcol, a[cy, cx]])
         Wt = np.zeros((len(tx), len(names)), np.float32)
-        Wt[np.arange(len(tx)), owner[ty, tx]] = 1
+        Wt[np.arange(len(tx)), tb] = 1
         self.names = names
         self.X = np.concatenate([bx, tx.astype(np.float32)])
         self.Y = np.concatenate([by, ty.astype(np.float32)])
-        self.col = np.concatenate([base[ys, xs], a[ty, tx]])   # RGBA không premultiplied
+        self.col = np.concatenate([base[ys, xs], tcol])   # RGBA không premultiplied
         self.W = np.concatenate([Wb, Wt])
         depths = np.array([self.bones[n]["depth"] for n in names], np.float32)
         self.depth = np.concatenate([Wb @ depths, 10.0 + Wt @ depths * 0.01])

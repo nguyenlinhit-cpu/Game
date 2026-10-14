@@ -14,7 +14,7 @@ Thư viện dùng chung (mỗi con chỉ khai báo, không chép lõi):
 
 | Thư viện | Việc | File khai báo của mỗi con |
 | --- | --- | --- |
-| `rig2d.py` | Sprite trận bằng xương 2D uốn ảnh 1a: cắt nền, xoá hiệu ứng vẽ sẵn (`erase`/`keep`), bóng đổ dưới chân (`shadow_below`), nền trắng lọt giữa chi tiết (`white_holes`), lớp trên trọng số cứng (tay, vũ khí) + tô lấp lớp nền, xuất sheet + JSON + GIF, `grid.png` (lưới toạ độ), `weights.png` (vùng xương). `locate()` tính vị trí một điểm ở khung bất kỳ để đặt hiệu ứng | `4_rig2d/rig_battle.py`: xương, tư thế từng Action |
+| `rig2d.py` | Sprite trận bằng xương 2D uốn ảnh 1a: cắt nền, xoá hiệu ứng vẽ sẵn (`erase`/`keep`), bóng đổ dưới chân (`shadow_below`), nền trắng lọt giữa chi tiết (`white_holes`; `strict_pockets` khi tóc/áo trắng tinh), tô lấp chỗ lớp trên chìa ra (`fill_under`), bản sao vũ khí cho tay kia (`clones`), lớp trên trọng số cứng (tay, vũ khí) + tô lấp lớp nền, xuất sheet + JSON + GIF, `grid.png` (lưới toạ độ), `weights.png` (vùng xương). `locate()` tính vị trí một điểm ở khung bất kỳ để đặt hiệu ứng | `4_rig2d/rig_battle.py`: xương, tư thế từng Action |
 | `pixel2d.py` | Sprite pixel map từ lưới ký tự: dời nhóm pixel, nghiêng, nhấc phần phụ, nhắm mắt, vệt gió | `4_rig2d/map_base.txt` + `pixel_map.py`: bảng màu, màu mắt/da |
 | `vfx2d.py` | Hiệu ứng 2D: hình vẽ (giọt, vòng, tia, sao 4/5 cánh, mây, mưa, mũi tên, đa giác…), bảng màu nguyên tố (`set_palette`), cắt cảnh, xuất cast/hit/screen + pixel map + GIF ghép với sprite | `6_vfx/make_<id>_vfx.py`: hàm vẽ từng khung của mỗi skill |
 

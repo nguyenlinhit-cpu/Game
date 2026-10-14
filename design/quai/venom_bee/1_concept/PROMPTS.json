@@ -1,0 +1,109 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for views phases variants",
+  "metadata": {
+    "id": "venom_bee",
+    "title": "Q07. Ong Độc – Thường",
+    "palette": [
+      [
+        "Sọc thân",
+        "#2A2620"
+      ],
+      [
+        "Thân (màu biến thể)",
+        "#9BC53D"
+      ],
+      [
+        "Cánh",
+        "#E6F2F2"
+      ],
+      [
+        "Mắt",
+        "#5A3A66"
+      ],
+      [
+        "Nọc",
+        "#C9F27A"
+      ]
+    ],
+    "variants": [
+      {
+        "id": "venom_bee_poison",
+        "element": "Độc",
+        "color": "#9BC53D"
+      },
+      {
+        "id": "venom_bee_poison_drone",
+        "element": "Độc (ong thợ, nhỏ hơn 30%)",
+        "color": "#9BC53D"
+      },
+      {
+        "id": "venom_bee_wind",
+        "element": "Phong",
+        "color": "#4FD1B5"
+      },
+      {
+        "id": "venom_bee_wind_drone",
+        "element": "Phong (ong thợ, nhỏ hơn 30%)",
+        "color": "#4FD1B5"
+      }
+    ],
+    "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 0,8 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+    "phases": [],
+    "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes; the worker bee drone version is 30 percent smaller, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+    "category": "Thường",
+    "has_pixel": true
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #9BC53D. Material palette: Sọc thân #2A2620, Thân (màu biến thể) #9BC53D, Cánh #E6F2F2, Mắt #5A3A66, Nọc #C9F27A.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Same creature as the reference image: a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_side.png",
+      "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a cat-sized venomous bee with four translucent wings, a fuzzy segmented striped body, a dripping stinger, big shiny compound eyes; the worker bee drone version is 30 percent smaller, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_pixel.png",
+      "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, fat bee with four translucent wings and a dripping stinger, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": true
+    },
+    {
+      "asset": "variants/venom_bee_poison.png",
+      "prompt": "Use case: precise-object-edit. Create venom_bee_poison variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": true
+    },
+    {
+      "asset": "variants/venom_bee_poison_drone.png",
+      "prompt": "Use case: precise-object-edit. Create venom_bee_poison_drone variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #9BC53D (Độc (ong thợ, nhỏ hơn 30%)). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark. Worker drone: physically 30 percent smaller than parent on SAME size canvas; four wings stinger fuzzy striped body unchanged. Do not show parent.",
+      "transparent_background": false,
+      "copy_base": false
+    },
+    {
+      "asset": "variants/venom_bee_wind.png",
+      "prompt": "Use case: precise-object-edit. Create venom_bee_wind variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": false
+    },
+    {
+      "asset": "variants/venom_bee_wind_drone.png",
+      "prompt": "Use case: precise-object-edit. Create venom_bee_wind_drone variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong (ong thợ, nhỏ hơn 30%)). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark. Worker drone: physically 30 percent smaller than parent on SAME size canvas; four wings stinger fuzzy striped body unchanged. Do not show parent.",
+      "transparent_background": false,
+      "copy_base": false
+    }
+  ],
+  "revisions": [
+    {
+      "asset": "1b_side.png",
+      "prompt": "Redraw this exact monster as a TRUE 90-degree orthographic LEFT SIDE PROFILE turnaround. Camera is exactly perpendicular to the creature's side. Change its pose and orientation substantially from the reference. Show ONLY its LEFT side; the front/chest/face must NOT face the viewer. One visible eye (if eyes), overlapping far limbs, nose/muzzle pointing horizontally LEFT, chest in profile. Lower weapons into resting position. For winged creatures only one side wing silhouette, wings partially folded. For the mechanical furnace arm show a horizontal arm in exact side elevation, wall edge-on at RIGHT. For the flying book show narrow thickness/spine in side profile with one folded wing, do NOT show the broad front cover. Keep same identity, anatomy, costume details and colors. Single full body with all appendages visible, plain white background, crisp cel-shaded game concept, no text, no duplicate or sheet."
+    }
+  ]
+}

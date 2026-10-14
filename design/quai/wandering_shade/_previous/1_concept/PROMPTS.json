@@ -1,0 +1,99 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for views phases variants",
+  "metadata": {
+    "id": "wandering_shade",
+    "title": "Q02. Hồn Ảnh Lang Thang – Thường",
+    "palette": [
+      [
+        "Áo choàng rách",
+        "#5B5F7A"
+      ],
+      [
+        "Thân hồn trong suốt",
+        "#C9D6E8"
+      ],
+      [
+        "Mắt, tay phát sáng (màu biến thể)",
+        "#4FD1B5"
+      ],
+      [
+        "Viền tối",
+        "#2B2D3A"
+      ]
+    ],
+    "variants": [
+      {
+        "id": "wandering_shade",
+        "element": "Hồn",
+        "color": "#F2D58A"
+      },
+      {
+        "id": "wandering_shade_wind",
+        "element": "Phong",
+        "color": "#4FD1B5"
+      },
+      {
+        "id": "wandering_shade_water",
+        "element": "Nước",
+        "color": "#3A8DDE"
+      },
+      {
+        "id": "wandering_shade_soul",
+        "element": "Hồn",
+        "color": "#F2D58A"
+      }
+    ],
+    "scale": "Khung trận 256 px, quay sang trái. Ngoài map 32×32 px. Cao khoảng 1,8 m so với nhân vật phe ta 2,0 m (để đặt tỉ lệ trong khung).",
+    "phases": [],
+    "identity": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood, corrupted by a magical rift: glowing cracks and small floating crystal shards. ",
+    "category": "Thường",
+    "has_pixel": true
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Cute-but-creepy chibi fantasy monster for a turn-based RPG, a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood, corrupted by a magical rift: glowing cracks and small floating crystal shards. Three-quarter view facing left. Clean cel shading with two tones, colored dark lineart, bright readable colors, plain white background, single creature, no text. Accent glow #F2D58A. Material palette: Áo choàng rách #5B5F7A, Thân hồn trong suốt #C9D6E8, Mắt, tay phát sáng (màu biến thể) #4FD1B5, Viền tối #2B2D3A.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Same creature as the reference image: a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood. Neutral standing pose, full body, front view, even flat lighting, no cast shadows, plain white background, clean readable shapes, individual pose reference.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_side.png",
+      "prompt": "Same creature as the reference image, full body side view, neutral pose, even flat lighting, plain white background, individual pose reference. Side profile FACING LEFT. Identity: Cute-but-creepy chibi fantasy monster for a turn-based RPG, a half-transparent wandering ghost wrapped in a tattered hooded cloak, no legs but a pointed wispy tail, two long thin arms with glowing hands, hollow glowing eyes under the hood, corrupted by a magical rift: glowing cracks and small floating crystal shards. \nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_pixel.png",
+      "prompt": "Pixel art game sprite, 32x32 pixels, small fantasy monster, side view facing right, ghost in a tattered hood, pointed wispy tail, long thin arms, glowing rift cracks, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nONE individual creature ONLY centered, full body all appendages and props visible with generous margins. Never a reference sheet, collage, inset, multiple angles or duplicate poses. Compact chibi cel-shaded game design. No text or watermark.",
+      "transparent_background": true
+    },
+    {
+      "asset": "variants/wandering_shade.png",
+      "prompt": "Use case: precise-object-edit. Create wandering_shade variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #F2D58A (Hồn). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": true
+    },
+    {
+      "asset": "variants/wandering_shade_wind.png",
+      "prompt": "Use case: precise-object-edit. Create wandering_shade_wind variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #4FD1B5 (Phong). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": false
+    },
+    {
+      "asset": "variants/wandering_shade_water.png",
+      "prompt": "Use case: precise-object-edit. Create wandering_shade_water variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #3A8DDE (Nước). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": false
+    },
+    {
+      "asset": "variants/wandering_shade_soul.png",
+      "prompt": "Use case: precise-object-edit. Create wandering_shade_soul variant of EXACTLY the same creature. Preserve all anatomy silhouette pose materials props markings. Change ONLY elemental accent/glow to #F2D58A (Hồn). Keep non-element colors unchanged. ONE creature three-quarter facing LEFT on white, fully visible same generous margins. No sheet extra views duplicates text or watermark.",
+      "transparent_background": false,
+      "copy_base": true
+    }
+  ]
+}

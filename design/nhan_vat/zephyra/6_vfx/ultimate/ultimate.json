@@ -1,0 +1,197 @@
+{
+ "owner": "zephyra",
+ "skill": "ultimate",
+ "fps": 12,
+ "frames": 12,
+ "hit_frame": 8,
+ "element_color": "#4FD1B5",
+ "anchors": {
+  "feet": [
+   256,
+   430
+  ],
+  "head": [
+   267,
+   212
+  ],
+  "eye": [
+   279,
+   224
+  ],
+  "chest": [
+   279,
+   278
+  ],
+  "target_center": [
+   256,
+   270
+  ],
+  "fan_center_per_frame": {
+   "attack": [
+    [
+     417,
+     227
+    ],
+    [
+     396,
+     222
+    ],
+    [
+     374,
+     209
+    ],
+    [
+     432,
+     257
+    ],
+    [
+     435,
+     268
+    ],
+    [
+     427,
+     242
+    ],
+    [
+     413,
+     219
+    ],
+    [
+     419,
+     229
+    ]
+   ],
+   "skill": [
+    [
+     417,
+     224
+    ],
+    [
+     317,
+     224
+    ],
+    [
+     133,
+     224
+    ],
+    [
+     317,
+     224
+    ],
+    [
+     417,
+     225
+    ],
+    [
+     418,
+     216
+    ],
+    [
+     419,
+     213
+    ],
+    [
+     430,
+     247
+    ],
+    [
+     431,
+     282
+    ],
+    [
+     426,
+     258
+    ]
+   ],
+   "ultimate": [
+    [
+     417,
+     227
+    ],
+    [
+     409,
+     200
+    ],
+    [
+     399,
+     175
+    ],
+    [
+     415,
+     180
+    ],
+    [
+     424,
+     190
+    ],
+    [
+     404,
+     127
+    ],
+    [
+     413,
+     129
+    ],
+    [
+     423,
+     133
+    ],
+    [
+     425,
+     140
+    ],
+    [
+     427,
+     147
+    ],
+    [
+     417,
+     235
+    ],
+    [
+     417,
+     231
+    ]
+   ]
+  }
+ },
+ "layers": {
+  "cast": {
+   "start_frame": 0,
+   "frames": 12,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "người dùng (khung trùng khung sprite trận, chân ở anchor)"
+  },
+  "hit": {
+   "start_frame": 8,
+   "frames": 8,
+   "size": [
+    512,
+    512
+   ],
+   "placed_at": "mục tiêu (khung trùng khung sprite mục tiêu)"
+  },
+  "screen": {
+   "start_frame": 6,
+   "frames": 12,
+   "size": [
+    1024,
+    576
+   ],
+   "placed_at": "giữa màn hình"
+  }
+ },
+ "cutin": {
+  "frames": 10,
+  "size": [
+   1920,
+   540
+  ],
+  "seconds": 0.8,
+  "source": "1_concept/1e_splash.png",
+  "plays": "trước khung 0 của ultimate"
+ }
+}
