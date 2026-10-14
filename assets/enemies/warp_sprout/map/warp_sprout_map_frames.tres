@@ -1,0 +1,87 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/enemies/warp_sprout/map/map_warp_sprout.png" id="1_i013c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7tq5"]
+atlas = ExtResource("1_i013c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1p7n"]
+atlas = ExtResource("1_i013c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uto4"]
+atlas = ExtResource("1_i013c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iah8n"]
+atlas = ExtResource("1_i013c")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l32io"]
+atlas = ExtResource("1_i013c")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nmxa"]
+atlas = ExtResource("1_i013c")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt8ly"]
+atlas = ExtResource("1_i013c")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps4ci"]
+atlas = ExtResource("1_i013c")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_206ke"]
+atlas = ExtResource("1_i013c")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wujvp"]
+atlas = ExtResource("1_i013c")
+region = Rect2(160, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7tq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1p7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uto4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iah8n")
+}],
+"loop": 1,
+"name": &"idle_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l32io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nmxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt8ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps4ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_206ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wujvp")
+}],
+"loop": 1,
+"name": &"run_e",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.9688)

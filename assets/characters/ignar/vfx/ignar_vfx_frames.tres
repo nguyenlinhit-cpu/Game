@@ -1,0 +1,244 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack_00.png" id="1_slkgo"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack_01.png" id="2_e4bw0"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack_02.png" id="3_5127y"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack_03.png" id="4_spinr"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack_04.png" id="5_pppng"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack_05.png" id="6_xf5ah"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_00.png" id="7_lhrwg"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_01.png" id="8_v6im4"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_02.png" id="9_goeiy"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_03.png" id="10_ipak3"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_04.png" id="11_rfhxr"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_05.png" id="12_fs8hr"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_06.png" id="13_1cdps"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_attack-cast_07.png" id="14_ye8ub"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_00.png" id="15_2xm5x"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_01.png" id="16_71gaf"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_02.png" id="17_ecwuk"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_03.png" id="18_g372f"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_04.png" id="19_2h66n"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_05.png" id="20_dkadi"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_06.png" id="21_fmik0"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill_07.png" id="22_vcgwb"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_00.png" id="23_3jb58"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_01.png" id="24_ignom"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_02.png" id="25_volh5"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_03.png" id="26_fvdpx"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_04.png" id="27_bdnc6"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_05.png" id="28_qonns"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_06.png" id="29_cxoqm"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_07.png" id="30_wurxt"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_08.png" id="31_w5tem"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_skill-cast_09.png" id="32_f4708"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_00.png" id="33_mobuh"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_01.png" id="34_2bv0v"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_02.png" id="35_nivu3"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_03.png" id="36_w0ysa"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_04.png" id="37_qdlky"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_05.png" id="38_3ukbn"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_06.png" id="39_cqs05"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate_07.png" id="40_agqqe"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_00.png" id="41_51ux4"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_01.png" id="42_jdqf0"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_02.png" id="43_ya53g"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_03.png" id="44_otb87"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_04.png" id="45_gf1v3"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_05.png" id="46_muli5"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_06.png" id="47_425gw"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_07.png" id="48_ksdyf"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_08.png" id="49_rv8gq"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_09.png" id="50_j2fta"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_10.png" id="51_7nkfk"]
+[ext_resource type="Texture2D" path="res://assets/characters/ignar/vfx/vfx_ignar_ultimate-cast_11.png" id="52_lev8q"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_slkgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e4bw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5127y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_spinr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pppng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xf5ah")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lhrwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v6im4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_goeiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ipak3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rfhxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fs8hr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1cdps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ye8ub")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_2xm5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_71gaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ecwuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g372f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2h66n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dkadi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fmik0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vcgwb")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_3jb58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ignom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_volh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fvdpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_bdnc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qonns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_cxoqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_wurxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_w5tem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_f4708")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_mobuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_2bv0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_nivu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_w0ysa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_qdlky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_3ukbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_cqs05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_agqqe")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_51ux4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_jdqf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ya53g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_otb87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_gf1v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_muli5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_425gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ksdyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_rv8gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_j2fta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_7nkfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_lev8q")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)

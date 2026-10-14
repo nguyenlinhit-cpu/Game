@@ -7,9 +7,19 @@
  ],
  "anchor": [
   0.5,
-  0.8386
+  0.8398
  ],
- "fps": 10,
+ "fps": 12,
+ "source": "design/nhan_vat/mira/4_rig2d/rig_battle.py (xương 2D trên 1a_battle.png)",
+ "loop": [
+  "idle",
+  "victory"
+ ],
+ "hit_frame": {
+  "attack": 4,
+  "skill": 6,
+  "ultimate": 8
+ },
  "frames": [
   {
    "action": "idle",
@@ -86,7 +96,8 @@
    "dir": "",
    "index": 4,
    "x": 2048,
-   "y": 512
+   "y": 512,
+   "hit": true
   },
   {
    "action": "attack",
@@ -108,7 +119,288 @@
    "index": 7,
    "x": 3584,
    "y": 512
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 1024,
+   "hit": true
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 8,
+   "x": 4096,
+   "y": 1024
+  },
+  {
+   "action": "skill",
+   "dir": "",
+   "index": 9,
+   "x": 4608,
+   "y": 1024
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 8,
+   "x": 4096,
+   "y": 1536,
+   "hit": true
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 9,
+   "x": 4608,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 10,
+   "x": 5120,
+   "y": 1536
+  },
+  {
+   "action": "ultimate",
+   "dir": "",
+   "index": 11,
+   "x": 5632,
+   "y": 1536
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 2048
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 2048
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 2048
+  },
+  {
+   "action": "hit",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 2048
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 2560
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 2560
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 2560
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 2560
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 2560
+  },
+  {
+   "action": "down",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 2560
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 0,
+   "x": 0,
+   "y": 3072
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 1,
+   "x": 512,
+   "y": 3072
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 2,
+   "x": 1024,
+   "y": 3072
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 3,
+   "x": 1536,
+   "y": 3072
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 4,
+   "x": 2048,
+   "y": 3072
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 5,
+   "x": 2560,
+   "y": 3072
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 6,
+   "x": 3072,
+   "y": 3072
+  },
+  {
+   "action": "victory",
+   "dir": "",
+   "index": 7,
+   "x": 3584,
+   "y": 3072
   }
- ],
- "source": "sample_character.blend"
+ ]
 }

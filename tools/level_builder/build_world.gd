@@ -23,6 +23,12 @@ const TRIGGER_SCRIPT: String = "res://scenes/overworld/interactables/story_trigg
 const ITEM_SCRIPT: String = "res://scenes/overworld/interactables/story_item.gd"
 const GATE_SCRIPT: String = "res://scenes/overworld/interactables/story_gate.gd"
 const TUTORIAL_ENCOUNTER: String = "res://data/encounters/prologue_tutorial.tres"
+const HUB_PLAZA_BACKDROP: String = "res://assets/maps/hub/hub_plaza.jpg"
+const HUB_CRYSTAL_BACKDROP: String = "res://assets/maps/hub/hub_crystal.jpg"
+const HUB_RUNES_BACKDROP: String = "res://assets/maps/hub/hub_runes.jpg"
+const HUB_GARDEN_BACKDROP: String = "res://assets/maps/hub/hub_garden.jpg"
+## Đoạn hành lang Bắc–Nam lặp được theo chiều dọc.
+const HUB_CORRIDOR_NS: String = "res://assets/maps/hub/hub_corridor_ns.jpg"
 
 const T := Room.RoomType
 const K := ElementalObstacle.Kind
@@ -145,26 +151,63 @@ var LAYOUTS: Dictionary = {
 	&"hub": {
 		"start": &"H04",
 		"rooms": [
-			{"id": &"H01", "cell": Vector2i(0, 0), "type": T.HALL, "size": Vector2i(31, 23), "rest_tile": Vector2i(0, 1),
+			# Quảng trường vẽ sẵn (1280×690, phóng ×2): tường phòng khớp mép sân đá, 4 bồn hoa là tường ẩn.
+			{"id": &"H01", "cell": Vector2i(0, 0), "type": T.HALL, "size": Vector2i(31, 15), "rest_tile": Vector2i(0, 0),
+				"backdrop": HUB_PLAZA_BACKDROP, "backdrop_scale": 2.0, "backdrop_offset": Vector2(0, -10),
+				"walls": _rect_cells(Vector2i(-10, -5), Vector2i(-5, -4)) + _rect_cells(Vector2i(5, -5), Vector2i(10, -4))
+					+ _rect_cells(Vector2i(-10, 3), Vector2i(-5, 4)) + _rect_cells(Vector2i(5, 3), Vector2i(10, 4))
+					# Lan can phía Nam (chừa cầu thang), thùng gỗ ở các góc.
+					+ _rect_cells(Vector2i(-14, 6), Vector2i(-2, 6)) + _rect_cells(Vector2i(2, 6), Vector2i(14, 6))
+					+ _rect_cells(Vector2i(-14, -6), Vector2i(-13, -6)) + _rect_cells(Vector2i(13, -6), Vector2i(14, -6))
+					+ _rect_cells(Vector2i(-14, 3), Vector2i(-14, 5)),
 				"npcs": [
-					{"id": &"orwen", "name": "NpcOrwen", "tile": Vector2i(0, -6)},
-					{"id": &"lio", "name": "NpcLio", "tile": Vector2i(-6, -7)},
-					{"id": &"bram", "name": "NpcBram", "tile": Vector2i(9, 6)},
+					{"id": &"orwen", "name": "NpcOrwen", "tile": Vector2i(0, -5)},
+					{"id": &"lio", "name": "NpcLio", "tile": Vector2i(-6, -6)},
+					{"id": &"bram", "name": "NpcBram", "tile": Vector2i(9, 5)},
 				],
 				"stations": [
 					{"kind": Station.Kind.GACHA, "name": "StationGacha", "tile": Vector2i(-10, -2)},
-					{"kind": Station.Kind.QUESTS, "name": "StationQuests", "tile": Vector2i(-10, 4)},
+					{"kind": Station.Kind.QUESTS, "name": "StationQuests", "tile": Vector2i(-12, 4)},
 					{"kind": Station.Kind.UPGRADE, "name": "StationUpgrade", "tile": Vector2i(10, -2)},
 					{"kind": Station.Kind.TEAM, "name": "StationTeam", "tile": Vector2i(6, -6)},
-					{"kind": Station.Kind.SHOP, "name": "StationShop", "tile": Vector2i(12, 6)},
+					{"kind": Station.Kind.SHOP, "name": "StationShop", "tile": Vector2i(12, 5)},
 				]},
-			{"id": &"H02", "cell": Vector2i(1, 0), "type": T.COMBAT, "size": Vector2i(23, 17), "tutorial": true,
+			# Sân pha lê: tàn tường, trụ đèn, cụm pha lê là tường ẩn (khung theo pixel ảnh gốc).
+			{"id": &"H02", "cell": Vector2i(1, 0), "type": T.COMBAT, "size": Vector2i(31, 15), "tutorial": true,
+				"tutorial_tile": Vector2i(6, 0),
+				"backdrop": HUB_CRYSTAL_BACKDROP, "backdrop_scale": 2.0, "backdrop_offset": Vector2(0, -10),
+				"image_blocks": [[165, 95, 225, 180], [205, 280, 260, 360], [155, 425, 215, 510], [1055, 95, 1115, 180],
+					[1015, 280, 1070, 360], [1065, 425, 1120, 510],
+					[320, 170, 370, 230], [345, 210, 395, 270], [370, 250, 415, 310], [375, 140, 450, 200],
+					[915, 170, 965, 230], [890, 210, 940, 270], [860, 250, 915, 310], [850, 150, 900, 200],
+					[490, 40, 600, 200], [680, 50, 790, 200],
+					[455, 160, 495, 230], [785, 160, 825, 230], [455, 395, 495, 460], [785, 395, 825, 460],
+					[375, 345, 415, 390], [345, 380, 395, 430], [315, 420, 520, 490],
+					[865, 345, 905, 390], [885, 380, 935, 430], [760, 420, 965, 490],
+					[520, 450, 600, 540], [690, 450, 860, 540], [595, 270, 685, 410],
+					[150, 515, 590, 560], [690, 515, 1130, 560]],
 				"trigger": &"hub_training", "trigger_tile": Vector2i(-7, 0), "trigger_size": Vector2i(3, 9)},
-			{"id": &"H03", "cell": Vector2i(-1, 0), "type": T.HALL,
-				"stations": [{"kind": Station.Kind.GATE, "name": "StationGate", "tile": Vector2i(0, -1)}]},
-			{"id": &"H04", "cell": Vector2i(0, 1), "type": T.HALL, "spawn": true},
+			# Sân cổ ngữ: 4 khối tường đổ, thùng gỗ, lan can phía Nam.
+			{"id": &"H03", "cell": Vector2i(-1, 0), "type": T.HALL, "size": Vector2i(31, 15),
+				"backdrop": HUB_RUNES_BACKDROP, "backdrop_scale": 2.0, "backdrop_offset": Vector2(0, -10),
+				"image_blocks": [[310, 195, 565, 300], [715, 195, 965, 300], [565, 225, 600, 300], [680, 225, 715, 300],
+					[480, 295, 530, 335], [315, 390, 565, 490], [715, 390, 965, 490], [1060, 95, 1135, 170],
+					[115, 450, 205, 520], [150, 515, 590, 560], [690, 515, 1130, 560]],
+				"stations": [{"kind": Station.Kind.GATE, "name": "StationGate", "tile": Vector2i(0, 0)}]},
+			# Vườn hoa có vòng pháp trận: thùng gỗ, trụ cờ, lan can phía Nam.
+			{"id": &"H04", "cell": Vector2i(0, 1), "type": T.HALL, "size": Vector2i(21, 15), "spawn": true,
+				"backdrop": HUB_GARDEN_BACKDROP, "backdrop_scale": 2.0, "backdrop_offset": Vector2(0, -10),
+				"image_blocks": [[345, 155, 455, 225], [850, 155, 945, 225], [320, 430, 385, 490], [870, 430, 950, 490],
+					[455, 400, 495, 480], [785, 400, 825, 480], [420, 520, 590, 560], [690, 520, 860, 560],
+					[300, 490, 430, 545], [850, 490, 980, 545]]},
 		],
 		"edges": [[&"H01", &"H02"], [&"H01", &"H03"], [&"H01", &"H04"]],
+		# Hành lang vẽ sẵn thay ô tạm. Đông–Tây không cần: ảnh hai phòng kề nhau đã nối cầu gỗ.
+		"hide_corridor_tiles": true,
+		"corridor_art": [
+			# H01 ↔ H04: lấp khoảng giữa mép dưới ảnh H01 (y 712) và mép trên ảnh H04 (y 1892).
+			{"texture": HUB_CORRIDOR_NS, "center": Vector2(17, 1302), "size": Vector2(520, 1180)},
+		],
 	},
 }
 
@@ -202,6 +245,18 @@ func _build_map(zone: StringName, layout: Dictionary) -> bool:
 	corridors.tile_set = _tile_set
 	corridors.modulate = ZONE_TINTS.get(zone, Color.WHITE)
 	_own(root, root, corridors, true)
+	# Ẩn ô hành lang chỉ tắt phần vẽ, tường hành lang vẫn chặn.
+	corridors.visible = not layout.get("hide_corridor_tiles", false)
+	for i in (layout.get("corridor_art", []) as Array).size():
+		var art: Dictionary = layout["corridor_art"][i]
+		var sprite := Sprite2D.new()
+		sprite.name = "CorridorArt%d" % (i + 1)
+		sprite.texture = load(art["texture"])
+		sprite.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+		sprite.region_enabled = true
+		sprite.region_rect = Rect2(Vector2.ZERO, art["size"])
+		sprite.position = art["center"]
+		_own(root, root, sprite)
 	var rooms_root := Node2D.new()
 	rooms_root.name = "Rooms"
 	_own(root, root, rooms_root, true)
@@ -290,6 +345,14 @@ func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictio
 	var niche_south := not (int(def["doors"]) & S)
 	if type == T.PUZZLE:
 		extra_walls = _niche_walls(half, niche_south)
+	for cell: Vector2i in def.get("walls", []):
+		extra_walls.append(cell)
+	if def.has("backdrop"):
+		var backdrop := load(def["backdrop"]) as Texture2D
+		root.set("backdrop", backdrop)
+		root.set("backdrop_scale", def.get("backdrop_scale", 1.0))
+		root.set("backdrop_offset", def.get("backdrop_offset", Vector2.ZERO))
+		extra_walls.append_array(_image_block_cells(def, half, backdrop.get_size()))
 	var floor_layer := _layer(map_root, root, "Floor", zone)
 	var wall_layer := _layer(map_root, root, "Walls", zone)
 	for y in range(-half.y, half.y + 1):
@@ -318,7 +381,7 @@ func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictio
 		if encounter.kind == EncounterData.Kind.NORMAL:
 			enemy.set("patrol_points", PackedVector2Array([Vector2(-160, 0), Vector2(160, 0)]))
 	if def.get("tutorial", false):
-		var enemy := _instance(map_root, entities, ENEMY_SCENE, "TutorialEnemy", slots[0])
+		var enemy := _instance(map_root, entities, ENEMY_SCENE, "TutorialEnemy", def.get("tutorial_tile", slots[0]))
 		enemy.set("encounter", load(TUTORIAL_ENCOUNTER))
 		_gate(map_root, enemy, ["prologue_awake"], ["prologue_done"])
 
@@ -352,6 +415,30 @@ func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictio
 
 	_add_story_entities(map_root, entities, def, size)
 	return root as Room
+
+
+## Ô bên trong phòng có tâm nằm trong một khung "image_blocks" [x0, y0, x1, y1] (pixel ảnh nền gốc).
+func _image_block_cells(def: Dictionary, half: Vector2i, image_size: Vector2) -> Array[Vector2i]:
+	var cells: Array[Vector2i] = []
+	var scale: float = def.get("backdrop_scale", 1.0)
+	var offset: Vector2 = def.get("backdrop_offset", Vector2.ZERO)
+	for y in range(-half.y + 1, half.y):
+		for x in range(-half.x + 1, half.x):
+			var pixel := (Vector2(x, y) * Room.TILE_SIZE - offset) / scale + image_size * 0.5
+			for block: Array in def.get("image_blocks", []):
+				if pixel.x >= block[0] and pixel.y >= block[1] and pixel.x <= block[2] and pixel.y <= block[3]:
+					cells.append(Vector2i(x, y))
+					break
+	return cells
+
+
+## Mọi ô trong khung chữ nhật [from, to] (tính cả hai đầu).
+static func _rect_cells(from: Vector2i, to: Vector2i) -> Array[Vector2i]:
+	var cells: Array[Vector2i] = []
+	for y in range(from.y, to.y + 1):
+		for x in range(from.x, to.x + 1):
+			cells.append(Vector2i(x, y))
+	return cells
 
 
 ## Tường hốc giải đố dọc cạnh Nam (hoặc Bắc nếu cửa ở phía Nam): mỗi hốc rộng 2 ô, sâu 2 ô.

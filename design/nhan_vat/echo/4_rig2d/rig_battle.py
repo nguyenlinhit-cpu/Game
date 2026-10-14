@@ -1,0 +1,65 @@
+"""2D source-coordinate rig; edit pivots using grid.png and weights.png. Review v1."""
+from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[3]/"_tools"))
+from rig2d import run
+from character_motion import poses_for, run_echo
+
+CONFIG = {'id': 'echo',
+ 'bones': {'root': {'parent': None, 'pivot': (950, 1000), 'zone': [], 'prio': 0.02, 'depth': 0},
+           'leg_l': {'parent': 'root',
+                     'pivot': (900, 800),
+                     'zone': [(900, 800, 865, 935, 50)],
+                     'prio': 1.5,
+                     'depth': 1},
+           'leg_r': {'parent': 'root',
+                     'pivot': (1020, 800),
+                     'zone': [(1020, 800, 1040, 950, 50)],
+                     'prio': 1.5,
+                     'depth': 1},
+           'hips': {'parent': 'root',
+                    'pivot': (960, 650),
+                    'zone': [(890, 650, 1030, 650, 75)],
+                    'prio': 1.5,
+                    'depth': 1.2},
+           'chest': {'parent': 'hips',
+                     'pivot': (970, 560),
+                     'zone': [(970, 460, 970, 520, 90)],
+                     'prio': 1.5,
+                     'depth': 2},
+           'head': {'parent': 'chest',
+                    'pivot': (950, 371.0),
+                    'zone': [(950, 137.0, 950, 283.25, 146.25)],
+                    'prio': 2,
+                    'depth': 3},
+           'arm_l': {'parent': 'chest',
+                     'pivot': (855, 465),
+                     'zone': [(855, 465, 820, 580, 45)],
+                     'prio': 2,
+                     'depth': 3.5},
+           'arm_r': {'parent': 'chest',
+                     'pivot': (1065, 435),
+                     'zone': [(1065, 435, 1090, 400, 45)],
+                     'prio': 2,
+                     'depth': 3.5},
+           'weapon': {'parent': 'arm_r', 'pivot': (1100, 405), 'zone': [], 'prio': 0, 'depth': 10},
+           'hair1': {'parent': 'head',
+                     'pivot': (760, 350),
+                     'zone': [(705, 470, 630, 550, 85)],
+                     'prio': 2.2,
+                     'depth': 3.2},
+           'hair2': {'parent': 'hair1',
+                     'pivot': (630, 550),
+                     'zone': [(565, 650, 475, 680, 70)],
+                     'prio': 2.2,
+                     'depth': 3.2}},
+ 'top': [('weapon', [(1110, 275, 1135, 210, 75), (1100, 355, 1105, 405, 24)])],
+ 'char_h': 300,
+ 'foot_x': 850,
+ 'strict_pockets': 350,
+ 'shadow_below': 975,
+ 'concept': '1a_clean.png'}
+CONFIG["poses"] = poses_for('mirror', ['hair1', 'hair2'])
+
+if __name__ == "__main__":
+    run_echo(CONFIG)

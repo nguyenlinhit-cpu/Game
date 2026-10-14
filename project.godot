@@ -35,6 +35,10 @@ window/size/window_height_override=900
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-mcp/plugin.cfg")
+
 [gui]
 
 theme/custom="res://assets/ui/main_theme.tres"
@@ -177,12 +181,7 @@ locale/fallback="vi"
 
 [rendering]
 
-textures/vram_compression/import_etc2_astc=true
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.03, 0.03, 0.07, 1)
-
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot-mcp/plugin.cfg")

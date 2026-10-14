@@ -1,0 +1,191 @@
+{
+ "asset_id": "garren",
+ "mode": "map",
+ "frame_size": [
+  32,
+  32
+ ],
+ "anchor": [
+  0.5,
+  0.9688
+ ],
+ "fps": 12,
+ "source": "design/nhan_vat/garren/4_rig2d/pixel_map.py (map_base.txt vẽ tay theo 1d_pixel.png)",
+ "loop": [
+  "idle",
+  "run"
+ ],
+ "hit_frame": {
+  "opener": 2
+ },
+ "frames": [
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 0
+  },
+  {
+   "action": "idle",
+   "dir": "e",
+   "index": 3,
+   "x": 96,
+   "y": 0
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 3,
+   "x": 96,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 4,
+   "x": 128,
+   "y": 32
+  },
+  {
+   "action": "run",
+   "dir": "e",
+   "index": 5,
+   "x": 160,
+   "y": 32
+  },
+  {
+   "action": "dash",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 64
+  },
+  {
+   "action": "dash",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 64
+  },
+  {
+   "action": "dash",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 64
+  },
+  {
+   "action": "opener",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 96
+  },
+  {
+   "action": "opener",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 96
+  },
+  {
+   "action": "opener",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 96
+  },
+  {
+   "action": "opener",
+   "dir": "e",
+   "index": 3,
+   "x": 96,
+   "y": 96
+  },
+  {
+   "action": "opener",
+   "dir": "e",
+   "index": 4,
+   "x": 128,
+   "y": 96
+  },
+  {
+   "action": "technique",
+   "dir": "e",
+   "index": 0,
+   "x": 0,
+   "y": 128
+  },
+  {
+   "action": "technique",
+   "dir": "e",
+   "index": 1,
+   "x": 32,
+   "y": 128
+  },
+  {
+   "action": "technique",
+   "dir": "e",
+   "index": 2,
+   "x": 64,
+   "y": 128
+  },
+  {
+   "action": "technique",
+   "dir": "e",
+   "index": 3,
+   "x": 96,
+   "y": 128
+  },
+  {
+   "action": "technique",
+   "dir": "e",
+   "index": 4,
+   "x": 128,
+   "y": 128
+  },
+  {
+   "action": "technique",
+   "dir": "e",
+   "index": 5,
+   "x": 160,
+   "y": 128
+  }
+ ]
+}

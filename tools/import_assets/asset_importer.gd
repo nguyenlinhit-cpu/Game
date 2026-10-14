@@ -69,7 +69,8 @@ func _import_character(asset_id: String) -> void:
 	var directions: Array = _req["directions"]
 	_import_mode(base, asset_id, "map", spec["map"], directions, label)
 	_import_mode(base, asset_id, "battle", spec["battle"], [], label)
-	var vfx_spec := {"actions": spec["vfx"]["skills"], "loop": [], "frame_size": spec["vfx"]["frame_size"]}
+	var vfx_spec := {"actions": spec["vfx"]["skills"], "loop": [], "frame_size": spec["vfx"]["frame_size"],
+			"fps": spec["vfx"].get("fps", _req.get("default_fps", 10))}
 	_import_mode(base, asset_id, "vfx", vfx_spec, [], label, true)
 	for expression: String in spec["portrait"]["expressions"]:
 		var path := base.path_join("portrait/portrait_%s_%s.png" % [asset_id, expression])
@@ -126,7 +127,7 @@ func _import_mode(base: String, asset_id: String, mode: String, spec: Dictionary
 		optional: bool = false) -> void:
 	var dir := base.path_join(mode)
 	var frames_by_anim: Dictionary = {}
-	var meta := {"anchor": Vector2(0.5, 0.85), "fps": float(_req.get("default_fps", 10))}
+	var meta := {"anchor": Vector2(0.5, 0.85), "fps": float(spec.get("fps", _req.get("default_fps", 10)))}
 	if DirAccess.dir_exists_absolute(dir):
 		_collect_sheet(dir, asset_id, mode, frames_by_anim, meta)
 		_collect_loose(dir, asset_id, mode, frames_by_anim)

@@ -10,6 +10,8 @@ Khai báo (dict CONFIG):
               Lớp nền dưới chúng được tô lấp.
     fill_under [xương lớp trên] tô lấp cả phần lớp đó chìa ra ngoài hình (mặc định để trống), ví dụ kính trên mũ
               kéo xuống mắt thì chỗ cũ thành mũ chứ không thành lỗ.
+    drop_islands  True: sau erase, bỏ mọi mảnh không nối với thân chính (vùng chứa đáy/chân) – pha lê bay quanh quái;
+              (x, y): thân chính là vùng chứa điểm này (khi đáy ảnh là vũng mực, bóng… rời thân).
     erase     [zone...] vùng xoá khỏi ảnh (hiệu ứng vẽ sẵn trong concept); keep: [zone...] vùng giữ lại trong đó.
     clones    [(xương, [zone...], (dx, dy)?), ...] chép điểm ảnh trong zone (dời dx, dy) thành lớp trên mới gắn vào
               xương, ảnh gốc giữ nguyên: thanh kiếm thứ hai cho tay kia, đoạn cán bị đầu che…; ẩn bằng sx/sy ≈ 0.
@@ -278,6 +280,9 @@ class Rig:
         if kill.any():
             a[kill, 3] = 0
             a = drop_specks(a, kill)
+        if cfg.get("drop_islands"):  # bỏ mọi mảnh rời thân chính (pha lê bay, giọt mực rơi…)
+            seed = cfg["drop_islands"] if isinstance(cfg["drop_islands"], (tuple, list)) else None
+            a = drop_specks(a, np.ones(a.shape[:2], bool), reach=0, seed=seed)
         self.src = a
         ys, xs = np.nonzero(a[..., 3] > 0.02)
         self.top, self.bottom = ys.min(), ys.max()
@@ -386,15 +391,18 @@ class Rig:
         return out[:, ::-1].copy() if self.cfg.get("face_left") else out
 
 
-def drop_specks(a, killed, reach=60):
+def drop_specks(a, killed, reach=60, seed=None):
     """Sau khi xoá: bỏ mọi mẩu không nối với thân chính nằm trong khoảng `reach` px quanh vùng vừa xoá
-    (tàn lửa vụn, viền sót…). Thân chính = vùng liền mạch chứa điểm giữa đáy (chân)."""
+    (tàn lửa vụn, viền sót…). Thân chính = vùng liền mạch chứa điểm giữa đáy (chân), hoặc chứa điểm seed (x, y)."""
     solid = a[..., 3] > 0.02
     ys, xs = np.nonzero(solid)
     bottom = ys.max()
     feet = np.nonzero(solid[bottom - 3])[0]
     main = np.zeros_like(solid)
-    main[bottom - 3, feet] = True
+    if seed:
+        main[seed[1], seed[0]] = True
+    else:
+        main[bottom - 3, feet] = True
     while True:  # loang theo điểm liền kề (vector hoá, kiểm tra hội tụ mỗi 25 bước)
         before = main.sum()
         for _ in range(25):

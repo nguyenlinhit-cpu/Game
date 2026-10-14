@@ -87,20 +87,17 @@ func _test_importer() -> void:
 	_check(missing.size() > 200 and text.contains("traveler_male") and text.contains("Quái library_warden")
 			and text.contains("Tileset library") and text.contains("NPC orwen"),
 			"Liệt kê đủ asset còn thiếu (%d mục: nhân vật, quái, tileset, NPC)" % missing.size())
-	_check(text.contains("map: dash_e") and not text.contains("map: run_e"),
-			"Mira: chỉ báo thiếu hành động chưa render (dash...), không báo run/idle")
+	_check(text.contains("map: idle_n") and not text.contains("map: run_e") and not text.contains("map: idle_e"),
+			"Mira: chỉ báo thiếu hướng chưa vẽ (idle_n...), không báo hướng phải")
 	var frames := ArtLibrary.character_frames(DataPaths.load_character(&"mira"), "map")
-	var dirs_ok := frames != null
-	for d in DIRECTIONS:
-		dirs_ok = dirs_ok and frames.has_animation("run_" + d) and frames.get_frame_count("run_" + d) == 8 \
-				and frames.has_animation("idle_" + d) and frames.get_frame_count("idle_" + d) == 4
-	_check(dirs_ok and frames.get_animation_loop("run_s") and ArtLibrary.frame_size_of(frames) == Vector2(128, 128),
-			"SpriteFrames map: idle 4 + run 8 khung × 8 hướng, khung 128 px, lặp")
+	_check(frames != null and frames.get_frame_count("run_e") == 6 and frames.get_frame_count("idle_e") == 4
+			and frames.get_animation_loop("run_e") and ArtLibrary.frame_size_of(frames) == Vector2(32, 32),
+			"SpriteFrames map pixel: idle 4 + run 6 khung hướng phải, khung 32 px, lặp")
 	var battle := ArtLibrary.character_frames(DataPaths.load_character(&"mira"), "battle")
 	_check(battle and battle.get_frame_count("attack") == 8 and not battle.get_animation_loop("attack")
 			and ArtLibrary.frame_size_of(battle) == Vector2(512, 512), "SpriteFrames trận: attack 8 khung 512 px, không lặp")
-	_check(ArtLibrary.character_frames(DataPaths.load_character(&"ignar"), "map") == null
-			and ArtLibrary.portrait(DataPaths.load_character(&"ignar")) == null and ArtLibrary.zone_tileset(&"library") == null,
+	_check(ArtLibrary.character_frames(DataPaths.load_character(&"echo"), "map") == null
+			and ArtLibrary.portrait(DataPaths.load_character(&"echo")) == null and ArtLibrary.zone_tileset(&"library") == null,
 			"Thiếu hình → trả về null (giữ hình tạm)")
 
 
@@ -123,16 +120,21 @@ func _test_map_sprite() -> void:
 	_check(player.sprite == null, "Lữ khách chưa có hình: vẽ tạm")
 	player.set_leader(1)
 	await _frames(2)
-	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_s"), "Mira dẫn đầu: dùng sprite Blender")
+	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Mira dẫn đầu: dùng sprite pixel")
 	Input.action_press("move_right")
 	await _seconds(0.4)
-	_check(player.sprite.animation == &"run_e" and player.sprite.is_playing(), "Chạy sang phải: phát run_e")
+	_check(player.sprite.animation == &"run_e" and player.sprite.is_playing() and not player.sprite.flip_h,
+			"Chạy sang phải: phát run_e")
 	Input.action_release("move_right")
+	Input.action_press("move_left")
+	await _seconds(0.4)
+	_check(player.sprite.animation == &"run_e" and player.sprite.flip_h, "Chạy sang trái: run_e lật ngang")
+	Input.action_release("move_left")
 	Input.action_press("move_up")
 	await _seconds(0.3)
 	Input.action_release("move_up")
 	await _seconds(0.6)
-	_check(player.sprite.animation == &"idle_n", "Dừng lại nhìn lên: idle_n")
+	_check(player.sprite.animation == &"idle_e" and not player.sprite.flip_h, "Dừng lại nhìn lên: chưa có idle_n, dùng idle_e")
 	player.set_leader(0)
 	_check(player.sprite == null, "Đổi về Lữ khách: bỏ sprite")
 
@@ -178,6 +180,6 @@ func _test_battle_sprite() -> void:
 			"Tuyệt kỹ: nền đổi màu theo nguyên tố (shader ultimate_bg)")
 	scene.debug_force_result(true)
 	await _frames(3)
-	_check(mira.sprite.animation == &"idle", "Chưa có hoạt ảnh thắng: giữ idle")
+	_check(mira.sprite.animation == &"victory", "Thắng trận: phát victory")
 	SceneRouter.go_to(DataPaths.TITLE_SCENE, {}, 0.01)
 	await SceneRouter.transition_finished

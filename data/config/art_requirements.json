@@ -6,7 +6,7 @@
 		"battle": {"frame_size": 512, "actions": {"idle": 6, "attack": 8, "skill": 10, "ultimate": 12, "hit": 4, "down": 6, "victory": 8}, "loop": ["idle", "victory"]},
 		"portrait": {"size": 1024, "expressions": ["neutral", "happy", "serious"]},
 		"splash": {"size": [2048, 1152]},
-		"vfx": {"frame_size": 512, "skills": {"attack": 8, "skill": 12, "ultimate": 16}}
+		"vfx": {"frame_size": 512, "fps": 12, "skills": {"attack": 8, "skill": 12, "ultimate": 16}}
 	},
 	"enemy": {
 		"map": {"frame_size": 128, "actions": {"idle": 4, "run": 6}, "loop": ["idle", "run"]},

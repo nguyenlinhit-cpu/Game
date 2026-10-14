@@ -33,6 +33,11 @@ const LOCKING_TYPES: Array[RoomType] = [RoomType.COMBAT, RoomType.ELITE, RoomTyp
 @export_flags("Bắc", "Đông", "Nam", "Tây") var door_sides: int = 15
 ## Khu chứa phòng (library, vault...). Rỗng = theo khu của map (OverworldMap.zone).
 @export var zone: StringName = &""
+## Ảnh vẽ sẵn cả phòng. Có ảnh thì lớp sàn / tường không vẽ nữa, chỉ giữ va chạm.
+@export var backdrop: Texture2D
+## Tâm ảnh lệch so với tâm ô giữa phòng (px), và độ phóng ảnh.
+@export var backdrop_offset: Vector2 = Vector2.ZERO
+@export var backdrop_scale: float = 1.0
 
 var connected_sides: int = 0
 
@@ -51,6 +56,7 @@ func _ready() -> void:
 	_doors_root.name = "Doors"
 	add_child(_doors_root)
 	_create_interior_area()
+	_create_backdrop()
 	for group in get_enemy_groups():
 		group.defeated.connect(_on_enemy_group_defeated)
 
@@ -185,6 +191,23 @@ func debug_clear_enemies() -> void:
 func _on_enemy_group_defeated(_group: Node) -> void:
 	if not has_enemies():
 		cleared.emit(self)
+
+
+## Ảnh nền vẽ dưới mọi thứ trong phòng (và đè lên hành lang chỗ ảnh phủ tới, vì Rooms đứng sau Corridors).
+func _create_backdrop() -> void:
+	if backdrop == null:
+		return
+	var sprite := Sprite2D.new()
+	sprite.name = "Backdrop"
+	sprite.texture = backdrop
+	sprite.centered = true
+	sprite.scale = Vector2.ONE * backdrop_scale
+	sprite.position = Vector2.ONE * TILE_SIZE * 0.5 + backdrop_offset
+	add_child(sprite)
+	move_child(sprite, 0)
+	# Ẩn lớp ô chỉ tắt phần vẽ, va chạm tường vẫn còn.
+	floor_layer.visible = false
+	wall_layer.visible = false
 
 
 ## Hai vùng: "Interior" (lùi vào trong) báo đã vào phòng, để cửa đóng sau lưng người chơi;

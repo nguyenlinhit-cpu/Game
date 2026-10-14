@@ -82,6 +82,9 @@ func setup(battle_unit: BattleUnit, at: Vector2) -> void:
 		body.add_child(sprite)
 		sprite.animation_finished.connect(_on_sprite_finished)
 		_play_anim("idle")
+		# Tải sẵn hiệu ứng kỹ năng vẽ tay để lần ra đòn đầu tiên không bị khựng.
+		if unit.character:
+			ArtLibrary.vfx_frames(unit.character)
 	else:
 		body.material = fx_material
 
@@ -149,11 +152,30 @@ func play_hit() -> void:
 
 ## Ra đòn: lao về phía trước rồi quay lại.
 func play_action(kind: int = 0) -> void:
-	_play_anim(ACTION_ANIMS.get(kind, "attack"))
+	var action: String = ACTION_ANIMS.get(kind, "attack")
+	_play_anim(action)
+	_play_cast_vfx(action)
 	var forward := 40.0 if unit.is_ally() else -40.0
 	var tween := create_tween()
 	tween.tween_property(self, "position", home_position + Vector2(forward, 0.0), 0.12)
 	tween.tween_property(self, "position", home_position, 0.2)
+
+
+## Lớp cast vẽ tay ("<hành động>-cast"): khung trùng khung sprite trận nên đặt chồng đúng lên sprite.
+func _play_cast_vfx(action: String) -> void:
+	var frames := ArtLibrary.vfx_frames(unit.character) if unit.character else null
+	if sprite == null or frames == null or not frames.has_animation(action + "-cast"):
+		return
+	var cast := AnimatedSprite2D.new()
+	cast.name = "CastVfx"
+	cast.sprite_frames = frames
+	cast.position = sprite.position
+	cast.scale = sprite.scale
+	cast.offset = sprite.offset
+	cast.flip_h = sprite.flip_h
+	body.add_child(cast)
+	cast.play(action + "-cast")
+	cast.animation_finished.connect(cast.queue_free)
 
 
 func _process(delta: float) -> void:

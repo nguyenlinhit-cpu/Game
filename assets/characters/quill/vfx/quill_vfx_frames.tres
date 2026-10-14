@@ -1,0 +1,244 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack_00.png" id="1_o4y2v"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack_01.png" id="2_5lbcg"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack_02.png" id="3_2tblh"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack_03.png" id="4_p6cod"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack_04.png" id="5_bd3od"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack_05.png" id="6_sk1iq"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_00.png" id="7_clqva"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_01.png" id="8_dv2ob"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_02.png" id="9_7inhx"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_03.png" id="10_8y7sd"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_04.png" id="11_rd77w"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_05.png" id="12_oatqe"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_06.png" id="13_beyq5"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_attack-cast_07.png" id="14_2vesi"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_00.png" id="15_gmhqj"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_01.png" id="16_4y65a"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_02.png" id="17_g7c0g"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_03.png" id="18_2kyqw"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_04.png" id="19_xpg8k"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_05.png" id="20_68mp5"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_06.png" id="21_8oxhk"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill_07.png" id="22_x1qdg"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_00.png" id="23_441t2"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_01.png" id="24_cpb14"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_02.png" id="25_ugjms"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_03.png" id="26_4i7es"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_04.png" id="27_8tsnu"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_05.png" id="28_fnhi5"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_06.png" id="29_nvhe2"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_07.png" id="30_ie3vb"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_08.png" id="31_ig2o6"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_skill-cast_09.png" id="32_bxsd8"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_00.png" id="33_xiyln"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_01.png" id="34_6c5ar"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_02.png" id="35_f24mb"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_03.png" id="36_3il00"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_04.png" id="37_2avaj"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_05.png" id="38_c3cae"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_06.png" id="39_matay"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate_07.png" id="40_mqniq"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_00.png" id="41_2qrge"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_01.png" id="42_t1s16"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_02.png" id="43_g0ssy"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_03.png" id="44_ukok7"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_04.png" id="45_spso3"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_05.png" id="46_7gifp"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_06.png" id="47_yfepc"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_07.png" id="48_e6nlr"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_08.png" id="49_dwk87"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_09.png" id="50_uy4dw"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_10.png" id="51_cpo8e"]
+[ext_resource type="Texture2D" path="res://assets/characters/quill/vfx/vfx_quill_ultimate-cast_11.png" id="52_udem7"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o4y2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5lbcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2tblh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p6cod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bd3od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sk1iq")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_clqva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dv2ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7inhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8y7sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rd77w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oatqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_beyq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2vesi")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_gmhqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4y65a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g7c0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2kyqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xpg8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_68mp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8oxhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_x1qdg")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_441t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cpb14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ugjms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4i7es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_8tsnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_fnhi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_nvhe2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ie3vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ig2o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bxsd8")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_xiyln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_6c5ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_f24mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3il00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_2avaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_c3cae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_matay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_mqniq")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_2qrge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_t1s16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_g0ssy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ukok7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_spso3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_7gifp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_yfepc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_e6nlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_dwk87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_uy4dw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_cpo8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_udem7")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)

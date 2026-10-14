@@ -1,0 +1,13 @@
+BlenderMCP addon registered
+[echo rig] idle: 6 khung
+[echo rig] attack: 8 khung
+[echo rig] skill: 10 khung
+[echo rig] ultimate: 12 khung
+[echo rig] hit: 4 khung
+[echo rig] down: 6 khung
+[echo rig] victory: 8 khung
+[echo rig] sheet 6144×3584 → /home/linh/Game/design/nhan_vat/echo/5_render/battle_echo.png
+BlenderMCP addon unregistered
+Blender 5.2.2 LTS
+
+Blender quit

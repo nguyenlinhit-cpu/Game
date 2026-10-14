@@ -15,6 +15,9 @@ var particles: GPUParticles2D
 ## Tạo hiệu ứng `action` (attack / skill / ultimate) của `source` tại `at` (toạ độ trong `parent`).
 static func spawn(parent: Node, at: Vector2, element: int, source: CharacterData, action: String,
 		size: float = 1.0) -> SkillVfx:
+	# Màn trận đã rời cây scene (đang đổi màn): bỏ qua hiệu ứng.
+	if not parent.is_inside_tree():
+		return null
 	var vfx := SkillVfx.new()
 	vfx.position = at
 	parent.add_child(vfx)
@@ -29,7 +32,9 @@ static func spawn(parent: Node, at: Vector2, element: int, source: CharacterData
 func _play_frames(frames: SpriteFrames, action: String, size: float) -> void:
 	sprite = AnimatedSprite2D.new()
 	sprite.sprite_frames = frames
-	sprite.scale = Vector2.ONE * 0.6 * size
+	# Khung hit vẽ trùng khung sprite trận mục tiêu: cùng tỉ lệ với sprite trận (cao ALLY_RADIUS × 4.2).
+	var frame_h := ArtLibrary.frame_size_of(frames).y
+	sprite.scale = Vector2.ONE * (UnitView.ALLY_RADIUS * 4.2 / frame_h if frame_h > 0.0 else 0.6) * size
 	add_child(sprite)
 	sprite.play(action)
 	sprite.animation_finished.connect(queue_free)

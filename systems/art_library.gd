@@ -148,6 +148,9 @@ static func make_sprite(frames: SpriteFrames, height: float) -> AnimatedSprite2D
 	if frame_size.y > 0.0:
 		var scale_value := height / frame_size.y
 		sprite.scale = Vector2.ONE * scale_value
+		# Pixel art nhỏ (map 32×32) phóng to: giữ nét, không làm nhòe.
+		if frame_size.y <= 64.0:
+			sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		var anchor: Vector2 = frames.get_meta("anchor", Vector2(0.5, 0.85))
 		sprite.offset = Vector2((0.5 - anchor.x) * frame_size.x, (0.5 - anchor.y) * frame_size.y)
 	return sprite
@@ -179,6 +182,9 @@ static func play(sprite: AnimatedSprite2D, action: String, direction: String = "
 				candidates.append("%s_%s" % [act, fallback])
 	for name in candidates:
 		if frames.has_animation(name):
+			# Chỉ có hình hướng phải (pixel map vẽ 1 hướng): lật ngang khi nhìn sang trái.
+			if not direction.is_empty():
+				sprite.flip_h = name.ends_with("_e") and direction.contains("w")
 			if sprite.animation != name or not sprite.is_playing():
 				sprite.play(name)
 			return name

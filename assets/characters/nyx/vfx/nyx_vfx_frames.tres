@@ -1,0 +1,248 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack_00.png" id="1_5h031"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack_01.png" id="2_muem1"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack_02.png" id="3_3pxs3"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack_03.png" id="4_u2nes"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack_04.png" id="5_5v7qj"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack_05.png" id="6_we1l1"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_00.png" id="7_0y7ce"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_01.png" id="8_k2jvg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_02.png" id="9_6xgrm"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_03.png" id="10_hhv4x"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_04.png" id="11_7d70l"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_05.png" id="12_bcjki"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_06.png" id="13_k88il"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_attack-cast_07.png" id="14_ihn8r"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_00.png" id="15_sswl3"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_01.png" id="16_vf2p7"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_02.png" id="17_uyscu"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_03.png" id="18_k1ahi"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_04.png" id="19_ill1i"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_05.png" id="20_i0d2b"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_06.png" id="21_xx1oo"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_07.png" id="22_gojac"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill_08.png" id="23_v7jog"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_00.png" id="24_q0bn7"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_01.png" id="25_f6tor"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_02.png" id="26_fqa6v"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_03.png" id="27_xv5my"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_04.png" id="28_abdx4"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_05.png" id="29_0fxqa"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_06.png" id="30_kfafl"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_07.png" id="31_1re3f"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_08.png" id="32_w4yvj"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_skill-cast_09.png" id="33_hdxpl"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_00.png" id="34_pfg65"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_01.png" id="35_267lu"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_02.png" id="36_7cq8u"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_03.png" id="37_03ydp"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_04.png" id="38_37fhk"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_05.png" id="39_cd3qp"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_06.png" id="40_784h2"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate_07.png" id="41_cm8ey"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_00.png" id="42_htnd0"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_01.png" id="43_5x2lp"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_02.png" id="44_y4umb"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_03.png" id="45_qcky3"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_04.png" id="46_0nw4k"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_05.png" id="47_urvxe"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_06.png" id="48_v5h4v"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_07.png" id="49_hnqgo"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_08.png" id="50_o52n1"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_09.png" id="51_ejssm"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_10.png" id="52_2ltpg"]
+[ext_resource type="Texture2D" path="res://assets/characters/nyx/vfx/vfx_nyx_ultimate-cast_11.png" id="53_rgfme"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5h031")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_muem1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3pxs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u2nes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5v7qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_we1l1")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0y7ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k2jvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6xgrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hhv4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7d70l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bcjki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k88il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ihn8r")
+}],
+"loop": 0,
+"name": &"attack-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_sswl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vf2p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_uyscu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_k1ahi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ill1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i0d2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xx1oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_gojac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_v7jog")
+}],
+"loop": 0,
+"name": &"skill",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_q0bn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f6tor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fqa6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xv5my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_abdx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_0fxqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kfafl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1re3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_w4yvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_hdxpl")
+}],
+"loop": 0,
+"name": &"skill-cast",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_pfg65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_267lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_7cq8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_03ydp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_37fhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_cd3qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_784h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cm8ey")
+}],
+"loop": 0,
+"name": &"ultimate",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_htnd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_5x2lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_y4umb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_qcky3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_0nw4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_urvxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_v5h4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_hnqgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_o52n1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ejssm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_2ltpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_rgfme")
+}],
+"loop": 0,
+"name": &"ultimate-cast",
+"speed": 12.0
+}]
+metadata/anchor = Vector2(0.5, 0.85)

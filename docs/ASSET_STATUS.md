@@ -2,12 +2,154 @@
 
 Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lại: `godot --headless --path . --import && godot --headless --path . res://tools/import_assets/import_assets.tscn`.
 
-- Đã nhận: 2 · Còn thiếu: 262 mục · Cảnh báo: 0
+- Đã nhận: 51 · Còn thiếu: 751 mục · Cảnh báo: 90
 
 ## Đã nhận
 
-- assets/characters/mira/map/mira_map_frames.tres (16 hoạt ảnh)
-- assets/characters/mira/battle/mira_battle_frames.tres (2 hoạt ảnh)
+- assets/characters/aldric/map/aldric_map_frames.tres (5 hoạt ảnh)
+- assets/characters/aldric/battle/aldric_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/aldric/vfx/aldric_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/celestine/map/celestine_map_frames.tres (5 hoạt ảnh)
+- assets/characters/celestine/battle/celestine_battle_frames.tres (10 hoạt ảnh)
+- assets/characters/celestine/vfx/celestine_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/garren/map/garren_map_frames.tres (5 hoạt ảnh)
+- assets/characters/garren/battle/garren_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/garren/vfx/garren_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/ignar/map/ignar_map_frames.tres (5 hoạt ảnh)
+- assets/characters/ignar/battle/ignar_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/ignar/vfx/ignar_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/kiri/map/kiri_map_frames.tres (5 hoạt ảnh)
+- assets/characters/kiri/battle/kiri_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/kiri/vfx/kiri_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/marisol/map/marisol_map_frames.tres (5 hoạt ảnh)
+- assets/characters/marisol/battle/marisol_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/marisol/vfx/marisol_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/mira/map/mira_map_frames.tres (5 hoạt ảnh)
+- assets/characters/mira/battle/mira_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/mira/vfx/mira_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/nyx/map/nyx_map_frames.tres (5 hoạt ảnh)
+- assets/characters/nyx/battle/nyx_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/nyx/vfx/nyx_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/orrin/map/orrin_map_frames.tres (5 hoạt ảnh)
+- assets/characters/orrin/battle/orrin_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/orrin/vfx/orrin_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/quill/map/quill_map_frames.tres (5 hoạt ảnh)
+- assets/characters/quill/battle/quill_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/quill/vfx/quill_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/raiko/map/raiko_map_frames.tres (5 hoạt ảnh)
+- assets/characters/raiko/battle/raiko_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/raiko/vfx/raiko_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/rook/map/rook_map_frames.tres (5 hoạt ảnh)
+- assets/characters/rook/battle/rook_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/rook/vfx/rook_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/sylvaine/map/sylvaine_map_frames.tres (5 hoạt ảnh)
+- assets/characters/sylvaine/battle/sylvaine_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/sylvaine/vfx/sylvaine_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/vesper/map/vesper_map_frames.tres (5 hoạt ảnh)
+- assets/characters/vesper/battle/vesper_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/vesper/vfx/vesper_vfx_frames.tres (6 hoạt ảnh)
+- assets/characters/zephyra/map/zephyra_map_frames.tres (5 hoạt ảnh)
+- assets/characters/zephyra/battle/zephyra_battle_frames.tres (7 hoạt ảnh)
+- assets/characters/zephyra/vfx/zephyra_vfx_frames.tres (6 hoạt ảnh)
+- assets/enemies/ink_rat/map/ink_rat_map_frames.tres (2 hoạt ảnh)
+- assets/enemies/ink_rat/battle/ink_rat_battle_frames.tres (5 hoạt ảnh)
+- assets/enemies/wandering_shade/map/wandering_shade_map_frames.tres (2 hoạt ảnh)
+- assets/enemies/wandering_shade/battle/wandering_shade_battle_frames.tres (5 hoạt ảnh)
+- assets/enemies/warp_sprout/map/warp_sprout_map_frames.tres (2 hoạt ảnh)
+- assets/enemies/warp_sprout/battle/warp_sprout_battle_frames.tres (5 hoạt ảnh)
+
+## Cảnh báo
+
+- Nhân vật aldric: map run_e có 6/8 khung
+- Nhân vật aldric: map dash_e có 3/4 khung
+- Nhân vật aldric: map opener_e có 5/6 khung
+- Nhân vật aldric: vfx attack có 6/8 khung
+- Nhân vật aldric: vfx skill có 8/12 khung
+- Nhân vật aldric: vfx ultimate có 8/16 khung
+- Nhân vật celestine: map run_e có 6/8 khung
+- Nhân vật celestine: map dash_e có 3/4 khung
+- Nhân vật celestine: map opener_e có 5/6 khung
+- Nhân vật celestine: vfx attack có 5/8 khung
+- Nhân vật celestine: vfx skill có 8/12 khung
+- Nhân vật celestine: vfx ultimate có 8/16 khung
+- Nhân vật garren: map run_e có 6/8 khung
+- Nhân vật garren: map dash_e có 3/4 khung
+- Nhân vật garren: map opener_e có 5/6 khung
+- Nhân vật garren: vfx attack có 6/8 khung
+- Nhân vật garren: vfx skill có 8/12 khung
+- Nhân vật garren: vfx ultimate có 8/16 khung
+- Nhân vật ignar: map run_e có 6/8 khung
+- Nhân vật ignar: map dash_e có 3/4 khung
+- Nhân vật ignar: map opener_e có 5/6 khung
+- Nhân vật ignar: vfx attack có 6/8 khung
+- Nhân vật ignar: vfx skill có 8/12 khung
+- Nhân vật ignar: vfx ultimate có 8/16 khung
+- Nhân vật kiri: map run_e có 6/8 khung
+- Nhân vật kiri: map dash_e có 3/4 khung
+- Nhân vật kiri: map opener_e có 5/6 khung
+- Nhân vật kiri: vfx attack có 6/8 khung
+- Nhân vật kiri: vfx skill có 8/12 khung
+- Nhân vật kiri: vfx ultimate có 8/16 khung
+- Nhân vật marisol: map run_e có 6/8 khung
+- Nhân vật marisol: map dash_e có 3/4 khung
+- Nhân vật marisol: map opener_e có 5/6 khung
+- Nhân vật marisol: vfx attack có 6/8 khung
+- Nhân vật marisol: vfx skill có 8/12 khung
+- Nhân vật marisol: vfx ultimate có 8/16 khung
+- Nhân vật mira: map run_e có 6/8 khung
+- Nhân vật mira: map dash_e có 3/4 khung
+- Nhân vật mira: map opener_e có 5/6 khung
+- Nhân vật mira: vfx attack có 6/8 khung
+- Nhân vật mira: vfx skill có 8/12 khung
+- Nhân vật mira: vfx ultimate có 8/16 khung
+- Nhân vật nyx: map run_e có 6/8 khung
+- Nhân vật nyx: map dash_e có 3/4 khung
+- Nhân vật nyx: map opener_e có 5/6 khung
+- Nhân vật nyx: vfx attack có 6/8 khung
+- Nhân vật nyx: vfx skill có 9/12 khung
+- Nhân vật nyx: vfx ultimate có 8/16 khung
+- Nhân vật orrin: map run_e có 6/8 khung
+- Nhân vật orrin: map dash_e có 3/4 khung
+- Nhân vật orrin: map opener_e có 5/6 khung
+- Nhân vật orrin: vfx attack có 6/8 khung
+- Nhân vật orrin: vfx skill có 8/12 khung
+- Nhân vật orrin: vfx ultimate có 8/16 khung
+- Nhân vật quill: map run_e có 6/8 khung
+- Nhân vật quill: map dash_e có 3/4 khung
+- Nhân vật quill: map opener_e có 5/6 khung
+- Nhân vật quill: vfx attack có 6/8 khung
+- Nhân vật quill: vfx skill có 8/12 khung
+- Nhân vật quill: vfx ultimate có 8/16 khung
+- Nhân vật raiko: map run_e có 6/8 khung
+- Nhân vật raiko: map dash_e có 3/4 khung
+- Nhân vật raiko: map opener_e có 5/6 khung
+- Nhân vật raiko: vfx attack có 6/8 khung
+- Nhân vật raiko: vfx skill có 8/12 khung
+- Nhân vật raiko: vfx ultimate có 8/16 khung
+- Nhân vật rook: map run_e có 6/8 khung
+- Nhân vật rook: map dash_e có 3/4 khung
+- Nhân vật rook: map opener_e có 5/6 khung
+- Nhân vật rook: vfx attack có 6/8 khung
+- Nhân vật rook: vfx skill có 8/12 khung
+- Nhân vật rook: vfx ultimate có 8/16 khung
+- Nhân vật sylvaine: map run_e có 6/8 khung
+- Nhân vật sylvaine: map dash_e có 3/4 khung
+- Nhân vật sylvaine: map opener_e có 5/6 khung
+- Nhân vật sylvaine: vfx attack có 6/8 khung
+- Nhân vật sylvaine: vfx skill có 8/12 khung
+- Nhân vật sylvaine: vfx ultimate có 8/16 khung
+- Nhân vật vesper: map run_e có 6/8 khung
+- Nhân vật vesper: map dash_e có 3/4 khung
+- Nhân vật vesper: map opener_e có 5/6 khung
+- Nhân vật vesper: vfx attack có 6/8 khung
+- Nhân vật vesper: vfx skill có 8/12 khung
+- Nhân vật vesper: vfx ultimate có 8/16 khung
+- Nhân vật zephyra: map run_e có 6/8 khung
+- Nhân vật zephyra: map dash_e có 3/4 khung
+- Nhân vật zephyra: map opener_e có 5/6 khung
+- Nhân vật zephyra: vfx attack có 6/8 khung
+- Nhân vật zephyra: vfx skill có 8/12 khung
+- Nhân vật zephyra: vfx ultimate có 8/16 khung
 
 ## Còn thiếu (đang dùng hình tạm)
 
@@ -30,18 +172,82 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/traveler_female/splash/splash_traveler_female.png
 
 ### Nhân vật aldric
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/aldric/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/aldric/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/aldric/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/aldric/portrait/portrait_aldric_neutral.png
 - chân dung happy (1024px) – assets/characters/aldric/portrait/portrait_aldric_happy.png
 - chân dung serious (1024px) – assets/characters/aldric/portrait/portrait_aldric_serious.png
 - tranh gacha 2048×1152 – assets/characters/aldric/splash/splash_aldric.png
 
 ### Nhân vật celestine
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/celestine/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/celestine/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/celestine/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/celestine/portrait/portrait_celestine_neutral.png
 - chân dung happy (1024px) – assets/characters/celestine/portrait/portrait_celestine_happy.png
 - chân dung serious (1024px) – assets/characters/celestine/portrait/portrait_celestine_serious.png
@@ -75,18 +281,82 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/fenna/splash/splash_fenna.png
 
 ### Nhân vật garren
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/garren/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/garren/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/garren/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/garren/portrait/portrait_garren_neutral.png
 - chân dung happy (1024px) – assets/characters/garren/portrait/portrait_garren_happy.png
 - chân dung serious (1024px) – assets/characters/garren/portrait/portrait_garren_serious.png
 - tranh gacha 2048×1152 – assets/characters/garren/splash/splash_garren.png
 
 ### Nhân vật ignar
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/ignar/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/ignar/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/ignar/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/ignar/portrait/portrait_ignar_neutral.png
 - chân dung happy (1024px) – assets/characters/ignar/portrait/portrait_ignar_happy.png
 - chân dung serious (1024px) – assets/characters/ignar/portrait/portrait_ignar_serious.png
@@ -102,25 +372,20 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/kestrel/splash/splash_kestrel.png
 
 ### Nhân vật kiri
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/kiri/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/kiri/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/kiri/vfx/
-- chân dung neutral (1024px) – assets/characters/kiri/portrait/portrait_kiri_neutral.png
-- chân dung happy (1024px) – assets/characters/kiri/portrait/portrait_kiri_happy.png
-- chân dung serious (1024px) – assets/characters/kiri/portrait/portrait_kiri_serious.png
-- tranh gacha 2048×1152 – assets/characters/kiri/splash/splash_kiri.png
-
-### Nhân vật marisol
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/marisol/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/marisol/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/marisol/vfx/
-- chân dung neutral (1024px) – assets/characters/marisol/portrait/portrait_marisol_neutral.png
-- chân dung happy (1024px) – assets/characters/marisol/portrait/portrait_marisol_happy.png
-- chân dung serious (1024px) – assets/characters/marisol/portrait/portrait_marisol_serious.png
-- tranh gacha 2048×1152 – assets/characters/marisol/splash/splash_marisol.png
-
-### Nhân vật mira
-- map: dash_e (4 khung)
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
 - map: dash_se (4 khung)
 - map: dash_s (4 khung)
 - map: dash_sw (4 khung)
@@ -128,7 +393,6 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - map: dash_nw (4 khung)
 - map: dash_n (4 khung)
 - map: dash_ne (4 khung)
-- map: opener_e (6 khung)
 - map: opener_se (6 khung)
 - map: opener_s (6 khung)
 - map: opener_sw (6 khung)
@@ -136,7 +400,6 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - map: opener_nw (6 khung)
 - map: opener_n (6 khung)
 - map: opener_ne (6 khung)
-- map: technique_e (6 khung)
 - map: technique_se (6 khung)
 - map: technique_s (6 khung)
 - map: technique_sw (6 khung)
@@ -144,12 +407,88 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - map: technique_nw (6 khung)
 - map: technique_n (6 khung)
 - map: technique_ne (6 khung)
-- battle: skill (10 khung)
-- battle: ultimate (12 khung)
-- battle: hit (4 khung)
-- battle: down (6 khung)
-- battle: victory (8 khung)
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/mira/vfx/
+- chân dung neutral (1024px) – assets/characters/kiri/portrait/portrait_kiri_neutral.png
+- chân dung happy (1024px) – assets/characters/kiri/portrait/portrait_kiri_happy.png
+- chân dung serious (1024px) – assets/characters/kiri/portrait/portrait_kiri_serious.png
+- tranh gacha 2048×1152 – assets/characters/kiri/splash/splash_kiri.png
+
+### Nhân vật marisol
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
+- chân dung neutral (1024px) – assets/characters/marisol/portrait/portrait_marisol_neutral.png
+- chân dung happy (1024px) – assets/characters/marisol/portrait/portrait_marisol_happy.png
+- chân dung serious (1024px) – assets/characters/marisol/portrait/portrait_marisol_serious.png
+- tranh gacha 2048×1152 – assets/characters/marisol/splash/splash_marisol.png
+
+### Nhân vật mira
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/mira/portrait/portrait_mira_neutral.png
 - chân dung happy (1024px) – assets/characters/mira/portrait/portrait_mira_happy.png
 - chân dung serious (1024px) – assets/characters/mira/portrait/portrait_mira_serious.png
@@ -165,18 +504,82 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/neris/splash/splash_neris.png
 
 ### Nhân vật nyx
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/nyx/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/nyx/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/nyx/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/nyx/portrait/portrait_nyx_neutral.png
 - chân dung happy (1024px) – assets/characters/nyx/portrait/portrait_nyx_happy.png
 - chân dung serious (1024px) – assets/characters/nyx/portrait/portrait_nyx_serious.png
 - tranh gacha 2048×1152 – assets/characters/nyx/splash/splash_nyx.png
 
 ### Nhân vật orrin
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/orrin/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/orrin/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/orrin/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/orrin/portrait/portrait_orrin_neutral.png
 - chân dung happy (1024px) – assets/characters/orrin/portrait/portrait_orrin_happy.png
 - chân dung serious (1024px) – assets/characters/orrin/portrait/portrait_orrin_serious.png
@@ -192,27 +595,123 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/pip/splash/splash_pip.png
 
 ### Nhân vật quill
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/quill/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/quill/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/quill/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/quill/portrait/portrait_quill_neutral.png
 - chân dung happy (1024px) – assets/characters/quill/portrait/portrait_quill_happy.png
 - chân dung serious (1024px) – assets/characters/quill/portrait/portrait_quill_serious.png
 - tranh gacha 2048×1152 – assets/characters/quill/splash/splash_quill.png
 
 ### Nhân vật raiko
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/raiko/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/raiko/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/raiko/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/raiko/portrait/portrait_raiko_neutral.png
 - chân dung happy (1024px) – assets/characters/raiko/portrait/portrait_raiko_happy.png
 - chân dung serious (1024px) – assets/characters/raiko/portrait/portrait_raiko_serious.png
 - tranh gacha 2048×1152 – assets/characters/raiko/splash/splash_raiko.png
 
 ### Nhân vật rook
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/rook/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/rook/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/rook/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/rook/portrait/portrait_rook_neutral.png
 - chân dung happy (1024px) – assets/characters/rook/portrait/portrait_rook_happy.png
 - chân dung serious (1024px) – assets/characters/rook/portrait/portrait_rook_serious.png
@@ -228,9 +727,41 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/selka/splash/splash_selka.png
 
 ### Nhân vật sylvaine
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/sylvaine/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/sylvaine/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/sylvaine/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/sylvaine/portrait/portrait_sylvaine_neutral.png
 - chân dung happy (1024px) – assets/characters/sylvaine/portrait/portrait_sylvaine_happy.png
 - chân dung serious (1024px) – assets/characters/sylvaine/portrait/portrait_sylvaine_serious.png
@@ -246,9 +777,41 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/vael/splash/splash_vael.png
 
 ### Nhân vật vesper
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/vesper/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/vesper/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/vesper/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/vesper/portrait/portrait_vesper_neutral.png
 - chân dung happy (1024px) – assets/characters/vesper/portrait/portrait_vesper_happy.png
 - chân dung serious (1024px) – assets/characters/vesper/portrait/portrait_vesper_serious.png
@@ -264,9 +827,41 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - tranh gacha 2048×1152 – assets/characters/wisp/splash/splash_wisp.png
 
 ### Nhân vật zephyra
-- map (128px/khung): idle 4, run 8, dash 4, opener 6, technique 6 khung × 8 hướng – assets/characters/zephyra/map/
-- battle (512px/khung): idle 6, attack 8, skill 10, ultimate 12, hit 4, down 6, victory 8 khung – assets/characters/zephyra/battle/
-- vfx (512px/khung): attack 8, skill 12, ultimate 16 khung – đang dùng hiệu ứng particle tạm – assets/characters/zephyra/vfx/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (8 khung)
+- map: run_s (8 khung)
+- map: run_sw (8 khung)
+- map: run_w (8 khung)
+- map: run_nw (8 khung)
+- map: run_n (8 khung)
+- map: run_ne (8 khung)
+- map: dash_se (4 khung)
+- map: dash_s (4 khung)
+- map: dash_sw (4 khung)
+- map: dash_w (4 khung)
+- map: dash_nw (4 khung)
+- map: dash_n (4 khung)
+- map: dash_ne (4 khung)
+- map: opener_se (6 khung)
+- map: opener_s (6 khung)
+- map: opener_sw (6 khung)
+- map: opener_w (6 khung)
+- map: opener_nw (6 khung)
+- map: opener_n (6 khung)
+- map: opener_ne (6 khung)
+- map: technique_se (6 khung)
+- map: technique_s (6 khung)
+- map: technique_sw (6 khung)
+- map: technique_w (6 khung)
+- map: technique_nw (6 khung)
+- map: technique_n (6 khung)
+- map: technique_ne (6 khung)
 - chân dung neutral (1024px) – assets/characters/zephyra/portrait/portrait_zephyra_neutral.png
 - chân dung happy (1024px) – assets/characters/zephyra/portrait/portrait_zephyra_happy.png
 - chân dung serious (1024px) – assets/characters/zephyra/portrait/portrait_zephyra_serious.png
@@ -305,8 +900,20 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - battle (256px/khung): idle 6, attack 8, skill 10, hit 4, down 6 khung – assets/enemies/furnace_arm/battle/
 
 ### Quái ink_rat
-- map (128px/khung): idle 4, run 6 khung × 8 hướng – assets/enemies/ink_rat/map/
-- battle (256px/khung): idle 6, attack 8, skill 10, hit 4, down 6 khung – assets/enemies/ink_rat/battle/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (6 khung)
+- map: run_s (6 khung)
+- map: run_sw (6 khung)
+- map: run_w (6 khung)
+- map: run_nw (6 khung)
+- map: run_n (6 khung)
+- map: run_ne (6 khung)
 
 ### Quái library_warden
 - map (128px/khung): idle 4, run 6 khung × 8 hướng – assets/enemies/library_warden/map/
@@ -345,16 +952,40 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - battle (256px/khung): idle 6, attack 8, skill 10, hit 4, down 6 khung – assets/enemies/void_archer/battle/
 
 ### Quái wandering_shade
-- map (128px/khung): idle 4, run 6 khung × 8 hướng – assets/enemies/wandering_shade/map/
-- battle (256px/khung): idle 6, attack 8, skill 10, hit 4, down 6 khung – assets/enemies/wandering_shade/battle/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (6 khung)
+- map: run_s (6 khung)
+- map: run_sw (6 khung)
+- map: run_w (6 khung)
+- map: run_nw (6 khung)
+- map: run_n (6 khung)
+- map: run_ne (6 khung)
 
 ### Quái warp_matrix
 - map (128px/khung): idle 4, run 6 khung × 8 hướng – assets/enemies/warp_matrix/map/
 - battle (384px/khung): idle 6, attack 8, skill 10, hit 4, down 6 khung – assets/enemies/warp_matrix/battle/
 
 ### Quái warp_sprout
-- map (128px/khung): idle 4, run 6 khung × 8 hướng – assets/enemies/warp_sprout/map/
-- battle (256px/khung): idle 6, attack 8, skill 10, hit 4, down 6 khung – assets/enemies/warp_sprout/battle/
+- map: idle_se (4 khung)
+- map: idle_s (4 khung)
+- map: idle_sw (4 khung)
+- map: idle_w (4 khung)
+- map: idle_nw (4 khung)
+- map: idle_n (4 khung)
+- map: idle_ne (4 khung)
+- map: run_se (6 khung)
+- map: run_s (6 khung)
+- map: run_sw (6 khung)
+- map: run_w (6 khung)
+- map: run_nw (6 khung)
+- map: run_n (6 khung)
+- map: run_ne (6 khung)
 
 ### Quái warped_core
 - map (128px/khung): idle 4, run 6 khung × 8 hướng – assets/enemies/warped_core/map/
