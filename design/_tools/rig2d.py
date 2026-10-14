@@ -11,8 +11,9 @@ Khai báo (dict CONFIG):
     fill_under [xương lớp trên] tô lấp cả phần lớp đó chìa ra ngoài hình (mặc định để trống), ví dụ kính trên mũ
               kéo xuống mắt thì chỗ cũ thành mũ chứ không thành lỗ.
     erase     [zone...] vùng xoá khỏi ảnh (hiệu ứng vẽ sẵn trong concept); keep: [zone...] vùng giữ lại trong đó.
-    clones    [(xương, [zone...]), ...] chép điểm ảnh trong zone thành lớp trên mới gắn vào xương (ảnh gốc giữ nguyên),
-              ví dụ thanh kiếm thứ hai cho tay kia; ẩn bằng sx/sy ≈ 0 ở tư thế không dùng.
+    clones    [(xương, [zone...], (dx, dy)?), ...] chép điểm ảnh trong zone (dời dx, dy) thành lớp trên mới gắn vào
+              xương, ảnh gốc giữ nguyên: thanh kiếm thứ hai cho tay kia, đoạn cán bị đầu che…; ẩn bằng sx/sy ≈ 0.
+              Xương có "layer_depth" thì điểm lớp trên của nó dùng độ sâu đó (nằm sau phần thân sâu hơn).
     strict_pockets  N: nền lọt chỉ là vùng trắng tuyệt đối (≥ 0.995) bị bao kín, rộng ≥ N px (tóc/áo trắng không bao
               giờ trắng tới mức đó); dùng thay white_holes khi nhân vật có tóc hoặc áo trắng tinh.
     poses     {action: hàm(i, n) -> {xương: {"rot", "dx", "dy", "sx", "sy"}}}
@@ -309,9 +310,11 @@ class Rig:
         ty, tx = np.nonzero(top_m)
         tb = owner[ty, tx]
         tcol = a[ty, tx]
-        for bone, zones in cfg.get("clones", []):  # bản sao điểm ảnh (vũ khí thứ hai…), ảnh gốc giữ nguyên
+        for clone in cfg.get("clones", []):  # bản sao điểm ảnh (vũ khí thứ hai…), ảnh gốc giữ nguyên
+            bone, zones = clone[0], clone[1]
+            ox, oy = clone[2] if len(clone) > 2 else (0, 0)
             cy, cx = np.nonzero(zone_mask(a.shape[:2], zones) & (a[..., 3] > 0.02))
-            ty, tx = np.concatenate([ty, cy]), np.concatenate([tx, cx])
+            ty, tx = np.concatenate([ty, cy + oy]), np.concatenate([tx, cx + ox])
             tb = np.concatenate([tb, np.full(len(cx), names.index(bone))])
             tcol = np.concatenate([tcol, a[cy, cx]])
         Wt = np.zeros((len(tx), len(names)), np.float32)
@@ -322,7 +325,10 @@ class Rig:
         self.col = np.concatenate([base[ys, xs], tcol])   # RGBA không premultiplied
         self.W = np.concatenate([Wb, Wt])
         depths = np.array([self.bones[n]["depth"] for n in names], np.float32)
-        self.depth = np.concatenate([Wb @ depths, 10.0 + Wt @ depths * 0.01])
+        # lớp trên nằm trên mọi thứ (10 + …), trừ xương có "layer_depth" (ví dụ đoạn cán giấu sau đầu)
+        top_depth = np.array([self.bones[n].get("layer_depth", 10.0 + self.bones[n]["depth"] * 0.01) for n in names],
+                             np.float32)
+        self.depth = np.concatenate([Wb @ depths, Wt @ top_depth])
         self.n_base = len(bx)
 
     def world_mats(self, pose):
