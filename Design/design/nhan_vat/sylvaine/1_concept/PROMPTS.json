@@ -68,5 +68,17 @@
       "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1e_splash.png. Anime key visual splash art of the same character as the reference image: a kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. Praying with eyes closed as an entire garden of flowers blooms around her, her long flower-braided hair floating, warm green and golden light. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
       "transparent_background": false
     }
+  ],
+  "revisions": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Render ONLY the LARGE main battle figure at LEFT of supplied image. ONE full-body Sylvaine, holding flowering tree staff in gentle pose three-quarter facing RIGHT on plain white. Keep exact face hair leaf dress flowers staff and warm colors. Compact chibi 2.5 heads. Remove all extra views, portraits, prop insets and detail panels. ONE figure centered with generous margin.",
+      "reference": "1a_battle_draft.png"
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render ONLY the FRONT figure on LEFT of supplied image. ONE full-body Sylvaine A-pose looking straight toward camera, empty hands 30 degrees away, same exact leaf dress flowering hair and colors. Remove the BACK figure. ONE centered front view on plain white, compact chibi 2.5 heads, no extra views.",
+      "reference": "1b_front_draft.png"
+    }
   ]
 }

@@ -72,5 +72,12 @@
       "prompt": "Use case: stylized-concept. Asset: Aethelgard rook 1e_splash.png. Anime key visual splash art of the same character as the reference image: a big boxy cheerful lumberjack warrior with a broad square body, short spiky moss-green hair and stubble, a dark red plaid shirt under wooden armor plates, stone-grey bracers, tan skin. Chopping the base of a giant tree that is falling toward the enemies, his double-bladed axe glowing with red wood grain, leaves exploding. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
       "transparent_background": false
     }
+  ],
+  "revisions": [
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render only the front-facing figure at LEFT, same identity and outfit, full-body A-pose on white, remove all other views.",
+      "reference": "1b_front_draft.png"
+    }
   ]
 }

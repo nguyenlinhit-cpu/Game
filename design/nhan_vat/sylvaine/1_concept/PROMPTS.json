@@ -1,0 +1,84 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for remaining views",
+  "metadata": {
+    "id": "sylvaine",
+    "title": "Sylvaine – 5★ · Mộc · Trù Phú",
+    "palette": [
+      [
+        "Tóc",
+        "#6B8F4A"
+      ],
+      [
+        "Hoa",
+        "#F5A89A"
+      ],
+      [
+        "Da",
+        "#F6DCC8"
+      ],
+      [
+        "Váy kem",
+        "#F3EAD6"
+      ],
+      [
+        "Áo choàng lá",
+        "#2E8B57"
+      ],
+      [
+        "Gỗ",
+        "#7A5A3A"
+      ],
+      [
+        "Mắt",
+        "#6CC36A"
+      ]
+    ],
+    "personality": "Hiền, chậm rãi, kiên nhẫn; nói chuyện với cây như với người.",
+    "identity": "Xanh lá #2E8B57, hồng đào, nâu đất, kem. Bóng đen: mái tóc dài kết hoa thành vòng, gậy mọc cành lá."
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. Weapon: a living wooden staff sprouting leafy branches and small flowers at the top. Holding the leafy staff with both hands, gentle smile, petals drifting around her. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1b_front.png. Same character as the reference image: a kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals.  EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1c_weapon.png. Game prop design: a living wooden staff sprouting leafy branches and small flowers at the top, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. One isolated weapon design only, no collage.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, very long hair with a ring of pink flowers, cream dress, green capelet, leafy wooden staff, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": true
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard sylvaine 1e_splash.png. Anime key visual splash art of the same character as the reference image: a kind serene forest healer woman with very long brown-green hair braided with a ring of peach-pink flowers, soft green eyes, a cream dress with a leaf-green layered capelet, peach-pink accents, root-like sandals. Praying with eyes closed as an entire garden of flowers blooms around her, her long flower-braided hair floating, warm green and golden light. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    }
+  ],
+  "revisions": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Render ONLY the LARGE main battle figure at LEFT of supplied image. ONE full-body Sylvaine, holding flowering tree staff in gentle pose three-quarter facing RIGHT on plain white. Keep exact face hair leaf dress flowers staff and warm colors. Compact chibi 2.5 heads. Remove all extra views, portraits, prop insets and detail panels. ONE figure centered with generous margin.",
+      "reference": "1a_battle_draft.png"
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render ONLY the FRONT figure on LEFT of supplied image. ONE full-body Sylvaine A-pose looking straight toward camera, empty hands 30 degrees away, same exact leaf dress flowering hair and colors. Remove the BACK figure. ONE centered front view on plain white, compact chibi 2.5 heads, no extra views.",
+      "reference": "1b_front_draft.png"
+    }
+  ]
+}

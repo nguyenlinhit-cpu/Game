@@ -68,5 +68,17 @@
       "prompt": "Use case: stylized-concept. Asset: Aethelgard vael 1e_splash.png. Anime key visual splash art of the same character as the reference image: a flamboyant showy stage magician young man with pink-violet hair, toxic-green eyes, a tall crooked top hat, a black and gold stage tailcoat, a wide round flared cape with pink-violet lining, white gloves, a deck of glowing cards. Taking a dramatic bow on a stage under a spotlight as a curtain call of exploding glowing poison cards fills the air, flared cape spread. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark green and purple background with glowing toxic mist and bubbles, glowing poison effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
       "transparent_background": false
     }
+  ],
+  "revisions": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Render ONLY the large battle figure on LEFT of reference. ONE complete compact chibi magician, three-quarter facing RIGHT, holding poison-green cards and touching his top hat with other hand. Preserve exact face magenta hair clothing top hat and colors. Remove ALL small poses portraits detail panels and extra views. Centered plain white full figure generous margins, exactly ONE character.",
+      "reference": "1a_battle_draft.png"
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render ONLY the FRONT-facing figure at LEFT of supplied sheet. ONE full-body front A-pose magician on white, empty hands no cards, exact same face magenta hair top hat cape outfit and colors. Arms 30 degrees away feet apart. Remove all other views and duplicate figures. One centered complete figure with margin.",
+      "reference": "1b_front_draft.png"
+    }
   ]
 }

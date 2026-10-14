@@ -72,5 +72,12 @@
       "prompt": "Use case: stylized-concept. Asset: Aethelgard ember 1e_splash.png. Anime key visual splash art of the same character as the reference image: an excitable young mage boy with wild flame-shaped orange-red hair with yellow tips, yellow eyes, an ash-grey robe with a white collar and flame-orange trim, soot on his nose. Holding his burning spellbook to the sky as a magic circle spins and fiery meteors rain down, his flame-like hair blazing. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a blazing orange-red background with flying embers and heat haze, glowing fire effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
       "transparent_background": false
     }
+  ],
+  "revisions": [
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render ONLY the FRONT-facing figure on LEFT of supplied sheet. ONE complete Ember chibi A-pose, empty hands, same exact orange hair soot on nose brown robe orange flame patterns cream hood and dark pants boots. Remove middle side and right back figures. One centered FRONT view white background full head feet with margin. Arms 30 degrees away feet slightly apart.",
+      "reference": "1b_front_draft.png"
+    }
   ]
 }

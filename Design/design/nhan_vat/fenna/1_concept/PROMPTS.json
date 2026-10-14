@@ -68,5 +68,12 @@
       "prompt": "Use case: stylized-concept. Asset: Aethelgard fenna 1e_splash.png. Anime key visual splash art of the same character as the reference image: a nimble playful ranger girl with short russet hair, amber eyes, a leaf-green hood with fox ears, a brown leather vest, an autumn-orange scarf, white feather accents, fingerless gloves. Kneeling on one knee aiming a glowing leaf-green arrow, a ring of leaves swirling around the arrowhead, fox-ear hood and orange scarf blowing. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a lush green forest background with falling leaves and flowers, glowing nature effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
       "transparent_background": false
     }
+  ],
+  "revisions": [
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render only the front-facing figure at LEFT, same identity and outfit, full-body A-pose on white, remove all other views.",
+      "reference": "1b_front_draft.png"
+    }
   ]
 }

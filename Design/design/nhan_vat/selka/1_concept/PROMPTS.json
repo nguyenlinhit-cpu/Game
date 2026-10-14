@@ -68,5 +68,17 @@
       "prompt": "Use case: stylized-concept. Asset: Aethelgard selka 1e_splash.png. Anime key visual splash art of the same character as the reference image: a serene graceful incense priestess with lavender hair in a high bun held by golden hairpins, peach-pink eyes, layered lavender and toxic-green robes, pink accents, gold ornaments. Swinging her censer staff in a wide circle as fragrant green and pink smoke blooms into flower shapes around the whole team. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a dark green and purple background with glowing toxic mist and bubbles, glowing poison effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
       "transparent_background": false
     }
+  ],
+  "revisions": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Render ONLY large main battle figure on LEFT. ONE complete compact chibi Selka, three-quarter facing RIGHT, gently swinging incense burner dangling from baton. Preserve exact lavender hair jade gold ornaments pink green lilac dress and pastel smoke, exact face and colors. Remove ALL small views insets and extra figures. ONE figure centered on white with margins.",
+      "reference": "1a_battle_draft.png"
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render ONLY the front-facing figure at LEFT of reference sheet. ONE complete compact chibi Selka FRONT A-pose, empty hands no burner or baton, exact same face lavender bun jade gold ornaments pink lilac green dress colors. Remove other views and extra figures. Plain white centered one figure arms 30 degrees away feet apart with margin.",
+      "reference": "1b_front_draft.png"
+    }
   ]
 }

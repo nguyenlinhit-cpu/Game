@@ -68,5 +68,17 @@
       "prompt": "Use case: stylized-concept. Asset: Aethelgard orrin 1e_splash.png. Anime key visual splash art of the same character as the reference image: a kind slightly hunched elderly scholar with a long white beard and round spectacles, golden eyes, a soft floppy pointed cap, a night-blue robe with paper-white patches and brown leather straps, a stack of glowing old books floating around his shoulders. A giant glowing tome opening above his head, golden ancient runes spiraling down, his quill staff raised, floating books orbiting him. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a night-blue background with golden starlight and a giant glowing eye motif, glowing soul effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
       "transparent_background": false
     }
+  ],
+  "revisions": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Render ONLY LARGE main figure on LEFT of supplied sheet. ONE full-body Orrin, old kindly white-bearded scholar with golden quill staff and orbiting books, same exact face hair spectacles robe hat colors. Three-quarter facing RIGHT, compact chibi 2.5 heads on plain white. Remove ALL other figures, views and insets. ONE complete figure centered with margin.",
+      "reference": "1a_battle_draft.png"
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Render ONLY the FRONT-facing figure on LEFT of supplied reference sheet. ONE full-body old Orrin in empty-handed A-pose, arms 30 degrees from body, feet apart, centered plain white. Same exact hat spectacles white beard navy cream gold robe and accessories. No orbiting books or staff. Remove all extra figures and other views. ONE FRONT figure only.",
+      "reference": "1b_front_draft.png"
+    }
   ]
 }

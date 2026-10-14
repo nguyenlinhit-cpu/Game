@@ -1,0 +1,72 @@
+{
+  "tool": "image_gen built-in",
+  "reference": "1a_battle.png for remaining views",
+  "metadata": {
+    "id": "neris",
+    "title": "Neris – 4★ · Nước · Săn Bắn",
+    "palette": [
+      [
+        "Tóc",
+        "#1F3F7A"
+      ],
+      [
+        "Da",
+        "#D9A27E"
+      ],
+      [
+        "Bộ đồ lặn",
+        "#1F4E8C"
+      ],
+      [
+        "Xanh nước",
+        "#3A8DDE"
+      ],
+      [
+        "Cam san hô",
+        "#F2785C"
+      ],
+      [
+        "Bạc",
+        "#C9D1DA"
+      ],
+      [
+        "Mắt",
+        "#3AB0D8"
+      ]
+    ],
+    "personality": "Kiệm lời, kiên nhẫn, khô khan hài hước; ăn cá sống.",
+    "identity": "Xanh biển #3A8DDE, xanh đậm, bạc, cam san hô. Bóng đen: giáo ba chĩa dài, tóc ngắn rối, kính lặn trên trán."
+  },
+  "prompts": [
+    {
+      "asset": "1a_battle.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1a_battle.png. Chibi anime game character, full body, about 2.5 heads tall with a big head and large expressive eyes. A sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips. Weapon: a silver trident taller than her body. Holding the tall trident diagonally with both hands, ready to thrust, playful wink. Three-quarter view facing right. Clean cel shading with two tones and one soft highlight, colored dark lineart (not pure black), cool-tinted shadows, bright clean colors, detailed layered outfit, game character art, plain white background, single character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_front.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1b_front.png. Same character as the reference image: a sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips. Full body front view, standing straight in an A-pose with arms about 30 degrees away from the body, legs slightly apart, neutral expression, symmetrical, empty hands (no weapon), chibi proportions about 2.5 heads tall, even flat lighting, no cast shadows, plain white background, clean simple readable shapes, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1b_back.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1b_back.png. Same character as the reference image, full body back view, A-pose, same proportions and outfit, even flat lighting, plain white background, character turnaround reference.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins.\nCharacter description: Same character as the reference image: a sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips.  EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1c_weapon.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1c_weapon.png. Game prop design: a silver trident taller than her body, shown large and complete, side view, clean cel shading, colored lineart, plain white background, no character, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. One isolated weapon design only, no collage.",
+      "transparent_background": false
+    },
+    {
+      "asset": "1d_pixel.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1d_pixel.png. Pixel art game sprite, 32x32 pixels, tiny chibi character with an oversized head (head is about 60 percent of the height) and very short body and legs, side view facing right, short messy navy hair, diving mask on head, blue suit with coral accents, tall silver trident, 1-pixel dark outline, at most 12 colors, light from the top-left, crisp pixels, no anti-aliasing, roguelike dungeon crawler style, plain transparent background, single sprite.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": true
+    },
+    {
+      "asset": "1e_splash.png",
+      "prompt": "Use case: stylized-concept. Asset: Aethelgard neris 1e_splash.png. Anime key visual splash art of the same character as the reference image: a sporty tomboy diver girl with short messy navy hair, aqua eyes, tan skin, a round diving mask pushed up on her head, a deep-blue wetsuit-like outfit with coral-orange accents and silver clips. Bursting up out of deep water with her silver trident thrust upward inside a towering spiral wave, bubbles everywhere. Dramatic dynamic composition, character placed on the right third of the frame, empty space on the left, a deep blue water background with bubbles and shafts of light, glowing water effects, 16:9, high detail, cel shading with soft gradients, no text.\nKeep a readable compact chibi identity. True 2.5-head proportions: large head short torso short legs. Preserve asymmetric details on the same CHARACTER side in front/back views. No text watermark or extra limbs; complete subject with generous margins. EXACTLY ONE FIGURE ONLY, one individual illustration. No collage, extra views, insets, duplicate character, or reference sheet.",
+      "transparent_background": false
+    }
+  ]
+}

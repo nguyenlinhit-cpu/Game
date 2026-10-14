@@ -1,0 +1,31 @@
+{
+ "owner": "raiko",
+ "skill": "opener",
+ "fps": 12,
+ "frames": 5,
+ "hit_frame": 2,
+ "size": [
+  64,
+  64
+ ],
+ "colors": 5,
+ "anchors": {
+  "opener_origin": [
+   31,
+   35
+  ],
+  "opener_feet": [
+   16,
+   52
+  ],
+  "technique_feet": [
+   16,
+   52
+  ],
+  "technique_target": [
+   56,
+   34
+  ]
+ },
+ "placed_at": "khung 64×64, điểm neo ghi trong anchors (toạ độ pixel trong khung)"
+}
