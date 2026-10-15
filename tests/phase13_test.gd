@@ -106,11 +106,6 @@ func _test_importer() -> void:
 			GameState.player_gender = gender
 			var map_frames := ArtLibrary.character_frames(data, "map")
 			var battle_frames := ArtLibrary.character_frames(data, "battle")
-			var overworld := ArtLibrary.overworld_character_frames(data)
-			_check(overworld != null and overworld.get_frame_texture("idle_e", 0) == battle_frames.get_frame_texture("idle", 0)
-					and overworld.get_frame_texture("opener_e", 0) == battle_frames.get_frame_texture("attack", 0)
-					and overworld.get_animation_loop("run_e") and not overworld.get_animation_loop("opener_e"),
-					"%s (%s): ngoài map dùng hình idle và đánh từ bộ trong trận" % [id, gender])
 			var vfx := ArtLibrary.vfx_frames(data)
 			_check(map_frames != null and map_frames.has_animation("run_e")
 					and battle_frames != null and battle_frames.has_animation("ultimate")
@@ -135,10 +130,10 @@ func _test_map_sprite() -> void:
 	var map := get_tree().current_scene as OverworldMap
 	var player := map.player
 	player.set_leader(0)
-	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Lữ khách dùng hình trong trận ngoài map")
+	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Lữ khách dùng sprite pixel từ design")
 	player.set_leader(1)
 	await _frames(2)
-	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Mira dẫn đầu: dùng hình trong trận")
+	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Mira dẫn đầu: dùng sprite pixel")
 	Input.action_press("move_right")
 	await _seconds(0.4)
 	_check(player.sprite.animation == &"run_e" and player.sprite.is_playing() and not player.sprite.flip_h,
@@ -154,8 +149,8 @@ func _test_map_sprite() -> void:
 	await _seconds(0.6)
 	_check(player.sprite.animation == &"idle_e" and not player.sprite.flip_h, "Dừng lại nhìn lên: chưa có idle_n, dùng idle_e")
 	player.set_leader(0)
-	_check(player.sprite != null and player.sprite.sprite_frames == ArtLibrary.overworld_character_frames(
-			DataPaths.load_character(&"traveler")), "Đổi về Lữ khách: dùng đúng sprite Lữ khách")
+	_check(player.sprite != null and player.sprite.sprite_frames == ArtLibrary.character_frames(
+			DataPaths.load_character(&"traveler"), "map"), "Đổi về Lữ khách: dùng đúng sprite Lữ khách")
 
 
 func _test_battle_sprite() -> void:

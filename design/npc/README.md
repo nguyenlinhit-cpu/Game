@@ -2,7 +2,6 @@
 
 Phong cách fantasy anime vẽ tay, theo thiết kế nhân vật và quái hiện có.
 
-Nhân vật chơi được ngoài map (cả hai phiên bản Lữ khách) và NPC Kiri, Garren, Nyx dùng chung texture với bộ trong trận thông qua `ArtLibrary.overworld_character_frames()`. Đứng dùng `idle`, mở màn dùng `attack`, Bí Kỹ có ánh xạ `skill`. Khi chạy/lướt dùng idle nhanh hơn; người chơi có nhấp nhô nhẹ khi chạy. Bộ hình trong trận chưa có chu kỳ bước chân riêng. Tỉ lệ ngoài map là khung cao 170 px; giữ điểm neo chân từ bộ trong trận và lật ngang theo hướng trái/phải.
 
 | NPC | Nhận diện | Hình sử dụng |
 | --- | --- | --- |

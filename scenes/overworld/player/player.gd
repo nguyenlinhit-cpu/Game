@@ -119,8 +119,6 @@ func _physics_process(delta: float) -> void:
 	_update_focus()
 	if sprite:
 		ArtLibrary.play(sprite, "opener" if _swing_left > 0.0 else get_animation_name(), get_facing_name())
-		# Battle sheets have no walking cycle: add a small step motion while moving.
-		sprite.position.y = -absf(sin(_anim_time * 14.0)) * 5.0 if get_animation_name() == "run" else 0.0
 	queue_redraw()
 
 
@@ -360,7 +358,7 @@ func _refresh_sprite() -> void:
 	if sprite:
 		sprite.queue_free()
 		sprite = null
-	var frames := ArtLibrary.overworld_character_frames(_leader)
+	var frames := ArtLibrary.character_frames(_leader, "map")
 	if frames:
 		sprite = ArtLibrary.make_sprite(frames, SPRITE_HEIGHT)
 		add_child(sprite)

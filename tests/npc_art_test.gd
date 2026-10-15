@@ -39,7 +39,7 @@ func _run() -> void:
 			if id in NEW_NPCS:
 				_check(frames.get_frame_count("idle_s") == 4 and frames.get_animation_loop("idle_s"), "%s: bốn khung idle có chớp mắt, lặp liên tục" % id)
 			else:
-				_check(frames == ArtLibrary.overworld_character_frames(DataPaths.load_character(id)), "%s: dùng hình trong trận ngoài bản đồ" % id)
+				_check(frames == ArtLibrary.character_frames(DataPaths.load_character(id), "map"), "%s: giữ đúng sprite pixel ngoài bản đồ" % id)
 			var frame := frames.get_frame_texture(npc.sprite.animation, 0)
 			_check(frame.get_image().get_pixel(0, 0).a < 0.05, "%s: nền sprite trong suốt" % id)
 			_check(npc.get_prompt().contains(npc.get_display_name()) and npc.get_node_or_null("IceShell") != null, "%s: tên, lời nhắc và lớp trạng thái tồn tại" % id)
