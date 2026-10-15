@@ -306,10 +306,12 @@ def main():
         enemy_spec(family, fams[family], req)
         index.append("- [%s](%s.md) – %s" % (fams[family]["name"], family, KIND_NAMES[fams[family]["kind"]]))
     story = json.load(open("data/story/story.json", encoding="utf-8"))
-    index += ["", "## NPC (chỉ chân dung %s, 1024×1024)" % ", ".join(req["character"]["portrait"]["expressions"]), ""]
+    index += ["", "## NPC (sprite và chân dung hiện có)", "",
+              "Sprite, chân dung và prompt: [design/npc/README.md](../design/npc/README.md).",
+              "Xem cả bộ: `godot --path . res://tools/npc_preview/npc_gallery.tscn`.", ""]
     for sid, sp in story["speakers"].items():
         if sid != "narrator" and "character" not in sp:
-            index.append("- `%s` → `assets/characters/%s/portrait/portrait_%s_<biểu cảm>.png`" % (sid, sid, sid))
+            index.append("- `%s` → `assets/characters/%s/portrait/portrait_%s_<biểu cảm>.tres` (neutral, happy, serious, speaking)" % (sid, sid, sid))
     index += ["", "## Tileset (Krita, ô 64×64)", "",
               "Mỗi khu 1 ảnh `assets/tilesets/<khu>/tiles_<khu>.png` 320×64: 5 ô hàng ngang theo thứ tự "
               "sàn A, sàn B, tường, sàn hành lang, tường hành lang (tường có va chạm). Khu: %s." % ", ".join(req["tileset"]["zones"])]

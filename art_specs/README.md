@@ -52,12 +52,13 @@ Sinh tự động bởi `tools/data_builder/build_art_specs.py`. Quy trình: `do
 - [Cự Thú Kho Chứa](vault_behemoth.md) – Boss
 - [Lõi Lò Biến Dạng](warped_core.md) – Boss
 
-## NPC (chỉ chân dung neutral, happy, serious, 1024×1024)
+## NPC (sprite và chân dung hiện có)
 
-- `orwen` → `assets/characters/orwen/portrait/portrait_orwen_<biểu cảm>.png`
-- `lio` → `assets/characters/lio/portrait/portrait_lio_<biểu cảm>.png`
-- `bram` → `assets/characters/bram/portrait/portrait_bram_<biểu cảm>.png`
-- `devourer` → `assets/characters/devourer/portrait/portrait_devourer_<biểu cảm>.png`
+- `orwen`, `lio`, `bram`: bốn khung idle và bốn chân dung, atlas `.tres` trong `assets/characters/<id>/map/` và `portrait/`.
+- `kiri`, `garren`, `nyx`: dùng sprite nhân vật và bốn chân dung trong `assets/characters/<id>/portrait/`.
+- `devourer`: dùng sprite boss; bốn chân dung atlas `assets/characters/devourer/portrait/portrait_devourer_<biểu cảm>.tres`.
+- Biểu cảm: `neutral`, `happy`, `serious`, `speaking`. Chi tiết và prompt: [design/npc/README.md](../design/npc/README.md).
+- Xem cả bộ: `godot --path . res://tools/npc_preview/npc_gallery.tscn`.
 
 ## Tileset (Krita, ô 64×64)
 

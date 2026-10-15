@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/devourer/portrait/devourer_portraits_v1.png" id="1_6rqbu"]
+
+[resource]
+atlas = ExtResource("1_6rqbu")
+region = Rect2(1086, 5, 543, 543)
+filter_clip = true

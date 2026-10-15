@@ -4,6 +4,7 @@ extends SceneTree
 
 const NEW_NPCS := ["orwen", "lio", "bram"]
 const COMPANIONS := ["kiri", "garren", "nyx"]
+const STORY_PORTRAITS := ["devourer"]
 const EXPRESSIONS := ["neutral", "happy", "serious", "speaking"]
 
 func _initialize() -> void:
@@ -11,7 +12,7 @@ func _initialize() -> void:
 		if not _build(id, true):
 			quit(1)
 			return
-	for id in COMPANIONS:
+	for id in COMPANIONS + STORY_PORTRAITS:
 		if not _build(id, false):
 			quit(1)
 			return

@@ -10,6 +10,16 @@ func _run() -> void:
 	GameState.reset_new_game()
 	StoryManager.auto_play = true
 	ArtLibrary.clear_cache()
+	# The final boss also speaks in story scenes, outside the recruitable NPC cast.
+	var story_regions: Dictionary = {}
+	for expression in EXPRESSIONS:
+		var portrait := StoryManager.speaker_portrait("devourer", expression) as AtlasTexture
+		_check(portrait != null and portrait.get_width() == portrait.get_height(), "devourer: chân dung %s tồn tại, đúng tỉ lệ" % expression)
+		if portrait:
+			story_regions[portrait.region] = true
+	_check(story_regions.size() == 4, "devourer: bốn biểu cảm dùng bốn vùng tranh riêng")
+	for expression in ["smug", "angry", "sad"]:
+		_check(StoryManager.speaker_portrait("devourer", expression) != null, "devourer: biểu cảm cốt truyện %s có hình" % expression)
 	for zone: StringName in CAST:
 		SceneRouter.go_to(StoryManager.get_zone_scene(zone), {}, 0.01)
 		await SceneRouter.transition_finished

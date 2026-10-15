@@ -26,6 +26,7 @@ Gợi ý nguồn miễn phí bản quyền: OpenGameArt (lọc CC0), Kenney.nl (
 
 ## Hình ảnh
 
+- Chân dung hội thoại Kẻ Nuốt Mảnh Hồn: tạo bằng image_gen tích hợp, dựa trên concept của dự án; ảnh tại `assets/characters/devourer/portrait/devourer_portraits_v1.png`, prompt tại `design/npc/devourer_prompt.txt`.
 - Hình tạm (khối màu, chữ cái) vẽ bằng code: `systems/placeholder_art.gd`, các hàm `_draw()`.
 - Tileset tạm: sinh bằng `tools/level_builder/build_rooms.gd`.
 - Hình mẫu của Mira (`assets/characters/mira/`): render từ mô hình khối của `tools/blender/make_sample_blend.py`.
