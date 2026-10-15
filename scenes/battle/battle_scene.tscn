@@ -1,17 +1,10 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_script"]
-[ext_resource type="Shader" path="res://assets/vfx/shaders/starfield_bg.gdshader" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/battle/crystal_ruins.png" id="2_bg"]
 [ext_resource type="Script" path="res://scenes/battle/ui/damage_number_pool.gd" id="3_numbers"]
 [ext_resource type="Script" path="res://scenes/battle/ui/turn_order_bar.gd" id="4_turns"]
 [ext_resource type="Script" path="res://scenes/battle/ui/skill_points_bar.gd" id="5_sp"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bg"]
-shader = ExtResource("2_bg")
-shader_parameter/top_color = Color(0.05, 0.04, 0.1, 1)
-shader_parameter/bottom_color = Color(0.16, 0.08, 0.2, 1)
-shader_parameter/glow_center = Vector2(0.55, 0.45)
-shader_parameter/glow_strength = 0.12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
 bg_color = Color(0.07, 0.06, 0.13, 0.96)
@@ -35,8 +28,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
 
-[node name="Background" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_bg")
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,18 +36,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Ground" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -420.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-color = Color(0.12, 0.1, 0.18, 0.55)
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Field" type="Node2D" parent="."]
 unique_name_in_owner = true
