@@ -1,0 +1,112 @@
+Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
+
+  ĐẠT  Đọc được data/story/story.json
+  ĐẠT  37 cảnh hội thoại JSON, 184 câu
+  ĐẠT  Mọi câu có người nói hợp lệ (chân dung, biểu cảm)
+  ĐẠT  Mọi câu thoại / lựa chọn có chữ dịch []
+  ĐẠT  Mở đầu + mỗi chương 3–5 cảnh chính { "p0": 4, "c1": 5, "c2": 5, "c3": 5, "c4": 5 }
+  ĐẠT  Cảnh gia nhập riêng: c1_kiri_join
+  ĐẠT  Cảnh gia nhập riêng: c2_garren_join
+  ĐẠT  Cảnh gia nhập riêng: c3_nyx_join
+  ĐẠT  Ảo ảnh Celestine ở cuối Chương 1
+  ĐẠT  Kết Chương 4: vết nứt mở ra vùng đất mới
+  ĐẠT  NPC và điểm kích hoạt trỏ tới cảnh có thật
+  ĐẠT  18 bước nhiệm vụ chính có chữ dịch
+  ĐẠT  2 nhiệm vụ phụ
+  ĐẠT  Có Sảnh Trung Tâm res://scenes/overworld/world/hub.tscn
+  ĐẠT  Sảnh có bàn Ước Nguyện, bảng nhiệm vụ, bàn nâng cấp, đội hình, quầy hàng, Cổng Dịch Chuyển
+  ĐẠT  Sảnh có NPC và điểm nghỉ
+  ĐẠT  Sảnh chỉ có 1 quái hướng dẫn (hiện theo cờ cốt truyện)
+  ĐẠT  library: 11 phòng (8–12)
+  ĐẠT  library: quái, rương 6/4/4, 8 Hộp Bí Kỹ đúng kế hoạch khu
+  ĐẠT  library: trận theo cấp chương [1, 8]
+  ĐẠT  library: không kẹt – tới được boss và mọi mục tiêu nhiệm vụ chính chỉ với đội miễn phí (11/11 phòng)
+  ĐẠT  library: cổng ở cửa không cần nhân vật gacha; 2 rương ẩn cần nhân vật gacha
+  ĐẠT  vault: 10 phòng (8–12)
+  ĐẠT  vault: quái, rương 6/4/4, 8 Hộp Bí Kỹ đúng kế hoạch khu
+  ĐẠT  vault: trận theo cấp chương [8, 16]
+  ĐẠT  vault: không kẹt – tới được boss và mọi mục tiêu nhiệm vụ chính chỉ với đội miễn phí (10/10 phòng)
+  ĐẠT  vault: cổng ở cửa không cần nhân vật gacha; 2 rương ẩn cần nhân vật gacha
+  ĐẠT  furnace: 10 phòng (8–12)
+  ĐẠT  furnace: quái, rương 6/4/4, 8 Hộp Bí Kỹ đúng kế hoạch khu
+  ĐẠT  furnace: trận theo cấp chương [16, 24]
+  ĐẠT  furnace: không kẹt – tới được boss và mọi mục tiêu nhiệm vụ chính chỉ với đội miễn phí (10/10 phòng)
+  ĐẠT  furnace: cổng ở cửa không cần nhân vật gacha; 2 rương ẩn cần nhân vật gacha
+  ĐẠT  tower: 12 phòng (8–12)
+  ĐẠT  tower: quái, rương 6/4/4, 8 Hộp Bí Kỹ đúng kế hoạch khu
+  ĐẠT  tower: trận theo cấp chương [24, 30]
+  ĐẠT  tower: không kẹt – tới được boss và mọi mục tiêu nhiệm vụ chính chỉ với đội miễn phí (12/12 phòng)
+  ĐẠT  tower: cổng ở cửa không cần nhân vật gacha; 2 rương ẩn cần nhân vật gacha
+  ĐẠT  Game mới: chỉ có nhân vật chính
+  ĐẠT  Game mới bắt đầu ở Sảnh Trung Tâm
+  ĐẠT  Gacha + nhiệm vụ ngày còn khóa
+  ĐẠT  Mở đầu: tỉnh dậy, Mira gia nhập đội
+  ĐẠT  Nhiệm vụ chính: dẹp quái ở Sân Tập
+  ĐẠT  Cảnh Sân Tập chạy đúng một lần
+  ĐẠT  Thắng trận hướng dẫn: cảnh sau trận chờ về map
+  ĐẠT  Sau trận: hướng dẫn xong, đi gặp ông Orwen
+  ĐẠT  Chưa gặp Orwen: Cổng chưa có khu nào
+  ĐẠT  Gặp Orwen: Cổng mở Thư Viện
+  ĐẠT  Vào Thư Viện: tìm nguồn tiếng nổ
+  ĐẠT  Chương 1: Kiri gia nhập (trước khi hết chương)
+  ĐẠT  Kiri gia nhập rồi thì không nói lại cảnh gia nhập
+  ĐẠT  Tìm sơ đồ xong: hạ boss Thư Viện
+  ĐẠT  Hạ boss: cảnh kết Chương 1 (ảo ảnh Celestine)
+  ĐẠT  Hết Chương 1: mở Gacha + nhiệm vụ ngày
+  ĐẠT  Thưởng chương 400 Lệ Tinh + 3 Vé Giới Hạn, quà mở Gacha 10 Vé Giới Hạn (+100 Lệ Tinh boss lần đầu)
+  ĐẠT  Mảnh Hồn 1 → Tinh Mệnh 1 của nhân vật chính
+  ĐẠT  Về gặp Orwen; chưa có nhiệm vụ phụ
+  ĐẠT  Cổng mở Kho Chứa
+  ĐẠT  Chương 2: Garren gia nhập, đội đủ 4 người
+  ĐẠT  Đội từ Chương 2 đủ vị trí: sát thương, hồi máu, buff, đỡ đòn
+  ĐẠT  Nhân vật gia nhập ở cấp trung bình của đội (Garren cấp 15, đã đột phá 1 lần)
+  ĐẠT  Hết Chương 2: Tinh Mệnh 2
+  ĐẠT  Nhiệm vụ phụ 1 mở sau Chương 2
+  ĐẠT  Nhặt nhật ký sau tường nứt
+  ĐẠT  Nhiệm vụ phụ 1 xong: Mảnh Hồn 5
+  ĐẠT  Chương 3: Nyx gia nhập
+  ĐẠT  Đủ 4 nhân vật miễn phí + nhân vật chính
+  ĐẠT  Hết Chương 3: Mảnh Hồn 3
+  ĐẠT  Nhiệm vụ phụ 2 xong: Mảnh Hồn 6
+  ĐẠT  Cổng mở đủ 4 khu
+  ĐẠT  Đỉnh Tháp: đối đầu Kẻ Nuốt Mảnh Hồn
+  ĐẠT  Hết Chương 4: vết nứt mở, nhiệm vụ chính hoàn thành
+  ĐẠT  Nhân vật chính đủ Tinh Mệnh 6 (4 chương + 2 nhiệm vụ phụ)
+  ĐẠT  Nhận đủ thưởng 4 chương
+  ĐẠT  Đánh lại boss không chạy lại cảnh kết chương
+  ĐẠT  Hộp chọn mức Khó trả về 'hard'
+  ĐẠT  Mở hộp thoại: chữ chạy, game tạm dừng
+  ĐẠT  Bấm khi đang chạy chữ: hiện hết câu
+  ĐẠT  Bấm lần nữa: sang câu sau
+  ĐẠT  Bỏ qua: dừng ở lựa chọn
+  ĐẠT  Lịch sử ghi lại lựa chọn
+  ĐẠT  Mở bảng lịch sử
+  ĐẠT  Hết cảnh: đóng hộp thoại, game chạy lại
+  ĐẠT  Phím Space hiện hết câu
+  ĐẠT  Đóng sau khi bỏ qua hết
+  ĐẠT  Game mới: xuất hiện ở phòng y tế (H04)
+  ĐẠT  Cảnh tỉnh dậy tự chạy khi vào Sảnh, Mira gia nhập
+  ĐẠT  Quái hướng dẫn hiện ra sau khi tỉnh dậy
+  ĐẠT  Mũi tên chỉ về Sân Tập
+  ĐẠT  Góc màn hình hiện nhiệm vụ chính
+  ĐẠT  Xong hướng dẫn: quái hướng dẫn ẩn
+  ĐẠT  Cổng Dịch Chuyển mở bảng (tạm dừng game)
+  ĐẠT  Mục tiêu ở khu khác: mũi tên chỉ về Cổng Dịch Chuyển
+  ĐẠT  Cổng có Thư Viện
+  ĐẠT  Tới Thư Viện ở phòng L01
+  ĐẠT  Cảnh vào Thư Viện chạy; mở dịch chuyển nhanh L01
+  ĐẠT  Tường lửa chắn đường chỉ mở bằng Nước (Mira)
+  ĐẠT  Kiri chờ ở L04
+  ĐẠT  Nói chuyện: Kiri gia nhập, NPC biến mất
+  ĐẠT  Điểm nghỉ: tự lưu, mở dịch chuyển nhanh
+  ĐẠT  Dịch chuyển nhanh có Sảnh Trung Tâm
+  ĐẠT  Về Sảnh, game chạy lại
+  ĐẠT  Vào lại khu: quái thường hồi lại
+  ĐẠT  Đánh lại boss: chọn Khó → vào trận mức Khó
+  ĐẠT  Lưu/tải giữ cờ cốt truyện, dịch chuyển nhanh, đội
+  ĐẠT  Quầy hàng: Hộp Bí Kỹ 600 Xu, tối đa 3 lần/ngày
+  ĐẠT  Ký Ức bậc 2: 5 lần/ngày
+  ĐẠT  Báo cáo kinh tế ĐẠT, kể cả mục F (bản đồ khớp kế hoạch khu)
+  ĐẠT  Báo cáo có mục F
+  ĐẠT  Không có lỗi engine/script trong lúc chạy
+Phase 12: 109/109 kiểm tra đạt

@@ -48,7 +48,7 @@ func run(write_status: bool = true) -> Dictionary:
 			for expression: String in _req["character"]["portrait"]["expressions"]:
 				var path := ArtLibrary.CHARACTER_DIR.path_join(speaker_id).path_join(
 						"portrait/portrait_%s_%s.png" % [speaker_id, expression])
-				if not ResourceLoader.exists(path):
+				if not ResourceLoader.exists(path) and not ResourceLoader.exists(path.get_basename() + ".tres"):
 					_missing("NPC %s" % speaker_id, "chân dung %s (1024px) – %s" % [expression, path.trim_prefix("res://")])
 	for family in _enemy_families():
 		_import_enemy(family["asset_id"], family["kind"], family["phases"])
@@ -74,7 +74,7 @@ func _import_character(asset_id: String) -> void:
 	_import_mode(base, asset_id, "vfx", vfx_spec, [], label, true)
 	for expression: String in spec["portrait"]["expressions"]:
 		var path := base.path_join("portrait/portrait_%s_%s.png" % [asset_id, expression])
-		if not ResourceLoader.exists(path):
+		if not ResourceLoader.exists(path) and not ResourceLoader.exists(path.get_basename() + ".tres"):
 			_missing(label, "chân dung %s (%dpx) – %s" % [expression, spec["portrait"]["size"], path.trim_prefix("res://")])
 	var splash := base.path_join("splash/splash_%s.png" % asset_id)
 	if not ResourceLoader.exists(splash):

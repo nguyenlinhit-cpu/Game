@@ -1,0 +1,45 @@
+Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
+OpenGL API 4.6 (Core Profile) Mesa 26.2.4 - Compatibility - Using Device: AMD - AMD Radeon 740M Graphics (radeonsi, phoenix2, ACO, DRM 3.64, 7.2.9)
+
+  ĐẠT  library: tileset riêng
+  ĐẠT  library: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  library: đủ 11 phòng
+  ĐẠT  library: đủ hành lang liên thông
+  ĐẠT  library: mọi phòng và hành lang được gắn hình
+  ĐẠT  library: mỗi khu nhỏ có tên riêng
+  ĐẠT  library: ít nhất 5 bố cục lát sàn riêng theo công dụng
+  ĐẠT  library: hành lang có trang trí kiến trúc
+  ĐẠT  library: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  library: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  vault: tileset riêng
+  ĐẠT  vault: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  vault: đủ 10 phòng
+  ĐẠT  vault: đủ hành lang liên thông
+  ĐẠT  vault: mọi phòng và hành lang được gắn hình
+  ĐẠT  vault: mỗi khu nhỏ có tên riêng
+  ĐẠT  vault: ít nhất 5 bố cục lát sàn riêng theo công dụng
+  ĐẠT  vault: hành lang có trang trí kiến trúc
+  ĐẠT  vault: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  vault: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  furnace: tileset riêng
+  ĐẠT  furnace: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  furnace: đủ 10 phòng
+  ĐẠT  furnace: đủ hành lang liên thông
+  ĐẠT  furnace: mọi phòng và hành lang được gắn hình
+  ĐẠT  furnace: mỗi khu nhỏ có tên riêng
+  ĐẠT  furnace: ít nhất 5 bố cục lát sàn riêng theo công dụng
+  ĐẠT  furnace: hành lang có trang trí kiến trúc
+  ĐẠT  furnace: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  furnace: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  tower: tileset riêng
+  ĐẠT  tower: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  tower: đủ 12 phòng
+  ĐẠT  tower: đủ hành lang liên thông
+  ĐẠT  tower: mọi phòng và hành lang được gắn hình
+  ĐẠT  tower: mỗi khu nhỏ có tên riêng
+  ĐẠT  tower: ít nhất 5 bố cục lát sàn riêng theo công dụng
+  ĐẠT  tower: hành lang có trang trí kiến trúc
+  ĐẠT  tower: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  tower: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  Không có lỗi engine/script trong lúc chạy
+Map art: 41/41 kiểm tra đạt

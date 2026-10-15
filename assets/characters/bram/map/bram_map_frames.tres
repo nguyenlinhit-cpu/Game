@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/bram/npc/bram_appearance_v1.png" id="1_x5iwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bifw"]
+atlas = ExtResource("1_x5iwo")
+region = Rect2(0, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpfvj"]
+atlas = ExtResource("1_x5iwo")
+region = Rect2(418, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy1vk"]
+atlas = ExtResource("1_x5iwo")
+region = Rect2(836, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwnqg"]
+atlas = ExtResource("1_x5iwo")
+region = Rect2(1254, 0, 418, 470)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_6bifw")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_hpfvj")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_hy1vk")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_fwnqg")
+}],
+"loop": 1,
+"name": &"idle_s",
+"speed": 4.0
+}]
+metadata/anchor = Vector2(0.5, 1)
+metadata/source = "res://assets/characters/bram/npc/bram_appearance_v1.png"

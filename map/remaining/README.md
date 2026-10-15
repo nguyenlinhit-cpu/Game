@@ -1,6 +1,6 @@
 # Map nền các khu vực còn lại
 
-Tạo bằng công cụ image_gen tích hợp, dựa trên ảnh Sảnh Trung Tâm hiện có. Các ảnh là nền raster/concept cho từng khu; chưa gắn vào scene Godot, chưa có collision hoặc tileset. Không thay ảnh gốc.
+Tạo bằng công cụ image_gen tích hợp, dựa trên ảnh Sảnh Trung Tâm hiện có. Đây là bộ tham chiếu gốc, còn dùng cho cầu nối và chất liệu tường. Các phòng hiện dùng [bốn atlas mới với tranh và cấu trúc riêng cho 43 phòng](../../assets/maps/ROOM_ATLASES.md), thay cho việc lặp một ảnh ở mọi phòng. Xem [danh sách map và ảnh chạy trong Godot](../../docs/MAPS.md). Ảnh gốc được giữ nguyên.
 
 | File | Khu | Khác biệt |
 |---|---|---|

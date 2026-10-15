@@ -85,6 +85,14 @@ static func character_frames(data: CharacterData, mode: String) -> SpriteFrames:
 	return _load(frames_path(CHARACTER_DIR, asset_id, mode)) as SpriteFrames
 
 
+## Story NPCs use their own idle artwork; recruitable companions keep their existing skin.
+static func npc_frames(npc_id: StringName) -> SpriteFrames:
+	var character_path := DataPaths.character_path(npc_id)
+	if ResourceLoader.exists(character_path):
+		return character_frames(DataPaths.load_character(npc_id), "map")
+	return _load(frames_path(CHARACTER_DIR, String(npc_id), "map")) as SpriteFrames
+
+
 ## Chân dung hội thoại: biểu cảm hội thoại quy về 3 biểu cảm vẽ (bình thường / vui / nghiêm), thiếu thì bình thường.
 static func portrait(data: CharacterData, expression: String = "neutral") -> Texture2D:
 	if data == null:
@@ -98,11 +106,13 @@ static func portrait(data: CharacterData, expression: String = "neutral") -> Tex
 
 ## Chân dung theo thư mục asset (dùng cho cả NPC không phải nhân vật đánh được: orwen, lio, bram...).
 static func portrait_by_id(asset_id: String, expression: String = "neutral") -> Texture2D:
-	var drawn := str(requirements().get("expression_map", {}).get(expression, "neutral"))
+	var drawn := str(requirements().get("expression_map", {}).get(expression,
+			expression if expression in ["neutral", "happy", "serious", "speaking"] else "neutral"))
 	for name: String in [drawn, "neutral"]:
-		var tex := _load(CHARACTER_DIR.path_join(asset_id).path_join("portrait/portrait_%s_%s.png" % [asset_id, name])) as Texture2D
-		if tex:
-			return tex
+		for extension: String in ["png", "tres"]:
+			var tex := _load(CHARACTER_DIR.path_join(asset_id).path_join("portrait/portrait_%s_%s.%s" % [asset_id, name, extension])) as Texture2D
+			if tex:
+				return tex
 	return null
 
 

@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/orwen/npc/orwen_appearance_v1.png" id="1_fpu3d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43eaw"]
+atlas = ExtResource("1_fpu3d")
+region = Rect2(0, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v3ch"]
+atlas = ExtResource("1_fpu3d")
+region = Rect2(418, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3wrm"]
+atlas = ExtResource("1_fpu3d")
+region = Rect2(836, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crmtl"]
+atlas = ExtResource("1_fpu3d")
+region = Rect2(1254, 0, 418, 470)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_43eaw")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_2v3ch")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_n3wrm")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_crmtl")
+}],
+"loop": 1,
+"name": &"idle_s",
+"speed": 4.0
+}]
+metadata/anchor = Vector2(0.5, 1)
+metadata/source = "res://assets/characters/orwen/npc/orwen_appearance_v1.png"

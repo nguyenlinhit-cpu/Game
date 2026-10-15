@@ -2,6 +2,8 @@
 
 18 họ, 33 biến thể, 55 chiêu khác nhau (85 bộ chiêu theo biến thể). Các bản mới chờ bạn duyệt hình. [Báo cáo tích hợp](../docs/DESIGN_ENEMY_IMPORT.md).
 
+Ngoài danh sách chính bên dưới, đã bổ sung hình cho cả 6 mẫu không có `family`: 3 id cũ dùng lại hình đúng biến thể, 2 bù nhìn tập và quái thử cân bằng có atlas SVG riêng. Phòng thử hiện đủ 39 quái. [Ảnh bù nhìn trong game](_reports/enemy_cast/ingame_training_dummy.png).
+
 ![Tổng quan](_reports/enemy_cast/overview.png)
 
 | Họ quái | Biến thể | Chiêu | Xem |

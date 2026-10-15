@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/orwen/npc/orwen_appearance_v1.png" id="1_30xs3"]
+
+[resource]
+atlas = ExtResource("1_30xs3")
+region = Rect2(836, 470, 418, 418)
+filter_clip = true

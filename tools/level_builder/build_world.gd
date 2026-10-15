@@ -7,6 +7,8 @@ extends Node
 
 const WORLD_DIR: String = "res://scenes/overworld/world"
 const ROOM_SCRIPT: String = "res://scenes/overworld/rooms/room.gd"
+const SCENERY_SCRIPT: String = "res://scenes/overworld/rooms/room_scenery.gd"
+const ARCHITECTURE = preload("res://tools/level_builder/room_architecture.gd")
 const MAP_SCRIPT: String = "res://scenes/overworld/map/overworld_map.gd"
 const MANAGER_SCRIPT: String = "res://scenes/overworld/map/room_manager.gd"
 const CAMERA_SCRIPT: String = "res://scenes/overworld/map/camera_rig.gd"
@@ -30,7 +32,16 @@ const HUB_GARDEN_BACKDROP: String = "res://assets/maps/hub/hub_garden.jpg"
 ## Đoạn hành lang Bắc–Nam lặp được theo chiều dọc.
 const HUB_CORRIDOR_NS: String = "res://assets/maps/hub/hub_corridor_ns.jpg"
 
+## Each dungeon room has its own painted cell and authored spatial plan.
+const PAINTED_ZONES := [&"library", &"vault", &"furnace", &"tower"]
+
 const T := Room.RoomType
+const AREA_NAMES := {
+	&"library": ["Sảnh học giả", "Đại sảnh sách", "Kho bản thảo", "Phòng đọc cổ", "Mật thất cổ ngữ", "Hành lang lưu trữ", "Kho nhật ký", "Cấm thư các", "Phòng hộ vệ", "Trạm nghỉ học giả", "Đại sảnh Người Gác"],
+	&"vault": ["Trạm trú băng", "Bến hàng đóng băng", "Kho bảo vật", "Nhà kho tuyết", "Sảnh lính gác", "Buồng khóa băng", "Kho sâu", "Trạm canh đông giá", "Nơi trú ấm", "Đại kho phong ấn"],
+	&"furnace": ["Trạm nghỉ công nhân", "Xưởng đầu", "Kho quặng", "Xưởng cơ khí", "Sảnh luyện", "Phòng điều khiển", "Xưởng sâu", "Buồng máy tinh anh", "Trạm làm mát", "Buồng lõi năng lượng"],
+	&"tower": ["Sảnh chân trời", "Sân gió", "Kho thiên văn", "Sân sao", "Đài hộ vệ", "Buồng thiên tượng", "Cầu vọng tinh", "Đài lính gác", "Sân vết nứt", "Đài tinh anh", "Trạm nghỉ đỉnh", "Thiên đài cuối"],
+}
 const K := ElementalObstacle.Kind
 const N := Room.Side.NORTH
 const E := Room.Side.EAST
@@ -221,10 +232,15 @@ func _ready() -> void:
 func _run() -> int:
 	_tile_set = load(DataPaths.PLACEHOLDER_TILESET) as TileSet
 	DirAccess.make_dir_recursive_absolute(WORLD_DIR)
+	var selected := OS.get_cmdline_user_args()
+	var built := 0
 	for zone: StringName in LAYOUTS:
+		if not selected.is_empty() and not selected.has(String(zone)):
+			continue
 		if not _build_map(zone, LAYOUTS[zone]):
 			return 1
-	print("Xong: %d bản đồ." % LAYOUTS.size())
+		built += 1
+	print("Xong: %d bản đồ." % built)
 	return 0
 
 
@@ -242,8 +258,9 @@ func _build_map(zone: StringName, layout: Dictionary) -> bool:
 	root.set("zone", zone)
 	var corridors := TileMapLayer.new()
 	corridors.name = "Corridors"
-	corridors.tile_set = _tile_set
-	corridors.modulate = ZONE_TINTS.get(zone, Color.WHITE)
+	var zone_tiles := ArtLibrary.zone_tileset(zone)
+	corridors.tile_set = zone_tiles if zone_tiles else _tile_set
+	corridors.modulate = Color.WHITE if zone_tiles else ZONE_TINTS.get(zone, Color.WHITE)
 	_own(root, root, corridors, true)
 	# Ẩn ô hành lang chỉ tắt phần vẽ, tường hành lang vẫn chặn.
 	corridors.visible = not layout.get("hide_corridor_tiles", false)
@@ -327,12 +344,18 @@ func _side_between(a: Vector2i, b: Vector2i) -> int:
 
 func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictionary, data: ZoneData,
 		counters: Dictionary) -> Room:
+	if PAINTED_ZONES.has(zone):
+		ARCHITECTURE.configure(zone, def)
 	var type: int = def["type"]
 	var size: Vector2i = def.get("size", SIZES[type])
 	var root := Node2D.new()
 	root.set_script(load(ROOM_SCRIPT))
 	root.name = "Room" + String(def["id"])
 	root.set("room_id", def["id"])
+	root.set("structure_id", def.get("structure_id", &""))
+	root.set("zone", zone)
+	if AREA_NAMES.has(zone):
+		root.set("area_name", AREA_NAMES[zone][String(def["id"]).substr(1).to_int() - 1])
 	root.set("room_type", type)
 	root.set("size_tiles", size)
 	root.set("grid_cell", def["cell"])
@@ -348,10 +371,11 @@ func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictio
 	for cell: Vector2i in def.get("walls", []):
 		extra_walls.append(cell)
 	if def.has("backdrop"):
-		var backdrop := load(def["backdrop"]) as Texture2D
+		var backdrop := def.get("backdrop_texture", load(def["backdrop"])) as Texture2D
 		root.set("backdrop", backdrop)
 		root.set("backdrop_scale", def.get("backdrop_scale", 1.0))
 		root.set("backdrop_offset", def.get("backdrop_offset", Vector2.ZERO))
+		root.set("backdrop_play_area", def.get("backdrop_play_area", Rect2()))
 		extra_walls.append_array(_image_block_cells(def, half, backdrop.get_size()))
 	var floor_layer := _layer(map_root, root, "Floor", zone)
 	var wall_layer := _layer(map_root, root, "Walls", zone)
@@ -364,7 +388,17 @@ func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictio
 			if (on_edge and not in_gap) or extra_walls.has(cell):
 				wall_layer.set_cell(cell, TileIds.SOURCE_ID, TileIds.WALL)
 			else:
-				floor_layer.set_cell(cell, TileIds.SOURCE_ID, TileIds.FLOOR_A if (x + y) % 2 == 0 else TileIds.FLOOR_B)
+				var floor_tile := TileIds.FLOOR_A if (x + y) % 2 == 0 else TileIds.FLOOR_B
+				if zone != &"hub":
+					floor_tile = _area_floor(cell, half, type, String(def["id"]).substr(1).to_int())
+				floor_layer.set_cell(cell, TileIds.SOURCE_ID, floor_tile)
+	if zone != &"hub" and not def.has("backdrop"):
+		var scenery := Node2D.new()
+		scenery.set_script(load(SCENERY_SCRIPT))
+		scenery.name = "Scenery"
+		scenery.set("zone", zone)
+		scenery.set("source_art", load("res://map/remake/%s_kit_v3.png" % zone))
+		_own(map_root, root, scenery)
 
 	var entities := Node2D.new()
 	entities.name = "Entities"
@@ -403,7 +437,7 @@ func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictio
 	if type == T.REST or def.has("rest_tile"):
 		var rest := _instance(map_root, entities, REST_SCENE, "RestPoint", def.get("rest_tile", Vector2i(0, -1)))
 		rest.set("rest_point_id", StringName("%s_%s" % [zone, def["id"]]))
-	if type == T.REST or def.get("spawn", false):
+	if type == T.REST or def.get("spawn", false) or PAINTED_ZONES.has(zone):
 		var marker := Marker2D.new()
 		marker.name = "PlayerSpawn"
 		marker.position = _tile(Vector2i(0, 3) if type != T.HALL else Vector2i(0, 2))
@@ -414,7 +448,111 @@ func _build_room(map_root: Node, rooms_root: Node, zone: StringName, def: Dictio
 		_add_door_gate(map_root, entities, half, gate[0], gate[1])
 
 	_add_story_entities(map_root, entities, def, size)
+	if zone != &"hub" and not def.has("backdrop"):
+		_add_architecture_bays(root as Room, floor_layer, wall_layer, entities, half)
+	if PAINTED_ZONES.has(zone):
+		_place_painted_entities(root as Room, floor_layer, wall_layer, entities, half)
 	return root as Room
+
+
+## Preserve encounter/item identities while moving any covered by painted furniture onto
+## the nearest reachable floor cell. Puzzle niches retain their authored gate positions.
+func _place_painted_entities(room: Room, floor: TileMapLayer, walls: TileMapLayer, entities: Node2D, half: Vector2i) -> void:
+	var occupied: Dictionary = {}
+	var seed := Vector2i.ZERO
+	var seed_distance := INF
+	for cell in floor.get_used_cells():
+		if walls.get_cell_source_id(cell) < 0 and Vector2(cell).length_squared() < seed_distance:
+			seed = cell
+			seed_distance = Vector2(cell).length_squared()
+	var reachable: Dictionary = {seed: true}
+	var pending: Array[Vector2i] = [seed]
+	var index := 0
+	while index < pending.size():
+		var current := pending[index]
+		index += 1
+		for step in [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]:
+			var next: Vector2i = current + step
+			if floor.get_cell_source_id(next) >= 0 and walls.get_cell_source_id(next) < 0 and not reachable.has(next):
+				reachable[next] = true
+				pending.append(next)
+	for entity in entities.get_children():
+		if not entity is Node2D or entity is ElementalObstacle:
+			continue
+		if String(entity.name).begins_with("Niche"):
+			continue
+		var desired := Vector2i((entity.position / Room.TILE_SIZE).floor())
+		var best := desired
+		var distance := INF
+		for cell: Vector2i in reachable:
+			if walls.get_cell_source_id(cell) >= 0 or occupied.has(cell):
+				continue
+			if absi(cell.x) >= half.x or absi(cell.y) >= half.y:
+				continue
+			var score := Vector2(cell - desired).length_squared()
+			if score < distance:
+				distance = score
+				best = cell
+		entity.position = _tile(best)
+		occupied[best] = true
+		if entity is OverworldEnemy:
+			# Keep patrols inside the clear part of a painted room.
+			entity.set("patrol_points", PackedVector2Array())
+	var marker := room.get_node("PlayerSpawn") as Marker2D
+	var marker_tile := Vector2i((marker.position / Room.TILE_SIZE).floor())
+	var closest := seed
+	var closest_distance := INF
+	for cell: Vector2i in reachable:
+		if walls.get_cell_source_id(cell) >= 0 or occupied.has(cell) or absi(cell.x) >= half.x - 1 or absi(cell.y) >= half.y - 1:
+			continue
+		var distance := Vector2(cell - marker_tile).length_squared()
+		if distance < closest_distance:
+			closest = cell
+			closest_distance = distance
+	marker.position = _tile(closest)
+
+
+func _add_architecture_bays(room: Room, floor_layer: TileMapLayer, wall_layer: TileMapLayer, entities: Node2D, half: Vector2i) -> void:
+	var bays: Array[Vector2i] = []
+	for x in [-half.x + 2, half.x - 3]:
+		for y in [-half.y + 2, half.y - 3]:
+			var corner := Vector2i(x, y)
+			var clearance := Rect2(Vector2(corner - Vector2i.ONE) * 64, Vector2.ONE * 256)
+			var occupied := false
+			for entity in entities.get_children():
+				if entity is Node2D and clearance.has_point(entity.position):
+					occupied = true
+			if occupied or room.room_type == T.PUZZLE:
+				continue
+			bays.append(corner)
+			for dx in 2:
+				for dy in 2:
+					var cell := corner + Vector2i(dx, dy)
+					floor_layer.erase_cell(cell)
+					wall_layer.set_cell(cell, TileIds.SOURCE_ID, TileIds.WALL)
+	room.decorative_bays = bays
+
+
+func _area_floor(cell: Vector2i, half: Vector2i, type: int, variant: int) -> Vector2i:
+	var tile := 1 if absi(cell.x) == half.x - 1 or absi(cell.y) == half.y - 1 else 0
+	match type:
+		T.REST:
+			if absi(cell.x) < half.x - 2 and absi(cell.y) < half.y - 2:
+				tile = 5
+		T.CHEST:
+			tile = 6 if absi(cell.x) <= 2 and absi(cell.y) <= 2 else tile
+		T.PUZZLE:
+			if absi(cell.y) <= 1 or cell.x % 5 == 0:
+				tile = 7
+		T.ELITE:
+			tile = 7 if absi(cell.x) == half.x - 3 or absi(cell.y) == half.y - 3 else tile
+		T.BOSS:
+			var ring := maxi(absi(cell.x), absi(cell.y))
+			tile = 7 if ring in [3, 7] else tile
+		_:
+			if (variant % 2 == 0 and absi(cell.y) <= 1) or (variant % 2 == 1 and absi(cell.x) <= 1):
+				tile = 5
+	return Vector2i(tile, 0)
 
 
 ## Ô bên trong phòng có tâm nằm trong một khung "image_blocks" [x0, y0, x1, y1] (pixel ảnh nền gốc).
@@ -424,7 +562,21 @@ func _image_block_cells(def: Dictionary, half: Vector2i, image_size: Vector2) ->
 	var offset: Vector2 = def.get("backdrop_offset", Vector2.ZERO)
 	for y in range(-half.y + 1, half.y):
 		for x in range(-half.x + 1, half.x):
+			# The four puzzle alcoves must stay open behind their elemental gates.
+			if def["type"] == T.PUZZLE and (NICHE_XS.has(x) or NICHE_XS.has(x - 1)):
+				var niche_sign := 1 if not (int(def["doors"]) & S) else -1
+				if y * niche_sign >= half.y - 3:
+					continue
 			var pixel := (Vector2(x, y) * Room.TILE_SIZE - offset) / scale + image_size * 0.5
+			var area: Rect2 = def.get("backdrop_play_area", Rect2())
+			if area.has_area():
+				var size: Vector2i = def.get("size", SIZES[def["type"]])
+				pixel = Vector2(x, y) / Vector2(size) * area.size + area.get_center()
+				var uv := (pixel - area.position) / area.size
+				var corner_distance := minf(uv.x, 1.0 - uv.x) + minf(uv.y, 1.0 - uv.y)
+				if corner_distance < float(def.get("clip_corners", 0.0)):
+					cells.append(Vector2i(x, y))
+					continue
 			for block: Array in def.get("image_blocks", []):
 				if pixel.x >= block[0] and pixel.y >= block[1] and pixel.x <= block[2] and pixel.y <= block[3]:
 					cells.append(Vector2i(x, y))
@@ -524,8 +676,9 @@ func _gate(map_root: Node, parent: Node, show_if: Array, hide_if: Array) -> void
 func _layer(map_root: Node, room: Node, layer_name: String, zone: StringName) -> TileMapLayer:
 	var layer := TileMapLayer.new()
 	layer.name = layer_name
-	layer.tile_set = _tile_set
-	layer.modulate = ZONE_TINTS.get(zone, Color.WHITE)
+	var zone_tiles := ArtLibrary.zone_tileset(zone)
+	layer.tile_set = zone_tiles if zone_tiles else _tile_set
+	layer.modulate = Color.WHITE if zone_tiles else ZONE_TINTS.get(zone, Color.WHITE)
 	_own(map_root, room, layer)
 	return layer
 

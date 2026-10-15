@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/bram/npc/bram_appearance_v1.png" id="1_2bunt"]
+
+[resource]
+atlas = ExtResource("1_2bunt")
+region = Rect2(1254, 470, 418, 418)
+filter_clip = true

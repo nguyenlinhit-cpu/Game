@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/lio/npc/lio_appearance_v1.png" id="1_8xvet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5pmm"]
+atlas = ExtResource("1_8xvet")
+region = Rect2(0, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke70w"]
+atlas = ExtResource("1_8xvet")
+region = Rect2(418, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctbjf"]
+atlas = ExtResource("1_8xvet")
+region = Rect2(836, 0, 418, 470)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6leah"]
+atlas = ExtResource("1_8xvet")
+region = Rect2(1254, 0, 418, 470)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_e5pmm")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_ke70w")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_ctbjf")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_6leah")
+}],
+"loop": 1,
+"name": &"idle_s",
+"speed": 4.0
+}]
+metadata/anchor = Vector2(0.5, 1)
+metadata/source = "res://assets/characters/lio/npc/lio_appearance_v1.png"

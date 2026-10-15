@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/characters/kiri/portrait/kiri_portraits_v1.png" id="1_hsb2o"]
+
+[resource]
+atlas = ExtResource("1_hsb2o")
+region = Rect2(1086, 12, 543, 543)
+filter_clip = true

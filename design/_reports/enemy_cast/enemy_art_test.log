@@ -1,7 +1,13 @@
 Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
 
+  ĐẠT  balance_brute: có model map
+  ĐẠT  balance_brute: có model trận
+  ĐẠT  balance_brute: texture có hình nhìn thấy, không chỉ có resource trống
+  ĐẠT  balance_brute: UnitView phát sprite thật
+  ĐẠT  balance_brute: hoạt ảnh attack hoạt động
   ĐẠT  devourer_clone_flame: map idle/run/windup
   ĐẠT  devourer_clone_flame: tải trận và VFX
+  ĐẠT  devourer_clone_flame: UnitView dùng sprite thật
   ĐẠT  devourer_clone_flame: idle
   ĐẠT  devourer_clone_flame: attack
   ĐẠT  devourer_clone_flame: skill
@@ -17,6 +23,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  devourer_clone_flame: phát hit en_clone_wail
   ĐẠT  devourer_clone_storm: map idle/run/windup
   ĐẠT  devourer_clone_storm: tải trận và VFX
+  ĐẠT  devourer_clone_storm: UnitView dùng sprite thật
   ĐẠT  devourer_clone_storm: idle
   ĐẠT  devourer_clone_storm: attack
   ĐẠT  devourer_clone_storm: skill
@@ -32,6 +39,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  devourer_clone_storm: phát hit en_clone_wail
   ĐẠT  devourer_clone_tide: map idle/run/windup
   ĐẠT  devourer_clone_tide: tải trận và VFX
+  ĐẠT  devourer_clone_tide: UnitView dùng sprite thật
   ĐẠT  devourer_clone_tide: idle
   ĐẠT  devourer_clone_tide: attack
   ĐẠT  devourer_clone_tide: skill
@@ -47,6 +55,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  devourer_clone_tide: phát hit en_clone_wail
   ĐẠT  flying_book: map idle/run/windup
   ĐẠT  flying_book: tải trận và VFX
+  ĐẠT  flying_book: UnitView dùng sprite thật
   ĐẠT  flying_book: idle
   ĐẠT  flying_book: attack
   ĐẠT  flying_book: skill
@@ -58,6 +67,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  flying_book: phát hit en_book_cut
   ĐẠT  furnace_arm: map idle/run/windup
   ĐẠT  furnace_arm: tải trận và VFX
+  ĐẠT  furnace_arm: UnitView dùng sprite thật
   ĐẠT  furnace_arm: idle
   ĐẠT  furnace_arm: attack
   ĐẠT  furnace_arm: skill
@@ -73,6 +83,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  furnace_arm: phát hit en_arm_stoke
   ĐẠT  ink_rat_lightning: map idle/run/windup
   ĐẠT  ink_rat_lightning: tải trận và VFX
+  ĐẠT  ink_rat_lightning: UnitView dùng sprite thật
   ĐẠT  ink_rat_lightning: idle
   ĐẠT  ink_rat_lightning: attack
   ĐẠT  ink_rat_lightning: skill
@@ -88,6 +99,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  ink_rat_lightning: phát hit en_rat_shred
   ĐẠT  ink_rat_wind: map idle/run/windup
   ĐẠT  ink_rat_wind: tải trận và VFX
+  ĐẠT  ink_rat_wind: UnitView dùng sprite thật
   ĐẠT  ink_rat_wind: idle
   ĐẠT  ink_rat_wind: attack
   ĐẠT  ink_rat_wind: skill
@@ -103,6 +115,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  ink_rat_wind: phát hit en_rat_shred
   ĐẠT  library_warden: map idle/run/windup
   ĐẠT  library_warden: tải trận và VFX
+  ĐẠT  library_warden: UnitView dùng sprite thật
   ĐẠT  library_warden: idle
   ĐẠT  library_warden: attack
   ĐẠT  library_warden: skill
@@ -138,6 +151,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  library_warden: hoạt ảnh tích tụ en_warden_curse
   ĐẠT  mirror_shade_soul: map idle/run/windup
   ĐẠT  mirror_shade_soul: tải trận và VFX
+  ĐẠT  mirror_shade_soul: UnitView dùng sprite thật
   ĐẠT  mirror_shade_soul: idle
   ĐẠT  mirror_shade_soul: attack
   ĐẠT  mirror_shade_soul: skill
@@ -157,6 +171,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  mirror_shade_soul: phát hit en_mirror_flash
   ĐẠT  mirror_shade_water: map idle/run/windup
   ĐẠT  mirror_shade_water: tải trận và VFX
+  ĐẠT  mirror_shade_water: UnitView dùng sprite thật
   ĐẠT  mirror_shade_water: idle
   ĐẠT  mirror_shade_water: attack
   ĐẠT  mirror_shade_water: skill
@@ -176,6 +191,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  mirror_shade_water: phát hit en_mirror_flash
   ĐẠT  mute_librarian: map idle/run/windup
   ĐẠT  mute_librarian: tải trận và VFX
+  ĐẠT  mute_librarian: UnitView dùng sprite thật
   ĐẠT  mute_librarian: idle
   ĐẠT  mute_librarian: attack
   ĐẠT  mute_librarian: skill
@@ -194,8 +210,16 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  mute_librarian: phát cast en_ml_hush
   ĐẠT  mute_librarian: phát hit en_ml_hush
   ĐẠT  mute_librarian: VFX screen đúng tỉ lệ
+  ĐẠT  rusted_knight: có model map
+  ĐẠT  rusted_knight: có model trận
+  ĐẠT  rusted_knight: texture có hình nhìn thấy, không chỉ có resource trống
+  ĐẠT  rusted_knight: UnitView phát sprite thật
+  ĐẠT  rusted_knight: hoạt ảnh attack hoạt động
+  ĐẠT  rusted_knight: chiêu cũ rusted_knight_slash nối đúng metadata
+  ĐẠT  rusted_knight: chiêu cũ rusted_knight_sweep nối đúng metadata
   ĐẠT  rusted_knight_lightning: map idle/run/windup
   ĐẠT  rusted_knight_lightning: tải trận và VFX
+  ĐẠT  rusted_knight_lightning: UnitView dùng sprite thật
   ĐẠT  rusted_knight_lightning: idle
   ĐẠT  rusted_knight_lightning: attack
   ĐẠT  rusted_knight_lightning: skill
@@ -215,6 +239,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  rusted_knight_lightning: phát hit en_knight_guard
   ĐẠT  rusted_knight_water: map idle/run/windup
   ĐẠT  rusted_knight_water: tải trận và VFX
+  ĐẠT  rusted_knight_water: UnitView dùng sprite thật
   ĐẠT  rusted_knight_water: idle
   ĐẠT  rusted_knight_water: attack
   ĐẠT  rusted_knight_water: skill
@@ -234,6 +259,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  rusted_knight_water: phát hit en_knight_guard
   ĐẠT  shattered_knight: map idle/run/windup
   ĐẠT  shattered_knight: tải trận và VFX
+  ĐẠT  shattered_knight: UnitView dùng sprite thật
   ĐẠT  shattered_knight: idle
   ĐẠT  shattered_knight: attack
   ĐẠT  shattered_knight: skill
@@ -254,6 +280,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  shattered_knight: hoạt ảnh tích tụ en_sk_charge
   ĐẠT  soul_devourer: map idle/run/windup
   ĐẠT  soul_devourer: tải trận và VFX
+  ĐẠT  soul_devourer: UnitView dùng sprite thật
   ĐẠT  soul_devourer: idle
   ĐẠT  soul_devourer: attack
   ĐẠT  soul_devourer: skill
@@ -300,8 +327,19 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  soul_devourer: phát hit en_dev_swallow
   ĐẠT  soul_devourer: VFX screen đúng tỉ lệ
   ĐẠT  soul_devourer: hoạt ảnh tích tụ en_dev_swallow
+  ĐẠT  training_dummy: có model map
+  ĐẠT  training_dummy: có model trận
+  ĐẠT  training_dummy: texture có hình nhìn thấy, không chỉ có resource trống
+  ĐẠT  training_dummy: UnitView phát sprite thật
+  ĐẠT  training_dummy: hoạt ảnh attack hoạt động
+  ĐẠT  training_dummy_fire: có model map
+  ĐẠT  training_dummy_fire: có model trận
+  ĐẠT  training_dummy_fire: texture có hình nhìn thấy, không chỉ có resource trống
+  ĐẠT  training_dummy_fire: UnitView phát sprite thật
+  ĐẠT  training_dummy_fire: hoạt ảnh attack hoạt động
   ĐẠT  vault_behemoth: map idle/run/windup
   ĐẠT  vault_behemoth: tải trận và VFX
+  ĐẠT  vault_behemoth: UnitView dùng sprite thật
   ĐẠT  vault_behemoth: idle
   ĐẠT  vault_behemoth: attack
   ĐẠT  vault_behemoth: skill
@@ -348,6 +386,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  vault_behemoth: hoạt ảnh tích tụ en_beh_avalanche
   ĐẠT  venom_bee_poison: map idle/run/windup
   ĐẠT  venom_bee_poison: tải trận và VFX
+  ĐẠT  venom_bee_poison: UnitView dùng sprite thật
   ĐẠT  venom_bee_poison: idle
   ĐẠT  venom_bee_poison: attack
   ĐẠT  venom_bee_poison: skill
@@ -363,6 +402,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  venom_bee_poison: phát hit en_bee_call_poison
   ĐẠT  venom_bee_poison_drone: map idle/run/windup
   ĐẠT  venom_bee_poison_drone: tải trận và VFX
+  ĐẠT  venom_bee_poison_drone: UnitView dùng sprite thật
   ĐẠT  venom_bee_poison_drone: idle
   ĐẠT  venom_bee_poison_drone: attack
   ĐẠT  venom_bee_poison_drone: skill
@@ -374,6 +414,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  venom_bee_poison_drone: phát hit en_bee_sting
   ĐẠT  venom_bee_wind: map idle/run/windup
   ĐẠT  venom_bee_wind: tải trận và VFX
+  ĐẠT  venom_bee_wind: UnitView dùng sprite thật
   ĐẠT  venom_bee_wind: idle
   ĐẠT  venom_bee_wind: attack
   ĐẠT  venom_bee_wind: skill
@@ -389,6 +430,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  venom_bee_wind: phát hit en_bee_call_wind
   ĐẠT  venom_bee_wind_drone: map idle/run/windup
   ĐẠT  venom_bee_wind_drone: tải trận và VFX
+  ĐẠT  venom_bee_wind_drone: UnitView dùng sprite thật
   ĐẠT  venom_bee_wind_drone: idle
   ĐẠT  venom_bee_wind_drone: attack
   ĐẠT  venom_bee_wind_drone: skill
@@ -400,6 +442,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  venom_bee_wind_drone: phát hit en_bee_sting
   ĐẠT  void_archer_lightning: map idle/run/windup
   ĐẠT  void_archer_lightning: tải trận và VFX
+  ĐẠT  void_archer_lightning: UnitView dùng sprite thật
   ĐẠT  void_archer_lightning: idle
   ĐẠT  void_archer_lightning: attack
   ĐẠT  void_archer_lightning: skill
@@ -419,6 +462,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  void_archer_lightning: phát hit en_archer_snipe
   ĐẠT  void_archer_wind: map idle/run/windup
   ĐẠT  void_archer_wind: tải trận và VFX
+  ĐẠT  void_archer_wind: UnitView dùng sprite thật
   ĐẠT  void_archer_wind: idle
   ĐẠT  void_archer_wind: attack
   ĐẠT  void_archer_wind: skill
@@ -436,8 +480,16 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  void_archer_wind: chiêu en_archer_snipe có VFX và timing
   ĐẠT  void_archer_wind: phát cast en_archer_snipe
   ĐẠT  void_archer_wind: phát hit en_archer_snipe
+  ĐẠT  wandering_shade: có model map
+  ĐẠT  wandering_shade: có model trận
+  ĐẠT  wandering_shade: texture có hình nhìn thấy, không chỉ có resource trống
+  ĐẠT  wandering_shade: UnitView phát sprite thật
+  ĐẠT  wandering_shade: hoạt ảnh attack hoạt động
+  ĐẠT  wandering_shade: chiêu cũ wandering_shade_touch nối đúng metadata
+  ĐẠT  wandering_shade: chiêu cũ riêng wandering_shade_wail giữ VFX particle
   ĐẠT  wandering_shade_soul: map idle/run/windup
   ĐẠT  wandering_shade_soul: tải trận và VFX
+  ĐẠT  wandering_shade_soul: UnitView dùng sprite thật
   ĐẠT  wandering_shade_soul: idle
   ĐẠT  wandering_shade_soul: attack
   ĐẠT  wandering_shade_soul: skill
@@ -453,6 +505,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  wandering_shade_soul: phát hit en_shade_veil
   ĐẠT  wandering_shade_water: map idle/run/windup
   ĐẠT  wandering_shade_water: tải trận và VFX
+  ĐẠT  wandering_shade_water: UnitView dùng sprite thật
   ĐẠT  wandering_shade_water: idle
   ĐẠT  wandering_shade_water: attack
   ĐẠT  wandering_shade_water: skill
@@ -468,6 +521,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  wandering_shade_water: phát hit en_shade_veil
   ĐẠT  wandering_shade_wind: map idle/run/windup
   ĐẠT  wandering_shade_wind: tải trận và VFX
+  ĐẠT  wandering_shade_wind: UnitView dùng sprite thật
   ĐẠT  wandering_shade_wind: idle
   ĐẠT  wandering_shade_wind: attack
   ĐẠT  wandering_shade_wind: skill
@@ -483,6 +537,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  wandering_shade_wind: phát hit en_shade_veil
   ĐẠT  warp_matrix: map idle/run/windup
   ĐẠT  warp_matrix: tải trận và VFX
+  ĐẠT  warp_matrix: UnitView dùng sprite thật
   ĐẠT  warp_matrix: idle
   ĐẠT  warp_matrix: attack
   ĐẠT  warp_matrix: skill
@@ -500,8 +555,15 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warp_matrix: chiêu en_matrix_spew có VFX và timing
   ĐẠT  warp_matrix: phát cast en_matrix_spew
   ĐẠT  warp_matrix: phát hit en_matrix_spew
+  ĐẠT  warp_sprout: có model map
+  ĐẠT  warp_sprout: có model trận
+  ĐẠT  warp_sprout: texture có hình nhìn thấy, không chỉ có resource trống
+  ĐẠT  warp_sprout: UnitView phát sprite thật
+  ĐẠT  warp_sprout: hoạt ảnh attack hoạt động
+  ĐẠT  warp_sprout: chiêu cũ warp_sprout_bite nối đúng metadata
   ĐẠT  warp_sprout_fire: map idle/run/windup
   ĐẠT  warp_sprout_fire: tải trận và VFX
+  ĐẠT  warp_sprout_fire: UnitView dùng sprite thật
   ĐẠT  warp_sprout_fire: idle
   ĐẠT  warp_sprout_fire: attack
   ĐẠT  warp_sprout_fire: skill
@@ -513,6 +575,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warp_sprout_fire: phát hit en_sprout_bite
   ĐẠT  warp_sprout_poison: map idle/run/windup
   ĐẠT  warp_sprout_poison: tải trận và VFX
+  ĐẠT  warp_sprout_poison: UnitView dùng sprite thật
   ĐẠT  warp_sprout_poison: idle
   ĐẠT  warp_sprout_poison: attack
   ĐẠT  warp_sprout_poison: skill
@@ -524,6 +587,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warp_sprout_poison: phát hit en_sprout_bite
   ĐẠT  warp_sprout_water: map idle/run/windup
   ĐẠT  warp_sprout_water: tải trận và VFX
+  ĐẠT  warp_sprout_water: UnitView dùng sprite thật
   ĐẠT  warp_sprout_water: idle
   ĐẠT  warp_sprout_water: attack
   ĐẠT  warp_sprout_water: skill
@@ -535,6 +599,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warp_sprout_water: phát hit en_sprout_bite
   ĐẠT  warped_core: map idle/run/windup
   ĐẠT  warped_core: tải trận và VFX
+  ĐẠT  warped_core: UnitView dùng sprite thật
   ĐẠT  warped_core: idle
   ĐẠT  warped_core: attack
   ĐẠT  warped_core: skill
@@ -565,6 +630,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warped_core: VFX screen đúng tỉ lệ
   ĐẠT  warped_mage_fire: map idle/run/windup
   ĐẠT  warped_mage_fire: tải trận và VFX
+  ĐẠT  warped_mage_fire: UnitView dùng sprite thật
   ĐẠT  warped_mage_fire: idle
   ĐẠT  warped_mage_fire: attack
   ĐẠT  warped_mage_fire: skill
@@ -585,6 +651,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warped_mage_fire: VFX screen đúng tỉ lệ
   ĐẠT  warped_mage_poison: map idle/run/windup
   ĐẠT  warped_mage_poison: tải trận và VFX
+  ĐẠT  warped_mage_poison: UnitView dùng sprite thật
   ĐẠT  warped_mage_poison: idle
   ĐẠT  warped_mage_poison: attack
   ĐẠT  warped_mage_poison: skill
@@ -605,6 +672,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warped_mage_poison: VFX screen đúng tỉ lệ
   ĐẠT  warped_mage_wind: map idle/run/windup
   ĐẠT  warped_mage_wind: tải trận và VFX
+  ĐẠT  warped_mage_wind: UnitView dùng sprite thật
   ĐẠT  warped_mage_wind: idle
   ĐẠT  warped_mage_wind: attack
   ĐẠT  warped_mage_wind: skill
@@ -624,6 +692,8 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  warped_mage_wind: phát hit en_mage_storm
   ĐẠT  warped_mage_wind: VFX screen đúng tỉ lệ
   ĐẠT  Đủ 33 biến thể thuộc 18 họ quái
+  ĐẠT  Cả 6 mẫu cũ, bù nhìn và quái thử cân bằng có hình
+  ĐẠT  Mọi quái trong mọi trận đều có model: []
   ĐẠT  Biến thể Nước / Sét tải bộ texture riêng
   ĐẠT  Không có lỗi engine/script trong lúc chạy
-Enemy art: 626/626 kiểm tra đạt
+Enemy art: 696/696 kiểm tra đạt

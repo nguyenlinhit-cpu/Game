@@ -36,6 +36,7 @@ var _magnet_radius: float = 0.0
 
 
 func _ready() -> void:
+	player.z_index = 10
 	var previous_scene := GameState.current_map_scene
 	GameState.current_map_scene = scene_file_path
 	# Vào map từ map khác (không phải từ trận về, không phải tải save): coi như vừa vào khu → quái thường + boss hồi.
@@ -45,6 +46,12 @@ func _ready() -> void:
 	var rooms := _collect_rooms()
 	_apply_zone_tileset(rooms)
 	room_manager.setup(rooms, _connect_rooms(rooms))
+	if RoomScenery.THEMES.has(zone):
+		var corridor_art := Node2D.new()
+		corridor_art.set_script(load("res://scenes/overworld/map/corridor_scenery.gd"))
+		corridor_art.name = "CorridorScenery"
+		corridor_art.set("map", self)
+		add_child(corridor_art)
 	room_manager.current_room_changed.connect(_on_current_room_changed)
 	_restore_and_track_state()
 	_place_player()

@@ -1,0 +1,71 @@
+Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
+ERROR: X11 Display is not available
+   at: DisplayServerX11 (platform/linuxbsd/x11/display_server_x11.cpp:6943)
+WARNING: Display driver x11 failed, falling back to wayland.
+     at: setup2 (main/main.cpp:3380)
+WARNING: xdg-toplevel-icon protocol not found! Cannot set window icon.
+     at: init (platform/linuxbsd/wayland/wayland_thread.cpp:5642)
+WARNING: FIFO protocol not found! Frame pacing will be degraded.
+     at: init (platform/linuxbsd/wayland/wayland_thread.cpp:5657)
+OpenGL API 4.6 (Core Profile) Mesa 26.2.4 - Compatibility - Using Device: AMD - AMD Radeon 740M Graphics (radeonsi, phoenix2, ACO, DRM 3.64, 7.2.9)
+
+  ĐẠT  library: tileset riêng
+  ĐẠT  library: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  library: đủ 11 phòng
+  ĐẠT  library: đủ hành lang liên thông
+  ĐẠT  library: mọi phòng dùng cảnh vẽ sẵn, hành lang dùng cầu cùng phong cách Sảnh
+  ĐẠT  library: mỗi khu nhỏ có tên riêng
+  ĐẠT  library: tỉ lệ tranh phù hợp phòng và có tường/cửa theo bố cục thật
+  ĐẠT  library: hành lang có trang trí kiến trúc
+  ĐẠT  library: từng phòng có tranh và cấu trúc va chạm riêng
+  ĐẠT  library: nhân vật và thực thể luôn nằm trên nền phòng/hành lang
+  ĐẠT  library: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  library: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  library: nhân vật hiện thật trên hành lang horizontal (2429 pixel)
+  ĐẠT  library: nhân vật hiện thật trên hành lang vertical (2178 pixel)
+  ĐẠT  vault: tileset riêng
+  ĐẠT  vault: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  vault: đủ 10 phòng
+  ĐẠT  vault: đủ hành lang liên thông
+  ĐẠT  vault: mọi phòng dùng cảnh vẽ sẵn, hành lang dùng cầu cùng phong cách Sảnh
+  ĐẠT  vault: mỗi khu nhỏ có tên riêng
+  ĐẠT  vault: tỉ lệ tranh phù hợp phòng và có tường/cửa theo bố cục thật
+  ĐẠT  vault: hành lang có trang trí kiến trúc
+  ĐẠT  vault: từng phòng có tranh và cấu trúc va chạm riêng
+  ĐẠT  vault: nhân vật và thực thể luôn nằm trên nền phòng/hành lang
+  ĐẠT  vault: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  vault: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  vault: nhân vật hiện thật trên hành lang horizontal (2178 pixel)
+  ĐẠT  vault: nhân vật hiện thật trên hành lang vertical (2209 pixel)
+  ĐẠT  furnace: tileset riêng
+  ĐẠT  furnace: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  furnace: đủ 10 phòng
+  ĐẠT  furnace: đủ hành lang liên thông
+  ĐẠT  furnace: mọi phòng dùng cảnh vẽ sẵn, hành lang dùng cầu cùng phong cách Sảnh
+  ĐẠT  furnace: mỗi khu nhỏ có tên riêng
+  ĐẠT  furnace: tỉ lệ tranh phù hợp phòng và có tường/cửa theo bố cục thật
+  ĐẠT  furnace: hành lang có trang trí kiến trúc
+  ĐẠT  furnace: từng phòng có tranh và cấu trúc va chạm riêng
+  ĐẠT  furnace: nhân vật và thực thể luôn nằm trên nền phòng/hành lang
+  ĐẠT  furnace: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  furnace: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  furnace: nhân vật hiện thật trên hành lang horizontal (2178 pixel)
+  ĐẠT  furnace: nhân vật hiện thật trên hành lang vertical (2253 pixel)
+  ĐẠT  tower: tileset riêng
+  ĐẠT  tower: chỉ tường phòng / hành lang có va chạm
+  ĐẠT  tower: đủ 12 phòng
+  ĐẠT  tower: đủ hành lang liên thông
+  ĐẠT  tower: mọi phòng dùng cảnh vẽ sẵn, hành lang dùng cầu cùng phong cách Sảnh
+  ĐẠT  tower: mỗi khu nhỏ có tên riêng
+  ĐẠT  tower: tỉ lệ tranh phù hợp phòng và có tường/cửa theo bố cục thật
+  ĐẠT  tower: hành lang có trang trí kiến trúc
+  ĐẠT  tower: từng phòng có tranh và cấu trúc va chạm riêng
+  ĐẠT  tower: nhân vật và thực thể luôn nằm trên nền phòng/hành lang
+  ĐẠT  tower: đường đi bằng ô gạch tới mọi phòng, kể cả boss
+  ĐẠT  tower: quái, rương, hộp, NPC, điểm nghỉ và vật nhiệm vụ nằm trên sàn tới được
+  ĐẠT  tower: nhân vật hiện thật trên hành lang horizontal (2178 pixel)
+  ĐẠT  tower: nhân vật hiện thật trên hành lang vertical (2253 pixel)
+  ĐẠT  Không có lỗi engine/script trong lúc chạy
+Map art: 57/57 kiểm tra đạt
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

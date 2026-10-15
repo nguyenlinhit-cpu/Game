@@ -1,7 +1,7 @@
 {
   "enemy_art": {
-    "passed": 626,
-    "total": 626,
+    "passed": 696,
+    "total": 696,
     "shutdown_resource_warning": false
   },
   "phase08": {
@@ -16,5 +16,8 @@
   },
   "map_sets": 33,
   "import_files": 403,
-  "rendered_families": 18
+  "rendered_families": 18,
+  "enemy_definitions_with_models": 39,
+  "sample_enemies_checked": 6,
+  "all_encounters_have_models": true
 }

@@ -2,7 +2,7 @@
 
 Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lại: `godot --headless --path . --import && godot --headless --path . res://tools/import_assets/import_assets.tscn`.
 
-- Đã nhận: 181 · Còn thiếu: 1033 mục · Cảnh báo: 145
+- Đã nhận: 183 · Còn thiếu: 1031 mục · Cảnh báo: 145
 
 ## Đã nhận
 
@@ -84,6 +84,8 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - assets/characters/zephyra/map/zephyra_map_frames.tres (5 hoạt ảnh)
 - assets/characters/zephyra/battle/zephyra_battle_frames.tres (7 hoạt ảnh)
 - assets/characters/zephyra/vfx/zephyra_vfx_frames.tres (9 hoạt ảnh)
+- assets/enemies/balance_brute/map/balance_brute_map_frames.tres (3 hoạt ảnh)
+- assets/enemies/balance_brute/battle/balance_brute_battle_frames.tres (5 hoạt ảnh)
 - assets/enemies/devourer_clone_flame/map/devourer_clone_flame_map_frames.tres (3 hoạt ảnh)
 - assets/enemies/devourer_clone_flame/battle/devourer_clone_flame_battle_frames.tres (5 hoạt ảnh)
 - assets/enemies/devourer_clone_flame/vfx/devourer_clone_flame_vfx_frames.tres (4 hoạt ảnh)
@@ -129,6 +131,10 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - assets/enemies/soul_devourer/map/soul_devourer_map_frames.tres (3 hoạt ảnh)
 - assets/enemies/soul_devourer/battle/soul_devourer_battle_frames.tres (26 hoạt ảnh)
 - assets/enemies/soul_devourer/vfx/soul_devourer_vfx_frames.tres (15 hoạt ảnh)
+- assets/enemies/training_dummy/map/training_dummy_map_frames.tres (3 hoạt ảnh)
+- assets/enemies/training_dummy/battle/training_dummy_battle_frames.tres (5 hoạt ảnh)
+- assets/enemies/training_dummy_fire/map/training_dummy_fire_map_frames.tres (3 hoạt ảnh)
+- assets/enemies/training_dummy_fire/battle/training_dummy_fire_battle_frames.tres (5 hoạt ảnh)
 - assets/enemies/vault_behemoth/map/vault_behemoth_map_frames.tres (3 hoạt ảnh)
 - assets/enemies/vault_behemoth/battle/vault_behemoth_battle_frames.tres (13 hoạt ảnh)
 - assets/enemies/vault_behemoth/vfx/vault_behemoth_vfx_frames.tres (18 hoạt ảnh)
@@ -150,8 +156,6 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - assets/enemies/void_archer_wind/map/void_archer_wind_map_frames.tres (3 hoạt ảnh)
 - assets/enemies/void_archer_wind/battle/void_archer_wind_battle_frames.tres (6 hoạt ảnh)
 - assets/enemies/void_archer_wind/vfx/void_archer_wind_vfx_frames.tres (6 hoạt ảnh)
-- assets/enemies/wandering_shade/map/wandering_shade_map_frames.tres (2 hoạt ảnh)
-- assets/enemies/wandering_shade/battle/wandering_shade_battle_frames.tres (5 hoạt ảnh)
 - assets/enemies/wandering_shade_soul/map/wandering_shade_soul_map_frames.tres (3 hoạt ảnh)
 - assets/enemies/wandering_shade_soul/battle/wandering_shade_soul_battle_frames.tres (5 hoạt ảnh)
 - assets/enemies/wandering_shade_soul/vfx/wandering_shade_soul_vfx_frames.tres (4 hoạt ảnh)
@@ -164,8 +168,6 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - assets/enemies/warp_matrix/map/warp_matrix_map_frames.tres (3 hoạt ảnh)
 - assets/enemies/warp_matrix/battle/warp_matrix_battle_frames.tres (6 hoạt ảnh)
 - assets/enemies/warp_matrix/vfx/warp_matrix_vfx_frames.tres (6 hoạt ảnh)
-- assets/enemies/warp_sprout/map/warp_sprout_map_frames.tres (2 hoạt ảnh)
-- assets/enemies/warp_sprout/battle/warp_sprout_battle_frames.tres (5 hoạt ảnh)
 - assets/enemies/warp_sprout_fire/map/warp_sprout_fire_map_frames.tres (3 hoạt ảnh)
 - assets/enemies/warp_sprout_fire/battle/warp_sprout_fire_battle_frames.tres (5 hoạt ảnh)
 - assets/enemies/warp_sprout_fire/vfx/warp_sprout_fire_vfx_frames.tres (5 hoạt ảnh)
@@ -1423,10 +1425,6 @@ Sinh tự động bởi `tools/import_assets` – đừng sửa tay. Chạy lạ
 - chân dung neutral (1024px) – assets/characters/devourer/portrait/portrait_devourer_neutral.png
 - chân dung happy (1024px) – assets/characters/devourer/portrait/portrait_devourer_happy.png
 - chân dung serious (1024px) – assets/characters/devourer/portrait/portrait_devourer_serious.png
-
-### Quái rusted_knight
-- map (32px/khung): idle 4, run 6 khung × 8 hướng – assets/enemies/rusted_knight/map/
-- battle (256px/khung): idle 6, attack 8, skill 10, hit 4, down 6 khung – assets/enemies/rusted_knight/battle/
 
 ### Tileset hub
 - assets/tilesets/hub/tiles_hub.png (5 ô 64px hàng ngang: sàn A, sàn B, tường, sàn hành lang, tường hành lang)

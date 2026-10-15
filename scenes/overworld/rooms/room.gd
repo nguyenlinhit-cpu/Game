@@ -25,6 +25,9 @@ const ENEMY_GROUP: StringName = &"enemy_group"
 const LOCKING_TYPES: Array[RoomType] = [RoomType.COMBAT, RoomType.ELITE, RoomType.BOSS]
 
 @export var room_id: StringName
+@export var area_name: String = ""
+@export var decorative_bays: Array[Vector2i] = []
+@export var structure_id: StringName
 @export var room_type: RoomType = RoomType.COMBAT
 ## Kích thước tính cả tường, luôn là số lẻ để có ô chính giữa.
 @export var size_tiles: Vector2i = Vector2i(17, 13)
@@ -38,6 +41,8 @@ const LOCKING_TYPES: Array[RoomType] = [RoomType.COMBAT, RoomType.ELITE, RoomTyp
 ## Tâm ảnh lệch so với tâm ô giữa phòng (px), và độ phóng ảnh.
 @export var backdrop_offset: Vector2 = Vector2.ZERO
 @export var backdrop_scale: float = 1.0
+## Pixel bounds of the painted courtyard corresponding to the room's tile bounds.
+@export var backdrop_play_area: Rect2 = Rect2()
 
 var connected_sides: int = 0
 
@@ -54,6 +59,8 @@ func _ready() -> void:
 	position = Vector2(grid_cell * CELL_TILES * TILE_SIZE)
 	_doors_root = Node2D.new()
 	_doors_root.name = "Doors"
+	_doors_root.z_index = 6
+	entities.z_index = 5
 	add_child(_doors_root)
 	_create_interior_area()
 	_create_backdrop()
@@ -119,6 +126,9 @@ func apply_connections(sides: int) -> void:
 		else:
 			for cell in get_door_gap_cells(side):
 				wall_layer.set_cell(cell, TileIds.SOURCE_ID, TileIds.WALL)
+	var painted_details := get_node_or_null("PaintedDetails") as Node2D
+	if painted_details:
+		painted_details.queue_redraw()
 
 
 ## Mã lưu trạng thái cho vật trong phòng (rương, quái...): "<room_id>/<đường dẫn trong phòng>".
@@ -199,12 +209,29 @@ func _create_backdrop() -> void:
 		return
 	var sprite := Sprite2D.new()
 	sprite.name = "Backdrop"
+	sprite.z_index = -20
 	sprite.texture = backdrop
 	sprite.centered = true
 	sprite.scale = Vector2.ONE * backdrop_scale
 	sprite.position = Vector2.ONE * TILE_SIZE * 0.5 + backdrop_offset
+	if backdrop_play_area.has_area():
+		sprite.scale = Vector2(size_tiles * TILE_SIZE) / backdrop_play_area.size
+		# Keep a frame of scenery without overlapping the next room on the grid.
+		var margin := Vector2.ONE * 192.0 / sprite.scale
+		var crop := backdrop_play_area.grow_individual(margin.x, margin.y, margin.x, margin.y)
+		crop = crop.intersection(Rect2(Vector2.ZERO, backdrop.get_size()))
+		sprite.region_enabled = true
+		sprite.region_rect = crop
+		sprite.position += (crop.get_center() - backdrop_play_area.get_center()) * sprite.scale
 	add_child(sprite)
 	move_child(sprite, 0)
+	if backdrop_play_area.has_area():
+		var details := Node2D.new()
+		details.set_script(load("res://scenes/overworld/rooms/painted_room_details.gd"))
+		details.name = "PaintedDetails"
+		details.z_index = -9
+		add_child(details)
+		move_child(details, 1)
 	# Ẩn lớp ô chỉ tắt phần vẽ, va chạm tường vẫn còn.
 	floor_layer.visible = false
 	wall_layer.visible = false

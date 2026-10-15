@@ -11,7 +11,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  Đọc chuỗi PNG Krita (số khung 4 chữ số)
   ĐẠT  Bỏ qua file sai quy tắc / của nhân vật khác
   ĐẠT  Nhận sprite sheet Blender của Mira (map + trận)
-  ĐẠT  Liệt kê asset còn thiếu, boss đã đủ hình (1033 mục: nhân vật, tileset, NPC)
+  ĐẠT  Liệt kê asset còn thiếu, boss đã đủ hình (1031 mục: nhân vật, tileset, NPC)
   ĐẠT  Mira: chỉ báo thiếu hướng chưa vẽ (idle_n...), không báo hướng phải
   ĐẠT  SpriteFrames map pixel: idle 4 + run 6 khung hướng phải, khung 32 px, lặp
   ĐẠT  SpriteFrames trận: attack 8 khung 512 px, không lặp
@@ -64,7 +64,7 @@ Godot Engine v4.7.2.stable.nixpkgs.ed1daf0bf - https://godotengine.org
   ĐẠT  Thắng trận: phát victory
   ĐẠT  Không có lỗi engine/script trong lúc chạy
 Phase 13: 63/63 kiểm tra đạt
-WARNING: 57 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+WARNING: 53 ObjectDB instances were leaked at exit (run with `--verbose` for details).
    at: cleanup (core/object/object.cpp:2536)
 ERROR: 48 resources still in use at exit (run with --verbose for details).
    at: clear (core/io/resource.cpp:822)
