@@ -86,8 +86,8 @@ func _test_importer() -> void:
 	var missing: Array = report["missing"]
 	var text := importer.get_missing_text()
 	_check(missing.size() > 200 and text.contains("traveler_male") and not text.contains("Quái library_warden")
-			and text.contains("Tileset library") and text.contains("NPC orwen"),
-			"Liệt kê asset còn thiếu, boss đã đủ hình (%d mục: nhân vật, tileset, NPC)" % missing.size())
+			and not text.contains("NPC orwen"),
+			"Liệt kê asset còn thiếu, boss và chân dung Orwen đã đủ hình (%d mục)" % missing.size())
 	_check(text.contains("map: idle_n") and not text.contains("map: run_e") and not text.contains("map: idle_e"),
 			"Mira: chỉ báo thiếu hướng chưa vẽ (idle_n...), không báo hướng phải")
 	var frames := ArtLibrary.character_frames(DataPaths.load_character(&"mira"), "map")
@@ -97,7 +97,7 @@ func _test_importer() -> void:
 	var battle := ArtLibrary.character_frames(DataPaths.load_character(&"mira"), "battle")
 	_check(battle and battle.get_frame_count("attack") == 8 and not battle.get_animation_loop("attack")
 			and ArtLibrary.frame_size_of(battle) == Vector2(512, 512), "SpriteFrames trận: attack 8 khung 512 px, không lặp")
-	_check(ArtLibrary.portrait(DataPaths.load_character(&"echo")) == null and ArtLibrary.zone_tileset(&"library") == null,
+	_check(ArtLibrary.portrait_by_id("missing_test_character") == null and ArtLibrary.zone_tileset(&"missing_test_zone") == null,
 			"Thiếu chân dung / tileset → trả về null (giữ hình tạm)")
 	for id in DataPaths.list_character_ids():
 		var data := DataPaths.load_character(id)
@@ -106,6 +106,11 @@ func _test_importer() -> void:
 			GameState.player_gender = gender
 			var map_frames := ArtLibrary.character_frames(data, "map")
 			var battle_frames := ArtLibrary.character_frames(data, "battle")
+			var overworld := ArtLibrary.overworld_character_frames(data)
+			_check(overworld != null and overworld.get_frame_texture("idle_e", 0) == battle_frames.get_frame_texture("idle", 0)
+					and overworld.get_frame_texture("opener_e", 0) == battle_frames.get_frame_texture("attack", 0)
+					and overworld.get_animation_loop("run_e") and not overworld.get_animation_loop("opener_e"),
+					"%s (%s): ngoài map dùng hình idle và đánh từ bộ trong trận" % [id, gender])
 			var vfx := ArtLibrary.vfx_frames(data)
 			_check(map_frames != null and map_frames.has_animation("run_e")
 					and battle_frames != null and battle_frames.has_animation("ultimate")
@@ -130,10 +135,10 @@ func _test_map_sprite() -> void:
 	var map := get_tree().current_scene as OverworldMap
 	var player := map.player
 	player.set_leader(0)
-	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Lữ khách dùng sprite pixel từ design")
+	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Lữ khách dùng hình trong trận ngoài map")
 	player.set_leader(1)
 	await _frames(2)
-	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Mira dẫn đầu: dùng sprite pixel")
+	_check(player.sprite != null and player.sprite.sprite_frames.has_animation("idle_e"), "Mira dẫn đầu: dùng hình trong trận")
 	Input.action_press("move_right")
 	await _seconds(0.4)
 	_check(player.sprite.animation == &"run_e" and player.sprite.is_playing() and not player.sprite.flip_h,
@@ -149,8 +154,8 @@ func _test_map_sprite() -> void:
 	await _seconds(0.6)
 	_check(player.sprite.animation == &"idle_e" and not player.sprite.flip_h, "Dừng lại nhìn lên: chưa có idle_n, dùng idle_e")
 	player.set_leader(0)
-	_check(player.sprite != null and player.sprite.sprite_frames == ArtLibrary.character_frames(
-			DataPaths.load_character(&"traveler"), "map"), "Đổi về Lữ khách: dùng đúng sprite Lữ khách")
+	_check(player.sprite != null and player.sprite.sprite_frames == ArtLibrary.overworld_character_frames(
+			DataPaths.load_character(&"traveler")), "Đổi về Lữ khách: dùng đúng sprite Lữ khách")
 
 
 func _test_battle_sprite() -> void:

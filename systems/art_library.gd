@@ -85,11 +85,39 @@ static func character_frames(data: CharacterData, mode: String) -> SpriteFrames:
 	return _load(frames_path(CHARACTER_DIR, asset_id, mode)) as SpriteFrames
 
 
-## Story NPCs use their own idle artwork; recruitable companions keep their existing skin.
+## Reuse battle artwork on the map; keep the original battle resources unchanged.
+static func overworld_character_frames(data: CharacterData) -> SpriteFrames:
+	var battle := character_frames(data, "battle")
+	if battle == null or not battle.has_animation("idle"):
+		return character_frames(data, "map")
+	var key := "overworld:%s" % battle.get_instance_id()
+	if _cache.has(key):
+		return _cache[key] as SpriteFrames
+	var frames := SpriteFrames.new()
+	frames.remove_animation("default")
+	var actions := {"idle": "idle", "run": "idle", "dash": "idle", "opener": "attack", "technique": "skill"}
+	for action: String in actions:
+		var source: String = actions[action]
+		if not battle.has_animation(source):
+			source = "idle"
+		var animation := action + "_e"
+		frames.add_animation(animation)
+		var speed := battle.get_animation_speed(source)
+		frames.set_animation_speed(animation, speed * (1.6 if action in ["run", "dash"] else 1.0))
+		frames.set_animation_loop(animation, action in ["idle", "run", "dash"])
+		for i in battle.get_frame_count(source):
+			frames.add_frame(animation, battle.get_frame_texture(source, i), battle.get_frame_duration(source, i))
+	frames.set_meta("anchor", battle.get_meta("anchor", Vector2(0.5, 0.85)))
+	frames.set_meta("battle_art", true)
+	_cache[key] = frames
+	return frames
+
+
+## Story NPCs use their own idle artwork; companions use the same art as in battle.
 static func npc_frames(npc_id: StringName) -> SpriteFrames:
 	var character_path := DataPaths.character_path(npc_id)
 	if ResourceLoader.exists(character_path):
-		return character_frames(DataPaths.load_character(npc_id), "map")
+		return overworld_character_frames(DataPaths.load_character(npc_id))
 	return _load(frames_path(CHARACTER_DIR, String(npc_id), "map")) as SpriteFrames
 
 
